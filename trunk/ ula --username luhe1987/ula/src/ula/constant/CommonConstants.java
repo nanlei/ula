@@ -1,11 +1,8 @@
 package ula.constant;
 
 public interface CommonConstants {
-	/*Error Messages*/
-	String WAC_IS_NULL = "WebApplicationContext is NULL"; 
 
-	
-	
+
 	/* Paging constants*/
 	int DEFAULT_PAGE_SIZE = 5;
 	int DEFAULT_NOTE_SIZE = 3;
@@ -30,5 +27,7 @@ public interface CommonConstants {
 	String KEY_CONTACT_GROUP_RU ="ruGroup";
 	String KEY_CONTACT_GROUP_CN ="cnGroup";
 	String KEY_CONTACT_GROUP_INDIVIDUAL ="individual";
+	
+	String LOGIN_USERID = "userId";
 	
 }

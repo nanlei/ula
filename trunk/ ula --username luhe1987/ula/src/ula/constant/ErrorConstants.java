@@ -1,6 +1,8 @@
 package ula.constant;
 
 public interface ErrorConstants {
+	String WAC_IS_NULL = "WebApplicationContext is NULL"; 
+	
 	String USERNAME_PASSWORD_EMPTY  = " username or password is empty.";
 	String INVALID_USERACCOUNT =" invalid user account.";
 	String ARTICLEID_NULL ="article Id is null.";
