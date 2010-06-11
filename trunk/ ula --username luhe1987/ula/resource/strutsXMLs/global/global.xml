@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+	<!-- 
+                      包含其他所有所有struts XML文件目录
+     -->
+<struts>
+	<package name="global" extends="struts-default" namespace="/">
+		<!--name属性的值，请参考BaseAction里的常量定义 -->
+		<global-results>
+			<result name="error">/global/errorMessage.jsp</result>
+			<result name="redirect" type = "redirect">${redirctURL}</result>
+			<result name="none">/global/nullPage.jsp</result>
+		</global-results>
+	</package>
+</struts>
+
