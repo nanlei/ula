@@ -7,9 +7,10 @@
      -->
 <struts>
 
-<include file="strutsXMLs/action/admin/login.xml"></include>
-<include file="strutsXMLs/action/admin/about.xml"></include>
-<include file="strutsXMLs/action/admin/contact.xml"></include>
+	<include file="strutsXMLs/action/admin/login.xml"></include>
+	<include file="strutsXMLs/action/admin/about.xml"></include>
+	<include file="strutsXMLs/action/admin/contact.xml"></include>
+	<include file="strutsXMLs/action/admin/city.xml"></include>
 
 </struts>
 

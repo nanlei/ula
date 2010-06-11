@@ -9,7 +9,6 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import ula.constant.ErrorConstants;
 
-
 public class BeanManager {
 	protected static final Log log;
 	private static WebApplicationContext wac;

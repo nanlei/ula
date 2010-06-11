@@ -4,22 +4,20 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
 	<!-- context parameters for Spring -->
-	
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:springXMLs/applicationContext.xml,
-		             classpath:springXMLs/applicationContext-service.xml
-		</param-value>
+		<param-value>classpath:springXMLs/*.xml</param-value>
 	</context-param>
 
 	<!--Core Filters List starts 核心过滤器列表       开始 -->
-	
+
 	<!-- Struts2 filter -->
 	<filter>
 		<filter-name>struts2-cleanup</filter-name>
 		<filter-class>org.apache.struts2.dispatcher.ActionContextCleanUp</filter-class>
 	</filter>
-	
+
 	<!-- Struts2核心过滤器。作用：转发客户端的请求 -->
 	<filter>
 		<filter-name>struts2</filter-name>
@@ -32,12 +30,12 @@
 
 
 	<!--Core Listener List starts 核心监听器列表       开始 -->
-	
+
 	<!--
 		Spring容器监听器。 作用：监听ServletContext初始化事件，
 		并在此时初始化Spring的相关变量，主要是contextConfigLocation
 	-->
-	
+
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
@@ -51,7 +49,7 @@
 
 
 
-	
+
 	<filter-mapping>
 		<filter-name>struts2-cleanup</filter-name>
 		<url-pattern>/*</url-pattern>
@@ -62,10 +60,22 @@
 		<url-pattern>*.action</url-pattern>
 	</filter-mapping>
 
+	<!-- FreeMarker页面处理 -->
+	<servlet>
+		<servlet-name>freemarker</servlet-name>
+		<servlet-class>org.apache.struts2.views.freemarker.FreemarkerServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>freemarker</servlet-name>
+		<url-pattern>*.ftl</url-pattern>
+	</servlet-mapping>
+
 
 
 	<display-name>ula</display-name>
-	
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
@@ -74,7 +84,7 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-	
+
 	<error-page>
 		<error-code>404</error-code>
 		<location>/404.jsp</location>

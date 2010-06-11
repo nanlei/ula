@@ -6,13 +6,23 @@
                       包含其他所有所有struts XML文件目录
      -->
 <struts>
-	<package name="global" extends="struts-default" namespace="/">
+	<package name="global" extends="ula-default" namespace="/">
 		<!--name属性的值，请参考BaseAction里的常量定义 -->
 		<global-results>
 			<result name="error">/global/errorMessage.jsp</result>
-			<result name="redirect" type = "redirect">${redirctURL}</result>
+			<result name="redirect" type="redirect">${redirctURL}</result>
 			<result name="none">/global/nullPage.jsp</result>
 		</global-results>
+
+	</package>
+
+	<package name="admin_index" extends="global" namespace="/admin">
+		<action name="admin" class="ula.action.BaseAction">
+			<result>admin.ftl</result>
+		</action>
+		<action name="admintree" class="ula.action.BaseAction">
+			<result>tree.ftl</result>
+		</action>
 	</package>
 </struts>
 
