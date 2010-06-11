@@ -10,6 +10,7 @@ import org.apache.struts2.ServletActionContext;
 
 import ula.common.BeanManager;
 import ula.common.ServiceManager;
+import ula.constant.CommonConstants;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
@@ -93,5 +94,14 @@ public class BaseAction implements Action {
 		if(log.isDebugEnabled()){
 			log.debug(msg);
 		}
+	}
+	
+	/**
+	 * 获取登陆用户的userId
+	 * 如果用户登录，用户的userId被放入Session
+	 */
+	public int getLoginUserID() throws Exception{
+		String userId = (String) this.getHttpSessionAsMap().get(CommonConstants.LOGIN_USERID);
+		return Integer.valueOf(userId);
 	}
 }
