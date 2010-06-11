@@ -7,7 +7,7 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import ula.constant.CommonConstants;
+import ula.constant.ErrorConstants;
 
 
 public class BeanManager {
@@ -27,7 +27,7 @@ public class BeanManager {
 		if (wac != null) {
 			log.info("BeanManager init finished successfully.");
 		} else {
-			log.error(CommonConstants.WAC_IS_NULL);
+			log.error(ErrorConstants.WAC_IS_NULL);
 		}
 	}
 
@@ -36,7 +36,7 @@ public class BeanManager {
 		if (wac != null)
 			return wac.getBean(beanName);
 		else {
-			log.error(CommonConstants.WAC_IS_NULL);
+			log.error(ErrorConstants.WAC_IS_NULL);
 			return null;
 		}
 	}
