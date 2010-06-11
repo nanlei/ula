@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<!-- context parameters for Spring -->
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:springXMLs/applicationContext.xml,
+		             classpath:springXMLs/applicationContext-service.xml
+		</param-value>
+	</context-param>
+
+	<!--Core Filters List starts 核心过滤器列表       开始 -->
+	
+	<!-- Struts2 filter -->
+	<filter>
+		<filter-name>struts2-cleanup</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ActionContextCleanUp</filter-class>
+	</filter>
+	
+	<!-- Struts2核心过滤器。作用：转发客户端的请求 -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+
+
+
+	<!--Core Filters List ends 核心过滤器列表          结束-->
+
+
+	<!--Core Listener List starts 核心监听器列表       开始 -->
+	
+	<!--
+		Spring容器监听器。 作用：监听ServletContext初始化事件，
+		并在此时初始化Spring的相关变量，主要是contextConfigLocation
+	-->
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>ula.common.BeanManagerListener</listener-class>
+	</listener>
+
+
+	<!--Core Listener List ends   核心监听器列表        结束-->
+
+
+
+	
+	<filter-mapping>
+		<filter-name>struts2-cleanup</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+
+
+
+	<display-name>ula</display-name>
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.jsp</location>
+	</error-page>
+
+	<error-page>
+		<error-code>500</error-code>
+		<location>/500.jsp</location>
+	</error-page>
+
+</web-app>

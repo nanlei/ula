@@ -1,0 +1,113 @@
+/*基本信息*/
+body {font:12px Tahoma;margin:0px;text-align:center;background:#FFF;}
+a:link,a:visited {font-size:12px;text-decoration: none;}
+a:hover{}
+ul li a{display:block;}
+
+
+/*页面层容器*/
+#container {width:800px;height:600px;margin:10px auto}
+
+/*页面头部*/
+#header {}
+#admin{margin-left:50px;display:block;line-height:30px; float:left; text-align:left;font-size:14px}
+#menu {padding:20px 20px 0 0}
+#menu ul {float:right;list-style:none;margin:0px;}
+#menu ul li {float:left;display:block;line-height:30px;margin:0 10px}
+#menu ul li a:link,#menu ul li a:visited {font-weight:bold;color:#666}
+#menu ul li a:hover{background-color:#F5DEB3}
+.current{background-color:#F5DEB3;}
+.menuDiv {width:1px;height:28px;background:#999}
+#banner {margin:auto;height:10px;border-bottom:5px solid #EFEFEF;clear:both}
+
+/*左侧栏*/
+#sidemenu {background-color:#CCCC99}
+#sidemenu ul {list-style:none;margin:0px;}
+#sidemenu ul li {display:block;line-height:30px;margin:0px auto}
+#sidemenu ul li a:link,#menu ul li a:visited {font-weight:bold;color:#666}
+#sidemenu ul li a:hover{}
+
+/*页面底部*/
+#footer {width:800px;margin:0 auto;height:50px;background:#00FFFF}
+
+#pagebody {
+ width:95%; /*设定宽度*/
+ margin:8px auto; /*居中*/
+}
+#sidebar {
+padding-top:20px;
+ width:120px; /*设定宽度*/
+ text-align:center; /*文字左对齐*/
+ float:left; /*浮动居左*/
+ clear:left; /*不允许左侧存在浮动*/
+ overflow:hidden; /*超出宽度部分隐藏*//
+}
+#mainbody {
+ width:95%;
+ padding:20px;
+ text-align:left;
+ float:right; /*浮动居右*/
+ clear:right; /*不允许右侧存在浮动*/
+ overflow:hidden
+}
+
+/*表格样式*/
+
+#customers
+{
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+width:90%;
+border-collapse:collapse;
+border:1px solid #98bf21;
+}
+#customers td, #customers th 
+{
+font-size:1.2em;
+text-align:center;
+border:1px solid #98bf21;
+padding:3px 7px 2px 7px;
+}
+#customers th 
+{
+font-size:20px;
+text-align:center;
+padding-top:5px;
+padding-bottom:4px;
+background-color:#A7C942;
+color:#fff;
+}
+
+#customers tr.alt td 
+{
+text-align:center; 
+color:#000;
+background-color:#EAF2D3;
+}
+
+#customers td.operation 
+{
+font-size:10px;
+text-align:center;
+}
+
+/*添加按钮样式*/
+
+.add{
+	font-family:宋体,"Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin-bottom:20px;
+	font-size:100px;
+}
+
+/*提示框样式*/
+
+.infobox {
+	width: 90%;
+	table-layout: fixed;
+	margin-bottom: 20px;
+	background-color:#FFCCFF;
+}
+
+.tablect {
+	height: 3px
+}
+
