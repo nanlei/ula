@@ -99,6 +99,11 @@ public class BaseAction implements Action {
 	/**
 	 * 获取登陆用户的userId
 	 * 如果用户登录，用户的userId被放入Session
+	 * 
+	 * 	getLoginUserID()有可能因为如下原因抛出异常：
+	 * a)没有登录，无法取到值
+	 * b)Session过期
+	 * c)格式转换
 	 */
 	public int getLoginUserID() throws Exception{
 		String userId = (String) this.getHttpSessionAsMap().get(CommonConstants.LOGIN_USERID);
