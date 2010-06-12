@@ -28,12 +28,11 @@ public class BusinessAction extends FrameworkAction{
 		public String admin() {
 //			设置存放信息的key。客户端用这个key取值
 			super.setMapKeyName(CommonConstants.KEY_BIZ_INFO);
-
 			try {
 				super.setInfoMap(this.getServiceManager().getAboutService().getBizInfo());
 			} catch (Exception e) {
 //				如果在数据库中没有找到信息，那么给出提示；
-				this.setCustomAlertMessage(AlertMessage.BIZINFO_EMPTY);
+				this.setAlertMessage(AlertMessage.BIZINFO_EMPTY);
 				return super.admin();
 			}	
 			
@@ -48,7 +47,8 @@ public class BusinessAction extends FrameworkAction{
 				this.setInfoMap(super.getServiceManager().getAboutService().getBizInfo());
 			} catch (Exception e) {
 				this.debug(e.getMessage());
-				this.setErrorMessage(ErrorConstants.UNKOWN_ERROR);
+				e.printStackTrace();
+				
 				return ERROR;
 			}
 			
@@ -73,7 +73,7 @@ public class BusinessAction extends FrameworkAction{
 				super.setInfoMap(this.getServiceManager().getAboutService().getBizInfo());
 			} catch (Exception e) {
 //				如果在数据库中没有找到信息，那么给出提示；
-				this.setCustomAlertMessage(AlertMessage.BIZINFO_EMPTY);
+				this.setAlertMessage(AlertMessage.BIZINFO_EMPTY);
 				return super.admin();
 			}	
 			return super.view();

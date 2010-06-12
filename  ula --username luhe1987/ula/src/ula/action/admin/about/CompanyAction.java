@@ -33,7 +33,7 @@ public class CompanyAction extends FrameworkAction{
 				super.setInfoMap(this.getServiceManager().getAboutService().getCompanyInfo());
 			} catch (Exception e) {
 //				如果在数据库中没有找到信息，那么给出提示；
-				this.setCustomAlertMessage(AlertMessage.COMPANYINFO_EMPTY);
+				this.setAlertMessage(AlertMessage.COMPANYINFO_EMPTY);
 				return super.admin();
 			}	
 			
@@ -47,8 +47,9 @@ public class CompanyAction extends FrameworkAction{
 			try {
 				this.setInfoMap(super.getServiceManager().getAboutService().getCompanyInfo());
 			} catch (Exception e) {
-				
-				this.setErrorMessage(ErrorConstants.UNKOWN_ERROR);
+				super.debug(e.getMessage());
+				e.printStackTrace();
+
 				return ERROR;
 			}
 			
@@ -73,7 +74,7 @@ public class CompanyAction extends FrameworkAction{
 				super.setInfoMap(this.getServiceManager().getAboutService().getCompanyInfo());
 			} catch (Exception e) {
 //				如果在数据库中没有找到信息，那么给出提示；
-				this.setCustomAlertMessage(AlertMessage.COMPANYINFO_EMPTY);
+				this.setAlertMessage(AlertMessage.COMPANYINFO_EMPTY);
 				return super.admin();
 			}	
 			
