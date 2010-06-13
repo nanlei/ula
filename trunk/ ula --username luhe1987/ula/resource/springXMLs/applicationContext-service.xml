@@ -19,6 +19,11 @@
 			<bean class="ula.service.admin.ContactService" />
 		</property>
 	</bean>
+	<bean id="cityServcie" parent="baseTxService">
+		<property name="target">
+			<bean class="ula.service.admin.CityServcie" />
+		</property>
+	</bean>
 
 	<bean id="serviceManager" class="ula.common.ServiceManager" />
 	

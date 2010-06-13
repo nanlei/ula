@@ -1,6 +1,7 @@
 package ula.common;
 
 import ula.service.admin.AboutService;
+import ula.service.admin.CityServcie;
 import ula.service.admin.ContactService;
 import ula.service.admin.LogService;
 
@@ -13,7 +14,16 @@ public class ServiceManager {
 	private LogService logService = null;
 	private AboutService aboutService = null;
 	private ContactService contactService = null;
+	private CityServcie cityServcie = null;
 	
+	public CityServcie getCityServcie() {
+		return cityServcie;
+	}
+
+	public void setCityServcie(CityServcie cityServcie) {
+		this.cityServcie = cityServcie;
+	}
+
 	public ContactService getContactService() {
 		return contactService;
 	}

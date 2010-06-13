@@ -8,6 +8,7 @@
 <title>错误提示信息</title>
 </head>
 <body>
+ERROR!开发人员查看log
 ${errorMessage}
 </body>
 </html>

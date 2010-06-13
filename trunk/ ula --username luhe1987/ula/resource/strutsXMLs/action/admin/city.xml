@@ -3,9 +3,14 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-	<package name="admin_city" extends="ula-default" namespace="/admin/city">
-		<action name="city" class="ula.action.admin.city.IntroductionAction">
-			<result name="test">test.ftl</result>
-		</action>
+	<package name="admin/city" extends="global" namespace="/admin/city">
+		<!--关于城市->大连介绍	-->
+		<action name="intro" class="ula.action.admin.city.IntroductionAction">
+			<result name="edit">introduction_edit.ftl</result>
+			<result name="view">introduction_view.ftl</result>
+			<result name="update">introduction_admin.ftl</result>
+			<result name="admin">introduction_admin.ftl</result>
+			<result name="preAdd">introduction_add.ftl</result>
+		</action>	
 	</package>
 </struts>

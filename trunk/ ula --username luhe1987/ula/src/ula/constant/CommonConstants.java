@@ -12,13 +12,15 @@ public interface CommonConstants {
 	String NORMAL_MARK = "?";
 	String START_MARK = ":_START_INDEX_";
 	String END_MARK = ":_END_INDEX_";
+	
+	
+	
 
 	String KEY_COMPANY_INFO = "companyInfo";
 	String KEY_BIZ_INFO = "bizInfo";
 	String KEY_TEAM_INFO = "teamInfo";
 	String KEY_MEMORY_INFO = "memoryInfo";
 
-	String KEY_CONTACT_INFO = "contactInfo";
 
 	int ID_CONTACT_GROUP_RU = 1;
 	int ID_CONTACT_GROUP_CN = 2;
@@ -26,7 +28,7 @@ public interface CommonConstants {
 
 	String KEY_CONTACT_GROUP_RU = "ruGroup";
 	String KEY_CONTACT_GROUP_CN = "cnGroup";
-	String KEY_CONTACT_GROUP_INDIVIDUAL = "individual";
+	String KEY_CONTACT_GROUP_INDIVIDUAL = "person";
 
 	String LOGIN_USER = "_LOGIN_USER_";
 	String LOGIN_USERID = "userId";

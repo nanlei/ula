@@ -10,30 +10,30 @@
 	
 <!--联系我们->个人客户 	-->
 		<action name="person" class="ula.action.admin.contact.IndividualClientAction">
-		<result name="edit">person_edit.jsp</result>
-		<result name="view">person_view.jsp</result>
-		<result name="update">person_admin.jsp</result>
-		<result name="admin">person_admin.jsp</result>
-		<result name="preAdd">person_add.jsp</result>
+		<result name="edit">person_edit.ftl</result>
+		<result name="view">person_view.ftl</result>
+		<result name="update">person_admin.ftl</result>
+		<result name="admin">person_admin.ftl</result>
+		<result name="preAdd">person_add.ftl</result>
 		</action>
 
 <!--联系我们->俄罗斯团体客户 	-->		
 		<action name="rugroup" class="ula.action.admin.contact.GroupClientRussianAction">
-		<result name="edit">rugroup_edit.jsp</result>
-		<result name="view">rugroup_view.jsp</result>
-		<result name="update">rugroup_admin.jsp</result>	
-		<result name="admin">rugroup_admin.jsp</result>
-		<result name="preAdd">rugroup_add.jsp</result>
+		<result name="edit">rugroup_edit.ftl</result>
+		<result name="view">rugroup_view.ftl</result>
+		<result name="update">rugroup_admin.ftl</result>	
+		<result name="admin">rugroup_admin.ftl</result>
+		<result name="preAdd">rugroup_add.ftl</result>
 		</action>
 		
 		
 <!--联系我们->中国团体客户 	-->	
 		<action name="cngroup" class="ula.action.admin.contact.GroupClientChineseAction">
-		<result name="edit">cngroup_edit.jsp</result>
-		<result name="view">cngroup_view.jsp</result>
-		<result name="update">cngroup_admin.jsp</result>
-		<result name="admin">cngroup_admin.jsp</result>	
-		<result name="preAdd">cngroup_add.jsp</result>
+		<result name="edit">cngroup_edit.ftl</result>
+		<result name="view">cngroup_view.ftl</result>
+		<result name="update">cngroup_admin.ftl</result>
+		<result name="admin">cngroup_admin.ftl</result>	
+		<result name="preAdd">cngroup_add.ftl</result>
 		</action>
 		
 	</package>
