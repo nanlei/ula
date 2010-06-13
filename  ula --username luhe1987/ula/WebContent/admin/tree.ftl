@@ -2,12 +2,63 @@
 <@p.tree root="系统管理" display="block">
 <script type="text/javascript"> 
 var treeMenu = [
-	{ level:1, name:"系统信息"},
-	{ level:2, name:"系统参数", link:"city/city!test.action"},
-	{ level:2, name:"数据库参数", link:"manage/info/dbInfo.action"},
-	{ level:1, name:"系统管理"},
-	{ level:2, name:"参数管理",link:"manage/system/params.action"},
-	{ level:2, name:"角色管理",link:"manage/role/role.action"}
+	{ level:1, name:"关于我们"},
+	{ level:2, name:"公司介绍", link:"about/company!admin.action"},
+	{ level:2, name:"业务范围", link:"about/biz!admin.action"},
+	{ level:2, name:"美好回忆", link:"about/memory!admin.action"},
+	{ level:2, name:"团队介绍", link:"about/team!admin.action"},
+	
+	{ level:1, name:"关于城市"},
+	{ level:2, name:"大连介绍", link:"city/city!test.action"},
+	{ level:2, name:"大连历史", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"景点、公园", link:"manage/info/dbInfo.action"},
+	{ level:3, name:"市内", link:"manage/info/dbInfo.action"},
+	{ level:3, name:"旅顺", link:"manage/info/dbInfo.action"},
+	{ level:3, name:"开发区、金石滩", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"大连美食", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"大连居住", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"大连购物", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"大连交通", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"大连交通", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"大连治疗", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"大连节日", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"展会信息", link:"manage/info/dbInfo.action"},
+	
+	{ level:1, name:"旅游项目"},
+	{ level:2, name:"本月推荐", link:"city/city!test.action"},
+	{ level:2, name:"常规行程", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"治疗行程", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"汉语学习", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"夏令营", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"温泉游", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"乡村游", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"展览", link:"manage/info/dbInfo.action"},
+	
+	{ level:1, name:"特色服务"},
+	{ level:2, name:"签证", link:"city/city!test.action"},
+	{ level:2, name:"酒店预订", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"各项委托", link:"manage/info/dbInfo.action"},
+	{ level:3, name:"代订车、船票", link:"manage/info/dbInfo.action"},
+	{ level:3, name:"租车服务", link:"manage/info/dbInfo.action"},
+	{ level:3, name:"翻译服务", link:"manage/info/dbInfo.action"},
+	{ level:3, name:"代邮寄纪念品", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"俄罗斯留学生之家", link:"manage/info/dbInfo.action"},
+	
+	{ level:1, name:"支付方式"},
+	{ level:2, name:"支付方式", link:"manage/info/dbInfo.action"},
+	
+	{ level:1, name:"联系我们"},
+	{ level:2, name:"客户入口"},
+	{ level:3, name:"俄罗斯客户", link:"contact/rugroup!admin.action"},
+	{ level:3, name:"中国客户", link:"contact/cngroup!admin.action"},
+	{ level:2, name:"游客入口", link:"contact/person!admin.action"},
+	
+	
+	{ level:1, name:"友情链接"},
+	{ level:2, name:"友情链接", link:"manage/info/dbInfo.action"}
+
+	
+	
 ];
 </script>
 </@p.tree>

@@ -15,5 +15,4 @@ public interface ErrorConstants {
 	
 	String INSERT_ERROR ="插入数据时发生错误。请检查数据库连接；或查看该数据是否已经存在";
 	
-	String UNKOWN_ERROR ="unknow error";
 }

@@ -2,7 +2,10 @@ package ula.action;
 
 import java.util.Map;
 
+import freemarker.core.DebugBreak;
+
 import ula.constant.AlertMessage;
+import ula.constant.DebugConstants;
 import ula.constant.ErrorConstants;
 import ula.util.StringUtil;
 
@@ -15,13 +18,10 @@ public class FrameworkAction extends CommonAction {
 	private Map<String, Object> infoMap = null;
 	
 //	map的key
-	private String mapKeyName = "infoMapKey";
+	private String mapKeyName ="";
 
 // 对数据库进行写操作时的结果	
 	private int result =0;
-
-	//	用户定制的提示消息
-	private String customAlertMessage = "";
 
 	public String add(){
 		
@@ -30,27 +30,53 @@ public class FrameworkAction extends CommonAction {
 
 		this.debug("title:" +this.title + ", content:" + this.content);
 		
-		this.setResult(addToDB(title, content));
+		int db_result = addToDB(title, content);
+		
+		if(db_result==-1){
+			super.debug(DebugConstants.DEBUG_MESSAGE_addToDB);
+			return ERROR;
+		}
+		
+		this.setResult(db_result);
 		
 		if(result ==0){
-			this.setAlertMessage(AlertMessage.UPDATE_FAILURE);
+			super.setAlertMessage(AlertMessage.UPDATE_FAILURE);
 			return "admin";
+		}else{
+			super.setAlertMessage(AlertMessage.UPDATE_SUCCESS);
 		}
 		
 		return this.admin();
 	}	
 	
+	/**
+	 * 一个hook方法，需要被子类覆盖
+	 *
+	 * @param title
+	 * @param content
+	 * @return
+	 * 
+	 * -1 默认值, 子类未覆盖此方法
+	 * 0  添加到数据库失败
+	 */
 	protected int addToDB(String title,String content){
-		return 0;
+		return -1;
 	}
 	
 	
 	public String admin() {
 		
-		if (infoMap == null || infoMap.isEmpty()) {
-			this.setAlertMessage(this.customAlertMessage);
+		if(StringUtil.isEmpty(this.mapKeyName)){
+			super.debug(DebugConstants.DEBUG_MESSAGE_setMapKeyName);
+			return ERROR;
+		}
+		
+		if(this.infoMap==null){
+			super.debug(DebugConstants.DEBUG_MESSAGE_setInfoMap);
 			return "admin";
 		}
+		
+		
 		
 		super.debug(infoMap.toString());
 		
@@ -64,6 +90,18 @@ public class FrameworkAction extends CommonAction {
 	 * @return
 	 */
 	public String edit() {
+		
+		if(StringUtil.isEmpty(this.mapKeyName)){
+			super.debug(DebugConstants.DEBUG_MESSAGE_setMapKeyName);
+			return ERROR;
+		}
+		
+		if(this.infoMap==null){
+			super.debug(DebugConstants.DEBUG_MESSAGE_setInfoMap);
+			return ERROR;
+		}
+		
+		
 		this.debug("要编辑的原信息内容：" + infoMap.toString());
 		this.getHttpServletRequest().setAttribute(this.mapKeyName, infoMap);
 		
@@ -72,28 +110,18 @@ public class FrameworkAction extends CommonAction {
 	public String getContent() {
 		return content;
 	}
-	public String getCustomAlertMessage() {
-		return customAlertMessage;
-	}
+
 
 	public String getTitle() {
 		return title;
 	}
-
-
-
+	
 	public String preAdd() {
 		return "preAdd";
 	}
 
 	public void setContent(String content) {
 		this.content = content;
-	}
-
-
-
-	public void setCustomAlertMessage(String customAlertMessage) {
-		this.customAlertMessage = customAlertMessage;
 	}
 
 	public void setInfoMap(Map<String, Object> infoMap) {
@@ -121,9 +149,16 @@ public class FrameworkAction extends CommonAction {
 		this.title = StringUtil.UTF8Encoding(this.title);
 		this.content = StringUtil.UTF8Encoding(this.content);
 
-		this.debug("title:" + this.title + ", content:" + this.content);
+		super.debug("title:" + this.title + ", content:" + this.content);
 		
-		this.result = this.updateToDB(title,content);
+		int db_result = updateToDB(title,content);
+		
+		if(db_result ==-1){
+			super.debug(DebugConstants.DEBUG_MESSAGE_updateToDB);
+			return ERROR;
+		}
+		
+		this.setResult(db_result);
 		
 		// 检查是否更新成功，未成功返回错误提示
 		if (result ==0) {
@@ -137,8 +172,17 @@ public class FrameworkAction extends CommonAction {
 		return this.admin();
 		
 	}
+	
+	/**
+	 * 一个hook方法，需要被子类覆盖
+	 * @param title2
+	 * @param content2
+	 * @return
+	 * -1 默认值, 子类未覆盖此方法
+	 * 0  更新数据库失败
+	 */
 	protected int updateToDB(String title2, String content2) {
-		return 0;
+		return -1;
 	}
 	
 	/**
@@ -147,6 +191,16 @@ public class FrameworkAction extends CommonAction {
 	 * @return
 	 */
 	public String view() {
+		
+		if(StringUtil.isEmpty(this.mapKeyName)){
+			super.debug(DebugConstants.DEBUG_MESSAGE_setMapKeyName);
+			return ERROR;
+		}
+		
+		if(this.infoMap==null){
+			super.debug(DebugConstants.DEBUG_MESSAGE_setInfoMap);
+			return ERROR;
+		}
 		
 		if (infoMap.isEmpty()) {
 			this.setErrorMessage(ErrorConstants.MAP_EMPTY);

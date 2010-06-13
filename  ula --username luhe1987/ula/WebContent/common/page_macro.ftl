@@ -17,19 +17,23 @@
 	<#list macro_config.css_path as css><#-- 系统CSS加载 -->
 		<link href="${base}${css}" rel="stylesheet" type="text/css">
 	</#list>
+	
 	<#if css?has_content>
 	<#list css as cssfile><#-- 自定义CSS加载 -->
 		<link href="${base}/css/${cssfile}" rel="stylesheet" type="text/css">
 	</#list>
 	</#if>
+	
 	<#list macro_config.js_path as js><#-- 系统JS加载 -->
 		<script language="javascript" src="${base}${js}"></script>
 	</#list>
+	
 	<#if js?has_content>
 	<#list js as jsfile><#-- 自定义JS加载 -->
 		<script language="javascript" src="${base}/js/${jsfile}"></script>
 	</#list>
 	</#if>
+	
 	<script language="javascript"> 
 	function toggleTree() {
 		$("#TreeTD").toggle();
@@ -59,12 +63,14 @@
 <div style="display:${display};margin-bottom:5px;">菜单控制:【<a href="javascript:void(0)" onclick="tree.openAll();this.blur();return false;" style="color:#333333">展开</a>】【<a href="javascript:void(0)" onclick="tree.closeAll();this.blur();return false;" style="color:#333333">折叠</a>】</div>
 <div class="dtree">
 <script type="text/javascript"> 
+
 //建立新树
 tree = new dTree('tree');
 tree.config.target = "MainFrame";
 tree.config.useCookies = false;
 var selNum = -1;
 var link = "";
+
 //根目录
 tree.add(0,-1,'${root}', null, null, null, '${base}/images/tico_root.gif', '${base}/images/tico_root.gif');
 var count = 0;
