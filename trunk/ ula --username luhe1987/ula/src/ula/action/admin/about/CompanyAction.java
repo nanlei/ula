@@ -32,6 +32,8 @@ public class CompanyAction extends FrameworkAction{
 			try {
 				super.setInfoMap(this.getServiceManager().getAboutService().getCompanyInfo());
 			} catch (Exception e) {
+				super.debug(e.getMessage());
+				e.printStackTrace();
 //				如果在数据库中没有找到信息，那么给出提示；
 				this.setAlertMessage(AlertMessage.COMPANYINFO_EMPTY);
 				return super.admin();

@@ -25,13 +25,15 @@ public class TeamAction extends FrameworkAction {
 	 */
 	@Override
 	public String admin() {
-		// 设置存放信息的key。客户端用这个key取值
+		// 设置存放信息的key。客户端用这个key取值。
 		super.setMapKeyName(CommonConstants.KEY_TEAM_INFO);
 
 		try {
 			super.setInfoMap(this.getServiceManager().getAboutService()
 					.getTeamInfo());
 		} catch (Exception e) {
+			e.getMessage();
+			e.printStackTrace();
 			// 如果在数据库中没有找到信息，那么给出提示；
 			this.setAlertMessage(AlertMessage.TEAMINFO_EMPTY);
 			return super.admin();
@@ -49,8 +51,8 @@ public class TeamAction extends FrameworkAction {
 					.getTeamInfo());
 		} catch (Exception e) {
 			this.debug(e.getMessage());
-			
 			e.printStackTrace();
+			super.setAlertMessage(AlertMessage.TEAMINFO_EMPTY);
 			return ERROR;
 		}
 
@@ -90,6 +92,9 @@ public class TeamAction extends FrameworkAction {
 					title, content);
 		} catch (Exception e) {
 			super.debug(ErrorConstants.INSERT_ERROR);
+			super.debug(e.getMessage());
+			e.printStackTrace();
+			
 			return 0;
 		}
 	}
