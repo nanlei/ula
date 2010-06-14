@@ -1,6 +1,5 @@
 package ula.action.admin.contact;
 
-import ula.action.CommonAction;
 import ula.action.FrameworkAction;
 import ula.constant.AlertMessage;
 import ula.constant.CommonConstants;
@@ -38,7 +37,7 @@ public class GroupClientChineseAction extends FrameworkAction {
 					.getInfo(CommonConstants.ID_CONTACT_GROUP_CN));
 		} catch (Exception e) {
 			super.debug(e.getMessage());
-			super.debug(e.getStackTrace().toString());
+			e.printStackTrace();
 			super.setAlertMessage(AlertMessage.COMPANYINFO_EMPTY);
 			return super.admin();
 		}
