@@ -38,7 +38,6 @@ public class IndividualClientAction extends FrameworkAction {
 			e.printStackTrace();
 			// 用户提示信息
 			super.setAlertMessage(AlertMessage.CONTACT_INFO_EMPTY);	
-			
 			return super.admin();
 		}
 		
