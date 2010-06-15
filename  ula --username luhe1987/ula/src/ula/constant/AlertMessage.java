@@ -22,5 +22,7 @@ public interface AlertMessage {
 	String PROGRAM_REGULAR_SCHEDULE ="常规行程没有添加，请添加";
 	String PROGRAM_SUMMER_CAMP ="夏令营行程没有添加，请添加";
 	String PROGRAM_THERAPY ="治疗行程没有添加，请添加";
+	String SPECIAL_PAYMENT ="支付方式没有添加，请添加";
+	String SPECIAL_VISA ="支付方式没有添加，请添加";
 	
 }
