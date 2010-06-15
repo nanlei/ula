@@ -1,4 +1,4 @@
-<form action="person!add.action" method="post">
+<form action="intro!add.action" method="post">
 
 <table>
 	<tr>
