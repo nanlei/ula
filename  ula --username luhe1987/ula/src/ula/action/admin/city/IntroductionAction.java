@@ -58,7 +58,6 @@ public class IntroductionAction extends FrameworkAction {
 
 	@Override
 	public String preAdd() {
-		// TODO Auto-generated method stub
 		return super.preAdd();
 	}
 
@@ -81,7 +80,6 @@ public class IntroductionAction extends FrameworkAction {
 
 	@Override
 	public String view() {
-		// TODO Auto-generated method stub
 		return super.view();
 	}
 	
