@@ -6,14 +6,14 @@ import ula.service.BaseService;
 
 public class ProgramService extends BaseService {
 	public static final String SQL_ADD_INFO = "INSERT INTO "
-		+ "visa(id,title,content,tag,date) "
+		+ "program(id,title,content,tag,date) "
 		+ "VALUES(?,?,?,?,(SELECT sysdate() FROM DUAL))";
 
 public static final String SQL_GET_INFO_BY_ID = "select * "
-		+ "from visa " 
+		+ "from program " 
 		+ "where id =?";
 
-public static final String SQL_UPDATE_INFO = "UPDATE visa "
+public static final String SQL_UPDATE_INFO = "UPDATE program "
 		+ "SET title = ?,content =?,date = (SELECT SYSDATE()FROM dual)"
 		+ "WHERE id = ?";
 
