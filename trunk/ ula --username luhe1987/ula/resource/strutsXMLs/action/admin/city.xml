@@ -4,6 +4,7 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
 	<package name="admin/city" extends="global" namespace="/admin/city">
+	
 		<!--关于城市->大连介绍	-->
 		<action name="intro" class="ula.action.admin.city.IntroductionAction">
 			<result name="edit">introduction_edit.ftl</result>
@@ -11,6 +12,15 @@
 			<result name="update">introduction_admin.ftl</result>
 			<result name="admin">introduction_admin.ftl</result>
 			<result name="preAdd">introduction_add.ftl</result>
+		</action>	
+		
+		<!--关于城市->大连历史	-->
+		<action name="history" class="ula.action.admin.city.HistoryAction">
+			<result name="edit">history_edit.ftl</result>
+			<result name="view">history_view.ftl</result>
+			<result name="update">history_admin.ftl</result>
+			<result name="admin">history_admin.ftl</result>
+			<result name="preAdd">history_add.ftl</result>
 		</action>	
 	</package>
 </struts>
