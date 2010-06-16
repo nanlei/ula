@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="admin/pic" extends="global" namespace="/pic">
+		<action name="list" class="ula.action.admin.pic.PictureAction"
+			method="list">
+			<result name="list">list.ftl</result>
+		</action>
+		<action name="preUpload" class="ula.action.admin.pic.PictureAction"
+			method="preUpload">
+			<result name="preUpload">upload.ftl</result>
+		</action>
+		<action name="upload" class="ula.action.admin.pic.PictureAction"
+			method="upload">
+			<interceptor-ref name="UlaFileUpload" />
+			<result name="success" type="chain">
+				<param name="alertMessage">${alertMessage}</param>
+				<param name="actionName">list</param>
+				<param name="namespace">/pic</param>
+			</result>
+		</action>
+		<action name="showPic" class="ula.action.admin.pic.PictureAction"
+			method="showPic">
+			<result name="showPic">showPic.ftl</result>
+		</action>
+		<action name="deletePic" class="ula.action.admin.pic.PictureAction"
+			method="deletePic">
+			<result name="success" type="chain">
+				<param name="alertMessage">${alertMessage}</param>
+				<param name="actionName">list</param>
+				<param name="namespace">/pic</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="admin/editorpic" extends="global" namespace="/pic">
+		<!-- CKEditor文件上传 -->
+		<action name="editorUpload" class="ula.action.admin.pic.EditorPictureAction"
+			method="editorUpload" />
+
+		<action name="editorList" class="ula.action.admin.pic.EditorPictureAction"
+			method="editorList">
+			<result name="editorList">editorList.ftl</result>
+		</action>
+
+		<action name="deleteEditorPic" class="ula.action.admin.pic.EditorPictureAction"
+			method="deleteEditorPic">
+			<result name="success" type="chain">
+				<param name="alertMessage">${alertMessage}</param>
+				<param name="actionName">editorList</param>
+				<param name="namespace">/pic</param>
+			</result>
+		</action>
+	</package>
+</struts>

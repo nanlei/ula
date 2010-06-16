@@ -3,7 +3,7 @@
 <#macro header>
 <table cellspacing="0" cellpadding="0" border="0" class="navtab" width="100%">
 	<tr>
-		<td rowspan="2" class="tdnormal" width="380"><img src="${base}/images/logo.gif" width="190" height="48" border="0" title="中小企业办公自动化系统" alt="Logo">
+		<td rowspan="2" class="tdnormal" width="380"><strong>大连乐游商务旅行社有限公司</strong>&nbsp;|&nbsp;网站后台管理中心<#--<img src="${base}/images/logo.gif" width="190" height="48" border="0" title="中小企业办公自动化系统" alt="Logo">-->
 			<#--<font color="white" size="4">OA系统</font>--></td>
 		<td colspan="5">&nbsp;</td>
 		<td style="text-align:right;padding-right:10px"><#--当前在线人数: 	<a href="${base}/showOnline.action" style="color:#ff6" target="MainFrame">${action.getOnline()}</a> &nbsp;当前用户：<span style="color:#ff6">${loginUser.userName} - ${loginUser.realName}</span> -->【<a style="color:#fff" href="${base}/logout.action">退出</a>】</td>
@@ -19,7 +19,7 @@
 <table width="100%" height="100%" cellSpacing="0" cellPadding="0" border="0" align="center">
 	<tr style="background:#FFF">
 		<td width="200px" id="TreeTD" rowspan="2"><iframe style="width:100%;height:100%" src="${treeAction}" name="TreeFrame" id="TreeFrame" frameborder="0"></iframe></td>
-		<td width="8px" align="center" onclick="toggleTree()" style="cursor:pointer" rowspan="2" class="fbg"><img src="images/switch.gif" width="6" height="24" border="0" alt=""></td>
+		<td width="8px" align="center" onclick="toggleTree()" style="cursor:pointer" rowspan="2" class="fbg"><img src="${base}/icon/switch.gif" width="6" height="24" border="0" alt=""></td>
 		<td width="*" id="navTD" height="30px"></td>
 	</tr>
 	<tr>
@@ -37,7 +37,7 @@ var navTD = top.document.getElementById("navTD");
 var naviInfo="${navi}".split(",");
 var displayInfo="<div id='navDiv'>";
 for(var i=0;i<naviInfo.length;i++){
-	displayInfo+="<span\><img src=\"${base}/images/arror.gif\" width=\"7\" height=\"11\" border=\"0\" alt=\"\"\></span\>&nbsp;"+ naviInfo[i] +"<span\>&nbsp;";
+	displayInfo+="<span\><img src=\"${base}/icon/arror.gif\" width=\"7\" height=\"11\" border=\"0\" alt=\"\"\></span\>&nbsp;"+ naviInfo[i] +"<span\>&nbsp;";
 }
 if (navTD) {
 	navTD.innerHTML =displayInfo+"</div>";
@@ -63,7 +63,7 @@ if (navTD) {
 	<td align="right">
 		<table>
 			<tr>
-				<td align="right" width="50px"><img src="${base}/images/help.gif" width="45" height="22" border="0" alt=""> </td>
+				<td align="right" width="50px"><img src="${base}/icon/help.gif" width="45" height="22" border="0" alt=""> </td>
 				<td align="center" width="80px" style="padding-top:5px"><a href="#" style="cursor:pointer" onclick="$('#page_explain').toggle();this.blur();return false;">${helpInfoTitle}</a></td>
 			</tr>
 		</table>
@@ -80,6 +80,6 @@ if (navTD) {
 <#-- Footer -->
 <#macro footer>
 <tr>
-	<td height="18px" align="center" style="padding-right:10px;font-size:12px">Ver 2C  Copyright &#169; www.ourpioneer.org All Rights Reserved,Powered By Nanlei</td>
+	<td height="18px" align="center" style="padding-right:10px;font-size:12px">Copyright &#169; 2010 ULA Team All Rights Reserved</td>
 </tr>
 </#macro>

@@ -22,7 +22,7 @@
 			</interceptor-stack>
 
 			<interceptor-stack name="UlaFileUpload">
-				<interceptor-ref name="login" />
+<!--				<interceptor-ref name="login" />-->
 				<interceptor-ref name="fileUpload" />
 				<interceptor-ref name="params" />
 			</interceptor-stack>

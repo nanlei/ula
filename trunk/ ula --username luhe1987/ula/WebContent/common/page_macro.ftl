@@ -202,13 +202,13 @@ if (selNum != -1) {
 
 <#-- CKEditor编辑器 -->
 <#macro ckeditor id upload=true>
-${importJS("/components/ckeditor/ckeditor.js")}
+${importJS("/ckeditor/ckeditor.js")}
 <#if upload>
 <script type="text/javascript">
 CKEDITOR.replace('${id}',{
-	filebrowserUploadUrl : '${base}/ckeditor/uploader?Type=File',
-	filebrowserImageUploadUrl : '${base}/ckeditor/uploader?Type=Image',
-	filebrowserFlashUploadUrl : '${base}/ckeditor/uploader?Type=Flash'
+	filebrowserUploadUrl : '${base}/pic/editorUpload.action',
+	filebrowserImageUploadUrl : '${base}/pic/editorUpload.action',
+	filebrowserFlashUploadUrl : '${base}/pic/editorUpload.action'
 });
 </script>
 <#else>
