@@ -9,4 +9,10 @@ public class UserService extends BaseService {
 	public PagingList getAllUser() {
 		return getPagingList(SQL_GET_ALL_USERS);
 	}
+
+	private static final String SQL_DEL_USER_BY_ID = "delete from user where USERID=?";
+
+	public void deleteUserById(String userId) {
+		DB.update(SQL_DEL_USER_BY_ID, new Object[] { userId });
+	}
 }
