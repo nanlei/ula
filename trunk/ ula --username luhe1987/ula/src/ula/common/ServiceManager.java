@@ -9,6 +9,7 @@ import ula.service.admin.PaymentService;
 import ula.service.admin.PicService;
 import ula.service.admin.ProgramService;
 import ula.service.admin.SpecialService;
+import ula.service.admin.UserService;
 
 public class ServiceManager {
 
@@ -21,11 +22,11 @@ public class ServiceManager {
 	private ContactService contactService = null;
 	private CityServcie cityServcie = null;
 	private ProgramService programService = null;
-	private PaymentService paymentService =null;
+	private PaymentService paymentService = null;
 	private SpecialService specialService = null;
 	private LinkService linkService = null;
 	private PicService picService = null;
-	
+	private UserService userService = null;
 
 	public LinkService getLinkService() {
 		return linkService;
@@ -50,8 +51,6 @@ public class ServiceManager {
 	public void setPaymentService(PaymentService paymentService) {
 		this.paymentService = paymentService;
 	}
-
-
 
 	public ProgramService getProgramService() {
 		return programService;
@@ -99,6 +98,14 @@ public class ServiceManager {
 
 	public void setPicService(PicService picService) {
 		this.picService = picService;
+	}
+
+	public UserService getUserService() {
+		return userService;
+	}
+
+	public void setUserService(UserService userService) {
+		this.userService = userService;
 	}
 
 }
