@@ -31,27 +31,26 @@
 			<bean class="ula.service.admin.ProgramService" />
 		</property>
 	</bean>
-	
+
 	<bean id="paymentService" parent="baseTxService">
 		<property name="target">
 			<bean class="ula.service.admin.PaymentService" />
 		</property>
 	</bean>
-	
-	
+
+
 	<bean id="specialService" parent="baseTxService">
 		<property name="target">
 			<bean class="ula.service.admin.SpecialService" />
 		</property>
 	</bean>
-	
-	
+
+
 	<bean id="linkService" parent="baseTxService">
 		<property name="target">
 			<bean class="ula.service.admin.LinkService" />
 		</property>
 	</bean>
-
 
 	<bean id="picService" parent="baseTxService">
 		<property name="target">
@@ -59,6 +58,11 @@
 		</property>
 	</bean>
 
+	<bean id="userService" parent="baseTxService">
+		<property name="target">
+			<bean class="ula.service.admin.UserService" />
+		</property>
+	</bean>
 
 	<bean id="serviceManager" class="ula.common.ServiceManager" />
 

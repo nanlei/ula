@@ -32,5 +32,14 @@
 			<result>tree.ftl</result>
 		</action>
 	</package>
+	<!-- 用户管理入口 -->
+	<package name="user_index" extends="global" namespace="/user">
+		<action name="admin" class="ula.action.BaseAction">
+			<result>user.ftl</result>
+		</action>
+		<action name="admintree" class="ula.action.BaseAction">
+			<result>tree.ftl</result>
+		</action>
+	</package>
 </struts>
 
