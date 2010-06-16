@@ -11,6 +11,7 @@ import org.apache.struts2.ServletActionContext;
 import ula.common.BeanManager;
 import ula.common.ServiceManager;
 import ula.constant.CommonConstants;
+import ula.util.QueryUtil;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
@@ -99,5 +100,55 @@ public class BaseAction implements Action {
 		String userId = (String) this.getHttpSessionAsMap().get(
 				CommonConstants.LOGIN_USERID);
 		return Integer.valueOf(userId);
+	}
+	
+	/* 分页信息 */
+	protected int pageNum = 1;
+
+	protected int pageSize = CommonConstants.DEFAULT_PAGE_SIZE;
+
+	public int getPageNum() {
+		return pageNum;
+	}
+
+	public void setPageNum(int pageNum) {
+		this.pageNum = pageNum;
+	}
+
+	public int getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public int getMaxPageSize() {
+		return CommonConstants.MAX_PAGE_SIZE;
+	}
+
+	public int getDefaultPageSize() {
+		return CommonConstants.DEFAULT_PAGE_SIZE;
+	}
+
+	public String getQueryStringWithoutPageNum() {
+		Map m = getParametersAsMap();
+		m.remove("pageNum");
+		return QueryUtil.getQueryString(m);
+	}
+
+	public String getFullUrlWithoutPageNum() {
+		return getHttpServletRequest().getServletPath() + "?" + getQueryStringWithoutPageNum();
+	}
+
+	public String getQueryStringWithoutPageInfo() {
+		Map m = getParametersAsMap();
+		m.remove("pageNum");
+		m.remove("pageSize");
+		return QueryUtil.getQueryString(m);
+	}
+
+	public String getFullUrlWithoutPageInfo() {
+		return getHttpServletRequest().getServletPath() + "?" + getQueryStringWithoutPageInfo();
 	}
 }

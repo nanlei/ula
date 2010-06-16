@@ -8,9 +8,7 @@ import ula.common.PagingList;
 import ula.common.ServiceManager;
 
 import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ognl.OgnlValueStack;
 import com.opensymphony.xwork2.util.ValueStack;
-
 
 public class BaseService {
 	/*
@@ -34,16 +32,24 @@ public class BaseService {
 	/**
 	 * Paging
 	 */
+	public PagingList getPagingList(String sql) {
+		int pageNum = ((Integer) getValueStack().findValue("pageNum"))
+				.intValue();
+		int pageSize = ((Integer) getValueStack().findValue("pageSize"))
+				.intValue();
+		return new PagingList(sql, null, pageNum, pageSize, DB);
+	}
+
 	public PagingList getPagingList(String sql, Object[] params) {
 		int pageNum = ((Integer) getValueStack().findValue("pageNum"))
 				.intValue();
 		int pageSize = ((Integer) getValueStack().findValue("pageSize"))
-				.intValue();		
-		return  new PagingList(sql, params, pageNum, pageSize, DB);
+				.intValue();
+		return new PagingList(sql, params, pageNum, pageSize, DB);
 	}
 
 	/** ValueStack */
-	public OgnlValueStack getValueStack() {
-		return (OgnlValueStack) ActionContext.getContext().getValueStack();
+	public ValueStack getValueStack() {
+		return ActionContext.getContext().getValueStack();
 	}
 }

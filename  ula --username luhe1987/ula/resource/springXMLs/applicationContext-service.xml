@@ -7,33 +7,39 @@
 			<bean class="ula.service.admin.LogService" />
 		</property>
 	</bean>
-	
+
 	<bean id="aboutService" parent="baseTxService">
 		<property name="target">
 			<bean class="ula.service.admin.AboutService" />
 		</property>
 	</bean>
-	
+
 	<bean id="contactService" parent="baseTxService">
 		<property name="target">
 			<bean class="ula.service.admin.ContactService" />
 		</property>
 	</bean>
-	
+
 	<bean id="cityServcie" parent="baseTxService">
 		<property name="target">
 			<bean class="ula.service.admin.CityServcie" />
 		</property>
 	</bean>
-	
+
 	<bean id="programService" parent="baseTxService">
 		<property name="target">
 			<bean class="ula.service.admin.ProgramService" />
 		</property>
 	</bean>
 
+	<bean id="picService" parent="baseTxService">
+		<property name="target">
+			<bean class="ula.service.admin.PicService" />
+		</property>
+	</bean>
+
 	<bean id="serviceManager" class="ula.common.ServiceManager" />
-	
+
 </beans>
 
 
