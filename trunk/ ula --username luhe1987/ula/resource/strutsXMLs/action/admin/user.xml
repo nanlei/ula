@@ -7,5 +7,13 @@
 		<action name="list" class="ula.action.admin.UserAction" method="list">
 			<result name="list">list.ftl</result>
 		</action>
+		<action name="deleteUser" class="ula.action.admin.UserAction"
+			method="deleteUser">
+			<result name="success" type="chain">
+				<param name="alertMessage">${alertMessage}</param>
+				<param name="actionName">list</param>
+				<param name="namespace">/user</param>
+			</result>
+		</action>
 	</package>
 </struts>

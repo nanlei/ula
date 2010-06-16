@@ -25,7 +25,7 @@
 		<td>${user.USERNAME?default("")}</td>
 		<td>${user.REALNAME?default("")}</td>
 		<td><#if user.USERROLE='admin'>超级管理员<#else>普通用户</#if></td>
-		<td></td>
+		<td><a href="preUpdateUser.action?userId=${user.USERID}">修改</a> | <a href="deleteUser.action?userId=${user.USERID}" onclick="return confirm('确定删除么?')">删除</a></td>
 	</tr>
 	<#assign count=count+1>
 	</#list>
