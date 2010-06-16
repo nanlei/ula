@@ -14,6 +14,7 @@
 	<include file="strutsXMLs/action/admin/program.xml"></include>
 	<include file="strutsXMLs/action/admin/special.xml"></include>
 	<include file="strutsXMLs/action/admin/payment.xml"></include>
+	<include file="strutsXMLs/action/admin/link.xml"></include>
 	<include file="strutsXMLs/action/admin/pic.xml"></include>
 
 </struts>

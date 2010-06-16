@@ -5,6 +5,7 @@ public interface CommonConstants {
 	String ENCODING = "UTF-8";
 
 	/* Paging constants */
+	
 	int DEFAULT_PAGE_SIZE = 5;
 	int DEFAULT_NOTE_SIZE = 3;
 	int MAX_PAGE_SIZE = 1000;
@@ -21,6 +22,10 @@ public interface CommonConstants {
 	String TAG_SPECIAL_VISA="visa";
 	String TAG_SPECIAL_HOTEL="hotel";
 	String TAG_SPECIAL_COMMISION_TICKET = "ticket";
+	String TAG_SPECIAL_COMMISION_CARRENTAL = "carrental";
+	String TAG_SPECIAL_COMMISION_TRANSLATION = "translation";
+	String TAG_SPECIAL_COMMISION_SOUVENIR = "translation";
+	String TAG_SPECIAL_RUSSIAN_STUDENTS = "russianstudents";
 	
 	String TAG_PROGRAM_MONTH_RECOMMENDATION = "recommend";
 	String TAG_PROGRAM_REGULAR = "regular";
@@ -30,7 +35,10 @@ public interface CommonConstants {
 	String TAG_PROGRAM_HOT_SPRING = "hotspring";
 	String TAG_PROGRAM_EXHIBITION = "exhibition";
 	String TAG_PROGRAM_COUNTRYSIDE = "countryside";
-
+	
+	String TAG_PAYMENT = "payment";
+	String TAG_LINK = "link";
+	
 //	KEY INFO
 	String KEY_COMPANY_INFO = "companyInfo";
 	String KEY_BIZ_INFO = "bizInfo";
@@ -52,6 +60,16 @@ public interface CommonConstants {
 	String KEY_PROGRAM_HOT_SPRING = "hotspring";
 	String KEY_PROGRAM_EXHIBITION = "exhibition";
 	String KEY_PROGRAM_COUNTRYSIDE = "countryside";
+	
+	String KEY_SPECIAL_PAYMENT = "payment";
+	String KEY_SPECIAL_VISA = "visa";
+	String KEY_SPECIAL_RUSSIAN_STUDENTS = "russianstudents";
+	String KEY_SPECIAL_TICKET ="ticket";
+	String KEY_SPECIAL_CARRENTAL ="carrental";
+	String KEY_SPECIAL_TRANSLATION ="translation";
+	String KEY_SPECIAL_SOUVENIR ="souvenir";
+	
+	String KEY_LINK = "link";
 
 // ID INFO
 	
@@ -78,9 +96,14 @@ public interface CommonConstants {
 	int ID_PROGRAM_HOT_SPRING_TOUR =6;
 	int ID_PROGRAM_EXHIBITION =7;
 	int ID_PROGRAM_COUNTRYSIDE_TOUR =8;
+	
+	int ID_PAYMENT =1;
+	int ID_LINK=1;
 
 	String LOGIN_USER = "_LOGIN_USER_";
 	String LOGIN_USERID = "userId";
+
+	
 
 	/* 记录用户登录前想要访问的地址在Session中的Key */
 	public static final String ORIGINAL_URL = "_ORIGINAL_URL_";

@@ -17,7 +17,7 @@ public class VisaAction extends FrameworkAction{
 	@Override
 	protected int addToDB(String title, String content) {
 		try {
-			return super.getServiceManager().getCityServcie().addInfo(CommonConstants.ID_SPECIAL_VISA, title, content,CommonConstants.TAG_CITY_INTRODUCTION);
+			return super.getServiceManager().getSpecialService().addInfo(CommonConstants.ID_SPECIAL_VISA, title, content,CommonConstants.TAG_SPECIAL_VISA);
 		} catch (Exception e) {
 			super.debug(e.getMessage());
 			e.printStackTrace();
@@ -27,13 +27,13 @@ public class VisaAction extends FrameworkAction{
 
 	@Override
 	public String admin() {
-		super.setMapKeyName(CommonConstants.KEY_CITY_INTRODUCTION);
+		super.setMapKeyName(CommonConstants.KEY_SPECIAL_VISA);
 		try {
-			super.setInfoMap(super.getServiceManager().getCityServcie().getInfo(CommonConstants.ID_CITY_INTRODUCTION));
+			super.setInfoMap(super.getServiceManager().getSpecialService().getInfo(CommonConstants.ID_SPECIAL_VISA));
 		} catch (Exception e) {
 		super.debug(e.getMessage());
 			e.printStackTrace();
-			super.setAlertMessage(AlertMessage.CITY_INTRO_EMPTY);
+			super.setAlertMessage(AlertMessage.SPECIAL_VISA);
 			return super.admin();
 		}
 		return super.admin();
@@ -41,9 +41,9 @@ public class VisaAction extends FrameworkAction{
 
 	@Override
 	public String edit() {
-	super.setMapKeyName(CommonConstants.KEY_CITY_INTRODUCTION);
+	super.setMapKeyName(CommonConstants.KEY_SPECIAL_VISA);
 	try {
-		super.setInfoMap(super.getServiceManager().getCityServcie().getInfo(CommonConstants.ID_CITY_INTRODUCTION));
+		super.setInfoMap(super.getServiceManager().getSpecialService().getInfo(CommonConstants.ID_SPECIAL_VISA));
 	} catch (Exception e) {
 		super.debug(e.getMessage());
 		e.printStackTrace();
@@ -55,7 +55,6 @@ public class VisaAction extends FrameworkAction{
 
 	@Override
 	public String preAdd() {
-		// TODO Auto-generated method stub
 		return super.preAdd();
 	}
 
@@ -67,7 +66,7 @@ public class VisaAction extends FrameworkAction{
 	@Override
 	protected int updateToDB(String title2, String content2) {
 		try {
-			return super.getServiceManager().getCityServcie().updateInfo(CommonConstants.ID_CITY_INTRODUCTION, title2, content2);
+			return super.getServiceManager().getSpecialService().updateInfo(CommonConstants.ID_SPECIAL_VISA, title2, content2);
 		} catch (Exception e) {
 			super.debug(e.getMessage());
 			e.printStackTrace();
@@ -78,7 +77,6 @@ public class VisaAction extends FrameworkAction{
 
 	@Override
 	public String view() {
-		// TODO Auto-generated method stub
 		return super.view();
 	}
 	

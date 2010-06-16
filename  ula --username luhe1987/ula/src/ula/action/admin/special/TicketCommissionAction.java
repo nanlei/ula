@@ -3,13 +3,12 @@ package ula.action.admin.special;
 import ula.action.FrameworkAction;
 import ula.constant.AlertMessage;
 import ula.constant.CommonConstants;
-
 /**
- * 俄罗斯留学生之家
+ * 各项委托
  * @author Harry
+ *
  */
-
-public class RussianStudentsAction extends FrameworkAction {
+public class TicketCommissionAction extends FrameworkAction {
 	@Override
 	public String add() {
 		return super.add();
@@ -18,7 +17,7 @@ public class RussianStudentsAction extends FrameworkAction {
 	@Override
 	protected int addToDB(String title, String content) {
 		try {
-			return super.getServiceManager().getSpecialService().addInfo(CommonConstants.ID_SPECIAL_RUSSIAN_STUDENTS, title, content,CommonConstants.TAG_SPECIAL_RUSSIAN_STUDENTS);
+			return super.getServiceManager().getSpecialService().addInfo(CommonConstants.ID_SPECIAL_COMMISSION_TICKET, title, content,CommonConstants.TAG_SPECIAL_COMMISION_TICKET);
 		} catch (Exception e) {
 			super.debug(e.getMessage());
 			e.printStackTrace();
@@ -28,13 +27,13 @@ public class RussianStudentsAction extends FrameworkAction {
 
 	@Override
 	public String admin() {
-		super.setMapKeyName(CommonConstants.KEY_SPECIAL_RUSSIAN_STUDENTS);
+		super.setMapKeyName(CommonConstants.KEY_SPECIAL_TICKET);
 		try {
-			super.setInfoMap(super.getServiceManager().getSpecialService().getInfo(CommonConstants.ID_SPECIAL_RUSSIAN_STUDENTS));
+			super.setInfoMap(super.getServiceManager().getSpecialService().getInfo(CommonConstants.ID_SPECIAL_COMMISSION_TICKET));
 		} catch (Exception e) {
 		super.debug(e.getMessage());
 			e.printStackTrace();
-			super.setAlertMessage(AlertMessage.SPECIAL_RUSSIAN_STUDENTS);
+			super.setAlertMessage(AlertMessage.SPECIAL_TICKET);
 			return super.admin();
 		}
 		return super.admin();
@@ -42,9 +41,9 @@ public class RussianStudentsAction extends FrameworkAction {
 
 	@Override
 	public String edit() {
-	super.setMapKeyName(CommonConstants.KEY_SPECIAL_RUSSIAN_STUDENTS);
+	super.setMapKeyName(CommonConstants.KEY_SPECIAL_TICKET);
 	try {
-		super.setInfoMap(super.getServiceManager().getSpecialService().getInfo(CommonConstants.ID_SPECIAL_RUSSIAN_STUDENTS));
+		super.setInfoMap(super.getServiceManager().getSpecialService().getInfo(CommonConstants.ID_SPECIAL_COMMISSION_TICKET));
 	} catch (Exception e) {
 		super.debug(e.getMessage());
 		e.printStackTrace();
@@ -67,7 +66,7 @@ public class RussianStudentsAction extends FrameworkAction {
 	@Override
 	protected int updateToDB(String title2, String content2) {
 		try {
-			return super.getServiceManager().getSpecialService().updateInfo(CommonConstants.ID_SPECIAL_RUSSIAN_STUDENTS, title2, content2);
+			return super.getServiceManager().getSpecialService().updateInfo(CommonConstants.ID_SPECIAL_COMMISSION_TICKET, title2, content2);
 		} catch (Exception e) {
 			super.debug(e.getMessage());
 			e.printStackTrace();
@@ -80,5 +79,4 @@ public class RussianStudentsAction extends FrameworkAction {
 	public String view() {
 		return super.view();
 	}
-	
 }
