@@ -3,9 +3,12 @@ package ula.common;
 import ula.service.admin.AboutService;
 import ula.service.admin.CityServcie;
 import ula.service.admin.ContactService;
+import ula.service.admin.LinkService;
 import ula.service.admin.LogService;
+import ula.service.admin.PaymentService;
 import ula.service.admin.PicService;
 import ula.service.admin.ProgramService;
+import ula.service.admin.SpecialService;
 
 public class ServiceManager {
 
@@ -18,7 +21,37 @@ public class ServiceManager {
 	private ContactService contactService = null;
 	private CityServcie cityServcie = null;
 	private ProgramService programService = null;
+	private PaymentService paymentService =null;
+	private SpecialService specialService = null;
+	private LinkService linkService = null;
 	private PicService picService = null;
+	
+
+	public LinkService getLinkService() {
+		return linkService;
+	}
+
+	public void setLinkService(LinkService linkService) {
+		this.linkService = linkService;
+	}
+
+	public SpecialService getSpecialService() {
+		return specialService;
+	}
+
+	public void setSpecialService(SpecialService specialService) {
+		this.specialService = specialService;
+	}
+
+	public PaymentService getPaymentService() {
+		return paymentService;
+	}
+
+	public void setPaymentService(PaymentService paymentService) {
+		this.paymentService = paymentService;
+	}
+
+
 
 	public ProgramService getProgramService() {
 		return programService;

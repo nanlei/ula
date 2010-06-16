@@ -14,7 +14,7 @@ public class CountrySideTourAction extends FrameworkAction {
 	public String add() {
 		return super.add();
 	}
-
+	
 	@Override
 	protected int addToDB(String title, String content) {
 		try {
@@ -75,7 +75,7 @@ public class CountrySideTourAction extends FrameworkAction {
 			return 0;
 		}
 	}
-
+	
 	@Override
 	public String view() {
 		return super.view();

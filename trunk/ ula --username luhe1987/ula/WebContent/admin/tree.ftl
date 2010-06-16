@@ -35,17 +35,17 @@ var treeMenu = [
 	{ level:2, name:"展览", link:"program/exhibition!admin.action"},
 	
 	{ level:1, name:"特色服务"},
-	{ level:2, name:"签证", link:"city/city!test.action"},
+	{ level:2, name:"签证", link:"special/visa!admin.action"},
 	{ level:2, name:"酒店预订", link:"manage/info/dbInfo.action"},
-	{ level:2, name:"各项委托", link:"manage/info/dbInfo.action"},
-	{ level:3, name:"代订车、船票", link:"manage/info/dbInfo.action"},
-	{ level:3, name:"租车服务", link:"manage/info/dbInfo.action"},
-	{ level:3, name:"翻译服务", link:"manage/info/dbInfo.action"},
-	{ level:3, name:"代邮寄纪念品", link:"manage/info/dbInfo.action"},
-	{ level:2, name:"俄罗斯留学生之家", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"各项委托"},
+	{ level:3, name:"代订车、船票", link:"special/ticket!admin.action"},
+	{ level:3, name:"租车服务", link:"special/carrental!admin.action"},
+	{ level:3, name:"翻译服务", link:"special/translation!admin.action"},
+	{ level:3, name:"代邮寄纪念品", link:"special/souvenir!admin.action"},
+	{ level:2, name:"俄罗斯留学生之家", link:"special/russianstudents!admin.action"},
 	
 	{ level:1, name:"支付方式"},
-	{ level:2, name:"支付方式", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"支付方式", link:"payment/payment!admin.action"},
 	
 	{ level:1, name:"联系我们"},
 	{ level:2, name:"客户入口"},
@@ -55,7 +55,7 @@ var treeMenu = [
 	
 	
 	{ level:1, name:"友情链接"},
-	{ level:2, name:"友情链接", link:"manage/info/dbInfo.action"}
+	{ level:2, name:"友情链接", link:"link/link!admin.action"}
 
 	
 	
