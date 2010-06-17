@@ -1,6 +1,7 @@
 package ula.common;
 
 import ula.service.admin.AboutService;
+import ula.service.admin.ArticleService;
 import ula.service.admin.CityServcie;
 import ula.service.admin.ContactService;
 import ula.service.admin.LinkService;
@@ -27,6 +28,7 @@ public class ServiceManager {
 	private LinkService linkService = null;
 	private PicService picService = null;
 	private UserService userService = null;
+	private ArticleService articleService = null;
 
 	public LinkService getLinkService() {
 		return linkService;
@@ -106,6 +108,14 @@ public class ServiceManager {
 
 	public void setUserService(UserService userService) {
 		this.userService = userService;
+	}
+
+	public ArticleService getArticleService() {
+		return articleService;
+	}
+
+	public void setArticleService(ArticleService articleService) {
+		this.articleService = articleService;
 	}
 
 }

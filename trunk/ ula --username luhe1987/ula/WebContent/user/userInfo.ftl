@@ -4,7 +4,7 @@
 	</@app.naviInfo>
 <#assign admin=''/>
 <#assign user=''/>
-<#if userInfo.userRole='admin'>
+<#if userInfo.USERROLE='admin'>
 <#assign admin='checked'/>
 <#else>
 <#assign user='checked'/>
@@ -29,7 +29,7 @@
 		<td>用户角色</td><td><input type="radio" name="userRole" value="admin" ${admin}>超级管理员&nbsp;&nbsp;<input type="radio" name="userRole" value="user" ${user}>普通用户</td>
 	</tr>
 	<tr>
-		<td colspan="2" align="center"><input type="submit" value="提交">&nbsp;&nbsp;<input type="reset" value="重置"></td>
+		<td colspan="2" align="center"><input type="submit" class="btn" value="提交">&nbsp;&nbsp;<input type="reset" class="btn" value="重置"></td>
 	</tr>
 </table>
 </form>

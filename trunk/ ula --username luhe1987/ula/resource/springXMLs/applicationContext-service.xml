@@ -64,6 +64,12 @@
 		</property>
 	</bean>
 
+	<bean id="articleService" parent="baseTxService">
+		<property name="target">
+			<bean class="ula.service.admin.ArticleService" />
+		</property>
+	</bean>
+
 	<bean id="serviceManager" class="ula.common.ServiceManager" />
 
 </beans>
