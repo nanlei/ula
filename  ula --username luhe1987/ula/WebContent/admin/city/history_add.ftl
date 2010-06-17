@@ -1,3 +1,8 @@
+<@p.page>
+<@app.naviBar navi="关于我们,大连历史" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于大连历史内容编辑，用户可以修改大连历史内容">
+	</@app.naviInfo>
+
 <form action="history!add.action" method="post">
 
 <table>
@@ -17,3 +22,5 @@
 </table>
 
 </form>
+
+</@p.page>
