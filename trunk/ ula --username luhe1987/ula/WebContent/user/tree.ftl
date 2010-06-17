@@ -3,7 +3,7 @@
 <script type="text/javascript"> 
 var treeMenu = [
 	{ level:1, name:"用户信息", link:"list.action"},
-	{ level:1, name:"添加用户", link:"preAdd.action"}
+	{ level:1, name:"添加用户", link:"preAddUser.action"}
 ];
 </script>
 </@p.tree>

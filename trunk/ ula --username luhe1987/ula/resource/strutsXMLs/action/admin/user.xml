@@ -15,5 +15,28 @@
 				<param name="namespace">/user</param>
 			</result>
 		</action>
+		<action name="preUpdateUser" class="ula.action.admin.UserAction"
+			method="preUpdateUser">
+			<result name="preUpdateUser">userInfo.ftl</result>
+		</action>
+		<action name="updateUser" class="ula.action.admin.UserAction"
+			method="updateUser">
+			<result name="success" type="chain">
+				<param name="alertMessage">${alertMessage}</param>
+				<param name="actionName">list</param>
+				<param name="namespace">/user</param>
+			</result>
+		</action>
+		<action name="preAddUser" class="ula.action.BaseAction">
+			<result>add.ftl</result>
+		</action>
+		<action name="addUser" class="ula.action.admin.UserAction"
+			method="addUser">
+			<result name="success" type="chain">
+				<param name="alertMessage">${alertMessage}</param>
+				<param name="actionName">list</param>
+				<param name="namespace">/user</param>
+			</result>
+		</action>
 	</package>
 </struts>
