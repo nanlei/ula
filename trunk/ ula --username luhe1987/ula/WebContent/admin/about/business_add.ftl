@@ -1,4 +1,9 @@
-<#if alertMessage?exists>${alertMessage}</#if>
+<@p.page>
+<@app.naviBar navi="关于我们,业务范围" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于操作业务范围编辑，用户可以修改业务范围内容">
+	</@app.naviInfo>
+	
+<#if alertMessage?exists><p align="center">${alertMessage}</p></#if>
 
 <form action="biz!add.action" method="post">
 
@@ -19,3 +24,4 @@
 </table>
 
 </form>
+</@p.page> 

@@ -1,4 +1,9 @@
-<#if alertMessage?exists>${alertMessage}</#if>
+<@p.page>
+<@app.naviBar navi="关于我们,团队介绍" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于团队介绍或人员介绍内容编辑，用户可以修改团队介绍或人员介绍内容">
+	</@app.naviInfo>
+
+<#if alertMessage?exists><p align="center">${alertMessage}</p></#if>
 <form action="team!update.action" method="post">
 
 <table>
@@ -18,3 +23,5 @@
 </table>
 
 </form>
+
+</@p.page>
