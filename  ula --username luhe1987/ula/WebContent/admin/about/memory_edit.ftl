@@ -1,4 +1,10 @@
-<#if alertMessage?exists>${alertMessage}</#if>
+<@p.page>
+<@app.naviBar navi="关于我们,美好回忆" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于操作美好回忆编辑，用户可以修改其内容">
+	</@app.naviInfo>
+
+
+<#if alertMessage?exists><p align="center">${alertMessage}</p></#if>
 <form action="memory!update.action" method="post">
 
 <table>
@@ -18,3 +24,6 @@
 </table>
 
 </form>
+
+
+</@p.page>
