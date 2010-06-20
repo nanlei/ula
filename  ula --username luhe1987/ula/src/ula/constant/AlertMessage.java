@@ -41,5 +41,7 @@ public interface AlertMessage {
 	String USER_DELETE_DENY = "根用户不能删除";
 	String USER_UPDATE_SUCCESS = "用户信息修改成功";
 	String USER_ADD_SUCCESS = "用户添加成功";
+	
+	String ARTICLE_ADD_SUCCESS="文章添加成功";
 
 }
