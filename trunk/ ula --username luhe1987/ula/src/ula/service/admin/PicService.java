@@ -37,4 +37,10 @@ public class PicService extends BaseService {
 	public PagingList getAllEditorPics() {
 		return getPagingList(SQL_GET_ALL_EDITOR_PICS);
 	}
+
+	private static final String SQL_GET_PICS_BY_TYPE = "select * from pic where PICTAG=?";
+
+	public PagingList getPicsByType(String type) {
+		return getPagingList(SQL_GET_PICS_BY_TYPE, new Object[] { type });
+	}
 }

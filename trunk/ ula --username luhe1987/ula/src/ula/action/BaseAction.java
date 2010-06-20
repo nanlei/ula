@@ -55,14 +55,14 @@ public class BaseAction implements Action {
 	/**
 	 * 获得原始的HttpSession
 	 */
-	public Map<String, Object> getHttpSessionAsMap() {
+	public Map getHttpSessionAsMap() {
 		return ActionContext.getContext().getSession();
 	}
 
 	/**
 	 * 获取客户端所有参数的值，并保存为Map
 	 */
-	public Map<String, Object> getParametersAsMap() {
+	public Map getParametersAsMap() {
 		return ActionContext.getContext().getParameters();
 	}
 
@@ -91,6 +91,10 @@ public class BaseAction implements Action {
 		}
 	}
 
+	public Map getLoginUser() throws Exception {
+		return (Map) getHttpSessionAsMap().get(CommonConstants.LOGIN_USER);
+	}
+
 	/**
 	 * 获取登陆用户的userId 如果用户登录，用户的userId被放入Session
 	 * 
@@ -101,7 +105,11 @@ public class BaseAction implements Action {
 				CommonConstants.LOGIN_USERID);
 		return Integer.valueOf(userId);
 	}
-	
+
+	public String getLoginUserName() throws Exception {
+		return (String) getLoginUser().get(CommonConstants.LOGIN_USERNAME);
+	}
+
 	/* 分页信息 */
 	protected int pageNum = 1;
 
@@ -138,7 +146,8 @@ public class BaseAction implements Action {
 	}
 
 	public String getFullUrlWithoutPageNum() {
-		return getHttpServletRequest().getServletPath() + "?" + getQueryStringWithoutPageNum();
+		return getHttpServletRequest().getServletPath() + "?"
+				+ getQueryStringWithoutPageNum();
 	}
 
 	public String getQueryStringWithoutPageInfo() {
@@ -149,6 +158,7 @@ public class BaseAction implements Action {
 	}
 
 	public String getFullUrlWithoutPageInfo() {
-		return getHttpServletRequest().getServletPath() + "?" + getQueryStringWithoutPageInfo();
+		return getHttpServletRequest().getServletPath() + "?"
+				+ getQueryStringWithoutPageInfo();
 	}
 }

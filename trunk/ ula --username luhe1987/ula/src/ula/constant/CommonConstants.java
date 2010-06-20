@@ -101,7 +101,8 @@ public interface CommonConstants {
 	int ID_LINK=1;
 
 	String LOGIN_USER = "_LOGIN_USER_";
-	String LOGIN_USERID = "userId";
+	String LOGIN_USERID = "USERID";
+	String LOGIN_USERNAME="USERNAME";
 
 	
 
