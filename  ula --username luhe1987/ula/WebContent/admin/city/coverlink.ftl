@@ -8,13 +8,15 @@
 	<col width="15%" align="center"/>
 	<col width="10%" align="center"/>
 	<col width="15%" align="center"/>
-	<col width="50%" align="center"/>
+	<col width="40%" align="center"/>
+	<col width="10%" align="center"/>
 	<tr class="title">
 		<td>序号</td>
 		<td>图片名</td>
 		<td>上传人</td>
 		<td>上传时间</td>
 		<td>图片地址</td>
+		<td>操作</td>
 	</tr>
 	<#assign count=(pageNum-1)*10+1>
 	<#list pictureList.list as pic>
@@ -24,6 +26,7 @@
 		<td>${pic.PICUSER?default("")}</td>
 		<td>${pic.PICTIME?datetime?default("")}</td>
 		<td>${pic.PICPATH?default("")}</td>
+		<td><a href="${base}/pic/showPic.action?picId=${pic.PICID}">查看</a></td>
 	</tr>
 	<#assign count=count+1>
 	</#list>

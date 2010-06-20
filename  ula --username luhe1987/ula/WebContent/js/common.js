@@ -566,15 +566,3 @@ function loadOption(firstSelId, secondSelId, key, url) {
 		);
 	}
 }
-
-//禁用鼠标右键
-//function click(){
-	//return false;
-//}
-//document.oncontextmenu=click; 
-//禁用Ctrl+N
-function keydown()
-{
-      if(event.ctrlKey ==true || event.keyCode ==93 ){return false;} 
-}
-document.onkeydown =keydown;

@@ -29,7 +29,7 @@
 		<td>${article.USERNAME}</td>
 		<td>${article.ADDTIME?datetime}</td>
 		<td>${article.COVERLINK?default("未选择")}</td>
-		<td><a href="preUpdateTour.action?articleId=${article.ID}">修改</a> | <a href="deleteTour.action?articleId=${article.ID}" onclick="return confirm('确定删除么?')">删除</a></td>
+		<td><a href="preUpdateTour.action?articleId=${article.ID}">修改</a> | <a href="deleteTour.action?articleId=${article.ID}&articleType=dalian" onclick="return confirm('确定删除么?')">删除</a></td>
 	</tr>
 	<#assign count=count+1>
 	</#list>

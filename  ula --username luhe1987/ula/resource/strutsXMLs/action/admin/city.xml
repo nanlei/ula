@@ -44,5 +44,84 @@
 				<param name="namespace">/admin/city</param>
 			</result>
 		</action>
+		<action name="preUpdateTour" class="ula.action.admin.city.TourAction"
+			method="preUpdateTour">
+			<result name="preUpdateTour">tour/tourInfo.ftl</result>
+		</action>
+		<action name="updateTour" class="ula.action.admin.city.TourAction"
+			method="updateTour">
+			<result name="success" type="chain">
+				<param name="actionName">tour</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="deleteTour" class="ula.action.admin.city.TourAction"
+			method="deleteTour">
+			<result name="success" type="chain">
+				<param name="actionName">tour</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+
+		<!--大连美食	-->
+		<action name="food" class="ula.action.admin.city.FoodAction"
+			method="food">
+			<result name="food">food/food.ftl</result>
+		</action>
+		<action name="preAddFood" class="ula.action.BaseAction">
+			<result>food/add.ftl</result>
+		</action>
+		<action name="addFood" class="ula.action.admin.city.FoodAction"
+			method="addFood">
+			<result name="success" type="chain">
+				<param name="actionName">food</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="preUpdateFood" class="ula.action.admin.city.FoodAction"
+			method="preUpdateFood">
+			<result name="preUpdateFood">food/foodInfo.ftl</result>
+		</action>
+		<action name="updateFood" class="ula.action.admin.city.FoodAction"
+			method="updateFood">
+			<result name="success" type="chain">
+				<param name="actionName">food</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="deleteFood" class="ula.action.admin.city.FoodAction"
+			method="deleteFood">
+			<result name="success" type="chain">
+				<param name="actionName">food</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+
+		<!--大连居住-->
+		<action name="housing" class="ula.action.admin.city.HousingAction"
+			method="housing">
+			<result name="housing">housing/housing.ftl</result>
+		</action>
+		<action name="preAddHousing" class="ula.action.BaseAction">
+			<result>housing/add.ftl</result>
+		</action>
+		<action name="addHousing" class="ula.action.admin.city.HousingAction"
+			method="addHousing">
+			<result name="success" type="chain">
+				<param name="actionName">housing</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="preUpdateHousing" class="ula.action.admin.city.HousingAction"
+			method="preUpdateHousing">
+			<result name="preUpdateHousing">housing/housingInfo.ftl</result>
+		</action>
+		<action name="updateHousing" class="ula.action.admin.city.HousingAction"
+			method="updateHousing">
+			<result name="success" type="chain">
+				<param name="actionName">housing</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
 	</package>
 </struts>
