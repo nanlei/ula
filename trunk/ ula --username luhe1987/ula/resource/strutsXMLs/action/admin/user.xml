@@ -10,7 +10,6 @@
 		<action name="deleteUser" class="ula.action.admin.UserAction"
 			method="deleteUser">
 			<result name="success" type="chain">
-				<param name="alertMessage">${alertMessage}</param>
 				<param name="actionName">list</param>
 				<param name="namespace">/user</param>
 			</result>
@@ -22,7 +21,6 @@
 		<action name="updateUser" class="ula.action.admin.UserAction"
 			method="updateUser">
 			<result name="success" type="chain">
-				<param name="alertMessage">${alertMessage}</param>
 				<param name="actionName">list</param>
 				<param name="namespace">/user</param>
 			</result>
@@ -33,7 +31,6 @@
 		<action name="addUser" class="ula.action.admin.UserAction"
 			method="addUser">
 			<result name="success" type="chain">
-				<param name="alertMessage">${alertMessage}</param>
 				<param name="actionName">list</param>
 				<param name="namespace">/user</param>
 			</result>

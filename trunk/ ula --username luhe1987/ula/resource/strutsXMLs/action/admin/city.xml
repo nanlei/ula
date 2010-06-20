@@ -30,5 +30,19 @@
 			<result name="lvshun">tour/lvshun.ftl</result>
 			<result name="devzone">tour/devzone.ftl</result>
 		</action>
+		<action name="preAddTour" class="ula.action.BaseAction">
+			<result>tour/add.ftl</result>
+		</action>
+		<action name="selectCoverLink" class="ula.action.admin.city.TourAction"
+			method="selectCoverLink">
+			<result name="selectCoverLink">coverlink.ftl</result>
+		</action>
+		<action name="addTour" class="ula.action.admin.city.TourAction"
+			method="addTour">
+			<result name="success" type="chain">
+				<param name="actionName">tour</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
 	</package>
 </struts>
