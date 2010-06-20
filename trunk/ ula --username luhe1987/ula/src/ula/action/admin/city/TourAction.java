@@ -1,9 +1,10 @@
 package ula.action.admin.city;
 
+import java.util.Map;
+
 import ula.action.CommonAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
-import ula.util.MapUtil;
 
 /**
  * 大连观光（景点，公园）
@@ -15,12 +16,8 @@ public class TourAction extends CommonAction {
 	private String articleType;// 栏目类别
 	private PagingList articleList;
 	private PagingList pictureList;
-
-	private String title;
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
+	private Map articleInfo;
+	private String articleId;
 
 	public String getArticleType() {
 		return articleType;
@@ -36,6 +33,14 @@ public class TourAction extends CommonAction {
 
 	public PagingList getPictureList() {
 		return pictureList;
+	}
+
+	public Map getArticleInfo() {
+		return articleInfo;
+	}
+
+	public void setArticleId(String articleId) {
+		this.articleId = articleId;
 	}
 
 	/**
@@ -80,6 +85,50 @@ public class TourAction extends CommonAction {
 			getServiceManager().getArticleService().addTour(
 					getParametersAsMap(), "admin");
 			this.setAlertMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
+			return SUCCESS;
+		} catch (Exception e) {
+			return ERROR;
+		}
+	}
+
+	/**
+	 * 文章信息
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String preUpdateTour() throws Exception {
+		articleInfo = getServiceManager().getArticleService().getArticleById(
+				articleId);
+		return "preUpdateTour";
+	}
+
+	/**
+	 * 更新文章信息
+	 * 
+	 * @return
+	 */
+	public String updateTour() {
+		try {
+			getServiceManager().getArticleService().updateTourById(
+					getParametersAsMap(), articleId);
+			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
+			return SUCCESS;
+		} catch (Exception e) {
+			return ERROR;
+		}
+	}
+
+	/**
+	 * 删除文章
+	 * 
+	 * @return
+	 */
+	public String deleteTour() {
+		try {
+			getServiceManager().getArticleService()
+					.deleteArticleById(articleId);
+			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
 			return ERROR;
