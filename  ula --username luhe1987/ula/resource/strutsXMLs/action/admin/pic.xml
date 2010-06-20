@@ -16,7 +16,6 @@
 			method="upload">
 			<interceptor-ref name="UlaFileUpload" />
 			<result name="success" type="chain">
-				<param name="alertMessage">${alertMessage}</param>
 				<param name="actionName">list</param>
 				<param name="namespace">/pic</param>
 			</result>
@@ -28,7 +27,6 @@
 		<action name="deletePic" class="ula.action.admin.pic.PictureAction"
 			method="deletePic">
 			<result name="success" type="chain">
-				<param name="alertMessage">${alertMessage}</param>
 				<param name="actionName">list</param>
 				<param name="namespace">/pic</param>
 			</result>
@@ -48,7 +46,6 @@
 		<action name="deleteEditorPic" class="ula.action.admin.pic.EditorPictureAction"
 			method="deleteEditorPic">
 			<result name="success" type="chain">
-				<param name="alertMessage">${alertMessage}</param>
 				<param name="actionName">editorList</param>
 				<param name="namespace">/pic</param>
 			</result>
