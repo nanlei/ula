@@ -164,5 +164,73 @@
 				<param name="namespace">/admin/city</param>
 			</result>
 		</action>
+
+		<!--大连交通-->
+		<action name="transportation" class="ula.action.admin.city.TransportationAction"
+			method="transportation">
+			<result name="transportation">transportation/transportation.ftl</result>
+		</action>
+		<action name="preAddTransportation" class="ula.action.BaseAction">
+			<result>transportation/add.ftl</result>
+		</action>
+		<action name="addTransportation" class="ula.action.admin.city.TransportationAction"
+			method="addTransportation">
+			<result name="success" type="chain">
+				<param name="actionName">transportation</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="preUpdateTransportation" class="ula.action.admin.city.TransportationAction"
+			method="preUpdateTransportation">
+			<result name="preUpdateTransportation">transportation/transportationInfo.ftl</result>
+		</action>
+		<action name="updateTransportation" class="ula.action.admin.city.TransportationAction"
+			method="updateTransportation">
+			<result name="success" type="chain">
+				<param name="actionName">transportation</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="deleteTransportation" class="ula.action.admin.city.TransportationAction"
+			method="deleteTransportation">
+			<result name="success" type="chain">
+				<param name="actionName">transportation</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+
+		<!--大连治疗-->
+		<action name="therapy" class="ula.action.admin.city.TherapyAction"
+			method="therapy">
+			<result name="therapy">therapy/therapy.ftl</result>
+		</action>
+		<action name="preAddTherapy" class="ula.action.BaseAction">
+			<result>therapy/add.ftl</result>
+		</action>
+		<action name="addTherapy" class="ula.action.admin.city.TherapyAction"
+			method="addTherapy">
+			<result name="success" type="chain">
+				<param name="actionName">therapy</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="preUpdateTherapy" class="ula.action.admin.city.TherapyAction"
+			method="preUpdateTherapy">
+			<result name="preUpdateTherapy">therapy/therapyInfo.ftl</result>
+		</action>
+		<action name="updateTherapy" class="ula.action.admin.city.TherapyAction"
+			method="updateTherapy">
+			<result name="success" type="chain">
+				<param name="actionName">therapy</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="deleteTherapy" class="ula.action.admin.city.TherapyAction"
+			method="deleteTherapy">
+			<result name="success" type="chain">
+				<param name="actionName">therapy</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
 	</package>
 </struts>
