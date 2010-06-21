@@ -17,7 +17,7 @@ var treeMenu = [
 	{ level:3, name:"开发区、金石滩", link:"city/tour.action?articleType=devzone"},
 	{ level:2, name:"大连美食", link:"city/food.action"},
 	{ level:2, name:"大连居住", link:"city/housing.action"},
-	{ level:2, name:"大连购物", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"大连购物", link:"city/shopping.action"},
 	{ level:2, name:"大连交通", link:"manage/info/dbInfo.action"},
 	{ level:2, name:"大连治疗", link:"manage/info/dbInfo.action"},
 	{ level:2, name:"大连节日", link:"manage/info/dbInfo.action"},

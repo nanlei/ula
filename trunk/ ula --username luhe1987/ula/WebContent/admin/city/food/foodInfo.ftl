@@ -12,10 +12,10 @@ function selectCoverLink(type){
 </script>
 <form name="articleForm" action="updateFood.action?articleId=${foodInfo.ID}" method="post" onsubmit="return validateForm(this)">
 <table class="default" width="100%">
-	<col width="10%" align="center">
-	<col width="30%" align="center">
-	<col width="10%" align="center">
-	<col width="50%" align="center">
+	<col width="15%" align="center">
+	<col width="35%" align="center">
+	<col width="15%" align="center">
+	<col width="35%" align="center">
 	<tr class="title">
 		<td colspan="4">修改文章</td>
 	</tr>
@@ -23,10 +23,14 @@ function selectCoverLink(type){
 		<td>标题</td><td><input type="text" name="title" emptyInfo="请填写文章标题" value="${foodInfo.TITLE}"></td>
 		<td>封面图片</td>
 		<td>
-			<input type="text" name="coverLink" emptyInfo="请先选择封面图片，然后填写图片的链接地址" title="图片的链接地址应该从/images开始" value="${foodInfo.COVERLINK}">&nbsp;&nbsp;&nbsp;
-			<a href="javascript:void(0)" class="navlink" onclick="selectCoverLink('common')">选择普通上传的图片</a>&nbsp;&nbsp;&nbsp;
-			<a href="javascript:void(0)" class="navlink" onclick="selectCoverLink('editor')">选择Editor上传的图片</a>
+			<input type="text" name="coverLink" emptyInfo="请先选择封面图片，然后填写图片的链接地址" title="图片的链接地址应该从/images开始" value="${foodInfo.COVERLINK}">&nbsp;
+			<a href="javascript:void(0)" class="navlink" onclick="selectCoverLink('common')">普通上传</a>&nbsp;
+			<a href="javascript:void(0)" class="navlink" onclick="selectCoverLink('editor')">Editor上传</a>
 		</td>
+	</tr>
+	<tr>
+		<td>参考价格</td><td><input type="text" name="price" value="${foodInfo.PRICE}" numberInfo="请填写价格，并且是数字格式"></td>
+		<td></td><td></td>
 	</tr>
 	<tr>
 		<td colspan="4"><textarea name="content" id="content">${foodInfo.CONTENT}</textarea><@p.ckeditor id="content"/></td>

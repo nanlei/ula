@@ -85,4 +85,20 @@ public class HousingAction extends CommonAction {
 		}
 	}
 
+	/**
+	 * 删除大连居住文章
+	 * 
+	 * @return
+	 */
+	public String deleteHousing() {
+		try {
+			getServiceManager().getArticleService()
+					.deleteArticleById(articleId);
+			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
+			return SUCCESS;
+		} catch (Exception e) {
+			return ERROR;
+		}
+	}
+
 }

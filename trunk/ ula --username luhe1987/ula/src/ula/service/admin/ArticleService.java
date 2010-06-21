@@ -13,13 +13,13 @@ public class ArticleService extends BaseService {
 		return getPagingList(SQL_GET_TOURS_BY_TYPE, new Object[] { type });
 	}
 
-	public static final String SQL_ADD_TOUR = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME) values(?,?,?,now(),?,?)";
+	public static final String SQL_ADD_TOUR = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME,PRICE) values(?,?,?,now(),?,?,?)";
 
 	public void addTour(Map parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"articleType,title,content,coverLink");
+				"articleType,title,content,coverLink,price");
 		DB.update(SQL_ADD_TOUR, new Object[] { params[0], params[1], params[2],
-				params[3], userName });
+				params[3], userName, params[4] });
 	}
 
 	public static final String SQL_GET_ARTICLE_BY_ID = "select * from article where ID=?";
@@ -29,22 +29,22 @@ public class ArticleService extends BaseService {
 				.queryForMap(SQL_GET_ARTICLE_BY_ID, new Object[] { articleId });
 	}
 
-	private static final String SQL_SET_ARTICLE_BY_ID = "update article set TITLE=?,CONTENT=?,COVERLINK=? where ID=?";
+	private static final String SQL_SET_ARTICLE_BY_ID = "update article set TITLE=?,CONTENT=?,COVERLINK=?,PRICE=? where ID=?";
 
 	public void updateArticleById(Map parameters, String articleId) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"title,content,coverLink");
+				"title,content,coverLink,price");
 		DB.update(SQL_SET_ARTICLE_BY_ID, new Object[] { params[0], params[1],
-				params[2], articleId });
+				params[2], params[3], articleId });
 	}
 
-	private static final String SQL_SET_TOUR_BY_ID = "update article set type=?,TITLE=?,CONTENT=?,COVERLINK=? where ID=?";
+	private static final String SQL_SET_TOUR_BY_ID = "update article set type=?,TITLE=?,CONTENT=?,COVERLINK=?,PRICE=? where ID=?";
 
 	public void updateTourById(Map parameters, String articleId) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"articleType,title,content,coverLink");
+				"articleType,title,content,coverLink,price");
 		DB.update(SQL_SET_TOUR_BY_ID, new Object[] { params[0], params[1],
-				params[2], params[3], articleId });
+				params[2], params[3], params[4], articleId });
 	}
 
 	private static final String SQL_DEL_ARTICLE_BY_ID = "delete from article where ID=?";
@@ -59,13 +59,13 @@ public class ArticleService extends BaseService {
 		return getPagingList(SQL_GET_FOOD_ARTICLES);
 	}
 
-	private static final String SQL_ADD_FOOD = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME) values('food',?,?,now(),?,?)";
+	private static final String SQL_ADD_FOOD = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME,PRICE) values('food',?,?,now(),?,?,?)";
 
 	public void addFood(Map parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"title,content,coverLink");
+				"title,content,coverLink,price");
 		DB.update(SQL_ADD_FOOD, new Object[] { params[0], params[1], params[2],
-				userName });
+				userName, params[3] });
 	}
 
 	private static final String SQL_GET_HOUSING_ARTICLES = "select * from article where TYPE='housing'";
@@ -74,13 +74,28 @@ public class ArticleService extends BaseService {
 		return getPagingList(SQL_GET_HOUSING_ARTICLES);
 	}
 
-	private static final String SQL_ADD_HOUSING = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME) values('housing',?,?,now(),?,?)";
+	private static final String SQL_ADD_HOUSING = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME,PRICE) values('housing',?,?,now(),?,?,?)";
 
 	public void addHousing(Map parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"title,content,coverLink");
+				"title,content,coverLink,price");
 		DB.update(SQL_ADD_HOUSING, new Object[] { params[0], params[1],
-				params[2], userName });
+				params[2], userName, params[3] });
+	}
+
+	private static final String SQL_GET_SHOPPING_ARTICLES = "select * from article where TYPE='shopping'";
+
+	public PagingList getShoppingArticles() {
+		return getPagingList(SQL_GET_SHOPPING_ARTICLES);
+	}
+
+	private static final String SQL_ADD_SHOPPING = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME,PRICE) values('shopping',?,?,now(),?,?,?)";
+
+	public void addShopping(Map parameters, String userName) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
+				"title,content,coverLink,price");
+		DB.update(SQL_ADD_SHOPPING, new Object[] { params[0], params[1],
+				params[2], userName, params[3] });
 	}
 
 }
