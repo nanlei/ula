@@ -98,4 +98,33 @@ public class ArticleService extends BaseService {
 				params[2], userName, params[3] });
 	}
 
+	private static final String SQL_GET_TRANSPORTATION_ARTICLES = "select * from article where TYPE='transportation'";
+
+	public PagingList getTransportationArticles() {
+		return getPagingList(SQL_GET_TRANSPORTATION_ARTICLES);
+	}
+
+	private static final String SQL_ADD_TRANSPORTATION = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME,PRICE) values('transportation',?,?,now(),?,?,?)";
+
+	public void addTransportation(Map parameters, String userName) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
+				"title,content,coverLink,price");
+		DB.update(SQL_ADD_TRANSPORTATION, new Object[] { params[0], params[1],
+				params[2], userName, params[3] });
+	}
+
+	private static final String SQL_GET_THERAPY_ARTICLES = "select * from article where TYPE='therapy'";
+
+	public PagingList getTherapyArticles() {
+		return getPagingList(SQL_GET_THERAPY_ARTICLES);
+	}
+
+	private static final String SQL_ADD_THERAPY = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME,PRICE) values('therapy',?,?,now(),?,?,?)";
+
+	public void addTherapy(Map parameters, String userName) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
+				"title,content,coverLink,price");
+		DB.update(SQL_ADD_THERAPY, new Object[] { params[0], params[1],
+				params[2], userName, params[3] });
+	}
 }
