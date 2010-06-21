@@ -12,13 +12,15 @@
 	<col width="10%" align="center"/>
 	<col width="15%" align="center"/>
 	<col width="25%" align="center"/>
-	<col width="25%" align="center"/>
+	<col width="10%" align="center"/>
+	<col width="15%" align="center"/>
 	<tr class="title">
 		<td>序号</td>
 		<td>标题</td>
 		<td>添加人</td>
 		<td>添加时间</td>
 		<td>图片地址</td>
+		<td>参考价格</td>
 		<td>操作</td>
 	</tr>
 	<#assign count=(pageNum-1)*10+1>
@@ -29,6 +31,7 @@
 		<td>${housing.USERNAME}</td>
 		<td>${housing.ADDTIME?datetime}</td>
 		<td>${housing.COVERLINK?default("未选择")}</td>
+		<td>${housing.PRICE?default("0")}</td>
 		<td><a href="preUpdateHousing.action?articleId=${housing.ID}">修改</a> | <a href="deleteHousing.action?articleId=${housing.ID}&articleType=food" onclick="return confirm('确定删除么?')">删除</a></td>
 	</tr>
 	<#assign count=count+1>

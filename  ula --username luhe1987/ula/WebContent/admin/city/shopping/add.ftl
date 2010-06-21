@@ -1,6 +1,6 @@
 <@p.page>
-	<@app.naviBar navi="关于城市,大连美食" />
-	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面您可以添加大连美食部分的文章">
+	<@app.naviBar navi="关于城市,大连购物" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面您可以添加大连购物部分的文章">
 	<a class="navlink" href="javascript:history.go(-1)">返回</a>
 	</@app.naviInfo>
 <script type="text/javascript">
@@ -10,7 +10,7 @@ function selectCoverLink(type){
 	window.open(targetURL,'',parameters);
 }
 </script>
-<form name="articleForm" action="addFood.action" method="post" onsubmit="return validateForm(this)">
+<form name="articleForm" action="addShopping.action" method="post" onsubmit="return validateForm(this)">
 <table class="default" width="100%">
 	<col width="15%" align="center">
 	<col width="35%" align="center">

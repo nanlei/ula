@@ -123,5 +123,46 @@
 				<param name="namespace">/admin/city</param>
 			</result>
 		</action>
+		<action name="deleteHousing" class="ula.action.admin.city.HousingAction"
+			method="deleteHousing">
+			<result name="success" type="chain">
+				<param name="actionName">housing</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+
+		<!--大连购物-->
+		<action name="shopping" class="ula.action.admin.city.ShoppingAction"
+			method="shopping">
+			<result name="shopping">shopping/shopping.ftl</result>
+		</action>
+		<action name="preAddShopping" class="ula.action.BaseAction">
+			<result>shopping/add.ftl</result>
+		</action>
+		<action name="addShopping" class="ula.action.admin.city.ShoppingAction"
+			method="addShopping">
+			<result name="success" type="chain">
+				<param name="actionName">shopping</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="preUpdateShopping" class="ula.action.admin.city.ShoppingAction"
+			method="preUpdateShopping">
+			<result name="preUpdateShopping">shopping/shoppingInfo.ftl</result>
+		</action>
+		<action name="updateShopping" class="ula.action.admin.city.ShoppingAction"
+			method="updateShopping">
+			<result name="success" type="chain">
+				<param name="actionName">shopping</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="deleteShopping" class="ula.action.admin.city.ShoppingAction"
+			method="deleteShopping">
+			<result name="success" type="chain">
+				<param name="actionName">shopping</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
 	</package>
 </struts>

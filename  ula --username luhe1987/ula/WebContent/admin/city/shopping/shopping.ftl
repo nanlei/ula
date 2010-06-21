@@ -1,7 +1,7 @@
 <@p.page>
-	<@app.naviBar navi="关于城市,大连美食" />
-	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面显示系统内的所有的关于城市->大连美食的文章，您可以维护这些信息。">
-	<a class="navlink" href="preAddFood.action">添加文章</a>
+	<@app.naviBar navi="关于城市,大连购物" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面显示系统内的所有的关于城市->大连购物的文章，您可以维护这些信息。">
+	<a class="navlink" href="preAddShopping.action">添加文章</a>
 	</@app.naviInfo>
 	<#if alertMessage?exists>
 	${alertMessage}
@@ -24,21 +24,21 @@
 		<td>操作</td>
 	</tr>
 	<#assign count=(pageNum-1)*10+1>
-	<#list foodList.list as food>
+	<#list shoppingList.list as shopping>
 	<tr>
 		<td>${count}</td>
-		<td>${food.TITLE}</td>
-		<td>${food.USERNAME}</td>
-		<td>${food.ADDTIME?datetime}</td>
-		<td>${food.COVERLINK?default("未选择")}</td>
-		<td>${food.PRICE?default("0")}</td>
-		<td><a href="preUpdateFood.action?articleId=${food.ID}">修改</a> | <a href="deleteFood.action?articleId=${food.ID}&articleType=food" onclick="return confirm('确定删除么?')">删除</a></td>
+		<td>${shopping.TITLE}</td>
+		<td>${shopping.USERNAME}</td>
+		<td>${shopping.ADDTIME?datetime}</td>
+		<td>${shopping.COVERLINK?default("未选择")}</td>
+		<td>${shopping.PRICE?default("0")}</td>
+		<td><a href="preUpdateShopping.action?articleId=${shopping.ID}">修改</a> | <a href="deleteShopping.action?articleId=${shopping.ID}&articleType=shopping" onclick="return confirm('确定删除么?')">删除</a></td>
 	</tr>
 	<#assign count=count+1>
 	</#list>
 </table>
 <div align="right">
-	<@p.paging foodList />
+	<@p.paging shoppingList />
 </div>
 <#if count=1>
 	<p align="center"><font color="red">尚未添加文章</font></p>
