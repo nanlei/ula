@@ -17,6 +17,7 @@
 	<include file="strutsXMLs/action/admin/link.xml"></include>
 	<include file="strutsXMLs/action/admin/pic.xml"></include>
 	<include file="strutsXMLs/action/admin/user.xml"></include>
+	<include file="strutsXMLs/action/admin/setting.xml"></include>
 
 </struts>
 

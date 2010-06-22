@@ -8,7 +8,7 @@
 	</tr>
 	<tr>
 		<td valign="baseline">网址链接</td>
-		<td><input type="text" name="content" id="content" size = "30">(http://开头)</td>
+		<td><input type="text" name="url" id="content" size = "30">(http://开头)</td>
 	</tr>
 	<tr>
 	<td colspan="2"><div align="center"><input type="submit" value="添加" style="height: 25px; width: 100px"/></div></td>

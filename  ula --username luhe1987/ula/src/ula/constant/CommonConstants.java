@@ -6,10 +6,8 @@ public interface CommonConstants {
 
 	/* Paging constants */
 	
-	int DEFAULT_PAGE_SIZE = 5;
-	int DEFAULT_NOTE_SIZE = 3;
+	int DEFAULT_PAGE_SIZE = 20;
 	int MAX_PAGE_SIZE = 1000;
-	int MAX_NOTE_SIZE = 1000;
 
 	String NORMAL_MARK = "?";
 	String START_MARK = ":_START_INDEX_";

@@ -1,3 +1,8 @@
+<@p.page>
+<@app.naviBar navi="旅游项目,常规行程" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于常规行程内容编辑，用户可以修改常规行程内容">
+	</@app.naviInfo>
+
 <form action="regular!add.action" method="post">
 
 <table>
@@ -17,3 +22,4 @@
 </table>
 
 </form>
+</@p.page>

@@ -1,5 +1,6 @@
 package ula.common;
 
+import ula.service.SettingService;
 import ula.service.admin.AboutService;
 import ula.service.admin.ArticleService;
 import ula.service.admin.CityServcie;
@@ -29,6 +30,15 @@ public class ServiceManager {
 	private PicService picService = null;
 	private UserService userService = null;
 	private ArticleService articleService = null;
+	private SettingService settingService = null;
+ 
+	public SettingService getSettingService() {
+		return settingService;
+	}
+
+	public void setSettingService(SettingService settingService) {
+		this.settingService = settingService;
+	}
 
 	public LinkService getLinkService() {
 		return linkService;

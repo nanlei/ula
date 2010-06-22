@@ -1,3 +1,8 @@
+<@p.page>
+<@app.naviBar navi="旅游项目,代订车、船票" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于代订车、船票内容编辑，用户可以修改代订车、船票内容">
+	</@app.naviInfo>
+
 <form action="ticket!update.action" method="post">
 
 <table>
@@ -17,3 +22,6 @@
 </table>
 
 </form>
+
+
+</@p.page>

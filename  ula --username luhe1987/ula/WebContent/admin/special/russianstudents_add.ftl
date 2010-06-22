@@ -1,3 +1,8 @@
+<@p.page>
+<@app.naviBar navi="旅游项目,俄罗斯留学生之家" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于俄罗斯留学生之家内容编辑，用户可以修改俄罗斯留学生之家内容">
+	</@app.naviInfo>
+	
 <form action="russianstudents!add.action" method="post">
 
 <table>
@@ -17,3 +22,6 @@
 </table>
 
 </form>
+
+
+</@p.page>

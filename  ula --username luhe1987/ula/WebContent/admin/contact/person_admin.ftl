@@ -1,5 +1,5 @@
 <@p.page>
-<@app.naviBar navi="关于我们,游客入口" />
+<@app.naviBar navi="联系我们,游客入口" />
 	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于中国客户内容编辑，用户可以修改中国客户内容">
 	</@app.naviInfo>
 <#if alertMessage?exists><p align="center">${alertMessage}</p></#if>

@@ -1,3 +1,8 @@
+<@p.page>
+<@app.naviBar navi="支付方式,支付方式" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于支付方式内容编辑，用户可以修改支付方式内容">
+	</@app.naviInfo>
+	
 <form action="payment!add.action" method="post">
 
 <table>
@@ -17,3 +22,5 @@
 </table>
 
 </form>
+
+</@p.page>

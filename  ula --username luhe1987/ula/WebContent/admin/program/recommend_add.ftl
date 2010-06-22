@@ -1,3 +1,8 @@
+<@p.page>
+<@app.naviBar navi="旅游项目,本月推荐" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于本月推荐内容编辑，用户可以修改本月推荐内容">
+	</@app.naviInfo>
+
 <form action="recommend!add.action" method="post">
 
 <table>
@@ -17,3 +22,5 @@
 </table>
 
 </form>
+
+</@p.page>

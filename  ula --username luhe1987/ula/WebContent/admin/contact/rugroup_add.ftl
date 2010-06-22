@@ -1,5 +1,5 @@
 <@p.page>
-<@app.naviBar navi="关于我们,俄罗斯客户" />
+<@app.naviBar navi="联系我们,俄罗斯客户" />
 	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于俄罗斯客户内容编辑，用户可以修改俄罗斯客户内容">
 	</@app.naviInfo>
 
