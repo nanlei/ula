@@ -1,11 +1,20 @@
-<#if alertMessage?exists>${alertMessage}</#if>
+<@p.page>
+<@app.naviBar navi="支付方式,支付方式" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于支付方式内容编辑，用户可以修改支付方式内容">
+	</@app.naviInfo>
+
+<#if alertMessage?exists><p align="center">${alertMessage}</p></#if>
 
 <#if payment?exists>
- <table id="customers">
-			<tr>
+ <table class="default" width="70%" align="center">
+	<col width="40%" align="center"/>
+	<col width="40%" align="center"/>
+	<col width="10%" align="center"/>
+	<col width="10%" align="center"/>
+			<tr class="title">
 				<td>标题</td>
 				<td>发布时间</td>
-				<td colspan="3" align="center">操作</td>
+				<td colspan="2" align="center">操作</td>
 			</tr>
 			<tr class="alt">
 				<td>${payment.title}</td>
@@ -21,3 +30,4 @@
 			height="30px" width="30px" />添加</a>
 </div>
 </#if>  
+</@p.page>

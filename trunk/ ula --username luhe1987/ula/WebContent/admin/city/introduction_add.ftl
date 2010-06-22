@@ -1,5 +1,5 @@
 <@p.page>
-<@app.naviBar navi="关于我们,大连介绍" />
+<@app.naviBar navi="关于城市,大连介绍" />
 	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于大连介绍内容编辑，用户可以修改大连介绍内容">
 	</@app.naviInfo>
 <form action="intro!add.action" method="post">

@@ -6,15 +6,15 @@ import ula.service.BaseService;
 
 public class PaymentService extends BaseService {
 	
-	public static final String SQL_ADD_INFO = "INSERT INTO "
+	private static final String SQL_ADD_INFO = "INSERT INTO "
 		+ "payment(id,title,content,tag,date) "
 		+ "VALUES(?,?,?,?,(SELECT sysdate() FROM DUAL))";
 
-public static final String SQL_GET_INFO_BY_ID = "select * "
+private static final String SQL_GET_INFO_BY_ID = "select * "
 		+ "from payment " 
 		+ "where id =?";
 
-public static final String SQL_UPDATE_INFO = "UPDATE payment "
+private static final String SQL_UPDATE_INFO = "UPDATE payment "
 		+ "SET title = ?,content =?,date = (SELECT SYSDATE()FROM dual)"
 		+ "WHERE id = ?";
 

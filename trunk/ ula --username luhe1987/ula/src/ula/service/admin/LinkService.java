@@ -2,40 +2,41 @@ package ula.service.admin;
 
 import java.util.Map;
 
+import ula.common.PagingList;
 import ula.service.BaseService;
 
 public class LinkService extends BaseService {
-	public static final String SQL_ADD_INFO = "INSERT INTO "
-		+ "link(id,title,content,tag,date) "
-		+ "VALUES(?,?,?,?,(SELECT sysdate() FROM DUAL))";
+	private static final String SQL_DELETE_BY_ID = "DELETE FROM link "
+			+ "WHERE Id =?";
+	private static final String SQL_GET_ALL = "select * " + "FROM " + " link";
 
-public static final String SQL_GET_INFO_BY_ID = "select * "
-		+ "from link " 
-		+ "where id =?";
+	private static final String SQL_ADD_INFO = "INSERT INTO "
+			+ "link(title,url,date) "
+			+ "VALUES(?,?,(SELECT sysdate() FROM DUAL))";
 
-public static final String SQL_UPDATE_INFO = "UPDATE link "
-		+ "SET title = ?,content =?,date = (SELECT SYSDATE()FROM dual)"
-		+ "WHERE id = ?";
+	private static final String SQL_GET_INFO_BY_ID = "select * " + "from link "
+			+ "where id =?";
+	private static final String SQL_UPDATE_INFO = "UPDATE link "
+			+ "SET title = ?,url =?,date = (SELECT SYSDATE()FROM dual)"
+			+ "WHERE id = ?";
 
-public Map<String, Object> getInfo(int id) throws Exception {
-	return DB.queryForMap(this.SQL_GET_INFO_BY_ID, new Object[] { id });
-}
+	public Map<String, Object> getInfoById(String id) throws Exception {
+		return DB.queryForMap(SQL_GET_INFO_BY_ID, new Object[] { id });
+	}
 
-public Map<String, Object> getInfo(String tag) throws Exception {
-	return DB.queryForMap(this.SQL_GET_INFO_BY_ID, new Object[] { tag });
-}
+	public int addInfo(String title, String url) throws Exception {
+		return DB.update(SQL_ADD_INFO, new Object[] { title, url });
+	}
 
-public int addInfo(int id, String title, String content, String tag)throws Exception {
-	return DB
-			.update(SQL_ADD_INFO, new Object[] { id, title, content, tag });
-}
+	public int updateInfo(String linkID, String title, String url) throws Exception {
+		return DB.update(SQL_UPDATE_INFO, new Object[] { title, url, linkID });
+	}
 
-public int addInfo(int id, String title, String content)throws Exception {
-	return this.addInfo(id, title, content, "");
-}
+	public PagingList getAllInfo() {
+		return super.getPagingList(SQL_GET_ALL);
+	}
 
-public int updateInfo(int id, String title, String content)throws Exception {
-	return DB.update(this.SQL_UPDATE_INFO, new Object[]{title,content,id});
-}
-
+	public int deleteInfoById(String linkID) throws Exception {
+		return DB.update(SQL_DELETE_BY_ID, new Object[] { linkID });
+	}
 }

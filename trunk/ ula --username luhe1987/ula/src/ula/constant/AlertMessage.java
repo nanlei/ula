@@ -1,8 +1,13 @@
 package ula.constant;
 
 public interface AlertMessage {
-	String UPDATE_SUCCESS = "update successfully";
-	String UPDATE_FAILURE = "Sorry, fail to update";
+	String UPDATE_SUCCESS = "更新成功";
+	String UPDATE_FAILURE = "对不起，更新失败";
+	String INSERT_SUCCESS ="添加成功";
+	String INSERT_FAILURE ="添加失败";
+	String DELTE_ERROR = "删除失败";
+	String DELTE_SUCCESS = "删除成功";
+	String INFO_EMPTY = "信息不存在";
 
 	String COMPANYINFO_EMPTY = "公司介绍没有添加,请添加";
 	String TEAMINFO_EMPTY = "人员介绍没有添加,请添加";
@@ -31,7 +36,7 @@ public interface AlertMessage {
 	String SPECIAL_TRANSLATION = "翻译服务没有添加，请添加";
 	String SPECIAL_SOUVENIR = "纪念品代购没有添加，请添加";
 
-	String LINK = "友情链接没有添加，请添加";
+	String LINK_EMPTY = "友情链接没有添加，请添加";
 
 	String PIC_INSERT_SUCCESS = "图片上传成功";
 	String PIC_INSERT_DENY = "图片格式不对，不能上传。请选择jpg/jpeg/gif/png/bmp格式的文件";
@@ -42,6 +47,7 @@ public interface AlertMessage {
 	String USER_UPDATE_SUCCESS = "用户信息修改成功";
 	String USER_ADD_SUCCESS = "用户添加成功";
 
+	
 	String ARTICLE_ADD_SUCCESS = "文章添加成功";
 	String ARTICLE_UPDATE_SUCCESS = "文章更新成功";
 	String ARTICLE_DELETE_SUCCESS = "文章删除成功";

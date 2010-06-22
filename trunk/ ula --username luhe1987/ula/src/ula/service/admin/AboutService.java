@@ -5,15 +5,15 @@ import java.util.Map;
 import ula.service.BaseService;
 
 public class AboutService extends BaseService {
-	public static final String SQL_ADD_INFO = "INSERT INTO " +
+	private static final String SQL_ADD_INFO = "INSERT INTO " +
 			"aboutinfo(id,title,content,date) " +
 			"VALUES(?,?,?,(SELECT sysdate() FROM DUAL))";
 	
-	public static final String SQL_GET_INFO ="select * " +
+	private static final String SQL_GET_INFO ="select * " +
 			"from aboutinfo " +
 			"where id =?";
 	
-	public static final String SQL_UPDATE_INFO ="UPDATE aboutInfo " +
+	private static final String SQL_UPDATE_INFO ="UPDATE aboutInfo " +
 			"SET title = ?,content =?,date = (SELECT SYSDATE()FROM dual)" +
 			"WHERE id = ?";
 

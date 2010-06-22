@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="admin/setting" extends="global" namespace="/admin/setting">
+	<action name="interface" class ="ula.action.admin.setting.InterfaceLan">
+	<result name ="admin">interface_admin.ftl</result>
+	<result name ="preAdd">interface_add.ftl</result>
+	<result name ="edit">interface_edit.ftl</result>
+	</action>
+	</package>
+
+</struts>

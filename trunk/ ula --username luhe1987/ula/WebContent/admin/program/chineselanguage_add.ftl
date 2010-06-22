@@ -1,3 +1,8 @@
+<@p.page>
+<@app.naviBar navi="旅游项目,汉语学习" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于汉语学习内容编辑，用户可以修改汉语学习内容">
+	</@app.naviInfo>
+	
 <form action="chineselanguage!add.action" method="post">
 
 <table>
@@ -17,3 +22,5 @@
 </table>
 
 </form>
+
+</@p.page>

@@ -1,3 +1,8 @@
+<@p.page>
+<@app.naviBar navi="旅游项目,温泉游" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于温泉游内容编辑，用户可以修改温泉游内容">
+	</@app.naviInfo>
+
 <form action="hotspring!add.action" method="post">
 
 <table>
@@ -17,3 +22,5 @@
 </table>
 
 </form>
+
+</@p.page>

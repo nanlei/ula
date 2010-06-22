@@ -12,7 +12,8 @@ public interface ErrorConstants {
 	
 	String QUERY_ERROR="查询信息时发生错误：";
 	String UPDATE_ERROR ="更新信息时发生错误";
-	
 	String INSERT_ERROR ="插入数据时发生错误。请检查数据库连接；或查看该数据是否已经存在";
+	String INFO_INVALID  ="对不起, 您所查找的信息不存在.";
+	
 	
 }

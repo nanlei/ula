@@ -1,3 +1,8 @@
+<@p.page>
+<@app.naviBar navi="旅游项目,翻译服务" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于翻译服务内容编辑，用户可以修改翻译服务内容">
+	</@app.naviInfo>
+	
 <form action="translation!update.action" method="post">
 
 <table>
@@ -17,3 +22,6 @@
 </table>
 
 </form>
+
+
+</@p.page>

@@ -1,3 +1,8 @@
+<@p.page>
+<@app.naviBar navi="旅游项目,租车服务" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于租车服务内容编辑，用户可以修改租车服务内容">
+	</@app.naviInfo>
+
 <form action="carrental!add.action" method="post">
 
 <table>
@@ -17,3 +22,6 @@
 </table>
 
 </form>
+
+
+</@p.page>
