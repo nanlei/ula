@@ -139,7 +139,7 @@ public class ArticleService extends BaseService {
 	public void addFestival(Map parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,content,coverLink,price");
-		DB.update(SQL_ADD_THERAPY, new Object[] { params[0], params[1],
+		DB.update(SQL_ADD_FESTIVAL, new Object[] { params[0], params[1],
 				params[2], userName, params[3] });
 	}
 
@@ -147,5 +147,14 @@ public class ArticleService extends BaseService {
 
 	public PagingList getExhibitionArticles() {
 		return getPagingList(SQL_GET_EXHIBITION_ARTICLES);
+	}
+
+	private static final String SQL_ADD_EXHIBITION = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME,PRICE) values('exhibition',?,?,now(),?,?,?)";
+
+	public void addExhibition(Map parameters, String userName) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
+				"title,content,coverLink,price");
+		DB.update(SQL_ADD_EXHIBITION, new Object[] { params[0], params[1],
+				params[2], userName, params[3] });
 	}
 }
