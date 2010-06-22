@@ -276,6 +276,29 @@
 			<result>exhibition/add.ftl</result>
 		</action>
 		<action name="addExhibition" class="ula.action.admin.city.ExhibitionAction"
-			method="addExhibition"></action>
+			method="addExhibition">
+			<result name="success" type="chain">
+				<param name="actionName">exhibition</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="preUpdateExhibition" class="ula.action.admin.city.ExhibitionAction"
+			method="preUpdateExhibition">
+			<result name="preUpdateExhibition">exhibition/exhibitionInfo.ftl</result>
+		</action>
+		<action name="updateExhibition" class="ula.action.admin.city.ExhibitionAction"
+			method="updateExhibition">
+			<result name="success" type="chain">
+				<param name="actionName">exhibition</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="deleteExhibition" class="ula.action.admin.city.ExhibitionAction"
+			method="deleteExhibition">
+			<result name="success" type="chain">
+				<param name="actionName">exhibition</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
 	</package>
 </struts>
