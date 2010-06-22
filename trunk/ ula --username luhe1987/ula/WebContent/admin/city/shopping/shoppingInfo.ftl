@@ -1,6 +1,6 @@
 <@p.page>
 	<@app.naviBar navi="关于城市,大连购物" />
-	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面您可以添加大连购物部分的文章">
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面您可以修改大连购物部分的文章">
 	<a class="navlink" href="javascript:history.go(-1)">返回</a>
 	</@app.naviInfo>
 <script type="text/javascript">

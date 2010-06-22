@@ -127,4 +127,25 @@ public class ArticleService extends BaseService {
 		DB.update(SQL_ADD_THERAPY, new Object[] { params[0], params[1],
 				params[2], userName, params[3] });
 	}
+
+	private static final String SQL_GET_FESTIVAL_ARTICLES = "select * from article where TYPE='festival'";
+
+	public PagingList getFestivalArticles() {
+		return getPagingList(SQL_GET_FESTIVAL_ARTICLES);
+	}
+
+	public static final String SQL_ADD_FESTIVAL = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME,PRICE) values('festival',?,?,now(),?,?,?)";
+
+	public void addFestival(Map parameters, String userName) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
+				"title,content,coverLink,price");
+		DB.update(SQL_ADD_THERAPY, new Object[] { params[0], params[1],
+				params[2], userName, params[3] });
+	}
+
+	private static final String SQL_GET_EXHIBITION_ARTICLES = "select * from article where TYPE='exhibition'";
+
+	public PagingList getExhibitionArticles() {
+		return getPagingList(SQL_GET_EXHIBITION_ARTICLES);
+	}
 }
