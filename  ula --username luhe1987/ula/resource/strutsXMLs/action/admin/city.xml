@@ -232,5 +232,50 @@
 				<param name="namespace">/admin/city</param>
 			</result>
 		</action>
+
+		<!--大连节日-->
+		<action name="festival" class="ula.action.admin.city.FestivalAction"
+			method="festival">
+			<result name="festival">festival/festival.ftl</result>
+		</action>
+		<action name="preAddFestival" class="ula.action.BaseAction">
+			<result>festival/add.ftl</result>
+		</action>
+		<action name="addFestival" class="ula.action.admin.city.FestivalAction"
+			method="addFestival">
+			<result name="success" type="chain">
+				<param name="actionName">festival</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="preUpdateFestival" class="ula.action.admin.city.FestivalAction"
+			method="preUpdateFestival">
+			<result name="preUpdateFestival">festival/festivalInfo.ftl</result>
+		</action>
+		<action name="updateFestival" class="ula.action.admin.city.FestivalAction"
+			method="updateFestival">
+			<result name="success" type="chain">
+				<param name="actionName">festival</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="deleteFestival" class="ula.action.admin.city.FestivalAction"
+			method="deleteFestival">
+			<result name="success" type="chain">
+				<param name="actionName">festival</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+
+		<!--展会信息-->
+		<action name="exhibition" class="ula.action.admin.city.ExhibitionAction"
+			method="exhibition">
+			<result name="exhibition">exhibition/exhibition.ftl</result>
+		</action>
+		<action name="preAddExhibition" class="ula.action.BaseAction">
+			<result>exhibition/add.ftl</result>
+		</action>
+		<action name="addExhibition" class="ula.action.admin.city.ExhibitionAction"
+			method="addExhibition"></action>
 	</package>
 </struts>

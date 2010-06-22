@@ -20,8 +20,8 @@ var treeMenu = [
 	{ level:2, name:"大连购物", link:"city/shopping.action"},
 	{ level:2, name:"大连交通", link:"city/transportation.action"},
 	{ level:2, name:"大连治疗", link:"city/therapy.action"},
-	{ level:2, name:"大连节日", link:"manage/info/dbInfo.action"},
-	{ level:2, name:"展会信息", link:"manage/info/dbInfo.action"},
+	{ level:2, name:"大连节日", link:"city/festival.action"},
+	{ level:2, name:"展会信息", link:"city/exhibition.action"},
 	
 	{ level:1, name:"旅游项目"},
 	{ level:2, name:"本月推荐", link:"program/recommend!admin.action"},
