@@ -20,7 +20,7 @@ public class LinkAction extends CommonAction {
 	 * @return
 	 */
 	public String add(){	
-		this.title = StringUtil.UTF8Encoding(this.title);
+//		this.title = StringUtil.UTF8Encoding(this.title);
 		try {
 			int db_result = super.getServiceManager().getLinkService().addInfo(this.title, this.url);
 			if(db_result ==1){
@@ -101,8 +101,6 @@ public class LinkAction extends CommonAction {
 			super.setErrorMessage(ErrorConstants.INFO_INVALID);
 			return ERROR;
 		}
-		
-		this.title = StringUtil.UTF8Encoding(this.title);
 		
 		super.debug("linkID:"+linkID);
 		
