@@ -26,7 +26,7 @@
 		</table>
 <#else>
  <div class="add"><a href="company!preAdd.action"><img
-			src="<%=request.getContextPath()%>/icon/add.jpg" border="0"
+			src="${base}/icon/add.jpg" border="0"
 			height="30px" width="30px" />添加</a>
 </div>
 </#if>
