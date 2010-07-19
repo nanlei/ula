@@ -51,5 +51,13 @@ public interface AlertMessage {
 	String ARTICLE_ADD_SUCCESS = "文章添加成功";
 	String ARTICLE_UPDATE_SUCCESS = "文章更新成功";
 	String ARTICLE_DELETE_SUCCESS = "文章删除成功";
+	String CITY_INSURANCE = "保险信息没有添加，请添加。";
+	String CITY_COMMONLAW = "法律常识没有添加，请添加。";
+	String CITY_CELLPHONE = "手机信息没有添加，请添加。";
+	String CITY_ADVICE = "实用建议没有添加，请添加。";
+	
+	
+	String DONE_MARK = "标记为已处理。操作成功";
+	String UNDONE_MARK = "标记为未处理。操作成功";
 
 }
