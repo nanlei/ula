@@ -23,8 +23,8 @@ public class FrameworkAction extends CommonAction {
 
 	public String add(){
 		
-		this.title = StringUtil.UTF8Encoding(this.title);
-		this.content = StringUtil.UTF8Encoding(this.content);
+//		this.title = StringUtil.UTF8Encoding(this.title);
+//		this.content = StringUtil.UTF8Encoding(this.content);
 
 		this.debug("title:" +this.title + ", content:" + this.content);
 		
@@ -73,8 +73,6 @@ public class FrameworkAction extends CommonAction {
 			super.debug(DebugConstants.DEBUG_MESSAGE_setInfoMap);
 			return "admin";
 		}
-		
-		
 		
 		super.debug(infoMap.toString());
 		
@@ -144,8 +142,8 @@ public class FrameworkAction extends CommonAction {
 	 */
 	public String update() {
 		// 获取客户端信息
-		this.title = StringUtil.UTF8Encoding(this.title);
-		this.content = StringUtil.UTF8Encoding(this.content);
+//		this.title = StringUtil.UTF8Encoding(this.title);
+//		this.content = StringUtil.UTF8Encoding(this.content);
 
 		super.debug("title:" + this.title + ", content:" + this.content);
 		
@@ -179,7 +177,7 @@ public class FrameworkAction extends CommonAction {
 	 * -1 默认值, 子类未覆盖此方法
 	 * 0  更新数据库失败
 	 */
-	protected int updateToDB(String title2, String content2) {
+	protected int updateToDB(String title, String content) {
 		return -1;
 	}
 	
