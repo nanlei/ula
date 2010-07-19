@@ -32,6 +32,7 @@
 			<result>tree.ftl</result>
 		</action>
 	</package>
+	
 	<!-- 用户管理入口 -->
 	<package name="user_index" extends="global" namespace="/user">
 		<action name="admin" class="ula.action.BaseAction">
@@ -41,5 +42,26 @@
 			<result>tree.ftl</result>
 		</action>
 	</package>
+	
+	<!-- 订单管理入口 -->
+	<package name="reservation_index" extends="global" namespace="/reservation">
+		<action name="admin" class="ula.action.BaseAction">
+			<result>reservation.ftl</result>
+		</action>
+		<action name="admintree" class="ula.action.BaseAction">
+			<result>tree.ftl</result>
+		</action>
+	</package>
+	
+	<!-- 用户反馈管理入口 -->
+	<package name="feedback_index" extends="global" namespace="/feedback">
+		<action name="admin" class="ula.action.BaseAction">
+			<result>feedback.ftl</result>
+		</action>
+		<action name="admintree" class="ula.action.BaseAction">
+			<result>tree.ftl</result>
+		</action>
+	</package>
+	
 </struts>
 

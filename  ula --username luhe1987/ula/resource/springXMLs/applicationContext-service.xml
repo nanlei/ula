@@ -70,9 +70,15 @@
 		</property>
 	</bean>
 	
-	<bean id="settingService" parent="baseTxService">
+	<bean id="feedbackService" parent="baseTxService">
 		<property name="target">
-			<bean class="ula.service.SettingService" />
+			<bean class="ula.service.admin.FeedbackService" />
+		</property>
+	</bean>
+	
+	<bean id="reservationService" parent="baseTxService">
+		<property name="target">
+			<bean class="ula.service.admin.ReservationService" />
 		</property>
 	</bean>
 
