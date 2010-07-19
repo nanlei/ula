@@ -1,15 +1,16 @@
 package ula.common;
 
-import ula.service.SettingService;
 import ula.service.admin.AboutService;
 import ula.service.admin.ArticleService;
 import ula.service.admin.CityServcie;
 import ula.service.admin.ContactService;
+import ula.service.admin.FeedbackService;
 import ula.service.admin.LinkService;
 import ula.service.admin.LogService;
 import ula.service.admin.PaymentService;
 import ula.service.admin.PicService;
 import ula.service.admin.ProgramService;
+import ula.service.admin.ReservationService;
 import ula.service.admin.SpecialService;
 import ula.service.admin.UserService;
 
@@ -18,7 +19,7 @@ public class ServiceManager {
 	/*
 	 * 这里是所有Service的集合。并提供Getter 和 Setter
 	 */
-
+	
 	private LogService logService = null;
 	private AboutService aboutService = null;
 	private ContactService contactService = null;
@@ -30,14 +31,24 @@ public class ServiceManager {
 	private PicService picService = null;
 	private UserService userService = null;
 	private ArticleService articleService = null;
-	private SettingService settingService = null;
- 
-	public SettingService getSettingService() {
-		return settingService;
+	private FeedbackService feedbackService = null;
+	private ReservationService reservationService = null;
+
+	
+	public ReservationService getReservationService() {
+		return reservationService;
 	}
 
-	public void setSettingService(SettingService settingService) {
-		this.settingService = settingService;
+	public void setReservationService(ReservationService reservationService) {
+		this.reservationService = reservationService;
+	}
+
+	public FeedbackService getFeedbackService() {
+		return feedbackService;
+	}
+
+	public void setFeedbackService(FeedbackService feedbackService) {
+		this.feedbackService = feedbackService;
 	}
 
 	public LinkService getLinkService() {
