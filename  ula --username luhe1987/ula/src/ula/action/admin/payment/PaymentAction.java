@@ -72,7 +72,6 @@ public class PaymentAction extends FrameworkAction {
 		} catch (Exception e) {
 			super.debug(e.getMessage());
 			e.printStackTrace();
-			
 			return 0;
 		}
 	}
