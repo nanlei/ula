@@ -4,15 +4,15 @@
 	</@app.naviInfo>
 <form action="intro!add.action" method="post">
 
-<table>
+<table class="default" width="100%">
 	<tr>
-		<td>标题</td>
-		<td><input type="text" name="title" id="title" size = "100"
+		<td align="center">标题</td>
+		<td><input type="text" name="title" id="title" size = "50"
 		></input></td>
 	</tr>
 	<tr>
-		<td valign="baseline">内容</td>
-		<td><textarea class="ckeditor" cols="80" id="content" name="content"
+		
+		<td colspan ="2"><textarea  id="content" name="content"
 	rows="10"></textarea></td>
 	</tr>
 	<tr>
