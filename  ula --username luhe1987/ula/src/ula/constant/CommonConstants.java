@@ -16,6 +16,11 @@ public interface CommonConstants {
 //	TAG INFO
 	String TAG_CITY_INTRODUCTION ="intro";
 	String TAG_CITY_HISTORY ="history";
+	String TAG_CITY_INSURANCE ="insurance";
+	String TAG_CITY_COMMONLAW ="commonlaw";
+	String TAG_CITY_CELLPHONE ="cellphone";
+	String TAG_CITY_ADVICE="advice";
+	
 	
 	String TAG_SPECIAL_VISA="visa";
 	String TAG_SPECIAL_HOTEL="hotel";
@@ -77,6 +82,10 @@ public interface CommonConstants {
 	
 	int ID_CITY_INTRODUCTION =1;
 	int ID_CITY_HISTORY =2;
+	int ID_CITY_INSURANCE =3;
+	int ID_CITY_COMMOMLAW=4;
+	int ID_CITY_CELLPHONE=5;
+	int ID_CITY_ADVICE=6;
 	
 	int ID_SPECIAL_VISA =1;
 	int ID_SPECIAL_HOTEL_BOOKING =2;
@@ -101,6 +110,12 @@ public interface CommonConstants {
 	String LOGIN_USER = "_LOGIN_USER_";
 	String LOGIN_USERID = "USERID";
 	String LOGIN_USERNAME="USERNAME";
+
+	String KEY_CITY_INSURANCE = "insurance";
+	String KEY_CITY_COMMONLAW = "law";
+	String KEY_CITY_CELLPHONE = "cellphone";
+	String KEY_CITY_ADVICE = "advice";
+
 
 	
 
