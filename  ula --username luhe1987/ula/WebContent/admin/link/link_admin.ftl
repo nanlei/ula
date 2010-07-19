@@ -1,9 +1,9 @@
-
+<@p.page>
 <#if alertMessage?exists>
 ${alertMessage}
 </#if>
  <div class="add"><a href="link!preAdd.action"><img
-			src="<%=request.getContextPath()%>/icon/add.jpg" border="0"
+			src="${base}/icon/add.jpg" border="0"
 			height="30px" width="30px" />添加</a>
 </div>
 
@@ -35,3 +35,4 @@ ${alertMessage}
 		</table>
 		
 </#if>
+</@p.page>
