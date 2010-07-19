@@ -1,11 +1,11 @@
 <@p.page>
-<@app.naviBar navi="关于城市,大连历史" />
-	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于大连历史内容编辑，用户可以修改大连历史内容">
+<@app.naviBar navi="关于城市,其他信息,保险" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面用于其它信息（保险）内容编辑，用户可以修改其他消息（保险）的内容">
 	</@app.naviInfo>
 
 <#if alertMessage?exists><p align="center">${alertMessage}</p></#if>
 
-<#if cityHistory?exists>
+<#if insurance?exists>
 <table class="default" width="70%" align="center">
 	<col width="40%" align="center"/>
 	<col width="40%" align="center"/>
@@ -17,15 +17,15 @@
 				<td colspan="2" align="center">操作</td>
 			</tr>
 			<tr class="alt">
-				<td>${cityHistory.title}</td>
-				<td>${cityHistory.date}</td>
+				<td>${insurance.title}</td>
+				<td>${insurance.date}</td>
 	
-				<td class="operation"><a href="history!edit.action">修改</a></td>
+				<td class="operation"><a href="insurance!edit.action">修改</a></td>
 				<td class="operation">删除</td>
 			</tr>
 		</table>
 <#else>
- <div class="add"><a href="history!preAdd.action"><img
+ <div class="add"><a href="insurance!preAdd.action"><img
 			src="${base}/icon/add.jpg" border="0"
 			height="30px" width="30px" />添加</a>
 </div>
