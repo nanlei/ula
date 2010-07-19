@@ -300,5 +300,43 @@
 				<param name="namespace">/admin/city</param>
 			</result>
 		</action>
+		
+		
+		<!--关于城市->保险	-->
+		<action name="insurance" class="ula.action.admin.city.InsuranceAction">
+			<result name="edit">insurance_edit.ftl</result>
+			<result name="view">insurance_view.ftl</result>
+			<result name="update">insurance_admin.ftl</result>
+			<result name="admin">insurance_admin.ftl</result>
+			<result name="preAdd">insurance_add.ftl</result>
+		</action>
+		
+		<!--关于城市->法律常识	-->
+		<action name="law" class="ula.action.admin.city.CommonLawAction">
+			<result name="edit">law_edit.ftl</result>
+			<result name="view">law_view.ftl</result>
+			<result name="update">law_admin.ftl</result>
+			<result name="admin">law_admin.ftl</result>
+			<result name="preAdd">law_add.ftl</result>
+		</action>
+		
+		
+		<!--关于城市->手机信息	-->
+		<action name="cellphone" class="ula.action.admin.city.CellphoneAction">
+			<result name="edit">cellphone_edit.ftl</result>
+			<result name="view">cellphone_view.ftl</result>
+			<result name="update">cellphone_admin.ftl</result>
+			<result name="admin">cellphone_admin.ftl</result>
+			<result name="preAdd">cellphone_add.ftl</result>
+		</action>
+		
+		<!--关于城市->实用建议	-->
+		<action name="advice" class="ula.action.admin.city.PracticalAdviceAction">
+			<result name="edit">advice_edit.ftl</result>
+			<result name="view">advice_view.ftl</result>
+			<result name="update">advice_admin.ftl</result>
+			<result name="admin">advice_admin.ftl</result>
+			<result name="preAdd">advice_add.ftl</result>
+		</action>
 	</package>
 </struts>
