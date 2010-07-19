@@ -8,7 +8,7 @@ var treeMenu = [
 	{ level:2, name:"美好回忆", link:"about/memory!admin.action"},
 	{ level:2, name:"团队介绍", link:"about/team!admin.action"},
 	
-	{ level:1, name:"关于城市"},
+	{ level:1, name:"关于大连"},
 	{ level:2, name:"大连介绍", link:"city/intro!admin.action"},
 	{ level:2, name:"大连历史", link:"city/history!admin.action"},
 	{ level:2, name:"景点、公园"},
@@ -22,6 +22,11 @@ var treeMenu = [
 	{ level:2, name:"大连治疗", link:"city/therapy.action"},
 	{ level:2, name:"大连节日", link:"city/festival.action"},
 	{ level:2, name:"展会信息", link:"city/exhibition.action"},
+	{ level:2, name:"其它信息"},
+    { level:3, name:"保险", link:"city/insurance!admin.action"},
+    { level:3, name:"法律常识", link:"city/law!admin.action"},
+    { level:3, name:"手机信息", link:"city/cellphone!admin.action"},
+    { level:3, name:"实用建议", link:"city/advice!admin.action"},
 	
 	{ level:1, name:"旅游项目"},
 	{ level:2, name:"本月推荐", link:"program/recommend!admin.action"},
@@ -52,6 +57,8 @@ var treeMenu = [
 	{ level:3, name:"中国客户", link:"contact/cngroup!admin.action"},
 	{ level:2, name:"游客入口", link:"contact/person!admin.action"},
 	
+	{ level:1, name:"其它信息"},
+	{ level:2, name:"其它信息", link:"payment/payment!admin.action"},
 	
 	{ level:1, name:"友情链接"},
 	{ level:2, name:"友情链接", link:"link/link!admin.action"}
