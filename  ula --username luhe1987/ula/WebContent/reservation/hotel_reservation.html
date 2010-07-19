@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script language="javascript" type="text/javascript" src="../My97DatePicker/WdatePicker.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>酒店预订</title>
+</head>
+<body >
+<form method=post action="hotelResev!reserve.action">
+<table align ="center">
+<tr>
+	<td>姓名</td>
+	<td><input type="text" name="name"></td>
+</tr>
+<tr>
+	<td>电话</td>
+	<td><input type="text" name="tel"></td>
+</tr>
+<tr>
+	<td>Email</td>
+	<td><input type="text" name="email"></td>
+</tr>
+<tr>
+	<td>酒店名称</td>
+	<td><input type="text" name="hotelName"></td>
+</tr>
+<tr>
+	<td>客房类型</td>
+	<td><input type="text" name="roomCategory"></td>
+</tr>
+<tr>
+	<td>入住日期</td>
+	<td><input class="Wdate" type="text" onClick="WdatePicker({lang:'en'})" name="checkinDate"></td>
+</tr>
+<tr>
+	<td>离开日期</td>
+	<td><input class="Wdate" type="text" onClick="WdatePicker({lang:'en'})" name="checkoutDate"></td>
+
+</tr>
+<tr>
+	<td>男性人数</td>
+	<td><input type="text" name="numberOfMen" value ="0"></td>
+</tr>
+<tr>
+	<td>女性人数</td>
+	<td><input type="text" name="numberOfWomen" value="0"></td>
+</tr>
+<tr>
+	<td>儿童人数</td>
+	<td><input type="text" name="numberOfKids" value="0"></td>
+</tr>
+<tr>
+	<td>备注说明</td>
+	<td valign="top"><textarea name="remarks" rows="10" cols="25"></textarea></td>
+</tr>
+<tr>
+	<td colspan ="2" align ="center"><input type="submit" value="提交"> </td>
+</tr>
+</table>
+  </form>
+</body>
+</html>
