@@ -10,11 +10,13 @@
 <script type="text/javascript" src="/ula/js/menu.js"></script>
 </head>
 <script language=javascript>  
- function my_height(){
+  function my_height(){
 	var my_right = document.getElementById("main_right");
 	var my_left = document.getElementById("left_menu");
+	if(my_left.clientHeight <= my_right.clientHeight){
 	my_left.style.height= my_right.clientHeight + "px";
-}   
+	}
+}    
 </script>  
 
 </head>
