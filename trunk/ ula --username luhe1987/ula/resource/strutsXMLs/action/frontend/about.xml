@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="/about" extends="global" namespace="/about">
+		<!--关于我们->我们的业务 	-->
+		<action name="biz" class="ula.action.admin.about.BusinessAction">
+		<result name ="view">/admin/about/about.ftl</result>
+		</action>
+
+		<!--关于我们->公司介绍 	-->
+		<action name="company" class="ula.action.admin.about.CompanyAction">
+			<result name ="view">/admin/about/about.ftl</result>
+		</action>
+
+		<!--关于我们->团队介绍 	-->
+		<action name="team" class="ula.action.admin.about.TeamAction">
+			<result name ="view">/admin/about/about.ftl</result>
+		</action>
+
+		<!--关于我们->美好回忆 	-->
+		<action name="memory" class="ula.action.admin.about.MemoryAction">
+		<result name ="view">/admin/about/about.ftl</result>
+		</action>
+
+	</package>
+
+</struts>
