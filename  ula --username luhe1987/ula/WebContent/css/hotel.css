@@ -566,7 +566,9 @@ width:252px;
 	padding-left:2px;
 	padding-right:2px;
 }
+
 .pager-top{
+    padding-top:10px;
 	margin-right:20px;
 	float:right;
 	font-size:12px;
