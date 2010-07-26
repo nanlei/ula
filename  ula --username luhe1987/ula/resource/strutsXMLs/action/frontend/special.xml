@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/special" extends="global" namespace="/special">
+		<!--特色服务—>签证-->
+		<action name="visa" class="ula.action.admin.special.VisaAction">
+			<result name="view">/admin/special/special.ftl</result>
+		</action>
+		<!--特色服务—>俄罗斯留学生之家-->
+		<action name="russianstudents" class="ula.action.admin.special.RussianStudentsAction">
+			<result name="view">/admin/special/special.ftl</result>
+		</action>
+		<!--特色服务—>汽车租赁-->
+		<action name="carrental"
+			class="ula.action.admin.special.CarRentalCommissionAction">
+			<result name="view">/admin/special/special.ftl</result>
+		</action>
+		<!--特色服务—>纪念品-->
+		<action name="souvenir"
+			class="ula.action.admin.special.SouvenirCommissionAction">
+			<result name="view">/admin/special/special.ftl</result>
+		</action>
+		<!--特色服务—>票务-->
+		<action name="ticket" class="ula.action.admin.special.TicketCommissionAction">
+			<result name="view">/admin/special/special.ftl</result>
+		</action>
+		<!--特色服务—>翻译-->
+		<action name="translation"
+			class="ula.action.admin.special.TranslationCommissionAction">
+			<result name="view">/admin/special/special.ftl</result>
+		</action>
+		<!--特色服务—>酒店预订-->
+		<action name="hotel" class="ula.action.admin.special.HotelReservationAction">
+			<result name="view">/admin/special/special.ftl</result>
+		</action>
+
+	</package>
+</struts>
