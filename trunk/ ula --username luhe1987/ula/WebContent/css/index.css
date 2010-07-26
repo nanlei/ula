@@ -75,6 +75,11 @@ hr {
 	border:1px;
 	margin:0.5em auto 0.5em auto;
 }
+
+a {
+	font-size:15px;
+	text-decoration:none;
+}
 /*表格元素 */
 table {
 	border-spacing:2px;

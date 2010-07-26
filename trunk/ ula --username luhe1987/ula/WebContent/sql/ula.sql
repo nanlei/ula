@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `aboutinfo`;
 CREATE TABLE `aboutinfo` (
   `Id` int(11) NOT NULL auto_increment,
   `title` varchar(200) NOT NULL,
-  `content` varchar(5000) NOT NULL,
+  `content` text NOT NULL,
   `author` varchar(100) default NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY  (`Id`)
@@ -35,7 +35,7 @@ CREATE TABLE `aboutinfo` (
 
 LOCK TABLES `aboutinfo` WRITE;
 /*!40000 ALTER TABLE `aboutinfo` DISABLE KEYS */;
-INSERT INTO `aboutinfo` VALUES (1,'公司介绍','公司介绍内容。',NULL,'2010-06-27 22:26:26'),(2,'业务范围','<p>\r\n	业务范围介绍</p>\r\n',NULL,'2010-06-27 17:52:37'),(3,'人员介绍','介绍内容',NULL,'2010-06-17 20:39:48'),(4,'美好回忆','<p>\r\n	美好回忆介绍。</p>\r\n',NULL,'2010-06-27 17:46:32');
+INSERT INTO `aboutinfo` VALUES (1,'公司介绍','公司介绍内容。',NULL,'2010-06-27 22:26:26'),(2,'业务范围','<h3 style=\"margin-left: 40px; color: red\">\r\n	<code>业务范围介绍</code></h3>\r\n',NULL,'2010-07-25 10:37:35'),(3,'人员介绍','介绍内容',NULL,'2010-06-17 20:39:48'),(4,'美好回忆','<p>\r\n	美好回忆介绍。</p>\r\n',NULL,'2010-06-27 17:46:32');
 /*!40000 ALTER TABLE `aboutinfo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,7 +98,7 @@ DROP TABLE IF EXISTS `contact`;
 CREATE TABLE `contact` (
   `Id` int(11) NOT NULL auto_increment,
   `title` varchar(200) NOT NULL,
-  `content` varchar(2000) NOT NULL,
+  `content` text NOT NULL,
   `tag` char(20) default NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY  (`Id`)
@@ -195,7 +195,7 @@ DROP TABLE IF EXISTS `payment`;
 CREATE TABLE `payment` (
   `Id` int(11) NOT NULL auto_increment,
   `title` varchar(200) NOT NULL,
-  `content` varchar(2000) NOT NULL,
+  `content` text NOT NULL,
   `tag` char(20) default NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY  (`Id`)
@@ -244,7 +244,7 @@ DROP TABLE IF EXISTS `program`;
 CREATE TABLE `program` (
   `Id` int(11) NOT NULL auto_increment,
   `title` varchar(200) NOT NULL,
-  `content` varchar(2000) NOT NULL,
+  `content` text NOT NULL,
   `tag` char(20) default NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY  (`Id`)
@@ -256,7 +256,7 @@ CREATE TABLE `program` (
 
 LOCK TABLES `program` WRITE;
 /*!40000 ALTER TABLE `program` DISABLE KEYS */;
-INSERT INTO `program` VALUES (1,'本月推荐','内容','recommend','2010-06-16 00:29:28'),(2,'常规行程','内容','regular','2010-06-15 15:44:50'),(3,'治疗行程','内容','therapy','2010-06-15 15:34:52'),(4,'汉语学习','内容','chineselearning','2010-06-18 08:38:19'),(5,'夏令营行程','内容','summercamp','2010-06-15 15:34:32'),(6,'温泉游行程','内容','hotspring','2010-06-18 09:00:55'),(7,'展览','内容','exhibition','2010-06-24 12:38:54'),(8,'乡村游','内容','countryside','2010-06-18 08:42:44');
+INSERT INTO `program` VALUES (1,'本月推荐','内容','recommend','2010-07-22 23:20:09'),(2,'常规行程','内容','regular','2010-06-15 15:44:50'),(3,'治疗行程','内容','therapy','2010-06-15 15:34:52'),(4,'汉语学习','内容','chineselearning','2010-06-18 08:38:19'),(5,'夏令营行程','内容','summercamp','2010-06-15 15:34:32'),(6,'温泉游行程','内容','hotspring','2010-06-18 09:00:55'),(7,'展览','内容','exhibition','2010-06-24 12:38:54'),(8,'乡村游','内容','countryside','2010-06-18 08:42:44');
 /*!40000 ALTER TABLE `program` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -393,7 +393,7 @@ DROP TABLE IF EXISTS `special`;
 CREATE TABLE `special` (
   `Id` int(11) NOT NULL auto_increment,
   `title` varchar(200) NOT NULL,
-  `content` varchar(2000) NOT NULL,
+  `content` text NOT NULL,
   `tag` char(20) default NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY  (`Id`)
@@ -440,7 +440,7 @@ DROP TABLE IF EXISTS `visa`;
 CREATE TABLE `visa` (
   `Id` int(11) NOT NULL auto_increment,
   `title` varchar(200) NOT NULL,
-  `content` varchar(2000) NOT NULL,
+  `content` text NOT NULL,
   `tag` char(20) default NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY  (`Id`)
@@ -465,4 +465,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-07-19  4:59:21
+-- Dump completed on 2010-07-26  8:41:41
