@@ -1,32 +1,114 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>乐游旅游</title>
+<link href="/ula/css/about.css" rel="stylesheet" type="text/css" />
+<!--<script type="text/javascript" src="/ula/js/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="/ula/js/jquery.jcarousel.pack.js"></script>
+<script type="text/javascript" src="/ula/js/jquery-func.js"></script>-->
+<script type="text/javascript" src="/ula/js/menu.js"></script>
 <script language="javascript" type="text/javascript" src="../My97DatePicker/WdatePicker.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>酒店预订</title>
 </head>
-<body >
-<form method=post action="hotelResev!reserve.action">
+<body>
+<div id="header">
+  <div id="header_left"> </div>
+  <div id="header_right"> </div>
+</div>
+<div id="navi">
+  <ul id="nav">
+    <li class="select nav_li_first"><a href="">首页</a></li>
+    <li class="nav_li"><a href="">关于我们</a></li>
+    <li class="nav_li"><a href="">关于大连</a></li>
+    <li class="nav_li"><a href="">旅游项目</a></li>
+    <li class="nav_li"><a href="">特色服务</a></li>
+    <li class="nav_li"><a href="">支付方式</a></li>
+    <li class="nav_li_last"><a href="">联系我们</a></li>
+  </ul>
+</div>
+<div id="other">
+  <div id="weather"></div>
+  <div id="recommended">
+    <div id="recommended_left">
+      <div id="project_month">本月推荐 Project Month</div>
+    </div>
+    <div id="recommendd_right">
+      <ul id="recommends">
+        <li class="recommend_li">5月9日 旅行社动态内容1，内容1详情介绍。</li>
+      </ul>
+    </div>
+  </div>
+  <div id="contact">
+    <div id="tel">Tel:400-4000-400 Email:abcd@efg.com</div>
+    <div id="now">Now!</div>
+  </div>
+</div>
+<div id="main">
+ <div id="left_menu">
+  <ul class="rolinList" id="rolin">
+  <li>
+  	<div class="menu_title">
+    <h2><a href="/ula/special/visa!view.action">签证</a></h2>
+    </div>
+    <div class="content" style="height:1px;"></div>
+  </li>
+  <li>
+  	<div class="menu_title">
+    <h2><a href="">宾馆预订</a></h2>
+    </div>
+    <div class="content" style="height:1px;"></div>
+  </li>
+  <li>
+  	<div class="menu_title">
+    <h2>委托</h2>
+    </div>
+    <div class="content">
+    	<div class="content_item"><a href="/ula/special/ticket!view.action">代订车、船票</a></div>
+        <div class="content_item"><a href="/ula/special/carrental!view.action">租车服务</a></div>
+        <div class="content_item"><a href="/ula/special/translation!view.action">翻译服务</a></div>
+        <div class="content_item"><a href="/ula/special/souvenir!view.action">代邮寄纪念品</a></div>
+    </div>
+  </li>
+  <li>
+  	<div class="menu_title">
+    <h2><a href="/ula/special/russianstudents!view.action">俄罗斯留学生</a></h2>
+    </div>
+    <div class="content" style="height:1px;"></div>
+  </li>
+</ul>
+  </div>
+  
+  
+    <div id="main_right">
+    
+    
+  	<div class="right_title">
+    	<h3>>>宾馆预订</h3>
+    </div>
+    
+    <div class="right_content">
+    
+     <p class="content_p"/><form method=post action="hotelResev!reserve.action">
 <table align ="center">
 <tr>
 	<td>姓名</td>
-	<td><input type="text" name="name"></td>
+	<td><input type="text" name="name"/></td>
 </tr>
 <tr>
 	<td>电话</td>
-	<td><input type="text" name="tel"></td>
+	<td><input type="text" name="tel"/></td>
 </tr>
 <tr>
 	<td>Email</td>
-	<td><input type="text" name="email"></td>
+	<td><input type="text" name="email"/></td>
 </tr>
 <tr>
 	<td>酒店名称</td>
-	<td><input type="text" name="hotelName"></td>
+	<td><input type="text" name="hotelName"/></td>
 </tr>
 <tr>
 	<td>客房类型</td>
-	<td><input type="text" name="roomCategory"></td>
+	<td><input type="text" name="roomCategory"/></td>
 </tr>
 <tr>
 	<td>入住日期</td>
@@ -39,24 +121,54 @@
 </tr>
 <tr>
 	<td>男性人数</td>
-	<td><input type="text" name="numberOfMen" value ="0"></td>
+	<td><input type="text" name="numberOfMen" value ="0"/></td>
 </tr>
 <tr>
 	<td>女性人数</td>
-	<td><input type="text" name="numberOfWomen" value="0"></td>
+	<td><input type="text" name="numberOfWomen" value="0"/></td>
 </tr>
 <tr>
 	<td>儿童人数</td>
-	<td><input type="text" name="numberOfKids" value="0"></td>
+	<td><input type="text" name="numberOfKids" value="0"/></td>
 </tr>
 <tr>
 	<td>备注说明</td>
 	<td valign="top"><textarea name="remarks" rows="10" cols="25"></textarea></td>
 </tr>
 <tr>
-	<td colspan ="2" align ="center"><input type="submit" value="提交"> </td>
+	<td colspan ="2" align ="center"><input type="submit" value="提交订单"/> </td>
 </tr>
 </table>
-  </form>
+  </form></p>
+    
+    </div> 
+    
+  </div>
+
+<div id="links">
+ <div id="link_left"></div>
+ <div id="link_right">
+ 	<ul id="link_ul">
+    	<li><a href="#">Our Link</a></li>
+        <li><a href="#">Our Link</a></li>
+        <li><a href="#">Our Link</a></li>
+        <li><a href="#">Our Link</a></li>
+        <li><a href="#">Our Link</a></li>
+        <li><a href="#">Our Link</a></li>
+        <li><a href="#">Our Link</a></li>
+        <li><a href="#">Our Link</a></li>
+        <li><a href="#">Our Link</a></li>
+        <li><a href="#">Our Link</a></li>
+        <li><a href="#">Our Link</a></li>
+        <li><a href="#">Our Link</a></li>
+    </ul>
+ </div>
+</div>
+<div id="foot">
+	<div id="Copyright"><span>Copyright © 2009 SOVO All Rights Reserved<br>
+Powered By Pioneer</span></div>
+</div>
 </body>
 </html>
+
+
