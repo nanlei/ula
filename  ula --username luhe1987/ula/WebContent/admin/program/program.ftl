@@ -1,11 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>乐游旅游</title>
-<link href="/ula/css/about.css" rel="stylesheet" type="text/css" />
+<link href="${base}/css/about.css" rel="stylesheet" type="text/css" />
+<!--<script type="text/javascript" src="${base}/js/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="${base}/js/jquery.jcarousel.pack.js"></script>
+<script type="text/javascript" src="${base}/js/jquery-func.js"></script>-->
+<script type="text/javascript" src="${base}/js/menu.js"></script>
 </head>
 <body>
 <div id="header">
@@ -27,7 +29,7 @@
   <div id="weather"></div>
   <div id="recommended">
     <div id="recommended_left">
-      <div id="project_month">本月推荐</div>
+      <div id="project_month">本月推荐 Project Month</div>
     </div>
     <div id="recommendd_right">
       <ul id="recommends">
@@ -45,43 +47,71 @@
   <ul class="rolinList" id="rolin">
   <li>
   	<div class="menu_title">
-    <h2><a href="#">公司介绍</a></h2>
+    <h2><a href="${base}/program/recommend!view.action">本月推荐</a></h2>
     </div>
-    <div class="content"></div>
+    
   </li>
-   <li>
+  <li>
   	<div class="menu_title">
-    <h2><a href="#">人员介绍</a></h2>
+    <h2><a href="${base}/program/regular!view.action">常规行程</a></h2>
     </div>
-    <div class="content"></div>
+    
   </li>
-   <li>
+  <li>
   	<div class="menu_title">
-    <h2><a href="#">业务范围</a></h2>
+    <h2><a href="${base}/program/therapy!view.action">治疗行程</a></h2>
     </div>
-    <div class="content"></div>
+    
   </li>
-   <li>
+  <li>
   	<div class="menu_title">
-    <h2><a href="#">美好回忆</a></h2>
+    <h2><a href="${base}/program/chineselanguage!view.action">汉语学习</a></h2>
     </div>
-    <div class="content"></div>
+    
   </li>
-  
+  <li>
+  	<div class="menu_title">
+    <h2><a href="${base}/program/summercamp!view.action">夏令营行程</a></h2>
+    </div>
+  </li>
+  <li>
+  	<div class="menu_title">
+    <h2><a href="${base}/program/hotspring!view.action">温泉游</a></h2>
+    </div>
+    
+  </li>
+  <li>
+  	<div class="menu_title">
+    <h2><a href="${base}/program/exhibition!view.action">会展、展览</a></h2>
+    </div>
+    
+  </li>
+  <li>
+  	<div class="menu_title">
+    <h2><a href="${base}/program/countryside!view.action">乡村游</a></h2>
+    </div>
+    
+  </li>
 </ul>
   </div>
-  <div id="main_right">
+  
+  
+    <div id="main_right">
+    
+    
   	<div class="right_title">
-    	<h3>>>公司介绍 О нас</h3>
+    	<h3>>>${view.title}</h3>
     </div>
+    
     <div class="right_content">
-     <img class="content_img" src="images/aboutleyou.png" />
-     <p class="content_p">在亚洲的东部有个古老的中国，在中国的东北海边有个浪漫的城市-大连，那里有舒缓的沙滩，迷人的风景，孩子欢乐的天堂，神奇的中医理疗，温泉，鲜为人知的旅顺军港，热情好客的大连人，专业的“乐游”旅行社的服务。。。。美丽的大连欢迎您！其中上面划蓝色的，是可以点击的，点击后分别是相关的内容，而且都在左侧出现一个目录框，里面是这个词所在目录的所有分项，比如点击中医理疗
-	 在亚洲的东部有个古老的中国，在中国的东北海边有个浪漫的城市-大连，那里有舒缓的沙滩，迷人的风景，孩子欢乐的天堂，神奇的中医理疗，温泉，鲜为人知的旅顺军港，热情好客的大连人，专业的“乐游”旅行社的服务。。。。美丽的大连欢迎您！其中上面划蓝色的，是可以点击的，点击后分别是相关的内容，而且都在左侧出现一个目录框，里面是这个词所在目录的所有分项，比如点击中医理疗
-	     在亚洲的东部有个古老的中国，在中国的东北海边有个浪漫的城市-大连，那里有舒缓的沙滩，迷人的风景，孩子欢乐的天堂，神奇的中医理疗，温泉，鲜为人知的旅顺军港，热情好客的大连人，专业的“乐游”旅行社的服务。。。。美丽的大连欢迎您！其中上面划蓝色的，是可以点击的，点击后分别是相关的内容，而且都在左侧出现一个目录框，里面是这个词所在目录的所有分项，比如点击中医理疗</p>
-    </div>
+    
+     <p class="content_p">${view.content}</p>
+     
+     
+    </div> 
+    
   </div>
-</div>
+
 <div id="links">
  <div id="link_left"></div>
  <div id="link_right">
