@@ -71,17 +71,13 @@ public class TeamAction extends FrameworkAction {
 
 	@Override
 	public String view() {
-		super.setMapKeyName(CommonConstants.KEY_TEAM_INFO);
-
+		super.setMapKeyName(CommonConstants.VIEW);
 		try {
-			super.setInfoMap(this.getServiceManager().getAboutService()
-					.getTeamInfo());
+			super.setInfoMap(this.getServiceManager().getAboutService().getTeamInfo());
 		} catch (Exception e) {
-			// 如果在数据库中没有找到信息，那么给出提示；
-			this.setAlertMessage(AlertMessage.TEAMINFO_EMPTY);
-			return super.admin();
-		}
-
+			e.printStackTrace();
+			return super.view();
+		}	
 		return super.view();
 	}
 

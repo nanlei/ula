@@ -85,6 +85,13 @@ super.debug(e.getMessage());
 
 	@Override
 	public String view() {
+		super.setMapKeyName(CommonConstants.VIEW);
+		try {
+			super.setInfoMap(this.getServiceManager().getCityServcie().getInfo(CommonConstants.ID_CITY_HISTORY));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return super.view();
+		}	
 		return super.view();
 	}
 

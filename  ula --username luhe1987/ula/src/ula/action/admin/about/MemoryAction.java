@@ -63,16 +63,13 @@ public class MemoryAction extends FrameworkAction{
 
 		@Override
 		public String view() {
-			super.setMapKeyName(CommonConstants.KEY_MEMORY_INFO);
-			
+			super.setMapKeyName(CommonConstants.VIEW);
 			try {
 				super.setInfoMap(this.getServiceManager().getAboutService().getMemoryInfo());
 			} catch (Exception e) {
-//				如果在数据库中没有找到信息，那么给出提示；
-				this.setAlertMessage(AlertMessage.MEMORY_EMPTY);
-				return super.admin();
+				e.printStackTrace();
+				return super.view();
 			}	
-			
 			return super.view();
 		}
 

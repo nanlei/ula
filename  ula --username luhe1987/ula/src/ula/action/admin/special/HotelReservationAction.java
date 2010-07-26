@@ -7,5 +7,8 @@ import ula.action.CommonAction;
  *
  */
 public class HotelReservationAction extends CommonAction {
-	
+	public String view(){
+		super.view();
+		return "view";
+	}
 }

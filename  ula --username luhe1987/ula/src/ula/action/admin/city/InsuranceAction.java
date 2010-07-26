@@ -54,4 +54,18 @@ public class InsuranceAction extends FrameworkAction {
 			return 0;
 		}
 	}
+
+	@Override
+	public String view() {
+		super.setMapKeyName(CommonConstants.VIEW);
+		try {
+			super.setInfoMap(this.getServiceManager().getCityServcie().getInfo(CommonConstants.ID_CITY_INSURANCE));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return super.view();
+		}	
+		return super.view();
+	}
+	
+	
 }

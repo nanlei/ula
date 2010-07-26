@@ -70,16 +70,13 @@ public class CompanyAction extends FrameworkAction{
 
 		@Override
 		public String view() {
-			super.setMapKeyName(CommonConstants.KEY_COMPANY_INFO);
-
+			super.setMapKeyName(CommonConstants.VIEW);
 			try {
 				super.setInfoMap(this.getServiceManager().getAboutService().getCompanyInfo());
 			} catch (Exception e) {
-//				如果在数据库中没有找到信息，那么给出提示；
-				this.setAlertMessage(AlertMessage.COMPANYINFO_EMPTY);
-				return super.admin();
+				e.printStackTrace();
+				return super.view();
 			}	
-			
 			return super.view();
 		}
 
