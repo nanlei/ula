@@ -7,7 +7,8 @@
 <script type="text/javascript" src="${base}/js/menu.js"></script>
 </head>
 <body>
-<div id="header">
+<#include "../../global/header.html">
+
   <div id="header_left"> </div>
   <div id="header_right"> </div>
 </div>

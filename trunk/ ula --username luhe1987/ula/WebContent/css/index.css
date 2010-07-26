@@ -222,7 +222,7 @@ img, form {
 	height:28px;
 	margin-left:auto;
 	margin-right:auto;
-	font-family:"微软雅黑";
+	font-family:"微软雅黑",Georgia, "Times New Roman", Times, serif;
 	font-size:15px;
 	text-decoration:none;
 	cursor:pointer;
@@ -286,10 +286,10 @@ img, form {
 	background:none repeat scroll 0 0 #F4F4F4;
 	border:1px solid #DDDBDB;
 	float:left;
-	height:30px;
+	height:34px;
 	width:252px;
 	margin-right:5px;
-	padding-top:12px;
+	padding-top:10px;
 }
 #contact{
 	width:276px;
@@ -412,13 +412,12 @@ img, form {
 	height:30px;
 	border:1px solid #dfdddd;
 	background:#f4f4f4;
-	position:relative;
 	margin-left:auto;
 	margin-right:auto;
-	margin-top:5px;
 	clear:both;
 }
 #link_left{
+	
 	width:104px;
 	height:31px;
 	background:url(/ula/icon/link_left.png);
@@ -438,7 +437,8 @@ img, form {
 }
 #link_ul li{
 	float:left;
-	margin-right:10px;
+
+	margin-right:20px;
 	overflow:hidden;
 }
 #link_ul li a{
