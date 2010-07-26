@@ -58,4 +58,18 @@ public class PracticalAdviceAction extends FrameworkAction {
 		}
 	}
 
+	@Override
+	public String view() {
+		super.setMapKeyName(CommonConstants.VIEW);
+		try {
+			super.setInfoMap(this.getServiceManager().getCityServcie().getInfo(CommonConstants.ID_CITY_ADVICE));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return super.view();
+		}	
+		return super.view();
+	}
+	
+	
+
 }

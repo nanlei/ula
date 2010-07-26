@@ -116,7 +116,9 @@ public interface CommonConstants {
 	String KEY_CITY_CELLPHONE = "cellphone";
 	String KEY_CITY_ADVICE = "advice";
 
-
+	String LINK = "link";
+	String RECOMMENDATION = "recommendation";
+	String VIEW = "view";
 	
 
 	/* 记录用户登录前想要访问的地址在Session中的Key */

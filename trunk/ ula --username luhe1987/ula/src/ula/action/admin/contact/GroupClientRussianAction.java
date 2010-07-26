@@ -88,7 +88,13 @@ public class GroupClientRussianAction extends FrameworkAction {
 
 	@Override
 	public String view() {
-		super.setMapKeyName(CommonConstants.KEY_CONTACT_GROUP_RU);
+		super.setMapKeyName(CommonConstants.VIEW);
+		try {
+			super.setInfoMap(this.getServiceManager().getContactService().getInfo(CommonConstants.ID_CONTACT_GROUP_RU));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return super.view();
+		}	
 		return super.view();
 	}
 

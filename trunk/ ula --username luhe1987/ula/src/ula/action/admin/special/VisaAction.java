@@ -77,6 +77,13 @@ public class VisaAction extends FrameworkAction{
 
 	@Override
 	public String view() {
+		super.setMapKeyName(CommonConstants.VIEW);
+		try {
+			super.setInfoMap(this.getServiceManager().getSpecialService().getInfo(CommonConstants.ID_SPECIAL_VISA));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return super.view();
+		}	
 		return super.view();
 	}
 	

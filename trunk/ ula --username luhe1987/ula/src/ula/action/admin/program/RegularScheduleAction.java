@@ -77,6 +77,13 @@ public class RegularScheduleAction extends FrameworkAction {
 
 	@Override
 	public String view() {
+		super.setMapKeyName(CommonConstants.VIEW);
+		try {
+			super.setInfoMap(this.getServiceManager().getProgramService().getInfo(CommonConstants.ID_PROGRAM_REGULAR_SCHEDULE));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return super.view();
+		}	
 		return super.view();
 	}
 }

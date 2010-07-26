@@ -182,12 +182,20 @@ public class FrameworkAction extends CommonAction {
 	}
 	
 	/**
-	 * 业务介绍查看
+	 * 信息查询页面。用于连接前端页面。
+	 * 
+	 * note: 放入session的变量 
+	 * 1. 每月推荐
+	 * 2.Links
 	 * 
 	 * @return
 	 */
 	public String view() {
 		
+//		获取页面常量
+		super.view();
+	
+//		处理框架逻辑
 		if(StringUtil.isEmpty(this.mapKeyName)){
 			super.debug(DebugConstants.DEBUG_MESSAGE_setMapKeyName);
 			return ERROR;

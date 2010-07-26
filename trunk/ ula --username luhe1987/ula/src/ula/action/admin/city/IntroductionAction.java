@@ -80,6 +80,13 @@ public class IntroductionAction extends FrameworkAction {
 
 	@Override
 	public String view() {
+		super.setMapKeyName(CommonConstants.VIEW);
+		try {
+			super.setInfoMap(this.getServiceManager().getCityServcie().getInfo(CommonConstants.ID_CITY_INTRODUCTION));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return super.view();
+		}	
 		return super.view();
 	}
 	

@@ -11,7 +11,6 @@ import ula.constant.CommonConstants;
  * 
  */
 public class IndividualClientAction extends FrameworkAction {
-
 	@Override
 	public String add() {
 		return super.add();
@@ -85,6 +84,13 @@ public class IndividualClientAction extends FrameworkAction {
 
 	@Override
 	public String view() {
+		super.setMapKeyName(CommonConstants.VIEW);
+		try {
+			super.setInfoMap(this.getServiceManager().getContactService().getInfo(CommonConstants.ID_CONTACT_INDIVIDUAL));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return super.view();
+		}	
 		return super.view();
 	}
 
