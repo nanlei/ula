@@ -112,11 +112,11 @@
   
   <div id="main_right">
   	<div class="right_title">
-    	<h3>>>${view.title}</h3>
+    	<h3>>>${view.TITLE}</h3>
     </div>
     
    <div class="right_content">
-     <p class="content_p"><#if view.content?exists>${view.content}</#if></p>     
+     <p class="content_p"><#if view.CONTENT?exists>${view.CONTENT}</#if></p>     
    </div>
   
 </div>
