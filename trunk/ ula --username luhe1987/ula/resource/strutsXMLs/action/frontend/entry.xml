@@ -6,9 +6,9 @@
 <struts>
 
 	<package name="/" extends="global" namespace="/">
-	<action name="entry" class = "ula.action.CommonAction" method ="view">
-	<result>/index.ftl</result>
-	</action>
+		<action name="entry" class="ula.action.CommonAction" method="view">
+			<result>/index.ftl</result>
+		</action>
 	</package>
 
 </struts>

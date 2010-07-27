@@ -129,7 +129,7 @@
      <p class="content_p">
      	<#if articleList?has_content>
      		<#list articleList.list as al>
-     			<a href="${base}/city/article.action?id=${al.ID}">${al.TITLE}</a>
+     			<img src="${base}${al.COVERLINK}" width="160" height="120"/><a href="${base}/city/article.action?id=${al.ID}">${al.TITLE}</a>
      		</#list>
      	<#else>
      		尚未添加内容
