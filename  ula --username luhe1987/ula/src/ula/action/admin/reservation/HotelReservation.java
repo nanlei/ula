@@ -258,6 +258,14 @@ public class HotelReservation extends CommonAction {
 	}
 		return this.admin();
 	}
+	
+	
+	@Override
+	public String view() {
+		super.view();
+		return "view";
+	}
+
 	@Override
 	public String toString() {
 		return "HotelReservation [checkinDate=" + checkinDate
