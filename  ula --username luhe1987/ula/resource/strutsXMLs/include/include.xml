@@ -30,6 +30,7 @@
 	<include file="strutsXMLs/action/frontend/payment.xml"></include>
 	<include file="strutsXMLs/action/frontend/contact.xml"></include>
 	<include file="strutsXMLs/action/frontend/entry.xml"></include>
+<!--	<include file="strutsXMLs/action/frontend/reservation.xml"></include>-->
 	
 </struts>
 
