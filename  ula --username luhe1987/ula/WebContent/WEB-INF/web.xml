@@ -27,6 +27,16 @@
 		<param-value>classpath:springXMLs/*.xml</param-value>
 	</context-param>
 
+	<filter>
+		<filter-name>loginFilter</filter-name>
+		<filter-class>ula.common.LoginFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>loginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
 	<!--Core Filters List starts 核心过滤器列表       开始 -->
 
 	<!-- Struts2 filter -->

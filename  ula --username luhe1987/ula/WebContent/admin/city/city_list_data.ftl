@@ -3,11 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>乐游旅游</title>
-<link href="/ula/css/about.css" rel="stylesheet" type="text/css" />
+<link href="${base}/css/about.css" rel="stylesheet" type="text/css" />
 <!--<script type="text/javascript" src="${base}/js/jquery-1.4.1.min.js"></script>
 <script type="text/javascript" src="${base}/js/jquery.jcarousel.pack.js"></script>
 <script type="text/javascript" src="${base}/js/jquery-func.js"></script>-->
-<script type="text/javascript" src="/ula/js/menu.js"></script>
+<script type="text/javascript" src="${base}/js/menu.js"></script>
 </head>
 <script language=javascript>  
   function my_height(){
@@ -50,50 +50,50 @@
     <h2>景点、公园</h2>
     </div>
     <div class="content">
-    	<div class="content_item"><a href="#">市内</a></div>
-        <div class="content_item"><a href="#">旅顺</a></div>
-        <div class="content_item"><a href="#">开发区、金石滩</a></div>
+    	<div class="content_item"><a href="${base}/city/tour!view.action?at=dalian">市内</a></div>
+        <div class="content_item"><a href="${base}/city/tour!view.action?at=lvshun">旅顺</a></div>
+        <div class="content_item"><a href="${base}/city/tour!view.action?at=devzone">开发区、金石滩</a></div>
     </div>
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="#">大连美食</a></h2>
-    </div>
-    
-  </li>
-  <li>
-  	<div class="menu_title">
-    <h2><a href="#">大连居住</a></h2>
+    <h2><a href="${base}/city/food!view.action">大连美食</a></h2>
     </div>
     
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="#">大连购物</a></h2>
+    <h2><a href="${base}/city/housing!view.action">大连居住</a></h2>
     </div>
     
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="#">大连交通</a></h2>
+    <h2><a href="${base}/city/shopping!view.action">大连购物</a></h2>
     </div>
     
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="#">大连治疗</a></h2>
+    <h2><a href="${base}/city/transportation!view.action">大连交通</a></h2>
     </div>
     
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="#">大连节日</a></h2>
+    <h2><a href="${base}/city/therapy!view.action">大连治疗</a></h2>
     </div>
     
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="#">展会信息</a></h2>
+    <h2><a href="${base}/city/festival!view.action">大连节日</a></h2>
+    </div>
+    
+  </li>
+  <li>
+  	<div class="menu_title">
+    <h2><a href="${base}/city/exhibition!view.action">展会信息</a></h2>
     </div>
   </li>
   <li>
@@ -112,12 +112,31 @@
   
   <div id="main_right">
   	<div class="right_title">
-    	<h3>>>${view.title}</h3>
+    	<h3><#if at="dalian">景点，公园>>市内
+    		<#elseif at="lvshun">景点，公园>>旅顺
+    		<#elseif at="devzone">景点，公园>>开发区、金石滩
+    		<#elseif at="food">大连美食
+    		<#elseif at="housing">大连居住
+    		<#elseif at="shopping">大连购物
+    		<#elseif at="transportation">大连交通
+    		<#elseif at="therapy">大连治疗
+    		<#elseif at="festival">大连节日
+    		<#elseif at="exhibition">展会信息
+    		<#else></#if></h3>
     </div>
     
    <div class="right_content">
-     <p class="content_p"><#if view.content?exists>${view.content}</#if></p>     
+     <p class="content_p">
+     	<#if articleList?has_content>
+     		<#list articleList.list as al>
+     			<a href="${base}/city/article.action?id=${al.ID}">${al.TITLE}</a>
+     		</#list>
+     	<#else>
+     		尚未添加内容
+     	</#if>
+     </p>
    </div>
+    <div align="right"><@p.paging articleList/></div>
   
 </div>
 
