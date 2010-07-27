@@ -16,6 +16,8 @@ public class ShoppingAction extends CommonAction {
 	private PagingList shoppingList;
 	private Map shoppingInfo;
 	private String articleId;
+	private String at;
+	private PagingList articleList;
 
 	public PagingList getShoppingList() {
 		return shoppingList;
@@ -27,6 +29,18 @@ public class ShoppingAction extends CommonAction {
 
 	public void setArticleId(String articleId) {
 		this.articleId = articleId;
+	}
+
+	public String getAt() {
+		return at;
+	}
+
+	public void setAt(String at) {
+		this.at = at;
+	}
+
+	public PagingList getArticleList() {
+		return articleList;
 	}
 
 	/**
@@ -98,5 +112,13 @@ public class ShoppingAction extends CommonAction {
 		} catch (Exception e) {
 			return ERROR;
 		}
+	}
+
+	public String view() {
+		super.view();
+		this.setAt("shopping");
+		articleList = getServiceManager().getArticleService()
+				.getShoppingArticles();
+		return "view";
 	}
 }

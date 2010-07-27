@@ -16,6 +16,8 @@ public class TransportationAction extends CommonAction {
 	private PagingList transportationList;
 	private Map transportationInfo;
 	private String articleId;
+	private String at;
+	private PagingList articleList;
 
 	public PagingList getTransportationList() {
 		return transportationList;
@@ -27,6 +29,18 @@ public class TransportationAction extends CommonAction {
 
 	public void setArticleId(String articleId) {
 		this.articleId = articleId;
+	}
+
+	public String getAt() {
+		return at;
+	}
+
+	public void setAt(String at) {
+		this.at = at;
+	}
+
+	public PagingList getArticleList() {
+		return articleList;
 	}
 
 	/**
@@ -99,5 +113,13 @@ public class TransportationAction extends CommonAction {
 		} catch (Exception e) {
 			return ERROR;
 		}
+	}
+
+	public String view() {
+		super.view();
+		this.setAt("transportation");
+		articleList = getServiceManager().getArticleService()
+				.getTransportationArticles();
+		return "view";
 	}
 }

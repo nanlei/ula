@@ -16,6 +16,8 @@ public class ExhibitionAction extends CommonAction {
 	private PagingList exhibitionList;
 	private Map exhibitionInfo;
 	private String articleId;
+	private String at;
+	private PagingList articleList;
 
 	public PagingList getExhibitionList() {
 		return exhibitionList;
@@ -27,6 +29,18 @@ public class ExhibitionAction extends CommonAction {
 
 	public void setArticleId(String articleId) {
 		this.articleId = articleId;
+	}
+
+	public String getAt() {
+		return at;
+	}
+
+	public void setAt(String at) {
+		this.at = at;
+	}
+
+	public PagingList getArticleList() {
+		return articleList;
 	}
 
 	/**
@@ -97,6 +111,14 @@ public class ExhibitionAction extends CommonAction {
 		} catch (Exception e) {
 			return ERROR;
 		}
+	}
+
+	public String view() {
+		super.view();
+		this.setAt("exhibition");
+		articleList = getServiceManager().getArticleService()
+				.getExhibitionArticles();
+		return "view";
 	}
 
 }

@@ -16,6 +16,8 @@ public class FoodAction extends CommonAction {
 	private PagingList foodList;
 	private String articleId;
 	private Map foodInfo;
+	private String at;
+	private PagingList articleList;
 
 	public PagingList getFoodList() {
 		return foodList;
@@ -27,6 +29,18 @@ public class FoodAction extends CommonAction {
 
 	public Map getFoodInfo() {
 		return foodInfo;
+	}
+
+	public PagingList getArticleList() {
+		return articleList;
+	}
+
+	public String getAt() {
+		return at;
+	}
+
+	public void setAt(String at) {
+		this.at = at;
 	}
 
 	/**
@@ -97,5 +111,12 @@ public class FoodAction extends CommonAction {
 		} catch (Exception e) {
 			return ERROR;
 		}
+	}
+
+	public String view() {
+		super.view();
+		this.setAt("food");
+		articleList = getServiceManager().getArticleService().getFoodArticles();
+		return "view";
 	}
 }
