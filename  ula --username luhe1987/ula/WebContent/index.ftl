@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="/ula/css/index.css" rel="stylesheet" type="text/css" />
+<link href="${base}/css/index.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <#include "/global/header.html">
