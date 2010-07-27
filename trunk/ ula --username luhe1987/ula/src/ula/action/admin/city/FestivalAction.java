@@ -16,6 +16,8 @@ public class FestivalAction extends CommonAction {
 	private PagingList festivalList;
 	private Map festivalInfo;
 	private String articleId;
+	private String at;
+	private PagingList articleList;
 
 	public PagingList getFestivalList() {
 		return festivalList;
@@ -27,6 +29,18 @@ public class FestivalAction extends CommonAction {
 
 	public void setArticleId(String articleId) {
 		this.articleId = articleId;
+	}
+
+	public String getAt() {
+		return at;
+	}
+
+	public void setAt(String at) {
+		this.at = at;
+	}
+
+	public PagingList getArticleList() {
+		return articleList;
 	}
 
 	/**
@@ -97,5 +111,13 @@ public class FestivalAction extends CommonAction {
 		} catch (Exception e) {
 			return ERROR;
 		}
+	}
+
+	public String view() {
+		super.view();
+		this.setAt("festival");
+		articleList = getServiceManager().getArticleService()
+				.getFestivalArticles();
+		return "view";
 	}
 }

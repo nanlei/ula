@@ -13,6 +13,8 @@ public class TherapyAction extends CommonAction {
 	private PagingList therapyList;
 	private Map therapyInfo;
 	private String articleId;
+	private String at;
+	private PagingList articleList;
 
 	public PagingList getTherapyList() {
 		return therapyList;
@@ -24,6 +26,18 @@ public class TherapyAction extends CommonAction {
 
 	public void setArticleId(String articleId) {
 		this.articleId = articleId;
+	}
+
+	public String getAt() {
+		return at;
+	}
+
+	public void setAt(String at) {
+		this.at = at;
+	}
+
+	public PagingList getArticleList() {
+		return articleList;
 	}
 
 	/**
@@ -95,5 +109,13 @@ public class TherapyAction extends CommonAction {
 		} catch (Exception e) {
 			return ERROR;
 		}
+	}
+
+	public String view() {
+		super.view();
+		this.setAt("therapy");
+		articleList = getServiceManager().getArticleService()
+				.getTherapyArticles();
+		return "view";
 	}
 }

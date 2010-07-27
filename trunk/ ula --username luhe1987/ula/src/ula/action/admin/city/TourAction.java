@@ -2,6 +2,8 @@ package ula.action.admin.city;
 
 import java.util.Map;
 
+import org.apache.struts2.ServletActionContext;
+
 import ula.action.CommonAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
@@ -18,6 +20,7 @@ public class TourAction extends CommonAction {
 	private PagingList pictureList;
 	private Map articleInfo;
 	private String articleId;
+	private String at;
 
 	public String getArticleType() {
 		return articleType;
@@ -41,6 +44,14 @@ public class TourAction extends CommonAction {
 
 	public void setArticleId(String articleId) {
 		this.articleId = articleId;
+	}
+
+	public String getAt() {
+		return at;
+	}
+
+	public void setAt(String at) {
+		this.at = at;
 	}
 
 	/**
@@ -133,5 +144,12 @@ public class TourAction extends CommonAction {
 		} catch (Exception e) {
 			return ERROR;
 		}
+	}
+
+	public String view() {
+		super.view();
+		articleList = getServiceManager().getArticleService()
+				.getToursByType(at);
+		return "view";
 	}
 }

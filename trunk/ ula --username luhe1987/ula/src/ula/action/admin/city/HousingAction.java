@@ -16,6 +16,8 @@ public class HousingAction extends CommonAction {
 	private PagingList housingList;
 	private Map housingInfo;
 	private String articleId;
+	private String at;
+	private PagingList articleList;
 
 	public PagingList getHousingList() {
 		return housingList;
@@ -27,6 +29,18 @@ public class HousingAction extends CommonAction {
 
 	public void setArticleId(String articleId) {
 		this.articleId = articleId;
+	}
+
+	public String getAt() {
+		return at;
+	}
+
+	public void setAt(String at) {
+		this.at = at;
+	}
+
+	public PagingList getArticleList() {
+		return articleList;
 	}
 
 	/**
@@ -99,6 +113,14 @@ public class HousingAction extends CommonAction {
 		} catch (Exception e) {
 			return ERROR;
 		}
+	}
+
+	public String view() {
+		super.view();
+		this.setAt("housing");
+		articleList = getServiceManager().getArticleService()
+				.getHousingArticles();
+		return "view";
 	}
 
 }
