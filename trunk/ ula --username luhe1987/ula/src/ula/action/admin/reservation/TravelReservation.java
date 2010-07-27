@@ -201,6 +201,13 @@ public class TravelReservation extends CommonAction {
 		return this.admin();
 	}
 	
+	
+	@Override
+	public String view() {
+		super.view();
+		return "view";
+	}
+	
 	@Override
 	public String toString() {
 		return "TravelReservation [contactEmail=" + contactEmail
