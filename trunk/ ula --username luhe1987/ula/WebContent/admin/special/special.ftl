@@ -10,10 +10,12 @@
 <script type="text/javascript" src="${base}/js/menu.js"></script>
 </head>
 <script language=javascript>  
- function my_height(){
+  function my_height(){
 	var my_right = document.getElementById("main_right");
 	var my_left = document.getElementById("left_menu");
+	if(my_left.clientHeight <= my_right.clientHeight){
 	my_left.style.height= my_right.clientHeight + "px";
+	}
 }   
 </script>  
 
@@ -33,7 +35,7 @@
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="${base}/reservation/hotel_reservation.html">宾馆预订</a></h2>
+    <h2><a href="${base}/reservation/hotel_reservation.ftl">宾馆预订</a></h2>
     </div>
     <div class="content" style="height:1px;"></div>
   </li>

@@ -4,14 +4,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>乐游旅游</title>
-<link href="${base}/css/about.css" rel="stylesheet" type="text/css" />
-<link href="${base}/css/index.css" rel="stylesheet" type="text/css" />
+<link href="/ula/css/about.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/ula/js/menu.js"></script>
 
 <script language=javascript>  
  function my_height(){
 	var my_right = document.getElementById("main_right");
 	var my_left = document.getElementById("left_menu");
+	if(my_left.clientHeight <= my_right.clientHeight){
 	my_left.style.height= my_right.clientHeight + "px";
+	}
 }   
 </script>  
 
@@ -55,7 +57,7 @@
     	<h3>>>${view.title}</h3>
     </div>
     <div class="right_content">
-     <p class="content_p"><#if view.content?exists>${view.content}</#if>${recommendation} </p>
+     <p class="content_p"><#if view.content?exists>${view.content}</#if> </p>
     </div>
     
   </div>
