@@ -14,6 +14,18 @@
 			<result name="none">/global/nullPage.jsp</result>
 		</global-results>
 	</package>
+
+	<package name="adminLogin" extends="ula-default" namespace="/">
+		<action name="loginAdmin" class="ula.action.admin.UserAction"
+			method="loginAdmin">
+			<result name="loginAdmin" type="redirect">/admin/admin.action</result>
+		</action>
+		<action name="logout" class="ula.action.admin.UserAction"
+			method="logout">
+			<result name="logout"  type="redirect">/entry.action</result>
+		</action>
+	</package>
+
 	<!-- 系统管理入口 -->
 	<package name="admin_index" extends="global" namespace="/admin">
 		<action name="admin" class="ula.action.BaseAction">
@@ -32,7 +44,7 @@
 			<result>tree.ftl</result>
 		</action>
 	</package>
-	
+
 	<!-- 用户管理入口 -->
 	<package name="user_index" extends="global" namespace="/user">
 		<action name="admin" class="ula.action.BaseAction">
@@ -42,7 +54,7 @@
 			<result>tree.ftl</result>
 		</action>
 	</package>
-	
+
 	<!-- 订单管理入口 -->
 	<package name="reservation_index" extends="global" namespace="/reservation">
 		<action name="admin" class="ula.action.BaseAction">
@@ -52,7 +64,7 @@
 			<result>tree.ftl</result>
 		</action>
 	</package>
-	
+
 	<!-- 用户反馈管理入口 -->
 	<package name="feedback_index" extends="global" namespace="/feedback">
 		<action name="admin" class="ula.action.BaseAction">
@@ -62,6 +74,6 @@
 			<result>tree.ftl</result>
 		</action>
 	</package>
-	
+
 </struts>
 

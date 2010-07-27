@@ -2,14 +2,19 @@ package ula.action.admin;
 
 import java.util.Map;
 
+import org.apache.struts2.ServletActionContext;
+
 import ula.action.FrameworkAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
+import ula.constant.CommonConstants;
 
 public class UserAction extends FrameworkAction {
 	private PagingList userList;
 	private Map userInfo;
 	private String userId;
+	private String userName;
+	private String password;
 
 	public PagingList getUserList() {
 		return userList;
@@ -21,6 +26,33 @@ public class UserAction extends FrameworkAction {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String loginAdmin() {
+		Map dbUser = getServiceManager().getUserService().getUserByUserName(
+				userName);
+		if (dbUser != null && password.equals(dbUser.get("PASSWORD"))) {
+			ServletActionContext.getRequest().getSession().invalidate();
+			ServletActionContext.getRequest().getSession().setAttribute(
+					CommonConstants.LOGIN_USER, dbUser);
+			return "loginAdmin";
+		} else {
+			return LOGIN;
+		}
+	}
+
+	public String logout() {
+		ServletActionContext.getRequest().getSession().removeAttribute(
+				CommonConstants.LOGIN_USER);
+		return "logout";
 	}
 
 	/**
