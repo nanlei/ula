@@ -59,11 +59,11 @@ A.u:link {
 <table border=0 cellpadding=2 cellspacing=0 width=100%>
 	<tr>
 		<td rowspan=3 width=1% nowrap><b><font face=times
-			color=#0039b6 size=10>E</font><font face=times color=#c41200 size=10>d</font><font
-			face=times color=#f3c518 size=10>u</font><font face=times
-			color=#0039b6 size=10>N</font><font face=times color=#30a72f size=10>o</font><font
-			face=times color=#c41200 size=10>t</font><font face=times
-			color=#f3c518 size=10>e</font><font face=times color=#0039b6 size=10>s</font>&nbsp;&nbsp;</b>
+			color=#0039b6 size=10>J</font><font face=times color=#c41200 size=10>o</font><font
+			face=times color=#f3c518 size=10>y</font><font face=times
+			color=#0039b6 size=10>T</font><font face=times color=#30a72f size=10>o</font><font
+			face=times color=#c41200 size=10>u</font><font face=times
+			color=#f3c518 size=10>r</font></b>
 		</td>
 		<td>&nbsp;</td>
 	</tr>

@@ -13,8 +13,10 @@
  function my_height(){
 	var my_right = document.getElementById("main_right");
 	var my_left = document.getElementById("left_menu");
+	if(my_left.clientHeight <= my_right.clientHeight){
 	my_left.style.height= my_right.clientHeight + "px";
-}   
+	}
+}    
 </script>  
 </head>
 <body onload= "my_height()">
