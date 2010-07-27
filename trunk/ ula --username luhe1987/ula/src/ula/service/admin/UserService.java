@@ -2,11 +2,24 @@ package ula.service.admin;
 
 import java.util.Map;
 
+import org.springframework.dao.EmptyResultDataAccessException;
+
 import ula.common.PagingList;
 import ula.service.BaseService;
 import ula.util.MapUtil;
 
 public class UserService extends BaseService {
+	private static final String SQL_GET_USER_BY_NAME = "select * from user where USERNAME=?";
+
+	public Map getUserByUserName(String userName) {
+		try {
+			return DB.queryForMap(SQL_GET_USER_BY_NAME,
+					new Object[] { userName });
+		} catch (EmptyResultDataAccessException e) {// 如果用户不存在，则要抛出该异常
+			return null;
+		}
+	}
+
 	private static final String SQL_GET_ALL_USERS = "select * from user";
 
 	public PagingList getAllUser() {

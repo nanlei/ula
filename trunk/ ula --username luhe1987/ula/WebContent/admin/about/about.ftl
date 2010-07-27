@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>乐游旅游</title>
 <link href="${base}/css/about.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/ula/js/menu.js"></script>
+<script type="text/javascript" src="${base}/js/menu.js"></script>
 
 <script language=javascript>  
  function my_height(){
