@@ -25,17 +25,23 @@
 <#include "../../global/header.html">
 
 <div id="main">
- <div id="left_menu">
+  <div id="left_menu">
   <ul class="rolinList" id="rolin">
   <li>
   	<div class="menu_title">
-    <h2><a href="${base}/special/visa!view.action">签证</a></h2>
+    <h2><a href="/ula/special/visa!view.action">签证</a></h2>
     </div>
     <div class="content" style="height:1px;"></div>
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="${base}/reservation/hotel_reservation.ftl">宾馆预订</a></h2>
+    <h2><a href="/ula/reservation/hotelReserv!view.action">宾馆预订</a></h2>
+    </div>
+    <div class="content" style="height:1px;"></div>
+  </li>
+  <li>
+  	<div class="menu_title">
+    <h2><a href="/ula/reservation/travelReserv!view.action">旅游路线预订</a></h2>
     </div>
     <div class="content" style="height:1px;"></div>
   </li>
@@ -44,15 +50,15 @@
     <h2>委托</h2>
     </div>
     <div class="content">
-    	<div class="content_item"><a href="${base}/special/ticket!view.action">代订车、船票</a></div>
-        <div class="content_item"><a href="${base}/special/carrental!view.action">租车服务</a></div>
-        <div class="content_item"><a href="${base}/special/translation!view.action">翻译服务</a></div>
-        <div class="content_item"><a href="${base}/special/souvenir!view.action">代邮寄纪念品</a></div>
+    	<div class="content_item"><a href="/ula/special/ticket!view.action">代订车、船票</a></div>
+        <div class="content_item"><a href="/ula/special/carrental!view.action">租车服务</a></div>
+        <div class="content_item"><a href="/ula/special/translation!view.action">翻译服务</a></div>
+        <div class="content_item"><a href="/ula/special/souvenir!view.action">代邮寄纪念品</a></div>
     </div>
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="${base}/special/russianstudents!view.action">俄罗斯留学生</a></h2>
+    <h2><a href="/ula/special/russianstudents!view.action">俄罗斯留学生</a></h2>
     </div>
     <div class="content" style="height:1px;"></div>
   </li>
