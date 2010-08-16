@@ -16,7 +16,7 @@
 	<div class="slide-info"><iframe
 		src="http://m.weather.com.cn/m/pn10/weather.htm?id=101070201T "
 		width="260" height="100" marginwidth="0" marginheight="0" hspace="0"
-		vspace="0" frameborder="0" scrolling="no"></iframe>
+		vspace="0" frameborder="0" scrolling="no" allowTransparency="true" ></iframe>
 
 	<p>
 	在亚洲的东部有个古老的中国，在中国的东北海边有个浪漫的城市-大连，那里有舒缓的沙滩，迷人的风景，孩子欢乐的天堂，神奇的中医理疗，温泉，鲜为人知的旅顺军港，热情好客的大连人，专业的“乐游”旅行社的服务……美丽的大连欢迎您！</p>
