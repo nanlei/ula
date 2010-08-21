@@ -72,7 +72,7 @@
     
     
   	<div class="right_title">
-    	<h3>>>宾馆预订</h3>
+    	<h3>>>旅游线路预订</h3>
     </div>
     
     <div class="right_content">
