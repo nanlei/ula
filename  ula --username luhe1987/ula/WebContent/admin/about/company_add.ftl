@@ -10,12 +10,10 @@
 <table class="default" width="100%">
 	<tr>
 		<td align="center">标题</td>
-		<td>标题</td>
-		<td><input type="text" name="title" id="title" size = "100"
+		<td><input type="text" name="title" id="title"
 		size="50"></input></td>
 	</tr>
 	<tr>
-		
 		<td colspan ="2"><textarea  id="content" name="content"
 	rows="10"></textarea><@p.ckeditor id="content"/></td>
 	</tr>
@@ -24,6 +22,7 @@
 	</tr>
 </table>
 
+
 </form>
 
-</@page>
+</@p.page>

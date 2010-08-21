@@ -1,7 +1,7 @@
 <@p.page>
-<#if alertMessage?exists>
-${alertMessage}
-</#if>
+
+<#if alertMessage?exists><p align="center">${alertMessage}</p></#if>
+ 
  <div class="add"><a href="link!preAdd.action"><img
 			src="${base}/icon/add.jpg" border="0"
 			height="30px" width="30px" />添加</a>

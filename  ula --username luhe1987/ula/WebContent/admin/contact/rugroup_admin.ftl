@@ -28,7 +28,7 @@
 			src="${base}/icon/add.jpg" border="0"
 			height="30px" width="30px" />添加</a>
 </div>
-<#if alertMessage?exists>${alertMessage}</#if>
+
 </#if>  
 
 </@p.page>

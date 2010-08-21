@@ -6,7 +6,7 @@ var treeMenu = [
 	{ level:2, name:"公司介绍", link:"about/company!admin.action"},
 	{ level:2, name:"业务范围", link:"about/biz!admin.action"},
 	{ level:2, name:"美好回忆", link:"about/memory!admin.action"},
-	{ level:2, name:"团队介绍", link:"about/team!admin.action"},
+	{ level:2, name:"人员介绍", link:"about/team!admin.action"},
 	
 	{ level:1, name:"关于大连"},
 	{ level:2, name:"大连介绍", link:"city/intro!admin.action"},
@@ -40,7 +40,6 @@ var treeMenu = [
 	
 	{ level:1, name:"特色服务"},
 	{ level:2, name:"签证", link:"special/visa!admin.action"},
-	{ level:2, name:"酒店预订", link:"manage/info/dbInfo.action"},
 	{ level:2, name:"各项委托"},
 	{ level:3, name:"代订车、船票", link:"special/ticket!admin.action"},
 	{ level:3, name:"租车服务", link:"special/carrental!admin.action"},
@@ -57,8 +56,6 @@ var treeMenu = [
 	{ level:3, name:"中国客户", link:"contact/cngroup!admin.action"},
 	{ level:2, name:"游客入口", link:"contact/person!admin.action"},
 	
-	{ level:1, name:"其它信息"},
-	{ level:2, name:"其它信息", link:"payment/payment!admin.action"},
 	
 	{ level:1, name:"友情链接"},
 	{ level:2, name:"友情链接", link:"link/link!admin.action"}
