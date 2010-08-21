@@ -75,7 +75,6 @@ public class CompanyAction extends FrameworkAction{
 				super.setInfoMap(this.getServiceManager().getAboutService().getCompanyInfo());
 			} catch (Exception e) {
 				e.printStackTrace();
-				return super.view();
 			}	
 			return super.view();
 		}
@@ -83,7 +82,7 @@ public class CompanyAction extends FrameworkAction{
 		@Override
 		protected int addToDB(String title, String content) {
 			try {
-				return super.getServiceManager().getAboutService().addBizInfo(title, content);
+				return super.getServiceManager().getAboutService().addCompanyInfo(title, content);
 			} catch (Exception e) {
 				super.debug(ErrorConstants.INSERT_ERROR);
 				return 0;

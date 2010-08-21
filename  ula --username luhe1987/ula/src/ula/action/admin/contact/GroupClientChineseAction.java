@@ -38,7 +38,7 @@ public class GroupClientChineseAction extends FrameworkAction {
 		} catch (Exception e) {
 			super.debug(e.getMessage());
 			e.printStackTrace();
-			super.setAlertMessage(AlertMessage.COMPANYINFO_EMPTY);
+			super.setAlertMessage(AlertMessage.CONTACT_INFO_EMPTY);
 			return super.admin();
 		}
 
