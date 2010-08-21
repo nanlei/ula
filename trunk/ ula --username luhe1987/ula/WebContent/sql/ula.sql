@@ -35,7 +35,7 @@ CREATE TABLE `aboutinfo` (
 
 LOCK TABLES `aboutinfo` WRITE;
 /*!40000 ALTER TABLE `aboutinfo` DISABLE KEYS */;
-INSERT INTO `aboutinfo` VALUES (1,'公司介绍','公司介绍内容。',NULL,'2010-06-27 22:26:26'),(2,'业务范围','<h3 style=\"margin-left: 40px; color: red\">\r\n	<code>业务范围介绍</code></h3>\r\n',NULL,'2010-07-25 10:37:35'),(3,'人员介绍','介绍内容',NULL,'2010-06-17 20:39:48'),(4,'美好回忆','<p>\r\n	美好回忆介绍。</p>\r\n',NULL,'2010-06-27 17:46:32');
+INSERT INTO `aboutinfo` VALUES (1,'公司介绍','公司介绍内容。',NULL,'2010-06-27 22:26:26'),(2,'业务范围','<code>业务范围介绍</code>',NULL,'2010-07-25 10:37:35'),(3,'人员介绍','介绍内容',NULL,'2010-06-17 20:39:48'),(4,'美好回忆','<p>\r\n	美好回忆介绍。</p>\r\n',NULL,'2010-06-27 17:46:32');
 /*!40000 ALTER TABLE `aboutinfo` ENABLE KEYS */;
 UNLOCK TABLES;
 
