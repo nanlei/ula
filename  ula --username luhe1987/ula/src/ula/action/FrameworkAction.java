@@ -167,8 +167,8 @@ public class FrameworkAction extends CommonAction {
 
 		// 更新成功，给出提示信息
 		this.setAlertMessage(AlertMessage.UPDATE_SUCCESS);
-
-		return this.admin();
+		
+		return admin();
 
 	}
 
