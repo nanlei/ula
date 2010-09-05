@@ -13,7 +13,7 @@ public class AboutService extends BaseService {
 			"from aboutinfo " +
 			"where id =?";
 	
-	private static final String SQL_UPDATE_INFO ="UPDATE aboutInfo " +
+	private static final String SQL_UPDATE_INFO ="UPDATE aboutinfo " +
 			"SET title = ?,content =?,date = (SELECT SYSDATE()FROM dual)" +
 			"WHERE id = ?";
 
