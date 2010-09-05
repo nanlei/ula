@@ -9,9 +9,9 @@ public class AboutService extends BaseService {
 			"aboutinfo(id,title,content,date) " +
 			"VALUES(?,?,?,(SELECT sysdate() FROM DUAL))";
 	
-	private static final String SQL_GET_INFO ="select * " +
-			"from aboutinfo " +
-			"where id =?";
+	private static final String SQL_GET_INFO ="SELECT * " +
+			"FROM aboutinfo " +
+			"WHERE id =?";
 	
 	private static final String SQL_UPDATE_INFO ="UPDATE aboutinfo " +
 			"SET title = ?,content =?,date = (SELECT SYSDATE()FROM dual)" +
