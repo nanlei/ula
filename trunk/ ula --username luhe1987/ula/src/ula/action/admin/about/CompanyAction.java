@@ -47,7 +47,7 @@ public class CompanyAction extends FrameworkAction{
 			super.setMapKeyName(CommonConstants.KEY_COMPANY_INFO);
 			
 			try {
-				this.setInfoMap(super.getServiceManager().getAboutService().getCompanyInfo());
+				super.setInfoMap(super.getServiceManager().getAboutService().getCompanyInfo());
 			} catch (Exception e) {
 				super.debug(e.getMessage());
 				e.printStackTrace();
