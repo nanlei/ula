@@ -4,6 +4,7 @@
 	</@app.naviInfo>
 	
 <#if alertMessage?exists><p align="center">${alertMessage}</p></#if>
+
 <#if bizInfo?exists>
 <table class="default" width="70%" align="center">
 	<col width="40%" align="center"/>
