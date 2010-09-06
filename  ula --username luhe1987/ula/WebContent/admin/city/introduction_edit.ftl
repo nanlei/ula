@@ -13,7 +13,7 @@
 	<tr>
 		
 		<td colspan ="2"><textarea  id="content" name="content"
-	rows="10">${cityIntro.content}</textarea></td>
+	rows="10">${cityIntro.content}</textarea><@p.ckeditor id="content"/></td>
 	</tr>
 	<tr>
 	<td colspan="2"><div align="center"><input type="submit" value="发表" style="height: 25px; width: 100px"/></div></td>
