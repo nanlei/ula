@@ -11,6 +11,7 @@
 	<col width="40%" align="center"/>
 	<col width="10%" align="center"/>
 	<col width="10%" align="center"/>
+	
 			<tr class="title">
 				<td>标题</td>
 				<td>发布时间</td>
