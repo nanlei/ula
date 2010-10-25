@@ -70,10 +70,12 @@
 
 #main_right .right_title {
 	position: relative;
-	background: url(../icon/right_title.png);
-	width: 223px;
-	height: 22px;
-	margin-left: 530px;
+	background-color:#6CA6A0;
+	text-align:center;
+	width: auto;
+	height:30px;
+	margin-left: 500px;
+	margin-right:20px;
 }
 
 #main_right .right_title h3 {
