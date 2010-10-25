@@ -11,6 +11,7 @@ var treeMenu = [
 	{ level:1, name:"关于大连"},
 	{ level:2, name:"大连介绍", link:"city/intro!admin.action"},
 	{ level:2, name:"大连历史", link:"city/history!admin.action"},
+	{ level:2, name:"城市地图", link:"city/citymap!admin.action"},
 	{ level:2, name:"景点、公园"},
 	{ level:3, name:"市内", link:"city/tour.action?articleType=dalian"},
 	{ level:3, name:"旅顺", link:"city/tour.action?articleType=lvshun"},
