@@ -5,7 +5,7 @@
 <struts>
 	<package name="admin/city" extends="global" namespace="/admin/city">
 
-		<!--关于城市->大连介绍	-->
+		<!--关于城市->大连介绍 -->
 		<action name="intro" class="ula.action.admin.city.IntroductionAction">
 			<result name="edit">introduction_edit.ftl</result>
 			<result name="view">introduction_view.ftl</result>
@@ -14,7 +14,7 @@
 			<result name="preAdd">introduction_add.ftl</result>
 		</action>
 
-		<!--关于城市->大连历史	-->
+		<!--关于城市->大连历史 -->
 		<action name="history" class="ula.action.admin.city.HistoryAction">
 			<result name="edit">history_edit.ftl</result>
 			<result name="view">history_view.ftl</result>
@@ -23,7 +23,7 @@
 			<result name="preAdd">history_add.ftl</result>
 		</action>
 
-		<!-- 关于城市->景点，公园  -->
+		<!-- 关于城市->景点，公园 -->
 		<action name="tour" class="ula.action.admin.city.TourAction"
 			method="tour">
 			<result name="dalian">tour/dalian.ftl</result>
@@ -63,7 +63,7 @@
 			</result>
 		</action>
 
-		<!--大连美食	-->
+		<!--大连美食 -->
 		<action name="food" class="ula.action.admin.city.FoodAction"
 			method="food">
 			<result name="food">food/food.ftl</result>
@@ -97,7 +97,7 @@
 			</result>
 		</action>
 
-		<!--大连居住-->
+		<!--大连居住 -->
 		<action name="housing" class="ula.action.admin.city.HousingAction"
 			method="housing">
 			<result name="housing">housing/housing.ftl</result>
@@ -131,7 +131,7 @@
 			</result>
 		</action>
 
-		<!--大连购物-->
+		<!--大连购物 -->
 		<action name="shopping" class="ula.action.admin.city.ShoppingAction"
 			method="shopping">
 			<result name="shopping">shopping/shopping.ftl</result>
@@ -165,7 +165,7 @@
 			</result>
 		</action>
 
-		<!--大连交通-->
+		<!--大连交通 -->
 		<action name="transportation" class="ula.action.admin.city.TransportationAction"
 			method="transportation">
 			<result name="transportation">transportation/transportation.ftl</result>
@@ -199,7 +199,7 @@
 			</result>
 		</action>
 
-		<!--大连治疗-->
+		<!--大连治疗 -->
 		<action name="therapy" class="ula.action.admin.city.TherapyAction"
 			method="therapy">
 			<result name="therapy">therapy/therapy.ftl</result>
@@ -233,7 +233,7 @@
 			</result>
 		</action>
 
-		<!--大连节日-->
+		<!--大连节日 -->
 		<action name="festival" class="ula.action.admin.city.FestivalAction"
 			method="festival">
 			<result name="festival">festival/festival.ftl</result>
@@ -267,7 +267,7 @@
 			</result>
 		</action>
 
-		<!--展会信息-->
+		<!--展会信息 -->
 		<action name="exhibition" class="ula.action.admin.city.ExhibitionAction"
 			method="exhibition">
 			<result name="exhibition">exhibition/exhibition.ftl</result>
@@ -300,9 +300,9 @@
 				<param name="namespace">/admin/city</param>
 			</result>
 		</action>
-		
-		
-		<!--关于城市->保险	-->
+
+
+		<!--关于城市->保险 -->
 		<action name="insurance" class="ula.action.admin.city.InsuranceAction">
 			<result name="edit">insurance_edit.ftl</result>
 			<result name="view">insurance_view.ftl</result>
@@ -310,8 +310,8 @@
 			<result name="admin">insurance_admin.ftl</result>
 			<result name="preAdd">insurance_add.ftl</result>
 		</action>
-		
-		<!--关于城市->法律常识	-->
+
+		<!--关于城市->法律常识 -->
 		<action name="law" class="ula.action.admin.city.CommonLawAction">
 			<result name="edit">law_edit.ftl</result>
 			<result name="view">law_view.ftl</result>
@@ -319,9 +319,9 @@
 			<result name="admin">law_admin.ftl</result>
 			<result name="preAdd">law_add.ftl</result>
 		</action>
-		
-		
-		<!--关于城市->手机信息	-->
+
+
+		<!--关于城市->手机信息 -->
 		<action name="cellphone" class="ula.action.admin.city.CellphoneAction">
 			<result name="edit">cellphone_edit.ftl</result>
 			<result name="view">cellphone_view.ftl</result>
@@ -329,14 +329,23 @@
 			<result name="admin">cellphone_admin.ftl</result>
 			<result name="preAdd">cellphone_add.ftl</result>
 		</action>
-		
-		<!--关于城市->实用建议	-->
+
+		<!--关于城市->实用建议 -->
 		<action name="advice" class="ula.action.admin.city.PracticalAdviceAction">
 			<result name="edit">advice_edit.ftl</result>
 			<result name="view">advice_view.ftl</result>
 			<result name="update">advice_admin.ftl</result>
 			<result name="admin">advice_admin.ftl</result>
 			<result name="preAdd">advice_add.ftl</result>
+		</action>
+
+		<!--关于城市->城市地图 -->
+		<action name="citymap" class="ula.action.admin.city.CityMapAction">
+			<result name="edit">citymap_edit.ftl</result>
+			<result name="view">citymap_view.ftl</result>
+			<result name="update">citymap_admin.ftl</result>
+			<result name="admin">citymap_admin.ftl</result>
+			<result name="preAdd">citymap_add.ftl</result>
 		</action>
 	</package>
 </struts>
