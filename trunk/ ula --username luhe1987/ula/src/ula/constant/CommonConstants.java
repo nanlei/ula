@@ -20,6 +20,7 @@ public interface CommonConstants {
 	String TAG_CITY_COMMONLAW ="commonlaw";
 	String TAG_CITY_CELLPHONE ="cellphone";
 	String TAG_CITY_ADVICE="advice";
+	String TAG_CITY_MAP = "map";
 	
 	
 	String TAG_SPECIAL_VISA="visa";
@@ -86,6 +87,7 @@ public interface CommonConstants {
 	int ID_CITY_COMMOMLAW=4;
 	int ID_CITY_CELLPHONE=5;
 	int ID_CITY_ADVICE=6;
+	int ID_CITY_MAP = 7;
 	
 	int ID_SPECIAL_VISA =1;
 	int ID_SPECIAL_HOTEL_BOOKING =2;
@@ -115,10 +117,14 @@ public interface CommonConstants {
 	String KEY_CITY_COMMONLAW = "law";
 	String KEY_CITY_CELLPHONE = "cellphone";
 	String KEY_CITY_ADVICE = "advice";
+	String KEY_CITY_MAP ="citymap";
 
 	String LINK = "link";
 	String RECOMMENDATION = "recommendation";
 	String VIEW = "view";
+
+
+
 	
 
 	/* 记录用户登录前想要访问的地址在Session中的Key */

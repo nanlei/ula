@@ -55,6 +55,8 @@ public interface AlertMessage {
 	String CITY_COMMONLAW = "法律常识没有添加，请添加。";
 	String CITY_CELLPHONE = "手机信息没有添加，请添加。";
 	String CITY_ADVICE = "实用建议没有添加，请添加。";
+	String CITY_MAP = "城市地图没有添加，请添加。";
+	
 	
 	
 	String DONE_MARK = "标记为已处理。操作成功";
