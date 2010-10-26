@@ -50,9 +50,9 @@
     <h2>景点、公园</h2>
     </div>
     <div class="content">
-    	<div class="content_item"><a href="${base}/city/tour!view.action?at=dalian">市内</a></div>
-        <div class="content_item"><a href="${base}/city/tour!view.action?at=lvshun">旅顺</a></div>
-        <div class="content_item"><a href="${base}/city/tour!view.action?at=devzone">开发区、金石滩</a></div>
+    	<div class="content_item"><a href="${base}/city/article.action?id=2">市内</a></div>
+        <div class="content_item"><a href="${base}/city/article.action?id=8">旅顺</a></div>
+        <div class="content_item"><a href="${base}/city/article.action?id=9">开发区、金石滩</a></div>
     </div>
   </li>
   <li>
@@ -122,14 +122,15 @@
     		<#elseif at="therapy">大连治疗
     		<#elseif at="festival">大连节日
     		<#elseif at="exhibition">展会信息
-    		<#else></#if></h3>
+    		<#else></#if>
+    	</h3>
     </div>
     
    <div class="right_content">
      <p class="content_p">
      	<#if articleList?has_content>
      		<#list articleList.list as al>
-     			<img src="${base}${al.COVERLINK}" width="160" height="120"/><a href="${base}/city/article.action?id=${al.ID}">${al.TITLE}</a>
+     			<a href="${base}/city/article.action?id=${al.ID}">${al.TITLE}</a><br/>
      		</#list>
      	<#else>
      		尚未添加内容
