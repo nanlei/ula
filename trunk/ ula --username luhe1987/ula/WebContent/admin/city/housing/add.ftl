@@ -20,6 +20,9 @@ function selectCoverLink(type){
 		<td colspan="4">添加文章</td>
 	</tr>
 	<tr>
+		<td>标题</td><td colspan="3"><input type="text" name="title" emptyInfo="请填写文章标题" size="80"></td>
+	</tr>
+	<#--<tr>
 		<td>标题</td><td><input type="text" name="title" emptyInfo="请填写文章标题"></td>
 		<td>封面图片</td>
 		<td>
@@ -31,7 +34,7 @@ function selectCoverLink(type){
 	<tr>
 		<td>参考价格</td><td><input type="text" name="price" numberInfo="请填写价格，并且是数字格式"></td>
 		<td></td><td></td>
-	</tr>
+	</tr>-->
 	<tr>
 		<td colspan="4"><textarea name="content" id="content"></textarea><@p.ckeditor id="content"/></td>
 	</tr>
