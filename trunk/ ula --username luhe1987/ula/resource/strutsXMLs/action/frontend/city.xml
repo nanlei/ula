@@ -20,6 +20,11 @@
 		<!--关于城市->大连历史	-->
 		<action name="history" class="ula.action.admin.city.HistoryAction">
 			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+		
+		<!--关于城市->城市地图	-->
+		<action name="citymap" class="ula.action.admin.city.CityMapAction">
+			<result name="view">/admin/city/city_map_data.ftl</result>
 
 		</action>
 
