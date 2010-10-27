@@ -43,7 +43,6 @@
   	<div class="menu_title">
     <h2><a href="${base}/city/citymap!view.action">城市地图</a></h2>
     </div>
-    
   </li>
   <li>
   	<div class="menu_title">
