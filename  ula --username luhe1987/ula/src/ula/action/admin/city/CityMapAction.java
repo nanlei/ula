@@ -20,6 +20,8 @@ public class CityMapAction extends FrameworkAction {
 			return 0;
 		}
 	}
+	
+	
 
 	@Override
 	public String admin() {
