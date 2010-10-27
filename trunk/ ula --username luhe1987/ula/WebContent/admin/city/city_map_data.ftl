@@ -41,7 +41,7 @@
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="#">城市地图</a></h2>
+    <h2><a href="${base}/city/citymap!view.action">城市地图</a></h2>
     </div>
     
   </li>
@@ -50,9 +50,9 @@
     <h2>景点、公园</h2>
     </div>
     <div class="content">
-    	<div class="content_item"><a href="${base}/city/article.action?id=2">市内</a></div>
-        <div class="content_item"><a href="${base}/city/article.action?id=8">旅顺</a></div>
-        <div class="content_item"><a href="${base}/city/article.action?id=9">开发区、金石滩</a></div>
+    	<div class="content_item"><a href="${base}/city/tour!view.action?at=dalian">市内</a></div>
+        <div class="content_item"><a href="${base}/city/tour!view.action?at=lvshun">旅顺</a></div>
+        <div class="content_item"><a href="${base}/city/tour!view.action?at=devzone">开发区、金石滩</a></div>
     </div>
   </li>
   <li>
