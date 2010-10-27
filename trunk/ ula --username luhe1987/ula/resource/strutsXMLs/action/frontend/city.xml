@@ -27,11 +27,17 @@
 			<result name="view">/admin/city/city_map_data.ftl</result>
 
 		</action>
+		
+		<!--关于城市->城市地图	-->
+		<action name="citymap" class="ula.action.admin.city.CityMapAction">
+			<result name="view">/admin/city/city_map_data.ftl</result>
+
+		</action>
 
 		<!-- 关于城市->景点，公园  -->
 		<action name="tour" class="ula.action.admin.city.TourAction"
 			method="view">
-			<result name="view">/admin/city/city_map_data.ftl</result>
+			<result name="view">/admin/city/city_list_data.ftl</result>
 		</action>
 
 
