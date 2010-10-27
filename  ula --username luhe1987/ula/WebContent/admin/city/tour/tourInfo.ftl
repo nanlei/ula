@@ -20,6 +20,7 @@ function selectCoverLink(type){
 		<td colspan="4">修改文章</td>
 	</tr>
 	<tr>
+	<#--
 		<td>选择类别</td>
 		<td>
 			<select name="articleType" emptyInfo="请选择文章类别">
@@ -28,9 +29,10 @@ function selectCoverLink(type){
 				<option value="lvshun" <#if articleInfo.TYPE='lvshun'>selected</#if>>旅顺</option>
 				<option value="devzone" <#if articleInfo.TYPE='devzone'>selected</#if>>开发区，金石滩</option>
 			</select>
-		</td>
-		<td>标题</td><td><input type="text" name="title" emptyInfo="请填写文章标题" value="${articleInfo.TITLE}"></td>
+		</td>-->
+		<td>标题</td><td colspan="3"><input type="text" name="title" emptyInfo="请填写文章标题" value="${articleInfo.TITLE}" size="80"></td>
 	</tr>
+	<#--
 	<tr>
 		<td>封面图片</td>
 		<td>
@@ -40,7 +42,7 @@ function selectCoverLink(type){
 		</td>
 		<td>参考价格</td>
 		<td><input type="text" name="price" value="${articleInfo.PRICE}" numberInfo="请填写价格，并且是数字格式"></td>
-	</tr>
+	</tr>-->
 	<tr>
 		<td colspan="4"><textarea name="content" id="content">${articleInfo.CONTENT}</textarea><@p.ckeditor id="content"/></td>
 	</tr>
