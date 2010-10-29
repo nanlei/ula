@@ -11,6 +11,7 @@ function selectCoverLink(type){
 }
 </script>
 <form name="articleForm" action="updateTour.action?articleId=${articleInfo.ID}" method="post" onsubmit="return validateForm(this)">
+<input type="hidden" name="articleType" value="${articleInfo.TYPE}">
 <table class="default" width="100%">
 	<col width="15%" align="center">
 	<col width="35%" align="center">

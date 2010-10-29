@@ -42,49 +42,49 @@
 
 
 		<!--大连美食	-->
-		<action name="food" class="ula.action.admin.city.FoodAction"
+		<action name="food" class="ula.action.admin.city.ArticleAction"
 			method="view">
-			<result name="view">/admin/city/city_list_data.ftl</result>
+			<result name="view">/admin/city/city_map_data.ftl</result>
 		</action>
 
 
 		<!--大连居住-->
-		<action name="housing" class="ula.action.admin.city.HousingAction"
+		<action name="housing" class="ula.action.admin.city.ArticleAction"
 			method="view">
-			<result name="view">/admin/city/city_list_data.ftl</result>
+			<result name="view">/admin/city/city_map_data.ftl</result>
 		</action>
 
 		<!--大连购物-->
-		<action name="shopping" class="ula.action.admin.city.ShoppingAction"
+		<action name="shopping" class="ula.action.admin.city.ArticleAction"
 			method="view">
-			<result name="view">/admin/city/city_list_data.ftl</result>
+			<result name="view">/admin/city/city_map_data.ftl</result>
 		</action>
 
 
 		<!--大连交通-->
-		<action name="transportation" class="ula.action.admin.city.TransportationAction"
+		<action name="transportation" class="ula.action.admin.city.ArticleAction"
 			method="view">
-			<result name="view">/admin/city/city_list_data.ftl</result>
+			<result name="view">/admin/city/city_map_data.ftl</result>
 		</action>
 
 
 		<!--大连治疗-->
-		<action name="therapy" class="ula.action.admin.city.TherapyAction"
+		<action name="therapy" class="ula.action.admin.city.ArticleAction"
 			method="view">
-			<result name="view">/admin/city/city_list_data.ftl</result>
+			<result name="view">/admin/city/city_map_data.ftl</result>
 		</action>
 
 		<!--大连节日-->
-		<action name="festival" class="ula.action.admin.city.FestivalAction"
+		<action name="festival" class="ula.action.admin.city.ArticleAction"
 			method="view">
-			<result name="view">/admin/city/city_list_data.ftl</result>
+			<result name="view">/admin/city/city_map_data.ftl</result>
 		</action>
 
 
 		<!--展会信息-->
-		<action name="exhibition" class="ula.action.admin.city.ExhibitionAction"
+		<action name="exhibition" class="ula.action.admin.city.ArticleAction"
 			method="view">
-			<result name="view">/admin/city/city_list_data.ftl</result>
+			<result name="view">/admin/city/city_map_data.ftl</result>
 		</action>
 
 

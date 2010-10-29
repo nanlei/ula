@@ -14,6 +14,8 @@ public class ArticleAction extends CommonAction {
 	private String id;
 	private Map view;
 
+	private String type;
+
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -22,10 +24,21 @@ public class ArticleAction extends CommonAction {
 		return view;
 	}
 
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	public String article() {
 		super.view();
 		view = getServiceManager().getArticleService().getArticleById(id);
 		return "article";
+	}
+
+	public String view() {
+		super.view();
+		view = getServiceManager().getArticleService().getFirstArticleByType(
+				type);
+		return "view";
 	}
 
 }

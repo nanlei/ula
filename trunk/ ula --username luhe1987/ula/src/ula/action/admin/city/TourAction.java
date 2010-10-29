@@ -2,8 +2,6 @@ package ula.action.admin.city;
 
 import java.util.Map;
 
-import org.apache.struts2.ServletActionContext;
-
 import ula.action.CommonAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
