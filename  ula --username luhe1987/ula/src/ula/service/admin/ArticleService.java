@@ -38,7 +38,7 @@ public class ArticleService extends BaseService {
 				"", "", articleId });
 	}
 
-	private static final String SQL_SET_TOUR_BY_ID = "update article set type=?,TITLE=?,CONTENT=?,COVERLINK=?,PRICE=? where ID=?";
+	private static final String SQL_SET_TOUR_BY_ID = "update article set TYPE=?,TITLE=?,CONTENT=?,COVERLINK=?,PRICE=? where ID=?";
 
 	public void updateTourById(Map parameters, String articleId) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
@@ -156,5 +156,16 @@ public class ArticleService extends BaseService {
 				"title,content,coverLink,price");
 		DB.update(SQL_ADD_EXHIBITION, new Object[] { params[0], params[1], "",
 				userName, "" });
+	}
+
+	private static final String SQL_GET_FIRST_ARTICLE_BY_TYPE = "select title,content from article where TYPE=? order by ID asc limit 1";
+
+	public Map getFirstArticleByType(String type) {
+		try {
+			return DB.queryForMap(SQL_GET_FIRST_ARTICLE_BY_TYPE,
+					new Object[] { type });
+		} catch (Exception e) {
+			return null;
+		}
 	}
 }

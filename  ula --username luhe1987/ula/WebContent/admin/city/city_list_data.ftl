@@ -57,43 +57,43 @@
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="${base}/city/food!view.action">大连美食</a></h2>
+    <h2><a href="${base}/city/food!view.action?type=food">大连美食</a></h2>
     </div>
     
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="${base}/city/housing!view.action">大连居住</a></h2>
+    <h2><a href="${base}/city/housing!view.action?type=housing">大连居住</a></h2>
     </div>
     
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="${base}/city/shopping!view.action">大连购物</a></h2>
+    <h2><a href="${base}/city/shopping!view.action?type=shopping">大连购物</a></h2>
     </div>
     
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="${base}/city/transportation!view.action">大连交通</a></h2>
+    <h2><a href="${base}/city/transportation!view.action?type=transportation">大连交通</a></h2>
     </div>
     
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="${base}/city/therapy!view.action">大连治疗</a></h2>
+    <h2><a href="${base}/city/therapy!view.action?type=therapy">大连治疗</a></h2>
     </div>
     
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="${base}/city/festival!view.action">大连节日</a></h2>
+    <h2><a href="${base}/city/festival!view.action?type=festival">大连节日</a></h2>
     </div>
     
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="${base}/city/exhibition!view.action">展会信息</a></h2>
+    <h2><a href="${base}/city/exhibition!view.action?type=exhibition">展会信息</a></h2>
     </div>
   </li>
   <li>
