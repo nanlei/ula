@@ -5,6 +5,7 @@ import ula.service.admin.ArticleService;
 import ula.service.admin.CityServcie;
 import ula.service.admin.ContactService;
 import ula.service.admin.FeedbackService;
+import ula.service.admin.HotelService;
 import ula.service.admin.LinkService;
 import ula.service.admin.LogService;
 import ula.service.admin.PaymentService;
@@ -19,7 +20,7 @@ public class ServiceManager {
 	/*
 	 * 这里是所有Service的集合。并提供Getter 和 Setter
 	 */
-	
+
 	private LogService logService = null;
 	private AboutService aboutService = null;
 	private ContactService contactService = null;
@@ -33,8 +34,8 @@ public class ServiceManager {
 	private ArticleService articleService = null;
 	private FeedbackService feedbackService = null;
 	private ReservationService reservationService = null;
+	private HotelService hotelService = null;
 
-	
 	public ReservationService getReservationService() {
 		return reservationService;
 	}
@@ -137,6 +138,14 @@ public class ServiceManager {
 
 	public void setArticleService(ArticleService articleService) {
 		this.articleService = articleService;
+	}
+
+	public HotelService getHotelService() {
+		return hotelService;
+	}
+
+	public void setHotelService(HotelService hotelService) {
+		this.hotelService = hotelService;
 	}
 
 }

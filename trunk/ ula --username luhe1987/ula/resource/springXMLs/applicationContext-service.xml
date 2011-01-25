@@ -69,16 +69,22 @@
 			<bean class="ula.service.admin.ArticleService" />
 		</property>
 	</bean>
-	
+
 	<bean id="feedbackService" parent="baseTxService">
 		<property name="target">
 			<bean class="ula.service.admin.FeedbackService" />
 		</property>
 	</bean>
-	
+
 	<bean id="reservationService" parent="baseTxService">
 		<property name="target">
 			<bean class="ula.service.admin.ReservationService" />
+		</property>
+	</bean>
+
+	<bean id="hotelService" parent="baseTxService">
+		<property name="target">
+			<bean class="ula.service.admin.HotelService" />
 		</property>
 	</bean>
 

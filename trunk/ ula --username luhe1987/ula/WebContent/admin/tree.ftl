@@ -18,6 +18,11 @@ var treeMenu = [
 	{ level:3, name:"开发区、金石滩", link:"city/tour.action?articleType=devzone"},
 	{ level:2, name:"大连美食", link:"city/food.action"},
 	{ level:2, name:"大连居住", link:"city/housing.action"},
+	{ level:2, name:"大连酒店" },
+	{ level:3, name:"酒店文章管理", link:"hotel/hotel.action"},
+	{ level:3, name:"酒店参数管理", link:"hotel/hotelparam.action"},
+	{ level:3, name:"酒店相册管理", link:"hotel/hotelalbum.action"},
+	
 	{ level:2, name:"大连购物", link:"city/shopping.action"},
 	{ level:2, name:"大连交通", link:"city/transportation.action"},
 	{ level:2, name:"大连治疗", link:"city/therapy.action"},
