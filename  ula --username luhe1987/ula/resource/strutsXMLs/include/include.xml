@@ -21,6 +21,7 @@
 	<include file="strutsXMLs/action/admin/user.xml"></include>
 	<include file="strutsXMLs/action/admin/feedback.xml"></include>
 	<include file="strutsXMLs/action/admin/reservation.xml"></include>
+	<include file="strutsXMLs/action/admin/hotel.xml"></include>
 	
 <!--前台页面XML配置 -->
 	<include file="strutsXMLs/action/frontend/about.xml"></include>

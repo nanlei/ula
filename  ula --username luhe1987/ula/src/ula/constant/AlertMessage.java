@@ -61,5 +61,8 @@ public interface AlertMessage {
 	
 	String DONE_MARK = "标记为已处理。操作成功";
 	String UNDONE_MARK = "标记为未处理。操作成功";
+	
+	String HOTEL_PARAM_ADD_SUCCESS="酒店参数添加成功";
+	String HOTEL_PARAM_UPDATE_SUCCESS="酒店参数修改成功";
 
 }

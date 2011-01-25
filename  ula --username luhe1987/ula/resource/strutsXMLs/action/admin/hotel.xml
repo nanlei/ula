@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="admin/hotel" extends="global" namespace="/admin/hotel">
+		<action name="hotelparam" class="ula.action.admin.hotel.HotelParamAction"
+			method="hotelparam">
+			<result name="hotelparam">param_list.ftl</result>
+		</action>
+		<action name="addParam" class="ula.action.admin.hotel.HotelParamAction"
+			method="addParam">
+			<result name="success" type="chain">
+				<param name="actionName">hotelparam</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<action name="hotelParamPreUpdate" class="ula.action.admin.hotel.HotelParamAction"
+			method="hotelParamPreUpdate">
+			<result name="hotelParamPreUpdate">param_info.ftl</result>
+		</action>
+		<action name="updateParam" class="ula.action.admin.hotel.HotelParamAction"
+			method="updateParam">
+			<result name="success" type="chain">
+				<param name="actionName">hotelparam</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+	</package>
+</struts>
