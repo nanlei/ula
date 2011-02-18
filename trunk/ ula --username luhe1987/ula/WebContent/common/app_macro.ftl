@@ -83,3 +83,43 @@ if (navTD) {
 	<td height="18px" align="center" style="padding-right:10px;font-size:12px">Copyright &#169; 2010 ULA Team All Rights Reserved</td>
 </tr>
 </#macro>
+
+<#-- Button按钮(使用了 jQuery UI)-->
+<#macro button id="" onclick="" text="">
+<div style="padding:0px;font-size:82.5%">
+<button id="${id}" onclick="${onclick}">&nbsp;${text}&nbsp;</button>
+</div>
+<script>
+	$("#${id}").button();
+</script>
+</#macro>
+
+<#-- 表单的Submit按钮(使用了 jQuery UI)-->
+<#macro submit id="" value="" onclick="">
+<span style="padding:0px;font-size:82.5%">
+<input type="submit" id="${id}" value="&nbsp;${value}&nbsp;" <#if onclick?has_content>${onclick}</#if>>
+</span>
+<script>
+	$("#${id}").button();
+</script>
+</#macro>
+
+<#-- 表单的Reset按钮(使用了 jQuery UI)-->
+<#macro reset id="" value="">
+<span style="padding:0px;font-size:82.5%">
+<input type="reset" id="${id}" value="&nbsp;${value}&nbsp;">
+</span>
+<script>
+	$("#${id}").button();
+</script>
+</#macro>
+
+<#-- 表单的File域(使用了 jQuery UI)-->
+<#macro file id="" name="" emptyInfo="">
+<span style="padding:0px;font-size:82.5%">
+<input type="file" id="${id}" name="${name}" emptyInfo="${emptyInfo}">
+</span>
+<script>
+	$("#${id}").button();
+</script>
+</#macro>
