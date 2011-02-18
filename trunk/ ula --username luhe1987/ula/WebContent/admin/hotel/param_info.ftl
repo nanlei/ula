@@ -28,7 +28,7 @@
 				<td><input type="text" name="paramValue" emptyInfo="请输入参数值" value="${hotelParam.VALUE}"></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="提交" class="btn">&nbsp;&nbsp;<input type="reset" value="重置" class="btn"></td>
+				<td colspan="2"><@app.submit id="submitButton" value="提交" />&nbsp;&nbsp;<@app.reset id="resetButton" value="重置"/></td>
 			</tr>
 		</table>
 	</form>
