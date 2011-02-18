@@ -63,4 +63,10 @@
 	<#assign count=count+1 />
 	</#list>
 </table>
+<div align="right">
+	<@p.paging hotelParams />
+</div>
+<#if count=1>
+	<p align="center"><font color="red">尚未添加参数</font></p>
+</#if>
 </@p.page>
