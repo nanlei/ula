@@ -55,9 +55,12 @@
 		<td>${hotelAlbum.CONTENT}</td>
 		<td>${hotelAlbum.POSTTIME?datetime}</td>
 		<td>${hotelAlbum.USERNAME}</td>
-		<td><a href="hotelAlbumPreUpdate.action?id=${hotelAlbum.ID}">修改</a> | <a href="hotelAlbumDelete.action?id=${hotelAlbum.ID}" onclick="return confirm('确定删除吗？')">删除</a></td>
+		<td><a href="hotelAlbumPreUpdate.action?id=${hotelAlbum.ID}">修改</a> | <a href="hotelAlbumPreAddPic.action?id=${hotelAlbum.ID}">添加照片</a> | <a href="hotelAlbumDelete.action?id=${hotelAlbum.ID}" onclick="return confirm('确定删除吗？')">删除</a></td>
 	</tr>
 	<#assign count=count+1 />
 	</#list>
 </table>
+<div align="right">
+	<@p.paging hotelAlbums />
+</div>
 </@p.page>

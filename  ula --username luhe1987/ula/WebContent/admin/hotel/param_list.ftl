@@ -1,7 +1,7 @@
 <@p.page>
 	<@app.naviBar navi="关于城市,大连酒店,酒店参数管理" />
 	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面显示系统内的所有的关于城市->大连酒店->酒店参数的信息，您可以维护这些信息。">
-	<a class="navlink" href="javascript:void(0)" onclick="$('#newParam').toggle();this.blur();return false;">添加参数</a>
+	<@app.button id="newParamButton" onclick="$('#newParam').toggle();this.blur();return false;" text="添加参数"/>
 	</@app.naviInfo>
 	<#if alertMessage?exists>
 	${alertMessage}
@@ -33,7 +33,7 @@
 				<td><input type="text" name="paramValue" emptyInfo="请输入参数值"></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="提交" class="btn">&nbsp;&nbsp;<input type="reset" value="重置" class="btn"></td>
+				<td colspan="2"><@app.submit id="submitButton" value="提交" />&nbsp;&nbsp;<@app.reset id="resetButton" value="重置"/></td>
 			</tr>
 		</table>
 	</form>
