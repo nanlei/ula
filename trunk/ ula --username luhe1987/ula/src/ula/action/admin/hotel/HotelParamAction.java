@@ -56,4 +56,15 @@ public class HotelParamAction extends CommonAction {
 			return ERROR;
 		}
 	}
+
+	public String hotelParamDelete() {
+		try {
+			getServiceManager().getHotelService().deleteHotelParam(
+					getParametersAsMap());
+			this.setAlertMessage(AlertMessage.HOTEL_PARAM_UPDATE_SUCCESS);
+			return SUCCESS;
+		} catch (Exception e) {
+			return ERROR;
+		}
+	}
 }

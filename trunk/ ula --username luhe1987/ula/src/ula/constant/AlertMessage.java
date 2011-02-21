@@ -3,8 +3,8 @@ package ula.constant;
 public interface AlertMessage {
 	String UPDATE_SUCCESS = "更新成功";
 	String UPDATE_FAILURE = "对不起，更新失败";
-	String INSERT_SUCCESS ="添加成功";
-	String INSERT_FAILURE ="添加失败";
+	String INSERT_SUCCESS = "添加成功";
+	String INSERT_FAILURE = "添加失败";
 	String DELTE_ERROR = "删除失败";
 	String DELTE_SUCCESS = "删除成功";
 	String INFO_EMPTY = "信息不存在";
@@ -47,7 +47,6 @@ public interface AlertMessage {
 	String USER_UPDATE_SUCCESS = "用户信息修改成功";
 	String USER_ADD_SUCCESS = "用户添加成功";
 
-	
 	String ARTICLE_ADD_SUCCESS = "文章添加成功";
 	String ARTICLE_UPDATE_SUCCESS = "文章更新成功";
 	String ARTICLE_DELETE_SUCCESS = "文章删除成功";
@@ -56,13 +55,21 @@ public interface AlertMessage {
 	String CITY_CELLPHONE = "手机信息没有添加，请添加。";
 	String CITY_ADVICE = "实用建议没有添加，请添加。";
 	String CITY_MAP = "城市地图没有添加，请添加。";
-	
-	
-	
+
 	String DONE_MARK = "标记为已处理。操作成功";
 	String UNDONE_MARK = "标记为未处理。操作成功";
-	
-	String HOTEL_PARAM_ADD_SUCCESS="酒店参数添加成功";
-	String HOTEL_PARAM_UPDATE_SUCCESS="酒店参数修改成功";
 
+	String HOTEL_PARAM_ADD_SUCCESS = "酒店参数添加成功";
+	String HOTEL_PARAM_UPDATE_SUCCESS = "酒店参数修改成功";
+	String HOTL_PARAM_DELETE_SUCCESS = "酒店参数删除成功";
+
+	String HOTEL_ALBUM_ADD_SUCCESS = "酒店相册添加成功";
+	String HOTEL_ADD_PIC_TO_ALBUM_SUCCESS = "照片添加到相册成功";
+	String HOTEL_ADD_PIC_TO_ALBUM_FAILURE = "照片添加到相册失败";
+	String HOTEL_DELETE_PIC_FROM_ALBUM_SUCCESS = "从相册中删除照片成功";
+	String HOTEL_DELETE_PIC_FROM_ALBUM_FALIURE = "从相册中删除照片失败";
+	String HOTEL_UPDATE_SUCCESS = "相册更新成功";
+	String HOTEL_UPDATE_FAILURE = "相册更新失败";
+	String HOTEL_DELETE_SUCCESS = "相册删除成功";
+	String HOTEL_DELETE_FAILURE = "相册删除失败";
 }
