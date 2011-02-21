@@ -97,7 +97,7 @@ if (navTD) {
 <#-- 表单的Submit按钮(使用了 jQuery UI)-->
 <#macro submit id="" value="" onclick="">
 <span style="padding:0px;font-size:82.5%">
-<input type="submit" id="${id}" value="&nbsp;${value}&nbsp;" <#if onclick?has_content>${onclick}</#if>>
+<input type="submit" id="${id}" value="&nbsp;${value}&nbsp;" <#if onclick?has_content>onclick="${onclick}"</#if>>
 </span>
 <script>
 	$("#${id}").button();

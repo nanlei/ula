@@ -21,7 +21,16 @@ function unSelectAll(formName, cbName) {
 	}
 }
 
-
+function getSelectedNum(formName, cbName){
+	var o=document.forms[formName].elements[cbName];
+	var count=0;
+	for(var i=0;i<o.length;i++){
+		if(document.forms[formName].elements[cbName][i].checked == true){
+			count++;
+		}
+	}
+	return count;
+}
 /* */
 function getStringLength(str) {
 	var endvalue=0;
