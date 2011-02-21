@@ -11,6 +11,7 @@ function showPic(id,picTitle){
 	$('#picDialog img').attr('src',basePath+path);
 	$('#picDialog').dialog({modal:true,position:"center",width:330,height:235,title:picTitle});
 }
+
 function selectAllCheckBox(){
 	var flag=$('#selector').val();
 	if(flag=='true'){
@@ -21,19 +22,29 @@ function selectAllCheckBox(){
 		$('#selector').attr('value','true');
 	}
 }
+
+function checkSelected(){
+	var count=getSelectedNum('addPicToAlbumForm','picIds');
+	if(count<=0){
+		alert('请至少选择一张照片');
+		return false;
+	}else{
+		return true;
+	}
+}
 </script>
 <div id="picDialog" style="display:none">
 	<img src="" width="300" height="225" />
 </div>
 <form name="addPicToAlbumForm" action="hotelAlbumAddPic.action?id=${hotelAlbum.ID}" method="post">
 <table class="default" width="100%">
-	<col width="15%" align="center">
-	<col width="10%" align="center">
-	<col width="15%" align="center">
-	<col width="15%" align="center">
 	<col width="10%" align="center">
 	<col width="10%" align="center">
-	<col width="25%" align="center">
+	<col width="15%" align="center">
+	<col width="15%" align="center">
+	<col width="10%" align="center">
+	<col width="10%" align="center">
+	<col width="30%" align="center">
 	<tr class="title">
 		<td colspan="7">添加照片</td>
 	</tr>
@@ -63,7 +74,7 @@ function selectAllCheckBox(){
 	<#assign count=count+1/>
 	</#list>
 	<tr>
-		<td colspan="7"><@app.submit id="submitButton" value="提交" />&nbsp;&nbsp;<@app.reset id="resetButton" value="重置"/></td>
+		<td colspan="7"><@app.submit id="submitButton" value="提交" onclick="return checkSelected()"/>&nbsp;&nbsp;<@app.reset id="resetButton" value="重置"/></td>
 	</tr>
 </table>
 </form>
