@@ -26,5 +26,63 @@
 				<param name="namespace">/admin/hotel</param>
 			</result>
 		</action>
+		<action name="hotelParamDelete" class="ula.action.admin.hotel.HotelParamAction"
+			method="hotelParamDelete">
+			<result name="success" type="chain">
+				<param name="actionName">hotelparam</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+
+		<action name="hotelalbum" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="hotelalbum">
+			<result name="hotelalbum">album_list.ftl</result>
+		</action>
+		<action name="addHotelAlbum" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="addHotelAlbum">
+			<result name="success" type="chain">
+				<param name="actionName">hotelalbum</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<action name="hotelAlbumPreUpdate" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="hotelAlbumPreUpdate">
+			<result name="hotelAlbumPreUpdate">album_info.ftl</result>
+		</action>
+		<action name="updateAlbum" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="updateAlbum">
+			<result name="success" type="chain">
+				<param name="actionName">hotelalbum</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<action name="hotelAlbumDelete" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="hotelAlbumDelete">
+			<result name="success" type="chain">
+				<param name="actionName">hotelalbum</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<!-- 向相册中添加照片 -->
+		<action name="hotelAlbumPreAddPic" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="hotelAlbumPreAddPic">
+			<result name="hotelAlbumPreAddPic">
+				album_addpic.ftl</result>
+		</action>
+		<action name="hotelAlbumAddPic" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="hotelAlbumAddPic">
+			<result name="success" type="chain">
+				<param name="actionName">hotelalbum</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<!-- 删除相册中的照片 -->
+		<action name="hotelAlbumDeletePic" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="hotelAlbumDeletePic">
+			<result name="success" type="chain">
+				<param name="actionName">hotelalbum</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
 	</package>
 </struts>
