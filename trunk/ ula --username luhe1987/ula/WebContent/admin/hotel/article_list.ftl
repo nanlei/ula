@@ -105,7 +105,7 @@
 		<td>${hotel.ALBUMNAME}</td>
 		<td>${hotel.POSTTIME?datetime}</td>
 		<td>${hotel.USERNAME}</td>
-		<td><a href="hotelArticlePreUpdate.action?id=${hotel.ID}">修改</a> | <a href="hotelArticleDelete.action?id=${hotel.ID}">删除</a></td>
+		<td><a href="hotelArticlePreUpdate.action?id=${hotel.ID}">修改</a> | <a href="hotelArticleDelete.action?id=${hotel.ID}" onclick="return confirm('确定删除吗？')">删除</a></td>
 	</tr>
 	<#assign count=count+1 />
 	</#list>
