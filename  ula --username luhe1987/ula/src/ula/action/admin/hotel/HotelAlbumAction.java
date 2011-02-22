@@ -3,10 +3,6 @@ package ula.action.admin.hotel;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.struts2.ServletActionContext;
-
-import com.opensymphony.xwork2.ActionContext;
-
 import ula.action.CommonAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;

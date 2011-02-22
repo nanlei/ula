@@ -72,4 +72,8 @@ public interface AlertMessage {
 	String HOTEL_UPDATE_FAILURE = "相册更新失败";
 	String HOTEL_DELETE_SUCCESS = "相册删除成功";
 	String HOTEL_DELETE_FAILURE = "相册删除失败";
+
+	String HOTEL_ADD_SUCCESS = "酒店添加成功";
+	String HOTEL_ADD_FAILURE = "酒店添加失败";
+
 }
