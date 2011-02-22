@@ -68,12 +68,18 @@ public interface AlertMessage {
 	String HOTEL_ADD_PIC_TO_ALBUM_FAILURE = "照片添加到相册失败";
 	String HOTEL_DELETE_PIC_FROM_ALBUM_SUCCESS = "从相册中删除照片成功";
 	String HOTEL_DELETE_PIC_FROM_ALBUM_FALIURE = "从相册中删除照片失败";
-	String HOTEL_UPDATE_SUCCESS = "相册更新成功";
-	String HOTEL_UPDATE_FAILURE = "相册更新失败";
-	String HOTEL_DELETE_SUCCESS = "相册删除成功";
-	String HOTEL_DELETE_FAILURE = "相册删除失败";
+	String HOTEL_ALBUM_UPDATE_SUCCESS = "相册更新成功";
+	String HOTEL_ALBUM_UPDATE_FAILURE = "相册更新失败";
+	String HOTEL_ALBUM_DELETE_SUCCESS = "相册删除成功";
+	String HOTEL_ALBUM_DELETE_FAILURE = "相册删除失败";
 
 	String HOTEL_ADD_SUCCESS = "酒店添加成功";
 	String HOTEL_ADD_FAILURE = "酒店添加失败";
+
+	String HOTEL_UPDATE_SUCCESS = "酒店更新成功";
+	String HOTEL_UPDATE_FAILURE = "酒店更新失败";
+
+	String HOTEL_DELETE_SUCCESS = "酒店删除成功";
+	String HOTEL_DELETE_FAILURE = "酒店删除失败";
 
 }

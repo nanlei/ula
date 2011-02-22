@@ -100,10 +100,10 @@ public class HotelAlbumAction extends CommonAction {
 		try {
 			getServiceManager().getHotelService().updateAlbumById(
 					getParametersAsMap());
-			this.setAlertMessage(AlertMessage.HOTEL_UPDATE_SUCCESS);
+			this.setAlertMessage(AlertMessage.HOTEL_ALBUM_UPDATE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
-			this.setAlertMessage(AlertMessage.HOTEL_UPDATE_FAILURE);
+			this.setAlertMessage(AlertMessage.HOTEL_ALBUM_UPDATE_FAILURE);
 			return ERROR;
 		}
 	}
@@ -117,10 +117,10 @@ public class HotelAlbumAction extends CommonAction {
 		String id = MapUtil.getStringFromMap(getParametersAsMap(), "id");
 		try {
 			getServiceManager().getHotelService().deleteAlbumById(id);
-			this.setAlertMessage(AlertMessage.HOTEL_DELETE_SUCCESS);
+			this.setAlertMessage(AlertMessage.HOTEL_ALBUM_DELETE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
-			this.setAlertMessage(AlertMessage.HOTEL_DELETE_FAILURE);
+			this.setAlertMessage(AlertMessage.HOTEL_ALBUM_DELETE_FAILURE);
 			return ERROR;
 		}
 	}

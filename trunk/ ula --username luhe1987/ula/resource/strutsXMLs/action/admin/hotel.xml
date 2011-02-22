@@ -101,5 +101,20 @@
 			method="hotelArticlePreUpdate">
 			<result name="hotelArticlePreUpdate">article_info.ftl</result>
 		</action>
+		<action name="hotelArticleUpdate" class="ula.action.admin.hotel.HotelArticleAction"
+			method="hotelArticleUpdate">
+			<result name="success" type="chain">
+				<param name="actionName">hotelarticle</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<action name="hotelArticleDelete" class="ula.action.admin.hotel.HotelArticleAction"
+			method="hotelArticleDelete">
+			<result name="success" type="chain">
+				<param name="actionName">hotelarticle</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		
 	</package>
 </struts>
