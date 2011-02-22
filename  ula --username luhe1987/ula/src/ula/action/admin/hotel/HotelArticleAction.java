@@ -6,6 +6,7 @@ import java.util.Map;
 import ula.action.CommonAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
+import ula.util.MapUtil;
 
 /**
  * 酒店文章管理Action
@@ -80,8 +81,52 @@ public class HotelArticleAction extends CommonAction {
 		}
 	}
 
-	private String hotelArticlePreUpdate() throws Exception {
-
+	/**
+	 * 获取酒店信息供修改
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String hotelArticlePreUpdate() throws Exception {
+		String id = MapUtil.getStringFromMap(getParametersAsMap(), "id");
+		hotelInfo = getServiceManager().getHotelService().getHotelById(id);
+		locationList = getServiceManager().getHotelService()
+				.getHotelParamByType("location");
+		levelList = getServiceManager().getHotelService().getHotelParamByType(
+				"level");
+		funcList = getServiceManager().getHotelService().getHotelParamByType(
+				"func");
+		albumList = getServiceManager().getHotelService().getAlbumForList();
 		return "hotelArticlePreUpdate";
+	}
+
+	/**
+	 * 修改酒店信息
+	 * 
+	 * @return
+	 */
+	public String hotelArticleUpdate() {
+		try {
+			getServiceManager().getHotelService().updateHotelById(
+					getParametersAsMap());
+			this.setAlertMessage(AlertMessage.HOTEL_UPDATE_SUCCESS);
+			return SUCCESS;
+		} catch (Exception e) {
+			this.setAlertMessage(AlertMessage.HOTEL_UPDATE_FAILURE);
+			return ERROR;
+		}
+	}
+
+	public String hotelArticleDelete() {
+		String id = MapUtil.getStringFromMap(getParametersAsMap(), "id");
+		try {
+			getServiceManager().getHotelService().deleteHotelById(id);
+			this.setAlertMessage(AlertMessage.HOTEL_DELETE_SUCCESS);
+			return SUCCESS;
+		} catch (Exception e) {
+			this.setAlertMessage(AlertMessage.HOTEL_DELETE_FAILURE);
+			return ERROR;
+		}
+
 	}
 }

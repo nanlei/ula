@@ -134,6 +134,25 @@ public class HotelService extends BaseService {
 		DB.update(ADD_HOTEL, new Object[] { params[0], params[1], params[2],
 				params[3], params[4], params[5], userName });
 	}
-	
-	private static final String GET_HOTEL_BY_ID="select h.*,a.NAME as ALBUMNAME from hotel h join album a on h.ALBUMID=a.ID where h.ID=?";
+
+	private static final String GET_HOTEL_BY_ID = "select h.*,a.NAME as ALBUMNAME from hotel h join album a on h.ALBUMID=a.ID where h.ID=?";
+
+	public Map getHotelById(String id) {
+		return DB.queryForMap(GET_HOTEL_BY_ID, new Object[] { id });
+	}
+
+	private static final String UPDATE_HOTEL_BY_ID = "update hotel set NAME=?, LOCATION=?, LEVEL=?, FUNC=?, CONTENT=?, ALBUMID=? where ID=?";
+
+	public void updateHotelById(Map parameters) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
+				"name,location,level,func,content,albumId,id");
+		DB.update(UPDATE_HOTEL_BY_ID, params);
+
+	}
+
+	private static final String DELETE_HOTEL_BY_ID = "delete from hotel where ID=?";
+
+	public void deleteHotelById(String id) {
+		DB.update(DELETE_HOTEL_BY_ID, new Object[] { id });
+	}
 }
