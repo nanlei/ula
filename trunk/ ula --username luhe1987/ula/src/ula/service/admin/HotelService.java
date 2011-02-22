@@ -107,4 +107,33 @@ public class HotelService extends BaseService {
 		DB.update(DELETE_PIC_FORM_ALBUM_BY_ALBUM_ID, new Object[] { id });
 		DB.update(DELETE_ALBUM_BY_ID, new Object[] { id });
 	}
+
+	private static final String GET_ALL_HOTELS = "select h.ID as ID, h.NAME as NAME, h.LOCATION as LOCATION, h.LEVEL as LEVEL, h.FUNC as FUNC, h.POSTTIME as POSTTIME,h.USERNAME as USERNAME, a.NAME as ALBUMNAME from hotel h join album a on h.ALBUMID=h.ID order by h.ID desc";
+
+	public PagingList getAllHotels() {
+		return getPagingList(GET_ALL_HOTELS);
+	}
+
+	private static final String GET_HOTEL_PARAM_BY_TYPE = "select * from hotel_param where TYPE=?";
+
+	public List getHotelParamByType(String type) {
+		return DB.queryForList(GET_HOTEL_PARAM_BY_TYPE, new Object[] { type });
+	}
+
+	private static final String GET_ALBUM_FOR_LIST = "select ID,NAME from album";
+
+	public List getAlbumForList() {
+		return DB.queryForList(GET_ALBUM_FOR_LIST);
+	}
+
+	private static final String ADD_HOTEL = "insert into hotel(NAME,LOCATION,LEVEL,FUNC,CONTENT,ALBUMID,POSTTIME,USERNAME) values(?,?,?,?,?,?,now(),?)";
+
+	public void addHotel(Map parameters, String userName) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
+				"name,location,level,func,content,albumId");
+		DB.update(ADD_HOTEL, new Object[] { params[0], params[1], params[2],
+				params[3], params[4], params[5], userName });
+	}
+	
+	private static final String GET_HOTEL_BY_ID="select h.*,a.NAME as ALBUMNAME from hotel h join album a on h.ALBUMID=a.ID where h.ID=?";
 }

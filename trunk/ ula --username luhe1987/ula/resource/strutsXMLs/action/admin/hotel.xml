@@ -84,5 +84,22 @@
 				<param name="namespace">/admin/hotel</param>
 			</result>
 		</action>
+
+		<!-- 文章管理部分 -->
+		<action name="hotelarticle" class="ula.action.admin.hotel.HotelArticleAction"
+			method="hotelarticle">
+			<result name="hotelarticle">article_list.ftl</result>
+		</action>
+		<action name="hotelArticleAdd" class="ula.action.admin.hotel.HotelArticleAction"
+			method="hotelArticleAdd">
+			<result name="success" type="chain">
+				<param name="actionName">hotelarticle</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<action name="hotelArticlePreUpdate" class="ula.action.admin.hotel.HotelArticleAction"
+			method="hotelArticlePreUpdate">
+			<result name="hotelArticlePreUpdate">article_info.ftl</result>
+		</action>
 	</package>
 </struts>
