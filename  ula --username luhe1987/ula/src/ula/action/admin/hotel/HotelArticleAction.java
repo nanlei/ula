@@ -22,6 +22,8 @@ public class HotelArticleAction extends CommonAction {
 	private List funcList;// 酒店功能
 	private List albumList;// 酒店相册
 
+	private Map recommandInfo;// 酒店推荐信息
+
 	public PagingList getHotelList() {
 		return hotelList;
 	}
@@ -44,6 +46,10 @@ public class HotelArticleAction extends CommonAction {
 
 	public List getAlbumList() {
 		return albumList;
+	}
+
+	public Map getRecommandInfo() {
+		return recommandInfo;
 	}
 
 	/**
@@ -117,6 +123,11 @@ public class HotelArticleAction extends CommonAction {
 		}
 	}
 
+	/**
+	 * 删除酒店信息
+	 * 
+	 * @return
+	 */
 	public String hotelArticleDelete() {
 		String id = MapUtil.getStringFromMap(getParametersAsMap(), "id");
 		try {
@@ -128,5 +139,34 @@ public class HotelArticleAction extends CommonAction {
 			return ERROR;
 		}
 
+	}
+
+	/**
+	 * 酒店推荐文章信息
+	 * 
+	 * @return
+	 */
+	public String hotelRecommand() {
+		recommandInfo = getServiceManager().getHotelService()
+				.getHotelRecommand();
+		return "hotelRecommand";
+	}
+
+	/**
+	 * 修改酒店推荐文章信息
+	 * 
+	 * @return
+	 */
+	public String hotelRecommandUpdate() {
+		try {
+			getServiceManager().getHotelService().updateHotelRecommand(
+					getParametersAsMap(), getLoginUserName());
+			this.setAlertMessage(AlertMessage.HOTEL_RECOMMAND_UPDATE_SUCCESS);
+			return SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.setAlertMessage(AlertMessage.HOTEL_RECOMMAND_UPDATE_FAILURE);
+			return ERROR;
+		}
 	}
 }

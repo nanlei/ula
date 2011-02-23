@@ -82,4 +82,7 @@ public interface AlertMessage {
 	String HOTEL_DELETE_SUCCESS = "酒店删除成功";
 	String HOTEL_DELETE_FAILURE = "酒店删除失败";
 
+	String HOTEL_RECOMMAND_UPDATE_SUCCESS = "酒店推荐更新成功";
+	String HOTEL_RECOMMAND_UPDATE_FAILURE = "酒店推荐更新失败";
+
 }
