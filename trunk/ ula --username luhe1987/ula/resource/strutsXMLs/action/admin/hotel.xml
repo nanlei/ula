@@ -115,6 +115,17 @@
 				<param name="namespace">/admin/hotel</param>
 			</result>
 		</action>
-		
+		<!-- 酒店推荐  -->
+		<action name="hotelRecommand" class="ula.action.admin.hotel.HotelArticleAction"
+			method="hotelRecommand">
+			<result name="hotelRecommand">article_recommand.ftl</result>
+		</action>
+		<action name="hotelRecommandUpdate" class="ula.action.admin.hotel.HotelArticleAction"
+			method="hotelRecommandUpdate">
+			<result name="success" type="chain">
+				<param name="actionName">hotelarticle</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
 	</package>
 </struts>

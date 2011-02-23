@@ -1,7 +1,8 @@
 <@p.page>
 	<@app.naviBar navi="关于城市,大连酒店,酒店管理" />
 	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面显示系统内的所有的关于城市->大连酒店->酒店的信息，您可以维护这些信息。">
-	<@app.button id="newArticleButton" onclick="$('#newArticle').toggle();this.blur();return false;" text="添加酒店"/>
+	<@app.a id="newArticleButton" href="javascript:void(0)" onclick="$('#newArticle').toggle();this.blur();return false;" text="添加酒店"/>
+	<@app.a id="recommandButton" href="hotelRecommand.action" text="酒店推荐"/>
 	</@app.naviInfo>
 	<#if alertMessage?exists>
 	${alertMessage}

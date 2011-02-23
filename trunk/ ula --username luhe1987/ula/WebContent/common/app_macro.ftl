@@ -86,9 +86,18 @@ if (navTD) {
 
 <#-- Button按钮(使用了 jQuery UI)-->
 <#macro button id="" onclick="" text="">
-<div style="padding:0px;font-size:82.5%">
+<span style="padding:0px;font-size:82.5%">
 <button id="${id}" onclick="${onclick}">&nbsp;${text}&nbsp;</button>
-</div>
+</span>
+<script>
+	$("#${id}").button();
+</script>
+</#macro>
+
+<#macro a id="" href="" onclick="" text="">
+<span style="padding:0px;font-size:100%">
+<a id="${id}" href="${href}" onclick="${onclick}">&nbsp;${text}&nbsp;</a>
+</span>
 <script>
 	$("#${id}").button();
 </script>

@@ -155,4 +155,20 @@ public class HotelService extends BaseService {
 	public void deleteHotelById(String id) {
 		DB.update(DELETE_HOTEL_BY_ID, new Object[] { id });
 	}
+
+	private static final String GET_HOTEL_RECOMMAND = "select * from hotel_recommand where ID=1";
+
+	public Map getHotelRecommand() {
+		return DB.queryForMap(GET_HOTEL_RECOMMAND);
+	}
+
+	private static final String UPDATE_HOTEL_RECOMMAND = "update hotel_recommand set TITLE=?, CONTENT=?, UPDATETIME=now(), UPDATEUSER=? where ID=1";
+
+	public void updateHotelRecommand(Map parameters, String userName) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
+				"title,content");
+		DB.update(UPDATE_HOTEL_RECOMMAND, new Object[] { params[0], params[1],
+				userName });
+	}
+
 }
