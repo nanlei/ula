@@ -19,6 +19,50 @@
 	my_left.style.height= my_right.clientHeight + "px";
 	}
 }    
+
+
+ function checkEmptyInputs(){
+           
+        var hotelName = document.getElementById('hotelName');
+        var guestTotal = document.getElementById('guestTotal');
+        var roomTotal = document.getElementById('roomTotal');
+        var checkinDate = document.getElementById('checkinDate');
+        var checkoutDate = document.getElementById('checkoutDate');
+        var name = document.getElementById('name');
+        var phoneNumber = document.getElementById('phoneNumber');
+        var contact = document.getElementById('contact');
+        
+        
+        if(hotelName.value==""){
+            hotelName.focus();
+            return false;
+        }
+        
+        if(checkinDate.value==""){
+           checkinDate.focus();  
+           return false;
+        }
+        
+        if(checkoutDate.value==""){
+            checkoutDate.focus();
+            return false;
+        }
+        
+        if(name.value==""){
+          name.focus();
+          return false;
+        }
+        
+        if(phoneNumber.value=="" && contact.value==""){
+            phoneNumber.focus();
+            return false;
+        }
+        
+        
+        return true;
+        
+   }	
+
 </script>  
 
 </head>
@@ -76,55 +120,75 @@
     
     <div class="right_content">
     
-     <p class="content_p"/><form method=post action="hotelReserv!reserve.action">
+<p class="content_p"/>
+
+<form method=post action="hotelReserv!reserve.action" onsubmit = "return checkEmptyInputs()">
+
 <table align ="center">
-<tr>
-	<td>姓名</td>
-	<td><input type="text" name="name"/></td>
-</tr>
-<tr>
-	<td>电话</td>
-	<td><input type="text" name="tel"/></td>
-</tr>
-<tr>
-	<td>Email</td>
-	<td><input type="text" name="email"/></td>
-</tr>
+
 <tr>
 	<td>酒店名称</td>
-	<td><input type="text" name="hotelName"/></td>
+	<td><input type="text" name="hotelName" id = "hotelName"/></td>
 </tr>
+
 <tr>
-	<td>客房类型</td>
-	<td><input type="text" name="roomCategory"/></td>
+	<td>入住人数</td>
+	<td><input type="text" name="guestTotal" id = "guestTotal" value ="1"/></td>
 </tr>
+
+<tr>
+	<td>预定间数</td>
+	<td><input type="text" name="roomTotal" id = "roomTotal" value="1"/></td>
+</tr>
+
+
 <tr>
 	<td>入住日期</td>
-	<td><input class="Wdate" type="text" onClick="WdatePicker({lang:'en'})" name="checkinDate"></td>
+	<td><input class="Wdate" type="text" onClick="WdatePicker({lang:'en'})" name="checkinDate" id = "checkinDate"> </td>
 </tr>
 <tr>
 	<td>离开日期</td>
-	<td><input class="Wdate" type="text" onClick="WdatePicker({lang:'en'})" name="checkoutDate"></td>
+	<td><input class="Wdate" type="text" onClick="WdatePicker({lang:'en'})" name="checkoutDate" id = "checkoutDate"></td>
+
+<tr>
+	<td>联系人</td>
+	<td><input type="text" name="name" id = "name"/></td>
+</tr>
+
+
+
+<tr>
+	<td>
+    <select name="phoneType">
+		<option value="tel">电话</option>
+		<option value="mobile">手机</option>
+    </select>
+     </td>
+     <td>
+     <input type="text" name="phoneNumber" id = "phoneNumber"/></td>
+</tr>
+
+<tr>
+    <td>
+    <select name="contactType">
+		<option value="icq">ICQ</option>
+		<option value="skype">Skype</option>
+		<option value="email">Email</option>
+    </select>
+    </td>
+    <td>
+	<input type="text" name="contact" id = "contact"/>
+	</td>
+</tr>
 
 </tr>
-<tr>
-	<td>男性人数</td>
-	<td><input type="text" name="numberOfMen" value ="0"/></td>
-</tr>
-<tr>
-	<td>女性人数</td>
-	<td><input type="text" name="numberOfWomen" value="0"/></td>
-</tr>
-<tr>
-	<td>儿童人数</td>
-	<td><input type="text" name="numberOfKids" value="0"/></td>
-</tr>
+
 <tr>
 	<td>备注说明</td>
 	<td valign="top"><textarea name="remarks" rows="10" cols="25"></textarea></td>
 </tr>
 <tr>
-	<td colspan ="2" align ="center"><input type="submit" value="提交订单"/> </td>
+	<td colspan ="2" align ="center"><input type="submit" value="提交订单" /> </td>
 </tr>
 </table>
   </form></p>

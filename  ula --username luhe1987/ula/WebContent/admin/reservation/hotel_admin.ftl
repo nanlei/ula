@@ -23,7 +23,7 @@
 		<tr>
 		<td>${hotelReserv.name}</td>
 		<td>${hotelReserv.hotelName}</td>
-		<td>${hotelReserv.order_date}</td>
+		<td>${hotelReserv.orderDate}</td>
 		<td><a href= "${base}/reservation/hotelReserv!detail.action?id=${hotelReserv.Id}">查看</a></td>
 		<td><a href= "${base}/reservation/hotelReserv!remove.action?id=${hotelReserv.Id}">删除</a></td>
 		<td>
