@@ -11,19 +11,19 @@
 	</tr>
 	<tr>
 	<td>电话：</td>
-	<td>${reservation.tel}</td>
+	<td>${reservation.phoneNumber}</td>
 	</tr>
 	<tr>
-	<td>Email：</td>
-	<td>${reservation.email}</td>
+	<td>其他联系方式：</td>
+	<td>${reservation.contact}</td>
 	</tr>
 	<tr>
 	<td>酒店名称：</td>
 	<td>${reservation.hotelName}</td>
 	</tr>
 	<tr>
-	<td>客房类型：</td>
-	<td>${reservation.roomCategory}</td>
+	<td>房间数量：</td>
+	<td>${reservation.roomTotal}</td>
 	</tr>
 	<tr>
 	<td>入住日期：</td>
@@ -34,17 +34,10 @@
 	<td>${reservation.checkoutDate}</td>
 	</tr>
 	<tr>
-	<td>男性人数：</td>
-	<td>${reservation.men}</td>
+	<td>入住人数：</td>
+	<td>${reservation.guestTotal}</td>
 	</tr>
-	<tr>
-	<td>女性人数：</td>
-	<td>${reservation.women}</td>
-	</tr>
-	<tr>
-	<td>儿童人数：</td>
-	<td>${reservation.kids}</td>
-	</tr>
+	
 	<tr>
 	<td>备注说明：</td>
 	<td><textarea rows="10" cols="25">${reservation.remarks}</textarea></td>
