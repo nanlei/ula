@@ -26,7 +26,7 @@
 			</tr>
 			<tr>
 				<td>参数名称</td>
-				<td><input type="text" name="paramName" emptyInfo="请输入参数名称"></td>
+				<td><input type="text" name="paramName" emptyInfo="请输入参数名称" noChineseInfo="参数名称仅能是字母或数字"><br/>（<b>用作查询条件，请使用字母或数字，不能修改，所有参数名称必须唯一</b>）</td>
 			</tr>
 			<tr>
 				<td>显示内容</td>

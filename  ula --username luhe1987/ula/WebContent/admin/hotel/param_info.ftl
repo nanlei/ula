@@ -21,7 +21,7 @@
 			</tr>
 			<tr>
 				<td>参数名称</td>
-				<td><input type="text" name="paramName" emptyInfo="请输入参数名称" value="${hotelParam.NAME}"></td>
+				<td>${hotelParam.NAME}</td>
 			</tr>
 			<tr>
 				<td>显示内容</td>
