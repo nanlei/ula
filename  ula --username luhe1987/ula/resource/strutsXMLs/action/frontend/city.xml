@@ -14,7 +14,6 @@
 		<!--关于城市->大连介绍	-->
 		<action name="intro" class="ula.action.admin.city.IntroductionAction">
 			<result name="view">/admin/city/city_map_data.ftl</result>
-
 		</action>
 
 		<!--关于城市->大连历史	-->
@@ -22,11 +21,9 @@
 			<result name="view">/admin/city/city_map_data.ftl</result>
 		</action>
 
-		
 		<!--关于城市->城市地图	-->
 		<action name="citymap" class="ula.action.admin.city.CityMapAction">
 			<result name="view">/admin/city/city_map_data.ftl</result>
-
 		</action>
 
 		<!-- 关于城市->景点，公园  -->
@@ -43,10 +40,34 @@
 		</action>
 
 
-		<!--大连居住-->
+		<!--大连居住，Deprecated -->
 		<action name="housing" class="ula.action.admin.city.ArticleAction"
 			method="view">
 			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+
+		<!-- 大连酒店 -->
+		<action name="hotel" class="ula.action.admin.hotel.HotelAction"
+			method="hotel">
+			<result name="hotel">/admin/city/hotel_list.ftl</result>
+		</action>
+
+		<!-- 大连酒店->酒店搜索 -->
+		<action name="hotelSearch" class="ula.action.admin.hotel.HotelAction"
+			method="hotelSearch">
+			<result name="hotelSearch">/admin/city/hotel_info.ftl</result>
+		</action>
+
+		<!-- 大连酒店->酒店信息 -->
+		<action name="hotelInfo" class="ula.action.admin.hotel.HotelAction"
+			method="hotelInfo">
+			<result name="hotelInfo">/admin/city/hotel_info.ftl</result>
+		</action>
+
+		<!-- 大连酒店->根据星级搜索 -->
+		<action name="hotelLevel" class="ula.action.admin.hotel.HotelAction"
+			method="hotelLevel">
+			<result name="hotelLevel">/admin/city/hotel_info.ftl</result>
 		</action>
 
 		<!--大连购物-->
