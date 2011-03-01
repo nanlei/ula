@@ -59,9 +59,13 @@ public interface AlertMessage {
 	String DONE_MARK = "标记为已处理。操作成功";
 	String UNDONE_MARK = "标记为未处理。操作成功";
 
+	String HOTEL_PARAM_NAME_EXIST = "酒店参数名称已经存在，请更换";
 	String HOTEL_PARAM_ADD_SUCCESS = "酒店参数添加成功";
+	String HOTEL_PARAM_ADD_FAILURE = "酒店参数添加失败";
 	String HOTEL_PARAM_UPDATE_SUCCESS = "酒店参数修改成功";
+	String HOTEL_PARAM_UPDATE_FAILURE = "酒店参数修改失败";
 	String HOTL_PARAM_DELETE_SUCCESS = "酒店参数删除成功";
+	String HOTL_PARAM_DELETE_FAILURE = "酒店参数删除失败";
 
 	String HOTEL_ALBUM_ADD_SUCCESS = "酒店相册添加成功";
 	String HOTEL_ADD_PIC_TO_ALBUM_SUCCESS = "照片添加到相册成功";

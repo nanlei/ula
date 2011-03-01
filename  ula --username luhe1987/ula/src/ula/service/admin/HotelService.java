@@ -3,15 +3,26 @@ package ula.service.admin;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
+
 import ula.common.PagingList;
 import ula.service.BaseService;
 import ula.util.MapUtil;
+import ula.util.QueryHelper;
 
 public class HotelService extends BaseService {
 	private static final String GET_ALL_HOTEL_PARAMS = "select * from hotel_param order by TYPE,ID";
 
 	public PagingList getAllHotelParams() {
 		return getPagingList(GET_ALL_HOTEL_PARAMS);
+	}
+
+	private static final String GET_CHECK_NAME_EXIST = "select count(*) from hotel_param where name=?";
+
+	public int getCheckNameExist(Map parameters) {
+		Object[] params = MapUtil
+				.getObjectArrayFromMap(parameters, "paramName");
+		return DB.queryForInt(GET_CHECK_NAME_EXIST, params);
 	}
 
 	private static final String ADD_HOTEL_PARAM = "insert into hotel_param(TYPE,NAME,VALUE) values(?,?,?)";
@@ -29,11 +40,11 @@ public class HotelService extends BaseService {
 		return DB.queryForMap(GET_HOTEL_PARAM_BY_ID, params);
 	}
 
-	private static final String UPDATE_HOTEL_PARAM_BY_ID = "update hotel_param set TYPE=?, NAME=?, VALUE=? where ID=?";
+	private static final String UPDATE_HOTEL_PARAM_BY_ID = "update hotel_param set TYPE=?, VALUE=? where ID=?";
 
 	public void updateHotelParam(Map parameters) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"type,paramName,paramValue,id");
+				"type,paramValue,id");
 		DB.update(UPDATE_HOTEL_PARAM_BY_ID, params);
 	}
 
@@ -169,6 +180,53 @@ public class HotelService extends BaseService {
 				"title,content");
 		DB.update(UPDATE_HOTEL_RECOMMAND, new Object[] { params[0], params[1],
 				userName });
+	}
+
+	// 以下为前台方法
+	private static final String GET_HOTEL_LEVEL_LIST = "select NAME,VALUE from hotel_param where type='level'";
+
+	public List getHotelLevelList() {
+		return DB.queryForList(GET_HOTEL_LEVEL_LIST);
+	}
+
+	private static final String GET_RECOMMAND_HOTEL = "select * from hotel_recommand where ID=1";
+
+	public Map getRecommandHotel() {
+		return DB.queryForMap(GET_RECOMMAND_HOTEL);
+	}
+
+	private static final String GET_SEARCH_HOTEL = "select ID,NAME from hotel";
+
+	public List getSearchHotel(Map parameters) {
+		String location = MapUtil.getStringFromMap(parameters, "location");
+		String level = MapUtil.getStringFromMap(parameters, "level");
+		String func = MapUtil.getStringFromMap(parameters, "func");
+		QueryHelper qh = new QueryHelper(GET_SEARCH_HOTEL);
+		qh.setParam(StringUtils.isNotEmpty(location), "location='" + location
+				+ "'");
+		qh.setParam(StringUtils.isNotEmpty(level), "level='" + level + "'");
+		qh.setParam(StringUtils.isNotEmpty(func), "func='" + func + "'");
+		System.out.println(qh.getQuerySql());
+		return DB.queryForList(qh.getQuerySql());
+	}
+
+	private static final String GET_HOTEL_ALBUM_PIC = "select p.PICID as PICID, p.PICNAME as PICNAME, p.PICPATH as PICPATH from hotel h join album_pic ap on h.ALBUMID=ap.ALBUMID join pic p on ap.PICID=p.PICID where h.ID=? order by p.PICID asc";
+
+	public List getHotelAlbumPicByHotelId(String id) {
+		return DB.queryForList(GET_HOTEL_ALBUM_PIC, new Object[] { id });
+	}
+
+	private static final String GET_PARAM_VALUE_BY_NAME = "select VALUE from hotel_param where NAME=?";
+
+	public String getParamValueByName(String name) {
+		return (String) DB.queryForObject(GET_PARAM_VALUE_BY_NAME,
+				new Object[] { name }, String.class);
+	}
+
+	private static final String GET_HOTEL_BY_LEVEL = "select ID,NAME from hotel where LEVEL=?";
+
+	public List getHotelByLevel(String level) {
+		return DB.queryForList(GET_HOTEL_BY_LEVEL, new Object[] { level });
 	}
 
 }
