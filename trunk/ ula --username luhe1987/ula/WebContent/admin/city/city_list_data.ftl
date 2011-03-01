@@ -63,7 +63,8 @@
   </li>
   <li>
   	<div class="menu_title">
-    <h2><a href="${base}/city/housing!view.action?type=housing">大连居住</a></h2>
+    <h2><#--<a href="${base}/city/housing!view.action?type=housing">-->
+    	<a href="${base}/city/hotel.action">大连酒店</a></h2>
     </div>
     
   </li>
