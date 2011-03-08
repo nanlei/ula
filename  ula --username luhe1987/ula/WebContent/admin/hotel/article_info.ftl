@@ -20,7 +20,7 @@
 				<select name="location" emptyInfo="请选择酒店位置">
 					<option>--请选择--</option>
 					<#list locationList as location>
-					<option value="${location.VALUE}" <#if location.VALUE=hotelInfo.LOCATION>selected="selected"</#if>>${location.NAME}</option>
+					<option value="${location.NAME}" <#if location.NAME=hotelInfo.LOCATION>selected="selected"</#if>>${location.VALUE}</option>
 					</#list>
 				</select>
 			</td>
@@ -31,7 +31,7 @@
 				<select name="level" emptyInfo="请选择酒店星级">
 					<option>--请选择--</option>
 					<#list levelList as level>
-					<option value="${level.VALUE}" <#if level.VALUE=hotelInfo.LEVEL>selected="selected"</#if>>${level.NAME}</option>
+					<option value="${level.NAME}" <#if level.NAME=hotelInfo.LEVEL>selected="selected"</#if>>${level.VALUE}</option>
 					</#list>
 				</select>
 			</td>
@@ -42,7 +42,7 @@
 				<select name="func" emptyInfo="请选择酒店功能">
 					<option>--请选择--</option>
 					<#list funcList as func>
-					<option value="${func.VALUE}" <#if func.VALUE=hotelInfo.FUNC>selected="selected"</#if>>${func.NAME}</option>
+					<option value="${func.NAME}" <#if func.NAME=hotelInfo.FUNC>selected="selected"</#if>>${func.VALUE}</option>
 					</#list>
 				</select>
 			</td>
