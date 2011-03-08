@@ -119,7 +119,7 @@ public class HotelService extends BaseService {
 		DB.update(DELETE_ALBUM_BY_ID, new Object[] { id });
 	}
 
-	private static final String GET_ALL_HOTELS = "select h.ID as ID, h.NAME as NAME, h.LOCATION as LOCATION, h.LEVEL as LEVEL, h.FUNC as FUNC, h.POSTTIME as POSTTIME,h.USERNAME as USERNAME, a.NAME as ALBUMNAME from hotel h join album a on h.ALBUMID=h.ID order by h.ID desc";
+	private static final String GET_ALL_HOTELS = "select h.ID as ID, h.NAME as NAME, h.LOCATION as LOCATION, h.LEVEL as LEVEL, h.FUNC as FUNC, h.POSTTIME as POSTTIME,h.USERNAME as USERNAME, a.NAME as ALBUMNAME from hotel h join album a on h.ALBUMID=h.ALBUMID order by h.ID desc";
 
 	public PagingList getAllHotels() {
 		return getPagingList(GET_ALL_HOTELS);
