@@ -50,6 +50,8 @@
 
 
 
+
+
 </style>		
 
 
@@ -167,6 +169,7 @@
 	   				酒店相册
 					<#assign pIndex=picIndex/>
 	   				<#list albumPicList as albumPic>
+	   				
 					<div id="#${albumPic.PICID}">
 						<img src="${base}${albumPic.PICPATH}" alt="${albumPic.PICNAME}" width="600" height="450"/>
 						<#if albumPic_index=0>
@@ -178,17 +181,23 @@
 						</#if>
 						<h3>${albumPic.PICNAME}</h3>
 					</div>
+					
 					</#list>
 				</div>
 			</div>
+			
 			<div style="text-align:center;">
-			${hotelInfo.NAME}
+		        ${hotelInfo.NAME}
 			</div>
+			
 			<div style="text-align:center;margin-top:10px;">
-			位置：<b>${hotelInfo.location}</b>&nbsp;&nbsp;星级：<b>${hotelInfo.level}</b>&nbsp;&nbsp;功能：<b>${hotelInfo.func}</b>
+			位置：<b>${hotelInfo.location}</b>&nbsp;&nbsp;
+			星级：<b>${hotelInfo.level}</b>&nbsp;&nbsp;
+			功能：<b>${hotelInfo.func}</b>
 			</div>
+			
 			<div style="margin-top:15px;">
-			${hotelInfo.CONTENT}
+		        ${hotelInfo.CONTENT}
 			</div>
 			
 			</p>
