@@ -17,26 +17,38 @@
 	}
 }    
 </script>  
+
+
 <style type="text/css">
-#hotel_category, #search_box {
-	text-align:center;
-}
 
-#hotel_category span a {
-	font-family: Arial, Verdana;
-	font-size: 14px;
-	color:#2C5463;
-	margin: 5px;
-	text-decoration: none;
-}
-
-#search_box{
-	margin-top: 20px;
-}
-</style>		
+	#hotel_category, #search_box {
+		text-align:center;
+	}
+	
+	#hotel_category span a {
+		font-family: Arial, Verdana;
+		font-size: 14px;
+		color:#2C5463;
+		margin: 5px;
+		text-decoration: none;
+	}
+	
+	#hotel_category a:visited{
+	         color: #666666
+	       }
+	
+	#search_box{
+		margin-top: 20px;
+	}
+</style>
+		
 </head>
+
+
+
 <body onload= "my_height()">
 <#include "../../global/header.html">
+
 <div id="main">
 	<div id="left_menu">
 		<ul class="rolinList" id="rolin">
@@ -120,41 +132,46 @@
     	</div>
     	<div class="right_content">
     		<p class="content_p">
+    		
     			<div id="hotel_category">
     				<#list hotelList as hotel>
     				<span><a href="hotelLevel.action?level=${hotel.NAME}">${hotel.VALUE}</a></span>
     				</#list>
 			    </div>
+			    
 			    <div id="search_box">
 			    	<form name="searchForm" action="hotelSearch.action" method="post" onSubmit="return validateForm(this)">
-			    	酒店搜索&nbsp;>>&nbsp;
-			    	位置：<select name="location">
-							<option value="">--请选择--</option>
-							<#list locationList as location>
-							<option value="${location.NAME}">${location.VALUE}</option>
-							</#list>
-						 </select>
-					&nbsp;&nbsp;
-					星级：<select name="level">
-							<option value="">--请选择--</option>
-							<#list levelList as level>
-							<option value="${level.NAME}">${level.VALUE}</option>
-							</#list>
-						 </select>
-					&nbsp;&nbsp;
-					功能：<select name="func">
-							<option value="">--请选择--</option>
-							<#list funcList as func>
-							<option value="${func.NAME}">${func.VALUE}</option>
-							</#list>
-						 </select>
-					&nbsp;&nbsp;
-					<span style="padding:0px;font-size:77.5%">
-					<input id="searchSubmit" type="submit" value="搜索">
-					</span> 
+					    	
+					    	酒店搜索&nbsp;>>&nbsp;
+					    	位置：<select name="location">
+									<option value="">--请选择--</option>
+									<#list locationList as location>
+									<option value="${location.NAME}">${location.VALUE}</option>
+									</#list>
+								 </select>
+							&nbsp;&nbsp;
+							星级：<select name="level">
+									<option value="">--请选择--</option>
+									<#list levelList as level>
+									<option value="${level.NAME}">${level.VALUE}</option>
+									</#list>
+								 </select>
+							&nbsp;&nbsp;
+							功能：<select name="func">
+									<option value="">--请选择--</option>
+									<#list funcList as func>
+									<option value="${func.NAME}">${func.VALUE}</option>
+									</#list>
+								 </select>
+							&nbsp;&nbsp;
+							
+							<span style="padding:0px;font-size:77.5%">
+							<input id="searchSubmit" type="submit" value="搜索">
+							</span> 
+					
 					</form>
 			    </div>
-			    <div style="text-align:center;margin-top:15px;">推荐酒店：${recommandHotel.TITLE}</div>
+			    <div style="text-align:center;margin-top:30px;">推荐酒店：${recommandHotel.TITLE}</div>
 			    <div style="margin-top:5px;">${recommandHotel.CONTENT}</div>
 			 </p>
 		</div>
