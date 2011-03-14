@@ -50,10 +50,10 @@
     <h2>委托</h2>
     </div>
     <div class="content">
-    	<div class="content_item"><a href="/ula/special/ticket!view.action">代订车、船票</a></div>
-        <div class="content_item"><a href="/ula/special/carrental!view.action">租车服务</a></div>
-        <div class="content_item"><a href="/ula/special/translation!view.action">翻译服务</a></div>
-        <div class="content_item"><a href="/ula/special/souvenir!view.action">代邮寄纪念品</a></div>
+    	<div class="content_item"><a href="${base}/special/ticket!view.action">代订车、船票</a></div>
+        <div class="content_item"><a href="${base}/special/carrental!view.action">租车服务</a></div>
+        <div class="content_item"><a href="${base}/special/translation!view.action">翻译服务</a></div>
+        <div class="content_item"><a href="${base}/special/souvenir!view.action">代邮寄纪念品</a></div>
     </div>
   </li>
   <li>
