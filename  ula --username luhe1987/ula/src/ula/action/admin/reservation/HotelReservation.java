@@ -370,6 +370,7 @@ public class HotelReservation extends CommonAction {
     public String view ( ) {
 
         super.view ( ) ;
+        super.debug (this.toString ());
         return "view" ;
     }
 
