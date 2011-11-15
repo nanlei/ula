@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="admin/city" extends="global" namespace="/admin/city">
+
+		<!--关于城市->大连介绍 -->
+		<action name="intro" class="ula.action.admin.city.IntroductionAction">
+			<result name="edit">introduction_edit.ftl</result>
+			<result name="view">introduction_view.ftl</result>
+			<result name="update">introduction_admin.ftl</result>
+			<result name="admin">introduction_admin.ftl</result>
+			<result name="preAdd">introduction_add.ftl</result>
+		</action>
+
+		<!--关于城市->大连历史 -->
+		<action name="history" class="ula.action.admin.city.HistoryAction">
+			<result name="edit">history_edit.ftl</result>
+			<result name="view">history_view.ftl</result>
+			<result name="update">history_admin.ftl</result>
+			<result name="admin">history_admin.ftl</result>
+			<result name="preAdd">history_add.ftl</result>
+		</action>
+
+		<!-- 关于城市->景点，公园 -->
+		<action name="tour" class="ula.action.admin.city.TourAction"
+			method="tour">
+			<result name="dalian">tour/dalian.ftl</result>
+			<result name="lvshun">tour/lvshun.ftl</result>
+			<result name="devzone">tour/devzone.ftl</result>
+		</action>
+		<action name="preAddTour" class="ula.action.BaseAction">
+			<result>tour/add.ftl</result>
+		</action>
+		<action name="selectCoverLink" class="ula.action.admin.city.TourAction"
+			method="selectCoverLink">
+			<result name="selectCoverLink">coverlink.ftl</result>
+		</action>
+		<action name="addTour" class="ula.action.admin.city.TourAction"
+			method="addTour">
+			<result name="success" type="chain">
+				<param name="actionName">tour</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="preUpdateTour" class="ula.action.admin.city.TourAction"
+			method="preUpdateTour">
+			<result name="preUpdateTour">tour/tourInfo.ftl</result>
+		</action>
+		<action name="updateTour" class="ula.action.admin.city.TourAction"
+			method="updateTour">
+			<result name="success" type="chain">
+				<param name="actionName">tour</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="deleteTour" class="ula.action.admin.city.TourAction"
+			method="deleteTour">
+			<result name="success" type="chain">
+				<param name="actionName">tour</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+
+		<!--大连美食 -->
+		<action name="food" class="ula.action.admin.city.FoodAction"
+			method="food">
+			<result name="food">food/food.ftl</result>
+		</action>
+		<action name="preAddFood" class="ula.action.BaseAction">
+			<result>food/add.ftl</result>
+		</action>
+		<action name="addFood" class="ula.action.admin.city.FoodAction"
+			method="addFood">
+			<result name="success" type="chain">
+				<param name="actionName">food</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="preUpdateFood" class="ula.action.admin.city.FoodAction"
+			method="preUpdateFood">
+			<result name="preUpdateFood">food/foodInfo.ftl</result>
+		</action>
+		<action name="updateFood" class="ula.action.admin.city.FoodAction"
+			method="updateFood">
+			<result name="success" type="chain">
+				<param name="actionName">food</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="deleteFood" class="ula.action.admin.city.FoodAction"
+			method="deleteFood">
+			<result name="success" type="chain">
+				<param name="actionName">food</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+
+		<!--大连居住 -->
+		<action name="housing" class="ula.action.admin.city.HousingAction"
+			method="housing">
+			<result name="housing">housing/housing.ftl</result>
+		</action>
+		<action name="preAddHousing" class="ula.action.BaseAction">
+			<result>housing/add.ftl</result>
+		</action>
+		<action name="addHousing" class="ula.action.admin.city.HousingAction"
+			method="addHousing">
+			<result name="success" type="chain">
+				<param name="actionName">housing</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="preUpdateHousing" class="ula.action.admin.city.HousingAction"
+			method="preUpdateHousing">
+			<result name="preUpdateHousing">housing/housingInfo.ftl</result>
+		</action>
+		<action name="updateHousing" class="ula.action.admin.city.HousingAction"
+			method="updateHousing">
+			<result name="success" type="chain">
+				<param name="actionName">housing</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="deleteHousing" class="ula.action.admin.city.HousingAction"
+			method="deleteHousing">
+			<result name="success" type="chain">
+				<param name="actionName">housing</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+
+		<!--大连购物 -->
+		<action name="shopping" class="ula.action.admin.city.ShoppingAction"
+			method="shopping">
+			<result name="shopping">shopping/shopping.ftl</result>
+		</action>
+		<action name="preAddShopping" class="ula.action.BaseAction">
+			<result>shopping/add.ftl</result>
+		</action>
+		<action name="addShopping" class="ula.action.admin.city.ShoppingAction"
+			method="addShopping">
+			<result name="success" type="chain">
+				<param name="actionName">shopping</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="preUpdateShopping" class="ula.action.admin.city.ShoppingAction"
+			method="preUpdateShopping">
+			<result name="preUpdateShopping">shopping/shoppingInfo.ftl</result>
+		</action>
+		<action name="updateShopping" class="ula.action.admin.city.ShoppingAction"
+			method="updateShopping">
+			<result name="success" type="chain">
+				<param name="actionName">shopping</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="deleteShopping" class="ula.action.admin.city.ShoppingAction"
+			method="deleteShopping">
+			<result name="success" type="chain">
+				<param name="actionName">shopping</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+
+		<!--大连交通 -->
+		<action name="transportation" class="ula.action.admin.city.TransportationAction"
+			method="transportation">
+			<result name="transportation">transportation/transportation.ftl</result>
+		</action>
+		<action name="preAddTransportation" class="ula.action.BaseAction">
+			<result>transportation/add.ftl</result>
+		</action>
+		<action name="addTransportation" class="ula.action.admin.city.TransportationAction"
+			method="addTransportation">
+			<result name="success" type="chain">
+				<param name="actionName">transportation</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="preUpdateTransportation" class="ula.action.admin.city.TransportationAction"
+			method="preUpdateTransportation">
+			<result name="preUpdateTransportation">transportation/transportationInfo.ftl</result>
+		</action>
+		<action name="updateTransportation" class="ula.action.admin.city.TransportationAction"
+			method="updateTransportation">
+			<result name="success" type="chain">
+				<param name="actionName">transportation</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="deleteTransportation" class="ula.action.admin.city.TransportationAction"
+			method="deleteTransportation">
+			<result name="success" type="chain">
+				<param name="actionName">transportation</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+
+		<!--大连治疗 -->
+		<action name="therapy" class="ula.action.admin.city.TherapyAction"
+			method="therapy">
+			<result name="therapy">therapy/therapy.ftl</result>
+		</action>
+		<action name="preAddTherapy" class="ula.action.BaseAction">
+			<result>therapy/add.ftl</result>
+		</action>
+		<action name="addTherapy" class="ula.action.admin.city.TherapyAction"
+			method="addTherapy">
+			<result name="success" type="chain">
+				<param name="actionName">therapy</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="preUpdateTherapy" class="ula.action.admin.city.TherapyAction"
+			method="preUpdateTherapy">
+			<result name="preUpdateTherapy">therapy/therapyInfo.ftl</result>
+		</action>
+		<action name="updateTherapy" class="ula.action.admin.city.TherapyAction"
+			method="updateTherapy">
+			<result name="success" type="chain">
+				<param name="actionName">therapy</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="deleteTherapy" class="ula.action.admin.city.TherapyAction"
+			method="deleteTherapy">
+			<result name="success" type="chain">
+				<param name="actionName">therapy</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+
+		<!--大连节日 -->
+		<action name="festival" class="ula.action.admin.city.FestivalAction"
+			method="festival">
+			<result name="festival">festival/festival.ftl</result>
+		</action>
+		<action name="preAddFestival" class="ula.action.BaseAction">
+			<result>festival/add.ftl</result>
+		</action>
+		<action name="addFestival" class="ula.action.admin.city.FestivalAction"
+			method="addFestival">
+			<result name="success" type="chain">
+				<param name="actionName">festival</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="preUpdateFestival" class="ula.action.admin.city.FestivalAction"
+			method="preUpdateFestival">
+			<result name="preUpdateFestival">festival/festivalInfo.ftl</result>
+		</action>
+		<action name="updateFestival" class="ula.action.admin.city.FestivalAction"
+			method="updateFestival">
+			<result name="success" type="chain">
+				<param name="actionName">festival</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="deleteFestival" class="ula.action.admin.city.FestivalAction"
+			method="deleteFestival">
+			<result name="success" type="chain">
+				<param name="actionName">festival</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+
+		<!--展会信息 -->
+		<action name="exhibition" class="ula.action.admin.city.ExhibitionAction"
+			method="exhibition">
+			<result name="exhibition">exhibition/exhibition.ftl</result>
+		</action>
+		<action name="preAddExhibition" class="ula.action.BaseAction">
+			<result>exhibition/add.ftl</result>
+		</action>
+		<action name="addExhibition" class="ula.action.admin.city.ExhibitionAction"
+			method="addExhibition">
+			<result name="success" type="chain">
+				<param name="actionName">exhibition</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="preUpdateExhibition" class="ula.action.admin.city.ExhibitionAction"
+			method="preUpdateExhibition">
+			<result name="preUpdateExhibition">exhibition/exhibitionInfo.ftl</result>
+		</action>
+		<action name="updateExhibition" class="ula.action.admin.city.ExhibitionAction"
+			method="updateExhibition">
+			<result name="success" type="chain">
+				<param name="actionName">exhibition</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+		<action name="deleteExhibition" class="ula.action.admin.city.ExhibitionAction"
+			method="deleteExhibition">
+			<result name="success" type="chain">
+				<param name="actionName">exhibition</param>
+				<param name="namespace">/admin/city</param>
+			</result>
+		</action>
+
+
+		<!--关于城市->保险 -->
+		<action name="insurance" class="ula.action.admin.city.InsuranceAction">
+			<result name="edit">insurance_edit.ftl</result>
+			<result name="view">insurance_view.ftl</result>
+			<result name="update">insurance_admin.ftl</result>
+			<result name="admin">insurance_admin.ftl</result>
+			<result name="preAdd">insurance_add.ftl</result>
+		</action>
+
+		<!--关于城市->法律常识 -->
+		<action name="law" class="ula.action.admin.city.CommonLawAction">
+			<result name="edit">law_edit.ftl</result>
+			<result name="view">law_view.ftl</result>
+			<result name="update">law_admin.ftl</result>
+			<result name="admin">law_admin.ftl</result>
+			<result name="preAdd">law_add.ftl</result>
+		</action>
+
+
+		<!--关于城市->手机信息 -->
+		<action name="cellphone" class="ula.action.admin.city.CellphoneAction">
+			<result name="edit">cellphone_edit.ftl</result>
+			<result name="view">cellphone_view.ftl</result>
+			<result name="update">cellphone_admin.ftl</result>
+			<result name="admin">cellphone_admin.ftl</result>
+			<result name="preAdd">cellphone_add.ftl</result>
+		</action>
+
+		<!--关于城市->实用建议 -->
+		<action name="advice" class="ula.action.admin.city.PracticalAdviceAction">
+			<result name="edit">advice_edit.ftl</result>
+			<result name="view">advice_view.ftl</result>
+			<result name="update">advice_admin.ftl</result>
+			<result name="admin">advice_admin.ftl</result>
+			<result name="preAdd">advice_add.ftl</result>
+		</action>
+
+		<!--关于城市->城市地图 -->
+		<action name="citymap" class="ula.action.admin.city.CityMapAction">
+			<result name="edit">citymap_edit.ftl</result>
+			<result name="view">citymap_view.ftl</result>
+			<result name="update">citymap_admin.ftl</result>
+			<result name="admin">citymap_admin.ftl</result>
+			<result name="preAdd">citymap_add.ftl</result>
+		</action>
+	</package>
+</struts>

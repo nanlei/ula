@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/city" extends="global" namespace="/city">
+
+		<!-- 文章内容 -->
+		<action name="article" class="ula.action.admin.city.ArticleAction"
+			method="article">
+			<result name="article">/admin/city/city_article.ftl</result>
+		</action>
+
+		<!--关于城市->大连介绍	-->
+		<action name="intro" class="ula.action.admin.city.IntroductionAction">
+			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+
+		<!--关于城市->大连历史	-->
+		<action name="history" class="ula.action.admin.city.HistoryAction">
+			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+
+		<!--关于城市->城市地图	-->
+		<action name="citymap" class="ula.action.admin.city.CityMapAction">
+			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+
+		<!-- 关于城市->景点，公园  -->
+		<action name="tour" class="ula.action.admin.city.TourAction"
+			method="view">
+			<result name="view">/admin/city/city_list_data.ftl</result>
+		</action>
+
+
+		<!--大连美食	-->
+		<action name="food" class="ula.action.admin.city.ArticleAction"
+			method="view">
+			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+
+
+		<!--大连居住，Deprecated -->
+		<action name="housing" class="ula.action.admin.city.ArticleAction"
+			method="view">
+			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+
+		<!-- 大连酒店 -->
+		<action name="hotel" class="ula.action.admin.hotel.HotelAction"
+			method="hotel">
+			<result name="hotel">/admin/city/hotel_list.ftl</result>
+		</action>
+
+		<!-- 大连酒店->酒店搜索 -->
+		<action name="hotelSearch" class="ula.action.admin.hotel.HotelAction"
+			method="hotelSearch">
+			<result name="hotelSearch">/admin/city/hotel_info.ftl</result>
+		</action>
+
+		<!-- 大连酒店->酒店信息 -->
+		<action name="hotelInfo" class="ula.action.admin.hotel.HotelAction"
+			method="hotelInfo">
+			<result name="hotelInfo">/admin/city/hotel_info.ftl</result>
+		</action>
+
+		<!-- 大连酒店->根据星级搜索 -->
+		<action name="hotelLevel" class="ula.action.admin.hotel.HotelAction"
+			method="hotelLevel">
+			<result name="hotelLevel">/admin/city/hotel_info.ftl</result>
+		</action>
+
+		<!--大连购物-->
+		<action name="shopping" class="ula.action.admin.city.ArticleAction"
+			method="view">
+			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+
+
+		<!--大连交通-->
+		<action name="transportation" class="ula.action.admin.city.ArticleAction"
+			method="view">
+			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+
+
+		<!--大连治疗-->
+		<action name="therapy" class="ula.action.admin.city.ArticleAction"
+			method="view">
+			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+
+		<!--大连节日-->
+		<action name="festival" class="ula.action.admin.city.ArticleAction"
+			method="view">
+			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+
+
+		<!--展会信息-->
+		<action name="exhibition" class="ula.action.admin.city.ArticleAction"
+			method="view">
+			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+
+
+		<!--关于城市->保险	-->
+		<action name="insurance" class="ula.action.admin.city.InsuranceAction">
+			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+
+		<!--关于城市->法律常识	-->
+		<action name="law" class="ula.action.admin.city.CommonLawAction">
+			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+
+
+		<!--关于城市->手机信息	-->
+		<action name="cellphone" class="ula.action.admin.city.CellphoneAction">
+			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+
+		<!--关于城市->实用建议	-->
+		<action name="advice" class="ula.action.admin.city.PracticalAdviceAction">
+			<result name="view">/admin/city/city_map_data.ftl</result>
+		</action>
+	</package>
+</struts>

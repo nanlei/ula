@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="/program" extends="global" namespace="/program">
+
+<!--旅游项目 -> 汉语学习行程	-->
+	<action name="chineselanguage" class="ula.action.admin.program.ChineseLanguageAction">
+	<result name="view">/admin/program/program.ftl</result>
+	</action>	
+	
+<!--旅游项目 -> 乡村游行程	-->
+	<action name="countryside" class="ula.action.admin.program.CountrySideTourAction">
+	<result name="view">/admin/program/program.ftl</result>
+	</action>
+		
+<!--旅游项目 -> 会展、展览行程	-->
+	<action name="exhibition" class="ula.action.admin.program.ExhibitionAction">
+	<result name="view">/admin/program/program.ftl</result>
+	</action>	
+	
+		
+<!--旅游项目 -> 温泉游行程	-->
+	<action name="hotspring" class="ula.action.admin.program.HotSpringTourAction">
+	<result name="view">/admin/program/program.ftl</result>
+	</action>	
+	
+		
+<!--旅游项目 -> 本月推荐行程	-->
+	<action name="recommend" class="ula.action.admin.program.MonthRecommendationAction">
+	<result name="view">/admin/program/program.ftl</result>
+	</action>	
+
+
+		
+<!--旅游项目 -> 常规行程	-->
+	<action name="regular" class="ula.action.admin.program.RegularScheduleAction">
+	<result name="view">/admin/program/program.ftl</result>
+	</action>			
+	
+		
+<!--旅游项目 -> 夏令营行程	-->
+	<action name="summercamp" class="ula.action.admin.program.SummerCampAction">
+	<result name="view">/admin/program/program.ftl</result>
+	</action>	
+	
+	
+		
+<!--旅游项目 -> 治疗行程	-->
+	<action name="therapy" class="ula.action.admin.program.TherapyScheduleAction">
+	<result name="view">/admin/program/program.ftl</result>
+	</action>	
+	</package>
+</struts>

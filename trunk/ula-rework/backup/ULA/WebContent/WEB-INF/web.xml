@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<filter>
+		<filter-name>SpringCharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>SpringCharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- context parameters for Spring -->
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:springXMLs/*.xml</param-value>
+	</context-param>
+
+	<filter>
+		<filter-name>loginFilter</filter-name>
+		<filter-class>ula.common.LoginFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>loginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!--Core Filters List starts 核心过滤器列表       开始 -->
+
+	<!-- Struts2 filter -->
+	<filter>
+		<filter-name>struts2-cleanup</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ActionContextCleanUp</filter-class>
+	</filter>
+
+	<!-- Struts2核心过滤器。作用：转发客户端的请求 -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+
+
+
+	<!--Core Filters List ends 核心过滤器列表          结束-->
+
+
+	<!--Core Listener List starts 核心监听器列表       开始 -->
+
+	<!--
+		Spring容器监听器。 作用：监听ServletContext初始化事件，
+		并在此时初始化Spring的相关变量，主要是contextConfigLocation
+	-->
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>ula.common.BeanManagerListener</listener-class>
+	</listener>
+
+
+	<!--Core Listener List ends   核心监听器列表        结束-->
+
+
+
+
+	<filter-mapping>
+		<filter-name>struts2-cleanup</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+
+	<!-- FreeMarker页面处理 -->
+	<servlet>
+		<servlet-name>freemarker</servlet-name>
+		<servlet-class>org.apache.struts2.views.freemarker.FreemarkerServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>freemarker</servlet-name>
+		<url-pattern>*.ftl</url-pattern>
+	</servlet-mapping>
+
+
+
+	<display-name>ula</display-name>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.jsp</location>
+	</error-page>
+
+
+
+</web-app>

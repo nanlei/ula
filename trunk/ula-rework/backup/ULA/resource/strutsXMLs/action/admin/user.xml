@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="admin/user" extends="global" namespace="/user">
+		<action name="list" class="ula.action.admin.UserAction" method="list">
+			<result name="list">list.ftl</result>
+		</action>
+		<action name="deleteUser" class="ula.action.admin.UserAction"
+			method="deleteUser">
+			<result name="success" type="chain">
+				<param name="actionName">list</param>
+				<param name="namespace">/user</param>
+			</result>
+		</action>
+		<action name="preUpdateUser" class="ula.action.admin.UserAction"
+			method="preUpdateUser">
+			<result name="preUpdateUser">userInfo.ftl</result>
+		</action>
+		<action name="updateUser" class="ula.action.admin.UserAction"
+			method="updateUser">
+			<result name="success" type="chain">
+				<param name="actionName">list</param>
+				<param name="namespace">/user</param>
+			</result>
+		</action>
+		<action name="preAddUser" class="ula.action.BaseAction">
+			<result>add.ftl</result>
+		</action>
+		<action name="addUser" class="ula.action.admin.UserAction"
+			method="addUser">
+			<result name="success" type="chain">
+				<param name="actionName">list</param>
+				<param name="namespace">/user</param>
+			</result>
+		</action>
+	</package>
+</struts>
