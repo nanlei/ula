@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+	<!-- 
+                      包含其他所有所有struts XML文件目录
+     -->
+<struts>
+	<package name="global" extends="ula-default" namespace="/">
+		<!--name属性的值，请参考BaseAction里的常量定义 -->
+		<global-results>
+			<result name="error">/global/errorMessage.jsp</result>
+			<result name="redirect" type="redirect">${redirctURL}</result>
+			<result name="none">/global/nullPage.jsp</result>
+		</global-results>
+	</package>
+
+	<package name="adminLogin" extends="ula-default" namespace="/">
+		<action name="loginAdmin" class="ula.action.admin.UserAction"
+			method="loginAdmin">
+			<result name="loginAdmin" type="redirect">/admin/admin.action</result>
+		</action>
+		<action name="logout" class="ula.action.admin.UserAction"
+			method="logout">
+			<result name="logout"  type="redirect">/entry.action</result>
+		</action>
+	</package>
+
+	<!-- 系统管理入口 -->
+	<package name="admin_index" extends="global" namespace="/admin">
+		<action name="admin" class="ula.action.BaseAction">
+			<result>admin.ftl</result>
+		</action>
+		<action name="admintree" class="ula.action.BaseAction">
+			<result>tree.ftl</result>
+		</action>
+	</package>
+	<!-- 图片管理入口 -->
+	<package name="pic_index" extends="global" namespace="/pic">
+		<action name="admin" class="ula.action.BaseAction">
+			<result>pic.ftl</result>
+		</action>
+		<action name="admintree" class="ula.action.BaseAction">
+			<result>tree.ftl</result>
+		</action>
+	</package>
+
+	<!-- 用户管理入口 -->
+	<package name="user_index" extends="global" namespace="/user">
+		<action name="admin" class="ula.action.BaseAction">
+			<result>user.ftl</result>
+		</action>
+		<action name="admintree" class="ula.action.BaseAction">
+			<result>tree.ftl</result>
+		</action>
+	</package>
+
+	<!-- 订单管理入口 -->
+	<package name="reservation_index" extends="global" namespace="/reservation">
+		<action name="admin" class="ula.action.BaseAction">
+			<result>reservation.ftl</result>
+		</action>
+		<action name="admintree" class="ula.action.BaseAction">
+			<result>tree.ftl</result>
+		</action>
+	</package>
+
+	<!-- 用户反馈管理入口 -->
+	<package name="feedback_index" extends="global" namespace="/feedback">
+		<action name="admin" class="ula.action.BaseAction">
+			<result>feedback.ftl</result>
+		</action>
+		<action name="admintree" class="ula.action.BaseAction">
+			<result>tree.ftl</result>
+		</action>
+	</package>
+
+</struts>
+

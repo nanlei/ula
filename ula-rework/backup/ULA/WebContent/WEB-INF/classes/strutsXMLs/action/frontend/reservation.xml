@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="/reservation" extends="global" namespace="/reservation">
+
+		<action name="hotelReserv" class="ula.action.admin.reservation.HotelReservation">
+			<result name="view">hotel_reservation.ftl</result>
+		</action>
+
+		<action name="travelReserv" class="ula.action.admin.reservation.TravelReservation">
+			<result name="view">travel_reservation.ftl</result>
+		</action>
+
+	</package>
+
+
+</struts>

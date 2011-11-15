@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+<!--	<package name="admin/feedback" extends="global" namespace="/feedback">-->
+<!--		<action name="feedback" class="ula.action.admin.feedback.Feedback">-->
+<!--		<result name="admin">/admin/feedback/admin.ftl</result>-->
+<!--		<result name ="detail">/admin/feedback/detail.ftl</result>-->
+<!--		</action>-->
+<!--	</package>-->
+
+</struts>
