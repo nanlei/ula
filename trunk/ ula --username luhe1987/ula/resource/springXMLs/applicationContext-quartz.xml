@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 定时批处理任务 -->
+
+	<!-- 更新天气预报 -->
+	<bean id="weatherUpdateService" class="ula.quartz.service.WeatherUpdateService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="weatherUpdateJob" class="ula.quartz.job.WeatherUpdateJob">
+		<property name="weatherUpdateService" ref="weatherUpdateService" />
+	</bean>
+
+	<bean id="weatherUpdateJobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="weatherUpdateJob" />
+		<property name="targetMethod" value="execute" />
+	</bean>
+
+	<!-- 每2小时自动更新一次 -->
+	<bean id="weatherUpdateJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="weatherUpdateJobDetail" />
+		<property name="cronExpression" value="0 0 0/2 * * ?" />
+	</bean>
+
+	<!-- 总任务管理器 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
+		lazy-init="false" autowire="no">
+		<property name="triggers">
+			<list>
+				<ref bean="weatherUpdateJobTrigger" />
+			</list>
+		</property>
+	</bean>
+</beans>

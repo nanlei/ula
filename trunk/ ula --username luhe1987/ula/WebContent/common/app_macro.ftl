@@ -80,7 +80,7 @@ if (navTD) {
 <#-- Footer -->
 <#macro footer>
 <tr>
-	<td height="18px" align="center" style="padding-right:10px;font-size:12px">Copyright &#169; 2010 ULA Team All Rights Reserved</td>
+	<td height="18px" align="center" style="padding-right:10px;font-size:12px">Copyright &#169; 2010-2012 ULA Team All Rights Reserved</td>
 </tr>
 </#macro>
 
@@ -126,7 +126,7 @@ if (navTD) {
 <#-- 表单的File域(使用了 jQuery UI)-->
 <#macro file id="" name="" emptyInfo="">
 <span style="padding:0px;font-size:82.5%">
-<input type="file" id="${id}" name="${name}" emptyInfo="${emptyInfo}">
+<input type="file" id="${id}" name="${name}" <#if emptyInfo?has_content>emptyInfo="${emptyInfo}"</#if>>
 </span>
 <script>
 	$("#${id}").button();

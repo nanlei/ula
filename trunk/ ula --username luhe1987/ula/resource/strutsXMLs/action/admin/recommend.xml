@@ -8,8 +8,10 @@
 			method="admin">
 			<result name="admin">recommend_admin.ftl</result>
 		</action>
+
 		<action name="recommend" class="ula.action.admin.RecommendAction">
 			<interceptor-ref name="UlaFileUpload"></interceptor-ref>
+			<result name="preUpdate">recommend_info.ftl</result>
 			<result name="success" type="chain">
 				<param name="actionName">recommendAdmin</param>
 				<param name="namespace">/admin/recommend</param>

@@ -2,7 +2,13 @@
 <@p.tree root="系统管理" display="block">
 <script type="text/javascript"> 
 var treeMenu = [
+	{ level:1, name:"天气预报", link:"weather/weatherAdmin.action"},
 	{ level:1, name:"推荐管理", link:"recommend/recommendAdmin.action"},
+	{ level:1, name:"订阅管理"},
+	{ level:2, name:"订阅资源管理", link:"subscribe/resourceAdmin.action"},
+	{ level:2, name:"订阅用户管理", link:"subscribe/subscriberAdmin.action"},
+	
+	
 	{ level:1, name:"关于我们"},
 	{ level:2, name:"公司介绍", link:"about/company!admin.action"},
 	{ level:2, name:"业务范围", link:"about/biz!admin.action"},
