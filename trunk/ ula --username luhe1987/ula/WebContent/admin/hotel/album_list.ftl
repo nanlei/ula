@@ -22,7 +22,7 @@
 			</tr>
 			<tr>
 				<td>相册内容</td>
-				<td><textarea name="content" cols="80" rows="10" emptyInfo="请输入相册内容"></textarea>
+				<td><textarea name="content" cols="80" rows="10" emptyInfo="请输入相册内容"></textarea></td>
 			</tr>
 			<tr>
 				<td colspan="2">

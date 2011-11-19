@@ -88,6 +88,12 @@
 		</property>
 	</bean>
 
+	<bean id="recommendService" parent="baseTxService">
+		<property name="target">
+			<bean class="ula.service.admin.RecommendService" />
+		</property>
+	</bean>
+
 	<bean id="serviceManager" class="ula.common.ServiceManager" />
 
 </beans>

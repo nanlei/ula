@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="admin/recommend" extends="global" namespace="/admin/recommend">
+		<action name="recommendAdmin" class="ula.action.admin.RecommendAction"
+			method="admin">
+			<result name="admin">recommend_admin.ftl</result>
+		</action>
+		<action name="recommend" class="ula.action.admin.RecommendAction">
+			<interceptor-ref name="UlaFileUpload"></interceptor-ref>
+			<result name="success" type="chain">
+				<param name="actionName">recommendAdmin</param>
+				<param name="namespace">/admin/recommend</param>
+			</result>
+			<result name="error" type="chain">
+				<param name="actionName">recommendAdmin</param>
+				<param name="namespace">/admin/recommend</param>
+			</result>
+		</action>
+	</package>
+</struts>

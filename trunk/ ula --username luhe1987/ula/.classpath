@@ -19,5 +19,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/struts2-core-2.1.6.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xwork-2.1.2.jar"/>
 	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-lang-2.5.jar"/>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>
