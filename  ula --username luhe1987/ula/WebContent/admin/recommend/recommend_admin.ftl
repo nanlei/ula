@@ -15,21 +15,21 @@
 				<td colspan="2">添加推荐文章</td>
 			</tr>
 			<tr>
-				<td>文章标题</td>
+				<td>文章标题<@p.mustMark /></td>
 				<td>
 					<input type="text" name="title" size="40" maxLength="50" emptyInfo="请输入文章标题">
 				</td>
 			</tr>
 			<tr>
-				<td>封面图片</td>
+				<td>封面图片<@p.mustMark /></td>
 				<td><@app.file id="cover" name="cover" emptyInfo="请选择封面图片"/></td>
 			</tr>
 			<tr>
-				<td>是否显示</td>
+				<td>是否显示<@p.mustMark /></td>
 				<td><input type="radio" name="tag" value="1" checked>显示&nbsp;&nbsp;<input type="radio" name="tag" value="0">不显示</td>
 			</tr>
 			<tr>
-				<td colspan="2"><textarea  id="content" name="content">请填写文章内容</textarea><@p.ckeditor id="content"/></td>
+				<td colspan="2"><textarea  id="content" name="content">请填写文章内容<@p.mustMark /></textarea><@p.ckeditor id="content"/></td>
 			</tr>
 			<tr>
 				<td colspan="2">
@@ -62,11 +62,14 @@
 		<td>${recommend.UPDATETIME?datetime}</td>
 		<td>${recommend.USERNAME}</td>
 		<td><#if recommend.TAG=1>显示中<#else>不显示</#if></td>
-		<td><a href="recommen!update.action?id=${recommend.ID}">修改</a> | <a href="recommend!delete.action?id=${recommend.ID}" onclick="return confirm('确定删除吗？')">删除</a></td>
+		<td><a href="recommend!preUpdate.action?id=${recommend.ID}">修改</a> | <a href="recommend!delete.action?id=${recommend.ID}" onclick="return confirm('确定删除吗？')">删除</a></td>
 	</tr>
 	<#assign count=count+1 />
 	</#list>
 </table>
+<#if recommendList.list.size()=0>
+<div align="center" style="margin-top:5px;font-size:14px;color:red;">暂无推荐文章</div>
+</#if>
 <div align="right">
 	<@p.paging recommendList />
 </div>
