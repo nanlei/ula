@@ -11,6 +11,7 @@ import ula.service.admin.LogService;
 import ula.service.admin.PaymentService;
 import ula.service.admin.PicService;
 import ula.service.admin.ProgramService;
+import ula.service.admin.RecommendService;
 import ula.service.admin.ReservationService;
 import ula.service.admin.SpecialService;
 import ula.service.admin.UserService;
@@ -35,6 +36,7 @@ public class ServiceManager {
 	private FeedbackService feedbackService = null;
 	private ReservationService reservationService = null;
 	private HotelService hotelService = null;
+	private RecommendService recommendService = null;
 
 	public ReservationService getReservationService() {
 		return reservationService;
@@ -146,6 +148,14 @@ public class ServiceManager {
 
 	public void setHotelService(HotelService hotelService) {
 		this.hotelService = hotelService;
+	}
+
+	public RecommendService getRecommendService() {
+		return recommendService;
+	}
+
+	public void setRecommendService(RecommendService recommendService) {
+		this.recommendService = recommendService;
 	}
 
 }

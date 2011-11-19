@@ -6,11 +6,11 @@
 				<tr>
 					<td>
 						<@app.header>
-							<td width="80" class="tdnormal"><div><a class="navbar" href="${base}/admin/admin.action">系统管理</a></div></td>
-							<td width="80" class="tdnormal"><div><a class="navbar" href="${base}/pic/admin.action">图片管理</a></div></td>
+							<td width="80" class="tdnormal"><div style="border-left:1px solid white"><a class="navbar" href="${base}/admin/admin.action">系统管理</a></div></td>
+							<td width="80" class="tdnormal"><div style="border-left:1px solid white"><a class="navbar" href="${base}/pic/admin.action">图片管理</a></div></td>
 							<td width="80" class="tdnormal"><div style="border-left:1px solid white"><a class="navbar" href="${base}/user/admin.action">用户管理</a></div></td>
-							<td width="80" class="tdselected"><div style="border-left:1px solid white"><a class="navbar" href="${base}/reservation/admin.action">订单管理</a></div></td>
-							<td width="80" class="tdnormal"><div style="border-left:1px solid white"><a class="navbar" href="${base}/feedback/admin.action">用户反馈管理</a></div></td>
+							<td width="80" class="tdselected fbg"><div><a class="navbar" href="${base}/reservation/admin.action">订单管理</a></div></td>
+							<td width="100" class="tdnormal"><div><a class="navbar" href="${base}/feedback/admin.action">用户反馈管理</a></div></td>
 							<td class="tdnormal"><div style="border-left:1px solid white">&nbsp;</div></td>
 							<td class="tdnormal">&nbsp;</td>
 							<td class="tdnormal"></td>

@@ -38,7 +38,9 @@ public interface AlertMessage {
 
 	String LINK_EMPTY = "友情链接没有添加，请添加";
 
+	String PIC_SIZE_ZERO = "图片大小为零，请重新选择";
 	String PIC_INSERT_SUCCESS = "图片上传成功";
+	String PIC_INSERT_FAILURE = "图片上传失败";
 	String PIC_INSERT_DENY = "图片格式不对，不能上传。请选择jpg/jpeg/gif/png/bmp格式的文件";
 	String PIC_DELETE_SUCCESS = "图片删除成功";
 
@@ -88,5 +90,8 @@ public interface AlertMessage {
 
 	String HOTEL_RECOMMAND_UPDATE_SUCCESS = "酒店推荐更新成功";
 	String HOTEL_RECOMMAND_UPDATE_FAILURE = "酒店推荐更新失败";
+	
+	String RECOMMAND_ADD_SUCCESS = "推荐添加成功";
+	String RECOMMAND_ADD_FAILURE = "推荐添加失败";
 
 }

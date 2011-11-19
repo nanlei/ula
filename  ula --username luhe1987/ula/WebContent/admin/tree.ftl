@@ -2,6 +2,7 @@
 <@p.tree root="系统管理" display="block">
 <script type="text/javascript"> 
 var treeMenu = [
+	{ level:1, name:"推荐管理", link:"recommend/recommendAdmin.action"},
 	{ level:1, name:"关于我们"},
 	{ level:2, name:"公司介绍", link:"about/company!admin.action"},
 	{ level:2, name:"业务范围", link:"about/biz!admin.action"},
