@@ -8,5 +8,15 @@
 			method="admin">
 			<result name="admin">weather_admin.ftl</result>
 		</action>
+		<action name="weather" class="ula.action.admin.WeatherAction">
+			<result name="success" type="chain">
+				<param name="actionName">weatherAdmin</param>
+				<param name="namespace">/admin/weather</param>
+			</result>
+			<result name="error" type="chain">
+				<param name="actionName">weatherAdmin</param>
+				<param name="namespace">/admin/weather</param>
+			</result>
+		</action>
 	</package>
 </struts>

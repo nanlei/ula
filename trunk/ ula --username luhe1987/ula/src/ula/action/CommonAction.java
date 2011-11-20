@@ -13,7 +13,7 @@ import ula.constant.CommonConstants;
  */
 public class CommonAction extends BaseAction {
 
-	private String alertMessage = "";
+	private String alertMessage;
 	private String errorMessage = "";
 	private String redirctURL = "/";
 
@@ -30,6 +30,7 @@ public class CommonAction extends BaseAction {
 	}
 
 	public void setAlertMessage(String alertMessage) {
+		getHttpServletRequest().setAttribute("alertMessage", alertMessage);
 		this.alertMessage = alertMessage;
 	}
 

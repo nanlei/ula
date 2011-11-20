@@ -98,4 +98,8 @@ public interface AlertMessage {
 	String RECOMMAND_DELETE_SUCCESS = "推荐删除成功";
 	String RECOMMAND_DELETE_FAILURE = "推荐删除失败";
 
+	String WEATHER_UPDATE_SUCCESS = "天气预报更新成功";
+	String WEATHER_UPDATE_FAILURE = "天气预报更新失败";
+	String WEATHER_DEFAULT_CITY_SUCCESS = "默认城市设置成功";
+	String WEATHER_DEFAULT_CITY_FAILURE = "默认城市设置失败";
 }
