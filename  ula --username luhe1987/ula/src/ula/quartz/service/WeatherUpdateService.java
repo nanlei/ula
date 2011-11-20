@@ -24,6 +24,12 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import ula.util.MapUtil;
 
+/**
+ * 天气预报定时更新Service
+ * 
+ * @author Nanlei
+ * 
+ */
 public class WeatherUpdateService {
 	private static final Logger log = Logger
 			.getLogger(WeatherUpdateService.class);
@@ -33,7 +39,7 @@ public class WeatherUpdateService {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
-	private static final String SQL_GET_DEFAULT_CITY_CODE = "select CITYCODE from weather";
+	private static final String SQL_GET_DEFAULT_CITY_CODE = "select CITYCODE from weather order by TAG desc";
 
 	private ArrayList<String> getDefaultCityCode() {
 		return (ArrayList<String>) jdbcTemplate.queryForList(
@@ -49,7 +55,7 @@ public class WeatherUpdateService {
 				.add(params, cityCode));
 	}
 
-	public String getJSONText(String queryURL) throws HttpException,
+	private String getJSONText(String queryURL) throws HttpException,
 			IOException {
 		String jsonText = null;
 		HttpClient client = new HttpClient();
