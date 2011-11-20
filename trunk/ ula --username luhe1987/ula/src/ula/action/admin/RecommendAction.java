@@ -21,7 +21,7 @@ import ula.util.ImageUtil;
  */
 public class RecommendAction extends CommonAction {
 	private PagingList recommendList;
-	private Map recommend;
+	private Map<String, Object> recommend;
 	// 图片上传
 	private File cover;
 	private String coverFileName;
@@ -31,7 +31,7 @@ public class RecommendAction extends CommonAction {
 		return recommendList;
 	}
 
-	public Map getRecommend() {
+	public Map<String, Object> getRecommend() {
 		return recommend;
 	}
 

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,11 +33,11 @@ public class WeatherUpdateService {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
-	private static final String SQL_GET_DEFAULT_CITY_CODE = "select CITYCODE from weather where TAG=1 limit 1";
+	private static final String SQL_GET_DEFAULT_CITY_CODE = "select CITYCODE from weather";
 
-	private String getDefaultCityCode() {
-		return (String) jdbcTemplate.queryForObject(SQL_GET_DEFAULT_CITY_CODE,
-				String.class);
+	private ArrayList<String> getDefaultCityCode() {
+		return (ArrayList<String>) jdbcTemplate.queryForList(
+				SQL_GET_DEFAULT_CITY_CODE, String.class);
 	}
 
 	private static final String SQL_UPDATE_WEATHER = "update weather set TEMP1=?, TEMP2=?, IMG1=?, IMG2=?, IMG3=?, IMG4=?, UPDATETIME=now() where CITYCODE=?";
@@ -69,31 +70,37 @@ public class WeatherUpdateService {
 	}
 
 	public void updateWeather() {
-		String cityCode = getDefaultCityCode();
-		String queryURL = "http://m.weather.com.cn/data/" + cityCode + ".html";
-		String jsonText = null;
-		try {
-			jsonText = getJSONText(queryURL);
-			if (StringUtils.isNotEmpty(jsonText)) {
-				JsonFactory jsonFactory = new MappingJsonFactory();
-				// Json解析器
-				JsonParser jsonParser = jsonFactory.createJsonParser(jsonText);
-				// 跳到结果集的开始
-				jsonParser.nextToken();
-				// 接受结果的HashMap
-				HashMap<String, String> map = new HashMap<String, String>();
-				// while循环遍历Json结果
-				while (jsonParser.nextToken() != JsonToken.END_OBJECT) {
-					// 跳转到Value
+		ArrayList<String> cityCodes = getDefaultCityCode();
+		for (String cityCode : cityCodes) {
+			String queryURL = "http://m.weather.com.cn/data/" + cityCode
+					+ ".html";
+			String jsonText = null;
+			try {
+				jsonText = getJSONText(queryURL);
+				if (StringUtils.isNotEmpty(jsonText)) {
+					JsonFactory jsonFactory = new MappingJsonFactory();
+					// Json解析器
+					JsonParser jsonParser = jsonFactory
+							.createJsonParser(jsonText);
+					// 跳到结果集的开始
 					jsonParser.nextToken();
-					// 将Json中的值装入Map中
-					map.put(jsonParser.getCurrentName(), jsonParser.getText());
+					// 接受结果的HashMap
+					HashMap<String, String> map = new HashMap<String, String>();
+					// while循环遍历Json结果
+					while (jsonParser.nextToken() != JsonToken.END_OBJECT) {
+						// 跳转到Value
+						jsonParser.nextToken();
+						// 将Json中的值装入Map中
+						map.put(jsonParser.getCurrentName(), jsonParser
+								.getText());
+					}
+					// 处理数据
+					updateDBInfo(map, cityCode);
 				}
-				// 处理数据
-				updateDBInfo(map, cityCode);
+			} catch (Exception e) {
+				log.error(ExceptionUtils.getStackTrace(e));
 			}
-		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
 		}
+		log.debug("Update " + cityCodes.size() + " city(cities) weather info");
 	}
 }

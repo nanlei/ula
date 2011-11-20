@@ -55,14 +55,14 @@ public class BaseAction implements Action {
 	/**
 	 * 获得原始的HttpSession
 	 */
-	public Map getHttpSessionAsMap() {
+	public Map<String, Object> getHttpSessionAsMap() {
 		return ActionContext.getContext().getSession();
 	}
 
 	/**
 	 * 获取客户端所有参数的值，并保存为Map
 	 */
-	public Map getParametersAsMap() {
+	public Map<String, Object> getParametersAsMap() {
 		return ActionContext.getContext().getParameters();
 	}
 

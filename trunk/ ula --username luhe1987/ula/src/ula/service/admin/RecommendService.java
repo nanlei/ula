@@ -15,7 +15,8 @@ public class RecommendService extends BaseService {
 
 	private static final String SQL_ADD_RECOMMEND = "insert into recommend(title,cover,content,updatetime,tag,username) values(?,?,?,now(),?,?)";
 
-	public void addRecommend(Map parameters, String filePath, String userName) {
+	public void addRecommend(Map<String, Object> parameters, String filePath,
+			String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,tag,content");
 		DB.update(SQL_ADD_RECOMMEND, new Object[] { params[0], filePath,
@@ -24,14 +25,14 @@ public class RecommendService extends BaseService {
 
 	private static final String SQL_GET_RECOMMEND_BY_ID = "select * from recommend where ID=?";
 
-	public Map getRecommendById(Map parameters) {
+	public Map<String, Object> getRecommendById(Map<String, Object> parameters) {
 		String id = MapUtil.getStringFromMap(parameters, "id");
 		return DB.queryForMap(SQL_GET_RECOMMEND_BY_ID, new Object[] { id });
 	}
 
 	private static final String SQL_UPDATE_RECOMMEND_NO_COVER = "update recommend set TITLE=?, CONTENT=?, UPDATETIME=now(), TAG=?, USERNAME=? where ID=?";
 
-	public void updateRecommend(Map parameters, String userName) {
+	public void updateRecommend(Map<String, Object> parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,content,tag,id");
 		DB.update(SQL_UPDATE_RECOMMEND_NO_COVER, new Object[] { params[0],
@@ -40,7 +41,8 @@ public class RecommendService extends BaseService {
 
 	private static final String SQL_UPDATE_RECOMMEND = "update recommend set TITLE=?, CONTENT=?, COVER=?, UPDATETIME=now(), TAG=?, USERNAME=? where ID=?";
 
-	public void updateRecommend(Map parameters, String filePath, String userName) {
+	public void updateRecommend(Map<String, Object> parameters,
+			String filePath, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,content,tag,id");
 		DB.update(SQL_UPDATE_RECOMMEND, new Object[] { params[0], params[1],

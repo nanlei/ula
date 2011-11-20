@@ -20,10 +20,10 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 		<property name="targetMethod" value="execute" />
 	</bean>
 
-	<!-- 每2小时自动更新一次 -->
+	<!-- 每30分钟自动更新一次 -->
 	<bean id="weatherUpdateJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
 		<property name="jobDetail" ref="weatherUpdateJobDetail" />
-		<property name="cronExpression" value="0 0 0/2 * * ?" />
+		<property name="cronExpression" value="0 0/30 * * * ?" />
 	</bean>
 
 	<!-- 总任务管理器 -->
