@@ -97,6 +97,12 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
 		</property>
 	</bean>
 
+	<bean id="weatherService" parent="baseTxService">
+		<property name="target">
+			<bean class="ula.service.admin.WeatherService" />
+		</property>
+	</bean>
+
 	<bean id="serviceManager" class="ula.common.ServiceManager" />
 
 </beans>
