@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="admin/hotel" extends="global" namespace="/admin/hotel">
+		<action name="hotelparam" class="ula.action.admin.hotel.HotelParamAction"
+			method="hotelparam">
+			<result name="hotelparam">param_list.ftl</result>
+		</action>
+		<action name="addParam" class="ula.action.admin.hotel.HotelParamAction"
+			method="addParam">
+			<result name="success" type="chain">
+				<param name="actionName">hotelparam</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<action name="hotelParamPreUpdate" class="ula.action.admin.hotel.HotelParamAction"
+			method="hotelParamPreUpdate">
+			<result name="hotelParamPreUpdate">param_info.ftl</result>
+		</action>
+		<action name="updateParam" class="ula.action.admin.hotel.HotelParamAction"
+			method="updateParam">
+			<result name="success" type="chain">
+				<param name="actionName">hotelparam</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<action name="hotelParamDelete" class="ula.action.admin.hotel.HotelParamAction"
+			method="hotelParamDelete">
+			<result name="success" type="chain">
+				<param name="actionName">hotelparam</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+
+		<action name="hotelalbum" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="hotelalbum">
+			<result name="hotelalbum">album_list.ftl</result>
+		</action>
+		<action name="addHotelAlbum" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="addHotelAlbum">
+			<result name="success" type="chain">
+				<param name="actionName">hotelalbum</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<action name="hotelAlbumPreUpdate" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="hotelAlbumPreUpdate">
+			<result name="hotelAlbumPreUpdate">album_info.ftl</result>
+		</action>
+		<action name="updateAlbum" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="updateAlbum">
+			<result name="success" type="chain">
+				<param name="actionName">hotelalbum</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<action name="hotelAlbumDelete" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="hotelAlbumDelete">
+			<result name="success" type="chain">
+				<param name="actionName">hotelalbum</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<!-- 向相册中添加照片 -->
+		<action name="hotelAlbumPreAddPic" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="hotelAlbumPreAddPic">
+			<result name="hotelAlbumPreAddPic">
+				album_addpic.ftl</result>
+		</action>
+		<action name="hotelAlbumAddPic" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="hotelAlbumAddPic">
+			<result name="success" type="chain">
+				<param name="actionName">hotelalbum</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<!-- 删除相册中的照片 -->
+		<action name="hotelAlbumDeletePic" class="ula.action.admin.hotel.HotelAlbumAction"
+			method="hotelAlbumDeletePic">
+			<result name="success" type="chain">
+				<param name="actionName">hotelalbum</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+
+		<!-- 文章管理部分 -->
+		<action name="hotelarticle" class="ula.action.admin.hotel.HotelArticleAction"
+			method="hotelarticle">
+			<result name="hotelarticle">article_list.ftl</result>
+		</action>
+		<action name="hotelArticleAdd" class="ula.action.admin.hotel.HotelArticleAction"
+			method="hotelArticleAdd">
+			<result name="success" type="chain">
+				<param name="actionName">hotelarticle</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<action name="hotelArticlePreUpdate" class="ula.action.admin.hotel.HotelArticleAction"
+			method="hotelArticlePreUpdate">
+			<result name="hotelArticlePreUpdate">article_info.ftl</result>
+		</action>
+		<action name="hotelArticleUpdate" class="ula.action.admin.hotel.HotelArticleAction"
+			method="hotelArticleUpdate">
+			<result name="success" type="chain">
+				<param name="actionName">hotelarticle</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<action name="hotelArticleDelete" class="ula.action.admin.hotel.HotelArticleAction"
+			method="hotelArticleDelete">
+			<result name="success" type="chain">
+				<param name="actionName">hotelarticle</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+		<!-- 酒店推荐  -->
+		<action name="hotelRecommand" class="ula.action.admin.hotel.HotelArticleAction"
+			method="hotelRecommand">
+			<result name="hotelRecommand">article_recommand.ftl</result>
+		</action>
+		<action name="hotelRecommandUpdate" class="ula.action.admin.hotel.HotelArticleAction"
+			method="hotelRecommandUpdate">
+			<result name="success" type="chain">
+				<param name="actionName">hotelarticle</param>
+				<param name="namespace">/admin/hotel</param>
+			</result>
+		</action>
+	</package>
+</struts>
