@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="admin/link" extends="global" namespace="/admin/link">
+		
+		<!--特色服务—>友情链接-->
+		<action name="link" class="ula.action.admin.link.LinkAction">
+			<result name="edit">link_edit.ftl</result>
+			<result name="view">link_view.ftl</result>
+			<result name="update">link_admin.ftl</result>
+			<result name="admin">link_admin.ftl</result>
+			<result name="preAdd">link_add.ftl</result>
+		</action>
+
+	</package>
+</struts>
