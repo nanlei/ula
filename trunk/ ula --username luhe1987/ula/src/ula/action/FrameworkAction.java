@@ -167,7 +167,7 @@ public class FrameworkAction extends CommonAction {
 
 		// 更新成功，给出提示信息
 		this.setAlertMessage(AlertMessage.UPDATE_SUCCESS);
-		
+
 		return admin();
 
 	}
@@ -200,21 +200,21 @@ public class FrameworkAction extends CommonAction {
 			super.debug(DebugConstants.DEBUG_MESSAGE_setMapKeyName);
 		}
 
-//		如果数据库连接错误，或者数据库中没有所查询的数据，那么infoMap的值为null
-//		这是view.title, view.content将无法显示。所有构造默认的情况
+		// 如果数据库连接错误，或者数据库中没有所查询的数据，那么infoMap的值为null
+		// 这是view.title, view.content将无法显示。所有构造默认的情况
 		if (this.infoMap == null) {
-			//给出后台程序的调试信息		
+			// 给出后台程序的调试信息
 			super.debug(DebugConstants.DEBUG_MESSAGE_setInfoMap);
-			
-			//处理前台显示			
-			this.infoMap = new HashMap();
+
+			// 处理前台显示
+			this.infoMap = new HashMap<String, Object>();
 			this.infoMap.put("title", "");
 			this.infoMap.put("content", "");
 
 		}
-		
+
 		this.getHttpServletRequest().setAttribute(this.mapKeyName, infoMap);
-		
+
 		return "view";
 	}
 

@@ -14,13 +14,13 @@ import ula.constant.AlertMessage;
  */
 public class HotelParamAction extends CommonAction {
 	private PagingList hotelParams;
-	private Map hotelParam;
+	private Map<String, Object> hotelParam;
 
 	public PagingList getHotelParams() {
 		return hotelParams;
 	}
 
-	public Map getHotelParam() {
+	public Map<String, Object> getHotelParam() {
 		return hotelParam;
 	}
 

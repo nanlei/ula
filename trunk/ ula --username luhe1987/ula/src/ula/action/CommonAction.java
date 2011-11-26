@@ -47,6 +47,7 @@ public class CommonAction extends BaseAction {
 	 * 
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public String view() {
 		PagingList linksFromSession = (PagingList) super.getHttpSessionAsMap()
 				.get(CommonConstants.LINK);

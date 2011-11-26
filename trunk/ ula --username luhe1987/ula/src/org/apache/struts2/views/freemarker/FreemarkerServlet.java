@@ -25,7 +25,11 @@ import freemarker.template.TemplateModelException;
 
 public class FreemarkerServlet extends HttpServlet {
 
-    protected Configuration configuration;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	protected Configuration configuration;
     private static FreemarkerManager freemarkerManager;
 
     @Inject

@@ -14,50 +14,50 @@ import ula.util.MapUtil;
  * 
  */
 public class HotelAction extends CommonAction {
-	private List hotelList;
-	private Map recommandHotel;
-	private List hotelSearchList;
-	private Map hotelInfo;
-	private List albumPicList;
-	private List picIndex;
+	private List<Map<String, Object>> hotelList;
+	private Map<String, Object> recommandHotel;
+	private List<Map<String, Object>> hotelSearchList;
+	private Map<String, Object> hotelInfo;
+	private List<Map<String, Object>> albumPicList;
+	private List<Object> picIndex;
 
-	private List locationList;// 酒店位置
-	private List levelList;// 酒店星级
-	private List funcList;// 酒店功能
+	private List<Map<String, Object>> locationList;// 酒店位置
+	private List<Map<String, Object>> levelList;// 酒店星级
+	private List<Map<String, Object>> funcList;// 酒店功能
 
-	public List getHotelList() {
+	public List<Map<String, Object>> getHotelList() {
 		return hotelList;
 	}
 
-	public Map getRecommandHotel() {
+	public Map<String, Object> getRecommandHotel() {
 		return recommandHotel;
 	}
 
-	public List getHotelSearchList() {
+	public List<Map<String, Object>> getHotelSearchList() {
 		return hotelSearchList;
 	}
 
-	public Map getHotelInfo() {
+	public Map<String, Object> getHotelInfo() {
 		return hotelInfo;
 	}
 
-	public List getAlbumPicList() {
+	public List<Map<String, Object>> getAlbumPicList() {
 		return albumPicList;
 	}
 
-	public List getPicIndex() {
+	public List<Object> getPicIndex() {
 		return picIndex;
 	}
 
-	public List getLocationList() {
+	public List<Map<String, Object>> getLocationList() {
 		return locationList;
 	}
 
-	public List getLevelList() {
+	public List<Map<String, Object>> getLevelList() {
 		return levelList;
 	}
 
-	public List getFuncList() {
+	public List<Map<String, Object>> getFuncList() {
 		return funcList;
 	}
 
@@ -107,9 +107,9 @@ public class HotelAction extends CommonAction {
 		hotelInfo.put("func", func);
 		albumPicList = getServiceManager().getHotelService()
 				.getHotelAlbumPicByHotelId(id);
-		picIndex = new ArrayList();
+		picIndex = new ArrayList<Object>();
 		for (int i = 0; i < albumPicList.size(); i++) {
-			Map map = (Map) albumPicList.get(i);
+			Map<String, Object> map = (Map<String, Object>) albumPicList.get(i);
 			picIndex.add(map.get("PICID"));
 		}
 		return "hotelInfo";

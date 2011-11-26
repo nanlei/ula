@@ -1,7 +1,6 @@
 package ula.util;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 
 public class StringUtil {
 
@@ -11,9 +10,9 @@ public class StringUtil {
 
 	public static String UTF8Encoding(String str) {
 		try {
-			return  new String(str.getBytes("ISO-8859-1"), "UTF-8");
+			return new String(str.getBytes("ISO-8859-1"), "UTF-8");
 		} catch (UnsupportedEncodingException e) {
-			
+
 		}
 		return str;
 	}

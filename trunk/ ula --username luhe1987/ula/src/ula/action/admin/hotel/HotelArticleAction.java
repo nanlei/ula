@@ -3,6 +3,8 @@ package ula.action.admin.hotel;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
+
 import ula.action.CommonAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
@@ -16,39 +18,39 @@ import ula.util.MapUtil;
  */
 public class HotelArticleAction extends CommonAction {
 	private PagingList hotelList;
-	private Map hotelInfo;
-	private List locationList;// 酒店位置
-	private List levelList;// 酒店星级
-	private List funcList;// 酒店功能
-	private List albumList;// 酒店相册
+	private Map<String, Object> hotelInfo;
+	private List<Map<String, Object>> locationList;// 酒店位置
+	private List<Map<String, Object>> levelList;// 酒店星级
+	private List<Map<String, Object>> funcList;// 酒店功能
+	private List<Map<String, Object>> albumList;// 酒店相册
 
-	private Map recommandInfo;// 酒店推荐信息
+	private Map<String, Object> recommandInfo;// 酒店推荐信息
 
 	public PagingList getHotelList() {
 		return hotelList;
 	}
 
-	public Map getHotelInfo() {
+	public Map<String, Object> getHotelInfo() {
 		return hotelInfo;
 	}
 
-	public List getLocationList() {
+	public List<Map<String, Object>> getLocationList() {
 		return locationList;
 	}
 
-	public List getLevelList() {
+	public List<Map<String, Object>> getLevelList() {
 		return levelList;
 	}
 
-	public List getFuncList() {
+	public List<Map<String, Object>> getFuncList() {
 		return funcList;
 	}
 
-	public List getAlbumList() {
+	public List<Map<String, Object>> getAlbumList() {
 		return albumList;
 	}
 
-	public Map getRecommandInfo() {
+	public Map<String, Object> getRecommandInfo() {
 		return recommandInfo;
 	}
 
@@ -82,6 +84,7 @@ public class HotelArticleAction extends CommonAction {
 			this.setAlertMessage(AlertMessage.HOTEL_ADD_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
 			this.setAlertMessage(AlertMessage.HOTEL_ADD_FAILURE);
 			return ERROR;
 		}
@@ -118,6 +121,7 @@ public class HotelArticleAction extends CommonAction {
 			this.setAlertMessage(AlertMessage.HOTEL_UPDATE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
 			this.setAlertMessage(AlertMessage.HOTEL_UPDATE_FAILURE);
 			return ERROR;
 		}
@@ -135,6 +139,7 @@ public class HotelArticleAction extends CommonAction {
 			this.setAlertMessage(AlertMessage.HOTEL_DELETE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
 			this.setAlertMessage(AlertMessage.HOTEL_DELETE_FAILURE);
 			return ERROR;
 		}
@@ -164,7 +169,7 @@ public class HotelArticleAction extends CommonAction {
 			this.setAlertMessage(AlertMessage.HOTEL_RECOMMAND_UPDATE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			this.setAlertMessage(AlertMessage.HOTEL_RECOMMAND_UPDATE_FAILURE);
 			return ERROR;
 		}

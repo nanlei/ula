@@ -91,8 +91,10 @@ public class BaseAction implements Action {
 		}
 	}
 
-	public Map getLoginUser() throws Exception {
-		return (Map) getHttpSessionAsMap().get(CommonConstants.LOGIN_USER);
+	@SuppressWarnings("unchecked")
+	public Map<String, Object> getLoginUser() throws Exception {
+		return (Map<String, Object>) getHttpSessionAsMap().get(
+				CommonConstants.LOGIN_USER);
 	}
 
 	/**
@@ -140,7 +142,7 @@ public class BaseAction implements Action {
 	}
 
 	public String getQueryStringWithoutPageNum() {
-		Map m = getParametersAsMap();
+		Map<String, Object> m = getParametersAsMap();
 		m.remove("pageNum");
 		return QueryUtil.getQueryString(m);
 	}
@@ -151,7 +153,7 @@ public class BaseAction implements Action {
 	}
 
 	public String getQueryStringWithoutPageInfo() {
-		Map m = getParametersAsMap();
+		Map<String, Object> m = getParametersAsMap();
 		m.remove("pageNum");
 		m.remove("pageSize");
 		return QueryUtil.getQueryString(m);

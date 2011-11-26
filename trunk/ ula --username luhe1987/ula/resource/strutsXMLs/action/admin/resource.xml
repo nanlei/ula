@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="admin/resource" extends="global" namespace="/admin/resource">
+		<action name="resourceAdmin" class="ula.action.admin.ResourceAction"
+			method="resourceAdmin">
+			<result name="resourceAdmin">resource_admin.ftl</result>
+		</action>
+		<action name="resource" class="ula.action.admin.ResourceAction">
+			<result name="preUpdate">resource_info.ftl</result>
+			<result name="success" type="chain">
+				<param name="actionName">resourceAdmin</param>
+				<param name="namespace">/admin/resource</param>
+			</result>
+			<result name="error" type="chain">
+				<param name="actionName">resourceAdmin</param>
+				<param name="namespace">/admin/resource</param>
+			</result>
+		</action>
+	</package>
+</struts>

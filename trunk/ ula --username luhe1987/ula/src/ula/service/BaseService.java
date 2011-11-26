@@ -29,23 +29,20 @@ public class BaseService {
 		return (ServiceManager) BeanManager.getBean("serviceManager");
 	}
 
-	/**
-	 * Paging
-	 */
 	public PagingList getPagingList(String sql) {
 		int pageNum = ((Integer) getValueStack().findValue("pageNum"))
 				.intValue();
 		int pageSize = ((Integer) getValueStack().findValue("pageSize"))
 				.intValue();
-		return new PagingList(sql, null, pageNum, pageSize, DB);
+		return new PagingList(sql, pageNum, pageSize, DB);
 	}
 
-	public PagingList getPagingList(String sql, Object[] params) {
+	public PagingList getPagingList(String sql, Object... params) {
 		int pageNum = ((Integer) getValueStack().findValue("pageNum"))
 				.intValue();
 		int pageSize = ((Integer) getValueStack().findValue("pageSize"))
 				.intValue();
-		return new PagingList(sql, params, pageNum, pageSize, DB);
+		return new PagingList(sql, pageNum, pageSize, DB, params);
 	}
 
 	/** ValueStack */

@@ -11,7 +11,7 @@ import ula.constant.CommonConstants;
 
 public class UserAction extends FrameworkAction {
 	private PagingList userList;
-	private Map userInfo;
+	private Map<String, Object> userInfo;
 	private String userId;
 	private String userName;
 	private String password;
@@ -20,7 +20,7 @@ public class UserAction extends FrameworkAction {
 		return userList;
 	}
 
-	public Map getUserInfo() {
+	public Map<String, Object> getUserInfo() {
 		return userInfo;
 	}
 
@@ -37,8 +37,8 @@ public class UserAction extends FrameworkAction {
 	}
 
 	public String loginAdmin() {
-		Map dbUser = getServiceManager().getUserService().getUserByUserName(
-				userName);
+		Map<String, Object> dbUser = getServiceManager().getUserService()
+				.getUserByUserName(userName);
 		if (dbUser != null && password.equals(dbUser.get("PASSWORD"))) {
 			ServletActionContext.getRequest().getSession().invalidate();
 			ServletActionContext.getRequest().getSession().setAttribute(

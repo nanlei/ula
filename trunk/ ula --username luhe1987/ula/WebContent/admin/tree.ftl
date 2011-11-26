@@ -5,8 +5,8 @@ var treeMenu = [
 	{ level:1, name:"天气预报", link:"weather/weatherAdmin.action"},
 	{ level:1, name:"推荐管理", link:"recommend/recommendAdmin.action"},
 	{ level:1, name:"订阅管理"},
-	{ level:2, name:"订阅资源管理", link:"subscribe/resourceAdmin.action"},
-	{ level:2, name:"订阅用户管理", link:"subscribe/subscriberAdmin.action"},
+	{ level:2, name:"订阅资源管理", link:"resource/resourceAdmin.action"},
+	{ level:2, name:"订阅用户管理", link:"subscriber/subscriberAdmin.action"},
 	
 	
 	{ level:1, name:"关于我们"},

@@ -77,12 +77,11 @@ public class WeatherUpdateService {
 
 	public void updateWeather() {
 		ArrayList<String> cityCodes = getDefaultCityCode();
-		for (String cityCode : cityCodes) {
-			String queryURL = "http://m.weather.com.cn/data/" + cityCode
-					+ ".html";
-			String jsonText = null;
-			try {
-				jsonText = getJSONText(queryURL);
+		try {
+			for (String cityCode : cityCodes) {
+				String queryURL = "http://m.weather.com.cn/data/" + cityCode
+						+ ".html";
+				String jsonText = getJSONText(queryURL);
 				if (StringUtils.isNotEmpty(jsonText)) {
 					JsonFactory jsonFactory = new MappingJsonFactory();
 					// Json解析器
@@ -103,10 +102,11 @@ public class WeatherUpdateService {
 					// 处理数据
 					updateDBInfo(map, cityCode);
 				}
-			} catch (Exception e) {
-				log.error(ExceptionUtils.getStackTrace(e));
 			}
+			log.debug("Update " + cityCodes.size()
+					+ " city(cities) weather info");
+		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
 		}
-		log.debug("Update " + cityCodes.size() + " city(cities) weather info");
 	}
 }
