@@ -33,28 +33,29 @@ public class PagingList {
 	private int endIndex = 1; // 结束记录数
 	private String srcSqlForCount;// 用于计算记录总量的SQL语句
 	private String srcSql;// 源SQL语句
-	private List list;// 记录列表
+	private List<Map<String, Object>> list;// 记录列表
 
-	public PagingList(String srcSql, Object[] params, int pageNum,
-			int pageSize, JdbcTemplate jdbcTemplate) {
-		this(getCountSql(srcSql), srcSql, params, pageNum, pageSize,
-				jdbcTemplate);
+	public PagingList(String srcSql, int pageNum, int pageSize,
+			JdbcTemplate jdbcTemplate, Object... params) {
+		this(getCountSql(srcSql), srcSql, pageNum, pageSize, jdbcTemplate,
+				params);
 	}
 
-	public PagingList(String srcSql, Map namedParams, int pageNum,
-			int pageSize, NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
+	public PagingList(String srcSql, Map<String, Object> namedParams,
+			int pageNum, int pageSize,
+			NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
 		this(getCountSql(srcSql), srcSql, namedParams, pageNum, pageSize,
 				namedParameterJdbcTemplate);
 	}
 
-	public PagingList(String srcSqlForCount, String srcSql, Object[] params,
-			int pageNum, int pageSize, JdbcTemplate jdbcTemplate) {
+	public PagingList(String srcSqlForCount, String srcSql, int pageNum,
+			int pageSize, JdbcTemplate jdbcTemplate, Object... params) {
 		preProcessParams(srcSqlForCount, srcSql, pageNum, pageSize);
 		execute(jdbcTemplate, params);
 	}
 
-	public PagingList(String srcSqlForCount, String srcSql, Map namedParams,
-			int pageNum, int pageSize,
+	public PagingList(String srcSqlForCount, String srcSql,
+			Map<String, Object> namedParams, int pageNum, int pageSize,
 			NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
 		preProcessParams(srcSqlForCount, srcSql, pageNum, pageSize);
 		execute(namedParameterJdbcTemplate, namedParams);
@@ -81,7 +82,7 @@ public class PagingList {
 	/**
 	 * 根据给定的数据计算相关分页信息
 	 */
-	private void execute(JdbcTemplate jdbcTemplate, Object[] params) {
+	private void execute(JdbcTemplate jdbcTemplate, Object... params) {
 		// 计算记录总数
 		this.rowCount = jdbcTemplate.queryForInt(srcSqlForCount, params);
 
@@ -114,7 +115,7 @@ public class PagingList {
 	}
 
 	private void execute(NamedParameterJdbcTemplate namedParameterJdbcTemplate,
-			Map namedParams) {
+			Map<String, Object> namedParams) {
 		// 计算记录总数
 		this.rowCount = namedParameterJdbcTemplate.queryForInt(srcSqlForCount,
 				namedParams);
@@ -163,7 +164,7 @@ public class PagingList {
 	/**
 	 * 获得对象列表
 	 */
-	public List getList() {
+	public List<Map<String, Object>> getList() {
 		return list;
 	}
 

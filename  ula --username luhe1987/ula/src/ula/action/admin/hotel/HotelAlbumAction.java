@@ -3,6 +3,8 @@ package ula.action.admin.hotel;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
+
 import ula.action.CommonAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
@@ -16,19 +18,19 @@ import ula.util.MapUtil;
  */
 public class HotelAlbumAction extends CommonAction {
 	private PagingList hotelAlbums;
-	private Map hotelAlbum;
-	private List picsInAlbum;// 相册中的照片
+	private Map<String, Object> hotelAlbum;
+	private List<Map<String, Object>> picsInAlbum;// 相册中的照片
 	private PagingList picsNotInAlbum;// 不在相册中的照片
 
 	public PagingList getHotelAlbums() {
 		return hotelAlbums;
 	}
 
-	public Map getHotelAlbum() {
+	public Map<String, Object> getHotelAlbum() {
 		return hotelAlbum;
 	}
 
-	public List getPicsInAlbum() {
+	public List<Map<String, Object>> getPicsInAlbum() {
 		return picsInAlbum;
 	}
 
@@ -53,6 +55,8 @@ public class HotelAlbumAction extends CommonAction {
 			this.setAlertMessage(AlertMessage.HOTEL_ALBUM_ADD_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			this.setAlertMessage(AlertMessage.HOTEL_ALBUM_ADD_FAILURE);
 			return ERROR;
 		}
 	}
@@ -103,6 +107,7 @@ public class HotelAlbumAction extends CommonAction {
 			this.setAlertMessage(AlertMessage.HOTEL_ALBUM_UPDATE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
 			this.setAlertMessage(AlertMessage.HOTEL_ALBUM_UPDATE_FAILURE);
 			return ERROR;
 		}
@@ -120,6 +125,7 @@ public class HotelAlbumAction extends CommonAction {
 			this.setAlertMessage(AlertMessage.HOTEL_ALBUM_DELETE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
 			this.setAlertMessage(AlertMessage.HOTEL_ALBUM_DELETE_FAILURE);
 			return ERROR;
 		}
@@ -142,6 +148,7 @@ public class HotelAlbumAction extends CommonAction {
 			this.setAlertMessage(AlertMessage.HOTEL_ADD_PIC_TO_ALBUM_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
 			this.setAlertMessage(AlertMessage.HOTEL_ADD_PIC_TO_ALBUM_FAILURE);
 			return ERROR;
 		}
@@ -164,6 +171,7 @@ public class HotelAlbumAction extends CommonAction {
 					.setAlertMessage(AlertMessage.HOTEL_DELETE_PIC_FROM_ALBUM_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
 			this
 					.setAlertMessage(AlertMessage.HOTEL_DELETE_PIC_FROM_ALBUM_FALIURE);
 			return ERROR;

@@ -2,13 +2,13 @@
 <!DOCTYPE struts PUBLIC
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
-	
+
 	<!-- 
                       包含所有strutsXMLs/action/下的XML文件
      -->
 <struts>
 
-<!--后台管理XML配置-->
+	<!--后台管理XML配置-->
 	<include file="strutsXMLs/action/admin/about.xml"></include>
 	<include file="strutsXMLs/action/admin/city.xml"></include>
 	<include file="strutsXMLs/action/admin/contact.xml"></include>
@@ -21,11 +21,12 @@
 	<include file="strutsXMLs/action/admin/program.xml"></include>
 	<include file="strutsXMLs/action/admin/recommend.xml"></include>
 	<include file="strutsXMLs/action/admin/reservation.xml"></include>
+	<include file="strutsXMLs/action/admin/resource.xml"></include>
 	<include file="strutsXMLs/action/admin/special.xml"></include>
 	<include file="strutsXMLs/action/admin/user.xml"></include>
 	<include file="strutsXMLs/action/admin/weather.xml"></include>
-	
-<!--前台页面XML配置 -->
+
+	<!--前台页面XML配置 -->
 	<include file="strutsXMLs/action/frontend/about.xml"></include>
 	<include file="strutsXMLs/action/frontend/city.xml"></include>
 	<include file="strutsXMLs/action/frontend/program.xml"></include>
@@ -33,7 +34,9 @@
 	<include file="strutsXMLs/action/frontend/payment.xml"></include>
 	<include file="strutsXMLs/action/frontend/contact.xml"></include>
 	<include file="strutsXMLs/action/frontend/entry.xml"></include>
-<!--	<include file="strutsXMLs/action/frontend/reservation.xml"></include>-->
-	
+	<!--
+		<include file="strutsXMLs/action/frontend/reservation.xml"></include>
+	-->
+
 </struts>
 

@@ -13,7 +13,7 @@ public class QueryHelper {
 
 	private StringBuffer querySql = new StringBuffer(512);
 
-	private List params = new ArrayList();
+	private List<Object> params = new ArrayList<Object>();
 
 	/* 两个构造函数 */
 	public QueryHelper(String prefixSql) {

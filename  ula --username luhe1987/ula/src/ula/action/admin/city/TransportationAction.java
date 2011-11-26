@@ -14,7 +14,7 @@ import ula.constant.AlertMessage;
  */
 public class TransportationAction extends CommonAction {
 	private PagingList transportationList;
-	private Map transportationInfo;
+	private Map<String, Object> transportationInfo;
 	private String articleId;
 	private String at;
 	private PagingList articleList;
@@ -23,7 +23,7 @@ public class TransportationAction extends CommonAction {
 		return transportationList;
 	}
 
-	public Map getTransportationInfo() {
+	public Map<String, Object> getTransportationInfo() {
 		return transportationInfo;
 	}
 

@@ -3,6 +3,7 @@ package ula.action.admin;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.ConnectException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -86,6 +87,10 @@ public class WeatherAction extends CommonAction {
 						+ AlertMessage.WEATHER_UPDATE_FAILURE);
 				return ERROR;
 			}
+		} catch (ConnectException conne) {
+			log.error(ExceptionUtils.getStackTrace(conne));
+			this.setAlertMessage(AlertMessage.WEATHER_CONNECT_TIMEOUT);
+			return ERROR;
 		} catch (Exception e) {
 			log.error(ExceptionUtils.getStackTrace(e));
 			this

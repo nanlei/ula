@@ -16,20 +16,19 @@ public class PicService extends BaseService {
 
 	public void addPic(String picName, String picPath, String picUser,
 			String picTag) {
-		DB.update(SQL_ADD_PIC,
-				new Object[] { picName, picPath, picUser, picTag });
+		DB.update(SQL_ADD_PIC, picName, picPath, picUser, picTag);
 	}
 
 	private static final String SQL_GET_PIC_BY_ID = "select * from pic where PICID=?";
 
-	public Map getPicInfoById(String picId) {
-		return DB.queryForMap(SQL_GET_PIC_BY_ID, new Object[] { picId });
+	public Map<String, Object> getPicInfoById(String picId) {
+		return DB.queryForMap(SQL_GET_PIC_BY_ID, picId);
 	}
 
 	private static final String SQL_DEL_PIC_BY_ID = "delete from pic where PICID=?";
 
 	public void deletePicById(String picId) {
-		DB.update(SQL_DEL_PIC_BY_ID, new Object[] { picId });
+		DB.update(SQL_DEL_PIC_BY_ID, picId);
 	}
 
 	private static final String SQL_GET_ALL_EDITOR_PICS = "select * from pic where PICTAG='editor'";
@@ -41,6 +40,6 @@ public class PicService extends BaseService {
 	private static final String SQL_GET_PICS_BY_TYPE = "select * from pic where PICTAG=?";
 
 	public PagingList getPicsByType(String type) {
-		return getPagingList(SQL_GET_PICS_BY_TYPE, new Object[] { type });
+		return getPagingList(SQL_GET_PICS_BY_TYPE, type);
 	}
 }

@@ -19,15 +19,15 @@ public class RecommendService extends BaseService {
 			String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,tag,content");
-		DB.update(SQL_ADD_RECOMMEND, new Object[] { params[0], filePath,
-				params[2], params[1], userName });
+		DB.update(SQL_ADD_RECOMMEND, params[0], filePath, params[2], params[1],
+				userName);
 	}
 
 	private static final String SQL_GET_RECOMMEND_BY_ID = "select * from recommend where ID=?";
 
 	public Map<String, Object> getRecommendById(Map<String, Object> parameters) {
 		String id = MapUtil.getStringFromMap(parameters, "id");
-		return DB.queryForMap(SQL_GET_RECOMMEND_BY_ID, new Object[] { id });
+		return DB.queryForMap(SQL_GET_RECOMMEND_BY_ID, id);
 	}
 
 	private static final String SQL_UPDATE_RECOMMEND_NO_COVER = "update recommend set TITLE=?, CONTENT=?, UPDATETIME=now(), TAG=?, USERNAME=? where ID=?";
@@ -35,8 +35,8 @@ public class RecommendService extends BaseService {
 	public void updateRecommend(Map<String, Object> parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,content,tag,id");
-		DB.update(SQL_UPDATE_RECOMMEND_NO_COVER, new Object[] { params[0],
-				params[1], params[2], userName, params[3] });
+		DB.update(SQL_UPDATE_RECOMMEND_NO_COVER, params[0], params[1],
+				params[2], userName, params[3]);
 	}
 
 	private static final String SQL_UPDATE_RECOMMEND = "update recommend set TITLE=?, CONTENT=?, COVER=?, UPDATETIME=now(), TAG=?, USERNAME=? where ID=?";
@@ -45,14 +45,14 @@ public class RecommendService extends BaseService {
 			String filePath, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,content,tag,id");
-		DB.update(SQL_UPDATE_RECOMMEND, new Object[] { params[0], params[1],
-				filePath, params[2], userName, params[3] });
+		DB.update(SQL_UPDATE_RECOMMEND, params[0], params[1], filePath,
+				params[2], userName, params[3]);
 	}
 
 	private static final String SQL_DELETE_RECOMMEND = "delete from recommend where ID=?";
 
 	public void deleteRecommendById(Map<String, Object> parameters) {
 		String id = MapUtil.getStringFromMap(parameters, "id");
-		DB.update(SQL_DELETE_RECOMMEND, new Object[] { id });
+		DB.update(SQL_DELETE_RECOMMEND, id);
 	}
 }

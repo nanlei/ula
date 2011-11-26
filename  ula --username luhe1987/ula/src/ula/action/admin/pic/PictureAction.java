@@ -16,7 +16,7 @@ import ula.constant.AlertMessage;
  */
 public class PictureAction extends FrameworkAction {
 	private PagingList picList;
-	private Map picInfo;
+	private Map<String, Object> picInfo;
 	private String picId;
 
 	// 图片上传
@@ -27,7 +27,7 @@ public class PictureAction extends FrameworkAction {
 		return picList;
 	}
 
-	public Map getPicInfo() {
+	public Map<String, Object> getPicInfo() {
 		return picInfo;
 	}
 
@@ -119,8 +119,8 @@ public class PictureAction extends FrameworkAction {
 	 */
 	public String deletePic() {
 		try {
-			Map picInfo = getServiceManager().getPicService().getPicInfoById(
-					picId);
+			Map<String, Object> picInfo = getServiceManager().getPicService()
+					.getPicInfoById(picId);
 			String filePath = (String) picInfo.get("PICPATH");
 			File pic = new File(getServletContext().getRealPath(filePath));
 			if (pic.exists()) {

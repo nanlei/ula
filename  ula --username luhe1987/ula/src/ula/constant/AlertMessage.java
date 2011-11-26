@@ -70,6 +70,7 @@ public interface AlertMessage {
 	String HOTL_PARAM_DELETE_FAILURE = "酒店参数删除失败";
 
 	String HOTEL_ALBUM_ADD_SUCCESS = "酒店相册添加成功";
+	String HOTEL_ALBUM_ADD_FAILURE = "酒店相册添加成功";
 	String HOTEL_ADD_PIC_TO_ALBUM_SUCCESS = "照片添加到相册成功";
 	String HOTEL_ADD_PIC_TO_ALBUM_FAILURE = "照片添加到相册失败";
 	String HOTEL_DELETE_PIC_FROM_ALBUM_SUCCESS = "从相册中删除照片成功";
@@ -100,6 +101,14 @@ public interface AlertMessage {
 
 	String WEATHER_UPDATE_SUCCESS = "天气预报更新成功";
 	String WEATHER_UPDATE_FAILURE = "天气预报更新失败";
+	String WEATHER_CONNECT_TIMEOUT = "网络请求超时，请稍后重试";
 	String WEATHER_DEFAULT_CITY_SUCCESS = "默认城市设置成功";
 	String WEATHER_DEFAULT_CITY_FAILURE = "默认城市设置失败";
+
+	String RESOURCE_ADD_SUCCESS = "订阅资源添加成功";
+	String RESOURCE_ADD_FAILURE = "订阅资源添加失败";
+	String RESOURCE_UPDATE_SUCCESS = "订阅资源更新成功";
+	String RESOURCE_UPDATE_FAILURE = "订阅资源更新失败";
+	String RESOURCE_DELETE_SUCCESS = "订阅资源删除成功";
+	String RESOURCE_DELETE_FAILURE = "订阅资源删除失败";
 }

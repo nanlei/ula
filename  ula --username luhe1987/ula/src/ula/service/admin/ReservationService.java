@@ -7,48 +7,39 @@ import ula.service.BaseService;
 
 /**
  * 2010-7-18 9:23:37
+ * 
  * @author Harry
- *
+ * 
  */
 public class ReservationService extends BaseService {
 
-	private static final String SQL_HOTEL_RESERVATION = "INSERT INTO reservation_hotel(name,tel,email,hotelName,roomCategory,checkinDate,checkoutDate,men,women,kids,remarks,order_date) "
-			+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,(select sysdate()from dual))";
-	
-	private static final String SQL_HOTEL_RESERVATION_BACKUP = "INSERT INTO reservation_hotel_backup(name,tel,email,hotelName,roomCategory,checkinDate,checkoutDate,men,women,kids,remarks,order_date) "
-			+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,(select sysdate()from dual))";
-	
+	private static final String SQL_HOTEL_RESERVATION = "INSERT INTO reservation_hotel(name,tel,email,hotelName,roomCategory,checkinDate,checkoutDate,men,women,kids,remarks,order_date) VALUES(?,?,?,?,?,?,?,?,?,?,?,now())";
+
+	private static final String SQL_HOTEL_RESERVATION_BACKUP = "INSERT INTO reservation_hotel_backup(name,tel,email,hotelName,roomCategory,checkinDate,checkoutDate,men,women,kids,remarks,order_date) VALUES(?,?,?,?,?,?,?,?,?,?,?,now())";
+
 	private static final String SQL_HOTEL_RESERVLIST = "SELECT * FROM reservation_hotel ORDER BY order_date desc";
-	
+
 	private static final String SQL_TRAVEL_RESERVLIST = "SELECT * FROM reservation_travel ORDER BY order_date desc";
-	
-	private static final String SQL_REMOVE_HOTELRESERV = "DELETE FROM reservation_hotel "
-			+ "WHERE Id = ?";
-	
+
+	private static final String SQL_REMOVE_HOTELRESERV = "DELETE FROM reservation_hotel WHERE Id = ?";
+
 	private static final String SQL_HOTEL_RESERVATION_DETAIL = "SELECT * FROM reservation_hotel WHERE Id =?";
-	
+
 	private static final String SQL_TRAVEL_RESERVATION_DETAIL = "SELECT * FROM reservation_travel WHERE Id =?";
 
-	private static final String SQL_TRAVEL_RESERVATION = "INSERT INTO reservation_travel"
-			+ "(touristNum,startDate,returnDate,replyDeadline,requirement,contactName,contactGender,contactPhone,contactEmail,order_date) "
-			+ "VALUES(?,?,?,?,?,?,?,?,?,(SELECT sysdate() FROM dual))";
-	private static final String SQL_TRAVEL_RESERVATION_BACKUP = "INSERT INTO reservation_travel_backup"
-		+ "(touristNum,startDate,returnDate,replyDeadline,requirement,contactName,contactGender,contactPhone,contactEmail,order_date) "
-		+ "VALUES(?,?,?,?,?,?,?,?,?,(SELECT sysdate() FROM dual))";
-	
+	private static final String SQL_TRAVEL_RESERVATION = "INSERT INTO reservation_travel(touristNum,startDate,returnDate,replyDeadline,requirement,contactName,contactGender,contactPhone,contactEmail,order_date) VALUES(?,?,?,?,?,?,?,?,?,now())";
+
+	private static final String SQL_TRAVEL_RESERVATION_BACKUP = "INSERT INTO reservation_travel_backup(touristNum,startDate,returnDate,replyDeadline,requirement,contactName,contactGender,contactPhone,contactEmail,order_date) VALUES(?,?,?,?,?,?,?,?,?,now())";
+
 	private static final String SQL_REMOVE_TRAVELRESERV = "DELETE FROM reservation_travel WHERE Id=?";
 
-	private static final String SQL_HOTEL_ORDER_DONE_MARK = "UPDATE reservation_hotel "
-			+ "SET done ='yes'" + " WHERE Id =?";
+	private static final String SQL_HOTEL_ORDER_DONE_MARK = "UPDATE reservation_hotel SET done ='yes' WHERE Id =?";
 
-	private static final String SQL_HOTEL_ORDER_UNDONE_MARK = "UPDATE reservation_hotel "
-			+ "SET done ='no'" + " WHERE Id =?";
+	private static final String SQL_HOTEL_ORDER_UNDONE_MARK = "UPDATE reservation_hotel SET done ='no' WHERE Id =?";
 
-	private static final String SQL_TRAVEL_ORDER_DONE_MARK = "UPDATE reservation_travel "
-			+ "SET done ='yes'" + " WHERE Id =?";
+	private static final String SQL_TRAVEL_ORDER_DONE_MARK = "UPDATE reservation_travel SET done ='yes' WHERE Id =?";
 
-	private static final String SQL_TRAVEL_ORDER_UNDONE_MARK = "UPDATE reservation_travel"
-			+ " SET done ='no'" + " WHERE Id =?";
+	private static final String SQL_TRAVEL_ORDER_UNDONE_MARK = "UPDATE reservation_travel SET done ='no' WHERE Id =?";
 
 	/**
 	 * 酒店预订
@@ -84,13 +75,13 @@ public class ReservationService extends BaseService {
 			String checkoutDate, String numberOfMen, String numberOfWomen,
 			String numberOfKids, String remarks) throws Exception {
 		// 备份
-		super.DB.update(SQL_HOTEL_RESERVATION_BACKUP, new Object[] { name, tel,
-				email, hotelName, roomCategory, checkinDate, checkoutDate,
-				numberOfMen, numberOfWomen, numberOfKids, remarks });
+		DB.update(SQL_HOTEL_RESERVATION_BACKUP, name, tel, email, hotelName,
+				roomCategory, checkinDate, checkoutDate, numberOfMen,
+				numberOfWomen, numberOfKids, remarks);
 		// 保存
-		return super.DB.update(SQL_HOTEL_RESERVATION, new Object[] { name, tel,
-				email, hotelName, roomCategory, checkinDate, checkoutDate,
-				numberOfMen, numberOfWomen, numberOfKids, remarks });
+		return DB.update(SQL_HOTEL_RESERVATION, name, tel, email, hotelName,
+				roomCategory, checkinDate, checkoutDate, numberOfMen,
+				numberOfWomen, numberOfKids, remarks);
 	}
 
 	/**
@@ -99,7 +90,7 @@ public class ReservationService extends BaseService {
 	 * @return
 	 */
 	public PagingList getHoteReservList() throws Exception {
-		return super.getPagingList(SQL_HOTEL_RESERVLIST);
+		return getPagingList(SQL_HOTEL_RESERVLIST);
 	}
 
 	/**
@@ -111,12 +102,11 @@ public class ReservationService extends BaseService {
 	 * @throws Exception
 	 */
 	public int removeHotelReserv(String id) throws Exception {
-		return super.DB.update(SQL_REMOVE_HOTELRESERV, new Object[] { id });
+		return DB.update(SQL_REMOVE_HOTELRESERV, id);
 	}
 
-	public Map detail_hotel(String id) throws Exception {
-		return super.DB.queryForMap(SQL_HOTEL_RESERVATION_DETAIL,
-				new Object[] { id });
+	public Map<String, Object> detail_hotel(String id) throws Exception {
+		return DB.queryForMap(SQL_HOTEL_RESERVATION_DETAIL, id);
 	}
 
 	/**
@@ -147,16 +137,14 @@ public class ReservationService extends BaseService {
 			String returnDate, String replyDeadline, String requirements,
 			String contactName, String contactGender, String contactPhone,
 			String contactEmail) throws Exception {
-//		备份
-		super.DB.update(SQL_TRAVEL_RESERVATION_BACKUP, new Object[] {
-				numOfTourist, startDate, returnDate, replyDeadline,
-				requirements, contactName, contactGender, contactPhone,
-				contactEmail });
-//		存储
-		return super.DB.update(SQL_TRAVEL_RESERVATION, new Object[] {
-				numOfTourist, startDate, returnDate, replyDeadline,
-				requirements, contactName, contactGender, contactPhone,
-				contactEmail });
+		// 备份
+		DB.update(SQL_TRAVEL_RESERVATION_BACKUP, numOfTourist, startDate,
+				returnDate, replyDeadline, requirements, contactName,
+				contactGender, contactPhone, contactEmail);
+		// 存储
+		return DB.update(SQL_TRAVEL_RESERVATION, numOfTourist, startDate,
+				returnDate, replyDeadline, requirements, contactName,
+				contactGender, contactPhone, contactEmail);
 	}
 
 	/**
@@ -167,7 +155,7 @@ public class ReservationService extends BaseService {
 	 * @return
 	 */
 	public int removeTravelReserv(String id) {
-		return super.DB.update(SQL_REMOVE_TRAVELRESERV, new Object[] { id });
+		return DB.update(SQL_REMOVE_TRAVELRESERV, id);
 	}
 
 	/**
@@ -179,7 +167,7 @@ public class ReservationService extends BaseService {
 	 * @throws Exception
 	 */
 	public int hotelOrderDoneMark(String id) throws Exception {
-		return super.DB.update(SQL_HOTEL_ORDER_DONE_MARK, new Object[] { id });
+		return DB.update(SQL_HOTEL_ORDER_DONE_MARK, id);
 	}
 
 	/**
@@ -191,8 +179,7 @@ public class ReservationService extends BaseService {
 	 * @throws Exception
 	 */
 	public int hotelOrderUndoneMark(String id) throws Exception {
-		return super.DB
-				.update(SQL_HOTEL_ORDER_UNDONE_MARK, new Object[] { id });
+		return DB.update(SQL_HOTEL_ORDER_UNDONE_MARK, id);
 	}
 
 	/**
@@ -203,8 +190,7 @@ public class ReservationService extends BaseService {
 	 * @return
 	 */
 	public int travelOrderUndoneMark(String id) throws Exception {
-		return super.DB.update(SQL_TRAVEL_ORDER_UNDONE_MARK,
-				new Object[] { id });
+		return DB.update(SQL_TRAVEL_ORDER_UNDONE_MARK, id);
 	}
 
 	/**
@@ -215,7 +201,7 @@ public class ReservationService extends BaseService {
 	 * @throws Exception
 	 */
 	public int travelOrderDoneMark(String id) throws Exception {
-		return super.DB.update(SQL_TRAVEL_ORDER_DONE_MARK, new Object[] { id });
+		return DB.update(SQL_TRAVEL_ORDER_DONE_MARK, id);
 	}
 
 	/**
@@ -225,16 +211,16 @@ public class ReservationService extends BaseService {
 	 * @return
 	 * @throws Exception
 	 */
-	public Map detail_travel(String id) throws Exception {
-		return super.DB
-				.queryForMap(SQL_TRAVEL_RESERVATION_DETAIL, new Object[] { id });
+	public Map<String, Object> detail_travel(String id) throws Exception {
+		return DB.queryForMap(SQL_TRAVEL_RESERVATION_DETAIL, id);
 	}
 
 	/**
 	 * 获取全部旅游行程订单
+	 * 
 	 * @return
 	 */
-	public PagingList getTravelReservList() throws Exception{
-		return super.getPagingList(SQL_TRAVEL_RESERVLIST);
+	public PagingList getTravelReservList() throws Exception {
+		return getPagingList(SQL_TRAVEL_RESERVLIST);
 	}
 }

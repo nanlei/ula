@@ -93,8 +93,8 @@ public class EditorPictureAction extends FrameworkAction {
 	 */
 	public String deleteEditorPic() throws Exception {
 		try {
-			Map picInfo = getServiceManager().getPicService().getPicInfoById(
-					picId);
+			Map<String, Object> picInfo = getServiceManager().getPicService()
+					.getPicInfoById(picId);
 			String filePath = (String) picInfo.get("PICPATH");
 			File pic = new File(getServletContext().getRealPath(filePath));
 			if (pic.exists()) {
