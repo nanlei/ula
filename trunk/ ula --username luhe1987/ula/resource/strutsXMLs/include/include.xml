@@ -23,6 +23,7 @@
 	<include file="strutsXMLs/action/admin/reservation.xml"></include>
 	<include file="strutsXMLs/action/admin/resource.xml"></include>
 	<include file="strutsXMLs/action/admin/special.xml"></include>
+	<include file="strutsXMLs/action/admin/subscriber.xml"></include>
 	<include file="strutsXMLs/action/admin/user.xml"></include>
 	<include file="strutsXMLs/action/admin/weather.xml"></include>
 

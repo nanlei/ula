@@ -15,6 +15,7 @@ import ula.service.admin.RecommendService;
 import ula.service.admin.ReservationService;
 import ula.service.admin.ResourceService;
 import ula.service.admin.SpecialService;
+import ula.service.admin.SubscriberService;
 import ula.service.admin.UserService;
 import ula.service.admin.WeatherService;
 
@@ -41,6 +42,7 @@ public class ServiceManager {
 	private RecommendService recommendService;
 	private WeatherService weatherService;
 	private ResourceService resourceService;
+	private SubscriberService subscriberService;
 
 	public ReservationService getReservationService() {
 		return reservationService;
@@ -176,6 +178,14 @@ public class ServiceManager {
 
 	public void setResourceService(ResourceService resourceService) {
 		this.resourceService = resourceService;
+	}
+
+	public SubscriberService getSubscriberService() {
+		return subscriberService;
+	}
+
+	public void setSubscriberService(SubscriberService subscriberService) {
+		this.subscriberService = subscriberService;
 	}
 
 }
