@@ -1,4 +1,4 @@
-package ula.action.admin;
+package ula.action.admin.resource;
 
 import java.util.Map;
 

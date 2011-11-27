@@ -117,4 +117,7 @@ public interface AlertMessage {
 	String RESOURCE_UPDATE_FAILURE = "订阅资源更新失败";
 	String RESOURCE_DELETE_SUCCESS = "订阅资源删除成功";
 	String RESOURCE_DELETE_FAILURE = "订阅资源删除失败";
+
+	String SUBSCRIBER_DELETE_SUCCESS = "订阅用户删除成功";
+	String SUBSCRIBER_DELETE_FAILURE = "订阅用户删除失败";
 }

@@ -26,12 +26,36 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 		<property name="cronExpression" value="0 0/30 * * * ?" />
 	</bean>
 
+
+	<!-- 发送订阅资源  -->
+	<bean id="sendResourceService" class="ula.quartz.service.SendResourceService">
+		<property name="interval" value="100" />
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="sendResourceJob" class="ula.quartz.job.SendResourceJob">
+		<property name="sendResourceService" ref="sendResourceService" />
+	</bean>
+
+	<bean id="sendResourceJobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="sendResourceJob" />
+		<property name="targetMethod" value="execute" />
+	</bean>
+
+	<!-- 每20分钟自动执行一次 -->
+	<bean id="sendResourceJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="sendResourceJobDetail" />
+		<property name="cronExpression" value="0/20 * * * * ?" />
+	</bean>
+
 	<!-- 总任务管理器 -->
 	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
 		lazy-init="false" autowire="no">
 		<property name="triggers">
 			<list>
 				<ref bean="weatherUpdateJobTrigger" />
+				<ref bean="sendResourceJobTrigger" />
 			</list>
 		</property>
 	</bean>
