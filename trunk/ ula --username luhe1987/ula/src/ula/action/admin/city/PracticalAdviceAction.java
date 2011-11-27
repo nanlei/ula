@@ -1,5 +1,7 @@
 package ula.action.admin.city;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
+
 import ula.action.FrameworkAction;
 import ula.constant.AlertMessage;
 import ula.constant.CommonConstants;
@@ -13,8 +15,7 @@ public class PracticalAdviceAction extends FrameworkAction {
 					CommonConstants.ID_CITY_ADVICE, title, content,
 					CommonConstants.TAG_CITY_ADVICE);
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return 0;
 		}
 	}
@@ -26,8 +27,7 @@ public class PracticalAdviceAction extends FrameworkAction {
 			super.setInfoMap(super.getServiceManager().getCityServcie()
 					.getInfo(CommonConstants.ID_CITY_ADVICE));
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			super.setAlertMessage(AlertMessage.CITY_ADVICE);
 		}
 		return super.admin();
@@ -40,8 +40,7 @@ public class PracticalAdviceAction extends FrameworkAction {
 			super.setInfoMap(super.getServiceManager().getCityServcie()
 					.getInfo(CommonConstants.ID_CITY_ADVICE));
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return ERROR;
 		}
 		return super.edit();
@@ -50,10 +49,10 @@ public class PracticalAdviceAction extends FrameworkAction {
 	@Override
 	protected int updateToDB(String title, String content) {
 		try {
-			return super.getServiceManager().getCityServcie().updateInfo(CommonConstants.ID_CITY_ADVICE, title, content);
+			return super.getServiceManager().getCityServcie().updateInfo(
+					CommonConstants.ID_CITY_ADVICE, title, content);
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return 0;
 		}
 	}
@@ -62,14 +61,13 @@ public class PracticalAdviceAction extends FrameworkAction {
 	public String view() {
 		super.setMapKeyName(CommonConstants.VIEW);
 		try {
-			super.setInfoMap(this.getServiceManager().getCityServcie().getInfo(CommonConstants.ID_CITY_ADVICE));
+			super.setInfoMap(this.getServiceManager().getCityServcie().getInfo(
+					CommonConstants.ID_CITY_ADVICE));
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return super.view();
-		}	
+		}
 		return super.view();
 	}
-	
-	
 
 }

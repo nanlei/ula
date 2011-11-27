@@ -12,7 +12,7 @@ import ula.action.CommonAction;
  */
 public class ArticleAction extends CommonAction {
 	private String id;
-	private Map view;
+	private Map<String, Object> view;
 
 	private String type;
 
@@ -20,7 +20,7 @@ public class ArticleAction extends CommonAction {
 		this.id = id;
 	}
 
-	public Map getView() {
+	public Map<String, Object> getView() {
 		return view;
 	}
 

@@ -56,11 +56,11 @@ public class RecommendAction extends CommonAction {
 	public String add() {
 		if (cover.length() <= 0) {
 			log.debug("The size of file(" + coverFileName + ") is 0");
-			this.setAlertMessage(AlertMessage.PIC_SIZE_ZERO);
+			setAlertMessage(AlertMessage.PIC_SIZE_ZERO);
 			return ERROR;
 		} else if (coverContentType.indexOf("image") == -1) {
 			log.debug("The type of file is not a kind of images");
-			this.setAlertMessage(AlertMessage.PIC_INSERT_DENY);
+			setAlertMessage(AlertMessage.PIC_INSERT_DENY);
 			return ERROR;
 		} else {
 			String fileName = new java.util.Date().getTime() + "."
@@ -73,11 +73,11 @@ public class RecommendAction extends CommonAction {
 				// 写数据库
 				getServiceManager().getRecommendService().addRecommend(
 						getParametersAsMap(), filePath, getLoginUserName());
-				this.setAlertMessage(AlertMessage.RECOMMAND_ADD_SUCCESS);
+				setAlertMessage(AlertMessage.RECOMMAND_ADD_SUCCESS);
 				return SUCCESS;
 			} catch (Exception e) {
 				log.error(ExceptionUtils.getStackTrace(e));
-				this.setAlertMessage(AlertMessage.RECOMMAND_ADD_FAILURE);
+				setAlertMessage(AlertMessage.RECOMMAND_ADD_FAILURE);
 				return ERROR;
 			}
 		}
@@ -94,21 +94,21 @@ public class RecommendAction extends CommonAction {
 			try {
 				getServiceManager().getRecommendService().updateRecommend(
 						getParametersAsMap(), getLoginUserName());
-				this.setAlertMessage(AlertMessage.RECOMMAND_UPDATE_SUCCESS);
+				setAlertMessage(AlertMessage.RECOMMAND_UPDATE_SUCCESS);
 				return SUCCESS;
 			} catch (Exception e) {
 				log.error(ExceptionUtils.getStackTrace(e));
-				this.setAlertMessage(AlertMessage.RECOMMAND_UPDATE_FAILURE);
+				setAlertMessage(AlertMessage.RECOMMAND_UPDATE_FAILURE);
 				return ERROR;
 			}
 		} else {// 更新封面图片
 			if (cover.length() <= 0) {
 				log.debug("The size of file(" + coverFileName + ") is 0");
-				this.setAlertMessage(AlertMessage.PIC_SIZE_ZERO);
+				setAlertMessage(AlertMessage.PIC_SIZE_ZERO);
 				return ERROR;
 			} else if (coverContentType.indexOf("image") == -1) {
 				log.debug("The type of file is not a kind of images");
-				this.setAlertMessage(AlertMessage.PIC_INSERT_DENY);
+				setAlertMessage(AlertMessage.PIC_INSERT_DENY);
 				return ERROR;
 			} else {
 				String oldFilePath = (String) getServiceManager()
@@ -130,11 +130,11 @@ public class RecommendAction extends CommonAction {
 					// 写数据库
 					getServiceManager().getRecommendService().updateRecommend(
 							getParametersAsMap(), filePath, getLoginUserName());
-					this.setAlertMessage(AlertMessage.RECOMMAND_UPDATE_SUCCESS);
+					setAlertMessage(AlertMessage.RECOMMAND_UPDATE_SUCCESS);
 					return SUCCESS;
 				} catch (Exception e) {
 					log.error(ExceptionUtils.getStackTrace(e));
-					this.setAlertMessage(AlertMessage.RECOMMAND_UPDATE_FAILURE);
+					setAlertMessage(AlertMessage.RECOMMAND_UPDATE_FAILURE);
 					return ERROR;
 				}
 			}
@@ -154,11 +154,11 @@ public class RecommendAction extends CommonAction {
 			// 删除数据库
 			getServiceManager().getRecommendService().deleteRecommendById(
 					getParametersAsMap());
-			this.setAlertMessage(AlertMessage.RECOMMAND_DELETE_SUCCESS);
+			setAlertMessage(AlertMessage.RECOMMAND_DELETE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
 			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.RECOMMAND_DELETE_FAILURE);
+			setAlertMessage(AlertMessage.RECOMMAND_DELETE_FAILURE);
 			return ERROR;
 		}
 	}

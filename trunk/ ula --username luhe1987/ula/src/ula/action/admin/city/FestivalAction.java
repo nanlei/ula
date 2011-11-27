@@ -2,6 +2,8 @@ package ula.action.admin.city;
 
 import java.util.Map;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
+
 import ula.action.CommonAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
@@ -14,7 +16,7 @@ import ula.constant.AlertMessage;
  */
 public class FestivalAction extends CommonAction {
 	private PagingList festivalList;
-	private Map festivalInfo;
+	private Map<String, Object> festivalInfo;
 	private String articleId;
 	private String at;
 	private PagingList articleList;
@@ -23,7 +25,7 @@ public class FestivalAction extends CommonAction {
 		return festivalList;
 	}
 
-	public Map getFestivalInfo() {
+	public Map<String, Object> getFestivalInfo() {
 		return festivalInfo;
 	}
 
@@ -66,6 +68,8 @@ public class FestivalAction extends CommonAction {
 			this.setAlertMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			this.setAlertMessage(AlertMessage.ARTICLE_ADD_FAILURE);
 			return ERROR;
 		}
 	}
@@ -93,6 +97,8 @@ public class FestivalAction extends CommonAction {
 			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
 			return ERROR;
 		}
 	}
@@ -109,6 +115,8 @@ public class FestivalAction extends CommonAction {
 			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_FAILURE);
 			return ERROR;
 		}
 	}

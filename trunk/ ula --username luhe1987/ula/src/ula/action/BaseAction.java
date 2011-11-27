@@ -80,17 +80,6 @@ public class BaseAction implements Action {
 		return ServletActionContext.getServletContext();
 	}
 
-	/**
-	 * 输出debug需要的信息，用于调试错误或者log
-	 * 
-	 * @param msg
-	 */
-	protected void debug(String msg) {
-		if (log.isDebugEnabled()) {
-			log.debug(msg);
-		}
-	}
-
 	@SuppressWarnings("unchecked")
 	public Map<String, Object> getLoginUser() throws Exception {
 		return (Map<String, Object>) getHttpSessionAsMap().get(

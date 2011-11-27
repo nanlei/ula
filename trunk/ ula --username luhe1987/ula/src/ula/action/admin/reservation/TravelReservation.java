@@ -2,6 +2,8 @@ package ula.action.admin.reservation;
 
 import java.util.Map;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
+
 import ula.action.CommonAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
@@ -115,15 +117,13 @@ public class TravelReservation extends CommonAction {
 	 * @return
 	 */
 	public String reserve() {
-		super.debug(this.toString());
 		try {
-			super.getServiceManager().getReservationService().reserve_travel(
-					this.numOfTourist, this.startDate, this.returnDate,
-					this.replyDeadline, this.requirements, this.contactName,
-					this.contactGender, this.contactPhone, this.contactEmail);
+			getServiceManager().getReservationService().reserve_travel(
+					numOfTourist, startDate, returnDate, replyDeadline,
+					requirements, contactName, contactGender, contactPhone,
+					contactEmail);
 		} catch (Exception e) {
-
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return ERROR;
 		}
 		return SUCCESS;
@@ -136,10 +136,10 @@ public class TravelReservation extends CommonAction {
 	 */
 	public String admin() {
 		try {
-			this.travelReservList = super.getServiceManager()
-					.getReservationService().getTravelReservList();
+			travelReservList = getServiceManager().getReservationService()
+					.getTravelReservList();
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 		}
 		return "admin";
 	}
@@ -150,15 +150,13 @@ public class TravelReservation extends CommonAction {
 	 * @return
 	 */
 	public String remove() {
-		String Id = super.getHttpServletRequest().getParameter("id");
+		String Id = getHttpServletRequest().getParameter("id");
 		if (StringUtil.isEmpty(Id)) {
-			super.debug("订单id: " + Id + "是一个无效id");
+			log.debug("订单id: " + Id + "是一个无效id");
 			return ERROR;
 		}
-
-		super.getServiceManager().getReservationService()
-				.removeTravelReserv(Id);
-		super.setAlertMessage(AlertMessage.DELTE_SUCCESS);
+		getServiceManager().getReservationService().removeTravelReserv(Id);
+		setAlertMessage(AlertMessage.DELTE_SUCCESS);
 		return this.admin();
 	}
 
@@ -170,16 +168,14 @@ public class TravelReservation extends CommonAction {
 	public String detail() {
 		String Id = this.getHttpServletRequest().getParameter("id");
 		if (StringUtil.isEmpty(Id)) {
-			super.debug("订单Id:" + Id + " 是无效Id");
+			log.debug("订单Id:" + Id + " 是无效Id");
 			return ERROR;
 		}
-
 		try {
-			this.travelReserv = super.getServiceManager()
-					.getReservationService().detail_travel(Id);
+			travelReserv = getServiceManager().getReservationService()
+					.detail_travel(Id);
 		} catch (Exception e) {
-
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return ERROR;
 		}
 		return "detail";
@@ -193,16 +189,14 @@ public class TravelReservation extends CommonAction {
 	public String done() {
 		String Id = this.getHttpServletRequest().getParameter("id");
 		if (StringUtil.isEmpty(Id)) {
-			super.debug("订单Id:" + Id + " 是无效Id");
+			log.debug("订单Id:" + Id + " 是无效Id");
 			return ERROR;
 		}
-
 		try {
-			super.getServiceManager().getReservationService()
-					.travelOrderDoneMark(Id);
-			super.setAlertMessage(AlertMessage.DONE_MARK);
+			getServiceManager().getReservationService().travelOrderDoneMark(Id);
+			setAlertMessage(AlertMessage.DONE_MARK);
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return ERROR;
 		}
 		return this.admin();
@@ -216,17 +210,15 @@ public class TravelReservation extends CommonAction {
 	public String undone() {
 		String Id = this.getHttpServletRequest().getParameter("id");
 		if (StringUtil.isEmpty(Id)) {
-			super.debug("订单Id:" + Id + " 是无效Id");
+			log.debug("订单Id:" + Id + " 是无效Id");
 			return ERROR;
 		}
-
 		try {
-			super.getServiceManager().getReservationService()
-					.travelOrderUndoneMark(Id);
-			super.setAlertMessage(AlertMessage.UNDONE_MARK);
+			getServiceManager().getReservationService().travelOrderUndoneMark(
+					Id);
+			setAlertMessage(AlertMessage.UNDONE_MARK);
 		} catch (Exception e) {
-
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return ERROR;
 		}
 		return this.admin();

@@ -2,6 +2,8 @@ package ula.action.admin.reservation;
 
 import java.util.Map;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
+
 import ula.action.CommonAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
@@ -140,16 +142,13 @@ public class HotelReservation extends CommonAction {
 	 * @return 一个提示页面，提示操作结果是否成功
 	 */
 	public String reserve() {
-		super.debug(this.toString());
 		try {
-			super.getServiceManager().getReservationService().reserve_hotel(
-					this.hotelName, this.guestTotal, this.roomTotal,
-					this.checkinDate, this.checkoutDate, this.name,
-					this.phoneType, this.phoneNumber, this.contactType,
-					this.contact, this.remarks);
+			getServiceManager().getReservationService().reserve_hotel(
+					hotelName, guestTotal, roomTotal, checkinDate,
+					checkoutDate, name, phoneType, phoneNumber, contactType,
+					contact, remarks);
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return ERROR;
 		}
 		return SUCCESS;
@@ -161,13 +160,11 @@ public class HotelReservation extends CommonAction {
 	 * @return
 	 */
 	public String admin() {
-
 		try {
-			this.hotelReservList = super.getServiceManager()
-					.getReservationService().getHoteReservList();
+			hotelReservList = getServiceManager().getReservationService()
+					.getHoteReservList();
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return ERROR;
 		}
 		return "admin";
@@ -179,22 +176,18 @@ public class HotelReservation extends CommonAction {
 	 * @return
 	 */
 	public String remove() {
-
-		String Id = this.getHttpServletRequest().getParameter("id");
+		String Id = getHttpServletRequest().getParameter("id");
 		if (StringUtil.isEmpty(Id)) {
-			super.debug("订单Id:" + Id + " 是无效Id");
+			log.debug("订单Id:" + Id + " 是无效Id");
 			return ERROR;
 		}
 		try {
-			super.getServiceManager().getReservationService()
-					.removeHotelReserv(Id);
-			super.setAlertMessage(AlertMessage.DELTE_SUCCESS);
+			getServiceManager().getReservationService().removeHotelReserv(Id);
+			setAlertMessage(AlertMessage.DELTE_SUCCESS);
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return ERROR;
 		}
-
 		return this.admin();
 	}
 
@@ -204,19 +197,16 @@ public class HotelReservation extends CommonAction {
 	 * @return
 	 */
 	public String detail() {
-
-		String Id = this.getHttpServletRequest().getParameter("id");
+		String Id = getHttpServletRequest().getParameter("id");
 		if (StringUtil.isEmpty(Id)) {
-			super.debug("订单Id:" + Id + " 是无效Id");
+			log.debug("订单Id:" + Id + " 是无效Id");
 			return ERROR;
 		}
-
 		try {
-			this.reservation = super.getServiceManager()
-					.getReservationService().detail_hotel(Id);
+			reservation = getServiceManager().getReservationService()
+					.detail_hotel(Id);
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return ERROR;
 		}
 
@@ -229,19 +219,16 @@ public class HotelReservation extends CommonAction {
 	 * @return
 	 */
 	public String done() {
-
-		String Id = this.getHttpServletRequest().getParameter("id");
+		String Id = getHttpServletRequest().getParameter("id");
 		if (StringUtil.isEmpty(Id)) {
-			super.debug("订单Id:" + Id + " 是无效Id");
+			log.debug("订单Id:" + Id + " 是无效Id");
 			return ERROR;
 		}
 		try {
-			super.getServiceManager().getReservationService()
-					.hotelOrderDoneMark(Id);
-			super.setAlertMessage(AlertMessage.DONE_MARK);
+			getServiceManager().getReservationService().hotelOrderDoneMark(Id);
+			setAlertMessage(AlertMessage.DONE_MARK);
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return ERROR;
 		}
 
@@ -254,19 +241,17 @@ public class HotelReservation extends CommonAction {
 	 * @return
 	 */
 	public String undone() {
-
-		String Id = this.getHttpServletRequest().getParameter("id");
+		String Id = getHttpServletRequest().getParameter("id");
 		if (StringUtil.isEmpty(Id)) {
-			super.debug("订单Id:" + Id + " 是无效Id");
+			log.debug("订单Id:" + Id + " 是无效Id");
 			return ERROR;
 		}
 		try {
-			super.getServiceManager().getReservationService()
+			getServiceManager().getReservationService()
 					.hotelOrderUndoneMark(Id);
-			super.setAlertMessage(AlertMessage.UNDONE_MARK);
+			setAlertMessage(AlertMessage.UNDONE_MARK);
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return ERROR;
 		}
 		return this.admin();
@@ -274,15 +259,13 @@ public class HotelReservation extends CommonAction {
 
 	@Override
 	public String view() {
-
 		super.view();
-		super.debug(this.toString());
+		log.debug(this.toString());
 		return "view";
 	}
 
 	@Override
 	public String toString() {
-
 		return "HotelReservation [name=" + name + ", hotelName=" + hotelName
 				+ ", checkinDate=" + checkinDate + ", checkoutDate="
 				+ checkoutDate + ", remarks=" + remarks + ", guestTotal="

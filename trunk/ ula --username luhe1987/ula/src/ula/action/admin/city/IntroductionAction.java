@@ -1,5 +1,7 @@
 package ula.action.admin.city;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
+
 import ula.action.FrameworkAction;
 import ula.constant.AlertMessage;
 import ula.constant.CommonConstants;
@@ -24,8 +26,7 @@ public class IntroductionAction extends FrameworkAction {
 					CommonConstants.ID_CITY_INTRODUCTION, title, content,
 					CommonConstants.TAG_CITY_INTRODUCTION);
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return 0;
 		}
 	}
@@ -37,8 +38,7 @@ public class IntroductionAction extends FrameworkAction {
 			super.setInfoMap(super.getServiceManager().getCityServcie()
 					.getInfo(CommonConstants.ID_CITY_INTRODUCTION));
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			super.setAlertMessage(AlertMessage.CITY_INTRO_EMPTY);
 			return super.admin();
 		}
@@ -52,8 +52,7 @@ public class IntroductionAction extends FrameworkAction {
 			super.setInfoMap(super.getServiceManager().getCityServcie()
 					.getInfo(CommonConstants.ID_CITY_INTRODUCTION));
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return ERROR;
 		}
 
@@ -76,9 +75,7 @@ public class IntroductionAction extends FrameworkAction {
 			return super.getServiceManager().getCityServcie().updateInfo(
 					CommonConstants.ID_CITY_INTRODUCTION, title2, content2);
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
-
+			log.error(ExceptionUtils.getStackTrace(e));
 			return 0;
 		}
 	}
@@ -90,7 +87,7 @@ public class IntroductionAction extends FrameworkAction {
 			super.setInfoMap(this.getServiceManager().getCityServcie().getInfo(
 					CommonConstants.ID_CITY_INTRODUCTION));
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return super.view();
 		}
 		return super.view();

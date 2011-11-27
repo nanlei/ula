@@ -2,6 +2,8 @@ package ula.action.admin.link;
 
 import java.util.Map;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
+
 import ula.action.CommonAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
@@ -22,19 +24,16 @@ public class LinkAction extends CommonAction {
 	public String add() {
 		// this.title = StringUtil.UTF8Encoding(this.title);
 		try {
-			int db_result = super.getServiceManager().getLinkService().addInfo(
+			int db_result = getServiceManager().getLinkService().addInfo(
 					this.title, this.url);
 			if (db_result == 1) {
-				super.setAlertMessage(AlertMessage.INSERT_SUCCESS);
+				setAlertMessage(AlertMessage.INSERT_SUCCESS);
 			}
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
-			super.setErrorMessage(ErrorConstants.INSERT_ERROR);
-
+			log.error(ExceptionUtils.getStackTrace(e));
+			setErrorMessage(ErrorConstants.INSERT_ERROR);
 			return ERROR;
 		}
-
 		return this.admin();
 	}
 
@@ -44,22 +43,18 @@ public class LinkAction extends CommonAction {
 	 * @return
 	 */
 	public String edit() {
-		String linkID = super.getHttpServletRequest().getParameter("id");
+		String linkID = getHttpServletRequest().getParameter("id");
 		if (StringUtil.isEmpty(linkID)) {
-			super.setErrorMessage(ErrorConstants.INFO_INVALID);
+			setErrorMessage(ErrorConstants.INFO_INVALID);
 			return ERROR;
 		}
-
-		super.debug("ID:" + linkID);
-
+		log.debug("ID:" + linkID);
 		try {
-			this.linkMap = super.getServiceManager().getLinkService()
-					.getInfoById(linkID);
-			super.debug("link info Map: " + this.linkMap);
+			linkMap = getServiceManager().getLinkService().getInfoById(linkID);
+			log.debug("link info Map: " + this.linkMap);
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
-			super.setErrorMessage(ErrorConstants.QUERY_ERROR);
+			log.error(ExceptionUtils.getStackTrace(e));
+			setErrorMessage(ErrorConstants.QUERY_ERROR);
 			return ERROR;
 		}
 
@@ -72,26 +67,24 @@ public class LinkAction extends CommonAction {
 	 * @return
 	 */
 	public String remove() {
-		String linkID = super.getHttpServletRequest().getParameter("id");
+		String linkID = getHttpServletRequest().getParameter("id");
 		if (StringUtil.isEmpty(linkID)) {
-			super.setErrorMessage(ErrorConstants.INFO_INVALID);
+			setErrorMessage(ErrorConstants.INFO_INVALID);
 			return ERROR;
 		}
-
 		try {
-			int db_result = super.getServiceManager().getLinkService()
+			int db_result = getServiceManager().getLinkService()
 					.deleteInfoById(linkID);
 			if (db_result == 0) {
-				super.setAlertMessage(AlertMessage.DELTE_ERROR);
+				setAlertMessage(AlertMessage.DELTE_ERROR);
 				return this.admin();
 			} else {
-				super.setAlertMessage(AlertMessage.DELTE_SUCCESS);
+				setAlertMessage(AlertMessage.DELTE_SUCCESS);
 				return this.admin();
 			}
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
-			super.setErrorMessage(ErrorConstants.QUERY_ERROR);
+			log.error(ExceptionUtils.getStackTrace(e));
+			setErrorMessage(ErrorConstants.QUERY_ERROR);
 			return ERROR;
 		}
 	}
@@ -102,28 +95,25 @@ public class LinkAction extends CommonAction {
 	 * @return
 	 */
 	public String update() {
-		String linkID = super.getHttpServletRequest().getParameter("id");
+		String linkID = getHttpServletRequest().getParameter("id");
 		if (StringUtil.isEmpty(linkID)) {
-			super.setErrorMessage(ErrorConstants.INFO_INVALID);
+			setErrorMessage(ErrorConstants.INFO_INVALID);
 			return ERROR;
 		}
-
-		super.debug("linkID:" + linkID);
-
+		log.debug("linkID:" + linkID);
 		try {
-			int db_result = super.getServiceManager().getLinkService()
-					.updateInfo(linkID, this.title, this.url);
+			int db_result = getServiceManager().getLinkService().updateInfo(
+					linkID, this.title, this.url);
 			if (db_result == 0) {
-				super.setAlertMessage(AlertMessage.UPDATE_FAILURE);
+				setAlertMessage(AlertMessage.UPDATE_FAILURE);
 				return this.admin();
 			} else {
-				super.setAlertMessage(AlertMessage.UPDATE_SUCCESS);
+				setAlertMessage(AlertMessage.UPDATE_SUCCESS);
 				return this.admin();
 			}
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
-			super.setErrorMessage(ErrorConstants.QUERY_ERROR);
+			log.error(ExceptionUtils.getStackTrace(e));
+			setErrorMessage(ErrorConstants.QUERY_ERROR);
 			return ERROR;
 		}
 	}
@@ -134,10 +124,9 @@ public class LinkAction extends CommonAction {
 	 * @return
 	 */
 	public String admin() {
-		this.linkList = super.getServiceManager().getLinkService().getAllInfo();
+		linkList = getServiceManager().getLinkService().getAllInfo();
 		if (this.linkList.getRowCount() == 0) {
-			super.setAlertMessage(AlertMessage.LINK_EMPTY + " "
-					+ super.getAlertMessage());
+			setAlertMessage(AlertMessage.LINK_EMPTY + " " + getAlertMessage());
 		}
 		return "admin";
 	}

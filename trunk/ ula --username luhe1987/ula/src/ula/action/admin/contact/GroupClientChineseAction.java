@@ -1,5 +1,7 @@
 package ula.action.admin.contact;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
+
 import ula.action.FrameworkAction;
 import ula.constant.AlertMessage;
 import ula.constant.CommonConstants;
@@ -23,8 +25,7 @@ public class GroupClientChineseAction extends FrameworkAction {
 			return super.getServiceManager().getContactService().addInfo(
 					CommonConstants.ID_CONTACT_GROUP_CN, title, content);
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return 0;
 		}
 	}
@@ -36,8 +37,7 @@ public class GroupClientChineseAction extends FrameworkAction {
 			super.setInfoMap(super.getServiceManager().getContactService()
 					.getInfo(CommonConstants.ID_CONTACT_GROUP_CN));
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			super.setAlertMessage(AlertMessage.CONTACT_INFO_EMPTY);
 			return super.admin();
 		}
@@ -52,11 +52,10 @@ public class GroupClientChineseAction extends FrameworkAction {
 			super.setInfoMap(super.getServiceManager().getContactService()
 					.getInfo(CommonConstants.ID_CONTACT_GROUP_CN));
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return ERROR;
 		}
-		
+
 		return super.edit();
 	}
 
@@ -73,10 +72,10 @@ public class GroupClientChineseAction extends FrameworkAction {
 	@Override
 	protected int updateToDB(String title2, String content2) {
 		try {
-			return super.getServiceManager().getContactService().updateInfo(CommonConstants.ID_CONTACT_GROUP_CN, title2, content2);
+			return super.getServiceManager().getContactService().updateInfo(
+					CommonConstants.ID_CONTACT_GROUP_CN, title2, content2);
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return 0;
 		}
 	}
@@ -85,11 +84,12 @@ public class GroupClientChineseAction extends FrameworkAction {
 	public String view() {
 		super.setMapKeyName(CommonConstants.VIEW);
 		try {
-			super.setInfoMap(this.getServiceManager().getContactService().getInfo(CommonConstants.ID_CONTACT_GROUP_CN));
+			super.setInfoMap(this.getServiceManager().getContactService()
+					.getInfo(CommonConstants.ID_CONTACT_GROUP_CN));
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return super.view();
-		}	
+		}
 		return super.view();
 	}
 

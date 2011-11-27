@@ -79,23 +79,19 @@ public class WeatherAction extends CommonAction {
 				// 处理数据
 				getServiceManager().getWeatherService()
 						.updateWeatherByCityCode(map, cityCode);
-				this.setAlertMessage(cityName
-						+ AlertMessage.WEATHER_UPDATE_SUCCESS);
+				setAlertMessage(cityName + AlertMessage.WEATHER_UPDATE_SUCCESS);
 				return SUCCESS;
 			} else {
-				this.setAlertMessage(cityName
-						+ AlertMessage.WEATHER_UPDATE_FAILURE);
+				setAlertMessage(cityName + AlertMessage.WEATHER_UPDATE_FAILURE);
 				return ERROR;
 			}
 		} catch (ConnectException conne) {
 			log.error(ExceptionUtils.getStackTrace(conne));
-			this.setAlertMessage(AlertMessage.WEATHER_CONNECT_TIMEOUT);
+			setAlertMessage(AlertMessage.WEATHER_CONNECT_TIMEOUT);
 			return ERROR;
 		} catch (Exception e) {
 			log.error(ExceptionUtils.getStackTrace(e));
-			this
-					.setAlertMessage(cityName
-							+ AlertMessage.WEATHER_UPDATE_FAILURE);
+			setAlertMessage(cityName + AlertMessage.WEATHER_UPDATE_FAILURE);
 			return ERROR;
 		}
 	}
@@ -104,11 +100,11 @@ public class WeatherAction extends CommonAction {
 		try {
 			getServiceManager().getWeatherService().setDefaulyCity(
 					getParametersAsMap());
-			this.setAlertMessage(AlertMessage.WEATHER_DEFAULT_CITY_SUCCESS);
+			setAlertMessage(AlertMessage.WEATHER_DEFAULT_CITY_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
 			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.WEATHER_DEFAULT_CITY_FAILURE);
+			setAlertMessage(AlertMessage.WEATHER_DEFAULT_CITY_FAILURE);
 			return ERROR;
 		}
 	}
