@@ -2,6 +2,8 @@ package ula.action.admin.city;
 
 import java.util.Map;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
+
 import ula.action.CommonAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
@@ -16,7 +18,7 @@ public class TourAction extends CommonAction {
 	private String articleType;// 栏目类别
 	private PagingList articleList;
 	private PagingList pictureList;
-	private Map articleInfo;
+	private Map<String, Object> articleInfo;
 	private String articleId;
 	private String at;
 
@@ -36,7 +38,7 @@ public class TourAction extends CommonAction {
 		return pictureList;
 	}
 
-	public Map getArticleInfo() {
+	public Map<String, Object> getArticleInfo() {
 		return articleInfo;
 	}
 
@@ -96,6 +98,8 @@ public class TourAction extends CommonAction {
 			this.setAlertMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			this.setAlertMessage(AlertMessage.ARTICLE_ADD_FAILURE);
 			return ERROR;
 		}
 	}
@@ -124,6 +128,8 @@ public class TourAction extends CommonAction {
 			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
 			return ERROR;
 		}
 	}
@@ -140,6 +146,8 @@ public class TourAction extends CommonAction {
 			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_FAILURE);
 			return ERROR;
 		}
 	}

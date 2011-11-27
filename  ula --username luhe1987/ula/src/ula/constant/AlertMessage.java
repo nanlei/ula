@@ -45,13 +45,19 @@ public interface AlertMessage {
 	String PIC_DELETE_SUCCESS = "图片删除成功";
 
 	String USER_DELETE_SUCCESS = "用户删除成功";
+	String USER_DELETE_FAILURE = "用户删除失败";
 	String USER_DELETE_DENY = "根用户不能删除";
 	String USER_UPDATE_SUCCESS = "用户信息修改成功";
+	String USER_UPDATE_FAILURE = "用户信息修改失败";
 	String USER_ADD_SUCCESS = "用户添加成功";
+	String USER_ADD_FAILURE = "用户添加失败";
 
 	String ARTICLE_ADD_SUCCESS = "文章添加成功";
+	String ARTICLE_ADD_FAILURE = "文章添加失败";
 	String ARTICLE_UPDATE_SUCCESS = "文章更新成功";
+	String ARTICLE_UPDATE_FAILURE = "文章更新失败";
 	String ARTICLE_DELETE_SUCCESS = "文章删除成功";
+	String ARTICLE_DELETE_FAILURE = "文章删除失败";
 	String CITY_INSURANCE = "保险信息没有添加，请添加。";
 	String CITY_COMMONLAW = "法律常识没有添加，请添加。";
 	String CITY_CELLPHONE = "手机信息没有添加，请添加。";

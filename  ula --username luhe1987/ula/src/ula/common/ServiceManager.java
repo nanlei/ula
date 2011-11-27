@@ -24,23 +24,23 @@ public class ServiceManager {
 	 * 这里是所有Service的集合。并提供Getter 和 Setter
 	 */
 
-	private LogService logService = null;
-	private AboutService aboutService = null;
-	private ContactService contactService = null;
-	private CityServcie cityServcie = null;
-	private ProgramService programService = null;
-	private PaymentService paymentService = null;
-	private SpecialService specialService = null;
-	private LinkService linkService = null;
-	private PicService picService = null;
-	private UserService userService = null;
-	private ArticleService articleService = null;
-	private FeedbackService feedbackService = null;
-	private ReservationService reservationService = null;
-	private HotelService hotelService = null;
-	private RecommendService recommendService = null;
-	private WeatherService weatherService = null;
-	private ResourceService resourceService = null;
+	private LogService logService;
+	private AboutService aboutService;
+	private ContactService contactService;
+	private CityServcie cityServcie;
+	private ProgramService programService;
+	private PaymentService paymentService;
+	private SpecialService specialService;
+	private LinkService linkService;
+	private PicService picService;
+	private UserService userService;
+	private ArticleService articleService;
+	private FeedbackService feedbackService;
+	private ReservationService reservationService;
+	private HotelService hotelService;
+	private RecommendService recommendService;
+	private WeatherService weatherService;
+	private ResourceService resourceService;
 
 	public ReservationService getReservationService() {
 		return reservationService;

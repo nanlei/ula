@@ -103,7 +103,7 @@ public class WeatherUpdateService {
 					updateDBInfo(map, cityCode);
 				}
 			}
-			log.debug("Update " + cityCodes.size()
+			log.info("Update " + cityCodes.size()
 					+ " city(cities) weather info");
 		} catch (Exception e) {
 			log.error(ExceptionUtils.getStackTrace(e));

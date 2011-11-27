@@ -2,6 +2,7 @@ package ula.action.admin;
 
 import java.util.Map;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.apache.struts2.ServletActionContext;
 
 import ula.action.FrameworkAction;
@@ -81,6 +82,8 @@ public class UserAction extends FrameworkAction {
 			}
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			this.setAlertMessage(AlertMessage.USER_DELETE_FAILURE);
 			return ERROR;
 		}
 	}
@@ -107,6 +110,8 @@ public class UserAction extends FrameworkAction {
 			this.setAlertMessage(AlertMessage.USER_UPDATE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			this.setAlertMessage(AlertMessage.USER_UPDATE_FAILURE);
 			return ERROR;
 		}
 	}
@@ -122,6 +127,8 @@ public class UserAction extends FrameworkAction {
 			this.setAlertMessage(AlertMessage.USER_ADD_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			this.setAlertMessage(AlertMessage.USER_ADD_FAILURE);
 			return ERROR;
 		}
 	}

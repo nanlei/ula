@@ -1,5 +1,7 @@
 package ula.action.admin.about;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
+
 import ula.action.FrameworkAction;
 import ula.constant.AlertMessage;
 import ula.constant.CommonConstants;
@@ -27,31 +29,26 @@ public class TeamAction extends FrameworkAction {
 	public String admin() {
 		// 设置存放信息的key。客户端用这个key取值。
 		super.setMapKeyName(CommonConstants.KEY_TEAM_INFO);
-
 		try {
 			super.setInfoMap(this.getServiceManager().getAboutService()
 					.getTeamInfo());
 		} catch (Exception e) {
-			e.getMessage();
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			// 如果在数据库中没有找到信息，那么给出提示；
 			this.setAlertMessage(AlertMessage.TEAMINFO_EMPTY);
 			return super.admin();
 		}
-
 		return super.admin();
 	}
 
 	@Override
 	public String edit() {
 		super.setMapKeyName(CommonConstants.KEY_TEAM_INFO);
-
 		try {
 			this.setInfoMap(super.getServiceManager().getAboutService()
 					.getTeamInfo());
 		} catch (Exception e) {
-			this.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			super.setAlertMessage(AlertMessage.TEAMINFO_EMPTY);
 			return ERROR;
 		}
@@ -73,11 +70,12 @@ public class TeamAction extends FrameworkAction {
 	public String view() {
 		super.setMapKeyName(CommonConstants.VIEW);
 		try {
-			super.setInfoMap(this.getServiceManager().getAboutService().getTeamInfo());
+			super.setInfoMap(this.getServiceManager().getAboutService()
+					.getTeamInfo());
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return super.view();
-		}	
+		}
 		return super.view();
 	}
 
@@ -87,10 +85,7 @@ public class TeamAction extends FrameworkAction {
 			return super.getServiceManager().getAboutService().addTeamInfo(
 					title, content);
 		} catch (Exception e) {
-			super.debug(ErrorConstants.INSERT_ERROR);
-			super.debug(e.getMessage());
-			e.printStackTrace();
-			
+			log.error(ErrorConstants.INSERT_ERROR);
 			return 0;
 		}
 	}
@@ -101,7 +96,7 @@ public class TeamAction extends FrameworkAction {
 			return this.getServiceManager().getAboutService().updateTeamInfo(
 					title2, content2);
 		} catch (Exception e) {
-			super.debug(ErrorConstants.UPDATE_ERROR);
+			log.error(ErrorConstants.UPDATE_ERROR);
 			return 0;
 		}
 	}

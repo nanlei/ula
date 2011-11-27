@@ -54,11 +54,11 @@ public class CommonAction extends BaseAction {
 
 		// 如果Session不为空，log
 		if (linksFromSession != null && !linksFromSession.getList().isEmpty()) {
-			super.debug("从Session读取内容：" + linksFromSession.getList());
+			log.debug("从Session读取内容：" + linksFromSession.getList());
 		}
 
 		if (linksFromSession == null || linksFromSession.getList().isEmpty()) {
-			super.debug("从数据库读取 友情链接 信息");
+			log.debug("从数据库读取 友情链接 信息");
 			// 友情链接
 			PagingList link = super.getServiceManager().getLinkService()
 					.getAllInfo();
@@ -81,12 +81,12 @@ public class CommonAction extends BaseAction {
 								CommonConstants.ID_PROGRAM_MONTH_RECOMMENDATION);
 				// 获取title
 				recomTitle = (String) recommendation.get("title");
-				super.debug("推荐标题：" + recomTitle);
+				log.debug("推荐标题：" + recomTitle);
 				// 放入Session
-				super.getHttpSessionAsMap().put(CommonConstants.RECOMMENDATION,
+				getHttpSessionAsMap().put(CommonConstants.RECOMMENDATION,
 						recomTitle);
 			} else {
-				super.debug("本月推荐:" + recommendation);
+				log.debug("本月推荐:" + recommendation);
 			}
 		} catch (Exception e) {
 		}

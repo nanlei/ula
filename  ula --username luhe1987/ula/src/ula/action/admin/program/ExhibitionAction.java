@@ -1,13 +1,16 @@
 package ula.action.admin.program;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
+
 import ula.action.FrameworkAction;
 import ula.constant.AlertMessage;
 import ula.constant.CommonConstants;
 
 /**
  * 展览
+ * 
  * @author Harry
- *
+ * 
  */
 public class ExhibitionAction extends FrameworkAction {
 	@Override
@@ -18,23 +21,24 @@ public class ExhibitionAction extends FrameworkAction {
 	@Override
 	protected int addToDB(String title, String content) {
 		try {
-			return super.getServiceManager().getProgramService().addInfo(CommonConstants.ID_PROGRAM_EXHIBITION, title, content,CommonConstants.TAG_PROGRAM_EXHIBITION);
+			return getServiceManager().getProgramService().addInfo(
+					CommonConstants.ID_PROGRAM_EXHIBITION, title, content,
+					CommonConstants.TAG_PROGRAM_EXHIBITION);
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return 0;
 		}
 	}
 
 	@Override
 	public String admin() {
-		super.setMapKeyName(CommonConstants.KEY_PROGRAM_EXHIBITION);
+		setMapKeyName(CommonConstants.KEY_PROGRAM_EXHIBITION);
 		try {
-			super.setInfoMap(super.getServiceManager().getProgramService().getInfo(CommonConstants.ID_PROGRAM_EXHIBITION));
+			setInfoMap(getServiceManager().getProgramService().getInfo(
+					CommonConstants.ID_PROGRAM_EXHIBITION));
 		} catch (Exception e) {
-		super.debug(e.getMessage());
-			e.printStackTrace();
-			super.setAlertMessage(AlertMessage.PROGRAM_EXHIBITION);
+			log.error(ExceptionUtils.getStackTrace(e));
+			setAlertMessage(AlertMessage.PROGRAM_EXHIBITION);
 			return super.admin();
 		}
 		return super.admin();
@@ -42,15 +46,15 @@ public class ExhibitionAction extends FrameworkAction {
 
 	@Override
 	public String edit() {
-	super.setMapKeyName(CommonConstants.KEY_PROGRAM_EXHIBITION);
-	try {
-		super.setInfoMap(super.getServiceManager().getProgramService().getInfo(CommonConstants.ID_PROGRAM_EXHIBITION));
-	} catch (Exception e) {
-		super.debug(e.getMessage());
-		e.printStackTrace();
-		return ERROR;
-	}
-	
+		setMapKeyName(CommonConstants.KEY_PROGRAM_EXHIBITION);
+		try {
+			setInfoMap(getServiceManager().getProgramService().getInfo(
+					CommonConstants.ID_PROGRAM_EXHIBITION));
+		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			return ERROR;
+		}
+
 		return super.edit();
 	}
 
@@ -67,24 +71,24 @@ public class ExhibitionAction extends FrameworkAction {
 	@Override
 	protected int updateToDB(String title2, String content2) {
 		try {
-			return super.getServiceManager().getProgramService().updateInfo(CommonConstants.ID_PROGRAM_EXHIBITION, title2, content2);
+			return getServiceManager().getProgramService().updateInfo(
+					CommonConstants.ID_PROGRAM_EXHIBITION, title2, content2);
 		} catch (Exception e) {
-			super.debug(e.getMessage());
-			e.printStackTrace();
-			
+			log.error(ExceptionUtils.getStackTrace(e));
 			return 0;
 		}
 	}
 
 	@Override
 	public String view() {
-		super.setMapKeyName(CommonConstants.VIEW);
+		setMapKeyName(CommonConstants.VIEW);
 		try {
-			super.setInfoMap(this.getServiceManager().getProgramService().getInfo(CommonConstants.ID_PROGRAM_EXHIBITION));
+			setInfoMap(getServiceManager().getProgramService().getInfo(
+					CommonConstants.ID_PROGRAM_EXHIBITION));
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(ExceptionUtils.getStackTrace(e));
 			return super.view();
-		}	
+		}
 		return super.view();
 	}
 }

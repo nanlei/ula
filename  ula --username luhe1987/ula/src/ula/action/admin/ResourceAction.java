@@ -36,11 +36,11 @@ public class ResourceAction extends CommonAction {
 		try {
 			getServiceManager().getResourceService().addResource(
 					getParametersAsMap(), getLoginUserName());
-			this.setAlertMessage(AlertMessage.RESOURCE_ADD_SUCCESS);
+			setAlertMessage(AlertMessage.RESOURCE_ADD_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
 			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.RESOURCE_ADD_FAILURE);
+			setAlertMessage(AlertMessage.RESOURCE_ADD_FAILURE);
 			return ERROR;
 		}
 	}
@@ -55,11 +55,11 @@ public class ResourceAction extends CommonAction {
 		try {
 			getServiceManager().getResourceService().updateResourceById(
 					getParametersAsMap(), getLoginUserName());
-			this.setAlertMessage(AlertMessage.RESOURCE_UPDATE_SUCCESS);
+			setAlertMessage(AlertMessage.RESOURCE_UPDATE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
 			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.RESOURCE_UPDATE_FAILURE);
+			setAlertMessage(AlertMessage.RESOURCE_UPDATE_FAILURE);
 			return ERROR;
 		}
 	}
@@ -68,11 +68,11 @@ public class ResourceAction extends CommonAction {
 		try {
 			getServiceManager().getResourceService().deleteResourceById(
 					getParametersAsMap());
-			this.setAlertMessage(AlertMessage.RESOURCE_DELETE_SUCCESS);
+			setAlertMessage(AlertMessage.RESOURCE_DELETE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {
 			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.RESOURCE_DELETE_FAILURE);
+			setAlertMessage(AlertMessage.RESOURCE_DELETE_FAILURE);
 			return ERROR;
 		}
 	}
