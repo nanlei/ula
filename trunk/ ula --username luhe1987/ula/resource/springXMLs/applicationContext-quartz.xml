@@ -31,6 +31,8 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	<bean id="sendResourceService" class="ula.quartz.service.SendResourceService">
 		<property name="interval" value="100" />
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="mailSender" ref="mailSender" />
+		<property name="fromAddress" value="dalianjoytour@gmail.com" />
 	</bean>
 
 	<bean id="sendResourceJob" class="ula.quartz.job.SendResourceJob">
@@ -46,7 +48,7 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	<!-- 每20分钟自动执行一次 -->
 	<bean id="sendResourceJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
 		<property name="jobDetail" ref="sendResourceJobDetail" />
-		<property name="cronExpression" value="0/20 * * * * ?" />
+		<property name="cronExpression" value="0 0/20 * * * ?" />
 	</bean>
 
 	<!-- 总任务管理器 -->
