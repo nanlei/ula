@@ -12,6 +12,9 @@
 	<col width="20%" align="center">
 	<col width="25%" align="center">
 	<tr class="title">
+		<td colspan="5">当前共有 ${subscriberNum} 位订阅用户</td>
+	</tr>
+	<tr class="subtitle">
 		<td>序号</td>
 		<td>E-Mail</td>
 		<td>注册时间</td>

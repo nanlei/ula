@@ -5,6 +5,8 @@ import java.util.Map;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
 
@@ -99,6 +101,24 @@ public class BaseAction implements Action {
 
 	public String getLoginUserName() throws Exception {
 		return (String) getLoginUser().get(CommonConstants.LOGIN_USERNAME);
+	}
+
+	/**
+	 * 获取IP的方法，加入了通过代理服务器跳转过来请求的判断
+	 * 
+	 * @param request
+	 * @return
+	 */
+	public String getIP() {
+		HttpServletRequest request = getHttpServletRequest();
+		String ip = request.getHeader("x-forwarded-for");
+		if (StringUtils.isEmpty(ip) || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("x-forward-for");
+			if (StringUtils.isEmpty(ip) || "unknown".equalsIgnoreCase(ip)) {
+				ip = request.getRemoteAddr();
+			}
+		}
+		return ip;
 	}
 
 	/* 分页信息 */
