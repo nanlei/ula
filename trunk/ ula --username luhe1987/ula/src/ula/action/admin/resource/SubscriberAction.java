@@ -16,10 +16,15 @@ import ula.constant.AlertMessage;
  */
 public class SubscriberAction extends CommonAction {
 	private PagingList subscriberList;
+	private int subscriberNum;
 	private HashMap<String, Object> jsonModel;
 
 	public PagingList getSubscriberList() {
 		return subscriberList;
+	}
+
+	public int getSubscriberNum() {
+		return subscriberNum;
 	}
 
 	public HashMap<String, Object> getJsonModel() {
@@ -33,6 +38,8 @@ public class SubscriberAction extends CommonAction {
 	public String subscriberAdmin() throws Exception {
 		subscriberList = getServiceManager().getSubscriberService()
 				.getAllSubscribers();
+		subscriberNum = getServiceManager().getSubscriberService()
+				.getSubscriberNum();
 		return "subscriberAdmin";
 	}
 

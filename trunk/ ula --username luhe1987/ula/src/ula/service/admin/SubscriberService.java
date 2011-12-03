@@ -19,4 +19,10 @@ public class SubscriberService extends BaseService {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
 		DB.update(SQL_DELETE_SUBSCRIBER_BY_ID, params);
 	}
+
+	private static final String SQL_GET_SUBSCRIBER_NUM = "select count(*) from resource_subscriber";
+
+	public int getSubscriberNum() {
+		return DB.queryForInt(SQL_GET_SUBSCRIBER_NUM);
+	}
 }

@@ -55,7 +55,7 @@ public class SendResourceService {
 			map = jdbcTemplate.queryForMap(SQL_GET_RESOURCE);
 			return map;
 		} catch (EmptyResultDataAccessException erdae) {
-			log.error(ExceptionUtils.getStackTrace(erdae));
+			// log.error(ExceptionUtils.getStackTrace(erdae));
 			return null;
 		} catch (Exception e) {
 			log.error(ExceptionUtils.getStackTrace(e));
@@ -103,27 +103,28 @@ public class SendResourceService {
 					lastSubscriber, interval);
 			times = times > subscriberList.size() ? subscriberList.size()
 					: times;
-			// 循环发送(发送失败的用户不补发)
-			for (int i = 1; i <= times; i++) {
-				try {
-					// 发送邮件
-					MimeMessage htmlMessage = mailSender.createMimeMessage();
-					MimeMessageHelper helper = new MimeMessageHelper(
-							htmlMessage, true, "UTF-8");
-					helper.setFrom(fromAddress);
-					helper.setTo((String) subscriberList.get(i - 1)
-							.get("EMAIL"));
-					helper.setSubject((String) resource.get("TITLE"));
-					helper.setText(HTML_PREFIX
-							+ (String) resource.get("CONTENT") + HTML_TIPS
-							+ HTML_SUFFIX, true);
-					mailSender.send(htmlMessage);
-				} catch (Exception e) {
-					log.error(ExceptionUtils.getStackTrace(e));
-					log.error("Send Email To "
-							+ subscriberList.get(i - 1).get("EMAIL")
-							+ " Error!");
-				}
+			// 设置密送发送邮件数组
+			String[] bcc = new String[times];
+			// 填充数组
+			for (int i = 0; i < times; i++) {
+				bcc[i] = (String) subscriberList.get(i).get("EMAIL");
+			}
+			try {
+				// 发送邮件
+				MimeMessage htmlMessage = mailSender.createMimeMessage();
+				// 发送HTML邮件
+				MimeMessageHelper helper = new MimeMessageHelper(htmlMessage,
+						true, "UTF-8");
+				// 设置邮件属性
+				helper.setFrom(fromAddress);
+				helper.setBcc(bcc);
+				helper.setSubject((String) resource.get("TITLE"));
+				helper.setText(HTML_PREFIX + (String) resource.get("CONTENT")
+						+ HTML_TIPS + HTML_SUFFIX, true);
+				// 发送邮件
+				mailSender.send(htmlMessage);
+			} catch (Exception e) {
+				log.error(ExceptionUtils.getStackTrace(e));
 			}
 			// 说明该订阅资源已经发送完毕，tag=1
 			if (subscriberList.size() > 0 && subscriberList.size() < interval) {
