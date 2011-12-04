@@ -9,6 +9,7 @@
 		<#local title = navi?last>
 	</#if>
 </#if>
+<#assign s=JspTaglibs["/WEB-INF/struts-tags.tld"]>
 <#--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">-->
 <html>
@@ -17,23 +18,19 @@
 	<#list macro_config.css_path as css><#-- 系统CSS加载 -->
 		<link href="${base}${css}" rel="stylesheet" type="text/css">
 	</#list>
-	
 	<#if css?has_content>
 	<#list css as cssfile><#-- 自定义CSS加载 -->
 		<link href="${base}/css/${cssfile}" rel="stylesheet" type="text/css">
 	</#list>
 	</#if>
-	
 	<#list macro_config.js_path as js><#-- 系统JS加载 -->
 		<script language="javascript" src="${base}${js}"></script>
 	</#list>
-	
 	<#if js?has_content>
 	<#list js as jsfile><#-- 自定义JS加载 -->
 		<script language="javascript" src="${base}/js/${jsfile}"></script>
 	</#list>
 	</#if>
-	
 	<script language="javascript"> 
 	function toggleTree() {
 		$("#TreeTD").toggle();
@@ -60,7 +57,7 @@
 <script type="text/javascript">var dtreeIconBasePath = "${base}/components/dtree";</script>
 <script language="javascript" src="${base}/components/dtree/dtree.js"></script>
 <#nested>
-<div style="display:${display};margin-bottom:5px;">菜单控制:【<a href="javascript:void(0)" onclick="tree.openAll();this.blur();return false;" style="color:#333333">展开</a>】【<a href="javascript:void(0)" onclick="tree.closeAll();this.blur();return false;" style="color:#333333">折叠</a>】</div>
+<div style="display:${display};margin-bottom:5px;">${action.getBundle('admin.tree.menu')}:【<a href="javascript:void(0)" onclick="tree.openAll();this.blur();return false;" style="color:#333333">${action.getBundle('admin.tree.open')}</a>】【<a href="javascript:void(0)" onclick="tree.closeAll();this.blur();return false;" style="color:#333333">${action.getBundle('admin.tree.close')}</a>】</div>
 <div class="dtree">
 <script type="text/javascript"> 
 

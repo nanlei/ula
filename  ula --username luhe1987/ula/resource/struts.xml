@@ -39,7 +39,6 @@
 	<!--针对所有Action的全局result,全局interceptor等的配置  -->
 	<include file="strutsXMLs/global/global.xml"></include>
 
-
 	<!-- 所有Action 配置文件 导入 -->
 	<include file="strutsXMLs/include/include.xml"></include>
 

@@ -196,23 +196,23 @@
                 <div class="clear"></div>
                 <div id="left_bottom"></div>
                 <div id="left_rss">
-                	<div id="rss_title"><span>订 阅</span></div>
+                	<div id="rss_title"><span><@s.property value="%{getText('front.rss.title')}"/></span></div>
                     <div id="rss_form">
                     	<form>
                         <p id="email_rss">
-                        	<label>请输入您的邮箱地址：</label>
+                        	<label><@s.property value="%{getText('front.rss.label')}"/>：</label>
                         	<input id="email_input" type="text" name="email_ad"/>
                         </p>
-                        <input class="rss_ch" type="radio" name="ree_ornot" value="yes" /><span>подписываться</span><br />
-                        <input class="rss_ch" type="radio" name="ree_ornot" value="no" /><span>Отменить</span>
-                        <p align="right"><input id="info_submit" name="rss_add" type="button" value="Представлять" onclick="rssSubmit()"/></p>
+                        <input class="rss_ch" type="radio" name="ree_ornot" value="yes" /><span><@s.property value="%{getText('front.rss.radio.subscrib')}"/></span><br />
+                        <input class="rss_ch" type="radio" name="ree_ornot" value="no" /><span><@s.property value="%{getText('front.rss.radio.cancel')}"/></span>
+                        <p align="right"><input id="info_submit" name="rss_add" type="button" value="  <@s.property value="%{getText('front.rss.submit')}"/>  " onclick="rssSubmit()"/></p>
                     	</form>
                     </div>
                 </div>
                 
               <div id="left_waether">
                 	<div id="waether_title">
-                    	<span>大连天气</span>
+                    	<span><@s.property value="%{getText('front.weather.title')}"/></span>
                     </div>
                 <table border="0"  cellspacing="0" cellpadding="0">
                     	<tr>
@@ -222,7 +222,7 @@
 								<img src="http://m.weather.com.cn/img/b${weather.IMG2}.gif" width="26" height="26" alt="network error" title="Weather"/>
 								</#if>
 							</td>
-                            <td width="75">сегодня</td>
+                            <td width="75"><@s.property value="%{getText('front.weather.today')}"/></td>
                             <td>${weather.TEMP1}</td>
                         </tr>
                         <tr >
@@ -232,7 +232,7 @@
 									<img src="http://m.weather.com.cn/img/b${weather.IMG4}.gif" width="26" height="26" alt="network error" title="Weather"/>
 								</#if>
                         	</td>
-                            <td width="75">завтра</td>
+                            <td width="75"><@s.property value="%{getText('front.weather.tomorrow')}"/></td>
                             <td>${weather.TEMP2}</td>
                         </tr>
                     </table>
