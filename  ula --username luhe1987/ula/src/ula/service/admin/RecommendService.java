@@ -1,5 +1,6 @@
 package ula.service.admin;
 
+import java.util.List;
 import java.util.Map;
 
 import ula.common.PagingList;
@@ -54,5 +55,11 @@ public class RecommendService extends BaseService {
 	public void deleteRecommendById(Map<String, Object> parameters) {
 		String id = MapUtil.getStringFromMap(parameters, "id");
 		DB.update(SQL_DELETE_RECOMMEND, id);
+	}
+
+	private static final String SQL_GET_RECOMMEND_FOR_INDEX_PAGE = "select ID,COVER,TITLE from recommend where TAG=1 order by ID desc";
+
+	public List<Map<String, Object>> getRecommendListForIndexPage() {
+		return DB.queryForList(SQL_GET_RECOMMEND_FOR_INDEX_PAGE);
 	}
 }

@@ -9,7 +9,7 @@ function selectAll(formName, cbName) {
 		o.checked = true;
 	}
 }
-//CheckBox
+// CheckBox
 function unSelectAll(formName, cbName) {
 	var o = document.forms[formName].elements[cbName];
 	if (o.length) {//
@@ -231,7 +231,7 @@ function validateForm(theForm) {
 			}
 			return false;
 		}
-		var nfEmptyInfo=field[i].getAttribute("emptyInfo");//focus
+		var nfEmptyInfo=field[i].getAttribute("emptyInfo");// focus
 		if(nfEmptyInfo!=null&&empty==true) {
 			alert(nfEmptyInfo);
 			return false;
@@ -318,7 +318,7 @@ function validateForm(theForm) {
 		
 
 		var validatorType=field[i].getAttribute("validatorType");
-		if(validatorType!=null) {//javascript
+		if(validatorType!=null) {// javascript
 			var rs=true;
 			if(validatorType=="javascript") {
 				eval("rs="+field[i].getAttribute("functionName")+"()");
@@ -327,7 +327,7 @@ function validateForm(theForm) {
 				} else {
 					continue;
 				}
-			} else if (validatorType=="disable") {//disable
+			} else if (validatorType=="disable") {// disable
 				disableList.length++;
 				disableList[disableList.length-1]=field[i];
 				continue;
@@ -355,8 +355,8 @@ function validateForm(theForm) {
 			}
 		} else {//
 			if(empty==false) {
-				var v = field[i].getAttribute("validator"); //validator
-				if(!v) continue;            //,
+				var v = field[i].getAttribute("validator"); // validator
+				if(!v) continue;            // ,
 				var reg=new RegExp(v);
 				if(reg.test(field[i].value)==false) {
 					alert(field[i].getAttribute("errorInfo"));
@@ -384,20 +384,20 @@ function dyniframesize(iframename) {
     eval('pTar = ' + iframename + ';');
   }
   if (pTar && !window.opera){
-    //begin resizing iframe
+    // begin resizing iframe
     pTar.style.display="block"
     
     if (pTar.contentDocument && pTar.contentDocument.body.offsetHeight){
-      //ns6 syntax
+      // ns6 syntax
       pTar.height = pTar.contentDocument.body.offsetHeight+FFextraHeight; 
     }
     else if (pTar.Document && pTar.Document.body.scrollHeight){
-      //ie5+ syntax
+      // ie5+ syntax
       pTar.height = pTar.Document.body.scrollHeight;
     }
   }
 }
-//CheckBox
+// CheckBox
 function del(formname,cbname){
 	
 	var a = document.getElementsByName(cbname);
@@ -422,7 +422,7 @@ function del(formname,cbname){
 	alert('');
 	}	
 }
-//CheckBox
+// CheckBox
 function docheck(formname,cbname){
 	
 	var a = document.getElementsByName(cbname);
@@ -442,7 +442,7 @@ function docheck(formname,cbname){
 	alert('');
 	}	
 }
-//,,
+// ,,
 function unequal(formname,inputname0,inputname2,str)
 {
 	var a = trim(inputname0.value);
@@ -459,7 +459,7 @@ function unequal(formname,inputname0,inputname2,str)
 		return false;
 	}
 }
-//,a,b,
+// ,a,b,
 function comparetime(a,b,alt)
 {
 	var time1 = a.substring(0,4).concat(a.substring(5,7)).concat(a.substring(8,10));
@@ -476,27 +476,27 @@ function comparetime(a,b,alt)
 }
 
 
-//Cookie
+// Cookie
 
-function Setcookie (name, value) { //name,valueCookie 
+function Setcookie (name, value) { // name,valueCookie
 	document.cookie = name + "=" + value + "";
 } 
 
-function Deletecookie (name) { //nameCookie 
+function Deletecookie (name) { // nameCookie
 	var exp = new Date(); 
 	exp.setTime (exp.getTime() - 1); 
 	var cval = GetCookie (name); 
 	document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString(); 
 } 
 
-function getCookieVal (offset) { //offsetcookie 
+function getCookieVal (offset) { // offsetcookie
 	var endstr = document.cookie.indexOf (";", offset); 
 	if (endstr == -1) 
 	endstr = document.cookie.length; 
 	return unescape(document.cookie.substring(offset, endstr)); 
 } 
 
-function GetCookie (name) { //namecookie 
+function GetCookie (name) { // namecookie
 	var arg = name + "="; 
 	var alen = arg.length; 
 	var clen = document.cookie.length; 
@@ -549,7 +549,7 @@ function checkOptionSame(formSrc, optNum, optPre) {
 	return true;
 }
 
-/* div  */
+/* div */
 function changediv(divid) {
 	clearalldiv();
 	showdiv(divid);

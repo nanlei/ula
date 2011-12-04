@@ -25,4 +25,22 @@ public class SubscriberService extends BaseService {
 	public int getSubscriberNum() {
 		return DB.queryForInt(SQL_GET_SUBSCRIBER_NUM);
 	}
+
+	private static final String SQL_GET_CHECK_SUBSCRIBER = "select count(*) from resource_subscriber where EMAIL=?";
+
+	public int getCheckSubscriber(String email) {
+		return DB.queryForInt(SQL_GET_CHECK_SUBSCRIBER, email);
+	}
+
+	private static final String SQL_ADD_SUBSCRIBER = "insert into resource_subscriber(EMAIL,REGTIME,REGIP) values(?,now(),?)";
+
+	public void addSubscriber(String email, String ip) {
+		DB.update(SQL_ADD_SUBSCRIBER, email, ip);
+	}
+
+	private static final String SQL_DELETE_SUBSCRIBER_BY_EMAIL = "delete from resource_subscriber where EMAIL=?";
+
+	public void deleteSubscriberByEmail(String email) {
+		DB.update(SQL_DELETE_SUBSCRIBER_BY_EMAIL, email);
+	}
 }
