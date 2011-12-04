@@ -1,6 +1,7 @@
 package ula.action;
 
 import java.util.Map;
+import java.util.ResourceBundle;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -171,5 +172,10 @@ public class BaseAction implements Action {
 	public String getFullUrlWithoutPageInfo() {
 		return getHttpServletRequest().getServletPath() + "?"
 				+ getQueryStringWithoutPageInfo();
+	}
+
+	public String getBundle(String key) {
+		ResourceBundle bundle = ResourceBundle.getBundle("globalMessages");
+		return bundle.getString(key);
 	}
 }
