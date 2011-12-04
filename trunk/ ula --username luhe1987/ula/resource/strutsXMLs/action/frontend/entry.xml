@@ -14,5 +14,8 @@
 			method="cancelSubscribe">
 			<result name="cancelSubscribe" type="jsonResult" />
 		</action>
+		<action name="language" class="ula.action.IndexAction" method="language">
+			<result name="success" type="redirect">/entry.action</result>
+		</action>
 	</package>
 </struts>

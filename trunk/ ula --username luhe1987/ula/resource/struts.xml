@@ -16,9 +16,11 @@
 
 		<interceptors>
 			<interceptor name="login" class="ula.common.LoginInterceptor" />
+			<interceptor name="locale" class="ula.common.LocaleInterceptor" />
 
 			<interceptor-stack name="UlaDefaultStack">
 				<interceptor-ref name="login" />
+				<interceptor-ref name="locale" />
 				<interceptor-ref name="params" />
 			</interceptor-stack>
 
@@ -29,7 +31,7 @@
 			</interceptor-stack>
 		</interceptors>
 
-		<!--		<default-interceptor-ref name="UlaDefaultStack" />-->
+		<default-interceptor-ref name="UlaDefaultStack" />
 
 		<global-results>
 			<result name="login" type="redirect">/index.jsp</result>
