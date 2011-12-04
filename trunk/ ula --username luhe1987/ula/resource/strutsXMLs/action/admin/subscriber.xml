@@ -9,7 +9,6 @@
 			<result name="subscriberAdmin">subscriber_admin.ftl</result>
 		</action>
 		<action name="subscriber" class="ula.action.admin.resource.SubscriberAction">
-			<result name="register" type="jsonResult" /><!-- For test -->
 			<result name="success" type="chain">
 				<param name="actionName">subscriberAdmin</param>
 				<param name="namespace">/admin/subscriber</param>

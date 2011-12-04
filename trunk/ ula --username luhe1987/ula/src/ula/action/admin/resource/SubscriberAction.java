@@ -56,17 +56,4 @@ public class SubscriberAction extends CommonAction {
 		}
 	}
 
-	/**
-	 * Test For Register
-	 * 
-	 * @return
-	 */
-	public String register() {
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("result", true);
-		map.put("age", 24);
-		map.put("name", "nanlei");
-		setJsonModel(map);
-		return "register";
-	}
 }

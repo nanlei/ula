@@ -2,13 +2,17 @@
 <!DOCTYPE struts PUBLIC
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
-
 <struts>
-
 	<package name="/" extends="global" namespace="/">
-		<action name="entry" class="ula.action.CommonAction" method="view">
-			<result>/index.ftl</result>
+		<action name="entry" class="ula.action.IndexAction" method="entry">
+			<result name="success">/index.ftl</result>
+		</action>
+		<action name="subscribe" class="ula.action.IndexAction" method="subscribe">
+			<result name="subscribe" type="jsonResult" />
+		</action>
+		<action name="cancelSubscribe" class="ula.action.IndexAction"
+			method="cancelSubscribe">
+			<result name="cancelSubscribe" type="jsonResult" />
 		</action>
 	</package>
-
 </struts>
