@@ -1,136 +1,93 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>大连乐游商务旅行社有限公司</title>
-<link href="css/indexv2.css" rel="stylesheet" type="text/css" />
-<script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
-<script src="js/index_tab.js" type="text/javascript"></script>
-<script src="js/ScrollPic.js" type="text/javascript"></script>
-<script src="js/rss.js" type="text/javascript"></script>
-<script src="My97DatePicker/WdatePicker.js" type="text/javascript"></script>
-</head>
+<@fp.page>
 <body>
 <!-- The Head -->
-    <div id="head_warpper">
-    	<div id="top_bar">
-            <span>大连乐游商务旅行社有限公司</span>
-            <span>Даляньский торгово-туристический оператор “Веселый тур”</span>
-        </div>
-    </div>
+<@fp.header /><#-- header宏 -->
 <!-- The Container  -->
-	<div id="container">
+<div id="container">
 	<!-- The Banner  -->
-    	<div id="banner">
-        	<div id="logo">
-            	<img src="images/logo.png" alt="LOGO"/>
-            </div>
-            <ul id="banner_ad">
-            	<#list recommendList as recommend>
-            	<li class="single_img">
-                	<a href="#"><img src="${base}${recommend.COVER}" alt="本月推荐" /></a>
-                    <p>${recommend.TITLE}</p>
-                </li>
-            	</#list>
-            </ul>
-        </div>
-    <!-- The Navigation  -->  
-        <div id="nav">
-        	<ul>
-            	<li><a class="clicked" href="#">首页</a></li>
-                <li><a href="#">关于大连</a></li>
-                <li><a href="#">旅游行程</a></li>
-                <li><a href="#">特色服务</a></li>
-                <li><a href="#">搜索</a></li>
-                <li><a href="#">联系我们</a></li>
-                <li><a href="#">在线咨询</a></li>
-            </ul>
-        </div>
+	<@fp.banner /><#-- banner宏 -->
+    <!-- The Navigation  -->
+	<@fp.navigation /><#-- navigation宏 -->
 	<!-- The Search Bar  -->
-     	<div id="search">
-        	<ul id="search_title">
-            	<li id="stab1" class="hover" onmouseover="setTab('stab',1,2)">行程搜索</li>
-                <li id="stab2" onmouseover="setTab('stab',2,3)">酒店搜索</li>
-            </ul>
-            <!-- The Search Content -->
-            <div id="tabcontent">
-                <div id="con_stab_1">
-                    <form class="search_bar" action="" name="sch_form" method="post">
-                    	<div class="tra_style">
-                        	<div class="s_title">休假类型</div>
-                            <div>
-                                <div class="text_part">
-                                    <p><input type="radio" name="travel_type" value="tt1" /><span>所有的</span></p>
-                                    <p><input type="radio" name="travel_type" value="tt2" /><span>孩子们的</span></p>
-                                    <p><input type="radio" name="travel_type" value="tt3" /><span>奢华行程</span></p>
-                                    <p><input type="radio" name="travel_type" value="tt4" /><span>美食家行程</span></p>
-                                    <p><input type="radio" name="travel_type" value="tt5" /><span>事件的</span></p>
-                                </div>
-                                <div class="text_part">
-                                    <p><input type="radio" name="travel_type" value="tt6" /><span>романтический отдых</span></p>
-                                    <p><input type="radio" name="travel_type" value="tt7" /><span>浪漫行程</span></p>
-                                    <p><input type="radio" name="travel_type" value="tt8" /><span>家庭行程</span></p>
-                                    <p><input type="radio" name="travel_type" value="tt9" /><span>运动行程</span></p>
-                                    <p><input type="radio" name="travel_type" value="tt0" /><span>学习行程</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_part">
-                        	<div class="s_title">负荷运动</div>
-                            <p><span>负荷量：</span>
-                                <select id="sport_num" name="sport_n">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </p>
-                                <p><input type="radio" name="sport_nl" onclick="sport_change('sport_num',5)" /><span>至多</span></p>
-                            	<p><input type="radio" name="sport_nl" onclick="sport_change('sport_num',1)" /><span>至少</span></p>
-                        </div>
-                        <div class="single_part">
-                        	<div class="s_title">酒店</div>
-                            <p><input type="radio" name="hotel" value="whole" /><span>所有的</span></p>
-                            <p>
-                            	<input type="radio" name="hotel" value="level3" /><span>3星</span>
-                                <input type="radio" name="hotel" value="level4" /><span>4星</span>
-                                <input type="radio" name="hotel" value="level5" /><span>5星</span>
-                            </p>
-                            <p><input type="radio" name="hotel" value="level3" /><span>快捷酒店</span></p>
-                            <p><input type="radio" name="hotel" value="level3" /><span>公寓式酒店</span></p>
-                            <p><input type="radio" name="hotel" value="level3" /><span>疗养院式酒店</span></p>
-                        </div>
-                         <div class="time_part">
-                        	<div class="s_title">日期、人数</div>
-                            <p>行程时间：</p>
-                            <p><input id="search_dater" type="checkbox" name="nothtl" onchange="hdiien_input()" />不重要</p>
-                            <div id="start_time" class="time_ch">
-                            	从:
-                            	<input name="start_time" class="Wdate" type="text" onclick="WdatePicker({readOnly:true,lang:'en'})" />
-                            </div>
-                            <div id="end_time" class="time_ch">
-                            	到:   
-                            	<input name="end_time" class="Wdate" type="text" onclick="WdatePicker({readOnly:true,lang:'en'})" />
-                            </div>
-                            <div align="left">
-                                <p>人数：</p>
-                                <p>成人数:<input class="short" type="text" /></p>
-                                <p>儿童数:<input class="short" type="text" /></p>
-                            </div>
-                        </div>
-                        <div class="single_part">
-                        	<div class="s_title">俄语导游要求</div>
-                            <p><input type="radio" name="guide" value="ser1" /><span>机场接送服务</span></p>
-                            <p><input type="radio" name="guide" value="ser2" /><span>游览时</span></p>
-                            <p><input type="radio" name="guide" value="ser3" /><span>全程陪同</span></p>
-                            <p><input type="radio" name="guide" value="ser4" /><span>固定的时间</span></p>
-                            <p><input type="radio" name="guide" value="ser5" /><span>没必要</span></p>
-                        </div>
-                        <input type="submit" class="search_btn" name="travel_sh" value=" " />
-                    </form>
-                    <div class="clear"></div>
-                </div>
+	<div id="search">
+		<ul id="search_title">
+			<li id="stab1" class="hover" onmouseover="setTab('stab',1,2)"><@s.property value="%{getText('front.search.tour')}"/></li>
+			<li id="stab2" onmouseover="setTab('stab',2,3)"><@s.property value="%{getText('front.search.hotel')}"/></li>
+		</ul>
+		<!-- The Search Content -->
+		<div id="tabcontent">
+			<div id="con_stab_1">
+				<form class="search_bar" action="" name="sch_form" method="post">
+					<div class="tra_style">
+						<div class="s_title">
+							<@s.property value="%{getText('front.search.vacation.type')}"/>
+						</div>
+						<div>
+							<div class="text_part">
+								<p><input type="radio" name="travel_type" value="tt1" /><span><@s.property value="%{getText('front.search.vacation.type.all')}"/></span></p>
+								<p><input type="radio" name="travel_type" value="tt2" /><span><@s.property value="%{getText('front.search.vacation.type.child')}"/></span></p>
+								<p><input type="radio" name="travel_type" value="tt3" /><span><@s.property value="%{getText('front.search.vacation.type.luxurious')}"/></span></p>
+								<p><input type="radio" name="travel_type" value="tt4" /><span><@s.property value="%{getText('front.search.vacation.type.foodie')}"/></span></p>
+								<p><input type="radio" name="travel_type" value="tt5" /><span><@s.property value="%{getText('front.search.vacation.type.event')}"/></span></p>
+							</div>
+							<div class="text_part">
+								<p><input type="radio" name="travel_type" value="tt6" /><span><@s.property value="%{getText('front.search.vacation.type.romantic')}"/></span></p>
+								<p><input type="radio" name="travel_type" value="tt8" /><span><@s.property value="%{getText('front.search.vacation.type.family')}"/></span></p>
+								<p><input type="radio" name="travel_type" value="tt9" /><span><@s.property value="%{getText('front.search.vacation.type.sport')}"/></span></p>
+								<p><input type="radio" name="travel_type" value="tt0" /><span><@s.property value="%{getText('front.search.vacation.type.learn')}"/></span></p>
+							</div>
+						</div>
+					</div>
+					<div class="single_part">
+						<div class="s_title"><@s.property value="%{getText('front.search.load.sport')}"/></div>
+						<p><span><@s.property value="%{getText('front.search.load.unit')}"/>：</span>
+							<select id="sport_num" name="sport_n">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+						</p>
+						<p><input type="radio" name="sport_nl" onclick="sport_change('sport_num',5)" /><span><@s.property value="%{getText('front.search.load.max')}"/></span></p>
+						<p><input type="radio" name="sport_nl" onclick="sport_change('sport_num',1)" /><span><@s.property value="%{getText('front.search.load.min')}"/></span></p>
+					</div>
+					<div class="single_part">
+						<div class="s_title"><@s.property value="%{getText('front.search.hotel')}"/></div>
+							<p><input type="radio" name="hotel" value="whole" /><span><@s.property value="%{getText('front.search.hotel.all')}"/></span></p>
+							<p>
+								<input type="radio" name="hotel" value="level3" /><span><@s.property value="%{getText('front.search.hotel.star3')}"/></span>
+								<input type="radio" name="hotel" value="level4" /><span><@s.property value="%{getText('front.search.hotel.star4')}"/></span>
+								<input type="radio" name="hotel" value="level5" /><span><@s.property value="%{getText('front.search.hotel.star5')}"/></span>
+							</p>
+							<p><input type="radio" name="hotel" value="level3" /><span><@s.property value="%{getText('front.search.hotel.express')}"/></span></p>
+							<p><input type="radio" name="hotel" value="level3" /><span><@s.property value="%{getText('front.search.hotel.dormitory')}"/></span></p>
+							<p><input type="radio" name="hotel" value="level3" /><span><@s.property value="%{getText('front.search.hotel.nursing')}"/></span></p>
+						</div>
+						<div class="time_part">
+							<div class="s_title"><@s.property value="%{getText('front.search.date.title')}"/></div>
+							<p><@s.property value="%{getText('front.search.date.travel')}"/>：</p>
+							<p><input id="search_dater" type="checkbox" name="nothtl" onchange="hdiien_input()" /><@s.property value="%{getText('front.search.date.no')}"/></p>
+							<div id="start_time" class="time_ch"><@s.property value="%{getText('front.search.date.from')}"/>:<input name="start_time" id="fromDate" class="Wdate" type="text" readonly="readonly"/></div>
+							<div id="end_time" class="time_ch"><@s.property value="%{getText('front.search.date.to')}"/>:<input name="end_time" id="toDate" class="Wdate" type="text" readonly="readonly"/></div>
+							<div>
+								<div><@s.property value="%{getText('front.search.date.people')}"/>:</div>
+								<div><input class="short" type="text" />&nbsp;<@s.property value="%{getText('front.search.date.adult')}"/></div>
+								<div style="margin-top:5px"><input class="short" type="text" />&nbsp;<@s.property value="%{getText('front.search.date.child')}"/></div>
+							</div>
+						</div>
+						<div class="single_part">
+							<div class="s_title"><@s.property value="%{getText('front.search.guide.require')}"/></div>
+							<p><input type="radio" name="guide" value="ser1" /><span><@s.property value="%{getText('front.search.guide.airport')}"/></span></p>
+							<p><input type="radio" name="guide" value="ser2" /><span><@s.property value="%{getText('front.search.guide.tour')}"/></span></p>
+							<p><input type="radio" name="guide" value="ser3" /><span><@s.property value="%{getText('front.search.guide.fulltime')}"/></span></p>
+							<p><input type="radio" name="guide" value="ser4" /><span><@s.property value="%{getText('front.search.guide.fixed')}"/></span></p>
+							<p><input type="radio" name="guide" value="ser5" /><span><@s.property value="%{getText('front.search.guide.no')}"/></span></p>
+						</div>
+						<input type="submit" class="search_btn" name="travel_sh" value=" " />
+					</form>
+					<div class="clear"></div>
+				</div>
                 <div id="con_stab_2" class="hidden">
                 	<form class="search_bar" action="" method="post">
                      	<div class="single_part">
@@ -203,9 +160,9 @@
                         	<label><@s.property value="%{getText('front.rss.label')}"/>：</label>
                         	<input id="email_input" type="text" name="email_ad"/>
                         </p>
-                        <input class="rss_ch" type="radio" name="ree_ornot" value="yes" /><span><@s.property value="%{getText('front.rss.radio.subscrib')}"/></span><br />
+                        <input class="rss_ch" type="radio" name="ree_ornot" value="yes" /><span><@s.property value="%{getText('front.rss.radio.subscribe')}"/></span><br />
                         <input class="rss_ch" type="radio" name="ree_ornot" value="no" /><span><@s.property value="%{getText('front.rss.radio.cancel')}"/></span>
-                        <p align="right"><input id="info_submit" name="rss_add" type="button" value="  <@s.property value="%{getText('front.rss.submit')}"/>  " onclick="rssSubmit()"/></p>
+                        <p align="right"><input id="info_submit" name="rss_add" type="button" value="    <@s.property value="%{getText('front.rss.submit')}"/>    " onclick="rssSubmit()"/></p>
                     	</form>
                     </div>
                 </div>
@@ -368,7 +325,7 @@
     <!-- The Footer -->
     	<div class="clear"></div>
     	<div id="links_bar">
-        	<div id="lk_title">Ссылка</div>
+        	<div id="lk_title"><@s.property value="%{getText('front.links')}"/></div>
             <ul class="links">
             	<li><a href="#">Юридическая информация</a></li>
                 <li><a href="#">Юридическая информация</a></li>
@@ -377,7 +334,7 @@
             <div class="clear"></div>
         </div>
         <div id="copyright">
-        	Copyright © 2011-2012 版权所有  大连乐游旅游有限公司
+        	Copyright © 2010-2012 <@s.property value="%{getText('front.copyright')}"/>  <@s.property value="%{getText('front.company')}"/>
         </div>
     </div>
     <div id="back_top"><a href="#">TOP</a></div>
@@ -402,3 +359,4 @@
 	</script>
 </body>
 </html>
+</@fp.page>

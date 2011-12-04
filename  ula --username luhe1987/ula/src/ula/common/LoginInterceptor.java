@@ -10,6 +10,12 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.Interceptor;
 
+/**
+ * 登录拦截器
+ * 
+ * @author Nanlei
+ * 
+ */
 public class LoginInterceptor implements Interceptor {
 
 	/**
@@ -29,7 +35,7 @@ public class LoginInterceptor implements Interceptor {
 		// 获取当前操作的方法名
 		String actionName = invocation.getInvocationContext().getName();
 		// 这里要求实现了Anonymous接口的Action以及固定的login/logoutAction可以跳过登录拦截
-		if (action instanceof Anonymous || "login".equals(actionName)
+		if (action instanceof Anonymous || "loginAdmin".equals(actionName)
 				|| "logout".equals(actionName)) {
 			// 放行当前操作
 			return invocation.invoke();
@@ -42,7 +48,8 @@ public class LoginInterceptor implements Interceptor {
 			}
 		}
 		// 拦截用户操作，返回登录页面
-		ActionContext.getContext().getSession().put(CommonConstants.ORIGINAL_URL,
+		ActionContext.getContext().getSession().put(
+				CommonConstants.ORIGINAL_URL,
 				QueryUtil.getRequestURL(ServletActionContext.getRequest()));
 		return Action.LOGIN;
 	}

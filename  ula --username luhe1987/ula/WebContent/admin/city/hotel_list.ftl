@@ -4,10 +4,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>乐游旅游</title>
 <link href="${base}/css/about.css" rel="stylesheet" type="text/css" />
-<link href="${base}/css/smoothness/jquery-ui-1.8.9.custom.css" rel="stylesheet" type="text/css" />
+<link href="${base}/css/jqueryui/start/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${base}/js/common.js"></script>
-<script type="text/javascript" src="${base}/js/jquery-1.4.1.min.js"></script>
-<script type="text/javascript" src="${base}/js/jquery-ui-1.8.9.custom.min.js"></script>
+<script type="text/javascript" src="${base}/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="${base}/js/jquery-ui-1.8.16.custom.min.js"></script>
 <script language=javascript>  
   function my_height(){
 	var my_right = document.getElementById("main_right");

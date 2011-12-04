@@ -1,3 +1,9 @@
+$(function() {
+	$(".Wdate").datepicker( {
+		dateFormat : 'yy-mm-dd'
+	});
+});
+
 function rssSubmit() {
 	var email = $.trim($("#email_input").val());
 	var emailReg = /^[_a-z0-9]+@([_a-z0-9]+\.)+[a-z0-9]{2,3}$/;

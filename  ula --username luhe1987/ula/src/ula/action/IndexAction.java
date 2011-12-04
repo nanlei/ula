@@ -2,10 +2,12 @@ package ula.action;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
 
+import ula.common.Anonymous;
 import ula.util.MapUtil;
 
 /**
@@ -14,7 +16,7 @@ import ula.util.MapUtil;
  * @author Nanlei
  * 
  */
-public class IndexAction extends BaseAction {
+public class IndexAction extends BaseAction implements Anonymous {
 	private List<Map<String, Object>> recommendList;
 	private Map<String, Object> weather;
 	private HashMap<String, Object> jsonModel;
@@ -104,5 +106,13 @@ public class IndexAction extends BaseAction {
 		}
 		setJsonModel(map);
 		return "cancelSubscribe";
+	}
+
+	public String language() {
+		String locale = MapUtil
+				.getStringFromMap(getParametersAsMap(), "locale");
+		getHttpServletRequest().getSession().setAttribute("locale_session",
+				new Locale(locale));
+		return SUCCESS;
 	}
 }
