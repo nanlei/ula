@@ -2,8 +2,9 @@ package ula.common;
 
 import java.util.Locale;
 
-import org.apache.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
@@ -22,13 +23,13 @@ public class LocaleInterceptor implements Interceptor {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Logger log = Logger.getLogger(getClass());
+	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	public void destroy() {
 	}
 
 	public void init() {
-		log.debug("Default Locale: " + Locale.getDefault());
+		logger.debug("Default Locale: " + Locale.getDefault());
 	}
 
 	public String intercept(ActionInvocation invocation) throws Exception {

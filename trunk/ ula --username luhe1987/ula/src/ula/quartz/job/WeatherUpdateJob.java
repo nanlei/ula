@@ -1,6 +1,7 @@
 package ula.quartz.job;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import ula.quartz.service.WeatherUpdateService;
 
@@ -11,7 +12,8 @@ import ula.quartz.service.WeatherUpdateService;
  * 
  */
 public class WeatherUpdateJob {
-	private static final Logger log = Logger.getLogger(WeatherUpdateJob.class);
+	private static final Logger logger = LoggerFactory
+			.getLogger(WeatherUpdateJob.class);
 	private WeatherUpdateService weatherUpdateService;
 
 	public void setWeatherUpdateService(
@@ -20,7 +22,7 @@ public class WeatherUpdateJob {
 	}
 
 	public void execute() {
-		log.info("Run Quartz Job : " + this.getClass().getName());
+		logger.info("Run Quartz Job : " + this.getClass().getName());
 		weatherUpdateService.updateWeather();
 	}
 }

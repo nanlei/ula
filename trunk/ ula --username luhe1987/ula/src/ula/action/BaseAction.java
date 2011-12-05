@@ -8,8 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import ula.common.BeanManager;
 import ula.common.ServiceManager;
@@ -30,7 +31,7 @@ import com.opensymphony.xwork2.ActionContext;
  */
 public class BaseAction implements Action {
 
-	protected Logger log = Logger.getLogger(getClass());
+	protected Logger log = LoggerFactory.getLogger(getClass());
 
 	protected static final String REDIRECT = "redirect";
 

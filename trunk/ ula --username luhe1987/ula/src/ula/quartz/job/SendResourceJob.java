@@ -1,6 +1,7 @@
 package ula.quartz.job;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import ula.quartz.service.SendResourceService;
 
@@ -11,15 +12,16 @@ import ula.quartz.service.SendResourceService;
  * 
  */
 public class SendResourceJob {
-	private static final Logger log = Logger.getLogger(SendResourceJob.class);
+	private static final Logger logger = LoggerFactory
+			.getLogger(SendResourceJob.class);
 	private SendResourceService sendResourceService;
 
 	public void setSendResourceService(SendResourceService sendResourceService) {
 		this.sendResourceService = sendResourceService;
 	}
-	
+
 	public void execute() {
-		log.info("Run Quartz Job : " + this.getClass().getName());
+		logger.info("Run Quartz Job : " + this.getClass().getName());
 		sendResourceService.sendResource();
 	}
 

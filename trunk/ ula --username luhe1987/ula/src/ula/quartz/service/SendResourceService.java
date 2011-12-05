@@ -6,7 +6,8 @@ import java.util.Map;
 import javax.mail.internet.MimeMessage;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -19,7 +20,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
  * 
  */
 public class SendResourceService {
-	private static final Logger log = Logger
+	private static final Logger logger = LoggerFactory
 			.getLogger(SendResourceService.class);
 
 	private JdbcTemplate jdbcTemplate;
@@ -55,10 +56,10 @@ public class SendResourceService {
 			map = jdbcTemplate.queryForMap(SQL_GET_RESOURCE);
 			return map;
 		} catch (EmptyResultDataAccessException erdae) {
-			// log.error(ExceptionUtils.getStackTrace(erdae));
+			// logger.error(ExceptionUtils.getStackTrace(erdae));
 			return null;
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
+			logger.error(ExceptionUtils.getStackTrace(e));
 			return null;
 		}
 	}
@@ -124,7 +125,7 @@ public class SendResourceService {
 				// 发送邮件
 				mailSender.send(htmlMessage);
 			} catch (Exception e) {
-				log.error(ExceptionUtils.getStackTrace(e));
+				logger.error(ExceptionUtils.getStackTrace(e));
 			}
 			// 说明该订阅资源已经发送完毕，tag=1
 			if (subscriberList.size() > 0 && subscriberList.size() < interval) {
@@ -137,7 +138,7 @@ public class SendResourceService {
 			}
 			updateResource(tag, counter + times, lastSubscriber,
 					(Integer) resource.get("ID"));
-			log.debug("Send Resource To " + times + " User(s)");
+			logger.debug("Send Resource To " + times + " User(s)");
 		}
 	}
 }

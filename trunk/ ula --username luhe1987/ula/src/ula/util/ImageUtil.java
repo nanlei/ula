@@ -7,8 +7,8 @@ import java.io.InputStream;
 
 import javax.imageio.ImageIO;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
@@ -20,7 +20,8 @@ import com.sun.image.codec.jpeg.JPEGImageEncoder;
  * 
  */
 public class ImageUtil {
-	private static final Log log = LogFactory.getLog(ImageUtil.class);
+	private static final Logger logger = LoggerFactory
+			.getLogger(ImageUtil.class);
 
 	/**
 	 * 格式化图形并上传到指定目录，同时指定宽度和高度
@@ -37,13 +38,13 @@ public class ImageUtil {
 	 */
 	public static void resizeImageToFile(InputStream is, int width, int height,
 			String filePath) throws Exception {
-		if (log.isDebugEnabled()) {
-			log.debug("Resize and upload image file begin");
+		if (logger.isDebugEnabled()) {
+			logger.debug("Resize and upload image file begin");
 		}
 		// 读取文件并转为Image类型
 		Image image = ImageIO.read(is);
 		if (image.getWidth(null) == -1) {
-			log.debug("The size of image file is illegal!");
+			logger.debug("The size of image file is illegal!");
 			throw new IllegalArgumentException(
 					"The size of image file is illegal!");
 		} else {
@@ -58,8 +59,8 @@ public class ImageUtil {
 			encoder.encode(bi);
 			out.close();
 		}
-		if (log.isDebugEnabled()) {
-			log.debug("Resize and upload image file end");
+		if (logger.isDebugEnabled()) {
+			logger.debug("Resize and upload image file end");
 		}
 	}
 
@@ -76,13 +77,13 @@ public class ImageUtil {
 	 */
 	public static void resizeImageToFile(InputStream is, int width,
 			String filePath) throws Exception {
-		if (log.isDebugEnabled()) {
-			log.debug("Resize and upload image file begin");
+		if (logger.isDebugEnabled()) {
+			logger.debug("Resize and upload image file begin");
 		}
 		// 读取文件并转为Image类型
 		Image image = ImageIO.read(is);
 		if (image.getWidth(null) == -1) {
-			log.debug("The size of image file is illegal!");
+			logger.debug("The size of image file is illegal!");
 			throw new IllegalArgumentException(
 					"The size of image file is illegal!");
 		} else {
@@ -101,8 +102,8 @@ public class ImageUtil {
 			encoder.encode(bi);
 			out.close();
 		}
-		if (log.isDebugEnabled()) {
-			log.debug("Resize and upload image file end");
+		if (logger.isDebugEnabled()) {
+			logger.debug("Resize and upload image file end");
 		}
 	}
 }

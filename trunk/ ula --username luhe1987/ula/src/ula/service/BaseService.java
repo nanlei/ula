@@ -1,6 +1,7 @@
 package ula.service;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import ula.common.BeanManager;
@@ -16,7 +17,7 @@ public class BaseService {
 	 * 需要ServiceManager,因为有可能需要其他Service的结果。\ 3. 需要PagingList做分页处理 4. 需要
 	 */
 
-	protected Logger log = Logger.getLogger(getClass());
+	protected Logger logger = LoggerFactory.getLogger(getClass());
 
 	/* 设置JDBC Template */
 	protected JdbcTemplate DB;
