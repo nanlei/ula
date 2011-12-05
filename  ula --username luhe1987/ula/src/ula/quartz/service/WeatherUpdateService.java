@@ -15,11 +15,12 @@ import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;
-import org.apache.log4j.Logger;
 import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.JsonToken;
 import org.codehaus.jackson.map.MappingJsonFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import ula.util.MapUtil;
@@ -31,7 +32,7 @@ import ula.util.MapUtil;
  * 
  */
 public class WeatherUpdateService {
-	private static final Logger log = Logger
+	private static final Logger logger = LoggerFactory
 			.getLogger(WeatherUpdateService.class);
 	private JdbcTemplate jdbcTemplate;
 
@@ -103,10 +104,10 @@ public class WeatherUpdateService {
 					updateDBInfo(map, cityCode);
 				}
 			}
-			log.info("Update " + cityCodes.size()
+			logger.info("Update " + cityCodes.size()
 					+ " city(cities) weather info");
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
+			logger.error(ExceptionUtils.getStackTrace(e));
 		}
 	}
 }
