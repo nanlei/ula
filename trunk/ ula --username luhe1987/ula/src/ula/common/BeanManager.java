@@ -32,7 +32,6 @@ public class BeanManager {
 	}
 
 	public static Object getBean(String beanName) {
-		logger.info("wac {}", wac);
 		if (wac != null)
 			return wac.getBean(beanName);
 		else {
