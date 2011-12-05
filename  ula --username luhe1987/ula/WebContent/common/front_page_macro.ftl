@@ -2,7 +2,10 @@
 <#macro page>
 <#assign locale=locale_session!'-'/>
 <#if locale=='-'>
-	<#assign locale=request.getLocale()/>
+	<#assign locale=request.getLocale()!'-'/>
+</#if>
+<#if locale=='-'>
+	<#assign locale='zh'/>
 </#if>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,3 +28,4 @@
 <#include "macro/header.ftl">
 <#include "macro/banner.ftl">
 <#include "macro/navigation.ftl">
+<#include "macro/search.ftl">

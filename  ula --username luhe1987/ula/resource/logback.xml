@@ -5,7 +5,7 @@
 	<!--输出到控制台,方便调试,应用时切换到文件Log -->
 	<appender name="ConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-			<pattern>%date [Thread:%thread] %-5level [%logger{80}:%L] - %msg%n
+			<pattern>%date %-5level [%logger{80}:%L] - %msg%n
 			</pattern>
 			<charset>UTF-8</charset>
 		</encoder>

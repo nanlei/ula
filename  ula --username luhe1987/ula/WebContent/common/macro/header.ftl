@@ -8,7 +8,6 @@
 			<a href="language.action?locale=ru" style="color:white"><@s.property value="%{getText('front.version.russian')}"/></a>&nbsp;
 		</span>
 		<span><@s.property value="%{getText('front.company')}"/></span>
-		<span>Даляньский торгово-туристический оператор “Веселый тур”</span>
 	</div>
 </div>
 </#macro>
