@@ -54,7 +54,7 @@
 					</div>
 					<div class="time_part">
 						<div class="s_title"><@s.property value="%{getText('front.search.date.title')}"/></div>
-						<p><@s.property value="%{getText('front.search.date.travel')}"/>：</p>
+						<p><@s.property value="%{getText('front.search.date.travel')}"/>:</p>
 						<p><input id="search_dater" type="checkbox" name="nothtl" onchange="hdiien_input()" /><@s.property value="%{getText('front.search.date.no')}"/></p>
 						<div id="start_time" class="time_ch"><@s.property value="%{getText('front.search.date.from')}"/>:<input name="start_time" id="fromDate" class="Wdate" type="text" readonly="readonly"/></div>
 						<div id="end_time" class="time_ch"><@s.property value="%{getText('front.search.date.to')}"/>:<input name="end_time" id="toDate" class="Wdate" type="text" readonly="readonly"/></div>
@@ -81,19 +81,26 @@
 						<p><input type="radio" name="where" value="city" /><span><@s.property value="%{getText('front.search.location.dalian')}"/></span></p>
 						<p><input type="radio" name="where" value="jst" /><span><@s.property value="%{getText('front.search.location.jst')}"/></span></p>
 						<p><input type="radio" name="where" value="ls" /><span><@s.property value="%{getText('front.search.location.ls')}"/></span></p>
-						<p><input type="radio" name="where" value="hb" /><span><@s.property value="%{getText('front.search.location.seaside')}"/></span></p>
 					</div>
 					<div class="single_part">
 						<div class="s_title"><@s.property value="%{getText('front.search.star')}"/></div>
 						<p><input type="radio" name="hotel" value="ht_le3" /><span><@s.property value="%{getText('front.search.star3')}"/></span></p>
 						<p><input type="radio" name="hotel" value="ht_le4" /><span><@s.property value="%{getText('front.search.star4')}"/></span></p>
 						<p><input type="radio" name="hotel" value="ht_le5" /><span><@s.property value="%{getText('front.search.star5')}"/></span></p>
+						<p><input type="radio" name="hotel" value="sty_kj" /><span><@s.property value="%{getText('front.search.star.express')}"/></span></p>
+						<p><input type="radio" name="hotel" value="sty_gy" /><span><@s.property value="%{getText('front.search.star.dormitory')}"/></span></p>
+						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.star.nursing')}"/></span></p>
 					</div>
-					<div class="single_part">
+					<div class="single_part_func">
 						<div class="s_title"><@s.property value="%{getText('front.search.function')}"/></div>
-						<p><input type="radio" name="hotel" value="sty_kj" /><span><@s.property value="%{getText('front.search.function.express')}"/></span></p>
-						<p><input type="radio" name="hotel" value="sty_gy" /><span><@s.property value="%{getText('front.search.function.dormitory')}"/></span></p>
-						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.nursing')}"/></span></p>
+						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.exhibition')}"/></span></p>
+						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.beach')}"/></span></p>
+						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.treatment')}"/></span></p>
+						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.store')}"/></span></p>
+						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.treatment.store')}"/></span></p>
+						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.treatment.beach')}"/></span></p>
+						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.garden.hotel')}"/></span></p>
+						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.college')}"/></span></p>
 					</div>
 					<input type="submit" class="search_btn" name="hotel_sh" value=" " />
 				</form>
