@@ -21,7 +21,30 @@
 	<script src="js/ScrollPic.js" type="text/javascript"></script>
 	<script src="js/index.js" type="text/javascript"></script>
 </head>
+<body>
 <#nested>
+<div id="back_top"><a href="#"><@s.property value="%{getText('front.top')}"/></a></div>
+</body>
+<script language="javascript" type="text/javascript">
+	<!--//--><![CDATA[//><!--
+	var scrollPic_02 = new ScrollPic();
+	scrollPic_02.scrollContId   = "banner_ad"; //内容容器ID
+	scrollPic_02.arrLeftId      = "LeftArr";//左箭头ID
+	scrollPic_02.arrRightId     = "RightArr"; //右箭头ID
+	
+	scrollPic_02.frameWidth     = 764;//显示框宽度
+	scrollPic_02.pageWidth      = 191; //翻页宽度
+
+	scrollPic_02.speed          = 10; //移动速度(单位毫秒，越小越快)
+	scrollPic_02.space          = 10; //每次移动像素(单位px，越大越快)
+	scrollPic_02.autoPlay       = true; //自动播放
+	scrollPic_02.autoPlayTime   = 3; //自动播放间隔时间(秒)
+
+	scrollPic_02.initialize(); //初始化
+							
+	//--><!]]>
+</script>
+</html>
 </#macro>
 
 <#-- 页面宏定义引入 -->
@@ -29,3 +52,7 @@
 <#include "macro/banner.ftl">
 <#include "macro/navigation.ftl">
 <#include "macro/search.ftl">
+<#include "macro/main_left.ftl">
+<#include "macro/main_middle.ftl">
+<#include "macro/main_right.ftl">
+<#include "macro/footer.ftl">

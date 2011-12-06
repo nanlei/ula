@@ -23,9 +23,13 @@ function hdiien_input() {
 	if (check.checked) {
 		inputbar1.style.display = "none";
 		inputbar2.style.display = "none";
+		//$("#fromDate").attr("value","");
+		//$("#toDate").arrt("value","");
 	} else {
 		inputbar1.style.display = "block";
 		inputbar2.style.display = "block";
+		//$("#fromDate").attr("value","");
+		//$("#toDate").attr("value","");
 	}
 }
 
