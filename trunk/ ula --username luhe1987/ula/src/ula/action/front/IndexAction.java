@@ -1,4 +1,4 @@
-package ula.action;
+package ula.action.front;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
 
+import ula.action.BaseAction;
 import ula.common.Anonymous;
 import ula.util.MapUtil;
 
@@ -108,6 +109,11 @@ public class IndexAction extends BaseAction implements Anonymous {
 		return "cancelSubscribe";
 	}
 
+	/**
+	 * 设置语言版本的方法，将所需的locale放入session
+	 * 
+	 * @return
+	 */
 	public String language() {
 		String locale = MapUtil
 				.getStringFromMap(getParametersAsMap(), "locale");

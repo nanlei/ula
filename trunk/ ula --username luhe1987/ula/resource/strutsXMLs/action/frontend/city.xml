@@ -12,9 +12,9 @@
 		</action>
 
 		<!--关于城市->大连介绍	-->
-		<action name="intro" class="ula.action.admin.city.IntroductionAction">
-			<result name="view">/admin/city/city_map_data.ftl</result>
-		</action>
+<!--		<action name="intro" class="ula.action.admin.city.IntroductionAction">-->
+<!--			<result name="view">/admin/city/city_map_data.ftl</result>-->
+<!--		</action>-->
 
 		<!--关于城市->大连历史	-->
 		<action name="history" class="ula.action.admin.city.HistoryAction">
