@@ -4,18 +4,25 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
 	<package name="/" extends="global" namespace="/">
-		<action name="entry" class="ula.action.IndexAction" method="entry">
+		<action name="entry" class="ula.action.front.IndexAction"
+			method="entry">
 			<result name="success">/index.ftl</result>
 		</action>
-		<action name="subscribe" class="ula.action.IndexAction" method="subscribe">
+		<action name="subscribe" class="ula.action.front.IndexAction"
+			method="subscribe">
 			<result name="subscribe" type="jsonResult" />
 		</action>
-		<action name="cancelSubscribe" class="ula.action.IndexAction"
+		<action name="cancelSubscribe" class="ula.action.front.IndexAction"
 			method="cancelSubscribe">
 			<result name="cancelSubscribe" type="jsonResult" />
 		</action>
-		<action name="language" class="ula.action.IndexAction" method="language">
+		<action name="language" class="ula.action.front.IndexAction"
+			method="language">
 			<result name="success" type="redirect">/entry.action</result>
+		</action>
+
+		<action name="city" class="ula.action.front.CityAction" method="city">
+			<result name="success">/front/city/index.ftl</result>
 		</action>
 	</package>
 </struts>
