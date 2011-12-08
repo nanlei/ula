@@ -1,12 +1,12 @@
 <@p.page>
-<@p.tree root="${action.getBundle('admin.tree.root')}" display="block">
+<@p.tree root="系统管理" display="block">
 <script type="text/javascript"> 
 var treeMenu = [
-	{ level:1, name:"<@s.property value="%{getText('admin.tree.weather')}"/>", link:"weather/weatherAdmin.action"},
-	{ level:1, name:"<@s.property value="%{getText('admin.tree.recommend')}"/>", link:"recommend/recommendAdmin.action"},
-	{ level:1, name:"<@s.property value="%{getText('admin.tree.resource.title')}"/>"},
-	{ level:2, name:"<@s.property value="%{getText('admin.tree.resource')}"/>", link:"resource/resourceAdmin.action"},
-	{ level:2, name:"<@s.property value="%{getText('admin.tree.subscriber')}"/>", link:"subscriber/subscriberAdmin.action"},
+	{ level:1, name:"天气预报", link:"weather/weatherAdmin.action"},
+	{ level:1, name:"推荐管理", link:"recommend/recommendAdmin.action"},
+	{ level:1, name:"订阅管理"},
+	{ level:2, name:"订阅资源管理", link:"resource/resourceAdmin.action"},
+	{ level:2, name:"订阅用户管理", link:"subscriber/subscriberAdmin.action"},
 	
 	
 	{ level:1, name:"关于我们"},

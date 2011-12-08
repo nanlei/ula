@@ -18,7 +18,7 @@
 		</action>
 		<action name="language" class="ula.action.front.IndexAction"
 			method="language">
-			<result name="success" type="redirect">/entry.action</result>
+			<result name="success" type="redirect">/index.html</result>
 		</action>
 
 		<action name="city" class="ula.action.front.CityAction" method="city">

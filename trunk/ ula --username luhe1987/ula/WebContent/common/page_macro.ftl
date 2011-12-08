@@ -57,7 +57,7 @@
 <script type="text/javascript">var dtreeIconBasePath = "${base}/components/dtree";</script>
 <script language="javascript" src="${base}/components/dtree/dtree.js"></script>
 <#nested>
-<div style="display:${display};margin-bottom:5px;">${action.getBundle('admin.tree.menu')}:【<a href="javascript:void(0)" onclick="tree.openAll();this.blur();return false;" style="color:#333333">${action.getBundle('admin.tree.open')}</a>】【<a href="javascript:void(0)" onclick="tree.closeAll();this.blur();return false;" style="color:#333333">${action.getBundle('admin.tree.close')}</a>】</div>
+<div style="display:${display};margin-bottom:5px;">菜单控制:【<a href="javascript:void(0)" onclick="tree.openAll();this.blur();return false;" style="color:#333333">展开</a>】【<a href="javascript:void(0)" onclick="tree.closeAll();this.blur();return false;" style="color:#333333">折叠</a>】</div>
 <div class="dtree">
 <script type="text/javascript"> 
 
