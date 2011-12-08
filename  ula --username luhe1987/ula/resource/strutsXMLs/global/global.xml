@@ -18,11 +18,11 @@
 	<package name="adminLogin" extends="ula-default" namespace="/">
 		<action name="loginAdmin" class="ula.action.admin.UserAction"
 			method="loginAdmin">
-			<result name="loginAdmin" type="redirect">/admin/admin.action</result>
+			<result name="loginAdmin" type="redirect">/admin/index</result>
 		</action>
-		<action name="logout" class="ula.action.admin.UserAction"
+		<action name="logoutAdmin" class="ula.action.admin.UserAction"
 			method="logout">
-			<result name="logout"  type="redirect">/entry.action</result>
+			<result name="logout"  type="redirect">/login.html</result>
 		</action>
 	</package>
 

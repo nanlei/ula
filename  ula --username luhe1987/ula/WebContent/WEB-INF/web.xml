@@ -27,16 +27,6 @@
 		<param-value>classpath:springXMLs/*.xml</param-value>
 	</context-param>
 
-	<filter>
-		<filter-name>loginFilter</filter-name>
-		<filter-class>ula.common.LoginFilter</filter-class>
-	</filter>
-
-	<filter-mapping>
-		<filter-name>loginFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-
 	<!--Core Filters List starts 核心过滤器列表       开始 -->
 	<!-- UrlRewriteFilter filter -->
 	<filter>
@@ -119,7 +109,7 @@
 	<display-name>ula</display-name>
 
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
 	</welcome-file-list>
 
 	<error-page>

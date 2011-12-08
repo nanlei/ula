@@ -4,10 +4,10 @@
 <table cellspacing="0" cellpadding="0" border="0" class="navtab" width="100%">
 	<tr>
 		<td rowspan="2" class="tdnormal" width="380">
-			<strong><@s.property value="%{getText('site.admin.title')}"/></strong>&nbsp;|&nbsp;<@s.property value="%{getText('site.admin.subtitle')}"/>
+			<strong>大连乐游商务旅行社有限公司</strong>&nbsp;|&nbsp;网站管理中心
 		</td>
 		<td colspan="5">&nbsp;</td>
-		<td style="text-align:right;padding-right:10px">&nbsp;<@s.property value="%{getText('site.current.user')}"/>：<span style="color:#ff6">${_LOGIN_USER_.USERNAME} - ${_LOGIN_USER_.REALNAME}</span>【<a style="color:#fff" href="${base}/logout.action"><@s.property value="%{getText('site.logout')}"/></a>】</td>
+		<td style="text-align:right;padding-right:10px">&nbsp;当前用户：<span style="color:#ff6">${_LOGIN_USER_.USERNAME} - ${_LOGIN_USER_.REALNAME}</span>【<a style="color:#fff" href="${base}/admin/logout">退出</a>】</td>
 	</tr>
 	<tr>
 	<#nested>
