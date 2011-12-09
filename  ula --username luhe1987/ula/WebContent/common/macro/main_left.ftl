@@ -51,7 +51,7 @@
 			</div>
 			<div id="left_waether">
 				<div id="waether_title">
-					<span><@s.property value="%{getText('front.weather.title')}"/></span>
+					<span><@s.property value="%{getText('front.weather.title')}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${weather.UPDATETIME?string("yyyy-MM-dd HH:mm")}</span>
 				</div>
 				<table border="0"  cellspacing="0" cellpadding="0">
 					<tr>

@@ -21,6 +21,7 @@ public class IndexAction extends BaseAction implements Anonymous {
 	private List<Map<String, Object>> recommendList;
 	private Map<String, Object> weather;
 	private HashMap<String, Object> jsonModel;
+	private String referer;
 
 	public List<Map<String, Object>> getRecommendList() {
 		return recommendList;
@@ -38,12 +39,16 @@ public class IndexAction extends BaseAction implements Anonymous {
 		this.jsonModel = jsonModel;
 	}
 
+	public String getReferer() {
+		return referer;
+	}
+
 	/**
 	 * 进入首页的方法
 	 * 
 	 * @return
 	 */
-	public String entry() {
+	public String index() {
 		recommendList = getServiceManager().getRecommendService()
 				.getRecommendListForIndexPage();
 		weather = getServiceManager().getWeatherService()
@@ -119,6 +124,9 @@ public class IndexAction extends BaseAction implements Anonymous {
 				.getStringFromMap(getParametersAsMap(), "locale");
 		getHttpServletRequest().getSession().setAttribute("locale_session",
 				new Locale(locale));
+		String header_referer = getHttpServletRequest().getHeader("referer");
+		referer = header_referer.substring(header_referer.lastIndexOf("/"));
 		return SUCCESS;
+
 	}
 }

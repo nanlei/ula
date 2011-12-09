@@ -27,6 +27,16 @@
 		<param-value>classpath:springXMLs/*.xml</param-value>
 	</context-param>
 
+	<filter>
+		<filter-name>security</filter-name>
+		<filter-class>ula.common.SecurityFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>security</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+
 	<!--Core Filters List starts 核心过滤器列表       开始 -->
 	<!-- UrlRewriteFilter filter -->
 	<filter>

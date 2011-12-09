@@ -93,14 +93,18 @@
 					</div>
 					<div class="single_part_func">
 						<div class="s_title"><@s.property value="%{getText('front.search.function')}"/></div>
+						<div class="text_part_func">
 						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.exhibition')}"/></span></p>
 						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.beach')}"/></span></p>
 						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.treatment')}"/></span></p>
 						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.store')}"/></span></p>
 						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.treatment.store')}"/></span></p>
 						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.treatment.beach')}"/></span></p>
+						</div>
+						<div class="text_part_func">
 						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.garden.hotel')}"/></span></p>
 						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.college')}"/></span></p>
+						</div>
 					</div>
 					<input type="submit" class="search_btn" name="hotel_sh" value=" " />
 				</form>
