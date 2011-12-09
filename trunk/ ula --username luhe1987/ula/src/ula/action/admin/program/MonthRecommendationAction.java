@@ -80,17 +80,17 @@ public class MonthRecommendationAction extends FrameworkAction {
 		}
 	}
 
-	@Override
-	public String view() {
-		setMapKeyName(CommonConstants.VIEW);
-		try {
-			setInfoMap(getServiceManager().getProgramService().getInfo(
-					CommonConstants.ID_PROGRAM_MONTH_RECOMMENDATION));
-		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			return super.view();
-		}
-		return super.view();
-	}
+//	@Override
+//	public String view() {
+//		setMapKeyName(CommonConstants.VIEW);
+//		try {
+//			setInfoMap(getServiceManager().getProgramService().getInfo(
+//					CommonConstants.ID_PROGRAM_MONTH_RECOMMENDATION));
+//		} catch (Exception e) {
+//			log.error(ExceptionUtils.getStackTrace(e));
+//			return super.view();
+//		}
+//		return super.view();
+//	}
 
 }

@@ -5,17 +5,12 @@
 	<rule>
 		<note>locale - set language</note>
 		<from>/language/([a-z]+)</from>
-		<to>/language.action?locale=$1</to>
+		<to type="forward">/language.action?locale=$1</to>
 	</rule>
     <rule>
         <note>index - homepage</note>
-        <from>/index.html</from>
-        <to type="forward">/entry.action</to>
-    </rule>
-    <rule>
-        <note>city - about dalian</note>
-        <from>/city.html</from>
-        <to type="forward">/city.action</to>
+        <from>/([a-z]+).html</from>
+        <to type="forward">/$1.action</to>
     </rule>
     
     <!-- 后台管理部分begin -->

@@ -338,6 +338,10 @@ img {
 	border-radius: 0px 4px 4px 4px;
 }
 
+#con_stab_1, #con_stab_2{
+	height:180px;
+}
+
 .search_bar {
 	width: 978px;
 	padding: 5px 10px;
@@ -354,7 +358,7 @@ img {
 
 .search_bar .single_part_func {
 	float: left;
-	width: 242px;
+	width: 320px;
 	padding-right: 5px;
 }
 
@@ -373,6 +377,12 @@ img {
 .search_bar .text_part {
 	float: left;
 	width: 123px;
+	padding-right: 5px;
+}
+
+.search_bar .text_part_func {
+	float: left;
+	width: 153px;
 	padding-right: 5px;
 }
 
@@ -449,7 +459,7 @@ img {
 
 /*   The body   */
 #main_body {
-	margin-top: 5px;
+	margin-top: 2px;
 	width: 1000px;
 	position: relative;
 	padding-bottom: 2px;

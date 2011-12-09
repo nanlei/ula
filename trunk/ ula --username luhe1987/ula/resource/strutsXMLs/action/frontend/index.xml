@@ -4,8 +4,8 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
 	<package name="/" extends="global" namespace="/">
-		<action name="entry" class="ula.action.front.IndexAction"
-			method="entry">
+		<action name="index" class="ula.action.front.IndexAction"
+			method="index">
 			<result name="success">/index.ftl</result>
 		</action>
 		<action name="subscribe" class="ula.action.front.IndexAction"
@@ -18,11 +18,14 @@
 		</action>
 		<action name="language" class="ula.action.front.IndexAction"
 			method="language">
-			<result name="success" type="redirect">/index.html</result>
+			<result name="success" type="redirect">${referer}</result>
 		</action>
 
 		<action name="city" class="ula.action.front.CityAction" method="city">
 			<result name="success">/front/city/index.ftl</result>
+		</action>
+		<action name="tour" class="ula.action.front.TourAction" method="tour">
+			<result name="success">/front/tour/index.ftl</result>
 		</action>
 	</package>
 </struts>
