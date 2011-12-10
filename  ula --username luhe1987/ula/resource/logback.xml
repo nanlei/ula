@@ -30,6 +30,10 @@
 	<logger name="ula.action">
 		<level value="debug" />
 	</logger>
+	
+	<logger name="ula.service">
+		<level value="debug" />
+	</logger>
 
 	<logger name="ula.common">
 		<level value="debug" />
