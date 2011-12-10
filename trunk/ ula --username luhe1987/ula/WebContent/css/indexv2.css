@@ -14,7 +14,6 @@ body {
 body,input {
 	color: #333333;
 	font-size: 12px;
-	/*font-family:"微软雅黑";*/
 	font-family: Georgia, "Times New Roman", Times, "微软雅黑";
 	line-height: 1.5;
 }
@@ -338,8 +337,8 @@ img {
 	border-radius: 0px 4px 4px 4px;
 }
 
-#con_stab_1, #con_stab_2{
-	height:180px;
+#con_stab_1,#con_stab_2 {
+	height: 180px;
 }
 
 .search_bar {
@@ -358,7 +357,7 @@ img {
 
 .search_bar .single_part_func {
 	float: left;
-	width: 320px;
+	width: 480px;
 	padding-right: 5px;
 }
 
@@ -382,7 +381,7 @@ img {
 
 .search_bar .text_part_func {
 	float: left;
-	width: 153px;
+	width: 220px;
 	padding-right: 5px;
 }
 

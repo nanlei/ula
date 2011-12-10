@@ -3,7 +3,7 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-	<package name="/" extends="global" namespace="/">
+	<package name="/" extends="global" namespace="/">	
 		<action name="index" class="ula.action.front.IndexAction"
 			method="index">
 			<result name="success">/index.ftl</result>
