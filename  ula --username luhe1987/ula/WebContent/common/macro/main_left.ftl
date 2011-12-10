@@ -51,7 +51,7 @@
 			</div>
 			<div id="left_waether">
 				<div id="waether_title">
-					<span><@s.property value="%{getText('front.weather.title')}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${weather.UPDATETIME?string("yyyy-MM-dd HH:mm")}</span>
+					<span><@s.property value="%{getText('front.weather.title')}"/><#if locale?string?starts_with('zh')>&nbsp;&nbsp;&nbsp;${weather.UPDATETIME?string("yyyy-MM-dd HH:mm")}</#if></span>
 				</div>
 				<table border="0"  cellspacing="0" cellpadding="0">
 					<tr>
