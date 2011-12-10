@@ -30,7 +30,7 @@ public class SendResourceService {
 
 	private static final String HTML_PREFIX = "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"></head><body>";
 	private static final String HTML_SUFFIX = "</body></html>";
-	private static final String HTML_TIPS = "<p><h4>Sent By System Automatically, Do Not reply!</h4></p>";
+	private static final String HTML_TIPS = "<p><h4>Sent By System Automatically, Do Not reply! If You Want To Un Subscribe, Please Go To <a href='http://www.dalianjoytour.com'>Joytour</a></h4></p>";
 
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
