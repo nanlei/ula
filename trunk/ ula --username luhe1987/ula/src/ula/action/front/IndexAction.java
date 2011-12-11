@@ -7,8 +7,7 @@ import java.util.Map;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
 
-import ula.action.BaseAction;
-import ula.common.Anonymous;
+import ula.action.AnonymousAction;
 import ula.util.MapUtil;
 
 /**
@@ -17,7 +16,7 @@ import ula.util.MapUtil;
  * @author Nanlei
  * 
  */
-public class IndexAction extends BaseAction implements Anonymous {
+public class IndexAction extends AnonymousAction {
 	private List<Map<String, Object>> recommendList;
 	private Map<String, Object> weather;
 	private HashMap<String, Object> jsonModel;

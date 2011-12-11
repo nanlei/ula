@@ -35,7 +35,7 @@ public class LoginInterceptor implements Interceptor {
 		// 获取当前操作的方法名
 		String actionName = invocation.getInvocationContext().getName();
 		// 这里要求实现了Anonymous接口的Action以及固定的login/logoutAction可以跳过登录拦截
-		if (action instanceof Anonymous || "loginAdmin".equals(actionName)
+		if (action instanceof Anonymous || "login".equals(actionName)
 				|| "logout".equals(actionName)) {
 			// 放行当前操作
 			return invocation.invoke();
