@@ -13,15 +13,16 @@
 						<div class="s_title"><@s.property value="%{getText('front.search.vacation.type')}"/></div>
 						<div class="text_part">
 							<p><input type="radio" name="travel_type" value="tt1" /><span><@s.property value="%{getText('front.search.vacation.type.all')}"/></span></p>
+							<p><input type="radio" name="travel_type" value="tt1" /><span><@s.property value="%{getText('front.search.vacation.type.therapy')}"/></span></p>
 							<p><input type="radio" name="travel_type" value="tt2" /><span><@s.property value="%{getText('front.search.vacation.type.child')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt3" /><span><@s.property value="%{getText('front.search.vacation.type.luxurious')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt4" /><span><@s.property value="%{getText('front.search.vacation.type.foodie')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt5" /><span><@s.property value="%{getText('front.search.vacation.type.event')}"/></span></p>
-						</div>
-						<div class="text_part">
 							<p><input type="radio" name="travel_type" value="tt6" /><span><@s.property value="%{getText('front.search.vacation.type.romantic')}"/></span></p>
+							<p><input type="radio" name="travel_type" value="tt3" /><span><@s.property value="%{getText('front.search.vacation.type.luxurious')}"/></span></p>
+						</div>
+						<div class="text_part2">
 							<p><input type="radio" name="travel_type" value="tt8" /><span><@s.property value="%{getText('front.search.vacation.type.family')}"/></span></p>
+							<p><input type="radio" name="travel_type" value="tt4" /><span><@s.property value="%{getText('front.search.vacation.type.foodie')}"/></span></p>
 							<p><input type="radio" name="travel_type" value="tt9" /><span><@s.property value="%{getText('front.search.vacation.type.sport')}"/></span></p>
+							<p><input type="radio" name="travel_type" value="tt5" /><span><@s.property value="%{getText('front.search.vacation.type.event')}"/></span></p>
 							<p><input type="radio" name="travel_type" value="tt0" /><span><@s.property value="%{getText('front.search.vacation.type.learn')}"/></span></p>
 						</div>
 					</div>
@@ -40,7 +41,7 @@
 						<p><input type="radio" name="sport_nl" onclick="sport_change('sport_num',5)" /><span><@s.property value="%{getText('front.search.load.max')}"/></span></p>
 						<p><input type="radio" name="sport_nl" onclick="sport_change('sport_num',1)" /><span><@s.property value="%{getText('front.search.load.min')}"/></span></p>
 					</div>
-					<div class="single_part">
+					<div class="hotel_part">
 						<div class="s_title"><@s.property value="%{getText('front.search.hotel')}"/></div>
 						<p><input type="radio" name="hotel" value="whole" /><span><@s.property value="%{getText('front.search.hotel.all')}"/></span></p>
 						<p>

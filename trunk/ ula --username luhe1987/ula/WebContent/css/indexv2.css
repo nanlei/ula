@@ -354,6 +354,11 @@ img {
 	width: 152px;
 	padding-right: 5px;
 }
+.search_bar .hotel_part {
+	float: left;
+	width: 122px;
+	padding-right: 5px;
+}
 
 .search_bar .single_part_func {
 	float: left;
@@ -375,7 +380,12 @@ img {
 
 .search_bar .text_part {
 	float: left;
-	width: 123px;
+	width: 138px;
+	padding-right: 5px;
+}
+.search_bar .text_part2 {
+	float: left;
+	width: 138px;
 	padding-right: 5px;
 }
 
@@ -451,7 +461,7 @@ img {
 }
 
 .search_bar .tra_style {
-	width: 260px;
+	width: 290px;
 	float: left;
 	padding-right: 5px;
 }
@@ -715,6 +725,7 @@ img {
 	height: 80px;
 	margin-top: 4px;
 	border: 1px #CCCCCC solid;
+	border-radius: 4px;
 	background: url(../images/address_bg.png) no-repeat left top;
 }
 

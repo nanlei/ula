@@ -127,6 +127,5 @@ public class IndexAction extends BaseAction implements Anonymous {
 		String header_referer = getHttpServletRequest().getHeader("referer");
 		referer = header_referer.substring(header_referer.lastIndexOf("/"));
 		return SUCCESS;
-
 	}
 }
