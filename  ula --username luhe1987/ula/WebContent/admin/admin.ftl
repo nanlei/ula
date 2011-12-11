@@ -6,7 +6,7 @@
 				<tr>
 					<td>
 						<@app.header>
-							<td width="80" class="tdselected fbg"><div><a class="navbar" href="${base}/admin/index">系统管理</a></div></td>
+							<td width="80" class="tdselected fbg"><div><a class="navbar" href="${base}/admin/index.html">系统管理</a></div></td>
 							<td width="80" class="tdnormal"><div><a class="navbar" href="${base}/pic/admin.action">图片管理</a></div></td>
 							<td width="80" class="tdnormal"><div style="border-left:1px solid white"><a class="navbar" href="${base}/user/admin.action">用户管理</a></div></td>
 							<td width="80" class="tdnormal"><div style="border-left:1px solid white"><a class="navbar" href="${base}/reservation/admin.action">订单管理</a></div></td>

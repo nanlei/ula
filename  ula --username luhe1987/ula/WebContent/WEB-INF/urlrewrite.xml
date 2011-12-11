@@ -15,19 +15,9 @@
     
     <!-- 后台管理部分begin -->
     <rule>
-        <note>login</note>
-        <from>/admin/login</from>
-        <to type="forward">/loginAdmin.action</to>
-    </rule>
-    <rule>
-        <note>logout</note>
-        <from>/admin/logout</from>
-        <to type="forward">/logoutAdmin.action</to>
-    </rule>
-    <rule>
-        <note>logout</note>
-        <from>/admin/index</from>
-        <to type="forward">/admin/admin.action</to>
+        <note>admin</note>
+        <from>/admin/([a-zA-Z]+).html</from>
+        <to type="forward">/admin/$1.action</to>
     </rule>
 </urlrewrite>
 

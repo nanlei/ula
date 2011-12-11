@@ -2,9 +2,6 @@
 <!DOCTYPE struts PUBLIC
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
-	<!-- 
-                      包含其他所有所有struts XML文件目录
-     -->
 <struts>
 	<package name="global" extends="ula-default" namespace="/">
 		<!--name属性的值，请参考BaseAction里的常量定义 -->
@@ -15,26 +12,31 @@
 		</global-results>
 	</package>
 
-	<package name="adminLogin" extends="ula-default" namespace="/">
-		<action name="loginAdmin" class="ula.action.admin.UserAction"
-			method="loginAdmin">
-			<result name="loginAdmin" type="redirect">/admin/index</result>
+	<package name="admin-login" extends="global" namespace="/admin">
+		<action name="loginPage" class="ula.action.AnonymousAction">
+			<result name="success">login.ftl</result>
 		</action>
-		<action name="logoutAdmin" class="ula.action.admin.UserAction"
-			method="logout">
-			<result name="logout"  type="redirect">/login.html</result>
+		<action name="login" class="ula.action.admin.UserAction"
+			method="loginAdmin">
+			<result name="loginAdmin" type="redirect">index.html</result>
+			<result name="error">login.ftl</result>
+		</action>
+		<action name="logout" class="ula.action.admin.UserAction"
+			method="logoutAdmin">
+			<result name="logout" type="redirect">loginPage.html</result>
 		</action>
 	</package>
 
 	<!-- 系统管理入口 -->
 	<package name="admin_index" extends="global" namespace="/admin">
-		<action name="admin" class="ula.action.BaseAction">
+		<action name="index" class="ula.action.BaseAction">
 			<result>admin.ftl</result>
 		</action>
 		<action name="admintree" class="ula.action.BaseAction">
 			<result>tree.ftl</result>
 		</action>
 	</package>
+
 	<!-- 图片管理入口 -->
 	<package name="pic_index" extends="global" namespace="/pic">
 		<action name="admin" class="ula.action.BaseAction">

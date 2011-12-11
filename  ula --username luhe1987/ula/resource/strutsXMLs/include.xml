@@ -18,12 +18,11 @@
 	<include file="strutsXMLs/action/admin/login.xml"></include>
 	<include file="strutsXMLs/action/admin/payment.xml"></include>
 	<include file="strutsXMLs/action/admin/pic.xml"></include>
-	<include file="strutsXMLs/action/admin/program.xml"></include>
 	<include file="strutsXMLs/action/admin/recommend.xml"></include>
 	<include file="strutsXMLs/action/admin/reservation.xml"></include>
 	<include file="strutsXMLs/action/admin/resource.xml"></include>
 	<include file="strutsXMLs/action/admin/special.xml"></include>
-	<include file="strutsXMLs/action/admin/subscriber.xml"></include>
+	<include file="strutsXMLs/action/admin/tour.xml"></include>
 	<include file="strutsXMLs/action/admin/user.xml"></include>
 	<include file="strutsXMLs/action/admin/weather.xml"></include>
 

@@ -7,6 +7,10 @@ var treeMenu = [
 	{ level:1, name:"订阅管理"},
 	{ level:2, name:"订阅资源管理", link:"resource/resourceAdmin.action"},
 	{ level:2, name:"订阅用户管理", link:"subscriber/subscriberAdmin.action"},
+	{ level:1, name:"行程管理"},
+	{ level:2, name:"行程分类管理", link:"tour/categoryAdmin.action"},
+	{ level:2, name:"行程文章管理", link:"tour/tourAdmin.action"},
+	{ level:2, name:"休假类别管理", link:"tour/vacationTypeAdmin.action"},
 	
 	
 	{ level:1, name:"关于我们"},
@@ -40,16 +44,6 @@ var treeMenu = [
     { level:3, name:"法律常识", link:"city/law!admin.action"},
     { level:3, name:"手机信息", link:"city/cellphone!admin.action"},
     { level:3, name:"实用建议", link:"city/advice!admin.action"},
-	
-	{ level:1, name:"旅游项目"},
-	{ level:2, name:"本月推荐行程", link:"program/recommend!admin.action"},
-	{ level:2, name:"常规行程", link:"program/regular!admin.action"},
-	{ level:2, name:"治疗行程", link:"program/therapy!admin.action"},
-	{ level:2, name:"汉语学习行程", link:"program/chineselanguage!admin.action"},
-	{ level:2, name:"夏令营行程", link:"program/summercamp!admin.action"},
-	{ level:2, name:"温泉游行程", link:"program/hotspring!admin.action"},
-	{ level:2, name:"乡村游行程", link:"program/countryside!admin.action"},
-	{ level:2, name:"会展、展览", link:"program/exhibition!admin.action"},
 	
 	{ level:1, name:"特色服务"},
 	{ level:2, name:"签证", link:"special/visa!admin.action"},

@@ -3,7 +3,7 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-	<package name="admin/resource" extends="global" namespace="/admin/resource">
+	<package name="admin-resource" extends="global" namespace="/admin/resource">
 		<action name="resourceAdmin" class="ula.action.admin.resource.ResourceAction"
 			method="resourceAdmin">
 			<result name="resourceAdmin">resource_admin.ftl</result>
@@ -17,6 +17,24 @@
 			<result name="error" type="chain">
 				<param name="actionName">resourceAdmin</param>
 				<param name="namespace">/admin/resource</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="admin-resource-subscriber" extends="global"
+		namespace="/admin/subscriber">
+		<action name="subscriberAdmin" class="ula.action.admin.resource.SubscriberAction"
+			method="subscriberAdmin">
+			<result name="subscriberAdmin">subscriber_admin.ftl</result>
+		</action>
+		<action name="subscriber" class="ula.action.admin.resource.SubscriberAction">
+			<result name="success" type="chain">
+				<param name="actionName">subscriberAdmin</param>
+				<param name="namespace">/admin/subscriber</param>
+			</result>
+			<result name="error" type="chain">
+				<param name="actionName">subscriberAdmin</param>
+				<param name="namespace">/admin/subscriber</param>
 			</result>
 		</action>
 	</package>
