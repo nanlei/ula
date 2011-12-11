@@ -1,7 +1,0 @@
-Service编写步骤:
-
-1. 继承BaseService
-
-2. 在applicationContext-service.xml中配置Service
-
-3. 在ServiceManager里编写bean

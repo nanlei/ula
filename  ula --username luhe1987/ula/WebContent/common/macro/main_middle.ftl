@@ -124,5 +124,27 @@
 					</li>
 				</ul>
 			</div>
+			<div id="contact">
+				<table cellpadding="0" cellspacing="0">
+					<col width="72" align="center">
+					<col width="531" align="center">
+					<tr>
+						<td class="blue"><@s.property value="%{getText('front.contact.address.title')}"/></td>
+						<td><@s.property value="%{getText('front.contact.address')}"/></td>
+					</tr>
+					<tr>
+						<td class="blue"><@s.property value="%{getText('front.contact.telephone.title')}"/></td>
+						<td>+86(411) 39791800,39791811</td>
+					</tr>
+					<tr>
+						<td class="blue"><@s.property value="%{getText('front.contact.fax.title')}"/></td>
+						<td>+ 86 (411) 39791811</td>
+					</tr>
+					<tr>
+						<td class="blue"><@s.property value="%{getText('front.contact.email.title')}"/></td>
+						<td>dalian-joytour@yandex.ru，dalian-joytour@mail.ru</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 </#macro>

@@ -41,8 +41,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xwork-core-2.2.3.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/struts2-core-2.2.3.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ognl-3.0.1.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ehcache-web-2.0.4.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javassist-3.12.1.GA.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ehcache-core-2.5.0.jar"/>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>
