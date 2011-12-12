@@ -10,7 +10,7 @@ var treeMenu = [
 	{ level:1, name:"行程管理"},
 	{ level:2, name:"行程分类管理", link:"tour/categoryAdmin.action"},
 	{ level:2, name:"行程文章管理", link:"tour/tourAdmin.action"},
-	{ level:2, name:"休假类别管理", link:"tour/vacationTypeAdmin.action"},
+	{ level:2, name:"休假类型管理", link:"tour/vacationTypeAdmin.action"},
 	
 	
 	{ level:1, name:"关于我们"},
