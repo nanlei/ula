@@ -12,18 +12,19 @@
 		</global-results>
 	</package>
 
+	<!-- 后台登录页面，登录和退出  -->
 	<package name="admin-login" extends="global" namespace="/admin">
 		<action name="loginPage" class="ula.action.AnonymousAction">
 			<result name="success">login.ftl</result>
 		</action>
 		<action name="login" class="ula.action.admin.UserAction"
 			method="loginAdmin">
-			<result name="loginAdmin" type="redirect">index.html</result>
+			<result name="loginAdmin" type="redirect">index</result>
 			<result name="error">login.ftl</result>
 		</action>
 		<action name="logout" class="ula.action.admin.UserAction"
 			method="logoutAdmin">
-			<result name="logout" type="redirect">loginPage.html</result>
+			<result name="logout" type="redirect">loginPage</result>
 		</action>
 	</package>
 

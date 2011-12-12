@@ -16,7 +16,7 @@
     <!-- 后台管理部分begin -->
     <rule>
         <note>admin</note>
-        <from>/admin/([a-zA-Z]+).html</from>
+        <from>^/admin/([a-zA-Z]+)$</from>
         <to type="forward">/admin/$1.action</to>
     </rule>
 </urlrewrite>

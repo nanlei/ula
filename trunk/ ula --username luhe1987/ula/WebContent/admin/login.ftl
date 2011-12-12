@@ -38,7 +38,7 @@ $(document).ready(
 	<table align="center" width="300px" cellspacing="20px" cellpadding="0" border="0" style="background:#fff">
 	<tr>
 		<td width="30%" valign="top">
-			<form action="login.action" name="loginForm" onsubmit="return validateForm(this)" method="post">
+			<form action="login" name="loginForm" onsubmit="return validateForm(this)" method="post">
 			<table border="0" align="center" cellpadding="0" cellspacing="0" class="default" width="100%">
 				<tr class="title">
 					<td colspan="2" align="center">JoyTour&nbsp;&nbsp;管理系统</td>

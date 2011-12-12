@@ -10,12 +10,12 @@ import ula.service.admin.LinkService;
 import ula.service.admin.LogService;
 import ula.service.admin.PaymentService;
 import ula.service.admin.PicService;
-import ula.service.admin.ProgramService;
 import ula.service.admin.RecommendService;
 import ula.service.admin.ReservationService;
 import ula.service.admin.ResourceService;
 import ula.service.admin.SpecialService;
 import ula.service.admin.SubscriberService;
+import ula.service.admin.TourService;
 import ula.service.admin.UserService;
 import ula.service.admin.WeatherService;
 
@@ -29,7 +29,6 @@ public class ServiceManager {
 	private AboutService aboutService;
 	private ContactService contactService;
 	private CityServcie cityServcie;
-	private ProgramService programService;
 	private PaymentService paymentService;
 	private SpecialService specialService;
 	private LinkService linkService;
@@ -39,10 +38,12 @@ public class ServiceManager {
 	private FeedbackService feedbackService;
 	private ReservationService reservationService;
 	private HotelService hotelService;
+
 	private RecommendService recommendService;
 	private WeatherService weatherService;
 	private ResourceService resourceService;
 	private SubscriberService subscriberService;
+	private TourService tourService;
 
 	public ReservationService getReservationService() {
 		return reservationService;
@@ -82,14 +83,6 @@ public class ServiceManager {
 
 	public void setPaymentService(PaymentService paymentService) {
 		this.paymentService = paymentService;
-	}
-
-	public ProgramService getProgramService() {
-		return programService;
-	}
-
-	public void setProgramService(ProgramService programService) {
-		this.programService = programService;
 	}
 
 	public CityServcie getCityServcie() {
@@ -186,6 +179,14 @@ public class ServiceManager {
 
 	public void setSubscriberService(SubscriberService subscriberService) {
 		this.subscriberService = subscriberService;
+	}
+
+	public TourService getTourService() {
+		return tourService;
+	}
+
+	public void setTourService(TourService tourService) {
+		this.tourService = tourService;
 	}
 
 }

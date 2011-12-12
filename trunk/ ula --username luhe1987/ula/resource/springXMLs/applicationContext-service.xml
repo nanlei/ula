@@ -4,120 +4,63 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
 	default-autowire="byName" default-merge="true">
-
-	<bean id="logService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.LogService" />
-		</property>
+	<!-- Base Service -->
+	<bean id="baseService" class="ula.service.BaseService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
 
-	<bean id="aboutService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.AboutService" />
-		</property>
-	</bean>
+	<bean id="logService" class="ula.service.admin.LogService" parent="baseService" />
 
-	<bean id="contactService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.ContactService" />
-		</property>
-	</bean>
+	<bean id="aboutService" class="ula.service.admin.AboutService"
+		parent="baseService" />
 
-	<bean id="cityServcie" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.CityServcie" />
-		</property>
-	</bean>
+	<bean id="contactService" class="ula.service.admin.ContactService"
+		parent="baseService" />
 
-	<bean id="programService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.ProgramService" />
-		</property>
-	</bean>
+	<bean id="cityServcie" class="ula.service.admin.CityServcie"
+		parent="baseService" />
 
-	<bean id="paymentService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.PaymentService" />
-		</property>
-	</bean>
+	<bean id="paymentService" class="ula.service.admin.PaymentService"
+		parent="baseService" />
 
+	<bean id="specialService" class="ula.service.admin.SpecialService"
+		parent="baseService" />
 
-	<bean id="specialService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.SpecialService" />
-		</property>
-	</bean>
+	<bean id="linkService" class="ula.service.admin.LinkService"
+		parent="baseService" />
 
+	<bean id="picService" class="ula.service.admin.PicService" parent="baseService" />
 
-	<bean id="linkService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.LinkService" />
-		</property>
-	</bean>
+	<bean id="userService" class="ula.service.admin.UserService"
+		parent="baseService" />
 
-	<bean id="picService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.PicService" />
-		</property>
-	</bean>
+	<bean id="articleService" class="ula.service.admin.ArticleService"
+		parent="baseService" />
 
-	<bean id="userService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.UserService" />
-		</property>
-	</bean>
+	<bean id="feedbackService" class="ula.service.admin.FeedbackService"
+		parent="baseService" />
 
-	<bean id="articleService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.ArticleService" />
-		</property>
-	</bean>
+	<bean id="reservationService" class="ula.service.admin.ReservationService"
+		parent="baseService" />
 
-	<bean id="feedbackService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.FeedbackService" />
-		</property>
-	</bean>
+	<bean id="hotelService" class="ula.service.admin.HotelService"
+		parent="baseService" />
 
-	<bean id="reservationService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.ReservationService" />
-		</property>
-	</bean>
+	<bean id="recommendService" class="ula.service.admin.RecommendService"
+		parent="baseService" />
 
-	<bean id="hotelService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.HotelService" />
-		</property>
-	</bean>
+	<bean id="weatherService" class="ula.service.admin.WeatherService"
+		parent="baseService" />
 
-	<bean id="recommendService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.RecommendService" />
-		</property>
-	</bean>
+	<bean id="resourceService" class="ula.service.admin.ResourceService"
+		parent="baseService" />
 
-	<bean id="weatherService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.WeatherService" />
-		</property>
-	</bean>
+	<bean id="subscriberService" class="ula.service.admin.SubscriberService"
+		parent="baseService" />
 
-	<bean id="resourceService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.ResourceService" />
-		</property>
-	</bean>
-
-	<bean id="subscriberService" parent="baseTxService">
-		<property name="target">
-			<bean class="ula.service.admin.SubscriberService" />
-		</property>
-	</bean>
+	<bean id="tourService" class="ula.service.admin.TourService"
+		parent="baseService" />
 
 	<bean id="serviceManager" class="ula.common.ServiceManager" />
 
 </beans>
-
-
-

@@ -73,12 +73,6 @@ public class CommonAction extends BaseAction {
 			Map recommendation = (Map) super.getHttpSessionAsMap().get(
 					CommonConstants.RECOMMENDATION);
 			if (recommendation == null || recommendation.isEmpty()) {
-				// 获得本月推荐的所有内容
-				recommendation = super
-						.getServiceManager()
-						.getProgramService()
-						.getInfo(
-								CommonConstants.ID_PROGRAM_MONTH_RECOMMENDATION);
 				// 获取title
 				recomTitle = (String) recommendation.get("title");
 				log.debug("推荐标题：" + recomTitle);
