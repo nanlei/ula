@@ -79,21 +79,26 @@ public class WeatherAction extends CommonAction {
 				// 处理数据
 				getServiceManager().getWeatherService()
 						.updateWeatherByCityCode(map, cityCode);
-				setAlertMessage(cityName + AlertMessage.WEATHER_UPDATE_SUCCESS);
-				return SUCCESS;
+				setResult(SUCCESS);
+				addMessage(cityName + AlertMessage.WEATHER_UPDATE_SUCCESS);
+				addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_WEATHER);
 			} else {
-				setAlertMessage(cityName + AlertMessage.WEATHER_UPDATE_FAILURE);
-				return ERROR;
+				setResult(ERROR);
+				addMessage(cityName + AlertMessage.WEATHER_UPDATE_FAILURE);
+				addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 			}
 		} catch (ConnectException conne) {
 			log.error(ExceptionUtils.getStackTrace(conne));
-			setAlertMessage(AlertMessage.WEATHER_CONNECT_TIMEOUT);
-			return ERROR;
+			setResult(ERROR);
+			addMessage(AlertMessage.WEATHER_CONNECT_TIMEOUT);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		} catch (Exception e) {
 			log.error(ExceptionUtils.getStackTrace(e));
-			setAlertMessage(cityName + AlertMessage.WEATHER_UPDATE_FAILURE);
-			return ERROR;
+			setResult(ERROR);
+			addMessage(cityName + AlertMessage.WEATHER_UPDATE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
 	public String setToDefault() {

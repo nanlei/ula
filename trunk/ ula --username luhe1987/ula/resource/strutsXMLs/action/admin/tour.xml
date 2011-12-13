@@ -14,14 +14,6 @@
 		</action>
 		<action name="category" class="ula.action.admin.tour.CategoryAction">
 			<result name="preUpdate">category/category_info.ftl</result>
-			<result name="success" type="chain">
-				<param name="actionName">categoryAdmin</param>
-				<param name="namespace">/admin/tour</param>
-			</result>
-			<result name="error" type="chain">
-				<param name="actionName">categoryAdmin</param>
-				<param name="namespace">/admin/tour</param>
-			</result>
 		</action>
 	</package>
 </struts>

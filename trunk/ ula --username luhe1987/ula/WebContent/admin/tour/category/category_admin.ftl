@@ -3,9 +3,6 @@
 	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面显示系统内所有的行程分类，您可以维护相关信息，注意删除类别将删除该分类下的所有文章">
 	<@app.button id="newCategoryButton" onclick="$('#newCategory').toggle();this.blur();return false;" text="添加行程分类"/>
 	</@app.naviInfo>
-	<#if alertMessage?exists>
-	${alertMessage}
-	</#if>
 <div id="newCategory" style="display:none">
 	<form name="resourceForm" action="category!add.action" method="post" onSubmit="return validateForm(this)">
 		<table class="default" width="100%">

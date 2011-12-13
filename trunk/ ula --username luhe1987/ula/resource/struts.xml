@@ -34,8 +34,15 @@
 		<default-interceptor-ref name="UlaDefaultStack" />
 
 		<global-results>
+			<result name="executeResult" type="redirect">execute_result.action
+			</result>
+			<result name="exception">/common/admin/exception.ftl</result>
 			<result name="login" type="redirect">/index.html</result>
 		</global-results>
+
+		<action name="execute_result" class="ula.action.BaseAction">
+			<result name="success">/common/execute_result.ftl</result>
+		</action>
 	</package>
 
 
