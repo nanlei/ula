@@ -1,6 +1,12 @@
 package ula.constant;
 
 public interface AlertMessage {
+	String GO_BACK = "返回";
+	String URL_GO_BACK = "javascript:history.go(-1)";
+
+	String URL_WEATHER = "weatherAdmin.action";
+	String URL_TOUR_CATEGORY = "categoryAdmin.action";
+
 	String UPDATE_SUCCESS = "更新成功";
 	String UPDATE_FAILURE = "对不起，更新失败";
 	String INSERT_SUCCESS = "添加成功";

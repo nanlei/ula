@@ -44,17 +44,25 @@ public class CategoryAction extends CommonAction {
 		return "categoryAdmin";
 	}
 
+	/**
+	 * 添加行程分类
+	 * 
+	 * @return
+	 */
 	public String add() {
 		try {
 			getServiceManager().getTourService().addTourCategory(
 					getParametersAsMap(), getLoginUserName());
-			setAlertMessage(AlertMessage.TOUR_CATEGORY_ADD_SUCCESS);
-			return SUCCESS;
+			setResult(SUCCESS);
+			addMessage(AlertMessage.TOUR_CATEGORY_ADD_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_TOUR_CATEGORY);
 		} catch (Exception e) {
 			log.error(ExceptionUtils.getStackTrace(e));
-			setAlertMessage(AlertMessage.TOUR_CATEGORY_ADD_FAILURE);
-			return ERROR;
+			setResult(ERROR);
+			addMessage(AlertMessage.TOUR_CATEGORY_ADD_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
 	public String preUpdate() throws Exception {
@@ -67,16 +75,24 @@ public class CategoryAction extends CommonAction {
 		return "preUpdate";
 	}
 
+	/**
+	 * 更新行程分类
+	 * 
+	 * @return
+	 */
 	public String update() {
 		try {
 			getServiceManager().getTourService().updateTourCategoryByID(
 					getParametersAsMap(), getLoginUserName());
-			setAlertMessage(AlertMessage.TOUR_CATEGORY_UPDATE_SUCCESS);
-			return SUCCESS;
+			setResult(SUCCESS);
+			addMessage(AlertMessage.TOUR_CATEGORY_UPDATE_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_TOUR_CATEGORY);
 		} catch (Exception e) {
 			log.error(ExceptionUtils.getStackTrace(e));
-			setAlertMessage(AlertMessage.TOUR_CATEGORY_UPDATE_FAILURE);
-			return ERROR;
+			setResult(ERROR);
+			addMessage(AlertMessage.TOUR_CATEGORY_UPDATE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 }

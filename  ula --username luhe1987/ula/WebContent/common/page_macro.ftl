@@ -199,7 +199,7 @@ if (selNum != -1) {
 
 <#-- CKEditor编辑器 -->
 <#macro ckeditor id upload=true>
-${importJS("/ckeditor/ckeditor.js")}
+${importJS("/components/ckeditor/ckeditor.js")}
 <#if upload>
 <script type="text/javascript">
 CKEDITOR.replace('${id}',{

@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import ula.common.BeanManager;
+import ula.common.ExecuteResult;
 import ula.common.ServiceManager;
 import ula.constant.CommonConstants;
 import ula.util.QueryUtil;
@@ -40,6 +41,35 @@ public class BaseAction implements Action {
 	 */
 	public String execute() throws Exception {
 		return SUCCESS;
+	}
+
+	/* 通用操作结果返回页 */
+	public static final String EXECUTE_RESULT = CommonConstants.EXECUTE_RESULT;
+
+	private ExecuteResult executeResult;
+
+	private ExecuteResult buildExecuteResult() {
+		if (executeResult == null) {
+			executeResult = new ExecuteResult();
+			getHttpSessionAsMap().put(EXECUTE_RESULT, executeResult);
+		}
+		return executeResult;
+	}
+
+	public void setResult(String result) {
+		buildExecuteResult().setResult(result);
+	}
+
+	public void addMessage(String message) {
+		buildExecuteResult().addMessage(message);
+	}
+
+	public void addRedirURL(String desc, String url) {
+		buildExecuteResult().addRedirURL(desc, url);
+	}
+
+	public ExecuteResult getExecuteResult() {
+		return (ExecuteResult) getHttpSessionAsMap().get(EXECUTE_RESULT);
 	}
 
 	/**

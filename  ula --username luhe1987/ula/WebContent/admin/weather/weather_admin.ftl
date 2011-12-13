@@ -2,9 +2,6 @@
 	<@app.naviBar navi="天气预报" />
 	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面显示天气预报信息。如需修改，请联系开发人员">
 	</@app.naviInfo>
-	<#if alertMessage?exists>
-	${alertMessage}
-	</#if>
 <table class="default" width="100%">
 	<col width="10%" align="center">
 	<col width="10%" align="center">
