@@ -95,4 +95,25 @@ public class CategoryAction extends CommonAction {
 		}
 		return EXECUTE_RESULT;
 	}
+
+	/**
+	 * 删除行程分类
+	 * 
+	 * @return
+	 */
+	public String delete() {
+		try {
+			getServiceManager().getTourService().deleteTourCategoryById(
+					getParametersAsMap());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.TOUR_CATEGORY_DELETE_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_TOUR_CATEGORY);
+		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			setResult(ERROR);
+			addMessage(AlertMessage.TOUR_CATEGORY_DELETE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
+		}
+		return EXECUTE_RESULT;
+	}
 }

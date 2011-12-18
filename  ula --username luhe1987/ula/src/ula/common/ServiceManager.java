@@ -10,6 +10,7 @@ import ula.service.admin.LinkService;
 import ula.service.admin.LogService;
 import ula.service.admin.PaymentService;
 import ula.service.admin.PicService;
+import ula.service.admin.ProductService;
 import ula.service.admin.RecommendService;
 import ula.service.admin.ReservationService;
 import ula.service.admin.ResourceService;
@@ -18,6 +19,7 @@ import ula.service.admin.SubscriberService;
 import ula.service.admin.TourService;
 import ula.service.admin.UserService;
 import ula.service.admin.WeatherService;
+import ula.service.front.IndexService;
 
 public class ServiceManager {
 
@@ -44,6 +46,9 @@ public class ServiceManager {
 	private ResourceService resourceService;
 	private SubscriberService subscriberService;
 	private TourService tourService;
+	private ProductService productService;
+	// 前台
+	private IndexService indexService;
 
 	public ReservationService getReservationService() {
 		return reservationService;
@@ -187,6 +192,24 @@ public class ServiceManager {
 
 	public void setTourService(TourService tourService) {
 		this.tourService = tourService;
+	}
+
+	public ProductService getProductService() {
+		return productService;
+	}
+
+	public void setProductService(ProductService productService) {
+		this.productService = productService;
+	}
+
+	// 前台
+
+	public IndexService getIndexService() {
+		return indexService;
+	}
+
+	public void setIndexService(IndexService indexService) {
+		this.indexService = indexService;
 	}
 
 }

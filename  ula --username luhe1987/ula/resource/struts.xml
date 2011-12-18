@@ -17,15 +17,18 @@
 		<interceptors>
 			<interceptor name="login" class="ula.common.LoginInterceptor" />
 			<interceptor name="locale" class="ula.common.LocaleInterceptor" />
+			<interceptor name="exception" class="ula.common.ExceptionInterceptor" />
 
 			<interceptor-stack name="UlaDefaultStack">
 				<interceptor-ref name="login" />
 				<interceptor-ref name="locale" />
+				<interceptor-ref name="exception" />
 				<interceptor-ref name="params" />
 			</interceptor-stack>
 
 			<interceptor-stack name="UlaFileUpload">
 				<!--				<interceptor-ref name="login" />-->
+				<interceptor-ref name="exception" />
 				<interceptor-ref name="fileUpload" />
 				<interceptor-ref name="params" />
 			</interceptor-stack>
@@ -36,7 +39,7 @@
 		<global-results>
 			<result name="executeResult" type="redirect">execute_result.action
 			</result>
-			<result name="exception">/common/admin/exception.ftl</result>
+			<result name="exception">/common/exception.ftl</result>
 			<result name="login" type="redirect">/index.html</result>
 		</global-results>
 

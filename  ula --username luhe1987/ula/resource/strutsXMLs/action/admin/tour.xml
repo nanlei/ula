@@ -6,14 +6,27 @@
 	<package name="admin-tour" extends="global" namespace="/admin/tour">
 		<action name="vacationTypeAdmin" class="ula.action.admin.tour.ParamAction"
 			method="vacationTypeAdmin">
-			<result name="vacationTypeAdmin">vacation_type.ftl</result>
+			<result name="vacationTypeAdmin">param/vacation_type.ftl</result>
 		</action>
+		<action name="vacationTypeInfo" class="ula.action.admin.tour.ParamAction"
+			method="vacationTypeInfo">
+			<result name="vacationTypeInfo">param/vacation_type_info.ftl</result>
+		</action>
+
 		<action name="categoryAdmin" class="ula.action.admin.tour.CategoryAction"
 			method="categoryAdmin">
 			<result name="categoryAdmin">category/category_admin.ftl</result>
 		</action>
 		<action name="category" class="ula.action.admin.tour.CategoryAction">
 			<result name="preUpdate">category/category_info.ftl</result>
+		</action>
+
+		<action name="tourAdmin" class="ula.action.admin.tour.TourAction"
+			method="tourAdmin">
+			<result name="tourAdmin">tour_admin.ftl</result>
+		</action>
+		<action name="tour" class="ula.action.admin.tour.TourAction">
+			<result name="preUpdate">tour_info.ftl</result>
 		</action>
 	</package>
 </struts>
