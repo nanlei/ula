@@ -7,6 +7,13 @@ public interface CommonConstants {
 	/* 通用操作结果页面返回值 */
 	public static final String EXECUTE_RESULT = "executeResult";
 
+	/* 异常结果返回值 */
+	public static final String EXCEPTION = "exception";
+
+	/* 异常信息在上下文中的存储值 */
+	public static final String CONTEXT_EXCEPTION = "_exception_";
+	public static final String CONTEXT_EXCEPTION_INFO = "_exception_info_";
+
 	/* Paging constants */
 
 	int DEFAULT_PAGE_SIZE = 20;

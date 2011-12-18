@@ -6,11 +6,13 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.ArrayUtils;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
+import ula.common.PagingList;
 import ula.service.BaseService;
 import ula.util.MapUtil;
 
@@ -19,6 +21,14 @@ public class TourService extends BaseService {
 
 	public List<Map<String, Object>> getAllTourVacationTypes() {
 		return DB.queryForList(SQL_GET_ALL_TOUR_VACATION_TYPES);
+	}
+
+	private static final String SQL_GET_TOUR_CATEGORY_BY_VACATION_TYPE = "select NAME from tour_category where ID in (select CATEGORY_ID from tour_category_vacation_type where VACATION_TYPE_ID=?)";
+
+	public List<Map<String, Object>> getTourCategoryByVacationType(
+			Map<String, Object> parameters) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
+		return DB.queryForList(SQL_GET_TOUR_CATEGORY_BY_VACATION_TYPE, params);
 	}
 
 	private static final String SQL_GET_ALL_TOUR_CATEGORIES = "select * from tour_category";
@@ -111,5 +121,54 @@ public class TourService extends BaseService {
 					}
 				});
 
+	}
+
+	private static final String SQL_DELETE_TOUR_BY_CATEGORY_ID = "delete from tour where CATEGORY_ID=?";
+	private static final String SQL_DELETE_TOUR_CATEGORY_BY_ID = "delete from tour_category where ID=?";
+
+	public void deleteTourCategoryById(Map<String, Object> parameters) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
+		DB.update(SQL_DELETE_VACATION_TYPE_BY_TOUR_CATEGOURY_ID, params);
+		DB.update(SQL_DELETE_TOUR_BY_CATEGORY_ID, params);
+		DB.update(SQL_DELETE_TOUR_CATEGORY_BY_ID, params);
+	}
+
+	private static final String SQL_GET_ALL_TOURS = "select t.ID, t.TITLE, t.UPDATETIME, t.USERNAME, c.NAME  as CATEGORY_NAME from tour t, tour_category c where t.CATEGORY_ID=c.ID";
+
+	public PagingList getAllTours() {
+		return getPagingList(SQL_GET_ALL_TOURS);
+	}
+
+	private static final String SQL_ADD_TOUR = "insert into tour(CATEGORY_ID, TITLE, CONTENT, UPDATETIME, USERNAME) values(?, ?, ?, now(), ?)";
+
+	public void addTour(Map<String, Object> parameters, String userName) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
+				"cid,title,content");
+		DB.update(SQL_ADD_TOUR, ArrayUtils.add(params, userName));
+	}
+
+	private static final String SQL_GET_TOUR_BY_ID = "select * from tour where ID=?";
+
+	public Map<String, Object> getTourById(Map<String, Object> parameters) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
+		return DB.queryForMap(SQL_GET_TOUR_BY_ID, params);
+	}
+
+	private static final String SQL_UPDATE_TOUR_BY_ID = "update tour set CATEGORY_ID=?, TITLE=?, CONTENT=?, UPDATETIME=now(), USERNAME=? where ID=?";
+
+	public void updateTourById(Map<String, Object> parameters, String userName) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
+				"cid,title,content,id");
+		DB.update(SQL_UPDATE_TOUR_BY_ID, params[0], params[1], params[2],
+				userName, params[3]);
+	}
+
+	private static final String SQL_DELETE_PRODUCT_TOUR_BY_ID = "delete from product_tour where TOUR_ID=?";
+	private static final String SQL_DELETE_TOUR_BY_ID = "delete from tour_where ID=?";
+
+	public void deleteTourById(Map<String, Object> parameters) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
+		DB.update(SQL_DELETE_PRODUCT_TOUR_BY_ID, params);
+		DB.update(SQL_DELETE_TOUR_BY_ID, params);
 	}
 }

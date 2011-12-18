@@ -61,6 +61,14 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
 	<bean id="tourService" class="ula.service.admin.TourService"
 		parent="baseService" />
 
+	<bean id="productService" class="ula.service.admin.ProductService"
+		parent="baseService" />
+
+	<!-- 前台Service -->
+	<bean id="indexService" class="ula.service.front.IndexService"
+		parent="baseService" />
+
+
 	<bean id="serviceManager" class="ula.common.ServiceManager" />
 
 </beans>
