@@ -4,9 +4,10 @@
     <div id="links_bar">
     	<div id="lk_title"><@s.property value="%{getText('front.links')}"/></div>
     	<ul class="links">
-    		<li><a href="#">Юридическая информация</a></li>
-    		<li><a href="#">Юридическая информация</a></li>
-    		<li><a href="#">Юридическая информация</a></li>
+    		<li></li>
+    		<#list linkList as link>
+    		<li><a href="${link.URL}">${link.TITLE}</a></li>
+    		</#list>
     	</ul>
     	<div class="clear"></div>
     </div>

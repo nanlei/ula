@@ -24,8 +24,8 @@ public class CityAction extends AnonymousAction {
 	 * @return
 	 */
 	public String city() {
-		recommendList = getServiceManager().getRecommendService()
-				.getRecommendListForIndexPage();
+		recommendList = getServiceManager().getIndexService()
+				.getRecommendList();
 		return SUCCESS;
 	}
 }
