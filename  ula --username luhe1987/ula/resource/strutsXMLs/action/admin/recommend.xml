@@ -5,8 +5,8 @@
 <struts>
 	<package name="admin/recommend" extends="global" namespace="/admin/recommend">
 		<action name="recommendAdmin" class="ula.action.admin.RecommendAction"
-			method="admin">
-			<result name="admin">recommend_admin.ftl</result>
+			method="recommendAdmin">
+			<result name="recommendAdmin">recommend_admin.ftl</result>
 		</action>
 
 		<action name="recommend" class="ula.action.admin.RecommendAction">

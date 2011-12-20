@@ -1,6 +1,6 @@
 <@p.page>
-	<@app.naviBar navi="推荐管理,推荐详情" />
-	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面显示推荐详情信息，您可以维护这些信息。">
+	<@app.naviBar navi="推荐管理,详情" />
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面显示推荐的详情信息，您可以维护这些信息。">
 	<@app.button id="gobackButton" onclick="javascript:history.go(-1)" text="返回"/>
 	</@app.naviInfo>
 <script type="text/javascript">

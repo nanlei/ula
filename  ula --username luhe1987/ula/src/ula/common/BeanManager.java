@@ -4,13 +4,13 @@ import javax.servlet.ServletContext;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import ula.constant.ErrorConstants;
-
 public class BeanManager {
+	private static final String WAC_IS_NULL = "WebApplicationContext is Null!";
+	private static final String INIT_SUCCESSFUL = "BeanManager Init Successfully!";
+
 	protected static final Logger logger;
 	private static WebApplicationContext wac;
 
@@ -25,9 +25,9 @@ public class BeanManager {
 		wac = WebApplicationContextUtils
 				.getRequiredWebApplicationContext(context);
 		if (wac != null) {
-			logger.info("BeanManager init finished successfully.");
+			logger.info(INIT_SUCCESSFUL);
 		} else {
-			logger.error(ErrorConstants.WAC_IS_NULL);
+			logger.error(WAC_IS_NULL);
 		}
 	}
 
@@ -35,13 +35,9 @@ public class BeanManager {
 		if (wac != null)
 			return wac.getBean(beanName);
 		else {
-			logger.error(ErrorConstants.WAC_IS_NULL);
+			logger.error(WAC_IS_NULL);
 			return null;
 		}
-	}
-
-	public static void refresh() {
-		((AbstractApplicationContext) wac).refresh();
 	}
 
 }

@@ -8,5 +8,9 @@
 			method="productAdmin">
 			<result name="productAdmin">product_admin.ftl</result>
 		</action>
+		<action name="product" class="ula.action.admin.ProductAction">
+			<interceptor-ref name="UlaFileUpload" />
+			<result name="preUpdate">product_info.ftl</result>
+		</action>
 	</package>
 </struts>

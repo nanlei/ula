@@ -13,8 +13,8 @@ public class TourAction extends AnonymousAction {
 	}
 
 	public String tour() throws Exception {
-		recommendList = getServiceManager().getRecommendService()
-				.getRecommendListForIndexPage();
+		recommendList = getServiceManager().getIndexService()
+				.getRecommendList();
 		return SUCCESS;
 	}
 }

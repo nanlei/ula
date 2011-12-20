@@ -35,6 +35,7 @@ public class RecommendAction extends CommonAction {
 		return recommend;
 	}
 
+	// 图片上传
 	public void setCover(File cover) {
 		this.cover = cover;
 	}
@@ -47,19 +48,22 @@ public class RecommendAction extends CommonAction {
 		this.coverContentType = coverContentType;
 	}
 
-	public String admin() throws Exception {
+	public String recommendAdmin() throws Exception {
 		recommendList = getServiceManager().getRecommendService()
 				.getAllRecommends();
-		return "admin";
+		return "recommendAdmin";
 	}
 
+	/**
+	 * 添加推荐，包含文件上传
+	 * 
+	 * @return
+	 */
 	public String add() {
 		if (cover.length() <= 0) {
-			log.debug("The size of file(" + coverFileName + ") is 0");
 			setAlertMessage(AlertMessage.PIC_SIZE_ZERO);
 			return ERROR;
 		} else if (coverContentType.indexOf("image") == -1) {
-			log.debug("The type of file is not a kind of images");
 			setAlertMessage(AlertMessage.PIC_INSERT_DENY);
 			return ERROR;
 		} else {
@@ -89,6 +93,11 @@ public class RecommendAction extends CommonAction {
 		return "preUpdate";
 	}
 
+	/**
+	 * 修改推荐，包含文件上传
+	 * 
+	 * @return
+	 */
 	public String update() {
 		if (StringUtils.isEmpty(coverFileName)) {// 不更新封面图片
 			try {

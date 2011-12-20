@@ -11,6 +11,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.ServletActionContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.mail.javamail.JavaMailSender;
 
 import ula.common.BeanManager;
 import ula.common.ExecuteResult;
@@ -101,10 +102,19 @@ public class BaseAction implements Action {
 	}
 
 	/**
-	 * 获取所有的Service
+	 * 获取Service管理器
 	 */
 	public ServiceManager getServiceManager() {
 		return (ServiceManager) BeanManager.getBean("serviceManager");
+	}
+
+	/**
+	 * 获取MailSender
+	 * 
+	 * @return
+	 */
+	public JavaMailSender getJavaMailSender() {
+		return (JavaMailSender) BeanManager.getBean("mailSender");
 	}
 
 	/**

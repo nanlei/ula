@@ -18,12 +18,23 @@ import ula.util.MapUtil;
  */
 public class IndexAction extends AnonymousAction {
 	private List<Map<String, Object>> recommendList;
+	private List<Map<String, Object>> productList;
+	private List<Map<String, Object>> linkList;
 	private Map<String, Object> weather;
+
 	private HashMap<String, Object> jsonModel;
 	private String referer;
 
 	public List<Map<String, Object>> getRecommendList() {
 		return recommendList;
+	}
+
+	public List<Map<String, Object>> getProductList() {
+		return productList;
+	}
+
+	public List<Map<String, Object>> getLinkList() {
+		return linkList;
 	}
 
 	public Map<String, Object> getWeather() {
@@ -48,10 +59,11 @@ public class IndexAction extends AnonymousAction {
 	 * @return
 	 */
 	public String index() {
-		recommendList = getServiceManager().getRecommendService()
-				.getRecommendListForIndexPage();
-		weather = getServiceManager().getWeatherService()
-				.getWeatherForIndexPage();
+		recommendList = getServiceManager().getIndexService()
+				.getRecommendList();
+		productList = getServiceManager().getIndexService().getProductList();
+		linkList = getServiceManager().getIndexService().getLinkList();
+		weather = getServiceManager().getIndexService().getWeather();
 		return SUCCESS;
 	}
 

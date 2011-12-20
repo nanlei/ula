@@ -7,6 +7,7 @@ public interface AlertMessage {
 	String URL_WEATHER = "weatherAdmin.action";
 	String URL_TOUR_CATEGORY = "categoryAdmin.action";
 	String URL_TOUR = "tourAdmin.action";
+	String URL_PRODUCT = "productAdmin.action";
 
 	String UPDATE_SUCCESS = "更新成功";
 	String UPDATE_FAILURE = "对不起，更新失败";
@@ -133,12 +134,19 @@ public interface AlertMessage {
 	String TOUR_CATEGORY_UPDATE_SUCCESS = "行程分类更新成功";
 	String TOUR_CATEGORY_UPDATE_FAILURE = "行车分类更新失败";
 	String TOUR_CATEGORY_DELETE_SUCCESS = "行程分类删除成功";
-	String TOUR_CATEGORY_DELETE_FAILURE = "行车分类删除失败";
+	String TOUR_CATEGORY_DELETE_FAILURE = "行程分类删除失败";
 
 	String TOUR_ADD_SUCCESS = "行程文章添加成功";
 	String TOUR_ADD_FAILURE = "行程文章添加失败";
 	String TOUR_UPDATE_SUCCESS = "行程文章更新成功";
 	String TOUR_UPDATE_FAILURE = "行程文章更新失败";
-	String TOUR_DELETE_SUCCESS = "行程分类删除成功";
-	String TOUR_DELETE_FAILURE = "行车分类删除失败";
+	String TOUR_DELETE_SUCCESS = "行程文章删除成功";
+	String TOUR_DELETE_FAILURE = "行程文章删除失败";
+
+	String PRODUCT_ADD_SUCCESS = "产品添加成功";
+	String PRODUCT_ADD_FAILURE = "产品添加失败";
+	String PRODUCT_UPDATE_SUCCESS = "产品更新成功";
+	String PRODUCT_UPDATE_FAILURE = "产品更新失败";
+	String PRODUCT_DELETE_SUCCESS = "产品删除成功";
+	String PRODUCT_DELETE_FAILURE = "产品删除失败";
 }

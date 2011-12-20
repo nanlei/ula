@@ -43,9 +43,5 @@ public class WeatherService extends BaseService {
 		DB.update(SQL_SET_DEFAULT_CITY, params);
 	}
 
-	private static final String SQL_GET_WEATHER_FOR_INDEX_PAGE = "select * from weather where CITYCODE='101070201'";
 
-	public Map<String, Object> getWeatherForIndexPage() {
-		return DB.queryForMap(SQL_GET_WEATHER_FOR_INDEX_PAGE);
-	}
 }
