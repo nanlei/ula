@@ -3,24 +3,14 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-	<package name="admin/city" extends="global" namespace="/admin/city">
-
-		<!--关于城市->大连介绍 -->
-		<action name="intro" class="ula.action.admin.city.IntroductionAction">
-			<result name="edit">introduction_edit.ftl</result>
-			<result name="view">introduction_view.ftl</result>
-			<result name="update">introduction_admin.ftl</result>
-			<result name="admin">introduction_admin.ftl</result>
-			<result name="preAdd">introduction_add.ftl</result>
+	<package name="admin-city" extends="global" namespace="/admin/city">
+		<!-- 关于大连:城市信息管理 -->
+		<action name="cityAdmin" class="ula.action.admin.city.CityAction"
+			method="cityAdmin">
+			<result name="cityAdmin">city_admin.ftl</result>
 		</action>
-
-		<!--关于城市->大连历史 -->
-		<action name="history" class="ula.action.admin.city.HistoryAction">
-			<result name="edit">history_edit.ftl</result>
-			<result name="view">history_view.ftl</result>
-			<result name="update">history_admin.ftl</result>
-			<result name="admin">history_admin.ftl</result>
-			<result name="preAdd">history_add.ftl</result>
+		<action name="city" class="ula.action.admin.city.CityAction">
+			<result name="preUpdate">city_info.ftl</result>
 		</action>
 
 		<!-- 关于城市->景点，公园 -->
@@ -299,53 +289,6 @@
 				<param name="actionName">exhibition</param>
 				<param name="namespace">/admin/city</param>
 			</result>
-		</action>
-
-
-		<!--关于城市->保险 -->
-		<action name="insurance" class="ula.action.admin.city.InsuranceAction">
-			<result name="edit">insurance_edit.ftl</result>
-			<result name="view">insurance_view.ftl</result>
-			<result name="update">insurance_admin.ftl</result>
-			<result name="admin">insurance_admin.ftl</result>
-			<result name="preAdd">insurance_add.ftl</result>
-		</action>
-
-		<!--关于城市->法律常识 -->
-		<action name="law" class="ula.action.admin.city.CommonLawAction">
-			<result name="edit">law_edit.ftl</result>
-			<result name="view">law_view.ftl</result>
-			<result name="update">law_admin.ftl</result>
-			<result name="admin">law_admin.ftl</result>
-			<result name="preAdd">law_add.ftl</result>
-		</action>
-
-
-		<!--关于城市->手机信息 -->
-		<action name="cellphone" class="ula.action.admin.city.CellphoneAction">
-			<result name="edit">cellphone_edit.ftl</result>
-			<result name="view">cellphone_view.ftl</result>
-			<result name="update">cellphone_admin.ftl</result>
-			<result name="admin">cellphone_admin.ftl</result>
-			<result name="preAdd">cellphone_add.ftl</result>
-		</action>
-
-		<!--关于城市->实用建议 -->
-		<action name="advice" class="ula.action.admin.city.PracticalAdviceAction">
-			<result name="edit">advice_edit.ftl</result>
-			<result name="view">advice_view.ftl</result>
-			<result name="update">advice_admin.ftl</result>
-			<result name="admin">advice_admin.ftl</result>
-			<result name="preAdd">advice_add.ftl</result>
-		</action>
-
-		<!--关于城市->城市地图 -->
-		<action name="citymap" class="ula.action.admin.city.CityMapAction">
-			<result name="edit">citymap_edit.ftl</result>
-			<result name="view">citymap_view.ftl</result>
-			<result name="update">citymap_admin.ftl</result>
-			<result name="admin">citymap_admin.ftl</result>
-			<result name="preAdd">citymap_add.ftl</result>
 		</action>
 	</package>
 </struts>

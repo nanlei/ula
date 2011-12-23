@@ -67,6 +67,8 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
 	<!-- 前台Service -->
 	<bean id="indexService" class="ula.service.front.IndexService"
 		parent="baseService" />
+	<bean id="frontService" class="ula.service.front.FrontService"
+		parent="baseService" />
 
 
 	<bean id="serviceManager" class="ula.common.ServiceManager" />

@@ -34,6 +34,7 @@ import com.opensymphony.xwork2.ActionContext;
 public class BaseAction implements Action {
 
 	protected Logger log = LoggerFactory.getLogger(getClass());
+	protected Logger logger = LoggerFactory.getLogger(getClass());
 
 	protected static final String REDIRECT = "redirect";
 

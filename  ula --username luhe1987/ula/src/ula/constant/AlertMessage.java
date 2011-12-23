@@ -8,6 +8,7 @@ public interface AlertMessage {
 	String URL_TOUR_CATEGORY = "categoryAdmin.action";
 	String URL_TOUR = "tourAdmin.action";
 	String URL_PRODUCT = "productAdmin.action";
+	String URL_CITY = "cityAdmin.action";
 
 	String UPDATE_SUCCESS = "更新成功";
 	String UPDATE_FAILURE = "对不起，更新失败";
@@ -24,9 +25,11 @@ public interface AlertMessage {
 
 	String CONTACT_INFO_EMPTY = "游客联系方式没有添加，请添加";
 
-	String CITY_INTRO_EMPTY = "大连介绍没有添加，请添加";
 	String CITY_HISTORY_EMPTY = "大连历史介绍没有添加，请添加";
+	String CITY_UPDATE_SUCCESS = "大连城市信息更新成功";
+	String cITY_UPDATE_FAILURE = "大连城市信息更新失败";
 
+	// String CITY_INTRO_EMPTY = "大连介绍没有添加，请添加";
 	// String PROGRAM_MONTH_RECOMMENDATION = "本月推荐没有添加，请添加";
 	// String PROGRAM_CHINESE_LEARNING = "汉语学习没有添加，请添加";
 	// String PROGRAM_COUNTRYSIDE_TOUR = "乡村游没有添加，请添加";

@@ -19,6 +19,7 @@ import ula.service.admin.SubscriberService;
 import ula.service.admin.TourService;
 import ula.service.admin.UserService;
 import ula.service.admin.WeatherService;
+import ula.service.front.FrontService;
 import ula.service.front.IndexService;
 
 public class ServiceManager {
@@ -49,6 +50,7 @@ public class ServiceManager {
 	private ProductService productService;
 	// 前台
 	private IndexService indexService;
+	private FrontService frontService;
 
 	public ReservationService getReservationService() {
 		return reservationService;
@@ -210,6 +212,14 @@ public class ServiceManager {
 
 	public void setIndexService(IndexService indexService) {
 		this.indexService = indexService;
+	}
+
+	public FrontService getFrontService() {
+		return frontService;
+	}
+
+	public void setFrontService(FrontService frontService) {
+		this.frontService = frontService;
 	}
 
 }
