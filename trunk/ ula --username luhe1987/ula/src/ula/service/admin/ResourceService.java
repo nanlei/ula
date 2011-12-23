@@ -18,14 +18,14 @@ public class ResourceService extends BaseService {
 	public void addResource(Map<String, Object> parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,content");
-		DB.update(SQL_ADD_RESOURCE, params[0], params[1], userName);
+		jt.update(SQL_ADD_RESOURCE, params[0], params[1], userName);
 	}
 
 	private static final String SQL_GET_RESOURCE_BY_ID = "select * from resource where ID=?";
 
 	public Map<String, Object> getResourceById(Map<String, Object> parameters) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
-		return DB.queryForMap(SQL_GET_RESOURCE_BY_ID, params);
+		return jt.queryForMap(SQL_GET_RESOURCE_BY_ID, params);
 	}
 
 	private static final String SQL_UPDATE_RESOURCE_BY_ID = "update resource set TITLE=?, CONTENT=?, USERNAME=? where ID=?";
@@ -34,7 +34,7 @@ public class ResourceService extends BaseService {
 			String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,content,id");
-		DB.update(SQL_UPDATE_RESOURCE_BY_ID, params[0], params[1], userName,
+		jt.update(SQL_UPDATE_RESOURCE_BY_ID, params[0], params[1], userName,
 				params[2]);
 	}
 
@@ -42,6 +42,6 @@ public class ResourceService extends BaseService {
 
 	public void deleteResourceById(Map<String, Object> parameters) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
-		DB.update(SQL_DELETE_RESOURCE_BY_ID, params);
+		jt.update(SQL_DELETE_RESOURCE_BY_ID, params);
 	}
 }

@@ -2,6 +2,7 @@ package ula.action.admin;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
@@ -23,6 +24,8 @@ public class ProductAction extends BaseAction {
 	private PagingList productList;
 	private Map<String, Object> product;
 	private int displayNum;
+	private PagingList tourList;
+	private List<Map<String, Object>> productTourList;
 
 	// 图片上传
 	private File cover;
@@ -39,6 +42,14 @@ public class ProductAction extends BaseAction {
 
 	public int getDisplayNum() {
 		return displayNum;
+	}
+
+	public PagingList getTourList() {
+		return tourList;
+	}
+
+	public List<Map<String, Object>> getProductTourList() {
+		return productTourList;
 	}
 
 	// 图片上传
@@ -189,6 +200,32 @@ public class ProductAction extends BaseAction {
 			log.error(ExceptionUtils.getStackTrace(e));
 			setResult(ERROR);
 			addMessage(AlertMessage.PRODUCT_DELETE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
+		}
+		return EXECUTE_RESULT;
+	}
+
+	public String preAddTour() throws Exception {
+		product = getServiceManager().getProductService().getProductById(
+				getParametersAsMap());
+		productTourList = getServiceManager().getProductService()
+				.getProductTourByProductId(getParametersAsMap());
+		setPageSize(20);
+		tourList = getServiceManager().getTourService().getAllTours();
+		return "preAddTour";
+	}
+
+	public String addTour() {
+		try {
+			getServiceManager().getProductService().addProductTour(
+					getParametersAsMap());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.PRODUCT_TOUR_ADD_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_PRODUCT);
+		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			setResult(ERROR);
+			addMessage(AlertMessage.PRODUCT_TOUR_ADD_FAILURE);
 			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
 		return EXECUTE_RESULT;

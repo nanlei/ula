@@ -18,14 +18,14 @@ public class ArticleService extends BaseService {
 	public void addTour(Map<String, Object> parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"articleType,title,content,coverLink,price");
-		DB.update(SQL_ADD_TOUR, params[0], params[1], params[2], "", userName,
+		jt.update(SQL_ADD_TOUR, params[0], params[1], params[2], "", userName,
 				"");
 	}
 
 	public static final String SQL_GET_ARTICLE_BY_ID = "select * from article where ID=?";
 
 	public Map<String, Object> getArticleById(String articleId) {
-		return DB
+		return jt
 				.queryForMap(SQL_GET_ARTICLE_BY_ID, new Object[] { articleId });
 	}
 
@@ -35,7 +35,7 @@ public class ArticleService extends BaseService {
 			String articleId) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,content,coverLink,price");
-		DB.update(SQL_SET_ARTICLE_BY_ID, new Object[] { params[0], params[1],
+		jt.update(SQL_SET_ARTICLE_BY_ID, new Object[] { params[0], params[1],
 				"", "", articleId });
 	}
 
@@ -44,14 +44,14 @@ public class ArticleService extends BaseService {
 	public void updateTourById(Map<String, Object> parameters, String articleId) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"articleType,title,content,coverLink,price");
-		DB.update(SQL_SET_TOUR_BY_ID, params[0], params[1], params[2], "", "",
+		jt.update(SQL_SET_TOUR_BY_ID, params[0], params[1], params[2], "", "",
 				articleId);
 	}
 
 	private static final String SQL_DEL_ARTICLE_BY_ID = "delete from article where ID=?";
 
 	public void deleteArticleById(String articleId) {
-		DB.update(SQL_DEL_ARTICLE_BY_ID, articleId);
+		jt.update(SQL_DEL_ARTICLE_BY_ID, articleId);
 	}
 
 	private static final String SQL_GET_FOOD_ARTICLES = "select * from article where TYPE='food'";
@@ -65,7 +65,7 @@ public class ArticleService extends BaseService {
 	public void addFood(Map<String, Object> parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,content,coverLink,price");
-		DB.update(SQL_ADD_FOOD, params[0], params[1], "", userName, "");
+		jt.update(SQL_ADD_FOOD, params[0], params[1], "", userName, "");
 	}
 
 	private static final String SQL_GET_HOUSING_ARTICLES = "select * from article where TYPE='housing'";
@@ -79,7 +79,7 @@ public class ArticleService extends BaseService {
 	public void addHousing(Map<String, Object> parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,content,coverLink,price");
-		DB.update(SQL_ADD_HOUSING, params[0], params[1], "", userName, "");
+		jt.update(SQL_ADD_HOUSING, params[0], params[1], "", userName, "");
 	}
 
 	private static final String SQL_GET_SHOPPING_ARTICLES = "select * from article where TYPE='shopping'";
@@ -93,7 +93,7 @@ public class ArticleService extends BaseService {
 	public void addShopping(Map<String, Object> parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,content,coverLink,price");
-		DB.update(SQL_ADD_SHOPPING, params[0], params[1], "", userName, "");
+		jt.update(SQL_ADD_SHOPPING, params[0], params[1], "", userName, "");
 	}
 
 	private static final String SQL_GET_TRANSPORTATION_ARTICLES = "select * from article where TYPE='transportation'";
@@ -108,7 +108,7 @@ public class ArticleService extends BaseService {
 			String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,content,coverLink,price");
-		DB.update(SQL_ADD_TRANSPORTATION, params[0], params[1], "", userName,
+		jt.update(SQL_ADD_TRANSPORTATION, params[0], params[1], "", userName,
 				"");
 	}
 
@@ -123,7 +123,7 @@ public class ArticleService extends BaseService {
 	public void addTherapy(Map<String, Object> parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,content,coverLink,price");
-		DB.update(SQL_ADD_THERAPY, params[0], params[1], "", userName, "");
+		jt.update(SQL_ADD_THERAPY, params[0], params[1], "", userName, "");
 	}
 
 	private static final String SQL_GET_FESTIVAL_ARTICLES = "select * from article where TYPE='festival'";
@@ -137,7 +137,7 @@ public class ArticleService extends BaseService {
 	public void addFestival(Map<String, Object> parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,content,coverLink,price");
-		DB.update(SQL_ADD_FESTIVAL, params[0], params[1], "", userName, "");
+		jt.update(SQL_ADD_FESTIVAL, params[0], params[1], "", userName, "");
 	}
 
 	private static final String SQL_GET_EXHIBITION_ARTICLES = "select * from article where TYPE='exhibition'";
@@ -151,14 +151,14 @@ public class ArticleService extends BaseService {
 	public void addExhibition(Map<String, Object> parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
 				"title,content,coverLink,price");
-		DB.update(SQL_ADD_EXHIBITION, params[0], params[1], "", userName, "");
+		jt.update(SQL_ADD_EXHIBITION, params[0], params[1], "", userName, "");
 	}
 
 	private static final String SQL_GET_FIRST_ARTICLE_BY_TYPE = "select title,content from article where TYPE=? order by ID asc limit 1";
 
 	public Map<String, Object> getFirstArticleByType(String type) {
 		try {
-			return DB.queryForMap(SQL_GET_FIRST_ARTICLE_BY_TYPE, type);
+			return jt.queryForMap(SQL_GET_FIRST_ARTICLE_BY_TYPE, type);
 		} catch (Exception e) {
 			return null;
 		}

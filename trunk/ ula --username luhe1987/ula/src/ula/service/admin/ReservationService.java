@@ -75,11 +75,11 @@ public class ReservationService extends BaseService {
 			String checkoutDate, String numberOfMen, String numberOfWomen,
 			String numberOfKids, String remarks) throws Exception {
 		// 备份
-		DB.update(SQL_HOTEL_RESERVATION_BACKUP, name, tel, email, hotelName,
+		jt.update(SQL_HOTEL_RESERVATION_BACKUP, name, tel, email, hotelName,
 				roomCategory, checkinDate, checkoutDate, numberOfMen,
 				numberOfWomen, numberOfKids, remarks);
 		// 保存
-		return DB.update(SQL_HOTEL_RESERVATION, name, tel, email, hotelName,
+		return jt.update(SQL_HOTEL_RESERVATION, name, tel, email, hotelName,
 				roomCategory, checkinDate, checkoutDate, numberOfMen,
 				numberOfWomen, numberOfKids, remarks);
 	}
@@ -102,11 +102,11 @@ public class ReservationService extends BaseService {
 	 * @throws Exception
 	 */
 	public int removeHotelReserv(String id) throws Exception {
-		return DB.update(SQL_REMOVE_HOTELRESERV, id);
+		return jt.update(SQL_REMOVE_HOTELRESERV, id);
 	}
 
 	public Map<String, Object> detail_hotel(String id) throws Exception {
-		return DB.queryForMap(SQL_HOTEL_RESERVATION_DETAIL, id);
+		return jt.queryForMap(SQL_HOTEL_RESERVATION_DETAIL, id);
 	}
 
 	/**
@@ -138,11 +138,11 @@ public class ReservationService extends BaseService {
 			String contactName, String contactGender, String contactPhone,
 			String contactEmail) throws Exception {
 		// 备份
-		DB.update(SQL_TRAVEL_RESERVATION_BACKUP, numOfTourist, startDate,
+		jt.update(SQL_TRAVEL_RESERVATION_BACKUP, numOfTourist, startDate,
 				returnDate, replyDeadline, requirements, contactName,
 				contactGender, contactPhone, contactEmail);
 		// 存储
-		return DB.update(SQL_TRAVEL_RESERVATION, numOfTourist, startDate,
+		return jt.update(SQL_TRAVEL_RESERVATION, numOfTourist, startDate,
 				returnDate, replyDeadline, requirements, contactName,
 				contactGender, contactPhone, contactEmail);
 	}
@@ -155,7 +155,7 @@ public class ReservationService extends BaseService {
 	 * @return
 	 */
 	public int removeTravelReserv(String id) {
-		return DB.update(SQL_REMOVE_TRAVELRESERV, id);
+		return jt.update(SQL_REMOVE_TRAVELRESERV, id);
 	}
 
 	/**
@@ -167,7 +167,7 @@ public class ReservationService extends BaseService {
 	 * @throws Exception
 	 */
 	public int hotelOrderDoneMark(String id) throws Exception {
-		return DB.update(SQL_HOTEL_ORDER_DONE_MARK, id);
+		return jt.update(SQL_HOTEL_ORDER_DONE_MARK, id);
 	}
 
 	/**
@@ -179,7 +179,7 @@ public class ReservationService extends BaseService {
 	 * @throws Exception
 	 */
 	public int hotelOrderUndoneMark(String id) throws Exception {
-		return DB.update(SQL_HOTEL_ORDER_UNDONE_MARK, id);
+		return jt.update(SQL_HOTEL_ORDER_UNDONE_MARK, id);
 	}
 
 	/**
@@ -190,7 +190,7 @@ public class ReservationService extends BaseService {
 	 * @return
 	 */
 	public int travelOrderUndoneMark(String id) throws Exception {
-		return DB.update(SQL_TRAVEL_ORDER_UNDONE_MARK, id);
+		return jt.update(SQL_TRAVEL_ORDER_UNDONE_MARK, id);
 	}
 
 	/**
@@ -201,7 +201,7 @@ public class ReservationService extends BaseService {
 	 * @throws Exception
 	 */
 	public int travelOrderDoneMark(String id) throws Exception {
-		return DB.update(SQL_TRAVEL_ORDER_DONE_MARK, id);
+		return jt.update(SQL_TRAVEL_ORDER_DONE_MARK, id);
 	}
 
 	/**
@@ -212,7 +212,7 @@ public class ReservationService extends BaseService {
 	 * @throws Exception
 	 */
 	public Map<String, Object> detail_travel(String id) throws Exception {
-		return DB.queryForMap(SQL_TRAVEL_RESERVATION_DETAIL, id);
+		return jt.queryForMap(SQL_TRAVEL_RESERVATION_DETAIL, id);
 	}
 
 	/**

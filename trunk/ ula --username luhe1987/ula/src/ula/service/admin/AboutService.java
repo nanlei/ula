@@ -17,55 +17,55 @@ public class AboutService extends BaseService {
 			+ "WHERE id = ?";
 
 	public Map<String, Object> getBizInfo() throws Exception {
-		return DB.queryForMap(SQL_GET_INFO, 2);
+		return jt.queryForMap(SQL_GET_INFO, 2);
 	}
 
 	public int updateBizInfo(String title, String content) throws Exception {
-		return DB.update(SQL_UPDATE_INFO, title, content, 2);
+		return jt.update(SQL_UPDATE_INFO, title, content, 2);
 	}
 
 	public Map<String, Object> getCompanyInfo() throws Exception {
-		return DB.queryForMap(SQL_GET_INFO, 1);
+		return jt.queryForMap(SQL_GET_INFO, 1);
 	}
 
 	public int updateCompanyInfo(String title, String content) throws Exception {
-		return DB.update(SQL_UPDATE_INFO, title, content, 1);
+		return jt.update(SQL_UPDATE_INFO, title, content, 1);
 	}
 
 	public Map<String, Object> getTeamInfo() {
-		return DB.queryForMap(SQL_GET_INFO, 3);
+		return jt.queryForMap(SQL_GET_INFO, 3);
 	}
 
 	public int updateTeamInfo(String title, String content) {
-		return DB.update(SQL_UPDATE_INFO, title, content, 3);
+		return jt.update(SQL_UPDATE_INFO, title, content, 3);
 	}
 
 	public Map<String, Object> getMemoryInfo() {
-		return DB.queryForMap(SQL_GET_INFO, 4);
+		return jt.queryForMap(SQL_GET_INFO, 4);
 	}
 
 	public int updateMemoryInfo(String title, String content) {
-		return DB.update(SQL_UPDATE_INFO, title, content, 4);
+		return jt.update(SQL_UPDATE_INFO, title, content, 4);
 	}
 
 	public int addCompanyInfo(String companyTitle, String companyContent)
 			throws Exception {
-		return DB.update(SQL_ADD_INFO, 1, companyTitle, companyContent);
+		return jt.update(SQL_ADD_INFO, 1, companyTitle, companyContent);
 	}
 
 	public int addBizInfo(String bizTitle, String bizContent) {
-		return DB.update(SQL_ADD_INFO, 2, bizTitle, bizContent);
+		return jt.update(SQL_ADD_INFO, 2, bizTitle, bizContent);
 	}
 
 	public int addTeamInfo(String teamTitle, String teamContent) {
-		return DB.update(SQL_ADD_INFO, 3, teamTitle, teamContent);
+		return jt.update(SQL_ADD_INFO, 3, teamTitle, teamContent);
 	}
 
 	public int addMemoryInfo(String memoryTitle, String memoryContent) {
-		return DB.update(SQL_ADD_INFO, 4, memoryTitle, memoryContent);
+		return jt.update(SQL_ADD_INFO, 4, memoryTitle, memoryContent);
 	}
 
 	public Map<String, Object> getInfo(int id) throws Exception {
-		return DB.queryForMap(SQL_GET_INFO, id);
+		return jt.queryForMap(SQL_GET_INFO, id);
 	}
 }

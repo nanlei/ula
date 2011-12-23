@@ -85,7 +85,7 @@ public class SendResourceService {
 				id);
 	}
 
-	public void sendResource() {
+	public void sendResource() throws Exception {
 		// 资源发送完毕标识位
 		int tag = 0;
 		// 获取一条还未处理完成的资源
@@ -110,23 +110,20 @@ public class SendResourceService {
 			for (int i = 0; i < times; i++) {
 				bcc[i] = (String) subscriberList.get(i).get("EMAIL");
 			}
-			try {
-				// 发送邮件
-				MimeMessage htmlMessage = mailSender.createMimeMessage();
-				// 发送HTML邮件
-				MimeMessageHelper helper = new MimeMessageHelper(htmlMessage,
-						true, "UTF-8");
-				// 设置邮件属性
-				helper.setFrom(fromAddress);
-				helper.setBcc(bcc);
-				helper.setSubject((String) resource.get("TITLE"));
-				helper.setText(HTML_PREFIX + (String) resource.get("CONTENT")
-						+ HTML_TIPS + HTML_SUFFIX, true);
-				// 发送邮件
-				mailSender.send(htmlMessage);
-			} catch (Exception e) {
-				logger.error(ExceptionUtils.getStackTrace(e));
-			}
+
+			// 发送邮件
+			MimeMessage htmlMessage = mailSender.createMimeMessage();
+			// 发送HTML邮件
+			MimeMessageHelper helper = new MimeMessageHelper(htmlMessage, true,
+					"UTF-8");
+			// 设置邮件属性
+			helper.setFrom(fromAddress);
+			helper.setBcc(bcc);
+			helper.setSubject((String) resource.get("TITLE"));
+			helper.setText(HTML_PREFIX + (String) resource.get("CONTENT")
+					+ HTML_TIPS + HTML_SUFFIX, true);
+			// 发送邮件
+			mailSender.send(htmlMessage);
 			// 说明该订阅资源已经发送完毕，tag=1
 			if (subscriberList.size() > 0 && subscriberList.size() < interval) {
 				tag = 1;

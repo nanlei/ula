@@ -11,6 +11,7 @@
 		<action name="product" class="ula.action.admin.ProductAction">
 			<interceptor-ref name="UlaFileUpload" />
 			<result name="preUpdate">product_info.ftl</result>
+			<result name="preAddTour">product_tour.ftl</result>
 		</action>
 	</package>
 </struts>

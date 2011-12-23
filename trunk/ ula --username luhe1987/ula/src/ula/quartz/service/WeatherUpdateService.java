@@ -14,7 +14,6 @@ import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.exception.ExceptionUtils;
 import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.JsonToken;
@@ -76,38 +75,33 @@ public class WeatherUpdateService {
 		return jsonText;
 	}
 
-	public void updateWeather() {
+	public void updateWeather() throws Exception {
 		ArrayList<String> cityCodes = getDefaultCityCode();
-		try {
-			for (String cityCode : cityCodes) {
-				String queryURL = "http://m.weather.com.cn/data/" + cityCode
-						+ ".html";
-				String jsonText = getJSONText(queryURL);
-				if (StringUtils.isNotEmpty(jsonText)) {
-					JsonFactory jsonFactory = new MappingJsonFactory();
-					// Json解析器
-					JsonParser jsonParser = jsonFactory
-							.createJsonParser(jsonText);
-					// 跳到结果集的开始
+		for (String cityCode : cityCodes) {
+			String queryURL = "http://m.weather.com.cn/data/" + cityCode
+					+ ".html";
+			String jsonText = getJSONText(queryURL);
+			if (StringUtils.isNotEmpty(jsonText)) {
+				JsonFactory jsonFactory = new MappingJsonFactory();
+				// Json解析器
+				JsonParser jsonParser = jsonFactory.createJsonParser(jsonText);
+				// 跳到结果集的开始
+				jsonParser.nextToken();
+				// 接受结果的HashMap
+				HashMap<String, String> map = new HashMap<String, String>();
+				// while循环遍历Json结果
+				while (jsonParser.nextToken() != JsonToken.END_OBJECT) {
+					// 跳转到Value
 					jsonParser.nextToken();
-					// 接受结果的HashMap
-					HashMap<String, String> map = new HashMap<String, String>();
-					// while循环遍历Json结果
-					while (jsonParser.nextToken() != JsonToken.END_OBJECT) {
-						// 跳转到Value
-						jsonParser.nextToken();
-						// 将Json中的值装入Map中
-						map.put(jsonParser.getCurrentName(), jsonParser
-								.getText());
-					}
-					// 处理数据
-					updateDBInfo(map, cityCode);
+					// 将Json中的值装入Map中
+					map.put(jsonParser.getCurrentName(), jsonParser.getText());
 				}
+				// 处理数据
+				updateDBInfo(map, cityCode);
 			}
-			logger.info("Update " + cityCodes.size()
-					+ " city(cities) weather info");
-		} catch (Exception e) {
-			logger.error(ExceptionUtils.getStackTrace(e));
 		}
+		logger
+				.info("Update " + cityCodes.size()
+						+ " city(cities) weather info");
 	}
 }

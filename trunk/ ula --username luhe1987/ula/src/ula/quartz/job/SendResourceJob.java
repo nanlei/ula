@@ -1,5 +1,6 @@
 package ula.quartz.job;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,7 +23,11 @@ public class SendResourceJob {
 
 	public void execute() {
 		logger.info("Run Quartz Job : " + this.getClass().getName());
-		sendResourceService.sendResource();
+		try {
+			sendResourceService.sendResource();
+		} catch (Exception e) {
+			logger.error(ExceptionUtils.getStackTrace(e));
+		}
 	}
 
 }

@@ -1,11 +1,15 @@
-<@p.page>
-<script language="JavaScript">
-<!--
-function showDetail() {
-	document.getElementById("explaintab").style.display = "";
-}
-//-->
-</script>
+<#include "config.ftl">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=${macro_config.charset}">
+<#list macro_config.css_path as css><#-- 系统CSS加载 -->
+<link href="${base}${css}" rel="stylesheet" type="text/css">
+</#list>
+<#list macro_config.js_path as js><#-- 系统JS加载 -->
+<script language="javascript" src="${base}${js}"></script>
+</#list>
+</head>
+<body>
 <#assign exception = stack.context["_exception_"]>
 <#assign exceptionDetail = stack.context["_exception_info_"]>
 <table border="0" cellpadding="0" cellspacing="1" class="default" style="width:50%" align="center">
@@ -17,7 +21,7 @@ function showDetail() {
 	<table width="90%"><tr><td style="padding:10px;background:#FFCCCC;border:1px solid black;width:90%">错误原因：${exception?if_exists?html}</td></tr></table>
 	<br>
 	请选择以下任务继续：<br><br>
-	<a href="javascript:history.go(-1)">返回</a> | <a href="javascript:showDetail();">查看错误详细信息</a>
+	<a href="javascript:history.go(-1)">返回</a> | <a href="javascript:void(0)" onclick="$('#explaintab').toggle();this.blur();return false;">查看错误详细信息</a>
 	</td>
 </tr>
 </tr>
@@ -29,4 +33,5 @@ function showDetail() {
 	</td>
 </tr>
 </table>
-</@p.page>
+</body>
+</html>

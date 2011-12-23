@@ -20,7 +20,7 @@ public class WeatherService extends BaseService {
 
 	public Map<String, Object> getWeatherById(Map<String, Object> parameters) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
-		return DB.queryForMap(SQL_GET_WEATHER_BY_ID, params);
+		return jt.queryForMap(SQL_GET_WEATHER_BY_ID, params);
 	}
 
 	private static final String SQL_UPDATE_WEAHTER_BY_CITYCODE = "update weather set TEMP1=?, TEMP2=?, IMG1=?, IMG2=?, IMG3=?, IMG4=?, UPDATETIME=now() where CITYCODE=?";
@@ -29,7 +29,7 @@ public class WeatherService extends BaseService {
 			String cityCode) {
 		Object[] params = MapUtil.getObjectArrayFromMap(weatherInfo,
 				"temp1,temp2,img1,img2,img3,img4");
-		DB.update(SQL_UPDATE_WEAHTER_BY_CITYCODE, ArrayUtils.add(params,
+		jt.update(SQL_UPDATE_WEAHTER_BY_CITYCODE, ArrayUtils.add(params,
 				cityCode));
 	}
 
@@ -39,8 +39,8 @@ public class WeatherService extends BaseService {
 
 	public void setDefaulyCity(Map<String, Object> parameters) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
-		DB.update(SQL_REMOVE_DEFAULT_CITY);
-		DB.update(SQL_SET_DEFAULT_CITY, params);
+		jt.update(SQL_REMOVE_DEFAULT_CITY);
+		jt.update(SQL_SET_DEFAULT_CITY, params);
 	}
 
 

@@ -17,16 +17,16 @@ public class CityServcie extends BaseService {
 			+ "WHERE id = ?";
 
 	public Map<String, Object> getInfo(int id) throws Exception {
-		return DB.queryForMap(SQL_GET_INFO_BY_ID, id);
+		return jt.queryForMap(SQL_GET_INFO_BY_ID, id);
 	}
 
 	public Map<String, Object> getInfo(String tag) throws Exception {
-		return DB.queryForMap(SQL_GET_INFO_BY_ID, tag);
+		return jt.queryForMap(SQL_GET_INFO_BY_ID, tag);
 	}
 
 	public int addInfo(int id, String title, String content, String tag)
 			throws Exception {
-		return DB.update(SQL_ADD_INFO, id, title, content, tag);
+		return jt.update(SQL_ADD_INFO, id, title, content, tag);
 	}
 
 	public int addInfo(int id, String title, String content) throws Exception {
@@ -35,7 +35,7 @@ public class CityServcie extends BaseService {
 
 	public int updateInfo(int id, String title, String content)
 			throws Exception {
-		return DB.update(SQL_UPDATE_INFO, title, content, id);
+		return jt.update(SQL_UPDATE_INFO, title, content, id);
 	}
 
 }
