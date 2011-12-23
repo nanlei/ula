@@ -2,7 +2,7 @@
 <#include "common_function.ftl">
 
 <#-- 页面统一基础模板 -->
-<#macro page title=macro_config.default_title body="" head="" setReferUrl=false referUrlKey="" js=[] css=[]>
+<#macro page title=macro_config.default_title setReferUrl=false referUrlKey="" js=[] css=[]>
 <#if setReferUrl><#if referUrlKey?has_content>${action.setReferUrl(referUrlKey)}<#else>${action.setReferUrl()}</#if></#if>
 <#if navi?has_content>
 	<#if title==macro_config.default_title>
@@ -10,8 +10,6 @@
 	</#if>
 </#if>
 <#assign s=JspTaglibs["/WEB-INF/struts-tags.tld"]>
-<#--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">-->
 <html>
 <head>
 	<title>${macro_config.common_title} - ${title?html}</title>
@@ -37,30 +35,30 @@
 	}
 	</script>
 	<meta http-equiv="Content-type" content="text/html; charset=${macro_config.charset}">
-	${head}
 </head>
-<#if request.servletPath?starts_with(macro_config.manage_path)>
-<body ${body}>
+<body>
 <#nested>
 </body>
-<#else>
-<body ${body}>
-<#nested>
-</body>
-</#if>
 </html>
 </#macro>
 
 <#-- 树形控件 tree -->
 <#macro tree root="" display="">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=${macro_config.charset}">
+<link href="${base}/css/default.css" rel="stylesheet" type="text/css">
 <style type="text/css">@import url('${base}/components/dtree/dtree.css');</style>
 <script type="text/javascript">var dtreeIconBasePath = "${base}/components/dtree";</script>
 <script language="javascript" src="${base}/components/dtree/dtree.js"></script>
 <#nested>
+</head>
+<body>
 <div style="display:${display};margin-bottom:5px;">菜单控制:【<a href="javascript:void(0)" onclick="tree.openAll();this.blur();return false;" style="color:#333333">展开</a>】【<a href="javascript:void(0)" onclick="tree.closeAll();this.blur();return false;" style="color:#333333">折叠</a>】</div>
 <div class="dtree">
+</div>
+</body>
 <script type="text/javascript"> 
-
 //建立新树
 tree = new dTree('tree');
 tree.config.target = "MainFrame";
@@ -103,7 +101,7 @@ if (selNum != -1) {
 	top.document.frames["MainFrame"].location.href=link;
 }
 </script>
-</div>
+</html>
 </#macro>
 
 <#-- 处理分页参数 -->

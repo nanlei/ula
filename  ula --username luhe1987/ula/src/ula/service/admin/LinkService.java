@@ -17,16 +17,16 @@ public class LinkService extends BaseService {
 	private static final String SQL_UPDATE_INFO = "UPDATE link SET title = ?,url =?,date =now() WHERE id = ?";
 
 	public Map<String, Object> getInfoById(String id) throws Exception {
-		return DB.queryForMap(SQL_GET_INFO_BY_ID, id);
+		return jt.queryForMap(SQL_GET_INFO_BY_ID, id);
 	}
 
 	public int addInfo(String title, String url) throws Exception {
-		return DB.update(SQL_ADD_INFO, title, url);
+		return jt.update(SQL_ADD_INFO, title, url);
 	}
 
 	public int updateInfo(String linkID, String title, String url)
 			throws Exception {
-		return DB.update(SQL_UPDATE_INFO, title, url, linkID);
+		return jt.update(SQL_UPDATE_INFO, title, url, linkID);
 	}
 
 	public PagingList getAllInfo() {
@@ -34,6 +34,6 @@ public class LinkService extends BaseService {
 	}
 
 	public int deleteInfoById(String linkID) throws Exception {
-		return DB.update(SQL_DELETE_BY_ID, linkID);
+		return jt.update(SQL_DELETE_BY_ID, linkID);
 	}
 }

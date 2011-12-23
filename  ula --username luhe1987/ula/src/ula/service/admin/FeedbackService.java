@@ -19,15 +19,15 @@ public class FeedbackService extends BaseService {
 
 	public int addFeedback(String customer, String email, String from,
 			String feedback) throws Exception {
-		return DB.update(SQL_ADD_FEEDBACK, customer, email, from, feedback);
+		return jt.update(SQL_ADD_FEEDBACK, customer, email, from, feedback);
 	}
 
 	public int removeFeedback(String id) throws Exception {
-		return DB.update(SQL_REMOVE_FEEDBACK, id);
+		return jt.update(SQL_REMOVE_FEEDBACK, id);
 	}
 
 	public int addReply(String id, String reply) throws Exception {
-		return DB.update(SQL_ADD_REPLY, reply, id);
+		return jt.update(SQL_ADD_REPLY, reply, id);
 	}
 
 	public PagingList getFeedbacks() throws Exception {
@@ -35,7 +35,7 @@ public class FeedbackService extends BaseService {
 	}
 
 	public Map<String, Object> detail(String id) throws Exception {
-		return DB.queryForMap(SQL_DETAIL, id);
+		return jt.queryForMap(SQL_DETAIL, id);
 	}
 
 }

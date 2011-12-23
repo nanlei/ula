@@ -149,4 +149,6 @@ public interface AlertMessage {
 	String PRODUCT_UPDATE_FAILURE = "产品更新失败";
 	String PRODUCT_DELETE_SUCCESS = "产品删除成功";
 	String PRODUCT_DELETE_FAILURE = "产品删除失败";
+	String PRODUCT_TOUR_ADD_SUCCESS = "行程添加到产品中成功";
+	String PRODUCT_TOUR_ADD_FAILURE = "行程添加到产品中失败";
 }

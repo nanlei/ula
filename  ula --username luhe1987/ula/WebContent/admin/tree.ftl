@@ -1,4 +1,3 @@
-<@p.page>
 <@p.tree root="系统管理" display="block">
 <script type="text/javascript"> 
 var treeMenu = [
@@ -73,4 +72,3 @@ var treeMenu = [
 ];
 </script>
 </@p.tree>
-</@p.page>
