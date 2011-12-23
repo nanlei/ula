@@ -20,9 +20,7 @@ var treeMenu = [
 	{ level:2, name:"人员介绍", link:"about/team!admin.action"},
 	
 	{ level:1, name:"关于大连"},
-	{ level:2, name:"大连介绍", link:"city/intro!admin.action"},
-	{ level:2, name:"大连历史", link:"city/history!admin.action"},
-	{ level:2, name:"城市地图", link:"city/citymap!admin.action"},
+	{ level:2, name:"城市信息管理", link:"city/cityAdmin.action"},
 	{ level:2, name:"景点、公园"},
 	{ level:3, name:"市内", link:"city/tour.action?articleType=dalian"},
 	{ level:3, name:"旅顺", link:"city/tour.action?articleType=lvshun"},
@@ -39,11 +37,6 @@ var treeMenu = [
 	{ level:2, name:"大连治疗", link:"city/therapy.action"},
 	{ level:2, name:"大连节日", link:"city/festival.action"},
 	{ level:2, name:"展会信息", link:"city/exhibition.action"},
-	{ level:2, name:"其它信息"},
-    { level:3, name:"保险", link:"city/insurance!admin.action"},
-    { level:3, name:"法律常识", link:"city/law!admin.action"},
-    { level:3, name:"手机信息", link:"city/cellphone!admin.action"},
-    { level:3, name:"实用建议", link:"city/advice!admin.action"},
 	
 	{ level:1, name:"特色服务"},
 	{ level:2, name:"签证", link:"special/visa!admin.action"},

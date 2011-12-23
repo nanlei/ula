@@ -90,7 +90,7 @@ public interface CommonConstants {
 	int ID_CONTACT_GROUP_CN = 2;
 	int ID_CONTACT_INDIVIDUAL = 3;
 
-	int ID_CITY_INTRODUCTION = 1;
+	// int ID_CITY_INTRODUCTION = 1;
 	int ID_CITY_HISTORY = 2;
 	int ID_CITY_INSURANCE = 3;
 	int ID_CITY_COMMOMLAW = 4;
