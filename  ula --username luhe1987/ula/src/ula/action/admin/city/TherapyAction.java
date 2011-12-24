@@ -4,42 +4,27 @@ import java.util.Map;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
 
-import ula.action.CommonAction;
+import ula.action.BaseAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
+import ula.constant.CommonConstants;
 
 /**
- * @author Harry
+ * 关于大连:大连治疗
+ * 
+ * @author Nanlei
+ * 
  */
-public class TherapyAction extends CommonAction {
+public class TherapyAction extends BaseAction {
 	private PagingList therapyList;
-	private Map<String, Object> therapyInfo;
-	private String articleId;
-	private String at;
-	private PagingList articleList;
+	private Map<String, Object> therapy;
 
 	public PagingList getTherapyList() {
 		return therapyList;
 	}
 
-	public Map<String, Object> getTherapyInfo() {
-		return therapyInfo;
-	}
-
-	public void setArticleId(String articleId) {
-		this.articleId = articleId;
-	}
-
-	public String getAt() {
-		return at;
-	}
-
-	public void setAt(String at) {
-		this.at = at;
-	}
-
-	public PagingList getArticleList() {
-		return articleList;
+	public Map<String, Object> getTherapy() {
+		return therapy;
 	}
 
 	/**
@@ -47,10 +32,10 @@ public class TherapyAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String therapy() {
+	public String therapyAdmin() {
 		therapyList = getServiceManager().getArticleService()
-				.getTherapyArticles();
-		return "therapy";
+				.getArticlesByType(CommonConstants.TAG_CITY_THERAPY);
+		return "therapyAdmin";
 	}
 
 	/**
@@ -58,17 +43,21 @@ public class TherapyAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String addTherapy() {
+	public String add() {
 		try {
-			getServiceManager().getArticleService().addTherapy(
-					getParametersAsMap(), "admin");
-			this.setAlertMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
-			return SUCCESS;
+			getServiceManager().getArticleService().addArticle(
+					getParametersAsMap(), CommonConstants.TAG_CITY_THERAPY,
+					getLoginUserName());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_THERAPY);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_ADD_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			setResult(ERROR);
+			addMessage(AlertMessage.ARTICLE_ADD_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
 	/**
@@ -77,10 +66,10 @@ public class TherapyAction extends CommonAction {
 	 * @return
 	 * @throws Exception
 	 */
-	public String preUpdateTherapy() throws Exception {
-		therapyInfo = getServiceManager().getArticleService().getArticleById(
+	public String preUpdate() throws Exception {
+		therapy = getServiceManager().getArticleService().getArticleById(
 				getParametersAsMap());
-		return "preUpdateTherapy";
+		return "preUpdate";
 	}
 
 	/**
@@ -88,17 +77,20 @@ public class TherapyAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String updateTherapy() {
+	public String update() {
 		try {
 			getServiceManager().getArticleService().updateArticleById(
-					getParametersAsMap(), articleId);
-			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
-			return SUCCESS;
+					getParametersAsMap(), getLoginUserName());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_THERAPY);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			setResult(ERROR);
+			addMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
 	/**
@@ -106,24 +98,19 @@ public class TherapyAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String deleteTherapy() {
+	public String delete() {
 		try {
-			getServiceManager().getArticleService()
-					.deleteArticleById(null);
-			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
-			return SUCCESS;
+			getServiceManager().getArticleService().deleteArticleById(
+					getParametersAsMap());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_THERAPY);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			addMessage(AlertMessage.ARTICLE_DELETE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
-	public String view() {
-		super.view();
-		this.setAt("therapy");
-		articleList = getServiceManager().getArticleService()
-				.getTherapyArticles();
-		return "view";
-	}
 }
