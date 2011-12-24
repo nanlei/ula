@@ -4,9 +4,10 @@ import java.util.Map;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
 
-import ula.action.CommonAction;
+import ula.action.BaseAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
+import ula.constant.CommonConstants;
 
 /**
  * 大连交通
@@ -14,35 +15,16 @@ import ula.constant.AlertMessage;
  * @author Harry
  * 
  */
-public class TransportationAction extends CommonAction {
+public class TransportationAction extends BaseAction {
 	private PagingList transportationList;
-	private Map<String, Object> transportationInfo;
-	private String articleId;
-	private String at;
-	private PagingList articleList;
+	private Map<String, Object> transportation;
 
 	public PagingList getTransportationList() {
 		return transportationList;
 	}
 
-	public Map<String, Object> getTransportationInfo() {
-		return transportationInfo;
-	}
-
-	public void setArticleId(String articleId) {
-		this.articleId = articleId;
-	}
-
-	public String getAt() {
-		return at;
-	}
-
-	public void setAt(String at) {
-		this.at = at;
-	}
-
-	public PagingList getArticleList() {
-		return articleList;
+	public Map<String, Object> getTransportation() {
+		return transportation;
 	}
 
 	/**
@@ -51,10 +33,10 @@ public class TransportationAction extends CommonAction {
 	 * @return
 	 * @throws Exception
 	 */
-	public String transportation() throws Exception {
+	public String transportationAdmin() throws Exception {
 		transportationList = getServiceManager().getArticleService()
-				.getTransportationArticles();
-		return "transportation";
+				.getArticlesByType(CommonConstants.TAG_CITY_TRANSPORTATION);
+		return "transportationAdmin";
 	}
 
 	/**
@@ -62,17 +44,23 @@ public class TransportationAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String addTransportation() {
+	public String add() {
 		try {
-			getServiceManager().getArticleService().addTransportation(
-					getParametersAsMap(), "admin");
-			this.setAlertMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
-			return SUCCESS;
+			getServiceManager().getArticleService()
+					.addArticle(getParametersAsMap(),
+							CommonConstants.TAG_CITY_TRANSPORTATION,
+							getLoginUserName());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK,
+					AlertMessage.URL_CITY_TRANSPORTATION);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_ADD_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			setResult(ERROR);
+			addMessage(AlertMessage.ARTICLE_ADD_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
 	/**
@@ -81,10 +69,10 @@ public class TransportationAction extends CommonAction {
 	 * @return
 	 * @throws Exception
 	 */
-	public String preUpdateTransportation() throws Exception {
-		transportationInfo = getServiceManager().getArticleService()
+	public String preUpdate() throws Exception {
+		transportation = getServiceManager().getArticleService()
 				.getArticleById(getParametersAsMap());
-		return "preUpdateTransportation";
+		return "preUpdate";
 	}
 
 	/**
@@ -92,17 +80,21 @@ public class TransportationAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String updateTransportation() {
+	public String update() {
 		try {
 			getServiceManager().getArticleService().updateArticleById(
-					getParametersAsMap(), articleId);
-			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
-			return SUCCESS;
+					getParametersAsMap(), getLoginUserName());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK,
+					AlertMessage.URL_CITY_TRANSPORTATION);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			setResult(ERROR);
+			addMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
 	/**
@@ -110,24 +102,20 @@ public class TransportationAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String deleteTransportation() {
+	public String delete() {
 		try {
-			getServiceManager().getArticleService()
-					.deleteArticleById(null);
-			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
-			return SUCCESS;
+			getServiceManager().getArticleService().deleteArticleById(
+					getParametersAsMap());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK,
+					AlertMessage.URL_CITY_TRANSPORTATION);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			addMessage(AlertMessage.ARTICLE_DELETE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
-	public String view() {
-		super.view();
-		this.setAt("transportation");
-		articleList = getServiceManager().getArticleService()
-				.getTransportationArticles();
-		return "view";
-	}
 }

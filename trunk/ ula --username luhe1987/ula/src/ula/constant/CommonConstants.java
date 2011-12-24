@@ -33,6 +33,10 @@ public interface CommonConstants {
 	String TAG_CITY_MAP = "map";
 
 	String TAG_CITY_FOOD = "food";
+	String TAG_CITY_HOUSING = "housing";
+	String TAG_CITY_SHOPPING = "shopping";
+	String TAG_CITY_TRANSPORTATION = "transportation";
+	String TAG_CITY_THERAPY = "therapy";
 
 	String TAG_SPECIAL_VISA = "visa";
 	String TAG_SPECIAL_HOTEL = "hotel";

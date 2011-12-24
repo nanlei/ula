@@ -4,9 +4,10 @@ import java.util.Map;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
 
-import ula.action.CommonAction;
+import ula.action.BaseAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
+import ula.constant.CommonConstants;
 
 /**
  * 大连购物
@@ -14,35 +15,16 @@ import ula.constant.AlertMessage;
  * @author Harry
  * 
  */
-public class ShoppingAction extends CommonAction {
+public class ShoppingAction extends BaseAction {
 	private PagingList shoppingList;
-	private Map<String, Object> shoppingInfo;
-	private String articleId;
-	private String at;
-	private PagingList articleList;
+	private Map<String, Object> shopping;
 
 	public PagingList getShoppingList() {
 		return shoppingList;
 	}
 
-	public Map<String, Object> getShoppingInfo() {
-		return shoppingInfo;
-	}
-
-	public void setArticleId(String articleId) {
-		this.articleId = articleId;
-	}
-
-	public String getAt() {
-		return at;
-	}
-
-	public void setAt(String at) {
-		this.at = at;
-	}
-
-	public PagingList getArticleList() {
-		return articleList;
+	public Map<String, Object> getShopping() {
+		return shopping;
 	}
 
 	/**
@@ -51,10 +33,10 @@ public class ShoppingAction extends CommonAction {
 	 * @return
 	 * @throws Exception
 	 */
-	public String shopping() throws Exception {
+	public String shoppingAdmin() throws Exception {
 		shoppingList = getServiceManager().getArticleService()
-				.getShoppingArticles();
-		return "shopping";
+				.getArticlesByType(CommonConstants.TAG_CITY_SHOPPING);
+		return "shoppingAdmin";
 	}
 
 	/**
@@ -62,17 +44,21 @@ public class ShoppingAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String addShopping() {
+	public String add() {
 		try {
-			getServiceManager().getArticleService().addShopping(
-					getParametersAsMap(), "admin");
-			this.setAlertMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
-			return SUCCESS;
+			getServiceManager().getArticleService().addArticle(
+					getParametersAsMap(), CommonConstants.TAG_CITY_SHOPPING,
+					getLoginUserName());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_SHOPPING);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_ADD_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			setResult(ERROR);
+			addMessage(AlertMessage.ARTICLE_ADD_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
 	/**
@@ -80,10 +66,10 @@ public class ShoppingAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String preUpdateShopping() {
-		shoppingInfo = getServiceManager().getArticleService().getArticleById(
+	public String preUpdate() throws Exception {
+		shopping = getServiceManager().getArticleService().getArticleById(
 				getParametersAsMap());
-		return "preUpdateShopping";
+		return "preUpdate";
 	}
 
 	/**
@@ -91,17 +77,20 @@ public class ShoppingAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String updateShopping() {
+	public String update() {
 		try {
 			getServiceManager().getArticleService().updateArticleById(
-					getParametersAsMap(), articleId);
-			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
-			return SUCCESS;
+					getParametersAsMap(), getLoginUserName());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_SHOPPING);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			setResult(ERROR);
+			addMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
 	/**
@@ -109,24 +98,19 @@ public class ShoppingAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String deleteShopping() {
+	public String delete() {
 		try {
-			getServiceManager().getArticleService()
-					.deleteArticleById(null);
-			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
-			return SUCCESS;
+			getServiceManager().getArticleService().deleteArticleById(
+					getParametersAsMap());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_SHOPPING);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			addMessage(AlertMessage.ARTICLE_DELETE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
-	public String view() {
-		super.view();
-		this.setAt("shopping");
-		articleList = getServiceManager().getArticleService()
-				.getShoppingArticles();
-		return "view";
-	}
 }

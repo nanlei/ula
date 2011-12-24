@@ -11,6 +11,10 @@ public interface AlertMessage {
 	String URL_CITY = "cityAdmin.action";
 	String URL_CITY_TOUR = "tourAdmin.action";
 	String URL_CITY_FOOD = "foodAdmin.action";
+	String URL_CITY_HOUSING = "housingAdmin.action";
+	String URL_CITY_SHOPPING = "shoppingAdmin.action";
+	String URL_CITY_TRANSPORTATION = "transportationAdmin.action";
+	String URL_CITY_THERAPY = "therapyAdmin.action";
 
 	String UPDATE_SUCCESS = "更新成功";
 	String UPDATE_FAILURE = "对不起，更新失败";

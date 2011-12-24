@@ -60,64 +60,6 @@ public class ArticleService extends BaseService {
 		jt.update(SQL_DELETE_ARTICLE_BY_ID, params);
 	}
 
-	private static final String SQL_GET_HOUSING_ARTICLES = "select * from article where TYPE='housing'";
-
-	public PagingList getHousingArticles() {
-		return getPagingList(SQL_GET_HOUSING_ARTICLES);
-	}
-
-	private static final String SQL_ADD_HOUSING = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME,PRICE) values('housing',?,?,now(),?,?,?)";
-
-	public void addHousing(Map<String, Object> parameters, String userName) {
-		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"title,content,coverLink,price");
-		jt.update(SQL_ADD_HOUSING, params[0], params[1], "", userName, "");
-	}
-
-	private static final String SQL_GET_SHOPPING_ARTICLES = "select * from article where TYPE='shopping'";
-
-	public PagingList getShoppingArticles() {
-		return getPagingList(SQL_GET_SHOPPING_ARTICLES);
-	}
-
-	private static final String SQL_ADD_SHOPPING = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME,PRICE) values('shopping',?,?,now(),?,?,?)";
-
-	public void addShopping(Map<String, Object> parameters, String userName) {
-		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"title,content,coverLink,price");
-		jt.update(SQL_ADD_SHOPPING, params[0], params[1], "", userName, "");
-	}
-
-	private static final String SQL_GET_TRANSPORTATION_ARTICLES = "select * from article where TYPE='transportation'";
-
-	public PagingList getTransportationArticles() {
-		return getPagingList(SQL_GET_TRANSPORTATION_ARTICLES);
-	}
-
-	private static final String SQL_ADD_TRANSPORTATION = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME,PRICE) values('transportation',?,?,now(),?,?,?)";
-
-	public void addTransportation(Map<String, Object> parameters,
-			String userName) {
-		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"title,content,coverLink,price");
-		jt.update(SQL_ADD_TRANSPORTATION, params[0], params[1], "", userName,
-				"");
-	}
-
-	private static final String SQL_GET_THERAPY_ARTICLES = "select * from article where TYPE='therapy'";
-
-	public PagingList getTherapyArticles() {
-		return getPagingList(SQL_GET_THERAPY_ARTICLES);
-	}
-
-	private static final String SQL_ADD_THERAPY = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME,PRICE) values('therapy',?,?,now(),?,?,?)";
-
-	public void addTherapy(Map<String, Object> parameters, String userName) {
-		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"title,content,coverLink,price");
-		jt.update(SQL_ADD_THERAPY, params[0], params[1], "", userName, "");
-	}
-
 	private static final String SQL_GET_FESTIVAL_ARTICLES = "select * from article where TYPE='festival'";
 
 	public PagingList getFestivalArticles() {
