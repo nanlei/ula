@@ -32,6 +32,8 @@ public interface CommonConstants {
 	String TAG_CITY_ADVICE = "advice";
 	String TAG_CITY_MAP = "map";
 
+	String TAG_CITY_FOOD = "food";
+
 	String TAG_SPECIAL_VISA = "visa";
 	String TAG_SPECIAL_HOTEL = "hotel";
 	String TAG_SPECIAL_COMMISION_TICKET = "ticket";
@@ -89,14 +91,6 @@ public interface CommonConstants {
 	int ID_CONTACT_GROUP_RU = 1;
 	int ID_CONTACT_GROUP_CN = 2;
 	int ID_CONTACT_INDIVIDUAL = 3;
-
-	// int ID_CITY_INTRODUCTION = 1;
-	int ID_CITY_HISTORY = 2;
-	int ID_CITY_INSURANCE = 3;
-	int ID_CITY_COMMOMLAW = 4;
-	int ID_CITY_CELLPHONE = 5;
-	int ID_CITY_ADVICE = 6;
-	int ID_CITY_MAP = 7;
 
 	int ID_SPECIAL_VISA = 1;
 	int ID_SPECIAL_HOTEL_BOOKING = 2;

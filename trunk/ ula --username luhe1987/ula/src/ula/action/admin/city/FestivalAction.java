@@ -81,7 +81,7 @@ public class FestivalAction extends CommonAction {
 	 */
 	public String preUpdateFestival() {
 		festivalInfo = getServiceManager().getArticleService().getArticleById(
-				articleId);
+				getParametersAsMap());
 		return "preUpdateFestival";
 	}
 
@@ -111,7 +111,7 @@ public class FestivalAction extends CommonAction {
 	public String deleteFestival() {
 		try {
 			getServiceManager().getArticleService()
-					.deleteArticleById(articleId);
+					.deleteArticleById(null);
 			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {

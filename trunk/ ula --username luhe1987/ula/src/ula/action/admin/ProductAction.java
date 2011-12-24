@@ -210,7 +210,6 @@ public class ProductAction extends BaseAction {
 				getParametersAsMap());
 		productTourList = getServiceManager().getProductService()
 				.getProductTourByProductId(getParametersAsMap());
-		setPageSize(20);
 		tourList = getServiceManager().getTourService().getAllTours();
 		return "preAddTour";
 	}

@@ -79,7 +79,7 @@ public class TherapyAction extends CommonAction {
 	 */
 	public String preUpdateTherapy() throws Exception {
 		therapyInfo = getServiceManager().getArticleService().getArticleById(
-				articleId);
+				getParametersAsMap());
 		return "preUpdateTherapy";
 	}
 
@@ -109,7 +109,7 @@ public class TherapyAction extends CommonAction {
 	public String deleteTherapy() {
 		try {
 			getServiceManager().getArticleService()
-					.deleteArticleById(articleId);
+					.deleteArticleById(null);
 			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {

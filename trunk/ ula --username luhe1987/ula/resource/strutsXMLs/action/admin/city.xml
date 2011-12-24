@@ -13,51 +13,30 @@
 			<result name="preUpdate">city_info.ftl</result>
 		</action>
 
-		<!-- 关于城市->景点，公园 -->
-		<action name="tour" class="ula.action.admin.city.TourAction"
-			method="tour">
-			<result name="dalian">tour/dalian.ftl</result>
-			<result name="lvshun">tour/lvshun.ftl</result>
-			<result name="devzone">tour/devzone.ftl</result>
+		<!-- 关于大连:景点公园管理 -->
+		<action name="tourAdmin" class="ula.action.admin.city.TourAction"
+			method="tourAdmin">
+			<result name="tourAdmin">tour_admin.ftl</result>
 		</action>
-		<action name="preAddTour" class="ula.action.BaseAction">
-			<result>tour/add.ftl</result>
+		<action name="tour" class="ula.action.admin.city.TourAction">
+			<result name="preUpdate">tour_info.ftl</result>
 		</action>
+
+		<!-- 选择封面图片，保留 -->
 		<action name="selectCoverLink" class="ula.action.admin.city.TourAction"
 			method="selectCoverLink">
 			<result name="selectCoverLink">coverlink.ftl</result>
 		</action>
-		<action name="addTour" class="ula.action.admin.city.TourAction"
-			method="addTour">
-			<result name="success" type="chain">
-				<param name="actionName">tour</param>
-				<param name="namespace">/admin/city</param>
-			</result>
-		</action>
-		<action name="preUpdateTour" class="ula.action.admin.city.TourAction"
-			method="preUpdateTour">
-			<result name="preUpdateTour">tour/tourInfo.ftl</result>
-		</action>
-		<action name="updateTour" class="ula.action.admin.city.TourAction"
-			method="updateTour">
-			<result name="success" type="chain">
-				<param name="actionName">tour</param>
-				<param name="namespace">/admin/city</param>
-			</result>
-		</action>
-		<action name="deleteTour" class="ula.action.admin.city.TourAction"
-			method="deleteTour">
-			<result name="success" type="chain">
-				<param name="actionName">tour</param>
-				<param name="namespace">/admin/city</param>
-			</result>
-		</action>
 
-		<!--大连美食 -->
-		<action name="food" class="ula.action.admin.city.FoodAction"
-			method="food">
-			<result name="food">food/food.ftl</result>
+		<!-- 关于大连:大连美食管理 -->
+		<action name="foodAdmin" class="ula.action.admin.city.FoodAction"
+			method="foodAdmin">
+			<result name="foodAdmin">food_admin.ftl</result>
 		</action>
+		<action name="food" class="ula.action.admin.city.FoodAction">
+			<result name="preUpdate">food_info.ftl</result>
+		</action>
+		
 		<action name="preAddFood" class="ula.action.BaseAction">
 			<result>food/add.ftl</result>
 		</action>

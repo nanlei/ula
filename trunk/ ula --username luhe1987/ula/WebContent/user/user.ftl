@@ -1,4 +1,15 @@
-<@p.page title="用户管理" body="style=\"margin:0;color:#fff\" scroll=\"no\"">
+<html>
+<head>
+	<title>ULA - 用户管理</title>
+	<link href="${base}/css/default.css" rel="stylesheet" type="text/css">
+	<script language="javascript"> 
+	function toggleTree() {
+		$("#TreeTD").toggle();
+	}
+	</script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+</head>
+<body style="margin:0;color:#fff" scroll="no">
 <table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" align="center" class="fbg" style="height:100%">
 	<tr>
 		<td height="65px">
@@ -29,4 +40,3 @@
 	</tr>
 	<@app.footer/>
 </table>
-</@p.page>

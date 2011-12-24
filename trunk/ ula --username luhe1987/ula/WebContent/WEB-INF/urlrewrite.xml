@@ -12,6 +12,11 @@
         <from>/([a-z]+).html</from>
         <to type="forward">/$1.action</to>
     </rule>
+    <rule>
+        <note>city - dalian</note>
+        <from>/city/([a-z]+).html</from>
+        <to type="forward">/city/$1.action</to>
+    </rule>
     
     <!-- 后台管理部分begin -->
     <rule>
