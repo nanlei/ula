@@ -82,7 +82,7 @@ public class ShoppingAction extends CommonAction {
 	 */
 	public String preUpdateShopping() {
 		shoppingInfo = getServiceManager().getArticleService().getArticleById(
-				articleId);
+				getParametersAsMap());
 		return "preUpdateShopping";
 	}
 
@@ -112,7 +112,7 @@ public class ShoppingAction extends CommonAction {
 	public String deleteShopping() {
 		try {
 			getServiceManager().getArticleService()
-					.deleteArticleById(articleId);
+					.deleteArticleById(null);
 			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {

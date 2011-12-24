@@ -4,14 +4,16 @@
 	</@app.naviInfo>
 <table class="default" width="100%">
 	<col width="10%" align="center">
-	<col width="40%" align="center">
+	<col width="35%" align="center">
+	<col width="10%" align="center">
 	<col width="10%" align="center">
 	<col width="15%" align="center">
-	<col width="25%" align="center">
+	<col width="20%" align="center">
 	<tr class="title">
 		<td>序号</td>
 		<td>标题</td>
 		<td>类型</td>
+		<td>更新人</td>
 		<td>更新时间</td>
 		<td>操作</td>
 	</tr>
@@ -31,6 +33,7 @@
 				<#case "map">城市地图<#break>
 			</#switch>
 		</td>
+		<td>${city.USERNAME}</td>
 		<td>${city.DATE?datetime}</td>
 		<td><a href="city!preUpdate.action?id=${city.ID}">修改</a></td>
 	</tr>

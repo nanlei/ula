@@ -21,11 +21,8 @@ var treeMenu = [
 	
 	{ level:1, name:"关于大连"},
 	{ level:2, name:"城市信息管理", link:"city/cityAdmin.action"},
-	{ level:2, name:"景点、公园"},
-	{ level:3, name:"市内", link:"city/tour.action?articleType=dalian"},
-	{ level:3, name:"旅顺", link:"city/tour.action?articleType=lvshun"},
-	{ level:3, name:"开发区、金石滩", link:"city/tour.action?articleType=devzone"},
-	{ level:2, name:"大连美食", link:"city/food.action"},
+	{ level:2, name:"景点公园管理", link:"city/tourAdmin.action"},
+	{ level:2, name:"大连美食", link:"city/foodAdmin.action"},
 	{ level:2, name:"大连居住", link:"city/housing.action"},
 	{ level:2, name:"大连酒店" },
 	{ level:3, name:"酒店文章管理", link:"hotel/hotelarticle.action"},

@@ -1,10 +1,11 @@
 package ula.action.admin.city;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
 
-import ula.action.CommonAction;
+import ula.action.BaseAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
 
@@ -14,44 +15,26 @@ import ula.constant.AlertMessage;
  * @author Harry
  * 
  */
-public class TourAction extends CommonAction {
+public class TourAction extends BaseAction {
 	private String articleType;// 栏目类别
-	private PagingList articleList;
+	private List<Map<String, Object>> tourList;
 	private PagingList pictureList;
-	private Map<String, Object> articleInfo;
-	private String articleId;
-	private String at;
-
-	public String getArticleType() {
-		return articleType;
-	}
+	private Map<String, Object> tour;
 
 	public void setArticleType(String articleType) {
 		this.articleType = articleType;
 	}
 
-	public PagingList getArticleList() {
-		return articleList;
+	public List<Map<String, Object>> getTourList() {
+		return tourList;
 	}
 
 	public PagingList getPictureList() {
 		return pictureList;
 	}
 
-	public Map<String, Object> getArticleInfo() {
-		return articleInfo;
-	}
-
-	public void setArticleId(String articleId) {
-		this.articleId = articleId;
-	}
-
-	public String getAt() {
-		return at;
-	}
-
-	public void setAt(String at) {
-		this.at = at;
+	public Map<String, Object> getTour() {
+		return tour;
 	}
 
 	/**
@@ -59,20 +42,9 @@ public class TourAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String tour() {
-		if ("dalian".equals(articleType)) {
-			articleList = getServiceManager().getArticleService()
-					.getToursByType("dalian");
-			return "dalian";
-		} else if ("lvshun".equals(articleType)) {
-			articleList = getServiceManager().getArticleService()
-					.getToursByType("lvshun");
-			return "lvshun";
-		} else {
-			articleList = getServiceManager().getArticleService()
-					.getToursByType("devzone");
-			return "devzone";
-		}
+	public String tourAdmin() {
+		tourList = getServiceManager().getArticleService().getTours();
+		return "tourAdmin";
 	}
 
 	/**
@@ -87,33 +59,15 @@ public class TourAction extends CommonAction {
 	}
 
 	/**
-	 * 添加文章
-	 * 
-	 * @return
-	 */
-	public String addTour() {
-		try {
-			getServiceManager().getArticleService().addTour(
-					getParametersAsMap(), "admin");
-			this.setAlertMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
-			return SUCCESS;
-		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_ADD_FAILURE);
-			return ERROR;
-		}
-	}
-
-	/**
 	 * 文章信息
 	 * 
 	 * @return
 	 * @throws Exception
 	 */
-	public String preUpdateTour() throws Exception {
-		articleInfo = getServiceManager().getArticleService().getArticleById(
-				articleId);
-		return "preUpdateTour";
+	public String preUpdate() throws Exception {
+		tour = getServiceManager().getArticleService().getArticleById(
+				getParametersAsMap());
+		return "preUpdate";
 	}
 
 	/**
@@ -121,41 +75,19 @@ public class TourAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String updateTour() {
+	public String update() {
 		try {
-			getServiceManager().getArticleService().updateTourById(
-					getParametersAsMap(), articleId);
-			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
-			return SUCCESS;
+			getServiceManager().getArticleService().updateArticleById(
+					getParametersAsMap(), getLoginUserName());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_TOUR);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			setResult(ERROR);
+			addMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
-	}
-
-	/**
-	 * 删除文章
-	 * 
-	 * @return
-	 */
-	public String deleteTour() {
-		try {
-			getServiceManager().getArticleService()
-					.deleteArticleById(articleId);
-			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
-			return SUCCESS;
-		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_FAILURE);
-			return ERROR;
-		}
-	}
-
-	public String view() {
-		super.view();
-		articleList = getServiceManager().getArticleService()
-				.getToursByType(at);
-		return "view";
+		return EXECUTE_RESULT;
 	}
 }

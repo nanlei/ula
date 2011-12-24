@@ -81,7 +81,7 @@ public class ExhibitionAction extends CommonAction {
 	 */
 	public String preUpdateExhibition() {
 		exhibitionInfo = getServiceManager().getArticleService()
-				.getArticleById(articleId);
+				.getArticleById(getParametersAsMap());
 		return "preUpdateExhibition";
 	}
 
@@ -111,7 +111,7 @@ public class ExhibitionAction extends CommonAction {
 	public String deleteExhibition() {
 		try {
 			getServiceManager().getArticleService()
-					.deleteArticleById(articleId);
+					.deleteArticleById(null);
 			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {

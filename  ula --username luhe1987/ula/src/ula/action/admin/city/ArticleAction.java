@@ -30,7 +30,7 @@ public class ArticleAction extends CommonAction {
 
 	public String article() {
 		super.view();
-		view = getServiceManager().getArticleService().getArticleById(id);
+		view = getServiceManager().getArticleService().getArticleById(getParametersAsMap());
 		return "article";
 	}
 

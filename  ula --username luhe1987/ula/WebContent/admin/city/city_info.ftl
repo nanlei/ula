@@ -1,6 +1,7 @@
 <@p.page>
 	<@app.naviBar navi="关于大连,城市信息管理,详情" />
 	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面显示系统内所有的关于大连的信息，您可以维护相关信息，如需添加或删除，请联系开发人员">
+	<@app.button id="gobackButton" onclick="javascript:history.go(-1)" text="返回"/>
 	</@app.naviInfo>
 <form name="cityForm" action="city!update.action?id=${city.ID}" method="post" onSubmit="return validateForm(this)">
 <table class="default" width="100%">
@@ -26,6 +27,10 @@
 				<#case "map">城市地图<#break>
 			</#switch>
 		</td>
+	</tr>
+	<tr>
+		<td>更新人</td>
+		<td>${city.USERNAME}</td>
 	</tr>
 	<tr>
 		<td>更新时间</td>

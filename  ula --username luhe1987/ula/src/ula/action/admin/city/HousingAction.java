@@ -83,7 +83,7 @@ public class HousingAction extends CommonAction {
 	 */
 	public String preUpdateHousing() throws Exception {
 		housingInfo = getServiceManager().getArticleService().getArticleById(
-				articleId);
+				getParametersAsMap());
 		return "preUpdateHousing";
 	}
 
@@ -113,7 +113,7 @@ public class HousingAction extends CommonAction {
 	public String deleteHousing() {
 		try {
 			getServiceManager().getArticleService()
-					.deleteArticleById(articleId);
+					.deleteArticleById(null);
 			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
 			return SUCCESS;
 		} catch (Exception e) {

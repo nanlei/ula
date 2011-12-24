@@ -4,9 +4,10 @@ import java.util.Map;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
 
-import ula.action.CommonAction;
+import ula.action.BaseAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
+import ula.constant.CommonConstants;
 
 /**
  * 大连美食
@@ -14,35 +15,16 @@ import ula.constant.AlertMessage;
  * @author Harry
  * 
  */
-public class FoodAction extends CommonAction {
+public class FoodAction extends BaseAction {
 	private PagingList foodList;
-	private String articleId;
-	private Map<String, Object> foodInfo;
-	private String at;
-	private PagingList articleList;
+	private Map<String, Object> food;
 
 	public PagingList getFoodList() {
 		return foodList;
 	}
 
-	public void setArticleId(String articleId) {
-		this.articleId = articleId;
-	}
-
-	public Map<String, Object> getFoodInfo() {
-		return foodInfo;
-	}
-
-	public PagingList getArticleList() {
-		return articleList;
-	}
-
-	public String getAt() {
-		return at;
-	}
-
-	public void setAt(String at) {
-		this.at = at;
+	public Map<String, Object> getFood() {
+		return food;
 	}
 
 	/**
@@ -51,9 +33,10 @@ public class FoodAction extends CommonAction {
 	 * @return
 	 * @throws Exception
 	 */
-	public String food() throws Exception {
-		foodList = getServiceManager().getArticleService().getFoodArticles();
-		return "food";
+	public String foodAdmin() throws Exception {
+		foodList = getServiceManager().getArticleService().getArticlesByType(
+				CommonConstants.TAG_CITY_FOOD);
+		return "foodAdmin";
 	}
 
 	/**
@@ -61,17 +44,21 @@ public class FoodAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String addFood() {
+	public String add() {
 		try {
-			getServiceManager().getArticleService().addFood(
-					getParametersAsMap(), "admin");
-			this.setAlertMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
-			return SUCCESS;
+			getServiceManager().getArticleService().addArticle(
+					getParametersAsMap(), CommonConstants.TAG_CITY_FOOD,
+					getLoginUserName());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_FOOD);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_ADD_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			setResult(ERROR);
+			addMessage(AlertMessage.ARTICLE_ADD_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
 	/**
@@ -79,10 +66,10 @@ public class FoodAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String preUpdateFood() throws Exception {
-		foodInfo = getServiceManager().getArticleService().getArticleById(
-				articleId);
-		return "preUpdateFood";
+	public String preUpdate() throws Exception {
+		food = getServiceManager().getArticleService().getArticleById(
+				getParametersAsMap());
+		return "preUpdate";
 	}
 
 	/**
@@ -90,17 +77,20 @@ public class FoodAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String updateFood() {
+	public String update() {
 		try {
 			getServiceManager().getArticleService().updateArticleById(
-					getParametersAsMap(), articleId);
-			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
-			return SUCCESS;
+					getParametersAsMap(), getLoginUserName());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_FOOD);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			setResult(ERROR);
+			addMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
 	/**
@@ -108,23 +98,19 @@ public class FoodAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String deleteFood() {
+	public String delete() {
 		try {
-			getServiceManager().getArticleService()
-					.deleteArticleById(articleId);
-			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
-			return SUCCESS;
+			getServiceManager().getArticleService().deleteArticleById(
+					getParametersAsMap());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_FOOD);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			addMessage(AlertMessage.ARTICLE_DELETE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
-	public String view() {
-		super.view();
-		this.setAt("food");
-		articleList = getServiceManager().getArticleService().getFoodArticles();
-		return "view";
-	}
 }

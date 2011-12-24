@@ -4,7 +4,7 @@
 			<div id="left_title"><@s.property value="%{getText('front.dalian.title')}"/></div>
 			<div id="left_menu">
 				<ul class="left_first_menu">
-					<li><a href="#"><@s.property value="%{getText('front.dalian.introduction')}"/></a></li>
+					<li><a href="${base}/city/intro.html"><@s.property value="%{getText('front.dalian.introduction')}"/></a></li>
 					<li><a href="#"><@s.property value="%{getText('front.dalian.history')}"/></a></li>
 					<li><a href="#"><@s.property value="%{getText('front.dalian.map')}"/></a></li>
 					<li><a href="#"><@s.property value="%{getText('front.dalian.site.park')}"/></a></li>

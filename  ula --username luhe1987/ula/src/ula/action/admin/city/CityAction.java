@@ -40,7 +40,7 @@ public class CityAction extends BaseAction {
 	public String update() {
 		try {
 			getServiceManager().getCityServcie().updateCityInfoByTag(
-					getParametersAsMap());
+					getParametersAsMap(), getLoginUserName());
 			setResult(SUCCESS);
 			addMessage(AlertMessage.CITY_UPDATE_SUCCESS);
 			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY);
