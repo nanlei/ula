@@ -3,58 +3,13 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-	<package name="admin/special" extends="global" namespace="/admin/special">
-		<!--特色服务—>签证-->
-		<action name="visa" class="ula.action.admin.special.VisaAction">
-			<result name="edit">visa_edit.ftl</result>
-			<result name="view">visa_view.ftl</result>
-			<result name="update">visa_admin.ftl</result>
-			<result name="admin">visa_admin.ftl</result>
-			<result name="preAdd">visa_add.ftl</result>
+	<package name="admin-special" extends="global" namespace="/admin/special">
+		<action name="specialAdmin" class="ula.action.admin.SpecialAction"
+			method="specialAdmin">
+			<result name="specialAdmin">special_admin.ftl</result>
 		</action>
-		<!--特色服务—>俄罗斯留学生之家-->
-		<action name="russianstudents" class="ula.action.admin.special.RussianStudentsAction">
-			<result name="edit">russianstudents_edit.ftl</result>
-			<result name="view">russianstudents_view.ftl</result>
-			<result name="update">russianstudents_admin.ftl</result>
-			<result name="admin">russianstudents_admin.ftl</result>
-			<result name="preAdd">russianstudents_add.ftl</result>
+		<action name="special" class="ula.action.admin.SpecialAction">
+			<result name="preUpdate">special_info.ftl</result>
 		</action>
-		<!--特色服务—>汽车租赁-->
-		<action name="carrental"
-			class="ula.action.admin.special.CarRentalCommissionAction">
-			<result name="edit">carrental_edit.ftl</result>
-			<result name="view">carrental_view.ftl</result>
-			<result name="update">carrental_admin.ftl</result>
-			<result name="admin">carrental_admin.ftl</result>
-			<result name="preAdd">carrental_add.ftl</result>
-		</action>
-		<!--特色服务—>纪念品-->
-		<action name="souvenir"
-			class="ula.action.admin.special.SouvenirCommissionAction">
-			<result name="edit">souvenir_edit.ftl</result>
-			<result name="view">souvenir_view.ftl</result>
-			<result name="update">souvenir_admin.ftl</result>
-			<result name="admin">souvenir_admin.ftl</result>
-			<result name="preAdd">souvenir_add.ftl</result>
-		</action>
-		<!--特色服务—>票务-->
-		<action name="ticket" class="ula.action.admin.special.TicketCommissionAction">
-			<result name="edit">ticket_edit.ftl</result>
-			<result name="view">ticket_view.ftl</result>
-			<result name="update">ticket_admin.ftl</result>
-			<result name="admin">ticket_admin.ftl</result>
-			<result name="preAdd">ticket_add.ftl</result>
-		</action>
-		<!--特色服务—>翻译-->
-		<action name="translation"
-			class="ula.action.admin.special.TranslationCommissionAction">
-			<result name="edit">translation_edit.ftl</result>
-			<result name="view">translation_view.ftl</result>
-			<result name="update">translation_admin.ftl</result>
-			<result name="admin">translation_admin.ftl</result>
-			<result name="preAdd">translation_add.ftl</result>
-		</action>
-
 	</package>
 </struts>

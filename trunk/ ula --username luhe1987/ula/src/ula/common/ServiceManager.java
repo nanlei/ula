@@ -8,7 +8,6 @@ import ula.service.admin.FeedbackService;
 import ula.service.admin.HotelService;
 import ula.service.admin.LinkService;
 import ula.service.admin.LogService;
-import ula.service.admin.PaymentService;
 import ula.service.admin.PicService;
 import ula.service.admin.ProductService;
 import ula.service.admin.RecommendService;
@@ -22,17 +21,18 @@ import ula.service.admin.WeatherService;
 import ula.service.front.FrontService;
 import ula.service.front.IndexService;
 
+/**
+ * Service管理器
+ * 
+ * @author Nanlei
+ * 
+ */
 public class ServiceManager {
-
-	/*
-	 * 这里是所有Service的集合。并提供Getter 和 Setter
-	 */
 
 	private LogService logService;
 	private AboutService aboutService;
 	private ContactService contactService;
 	private CityServcie cityServcie;
-	private PaymentService paymentService;
 	private SpecialService specialService;
 	private LinkService linkService;
 	private PicService picService;
@@ -82,14 +82,6 @@ public class ServiceManager {
 
 	public void setSpecialService(SpecialService specialService) {
 		this.specialService = specialService;
-	}
-
-	public PaymentService getPaymentService() {
-		return paymentService;
-	}
-
-	public void setPaymentService(PaymentService paymentService) {
-		this.paymentService = paymentService;
 	}
 
 	public CityServcie getCityServcie() {
