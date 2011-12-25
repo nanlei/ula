@@ -7,6 +7,7 @@ import org.apache.commons.lang.exception.ExceptionUtils;
 import ula.action.CommonAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
+import ula.constant.CommonConstants;
 
 /**
  * 展会信息
@@ -16,33 +17,14 @@ import ula.constant.AlertMessage;
  */
 public class ExhibitionAction extends CommonAction {
 	private PagingList exhibitionList;
-	private Map<String, Object> exhibitionInfo;
-	private String articleId;
-	private String at;
-	private PagingList articleList;
+	private Map<String, Object> exhibition;
 
 	public PagingList getExhibitionList() {
 		return exhibitionList;
 	}
 
-	public Map<String, Object> getExhibitionInfo() {
-		return exhibitionInfo;
-	}
-
-	public void setArticleId(String articleId) {
-		this.articleId = articleId;
-	}
-
-	public String getAt() {
-		return at;
-	}
-
-	public void setAt(String at) {
-		this.at = at;
-	}
-
-	public PagingList getArticleList() {
-		return articleList;
+	public Map<String, Object> getExhibition() {
+		return exhibition;
 	}
 
 	/**
@@ -50,10 +32,10 @@ public class ExhibitionAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String exhibition() {
+	public String exhibitionAdmin() {
 		exhibitionList = getServiceManager().getArticleService()
-				.getExhibitionArticles();
-		return "exhibition";
+				.getArticlesByType(CommonConstants.TAG_CITY_EXHIBITION);
+		return "exhibitionAdmin";
 	}
 
 	/**
@@ -61,17 +43,21 @@ public class ExhibitionAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String addExhibition() {
+	public String add() {
 		try {
-			getServiceManager().getArticleService().addExhibition(
-					getParametersAsMap(), "admin");
-			this.setAlertMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
-			return SUCCESS;
+			getServiceManager().getArticleService().addArticle(
+					getParametersAsMap(), CommonConstants.TAG_CITY_EXHIBITION,
+					getLoginUserName());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_EXHIBITION);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_ADD_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			setResult(ERROR);
+			addMessage(AlertMessage.ARTICLE_ADD_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
 	/**
@@ -79,10 +65,10 @@ public class ExhibitionAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String preUpdateExhibition() {
-		exhibitionInfo = getServiceManager().getArticleService()
-				.getArticleById(getParametersAsMap());
-		return "preUpdateExhibition";
+	public String preUpdate() throws Exception {
+		exhibition = getServiceManager().getArticleService().getArticleById(
+				getParametersAsMap());
+		return "preUpdate";
 	}
 
 	/**
@@ -90,17 +76,20 @@ public class ExhibitionAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String updateExhibition() {
+	public String update() {
 		try {
 			getServiceManager().getArticleService().updateArticleById(
-					getParametersAsMap(), articleId);
-			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
-			return SUCCESS;
+					getParametersAsMap(), getLoginUserName());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_EXHIBITION);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			setResult(ERROR);
+			addMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
 	/**
@@ -108,25 +97,19 @@ public class ExhibitionAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String deleteExhibition() {
+	public String delete() {
 		try {
-			getServiceManager().getArticleService()
-					.deleteArticleById(null);
-			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
-			return SUCCESS;
+			getServiceManager().getArticleService().deleteArticleById(
+					getParametersAsMap());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_EXHIBITION);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			addMessage(AlertMessage.ARTICLE_DELETE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
-	}
-
-	public String view() {
-		super.view();
-		this.setAt("exhibition");
-		articleList = getServiceManager().getArticleService()
-				.getExhibitionArticles();
-		return "view";
+		return EXECUTE_RESULT;
 	}
 
 }

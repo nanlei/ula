@@ -1,6 +1,7 @@
 <@p.tree root="系统管理" display="block">
 <script type="text/javascript"> 
 var treeMenu = [
+	{ level:1, name:"关于我们", link:"about/aboutAdmin.action"},
 	{ level:1, name:"天气预报", link:"weather/weatherAdmin.action"},
 	{ level:1, name:"推荐管理", link:"recommend/recommendAdmin.action"},
 	{ level:1, name:"产品管理", link:"product/productAdmin.action"},
@@ -12,13 +13,6 @@ var treeMenu = [
 	{ level:2, name:"订阅资源管理", link:"resource/resourceAdmin.action"},
 	{ level:2, name:"订阅用户管理", link:"subscriber/subscriberAdmin.action"},
 	
-	
-	{ level:1, name:"关于我们"},
-	{ level:2, name:"公司介绍", link:"about/company!admin.action"},
-	{ level:2, name:"业务范围", link:"about/biz!admin.action"},
-	{ level:2, name:"美好回忆", link:"about/memory!admin.action"},
-	{ level:2, name:"人员介绍", link:"about/team!admin.action"},
-	
 	{ level:1, name:"关于大连"},
 	{ level:2, name:"城市信息管理", link:"city/cityAdmin.action"},
 	{ level:2, name:"景点公园管理", link:"city/tourAdmin.action"},
@@ -27,13 +21,13 @@ var treeMenu = [
 	{ level:2, name:"大连购物", link:"city/shoppingAdmin.action"},
 	{ level:2, name:"大连交通", link:"city/transportationAdmin.action"},
 	{ level:2, name:"大连治疗", link:"city/therapyAdmin.action"},
+	{ level:2, name:"大连节日", link:"city/festivalAdmin.action"},
+	{ level:2, name:"展会信息", link:"city/exhibitionAdmin.action"},
 	{ level:2, name:"大连酒店" },
 	{ level:3, name:"酒店文章管理", link:"hotel/hotelarticle.action"},
 	{ level:3, name:"酒店参数管理", link:"hotel/hotelparam.action"},
 	{ level:3, name:"酒店相册管理", link:"hotel/hotelalbum.action"},
 	
-	{ level:2, name:"大连节日", link:"city/festival.action"},
-	{ level:2, name:"展会信息", link:"city/exhibition.action"},
 	
 	{ level:1, name:"特色服务"},
 	{ level:2, name:"签证", link:"special/visa!admin.action"},

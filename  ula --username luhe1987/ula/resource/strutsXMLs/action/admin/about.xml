@@ -2,49 +2,14 @@
 <!DOCTYPE struts PUBLIC
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
-
 <struts>
-
-	<package name="admin/about" extends="global" namespace="/admin/about">
-		<!--关于我们->我们的业务 	-->
-		<action name="biz" class="ula.action.admin.about.BusinessAction">
-			<result name="edit">business_edit.ftl</result>
-			<result name="view">business_view.ftl</result>
-			<result name="update">business_admin.ftl</result>
-			<result name="admin">business_admin.ftl</result>
-			<result name="preAdd">business_add.ftl</result>
+	<package name="admin-about" extends="global" namespace="/admin/about">
+		<action name="aboutAdmin" class="ula.action.admin.AboutAction"
+			method="aboutAdmin">
+			<result name="aboutAdmin">about_admin.ftl</result>
 		</action>
-
-		<!--关于我们->公司介绍 	-->
-		<action name="company" class="ula.action.admin.about.CompanyAction">
-			<result name="edit">company_edit.ftl</result>
-			<result name="view">company_view.ftl</result>
-			<result name="update">company_admin.ftl</result>
-			<result name="admin">company_admin.ftl</result>
-			<result name="preAdd">company_add.ftl</result>
-
+		<action name="about" class="ula.action.admin.AboutAction">
+			<result name="preUpdate">about_info.ftl</result>
 		</action>
-
-		<!--关于我们->团队介绍 	-->
-		<action name="team" class="ula.action.admin.about.TeamAction">
-			<result name="edit">team_edit.ftl</result>
-			<result name="view">team_view.ftl</result>
-			<result name="update">team_admin.ftl</result>
-			<result name="admin">team_admin.ftl</result>
-			<result name="preAdd">team_add.ftl</result>
-		</action>
-
-		<!--关于我们->美好回忆 	-->
-		<action name="memory" class="ula.action.admin.about.MemoryAction">
-			<result name="edit">memory_edit.ftl</result>
-			<result name="view">memory_view.ftl</result>
-			<result name="update">memory_admin.ftl</result>
-			<result name="admin">memory_admin.ftl</result>
-			<result name="preAdd">memory_add.ftl</result>
-		</action>
-
-
-
 	</package>
-
 </struts>

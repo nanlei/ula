@@ -7,6 +7,7 @@ import org.apache.commons.lang.exception.ExceptionUtils;
 import ula.action.CommonAction;
 import ula.common.PagingList;
 import ula.constant.AlertMessage;
+import ula.constant.CommonConstants;
 
 /**
  * 大连节日
@@ -16,33 +17,14 @@ import ula.constant.AlertMessage;
  */
 public class FestivalAction extends CommonAction {
 	private PagingList festivalList;
-	private Map<String, Object> festivalInfo;
-	private String articleId;
-	private String at;
-	private PagingList articleList;
+	private Map<String, Object> festival;
 
 	public PagingList getFestivalList() {
 		return festivalList;
 	}
 
-	public Map<String, Object> getFestivalInfo() {
-		return festivalInfo;
-	}
-
-	public void setArticleId(String articleId) {
-		this.articleId = articleId;
-	}
-
-	public String getAt() {
-		return at;
-	}
-
-	public void setAt(String at) {
-		this.at = at;
-	}
-
-	public PagingList getArticleList() {
-		return articleList;
+	public Map<String, Object> getFestival() {
+		return festival;
 	}
 
 	/**
@@ -50,10 +32,10 @@ public class FestivalAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String festival() {
+	public String festivalAdmin() {
 		festivalList = getServiceManager().getArticleService()
-				.getFestivalArticles();
-		return "festival";
+				.getArticlesByType(CommonConstants.TAG_CITY_FESTIVAL);
+		return "festivalAdmin";
 	}
 
 	/**
@@ -61,17 +43,21 @@ public class FestivalAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String addFestival() {
+	public String add() {
 		try {
-			getServiceManager().getArticleService().addFestival(
-					getParametersAsMap(), "admin");
-			this.setAlertMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
-			return SUCCESS;
+			getServiceManager().getArticleService().addArticle(
+					getParametersAsMap(), CommonConstants.TAG_CITY_FESTIVAL,
+					getLoginUserName());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_ADD_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_FESTIVAL);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_ADD_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			setResult(ERROR);
+			addMessage(AlertMessage.ARTICLE_ADD_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
 	/**
@@ -79,10 +65,10 @@ public class FestivalAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String preUpdateFestival() {
-		festivalInfo = getServiceManager().getArticleService().getArticleById(
+	public String preUpdate() throws Exception {
+		festival = getServiceManager().getArticleService().getArticleById(
 				getParametersAsMap());
-		return "preUpdateFestival";
+		return "preUpdate";
 	}
 
 	/**
@@ -90,17 +76,20 @@ public class FestivalAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String updateFestival() {
+	public String update() {
 		try {
 			getServiceManager().getArticleService().updateArticleById(
-					getParametersAsMap(), articleId);
-			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
-			return SUCCESS;
+					getParametersAsMap(), getLoginUserName());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_UPDATE_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_FESTIVAL);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			setResult(ERROR);
+			addMessage(AlertMessage.ARTICLE_UPDATE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
 	/**
@@ -108,24 +97,19 @@ public class FestivalAction extends CommonAction {
 	 * 
 	 * @return
 	 */
-	public String deleteFestival() {
+	public String delete() {
 		try {
-			getServiceManager().getArticleService()
-					.deleteArticleById(null);
-			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
-			return SUCCESS;
+			getServiceManager().getArticleService().deleteArticleById(
+					getParametersAsMap());
+			setResult(SUCCESS);
+			addMessage(AlertMessage.ARTICLE_DELETE_SUCCESS);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_CITY_FESTIVAL);
 		} catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			this.setAlertMessage(AlertMessage.ARTICLE_DELETE_FAILURE);
-			return ERROR;
+			logger.error(ExceptionUtils.getStackTrace(e));
+			addMessage(AlertMessage.ARTICLE_DELETE_FAILURE);
+			addRedirURL(AlertMessage.GO_BACK, AlertMessage.URL_GO_BACK);
 		}
+		return EXECUTE_RESULT;
 	}
 
-	public String view() {
-		super.view();
-		this.setAt("festival");
-		articleList = getServiceManager().getArticleService()
-				.getFestivalArticles();
-		return "view";
-	}
 }

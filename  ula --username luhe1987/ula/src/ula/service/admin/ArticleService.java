@@ -60,34 +60,6 @@ public class ArticleService extends BaseService {
 		jt.update(SQL_DELETE_ARTICLE_BY_ID, params);
 	}
 
-	private static final String SQL_GET_FESTIVAL_ARTICLES = "select * from article where TYPE='festival'";
-
-	public PagingList getFestivalArticles() {
-		return getPagingList(SQL_GET_FESTIVAL_ARTICLES);
-	}
-
-	public static final String SQL_ADD_FESTIVAL = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME,PRICE) values('festival',?,?,now(),?,?,?)";
-
-	public void addFestival(Map<String, Object> parameters, String userName) {
-		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"title,content,coverLink,price");
-		jt.update(SQL_ADD_FESTIVAL, params[0], params[1], "", userName, "");
-	}
-
-	private static final String SQL_GET_EXHIBITION_ARTICLES = "select * from article where TYPE='exhibition'";
-
-	public PagingList getExhibitionArticles() {
-		return getPagingList(SQL_GET_EXHIBITION_ARTICLES);
-	}
-
-	private static final String SQL_ADD_EXHIBITION = "insert into article(TYPE,TITLE,CONTENT,ADDTIME,COVERLINK,USERNAME,PRICE) values('exhibition',?,?,now(),?,?,?)";
-
-	public void addExhibition(Map<String, Object> parameters, String userName) {
-		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"title,content,coverLink,price");
-		jt.update(SQL_ADD_EXHIBITION, params[0], params[1], "", userName, "");
-	}
-
 	private static final String SQL_GET_FIRST_ARTICLE_BY_TYPE = "select title,content from article where TYPE=? order by ID asc limit 1";
 
 	public Map<String, Object> getFirstArticleByType(String type) {
