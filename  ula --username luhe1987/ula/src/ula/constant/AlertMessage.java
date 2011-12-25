@@ -18,6 +18,7 @@ public interface AlertMessage {
 	String URL_CITY_THERAPY = "therapyAdmin.action";
 	String URL_CITY_FESTIVAL = "festivalAdmin.action";
 	String URL_CITY_EXHIBITION = "exhibitionAdmin.action";
+	String URL_SPECIAL = "specialAdmin.action";
 
 	String UPDATE_SUCCESS = "更新成功";
 	String UPDATE_FAILURE = "对不起，更新失败";

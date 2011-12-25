@@ -70,25 +70,7 @@ public interface CommonConstants {
 	String KEY_CONTACT_GROUP_CN = "cnGroup";
 	String KEY_CONTACT_GROUP_INDIVIDUAL = "person";
 
-	String KEY_CITY_INTRODUCTION = "cityIntro";
-	String KEY_CITY_HISTORY = "cityHistory";
-
-	String KEY_PROGRAM_MONTH_RECOMMENDATION = "recommend";
-	String KEY_PROGRAM_REGULAR = "regular";
-	String KEY_PROGRAM_CHINESE_LEARNING = "chineselearning";
-	String KEY_PROGRAM_THERAPY = "therapy";
-	String KEY_PROGRAM_SUMMER_CAMP = "summercamp";
-	String KEY_PROGRAM_HOT_SPRING = "hotspring";
-	String KEY_PROGRAM_EXHIBITION = "exhibition";
-	String KEY_PROGRAM_COUNTRYSIDE = "countryside";
-
 	String KEY_SPECIAL_PAYMENT = "payment";
-	String KEY_SPECIAL_VISA = "visa";
-	String KEY_SPECIAL_RUSSIAN_STUDENTS = "russianstudents";
-	String KEY_SPECIAL_TICKET = "ticket";
-	String KEY_SPECIAL_CARRENTAL = "carrental";
-	String KEY_SPECIAL_TRANSLATION = "translation";
-	String KEY_SPECIAL_SOUVENIR = "souvenir";
 
 	String KEY_LINK = "link";
 
@@ -98,35 +80,12 @@ public interface CommonConstants {
 	int ID_CONTACT_GROUP_CN = 2;
 	int ID_CONTACT_INDIVIDUAL = 3;
 
-	int ID_SPECIAL_VISA = 1;
-	int ID_SPECIAL_HOTEL_BOOKING = 2;
-	int ID_SPECIAL_COMMISSION_TICKET = 3;
-	int ID_SPECIAL_COMMISSION_CAR_RENTAL = 4;
-	int ID_SPECIAL_COMMISSION_TRANSLATION = 5;
-	int ID_SPECIAL_COMMISSION_SOUVENIR = 6;
-	int ID_SPECIAL_RUSSIAN_STUDENTS = 7;
-
-	int ID_PROGRAM_MONTH_RECOMMENDATION = 1;
-	int ID_PROGRAM_REGULAR_SCHEDULE = 2;
-	int ID_PROGRAM_THERAPY_SCHEDULE = 3;
-	int ID_PROGRAM_CHINESE_LEARNING = 4;
-	int ID_PROGRAM_SUMMER_CAMP = 5;
-	int ID_PROGRAM_HOT_SPRING_TOUR = 6;
-	int ID_PROGRAM_EXHIBITION = 7;
-	int ID_PROGRAM_COUNTRYSIDE_TOUR = 8;
-
 	int ID_PAYMENT = 1;
 	int ID_LINK = 1;
 
 	String LOGIN_USER = "_LOGIN_USER_";
 	String LOGIN_USERID = "USERID";
 	String LOGIN_USERNAME = "USERNAME";
-
-	String KEY_CITY_INSURANCE = "insurance";
-	String KEY_CITY_COMMONLAW = "law";
-	String KEY_CITY_CELLPHONE = "cellphone";
-	String KEY_CITY_ADVICE = "advice";
-	String KEY_CITY_MAP = "citymap";
 
 	String LINK = "link";
 	String RECOMMENDATION = "recommendation";

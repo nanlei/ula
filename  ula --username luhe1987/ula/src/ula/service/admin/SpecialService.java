@@ -1,36 +1,39 @@
 package ula.service.admin;
 
+import java.util.List;
 import java.util.Map;
 
 import ula.service.BaseService;
+import ula.util.MapUtil;
 
+/**
+ * 特色服务
+ * 
+ * @author Nanlei
+ * 
+ */
 public class SpecialService extends BaseService {
-	private static final String SQL_ADD_INFO = "INSERT INTO visa(id,title,content,tag,date) VALUES(?,?,?,?,now())";
+	private static final String SQL_GET_ALL_SPECIAL = "select ID,TITLE,TAG,USERNAME,UPDATETIME from special";
 
-	private static final String SQL_GET_INFO_BY_ID = "select * from visa where id =?";
-
-	private static final String SQL_UPDATE_INFO = "UPDATE visa SET title = ?,content =?,date =now() WHERE id = ?";
-
-	public Map<String, Object> getInfo(int id) throws Exception {
-		return jt.queryForMap(SQL_GET_INFO_BY_ID, id);
+	public List<Map<String, Object>> getAllSpecial() {
+		return jt.queryForList(SQL_GET_ALL_SPECIAL);
 	}
 
-	public Map<String, Object> getInfo(String tag) throws Exception {
-		return jt.queryForMap(SQL_GET_INFO_BY_ID, tag);
+	private static final String SQL_GET_SPECIAL_BY_ID = "select * from special where ID=?";
+
+	public Map<String, Object> getSpecialById(Map<String, Object> parameters) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
+		return jt.queryForMap(SQL_GET_SPECIAL_BY_ID, params);
 	}
 
-	public int addInfo(int id, String title, String content, String tag)
-			throws Exception {
-		return jt.update(SQL_ADD_INFO, id, title, content, tag);
-	}
+	private static final String SQL_UPDATE_SPECIAL_BY_ID = "update special set TITLE=?,CONTENT=?,USERNAME=?,UPDATETIME=now() where ID=?";
 
-	public int addInfo(int id, String title, String content) throws Exception {
-		return this.addInfo(id, title, content, "");
-	}
-
-	public int updateInfo(int id, String title, String content)
-			throws Exception {
-		return jt.update(SQL_UPDATE_INFO, title, content, id);
+	public void updateSpecialById(Map<String, Object> parameters,
+			String userName) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
+				"title,content,id");
+		jt.update(SQL_UPDATE_SPECIAL_BY_ID, params[0], params[1], userName,
+				params[2]);
 	}
 
 }

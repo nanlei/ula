@@ -16,7 +16,6 @@
 	<include file="strutsXMLs/action/admin/hotel.xml"></include>
 	<include file="strutsXMLs/action/admin/link.xml"></include>
 	<include file="strutsXMLs/action/admin/login.xml"></include>
-	<include file="strutsXMLs/action/admin/payment.xml"></include>
 	<include file="strutsXMLs/action/admin/pic.xml"></include>
 	<include file="strutsXMLs/action/admin/product.xml"></include>
 	<include file="strutsXMLs/action/admin/recommend.xml"></include>
@@ -32,7 +31,6 @@
 	<include file="strutsXMLs/action/frontend/city.xml"></include>
 	<include file="strutsXMLs/action/frontend/program.xml"></include>
 	<include file="strutsXMLs/action/frontend/special.xml"></include>
-	<include file="strutsXMLs/action/frontend/payment.xml"></include>
 	<include file="strutsXMLs/action/frontend/contact.xml"></include>
 	<include file="strutsXMLs/action/frontend/index.xml"></include>
 	<!--
