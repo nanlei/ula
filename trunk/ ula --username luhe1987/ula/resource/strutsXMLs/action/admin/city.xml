@@ -77,72 +77,22 @@
 			<result name="preUpdate">therapy_info.ftl</result>
 		</action>
 
-		<!--大连节日 -->
-		<action name="festival" class="ula.action.admin.city.FestivalAction"
-			method="festival">
-			<result name="festival">festival/festival.ftl</result>
+		<!-- 关于大连:大连节日 -->
+		<action name="festivalAdmin" class="ula.action.admin.city.FestivalAction"
+			method="festivalAdmin">
+			<result name="festivalAdmin">festival_admin.ftl</result>
 		</action>
-		<action name="preAddFestival" class="ula.action.BaseAction">
-			<result>festival/add.ftl</result>
-		</action>
-		<action name="addFestival" class="ula.action.admin.city.FestivalAction"
-			method="addFestival">
-			<result name="success" type="chain">
-				<param name="actionName">festival</param>
-				<param name="namespace">/admin/city</param>
-			</result>
-		</action>
-		<action name="preUpdateFestival" class="ula.action.admin.city.FestivalAction"
-			method="preUpdateFestival">
-			<result name="preUpdateFestival">festival/festivalInfo.ftl</result>
-		</action>
-		<action name="updateFestival" class="ula.action.admin.city.FestivalAction"
-			method="updateFestival">
-			<result name="success" type="chain">
-				<param name="actionName">festival</param>
-				<param name="namespace">/admin/city</param>
-			</result>
-		</action>
-		<action name="deleteFestival" class="ula.action.admin.city.FestivalAction"
-			method="deleteFestival">
-			<result name="success" type="chain">
-				<param name="actionName">festival</param>
-				<param name="namespace">/admin/city</param>
-			</result>
+		<action name="festival" class="ula.action.admin.city.FestivalAction">
+			<result name="preUpdate">festival_info.ftl</result>
 		</action>
 
-		<!--展会信息 -->
-		<action name="exhibition" class="ula.action.admin.city.ExhibitionAction"
-			method="exhibition">
-			<result name="exhibition">exhibition/exhibition.ftl</result>
+		<!-- 关于大连:展会信息 -->
+		<action name="exhibitionAdmin" class="ula.action.admin.city.ExhibitionAction"
+			method="exhibitionAdmin">
+			<result name="exhibitionAdmin">exhibition_admin.ftl</result>
 		</action>
-		<action name="preAddExhibition" class="ula.action.BaseAction">
-			<result>exhibition/add.ftl</result>
-		</action>
-		<action name="addExhibition" class="ula.action.admin.city.ExhibitionAction"
-			method="addExhibition">
-			<result name="success" type="chain">
-				<param name="actionName">exhibition</param>
-				<param name="namespace">/admin/city</param>
-			</result>
-		</action>
-		<action name="preUpdateExhibition" class="ula.action.admin.city.ExhibitionAction"
-			method="preUpdateExhibition">
-			<result name="preUpdateExhibition">exhibition/exhibitionInfo.ftl</result>
-		</action>
-		<action name="updateExhibition" class="ula.action.admin.city.ExhibitionAction"
-			method="updateExhibition">
-			<result name="success" type="chain">
-				<param name="actionName">exhibition</param>
-				<param name="namespace">/admin/city</param>
-			</result>
-		</action>
-		<action name="deleteExhibition" class="ula.action.admin.city.ExhibitionAction"
-			method="deleteExhibition">
-			<result name="success" type="chain">
-				<param name="actionName">exhibition</param>
-				<param name="namespace">/admin/city</param>
-			</result>
+		<action name="exhibition" class="ula.action.admin.city.ExhibitionAction">
+			<result name="preUpdate">exhibition_info.ftl</result>
 		</action>
 	</package>
 </struts>

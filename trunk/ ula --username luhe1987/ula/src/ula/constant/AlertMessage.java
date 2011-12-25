@@ -4,6 +4,7 @@ public interface AlertMessage {
 	String GO_BACK = "返回";
 	String URL_GO_BACK = "javascript:history.go(-1)";
 
+	String URL_ABOUT = "aboutAdmin.action";
 	String URL_WEATHER = "weatherAdmin.action";
 	String URL_TOUR_CATEGORY = "categoryAdmin.action";
 	String URL_TOUR = "tourAdmin.action";
@@ -15,6 +16,8 @@ public interface AlertMessage {
 	String URL_CITY_SHOPPING = "shoppingAdmin.action";
 	String URL_CITY_TRANSPORTATION = "transportationAdmin.action";
 	String URL_CITY_THERAPY = "therapyAdmin.action";
+	String URL_CITY_FESTIVAL = "festivalAdmin.action";
+	String URL_CITY_EXHIBITION = "exhibitionAdmin.action";
 
 	String UPDATE_SUCCESS = "更新成功";
 	String UPDATE_FAILURE = "对不起，更新失败";
