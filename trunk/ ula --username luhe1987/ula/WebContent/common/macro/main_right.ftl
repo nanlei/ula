@@ -19,8 +19,24 @@
 			<div class="right_links"><a href="#"><@s.property value="%{getText('front.tool.supplier')}"/></a></div>
 			<div class="right_links"><a href="#"><@s.property value="%{getText('front.tool.promotion')}"/></a></div>
 			<div class="money_ch">
-				<div class="mtitle"><@s.property value="%{getText('front.tool.currency')}"/></div>
-				<div class="mcon"></div>
+				<div class="mtitle"><@s.property value="%{getText('front.tool.currency')}"/> (1 RUB)</div>
+				<div class="mcon">
+					<table border="0" width="100%" cellspacing="0" cellpadding="0">
+						<col width="50%" />
+						<col width="50%" />
+						<tr>
+							<td>货币</td>
+							<td>汇率</td>
+						</tr>
+						<#list exchangeRateList as exchangeRate>
+						<tr>
+							<td><a href="${exchangeRate.LINK}" target="_blank">${exchangeRate.TITLE}</a></td>
+							<td><span title="${exchangeRate.DESCRIPTION}">${exchangeRate.VALUE}</span></td>
+						</tr>
+						</#list>
+					</table>
+				
+				</div>
 			</div>
 		</div>
 </#macro>

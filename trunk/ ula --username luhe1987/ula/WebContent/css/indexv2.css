@@ -957,12 +957,17 @@ img {
 
 .money_ch .mcon {
 	width: 178px;
-	height: 169px;
+	height: 185px;
 	background: #f3f7fa;
 	border-bottom: 1px #CCC solid;
 	border-left: 1px #CCC solid;
 	border-right: 1px #CCC solid;
 	border-radius: 0px 0px 4px 4px;
+}
+
+.money_ch .mcon table{
+  text-align:center;
+  line-height:20px;
 }
 
 /*  The Footer*/

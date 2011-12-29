@@ -4,27 +4,27 @@ import org.apache.commons.lang.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ula.quartz.service.WeatherUpdateService;
+import ula.quartz.service.RetrieveExchangeService;
 
 /**
- * 天气预报更新任务
+ * 获取汇率并保存到数据库任务
  * 
  * @author Nanlei
  * 
  */
-public class WeatherUpdateJob {
+public class RetrieveExchangeJob {
 	private Logger logger = LoggerFactory.getLogger(getClass());
-	private WeatherUpdateService weatherUpdateService;
+	private RetrieveExchangeService retrieveExchangeService;
 
-	public void setWeatherUpdateService(
-			WeatherUpdateService weatherUpdateService) {
-		this.weatherUpdateService = weatherUpdateService;
+	public void setRetrieveExchangeService(
+			RetrieveExchangeService retrieveExchangeService) {
+		this.retrieveExchangeService = retrieveExchangeService;
 	}
 
 	public void execute() {
 		logger.info("Run Quartz Job : " + this.getClass().getName());
 		try {
-			weatherUpdateService.updateWeather();
+			retrieveExchangeService.retrieveExchange();
 		} catch (Exception e) {
 			logger.error(ExceptionUtils.getStackTrace(e));
 		}

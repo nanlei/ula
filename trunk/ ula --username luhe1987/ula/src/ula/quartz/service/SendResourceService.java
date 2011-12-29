@@ -20,8 +20,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
  * 
  */
 public class SendResourceService {
-	private static final Logger logger = LoggerFactory
-			.getLogger(SendResourceService.class);
+	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	private JdbcTemplate jdbcTemplate;
 	private int interval;
@@ -135,7 +134,7 @@ public class SendResourceService {
 			}
 			updateResource(tag, counter + times, lastSubscriber,
 					(Integer) resource.get("ID"));
-			logger.debug("Send Resource To " + times + " User(s)");
+			logger.info("Send Resource To {} User(s)", times);
 		}
 	}
 }

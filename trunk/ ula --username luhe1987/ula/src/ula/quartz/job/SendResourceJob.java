@@ -13,8 +13,7 @@ import ula.quartz.service.SendResourceService;
  * 
  */
 public class SendResourceJob {
-	private static final Logger logger = LoggerFactory
-			.getLogger(SendResourceJob.class);
+	private Logger logger = LoggerFactory.getLogger(getClass());
 	private SendResourceService sendResourceService;
 
 	public void setSendResourceService(SendResourceService sendResourceService) {

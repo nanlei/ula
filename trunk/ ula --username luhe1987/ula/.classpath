@@ -40,5 +40,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.springframework.asm-3.1.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.springframework.aop-3.1.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.springframework.expression-3.1.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xstream-1.4.2.jar"/>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>
