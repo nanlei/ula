@@ -1,7 +1,7 @@
 <@p.page>
 	<@app.naviBar navi="行程管理,行程文章管理,详情" />
 	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面显示系统内所有的行程文章，您可以维护相关信息">
-	<@app.button id="newTourButton" onclick="$('#newTour').toggle();this.blur();return false;" text="添加行程文章"/>
+	<@app.button id="goBackButton" onclick="javascript:history.go(-1)" text="返回"/>
 	</@app.naviInfo>
 	<form name="resourceForm" action="tour!update.action" method="post" onSubmit="return validateForm(this)">
 		<table class="default" width="100%">

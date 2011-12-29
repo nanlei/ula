@@ -30,7 +30,7 @@ public class IndexService extends BaseService {
 		return jt.queryForMap(SQL_GET_WEATHER);
 	}
 
-	private static final String SQL_GET_LINKS = "select TITLE,URL from link";
+	private static final String SQL_GET_LINKS = "select TITLE,URL from link where TAG=1";
 
 	public List<Map<String, Object>> getLinkList() {
 		return jt.queryForList(SQL_GET_LINKS);

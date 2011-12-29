@@ -20,7 +20,7 @@
 <table width="100%" height="100%" cellSpacing="0" cellPadding="0" border="0" align="center">
 	<tr style="background:#FFF">
 		<td width="200px" id="TreeTD" rowspan="2"><iframe style="width:100%;height:100%" src="${treeAction}" name="TreeFrame" id="TreeFrame" frameborder="0"></iframe></td>
-		<td width="8px" align="center" onclick="toggleTree()" style="cursor:pointer" rowspan="2" class="fbg"><img src="${base}/icon/switch.gif" width="6" height="24" border="0" alt=""></td>
+		<td width="8px" align="center" onclick="toggleTree()" style="cursor:pointer" rowspan="2" class="fbg"><img src="${base}/images/icon/switch.gif" width="6" height="24" border="0" alt=""></td>
 		<td width="*" id="navTD" height="30px"></td>
 	</tr>
 	<tr>
@@ -38,7 +38,7 @@ var navTD = top.document.getElementById("navTD");
 var naviInfo="${navi}".split(",");
 var displayInfo="<div id='navDiv'>";
 for(var i=0;i<naviInfo.length;i++){
-	displayInfo+="<span\><img src=\"${base}/icon/arror.gif\" width=\"7\" height=\"11\" border=\"0\" alt=\"\"\></span\>&nbsp;"+ naviInfo[i] +"<span\>&nbsp;";
+	displayInfo+="<span\><img src=\"${base}/images/icon/arror.gif\" width=\"7\" height=\"11\" border=\"0\" alt=\"\"\></span\>&nbsp;"+ naviInfo[i] +"<span\>&nbsp;";
 }
 if (navTD) {
 	navTD.innerHTML =displayInfo+"</div>";
@@ -64,7 +64,7 @@ if (navTD) {
 	<td align="right">
 		<table>
 			<tr>
-				<td align="right" width="50px"><img src="${base}/icon/help.gif" width="45" height="22" border="0" alt=""> </td>
+				<td align="right" width="50px"><img src="${base}/images/icon/help.gif" width="45" height="22" border="0" alt=""> </td>
 				<td align="center" width="80px" style="padding-top:5px"><a href="#" style="cursor:pointer" onclick="$('#page_explain').toggle();this.blur();return false;">${helpInfoTitle}</a></td>
 			</tr>
 		</table>

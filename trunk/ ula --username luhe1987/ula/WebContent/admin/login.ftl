@@ -12,7 +12,7 @@ table.default {
 }
 table.default tr.ltitle td, table.default tr.title td {
 	border-bottom:0px solid #0283c5;
-	background:url(../icon/bg.gif);
+	background:url(../images/icon/bg.gif);
 	color:#333;
 	border:0;
 }
