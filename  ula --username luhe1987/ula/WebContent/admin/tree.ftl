@@ -27,13 +27,7 @@ var treeMenu = [
 	{ level:3, name:"酒店参数管理", link:"hotel/hotelparam.action"},
 	{ level:3, name:"酒店相册管理", link:"hotel/hotelalbum.action"},
 	{ level:1, name:"特色服务",link:"special/specialAdmin.action"},
-
-	
-	{ level:1, name:"联系我们"},
-	{ level:2, name:"客户入口"},
-	{ level:3, name:"俄罗斯客户", link:"contact/rugroup!admin.action"},
-	{ level:3, name:"中国客户", link:"contact/cngroup!admin.action"},
-	{ level:2, name:"游客入口", link:"contact/person!admin.action"},
+	{ level:1, name:"联系我们", link:"contact/contactAdmin.action"},
 	
 	
 	{ level:1, name:"友情链接"},

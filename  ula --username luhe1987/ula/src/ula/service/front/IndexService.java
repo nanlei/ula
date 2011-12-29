@@ -35,4 +35,10 @@ public class IndexService extends BaseService {
 	public List<Map<String, Object>> getLinkList() {
 		return jt.queryForList(SQL_GET_LINKS);
 	}
+
+	private static final String SQL_GET_EXCHANGE_RATE = "select * from exchange_rate where TAG=1 order by ID asc";
+
+	public List<Map<String, Object>> getExchangeRate() {
+		return jt.queryForList(SQL_GET_EXCHANGE_RATE);
+	}
 }

@@ -31,8 +31,7 @@ import ula.util.MapUtil;
  * 
  */
 public class WeatherUpdateService {
-	private static final Logger logger = LoggerFactory
-			.getLogger(WeatherUpdateService.class);
+	private Logger logger = LoggerFactory.getLogger(getClass());
 	private JdbcTemplate jdbcTemplate;
 
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {

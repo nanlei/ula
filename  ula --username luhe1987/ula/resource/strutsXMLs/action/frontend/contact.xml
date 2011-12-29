@@ -1,29 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC
-    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-    "http://struts.apache.org/dtds/struts-2.0.dtd">
-
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-
-	<package name="/contact" extends="global" namespace="/contact">
-	
-	
-<!--联系我们->个人客户 	-->
-		<action name="person" class="ula.action.admin.contact.IndividualClientAction">
-		<result name="view">/admin/contact/contact.ftl</result>
-		</action>
-
-<!--联系我们->俄罗斯团体客户 	-->		
-		<action name="rugroup" class="ula.action.admin.contact.GroupClientRussianAction">
-		<result name="view">/admin/contact/contact.ftl</result>
-		</action>
-		
-		
-<!--联系我们->中国团体客户 	-->	
-		<action name="cngroup" class="ula.action.admin.contact.GroupClientChineseAction">
-		<result name="view">/admin/contact/contact.ftl</result>	
-		</action>
-		
+	<package name="front-contact" extends="global" namespace="/contact">
 	</package>
-	
 </struts>

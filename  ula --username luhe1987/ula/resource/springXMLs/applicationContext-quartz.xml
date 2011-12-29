@@ -48,7 +48,28 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	<!-- 每20分钟自动执行一次 -->
 	<bean id="sendResourceJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
 		<property name="jobDetail" ref="sendResourceJobDetail" />
-		<property name="cronExpression" value="0 0/20 * * * ?" />
+		<property name="cronExpression" value="0 1/20 * * * ?" />
+	</bean>
+
+	<!-- 获取汇率 -->
+	<bean id="retrieveExchangeService" class="ula.quartz.service.RetrieveExchangeService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="retrieveExchangeJob" class="ula.quartz.job.RetrieveExchangeJob">
+		<property name="retrieveExchangeService" ref="retrieveExchangeService" />
+	</bean>
+
+	<bean id="retrieveExchangeJobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="retrieveExchangeJob" />
+		<property name="targetMethod" value="execute" />
+	</bean>
+
+	<!-- 每30分钟自动更新一次 -->
+	<bean id="retrieveExchangeJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="retrieveExchangeJobDetail" />
+		<property name="cronExpression" value="0 2/30 * * * ?" />
 	</bean>
 
 	<!-- 总任务管理器 -->
@@ -58,6 +79,7 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 			<list>
 				<ref bean="weatherUpdateJobTrigger" />
 				<ref bean="sendResourceJobTrigger" />
+				<ref bean="retrieveExchangeJobTrigger" />
 			</list>
 		</property>
 	</bean>

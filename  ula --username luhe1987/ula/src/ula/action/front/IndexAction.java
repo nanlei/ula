@@ -21,6 +21,7 @@ public class IndexAction extends AnonymousAction {
 	private List<Map<String, Object>> productList;
 	private List<Map<String, Object>> linkList;
 	private Map<String, Object> weather;
+	private List<Map<String, Object>> exchangeRateList;
 
 	private HashMap<String, Object> jsonModel;
 	private String referer;
@@ -53,6 +54,10 @@ public class IndexAction extends AnonymousAction {
 		return referer;
 	}
 
+	public List<Map<String, Object>> getExchangeRateList() {
+		return exchangeRateList;
+	}
+
 	/**
 	 * 进入首页的方法
 	 * 
@@ -64,6 +69,8 @@ public class IndexAction extends AnonymousAction {
 		productList = getServiceManager().getIndexService().getProductList();
 		linkList = getServiceManager().getIndexService().getLinkList();
 		weather = getServiceManager().getIndexService().getWeather();
+		exchangeRateList = getServiceManager().getIndexService()
+				.getExchangeRate();
 		return SUCCESS;
 	}
 
