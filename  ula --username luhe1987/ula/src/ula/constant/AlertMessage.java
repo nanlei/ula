@@ -20,6 +20,7 @@ public interface AlertMessage {
 	String URL_CITY_EXHIBITION = "exhibitionAdmin.action";
 	String URL_SPECIAL = "specialAdmin.action";
 	String URL_CONTACT = "contactAdmin.action";
+	String URL_LINK = "linkAdmin.action";
 
 	String UPDATE_SUCCESS = "更新成功";
 	String UPDATE_FAILURE = "对不起，更新失败";
@@ -29,24 +30,9 @@ public interface AlertMessage {
 	String DELTE_SUCCESS = "删除成功";
 	String INFO_EMPTY = "信息不存在";
 
-	String COMPANYINFO_EMPTY = "公司介绍没有添加,请添加";
-	String TEAMINFO_EMPTY = "人员介绍没有添加,请添加";
-	String BIZINFO_EMPTY = "业务范围介绍没有添加,请添加";
-	String MEMORY_EMPTY = "美好回忆介绍没有添加,请添加";
-
-	String CONTACT_INFO_EMPTY = "游客联系方式没有添加，请添加";
-
 	String CITY_HISTORY_EMPTY = "大连历史介绍没有添加，请添加";
 	String CITY_UPDATE_SUCCESS = "大连城市信息更新成功";
 	String cITY_UPDATE_FAILURE = "大连城市信息更新失败";
-
-	String SPECIAL_PAYMENT = "支付方式没有添加，请添加";
-	String SPECIAL_VISA = "签证服务没有添加，请添加";
-	String SPECIAL_RUSSIAN_STUDENTS = "俄罗斯留学生之家没有添加，请添加";
-	String SPECIAL_CARRENTAL = "租车服务没有添加，请添加";
-	String SPECIAL_TICKET = "票务代购没有添加，请添加";
-	String SPECIAL_TRANSLATION = "翻译服务没有添加，请添加";
-	String SPECIAL_SOUVENIR = "纪念品代购没有添加，请添加";
 
 	String LINK_EMPTY = "友情链接没有添加，请添加";
 
@@ -95,13 +81,10 @@ public interface AlertMessage {
 
 	String HOTEL_ADD_SUCCESS = "酒店添加成功";
 	String HOTEL_ADD_FAILURE = "酒店添加失败";
-
 	String HOTEL_UPDATE_SUCCESS = "酒店更新成功";
 	String HOTEL_UPDATE_FAILURE = "酒店更新失败";
-
 	String HOTEL_DELETE_SUCCESS = "酒店删除成功";
 	String HOTEL_DELETE_FAILURE = "酒店删除失败";
-
 	String HOTEL_RECOMMAND_UPDATE_SUCCESS = "酒店推荐更新成功";
 	String HOTEL_RECOMMAND_UPDATE_FAILURE = "酒店推荐更新失败";
 
@@ -150,4 +133,11 @@ public interface AlertMessage {
 	String PRODUCT_DELETE_FAILURE = "产品删除失败";
 	String PRODUCT_TOUR_ADD_SUCCESS = "行程添加到产品中成功";
 	String PRODUCT_TOUR_ADD_FAILURE = "行程添加到产品中失败";
+
+	String LINK_ADD_SUCCESS = "链接添加成功";
+	String LINK_ADD_FAILURE = "链接添加失败";
+	String LINK_UPDATE_SUCCESS = "链接更新成功";
+	String LINK_UPDATE_FAILURE = "链接更新失败";
+	String LINK_DELETE_SUCCESS = "链接删除成功";
+	String LINK_DELETE_FAILURE = "链接删除失败";
 }

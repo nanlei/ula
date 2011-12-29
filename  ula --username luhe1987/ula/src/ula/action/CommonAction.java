@@ -60,10 +60,10 @@ public class CommonAction extends BaseAction {
 		if (linksFromSession == null || linksFromSession.getList().isEmpty()) {
 			log.debug("从数据库读取 友情链接 信息");
 			// 友情链接
-			PagingList link = super.getServiceManager().getLinkService()
-					.getAllInfo();
+//			PagingList link = super.getServiceManager().getLinkService()
+//					.getAllInfo();
 			// 返回给页面的是一个List对象。没有分页信息
-			super.getHttpSessionAsMap().put(CommonConstants.LINK, link);
+			//super.getHttpSessionAsMap().put(CommonConstants.LINK, link);
 		}
 
 		// 本月推荐

@@ -1,6 +1,7 @@
 <@p.page>
 	<@app.naviBar navi="订阅管理,订阅资源管理,资源详情" />
 	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面显示订阅资源的详情，您可以维护这些资源">
+	<@app.button id="goBackButton" onclick="javascript:history.go(-1)" text="返回"/>
 	</@app.naviInfo>
 	<form name="resourceForm" action="resource!update.action?id=${resource.ID}" method="post" onSubmit="return validateForm(this)">
 		<table class="default" width="100%">
