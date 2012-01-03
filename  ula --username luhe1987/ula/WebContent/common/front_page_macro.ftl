@@ -14,8 +14,8 @@
 	<title><@s.property value="%{getText('front.index.title')}"/></title>
 	<link href="css/indexv2.css" rel="stylesheet" type="text/css" />
 	<link href="css/jqueryui/start/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
-	<script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
-	<script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+	<script src="js/jquery-1.7.1.min.gzjs" type="text/javascript"></script>
+	<script src="js/jquery-ui-1.8.16.custom.min.gzjs" type="text/javascript"></script>
 	<script src="js/jqueryui/datepicker/lang/${locale}.js" type="text/javascript"></script>
 	<script src="js/index_tab.js" type="text/javascript"></script>
 	<script src="js/ScrollPic.js" type="text/javascript"></script>

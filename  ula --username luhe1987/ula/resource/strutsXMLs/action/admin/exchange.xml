@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="admin-exchange" extends="global" namespace="/admin/exchange">
+		<action name="exchangeAdmin" class="ula.action.admin.ExchangeAction"
+			method="exchangeAdmin">
+			<result name="exchangeAdmin">exchange_admin.ftl</result>
+		</action>
+		<action name="exchange" class="ula.action.admin.ExchangeAction">
+		</action>
+	</package>
+</struts>
