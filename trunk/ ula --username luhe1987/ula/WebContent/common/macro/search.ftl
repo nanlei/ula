@@ -57,8 +57,8 @@
 						<div class="s_title"><@s.property value="%{getText('front.search.date.title')}"/></div>
 						<p><@s.property value="%{getText('front.search.date.travel')}"/>:</p>
 						<p><input id="search_dater" type="checkbox" name="nothtl" onchange="hdiien_input()" /><@s.property value="%{getText('front.search.date.no')}"/></p>
-						<div id="start_time" class="time_ch"><@s.property value="%{getText('front.search.date.from')}"/>:<input name="start_time" id="fromDate" class="Wdate" type="text" readonly="readonly"/></div>
-						<div id="end_time" class="time_ch"><@s.property value="%{getText('front.search.date.to')}"/>:<input name="end_time" id="toDate" class="Wdate" type="text" readonly="readonly"/></div>
+						<div id="start_time" class="time_ch"><@s.property value="%{getText('front.search.date.from')}"/>:<input name="start_time" id="fromDate" type="text" readonly="readonly"/></div>
+						<div id="end_time" class="time_ch"><@s.property value="%{getText('front.search.date.to')}"/>:<input name="end_time" id="toDate" type="text" readonly="readonly"/></div>
 						<div><@s.property value="%{getText('front.search.date.people')}"/>:</div>
 						<div><input class="short" type="text" />&nbsp;<@s.property value="%{getText('front.search.date.adult')}"/></div>
 						<div style="margin-top:5px"><input class="short" type="text" />&nbsp;<@s.property value="%{getText('front.search.date.child')}"/></div>	

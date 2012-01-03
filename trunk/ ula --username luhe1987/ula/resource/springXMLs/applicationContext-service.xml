@@ -61,6 +61,9 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
 	<bean id="productService" class="ula.service.admin.ProductService"
 		parent="baseService" />
 
+	<bean id="exchangeService" class="ula.service.admin.ExchangeService"
+		parent="baseService" />
+
 	<!-- 前台Service -->
 	<bean id="indexService" class="ula.service.front.IndexService"
 		parent="baseService" />

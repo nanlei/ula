@@ -14,10 +14,15 @@ import ula.constant.CommonConstants;
  */
 public class CityAction extends AnonymousAction {
 	private List<Map<String, Object>> recommendList;
+	private List<Map<String, Object>> linkList;
 	private Map<String, Object> city;
 
 	public List<Map<String, Object>> getRecommendList() {
 		return recommendList;
+	}
+
+	public List<Map<String, Object>> getLinkList() {
+		return linkList;
 	}
 
 	public Map<String, Object> getCity() {
@@ -32,6 +37,7 @@ public class CityAction extends AnonymousAction {
 	public String city() throws Exception {
 		recommendList = getServiceManager().getIndexService()
 				.getRecommendList();
+		linkList = getServiceManager().getIndexService().getLinkList();
 		return SUCCESS;
 	}
 

@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC
-    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-    "http://struts.apache.org/dtds/struts-2.0.dtd">
-
-	<!-- 
-                      包含所有strutsXMLs/action/下的XML文件
-     -->
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-
 	<!--后台管理XML配置-->
 	<include file="strutsXMLs/action/admin/about.xml"></include>
 	<include file="strutsXMLs/action/admin/city.xml"></include>
 	<include file="strutsXMLs/action/admin/contact.xml"></include>
+	<include file="strutsXMLs/action/admin/exchange.xml"></include>
 	<include file="strutsXMLs/action/admin/feedback.xml"></include>
 	<include file="strutsXMLs/action/admin/hotel.xml"></include>
 	<include file="strutsXMLs/action/admin/link.xml"></include>
@@ -36,6 +32,5 @@
 	<!--
 		<include file="strutsXMLs/action/frontend/reservation.xml"></include>
 	-->
-
 </struts>
 

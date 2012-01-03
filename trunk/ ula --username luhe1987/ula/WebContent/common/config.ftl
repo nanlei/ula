@@ -6,9 +6,9 @@
 	 "manage_path" : "/admin",
 	 "css_path" : ["/css/default.css","/css/jqueryui/start/jquery-ui-1.8.16.custom.css"],
 	 "js_path" : ["/js/common.js",
-	 			  "/js/jquery-1.7.1.min.js",
+	 			  "/js/jquery-1.7.1.min.gzjs",
 	 			  "/js/jquery.selectboxes.js",
-	 			  "/js/jquery-ui-1.8.16.custom.min.js"
+	 			  "/js/jquery-ui-1.8.16.custom.min.gzjs"
 	 			  ]
 }>
 

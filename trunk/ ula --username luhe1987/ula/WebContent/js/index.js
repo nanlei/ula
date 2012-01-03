@@ -1,5 +1,8 @@
 $(function() {
-	$(".Wdate").datepicker( {
+	$("#fromDate").datepicker( {
+		dateFormat : 'yy-mm-dd'
+	});
+	$("#toDate").datepicker( {
 		dateFormat : 'yy-mm-dd'
 	});
 });
@@ -7,7 +10,7 @@ $(function() {
 function rssSubmit() {
 	var email = $.trim($("#email_input").val());
 	var emailReg = /^[_a-z0-9]+@([_a-z0-9]+\.)+[a-z0-9]{2,3}$/;
-	var selectorFlag = $("input:[name=ree_ornot]:radio:checked").length;
+	var selectorFlag = $("input:[name=rss_ornot]:radio:checked").length;
 	if (email == "" || email == null) {
 		alert("Invalid Email Address!");
 	} else if (emailReg.test(email) == false) {
@@ -15,7 +18,7 @@ function rssSubmit() {
 	} else if (selectorFlag == 0) {
 		alert("Please Choose Subscribe Or Cancel!");
 	} else {
-		var selector = $("input:[name=ree_ornot]:radio:checked").val();
+		var selector = $("input:[name=rss_ornot]:radio:checked").val();
 		if (selector == "yes") {
 			subscribe(email);
 		} else {

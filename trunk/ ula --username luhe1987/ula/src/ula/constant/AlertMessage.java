@@ -21,6 +21,7 @@ public interface AlertMessage {
 	String URL_SPECIAL = "specialAdmin.action";
 	String URL_CONTACT = "contactAdmin.action";
 	String URL_LINK = "linkAdmin.action";
+	String URL_EXCHANGE = "exchangeAdmin.action";
 
 	String UPDATE_SUCCESS = "更新成功";
 	String UPDATE_FAILURE = "对不起，更新失败";

@@ -4,6 +4,7 @@ import ula.service.admin.AboutService;
 import ula.service.admin.ArticleService;
 import ula.service.admin.CityServcie;
 import ula.service.admin.ContactService;
+import ula.service.admin.ExchangeService;
 import ula.service.admin.FeedbackService;
 import ula.service.admin.HotelService;
 import ula.service.admin.LinkService;
@@ -48,6 +49,7 @@ public class ServiceManager {
 	private SubscriberService subscriberService;
 	private TourService tourService;
 	private ProductService productService;
+	private ExchangeService exchangeService;
 	// 前台
 	private IndexService indexService;
 	private FrontService frontService;
@@ -194,6 +196,14 @@ public class ServiceManager {
 
 	public void setProductService(ProductService productService) {
 		this.productService = productService;
+	}
+
+	public ExchangeService getExchangeService() {
+		return exchangeService;
+	}
+
+	public void setExchangeService(ExchangeService exchangeService) {
+		this.exchangeService = exchangeService;
 	}
 
 	// 前台

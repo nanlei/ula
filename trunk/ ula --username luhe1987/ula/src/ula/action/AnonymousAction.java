@@ -10,7 +10,6 @@ import ula.common.Anonymous;
  */
 public class AnonymousAction extends BaseAction implements Anonymous {
 	public String execute(){
-		System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
 		return SUCCESS;
 	}
 }

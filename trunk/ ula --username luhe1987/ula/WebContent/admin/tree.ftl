@@ -28,7 +28,8 @@ var treeMenu = [
 	{ level:3, name:"酒店相册管理", link:"hotel/hotelalbum.action"},
 	{ level:1, name:"特色服务",link:"special/specialAdmin.action"},
 	{ level:1, name:"联系我们", link:"contact/contactAdmin.action"},
-	{ level:1, name:"友情链接", link:"link/linkAdmin.action"}
+	{ level:1, name:"友情链接", link:"link/linkAdmin.action"},
+	{ level:1, name:"汇率管理", link:"exchange/exchangeAdmin.action"}
 ];
 </script>
 </@p.tree>
