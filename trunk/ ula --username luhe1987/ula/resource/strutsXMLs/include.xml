@@ -25,11 +25,13 @@
 	<!--前台页面XML配置 -->
 	<include file="strutsXMLs/action/frontend/about.xml"></include>
 	<include file="strutsXMLs/action/frontend/city.xml"></include>
-	<include file="strutsXMLs/action/frontend/program.xml"></include>
-	<include file="strutsXMLs/action/frontend/special.xml"></include>
 	<include file="strutsXMLs/action/frontend/contact.xml"></include>
 	<include file="strutsXMLs/action/frontend/index.xml"></include>
+	<include file="strutsXMLs/action/frontend/product.xml"></include>
+	<include file="strutsXMLs/action/frontend/special.xml"></include>
 	<!--
+	<include file="strutsXMLs/action/frontend/pic.xml"></include>
+	<include file="strutsXMLs/action/frontend/feedback.xml"></include>
 		<include file="strutsXMLs/action/frontend/reservation.xml"></include>
 	-->
 </struts>

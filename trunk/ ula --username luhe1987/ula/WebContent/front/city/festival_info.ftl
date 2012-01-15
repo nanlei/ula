@@ -10,7 +10,7 @@
 	<!-- The Main Body -->
 	<div id="main_body">
 		<!-- The Left -->
-		<@fp.main_left /><#-- 主体左侧宏，包含关于大连导航，RSS订阅，天气预报-->
+		<@fp.main_left />
 		 <!-- The Content -->
             <div id="article_content">
             	<div id="page_article_title">

@@ -142,8 +142,17 @@ public class IndexAction extends AnonymousAction {
 				.getStringFromMap(getParametersAsMap(), "locale");
 		getHttpServletRequest().getSession().setAttribute("locale_session",
 				new Locale(locale));
+		String contextPath = getHttpServletRequest().getContextPath();
 		String header_referer = getHttpServletRequest().getHeader("referer");
-		referer = header_referer.substring(header_referer.lastIndexOf("/"));
+		String temp_referer = header_referer.substring(header_referer
+				.indexOf("//") + 2);
+		temp_referer = temp_referer.substring(temp_referer.indexOf("/"));
+		temp_referer = temp_referer.substring(temp_referer.indexOf(contextPath)
+				+ contextPath.length());
+		if (!temp_referer.startsWith("/")) {
+			temp_referer = "/" + temp_referer;
+		}
+		referer = temp_referer;
 		return SUCCESS;
 	}
 }

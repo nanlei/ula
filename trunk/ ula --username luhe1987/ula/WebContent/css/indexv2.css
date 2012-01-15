@@ -354,6 +354,7 @@ img {
 	width: 152px;
 	padding-right: 5px;
 }
+
 .search_bar .hotel_part {
 	float: left;
 	width: 119px;
@@ -383,6 +384,7 @@ img {
 	width: 135px;
 	padding-right: 5px;
 }
+
 .search_bar .text_part2 {
 	float: left;
 	width: 138px;
@@ -468,7 +470,7 @@ img {
 
 /*   The body   */
 #main_body {
-	margin-top: 2px;
+	margin-top: 5px;
 	width: 1000px;
 	position: relative;
 	padding-bottom: 2px;
@@ -965,9 +967,9 @@ img {
 	border-radius: 0px 0px 4px 4px;
 }
 
-.money_ch .mcon table{
-  text-align:center;
-  line-height:20px;
+.money_ch .mcon table {
+	text-align: center;
+	line-height: 20px;
 }
 
 /*  The Footer*/
@@ -1027,4 +1029,39 @@ img {
 	position: fixed;
 	z-index: 9999;
 	border-radius: 4px;
+}
+
+/*----------显示文章的页面----------*/
+#article_content {
+	width: 738px;
+	height: auto;
+	float: left;
+	padding: 10px 25px;
+	margin-left: 5px;
+	min-height: 790px;
+	border: 1px #F1F1F1 solid;
+	background: #FAFAFA;
+}
+
+#page_article_title {
+	padding-top: 15px;
+	width: 738px;
+	height: 50px;
+	border-bottom: 1px #CCCCCC dashed;
+}
+
+#page_article_title p {
+	font-size: 16px;
+	text-align: center;
+	font-weight: bold;
+	color: #5e7ead;
+}
+
+#page_article {
+	padding: 5px 2px;
+}
+
+#page_article p {
+	font-size: 12px;
+	line-height: 20px;
 }
