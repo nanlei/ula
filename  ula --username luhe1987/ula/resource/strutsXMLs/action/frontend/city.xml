@@ -1,97 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC
-    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    "-//Apache Software Foundation//DTD Struts Configuration 21//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="front-city" extends="global" namespace="/city">
-
-		<!-- 文章内容 -->
-		<action name="article" class="ula.action.admin.city.ArticleAction"
-			method="article">
-			<result name="article">/admin/city/city_article.ftl</result>
-		</action>
-
-		<!-- 关于城市:大连介绍 New -->
+		<!-- 关于城市 -->
 		<action name="intro" class="ula.action.front.CityAction"
 			method="intro">
 			<result name="intro">/front/city/index.ftl</result>
 		</action>
-
-		<!-- 关于城市->景点，公园  -->
-		<action name="tour" class="ula.action.admin.city.TourAction"
-			method="view">
-			<result name="view">/admin/city/city_list_data.ftl</result>
+		<!-- 大连历史 -->
+		<action name="history" class="ula.action.front.CityAction"
+			method="history">
+			<result name="history">/front/city/index.ftl</result>
 		</action>
-
-
-		<!--大连美食	-->
-		<action name="food" class="ula.action.admin.city.ArticleAction"
-			method="view">
-			<result name="view">/admin/city/city_map_data.ftl</result>
+		<!-- 城市地图 -->
+		<action name="map" class="ula.action.front.CityAction" method="map">
+			<result name="map">/front/city/index.ftl</result>
 		</action>
-
-
-		<!--大连居住，Deprecated -->
-		<action name="housing" class="ula.action.admin.city.ArticleAction"
-			method="view">
-			<result name="view">/admin/city/city_map_data.ftl</result>
+		<!-- 大连美食 -->
+		<action name="food" class="ula.action.front.CityAction" method="food">
+			<result name="food">/front/city/food.ftl</result>
 		</action>
-
-		<!-- 大连酒店 -->
-		<action name="hotel" class="ula.action.admin.hotel.HotelAction"
-			method="hotel">
-			<result name="hotel">/admin/city/hotel_list.ftl</result>
+		<action name="foodInfo" class="ula.action.front.CityAction"
+			method="foodInfo">
+			<result name="foodInfo">/front/city/food_info.ftl</result>
 		</action>
-
-		<!-- 大连酒店->酒店搜索 -->
-		<action name="hotelSearch" class="ula.action.admin.hotel.HotelAction"
-			method="hotelSearch">
-			<result name="hotelSearch">/admin/city/hotel_info.ftl</result>
+		<!-- 大连居住 -->
+		<action name="housing" class="ula.action.front.CityAction"
+			method="housing">
+			<result name="housing">/front/city/housing.ftl</result>
 		</action>
-
-		<!-- 大连酒店->酒店信息 -->
-		<action name="hotelInfo" class="ula.action.admin.hotel.HotelAction"
-			method="hotelInfo">
-			<result name="hotelInfo">/admin/city/hotel_info.ftl</result>
+		<action name="housingInfo" class="ula.action.front.CityAction"
+			method="housingInfo">
+			<result name="housingInfo">/front/city/housing_info.ftl</result>
 		</action>
-
-		<!-- 大连酒店->根据星级搜索 -->
-		<action name="hotelLevel" class="ula.action.admin.hotel.HotelAction"
-			method="hotelLevel">
-			<result name="hotelLevel">/admin/city/hotel_info.ftl</result>
+		<!-- 大连购物 -->
+		<action name="shopping" class="ula.action.front.CityAction"
+			method="shopping">
+			<result name="shopping">/front/city/shopping.ftl</result>
 		</action>
-
-		<!--大连购物-->
-		<action name="shopping" class="ula.action.admin.city.ArticleAction"
-			method="view">
-			<result name="view">/admin/city/city_map_data.ftl</result>
+		<action name="shoppingInfo" class="ula.action.front.CityAction"
+			method="shoppingInfo">
+			<result name="shoppingInfo">/front/city/shopping_info.ftl</result>
 		</action>
-
-
-		<!--大连交通-->
-		<action name="transportation" class="ula.action.admin.city.ArticleAction"
-			method="view">
-			<result name="view">/admin/city/city_map_data.ftl</result>
+		<!-- 大连交通 -->
+		<action name="transportation" class="ula.action.front.CityAction"
+			method="transportation">
+			<result name="transportation">/front/city/transportation.ftl</result>
 		</action>
-
-
-		<!--大连治疗-->
-		<action name="therapy" class="ula.action.admin.city.ArticleAction"
-			method="view">
-			<result name="view">/admin/city/city_map_data.ftl</result>
+		<action name="transportationInfo" class="ula.action.front.CityAction"
+			method="transportationInfo">
+			<result name="transportationInfo">/front/city/transportation_info.ftl</result>
 		</action>
-
-		<!--大连节日-->
-		<action name="festival" class="ula.action.admin.city.ArticleAction"
-			method="view">
-			<result name="view">/admin/city/city_map_data.ftl</result>
+		<!-- 大连治疗 -->
+		<action name="therapy" class="ula.action.front.CityAction"
+			method="therapy">
+			<result name="therapy">/front/city/therapy.ftl</result>
 		</action>
+		<action name="therapyInfo" class="ula.action.front.CityAction"
+			method="therapyInfo">
+			<result name="therapyInfo">/front/city/therapy_info.ftl</result>
+		</action>
+		<!-- 大连节日 -->
+		<action name="festival" class="ula.action.front.CityAction"
+			method="festival">
+			<result name="festival">/front/city/festival.ftl</result>
+		</action>
+		<action name="festivalInfo" class="ula.action.front.CityAction"
+			method="festivalInfo">
+			<result name="festivalInfo">/front/city/festival_info.ftl</result>
+		</action>
+		<!-- 展会信息 -->
+		<action name="exhibition" class="ula.action.front.CityAction"
+			method="exhibition">
+			<result name="exhibition">/front/city/exhibition.ftl</result>
+		</action>
+		<action name="exhibitionInfo" class="ula.action.front.CityAction"
+			method="exhibitionInfo">
+			<result name="exhibitionInfo">/front/city/exhibition_info.ftl</result>
+		</action>
+		<!-- 其它信息：保险 -->
+		<action name="insurance" class="ula.action.front.CityAction"
+			method="insurance">
+			<result name="insurance">/front/city/index.ftl</result>
+		</action>
+		<!-- 其它信息：法律常识 -->
+		<action name="law" class="ula.action.front.CityAction" method="law">
+			<result name="law">/front/city/index.ftl</result>
+		</action>
+		<!-- 其它信息：手机信息 -->
+		<action name="mobile" class="ula.action.front.CityAction"
+			method="mobile">
+			<result name="mobile">/front/city/index.ftl</result>
+		</action>
+		<!-- 其它信息：实用建议 -->
+		<action name="tips" class="ula.action.front.CityAction" method="tips">
+			<result name="tips">/front/city/index.ftl</result>
+		</action>
+	</package>
 
-
-		<!--展会信息-->
-		<action name="exhibition" class="ula.action.admin.city.ArticleAction"
-			method="view">
-			<result name="view">/admin/city/city_map_data.ftl</result>
+	<!-- 景点公园 -->
+	<package name="front-city-tour" extends="global" namespace="/city/tour">
+		<action name="dalian" class="ula.action.front.CityAction"
+			method="dalian">
+			<result name="dalian">/front/city/tour.ftl</result>
+		</action>
+		<action name="lvshun" class="ula.action.front.CityAction"
+			method="lvshun">
+			<result name="lvshun">/front/city/tour.ftl</result>
+		</action>
+		<action name="devzone" class="ula.action.front.CityAction"
+			method="devzone">
+			<result name="devzone">/front/city/tour.ftl</result>
 		</action>
 	</package>
 </struts>

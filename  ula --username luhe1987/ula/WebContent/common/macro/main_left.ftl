@@ -5,30 +5,30 @@
 			<div id="left_menu">
 				<ul class="left_first_menu">
 					<li><a href="${base}/city/intro.html"><@s.property value="%{getText('front.dalian.introduction')}"/></a></li>
-					<li><a href="#"><@s.property value="%{getText('front.dalian.history')}"/></a></li>
-					<li><a href="#"><@s.property value="%{getText('front.dalian.map')}"/></a></li>
+					<li><a href="${base}/city/history.html"><@s.property value="%{getText('front.dalian.history')}"/></a></li>
+					<li><a href="${base}/city/map.html"><@s.property value="%{getText('front.dalian.map')}"/></a></li>
 					<li><a href="#"><@s.property value="%{getText('front.dalian.site.park')}"/></a></li>
 				</ul>
 				<ul class="left_second_menu">
-					<li><a href="#"><@s.property value="%{getText('front.dalian.downtown')}"/></a></li>
-					<li><a href="#"><@s.property value="%{getText('front.dalian.ls')}"/></a></li>
-					<li><a href="#"><@s.property value="%{getText('front.dalian.jst')}"/></a></li>
+					<li><a href="${base}/city/tour/dalian.html"><@s.property value="%{getText('front.dalian.downtown')}"/></a></li>
+					<li><a href="${base}/city/tour/lvshun.html"><@s.property value="%{getText('front.dalian.ls')}"/></a></li>
+					<li><a href="${base}/city/tour/devzone.html"><@s.property value="%{getText('front.dalian.jst')}"/></a></li>
 				</ul>
 				<ul class="left_first_menu">
-					<li><a href="#"><@s.property value="%{getText('front.dalian.food')}"/></a></li>
-					<li><a href="#"><@s.property value="%{getText('front.dalian.housing')}"/></a></li>
-					<li><a href="#"><@s.property value="%{getText('front.dalian.shopping')}"/></a></li>
-					<li><a href="#"><@s.property value="%{getText('front.dalian.transportation')}"/></a></li>
-					<li><a href="#"><@s.property value="%{getText('front.dalian.therapy')}"/></a></li>
-					<li><a href="#"><@s.property value="%{getText('front.dalian.festival')}"/></a></li>
-					<li><a href="#"><@s.property value="%{getText('front.dalian.exhibition')}"/></a></li>
+					<li><a href="${base}/city/food.html"><@s.property value="%{getText('front.dalian.food')}"/></a></li>
+					<li><a href="${base}/city/housing.html"><@s.property value="%{getText('front.dalian.housing')}"/></a></li>
+					<li><a href="${base}/city/shopping.html"><@s.property value="%{getText('front.dalian.shopping')}"/></a></li>
+					<li><a href="${base}/city/transportation.html"><@s.property value="%{getText('front.dalian.transportation')}"/></a></li>
+					<li><a href="${base}/city/therapy.html"><@s.property value="%{getText('front.dalian.therapy')}"/></a></li>
+					<li><a href="${base}/city/festival.html"><@s.property value="%{getText('front.dalian.festival')}"/></a></li>
+					<li><a href="${base}/city/exhibition.html"><@s.property value="%{getText('front.dalian.exhibition')}"/></a></li>
 					<li><a href="#"><@s.property value="%{getText('front.dalian.other')}"/></a></li>
 				</ul>
 				<ul class="left_second_menu">
-					<li><a href="#"><@s.property value="%{getText('front.dalian.insurance')}"/></a></li>
-					<li><a href="#"><@s.property value="%{getText('front.dalian.law')}"/></a></li>
-					<li><a href="#"><@s.property value="%{getText('front.dalian.mobile')}"/></a></li>
-					<li><a href="#"><@s.property value="%{getText('front.dalian.tips')}"/></a></li>
+					<li><a href="${base}/city/insurance.html"><@s.property value="%{getText('front.dalian.insurance')}"/></a></li>
+					<li><a href="${base}/city/law.html"><@s.property value="%{getText('front.dalian.law')}"/></a></li>
+					<li><a href="${base}/city/mobile.html"><@s.property value="%{getText('front.dalian.mobile')}"/></a></li>
+					<li><a href="${base}/city/tips.html"><@s.property value="%{getText('front.dalian.tips')}"/></a></li>
 				</ul>
 			</div>
 			<div class="clear"></div>

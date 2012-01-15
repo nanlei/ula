@@ -14,10 +14,10 @@
 		 <!-- The Content -->
             <div id="article_content">
             	<div id="page_article_title">
-                	<p>${city.TITLE}</p>
+                	<p>${cityTour.TITLE}</p>
                 </div>
             	<div id="page_article">
-            	<p>${city.CONTENT}</p>
+            	<p>${cityTour.CONTENT}</p>
             	</div>
             </div>
 	</div>

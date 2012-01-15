@@ -7,12 +7,12 @@
 				<#list productList as product>
 					<#if counter%3=1><ul></#if>
 					<li>
-						<a href="">
+						<a href="${base}/product/${product.ID}.html">
 							<img src="${base}${product.COVER}" alt="<@s.property value="%{getText('front.production.title')}"/>" />
 						</a>
 						<div class="travel_info">
 							<span class="left_words">￥${product.PRICE}</span>
-							<a href="#" class="right_words">${product.NAME}>></a>
+							<a href="${base}/product/${product.ID}.html" class="right_words">${product.NAME}>></a>
 						</div>
 					</li>
 					<#if counter%3=0||counter=productList.size()></ul></#if>
