@@ -30,6 +30,7 @@
 				<#case "translation">翻译服务<#break>
 				<#case "souvenir">代邮寄纪念品<#break>
 				<#case "student">俄罗斯留学生之家<#break>
+				<#case "payment">支付方式<#break>
 			</#switch>
 		</td>
 		<td>${special.USERNAME}</td>

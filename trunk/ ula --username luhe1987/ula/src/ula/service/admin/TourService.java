@@ -58,22 +58,25 @@ public class TourService extends BaseService {
 		}, keyHolder);
 		// 获取分类ID
 		final int cid = keyHolder.getKey().intValue();
-		// 插入关联
+		// 获取关联的休假类型
 		final String[] vacationTypes = (String[]) parameters
 				.get("vacationType");
-		jt.batchUpdate(SQL_ADD_CATEGORY_AND_VACATION_TYPE,
-				new BatchPreparedStatementSetter() {
+		// 插入关联
+		if (ArrayUtils.isNotEmpty(vacationTypes)) {
+			jt.batchUpdate(SQL_ADD_CATEGORY_AND_VACATION_TYPE,
+					new BatchPreparedStatementSetter() {
 
-					public void setValues(PreparedStatement ps, int i)
-							throws SQLException {
-						ps.setObject(1, cid);
-						ps.setObject(2, vacationTypes[i]);
-					}
+						public void setValues(PreparedStatement ps, int i)
+								throws SQLException {
+							ps.setObject(1, cid);
+							ps.setObject(2, vacationTypes[i]);
+						}
 
-					public int getBatchSize() {
-						return vacationTypes.length;
-					}
-				});
+						public int getBatchSize() {
+							return vacationTypes.length;
+						}
+					});
+		}
 	}
 
 	private static final String SQL_GET_TOUR_CATEGORY_BY_ID = "select * from tour_category where ID=?";
