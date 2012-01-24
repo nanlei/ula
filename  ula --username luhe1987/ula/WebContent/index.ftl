@@ -1,4 +1,4 @@
-<@fp.page>
+<@fp.page index=true>
 <!-- The Head -->
 <@fp.header /><#-- header宏 -->
 <!-- The Container  -->

@@ -1,6 +1,6 @@
 <@p.page>
 	<@app.naviBar navi="行程管理,行程分类管理" />
-	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面显示系统内所有的行程分类，您可以维护相关信息，注意删除类别将删除该分类下的所有文章">
+	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面显示系统内所有的行程分类，您可以维护相关信息。如需修改前台添加类别，请联系开发人员。请注意，删除类别将删除该分类下的所有文章，若该类别显示在前台，那么会导致该分类不可用。">
 	<@app.button id="newCategoryButton" onclick="$('#newCategory').toggle();this.blur();return false;" text="添加行程分类"/>
 	</@app.naviInfo>
 <div id="newCategory" style="display:none">
@@ -53,7 +53,7 @@
 		<td>${category.NAME}</td>
 		<td>${category.UPDATETIME?datetime}</td>
 		<td>${category.USERNAME}</td>
-		<td><a href="category!preUpdate.action?id=${category.ID}">修改</a> | <a href="category!delete.action?id=${category.ID}" onclick="return confirm('该类别下的所有文章也将被删除，确定吗？')">删除</a></td>
+		<td><a href="category!preUpdate.action?id=${category.ID}">修改</a> | <a href="category!delete.action?id=${category.ID}" onclick="return confirm('该类别下的所有文章也将被删除\n若该类别显示在前台，那么会导致该分类不可用\n确定吗？？？')">删除</a></td>
 	</tr>
 	<#assign count=count+1 />
 	</#list>

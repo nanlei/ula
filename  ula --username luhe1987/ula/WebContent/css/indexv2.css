@@ -205,8 +205,29 @@ img {
 	z-index: 999;
 }
 
+#snav1 {
+	width: 132px;
+}
+
+#snav2 {
+	width: 132px;
+}
+
+#snav3 {
+	width: 132px;
+}
+
+#snav4 {
+	width: 132px;
+}
+
+#snav5 {
+	width: 132px;
+}
+
 #nav_sed .ul1 {
 	padding-left: 5px;
+	word-wrap: break-word;
 }
 
 #nav_sed .ul1 a {

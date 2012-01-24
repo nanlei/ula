@@ -1,5 +1,5 @@
 <#-- 页面统一基础模板 -->
-<#macro page>
+<#macro page index=false>
 <#assign locale=locale_session!'-'/>
 <#if locale=='-'>
 	<#assign locale=request.getLocale()!'-'/>
@@ -19,7 +19,12 @@
 	<script src="${base}/js/jqueryui/datepicker/lang/${locale}.js" type="text/javascript"></script>
 	<script src="${base}/js/index_tab.js" type="text/javascript"></script>
 	<script src="${base}/js/ScrollPic.js" type="text/javascript"></script>
+	<#if index>
 	<script src="${base}/js/index.js" type="text/javascript"></script>
+	</#if>
+	<#if !index>
+	<script src="${base}/js/page.js" type="text/javascript"></script>
+	</#if>
 </head>
 <body>
 <#nested>
