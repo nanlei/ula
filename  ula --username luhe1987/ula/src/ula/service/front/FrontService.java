@@ -37,6 +37,19 @@ public class FrontService extends BaseService {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
 		return jt.queryForMap(SQL_GET_ARTICLE_BY_ID, params);
 	}
-	
-	//private static final String SQL_GET_TOUR_BY_PRODUCT_ID="select from product_";
+
+	private static final String SQL_GET_TOUR_BY_CATEGORY_TAG = "select t.ID, t.TITLE from tour t,tour_category tc where t.CATEGORY_ID=tc.ID and tc.TAG=?";
+
+	public List<Map<String, Object>> getTourByCategoryTag(String tag) {
+		return jt.queryForList(SQL_GET_TOUR_BY_CATEGORY_TAG, tag);
+	}
+
+	private static final String SQL_GET_SPECIAL_BY_TAG = "select * from special where TAG=?";
+
+	public Map<String, Object> getSpecialByTag(String tag) {
+		return jt.queryForMap(SQL_GET_SPECIAL_BY_TAG, tag);
+	}
+
+	// private static final String
+	// SQL_GET_TOUR_BY_PRODUCT_ID="select from product_";
 }

@@ -1,4 +1,10 @@
 $(function() {
+	$("#checkinDate").datepicker( {
+		dateFormat : 'yy-mm-dd'
+	});
+	$("#checkoutDate").datepicker( {
+		dateFormat : 'yy-mm-dd'
+	});
 	$("#snav1").mouseover(function(){
 		$("#city_li").css({"background":"url(images/menu_clicked.png) no-repeat left top","color":"#3378c4"});
 	});

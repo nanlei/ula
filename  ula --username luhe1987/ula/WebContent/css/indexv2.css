@@ -1062,6 +1062,7 @@ img {
 	min-height: 790px;
 	border: 1px #F1F1F1 solid;
 	background: #FAFAFA;
+	border-radius: 4px;
 }
 
 #page_article_title {
@@ -1085,4 +1086,23 @@ img {
 #page_article p {
 	font-size: 12px;
 	line-height: 20px;
+}
+
+#hotel{
+	margin-top: 10px;
+	width: 740px;
+}
+
+#hotel .line {
+	text-align: center;
+	height: 28px;
+}
+
+#hotel .left {
+	width: 240px;
+	float: left;
+}
+#hotel .right {
+	width: 480px;
+	float: right;
 }

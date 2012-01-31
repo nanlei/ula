@@ -44,12 +44,28 @@ public interface CommonConstants {
 	String TAG_CITY_FESTIVAL = "festival";
 	String TAG_CITY_EXHIBITION = "exhibition";
 
+	String TAG_TOUR_BUSINESS = "business";
+	String TAG_TOUR_CAMPING = "camping";
+	String TAG_TOUR_FOODIE = "foodie";
+	String TAG_TOUR_FAMILY = "family";
+	String TAG_TOUR_THERAPY = "therapy";
+	String TAG_TOUR_NEWYEAR = "newyear";
+	String TAG_TOUR_LEARN = "learn";
+	String TAG_TOUR_ROMANTIC = "romantic";
+	String TAG_TOUR_RURAL = "rural";
+	String TAG_TOUR_EVENT = "event";
+	String TAG_TOUR_SPORT = "sport";
+	String TAG_TOUR_HOTSPRING = "hotspring";
+	String TAG_TOUR_EXHIBITION = "exhibition";
+	String TAG_TOUR_LUXURIOUS = "luxurious";
+
 	String TAG_SPECIAL_VISA = "visa";
 	String TAG_SPECIAL_HOTEL = "hotel";
-	String TAG_SPECIAL_COMMISION_TICKET = "ticket";
+	String TAG_SPECIAL_SUPPLIER = "supplier";
+	String TAG_SPECIAL_COMMISION_TICKETBOOKING = "ticket";
 	String TAG_SPECIAL_COMMISION_CARRENTAL = "carrental";
 	String TAG_SPECIAL_COMMISION_TRANSLATION = "translation";
-	String TAG_SPECIAL_COMMISION_SOUVENIR = "translation";
+	String TAG_SPECIAL_COMMISION_SOUVENIR = "souvenir";
 	String TAG_SPECIAL_RUSSIAN_STUDENTS = "russianstudents";
 
 	String TAG_PROGRAM_MONTH_RECOMMENDATION = "recommend";

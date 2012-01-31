@@ -34,15 +34,17 @@
 	</form>
 </div>
 <table class="default" width="100%">
-	<col width="15%" align="center">
-	<col width="35%" align="center">
+	<col width="10%" align="center">
+	<col width="30%" align="center">
+	<col width="10%" align="center">
 	<col width="15%" align="center">
 	<col width="10%" align="center">
 	<col width="25%" align="center">
 	<tr class="title">
 		<td>序号</td>
 		<td>行程类别名称</td>
-		<td>更细时间</td>
+		<td>标识</td>
+		<td>更新时间</td>
 		<td>更新人</td>
 		<td>操作</td>
 	</tr>
@@ -51,6 +53,7 @@
 	<tr <@p.trChangeColor />>
 		<td>${count}</td>
 		<td>${category.NAME}</td>
+		<td>${category.TAG}</td>
 		<td>${category.UPDATETIME?datetime}</td>
 		<td>${category.USERNAME}</td>
 		<td><a href="category!preUpdate.action?id=${category.ID}">修改</a> | <a href="category!delete.action?id=${category.ID}" onclick="return confirm('该类别下的所有文章也将被删除\n若该类别显示在前台，那么会导致该分类不可用\n确定吗？？？')">删除</a></td>

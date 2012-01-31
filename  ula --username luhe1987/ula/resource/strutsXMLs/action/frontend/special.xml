@@ -4,5 +4,33 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
 	<package name="front-special" extends="global" namespace="/special">
+		<action name="visa" class="ula.action.front.SpecialAction"
+			method="visa">
+			<result name="visa">/front/special/index.ftl</result>
+		</action>
+		<action name="hotel" class="ula.action.front.SpecialAction"
+			method="hotel">
+			<result name="hotel">/front/special/hotel.ftl</result>
+		</action>
+		<action name="supplier" class="ula.action.front.SpecialAction"
+			method="supplier">
+			<result name="supplier">/front/special/index.ftl</result>
+		</action>
+		<action name="carrental" class="ula.action.front.SpecialAction"
+			method="carrental">
+			<result name="carrental">/front/special/index.ftl</result>
+		</action>
+		<action name="ticketbooking" class="ula.action.front.SpecialAction"
+			method="ticketbooking">
+			<result name="ticketbooking">/front/special/index.ftl</result>
+		</action>
+		<action name="translation" class="ula.action.front.SpecialAction"
+			method="translation">
+			<result name="translation">/front/special/index.ftl</result>
+		</action>
+		<action name="shipping" class="ula.action.front.SpecialAction"
+			method="shipping">
+			<result name="shipping">/front/special/index.ftl</result>
+		</action>
 	</package>
 </struts>
