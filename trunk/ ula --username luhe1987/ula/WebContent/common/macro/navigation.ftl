@@ -5,7 +5,7 @@
     		<li><a<#if c_index> class="clicked"</#if> href="${base}/index.html"><@s.property value="%{getText('front.nav.homepage')}"/></a></li>
     		<li id="city_li"><a <#if c_city> class="clicked"</#if> onmousemove="secondNav('snav1');" onmouseout="hidden_nav('snav1');" href="${base}/city.html"><@s.property value="%{getText('front.nav.about.dalian')}"/></a></li>
     		<li id="tour_li" <#if locale='ru'> class="sp"</#if>><a<#if c_tour> class="clicked"</#if> onmousemove="secondNav('snav2');" onmouseout="hidden_nav('snav2');" href="${base}/tour.html"><@s.property value="%{getText('front.nav.jounery.tour')}"/></a></li>
-    		<li id="special_li"<#if locale='ru'> class="sp"</#if>><a<#if c_service> class="clicked"</#if> onmousemove="secondNav('snav3');" onmouseout="hidden_nav('snav3');" href="#"><@s.property value="%{getText('front.nav.special.service')}"/></a></li>
+    		<li id="special_li"<#if locale='ru'> class="sp"</#if>><a<#if c_service> class="clicked"</#if> onmousemove="secondNav('snav3');" onmouseout="hidden_nav('snav3');" href="${base}/special.html"><@s.property value="%{getText('front.nav.special.service')}"/></a></li>
     		<li id="search_li"><a<#if c_search> class="clicked"</#if> onmousemove="secondNav('snav4');" onmouseout="hidden_nav('snav4');" href="#"><@s.property value="%{getText('front.nav.search')}"/></a></li>
     		<li id="contact_li"><a<#if c_contact> class="clicked"</#if> onmousemove="secondNav('snav5');" onmouseout="hidden_nav('snav5');" href="#"><@s.property value="%{getText('front.nav.contact.us')}"/></a></li>
     		<li<#if locale='ru'> class="sp"</#if>><a href="#"><@s.property value="%{getText('front.nav.online.contact')}"/></a></li>
@@ -17,7 +17,7 @@
  				<li><a href="${base}/city/intro.html">▪ <@s.property value="%{getText('front.dalian.introduction')}"/></a></li>
  				<li><a href="${base}/city/history.html">▪ <@s.property value="%{getText('front.dalian.history')}"/></a></li>
  				<li><a href="${base}/city/map.html">▪ <@s.property value="%{getText('front.dalian.map')}"/></a></li>
- 				<li><a href="#">▪ <@s.property value="%{getText('front.dalian.site.park')}"/></a></li>
+ 				<li><a href="javascript:void(0)">▪ <@s.property value="%{getText('front.dalian.site.park')}"/></a></li>
  			</ul>
  			<ul class="ul2">
  				<li><a href="${base}/city/tour/dalian.html"><@s.property value="%{getText('front.dalian.downtown')}"/></a></li>
@@ -32,7 +32,7 @@
  				<li><a href="${base}/city/therapy.html">▪ <@s.property value="%{getText('front.dalian.therapy')}"/></a></li>
  				<li><a href="${base}/city/festival.html">▪ <@s.property value="%{getText('front.dalian.festival')}"/></a></li>
  				<li><a href="${base}/city/exhibition.html">▪ <@s.property value="%{getText('front.dalian.exhibition')}"/></a></li>
- 				<li><a href="#">▪ <@s.property value="%{getText('front.dalian.other')}"/></a></li>
+ 				<li><a href="javascript:void(0)">▪ <@s.property value="%{getText('front.dalian.other')}"/></a></li>
  			</ul>
  			<ul class="ul2">
  				<li><a href="${base}/city/insurance.html"><@s.property value="%{getText('front.dalian.insurance')}"/></a></li>
@@ -43,35 +43,35 @@
  		</div>
             <div id="snav2" class="menu2"  onmousemove="secondNav('snav2');" onmouseout="hidden_nav('snav2');">
             	<ul class="ul1">
-                	<li><a href="#">▪ <@s.property value="%{getText('front.tour.business')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.tour.camping')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.tour.foodie')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.tour.family')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.tour.therapy')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.tour.newyear')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.tour.learn')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.tour.romantic')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.tour.rural')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.tour.event')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.tour.sport')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.tour.hotspring')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.tour.exhibition')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.tour.luxurious')}"/></a></li>
+                	<li><a href="${base}/tour/business.html">▪ <@s.property value="%{getText('front.tour.business')}"/></a></li>
+                    <li><a href="${base}/tour/camping.html">▪ <@s.property value="%{getText('front.tour.camping')}"/></a></li>
+                    <li><a href="${base}/tour/foodie.html">▪ <@s.property value="%{getText('front.tour.foodie')}"/></a></li>
+                    <li><a href="${base}/tour/family.html">▪ <@s.property value="%{getText('front.tour.family')}"/></a></li>
+                    <li><a href="${base}/tour/therapy.html">▪ <@s.property value="%{getText('front.tour.therapy')}"/></a></li>
+                    <li><a href="${base}/tour/newyear.html">▪ <@s.property value="%{getText('front.tour.newyear')}"/></a></li>
+                    <li><a href="${base}/tour/learn.html">▪ <@s.property value="%{getText('front.tour.learn')}"/></a></li>
+                    <li><a href="${base}/tour/romantic.html">▪ <@s.property value="%{getText('front.tour.romantic')}"/></a></li>
+                    <li><a href="${base}/tour/rural.html">▪ <@s.property value="%{getText('front.tour.rural')}"/></a></li>
+                    <li><a href="${base}/tour/event.html">▪ <@s.property value="%{getText('front.tour.event')}"/></a></li>
+                    <li><a href="${base}/tour/sport.html">▪ <@s.property value="%{getText('front.tour.sport')}"/></a></li>
+                    <li><a href="${base}/tour/hotspring.html">▪ <@s.property value="%{getText('front.tour.hotspring')}"/></a></li>
+                    <li><a href="${base}/tour/exhibition.html">▪ <@s.property value="%{getText('front.tour.exhibition')}"/></a></li>
+                    <li><a href="${base}/tour/luxurious.html">▪ <@s.property value="%{getText('front.tour.luxurious')}"/></a></li>
                 </ul>
             </div>
             <div id="snav3" class="menu3" onmousemove="secondNav('snav3');" onmouseout="hidden_nav('snav3');">
             	<ul class="ul1">
-                	<li><a href="#">▪ <@s.property value="%{getText('front.special.visa')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.special.hotel')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.special.supplier')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.special.commission')}"/></a></li>
+                	<li><a href="${base}/special/visa.html">▪ <@s.property value="%{getText('front.special.visa')}"/></a></li>
+                    <li><a href="${base}/special/hotel.html">▪ <@s.property value="%{getText('front.special.hotel')}"/></a></li>
+                    <li><a href="${base}/special/supplier.html">▪ <@s.property value="%{getText('front.special.supplier')}"/></a></li>
+                    <li><a href="javascript:void(0)">▪ <@s.property value="%{getText('front.special.commission')}"/></a></li>
                 </ul>
-                    <ul class="ul2">
-                    	<li><a href="#"><@s.property value="%{getText('front.special.carrental')}"/></a></li>
-                        <li><a href="#"><@s.property value="%{getText('front.special.ticketbooking')}"/></a></li>
-                        <li><a href="#"><@s.property value="%{getText('front.special.translation')}"/></a></li>
-                        <li><a href="#"><@s.property value="%{getText('front.special.shipping')}"/></a></li>
-                    </ul>
+                <ul class="ul2">
+                	<li><a href="${base}/special/carrental.html"><@s.property value="%{getText('front.special.carrental')}"/></a></li>
+                	<li><a href="${base}/special/ticketbooking.html"><@s.property value="%{getText('front.special.ticketbooking')}"/></a></li>
+                	<li><a href="${base}/special/translation.html"><@s.property value="%{getText('front.special.translation')}"/></a></li>
+                	<li><a href="${base}/special/shipping.html"><@s.property value="%{getText('front.special.shipping')}"/></a></li>
+                </ul>
             </div>
             <div id="snav4" class="menu4"  onmousemove="secondNav('snav4');" onmouseout="hidden_nav('snav4');">
             	<ul class="ul1">

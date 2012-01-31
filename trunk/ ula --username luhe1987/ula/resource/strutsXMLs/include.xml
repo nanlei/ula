@@ -29,6 +29,7 @@
 	<include file="strutsXMLs/action/frontend/index.xml"></include>
 	<include file="strutsXMLs/action/frontend/product.xml"></include>
 	<include file="strutsXMLs/action/frontend/special.xml"></include>
+	<include file="strutsXMLs/action/frontend/tour.xml"></include>
 	<!--
 	<include file="strutsXMLs/action/frontend/pic.xml"></include>
 	<include file="strutsXMLs/action/frontend/feedback.xml"></include>

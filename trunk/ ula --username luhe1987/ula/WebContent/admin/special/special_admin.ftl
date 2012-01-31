@@ -31,6 +31,7 @@
 				<#case "souvenir">代邮寄纪念品<#break>
 				<#case "student">俄罗斯留学生之家<#break>
 				<#case "payment">支付方式<#break>
+				<#case "supplier">供货者搜索<#break>
 			</#switch>
 		</td>
 		<td>${special.USERNAME}</td>

@@ -23,38 +23,43 @@
         <to type="forward">/city/tour/$1.action</to>
     </rule>
     <rule>
+        <note>city:special service</note>
+        <from>/city/special/([a-z]+).html</from>
+        <to type="forward">/city/special/$1.action</to>
+    </rule>
+    <rule>
         <note>city:food</note>
-        <from>/city/food/([0-9]+).html</from>
+        <from>/city/food-([0-9]+).html</from>
         <to type="forward">/city/foodInfo.action?id=$1</to>
     </rule>
     <rule>
         <note>city:housing</note>
-        <from>/city/housing/([0-9]+).html</from>
+        <from>/city/housing-([0-9]+).html</from>
         <to type="forward">/city/housingInfo.action?id=$1</to>
     </rule>
     <rule>
         <note>city:shopping</note>
-        <from>/city/shopping/([0-9]+).html</from>
+        <from>/city/shopping-([0-9]+).html</from>
         <to type="forward">/city/shoppingInfo.action?id=$1</to>
     </rule>
     <rule>
         <note>city:transportation</note>
-        <from>/city/transportation/([0-9]+).html</from>
+        <from>/city/transportation-([0-9]+).html</from>
         <to type="forward">/city/transportationInfo.action?id=$1</to>
     </rule>
     <rule>
         <note>city:therapy</note>
-        <from>/city/therapy/([0-9]+).html</from>
+        <from>/city/therapy-([0-9]+).html</from>
         <to type="forward">/city/therapyInfo.action?id=$1</to>
     </rule>
     <rule>
         <note>city:festival</note>
-        <from>/city/festival/([0-9]+).html</from>
+        <from>/city/festival-([0-9]+).html</from>
         <to type="forward">/city/festivalInfo.action?id=$1</to>
     </rule>
     <rule>
         <note>city:exhibition</note>
-        <from>/city/exhibition/([0-9]+).html</from>
+        <from>/city/exhibition-([0-9]+).html</from>
         <to type="forward">/city/exhibitionInfo.action?id=$1</to>
     </rule>
     <rule>

@@ -16,7 +16,7 @@
             	<div style="border-top: 1px #CCCCCC dashed;margin-top:5px;"></div>
             	<#list articleList as article>
             	<div id="page_article_title">
-                	<p><a href="${base}/city/exhibition/${article.ID}.html">${article.TITLE}</a></p>
+                	<p><a href="${base}/city/exhibition-${article.ID}.html">${article.TITLE}</a></p>
                 </div>
                 </#list>
             </div>

@@ -17,6 +17,10 @@
 				</td>
 			</tr>
 			<tr>
+				<td>标识</td>
+				<td>${category.TAG}</td>
+			</tr>
+			<tr>
 				<td>对应休假类型</td>
 				<td>
 					<#assign checker=-1 />

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 21//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="front-tour" extends="global" namespace="/tour">
+		<!-- 商务行程 -->
+		<action name="business" class="ula.action.front.TourAction"
+			method="business">
+			<result name="business">/front/tour/index.ftl</result>
+		</action>
+		<!-- 夏令营行程 -->
+		<action name="camping" class="ula.action.front.TourAction"
+			method="camping">
+			<result name="camping">/front/tour/index.ftl</result>
+		</action>
+		<!-- 美食家行程 -->
+		<action name="foodie" class="ula.action.front.TourAction"
+			method="foodie">
+			<result name="foodie">/front/tour/index.ftl</result>
+		</action>
+		<!-- 家庭行程 -->
+		<action name="family" class="ula.action.front.TourAction"
+			method="family">
+			<result name="family">/front/tour/index.ftl</result>
+		</action>
+		<!-- 治疗行程 -->
+		<action name="therapy" class="ula.action.front.TourAction"
+			method="therapy">
+			<result name="therapy">/front/tour/index.ftl</result>
+		</action>
+		<!-- 治疗行程 -->
+		<action name="newyear" class="ula.action.front.TourAction"
+			method="newyear">
+			<result name="newyear">/front/tour/index.ftl</result>
+		</action>
+		<!-- 治疗行程 -->
+		<action name="learn" class="ula.action.front.TourAction"
+			method="learn">
+			<result name="learn">/front/tour/index.ftl</result>
+		</action>
+		<!-- 浪漫行程 -->
+		<action name="romantic" class="ula.action.front.TourAction"
+			method="romantic">
+			<result name="romantic">/front/tour/index.ftl</result>
+		</action>
+		<!-- 乡村行程 -->
+		<action name="rural" class="ula.action.front.TourAction"
+			method="rural">
+			<result name="rural">/front/tour/index.ftl</result>
+		</action>
+		<!-- 事件行程 -->
+		<action name="event" class="ula.action.front.TourAction"
+			method="event">
+			<result name="event">/front/tour/index.ftl</result>
+		</action>
+		<!-- 运动行程 -->
+		<action name="sport" class="ula.action.front.TourAction"
+			method="sport">
+			<result name="sport">/front/tour/index.ftl</result>
+		</action>
+		<!-- 温泉行程 -->
+		<action name="hotspring" class="ula.action.front.TourAction"
+			method="hotspring">
+			<result name="hotspring">/front/tour/index.ftl</result>
+		</action>
+		<!-- 展会行程 -->
+		<action name="exhibition" class="ula.action.front.TourAction"
+			method="exhibition">
+			<result name="exhibition">/front/tour/index.ftl</result>
+		</action>
+		<!-- 奢华行程 -->
+		<action name="luxurious" class="ula.action.front.TourAction"
+			method="luxurious">
+			<result name="luxurious">/front/tour/index.ftl</result>
+		</action>
+	</package>
+</struts>
