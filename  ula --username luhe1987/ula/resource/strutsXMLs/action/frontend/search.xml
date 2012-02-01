@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="front-search" extends="global" namespace="/search">
+		<action name="hotel" class="ula.action.front.SearchAction"
+			method="hotel">
+			<result name="hotel">/front/search/hotel.ftl</result>
+		</action>
+		<action name="tour" class="ula.action.front.SearchAction"
+			method="tour">
+			<result name="tour">/front/search/tour.ftl</result>
+		</action>
+	</package>
+</struts>

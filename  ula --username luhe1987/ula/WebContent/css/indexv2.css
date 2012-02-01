@@ -1089,20 +1089,25 @@ img {
 }
 
 #hotel{
-	margin-top: 10px;
-	width: 740px;
+	margin-top: 20px;
+	
 }
 
 #hotel .line {
 	text-align: center;
-	height: 28px;
+	height: 26px;
+	width: 740px;
 }
 
 #hotel .left {
-	width: 240px;
+    text-align: right;
+	width: 120px;
+	margin-left: 160px;
 	float: left;
 }
 #hotel .right {
-	width: 480px;
+    text-align: left;
+    margin-right: 180px;
 	float: right;
+	
 }

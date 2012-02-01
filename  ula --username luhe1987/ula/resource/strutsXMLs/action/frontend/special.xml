@@ -12,6 +12,10 @@
 			method="hotel">
 			<result name="hotel">/front/special/hotel.ftl</result>
 		</action>
+		<action name="hotelReserve" class="ula.action.front.SpecialAction"
+			method="hotelReserve">
+			<result name="hotelReserve">/front/special/hotel.ftl</result>
+		</action>
 		<action name="supplier" class="ula.action.front.SpecialAction"
 			method="supplier">
 			<result name="supplier">/front/special/index.ftl</result>

@@ -17,13 +17,13 @@
 					<li><a href="${base}/city/tour/devzone.html"><@s.property value="%{getText('front.dalian.jst')}"/></a></li>
 				</ul>
 				<ul class="left_first_menu">
-					<li><a href="${base}/city/food.html"><@s.property value="%{getText('front.dalian.food')}"/></a></li>
-					<li><a href="${base}/city/housing.html"><@s.property value="%{getText('front.dalian.housing')}"/></a></li>
-					<li><a href="${base}/city/shopping.html"><@s.property value="%{getText('front.dalian.shopping')}"/></a></li>
-					<li><a href="${base}/city/transportation.html"><@s.property value="%{getText('front.dalian.transportation')}"/></a></li>
-					<li><a href="${base}/city/therapy.html"><@s.property value="%{getText('front.dalian.therapy')}"/></a></li>
-					<li><a href="${base}/city/festival.html"><@s.property value="%{getText('front.dalian.festival')}"/></a></li>
-					<li><a href="${base}/city/exhibition.html"><@s.property value="%{getText('front.dalian.exhibition')}"/></a></li>
+					<li><a href="${base}/city/food-3.html"><@s.property value="%{getText('front.dalian.food')}"/></a></li>
+					<#--<li><a href="${base}/city/housing.html"><@s.property value="%{getText('front.dalian.housing')}"/></a></li>-->
+					<li><a href="${base}/city/shopping-17.html"><@s.property value="%{getText('front.dalian.shopping')}"/></a></li>
+					<li><a href="${base}/city/transportation-21.html"><@s.property value="%{getText('front.dalian.transportation')}"/></a></li>
+					<li><a href="${base}/city/therapy-19.html"><@s.property value="%{getText('front.dalian.therapy')}"/></a></li>
+					<li><a href="${base}/city/festival-20.html"><@s.property value="%{getText('front.dalian.festival')}"/></a></li>
+					<li><a href="${base}/city/exhibition-27.html"><@s.property value="%{getText('front.dalian.exhibition')}"/></a></li>
 					<li><a href="javascript:void(0)"><@s.property value="%{getText('front.dalian.other')}"/></a></li>
 				</ul>
 				<ul class="left_second_menu">
