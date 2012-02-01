@@ -50,6 +50,17 @@ public class FrontService extends BaseService {
 		return jt.queryForMap(SQL_GET_SPECIAL_BY_TAG, tag);
 	}
 
+	// 预定酒店
+	private static final String SQL_ADD_HOTE_RESERVATION = "insert into reservation_hotel(HOTEL_NAME,GUEST_TOTAL,ROOM_TOTAL,CHECK_IN_DATE,CHECK_OUT_DATE,CONTACT,PHONE_TYPE,PHONE_NUMBER,CONTACT_TYPE,CONTACT_VALUE,REMARKS,TAG,POST_TIME) values(?,?,?,?,?,?,?,?,?,?,?,0,now())";
+
+	public void addHotelReservation(Map<String, Object> parameters) {
+		Object[] params = MapUtil
+				.getObjectArrayFromMap(
+						parameters,
+						"hotelName,guestTotal,roomTotal,checkinDate,checkoutDate,contact,phoneType,phoneNumber,contactType,contactValue,remarks");
+		jt.update(SQL_ADD_HOTE_RESERVATION, params);
+	}
+
 	// private static final String
 	// SQL_GET_TOUR_BY_PRODUCT_ID="select from product_";
 }

@@ -18,6 +18,7 @@ public class SpecialAction extends AnonymousAction {
 	private Map<String, Object> weather;
 
 	private Map<String, Object> special;
+	private String reserveResult;
 
 	public List<Map<String, Object>> getRecommendList() {
 		return recommendList;
@@ -33,6 +34,10 @@ public class SpecialAction extends AnonymousAction {
 
 	public Map<String, Object> getSpecial() {
 		return special;
+	}
+
+	public String getReserveResult() {
+		return reserveResult;
 	}
 
 	private void baseInfo() throws Exception {
@@ -142,5 +147,22 @@ public class SpecialAction extends AnonymousAction {
 				CommonConstants.TAG_SPECIAL_COMMISION_SOUVENIR);
 		baseInfo();
 		return "shipping";
+	}
+
+	/**
+	 * 酒店预定
+	 * 
+	 * @return
+	 */
+	public String hotelReserve() {
+		try {
+			getServiceManager().getFrontService().addHotelReservation(
+					getParametersAsMap());
+			baseInfo();
+			reserveResult = "success";
+		} catch (Exception e) {
+			reserveResult = "failure";
+		}
+		return "hotelReserve";
 	}
 }
