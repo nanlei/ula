@@ -26,6 +26,7 @@
 			<result name="tourAdmin">tour_admin.ftl</result>
 		</action>
 		<action name="tour" class="ula.action.admin.tour.TourAction">
+			<interceptor-ref name="UlaFileUpload"></interceptor-ref>
 			<result name="preUpdate">tour_info.ftl</result>
 		</action>
 	</package>

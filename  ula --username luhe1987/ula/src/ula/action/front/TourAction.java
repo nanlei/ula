@@ -18,6 +18,8 @@ public class TourAction extends AnonymousAction {
 	private List<Map<String, Object>> linkList;
 	private Map<String, Object> weather;
 
+	private Map<String, Object> tour;
+
 	public List<Map<String, Object>> getTourList() {
 		return tourList;
 	}
@@ -34,11 +36,22 @@ public class TourAction extends AnonymousAction {
 		return weather;
 	}
 
+	public Map<String, Object> getTour() {
+		return tour;
+	}
+
 	private void baseInfo() throws Exception {
 		weather = getServiceManager().getIndexService().getWeather();
 		recommendList = getServiceManager().getIndexService()
 				.getRecommendList();
 		linkList = getServiceManager().getIndexService().getLinkList();
+	}
+
+	public String info() throws Exception {
+		tour = getServiceManager().getFrontService().getTourById(
+				getParametersAsMap());
+		baseInfo();
+		return "info";
 	}
 
 	/**

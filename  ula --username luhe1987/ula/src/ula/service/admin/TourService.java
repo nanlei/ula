@@ -142,12 +142,14 @@ public class TourService extends BaseService {
 		return getPagingList(SQL_GET_ALL_TOURS);
 	}
 
-	private static final String SQL_ADD_TOUR = "insert into tour(CATEGORY_ID, TITLE, CONTENT, UPDATETIME, USERNAME) values(?, ?, ?, now(), ?)";
+	private static final String SQL_ADD_TOUR = "insert into tour(CATEGORY_ID, TITLE, DESCRIPTION, COVERLINK, CONTENT, UPDATETIME, USERNAME) values(?, ?, ?, ?, ?, now(), ?)";
 
-	public void addTour(Map<String, Object> parameters, String userName) {
+	public void addTour(Map<String, Object> parameters, String filePath,
+			String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"cid,title,content");
-		jt.update(SQL_ADD_TOUR, ArrayUtils.add(params, userName));
+				"cid,title,description,content");
+		jt.update(SQL_ADD_TOUR, params[0], params[1], params[2], filePath,
+				params[3], userName);
 	}
 
 	private static final String SQL_GET_TOUR_BY_ID = "select * from tour where ID=?";
@@ -157,17 +159,27 @@ public class TourService extends BaseService {
 		return jt.queryForMap(SQL_GET_TOUR_BY_ID, params);
 	}
 
-	private static final String SQL_UPDATE_TOUR_BY_ID = "update tour set CATEGORY_ID=?, TITLE=?, CONTENT=?, UPDATETIME=now(), USERNAME=? where ID=?";
+	private static final String SQL_UPDATE_TOUR_NO_COVERLINK_BY_ID = "update tour set CATEGORY_ID=?, TITLE=?, DESCRIPTION=?, CONTENT=?, UPDATETIME=now(), USERNAME=? where ID=?";
 
 	public void updateTourById(Map<String, Object> parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"cid,title,content,id");
-		jt.update(SQL_UPDATE_TOUR_BY_ID, params[0], params[1], params[2],
-				userName, params[3]);
+				"cid,title,description,content,id");
+		jt.update(SQL_UPDATE_TOUR_NO_COVERLINK_BY_ID, params[0], params[1],
+				params[2], params[3], userName, params[4]);
+	}
+
+	private static final String SQL_UPDATE_TOUR_BY_ID = "update tour set CATEGORY_ID=?, TITLE=?, COVERLINK=?,DESCRIPTION=?, CONTENT=?, UPDATETIME=now(), USERNAME=? where ID=?";
+
+	public void updateTourById(Map<String, Object> parameters, String filePath,
+			String userName) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
+				"cid,title,description,content,id");
+		jt.update(SQL_UPDATE_TOUR_BY_ID, params[0], params[1], filePath,
+				params[2], params[3], userName, params[4]);
 	}
 
 	private static final String SQL_DELETE_PRODUCT_TOUR_BY_ID = "delete from product_tour where TOUR_ID=?";
-	private static final String SQL_DELETE_TOUR_BY_ID = "delete from tour_where ID=?";
+	private static final String SQL_DELETE_TOUR_BY_ID = "delete from tour where ID=?";
 
 	public void deleteTourById(Map<String, Object> parameters) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
