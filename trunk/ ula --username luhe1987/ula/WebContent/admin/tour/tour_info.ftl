@@ -3,7 +3,17 @@
 	<@app.naviInfo helpInfoTitle="查看页面说明" helpInfoContent="本页面显示系统内所有的行程文章，您可以维护相关信息">
 	<@app.button id="goBackButton" onclick="javascript:history.go(-1)" text="返回"/>
 	</@app.naviInfo>
-	<form name="resourceForm" action="tour!update.action" method="post" onSubmit="return validateForm(this)">
+<script type="text/javascript">
+var basePath='${base}';
+function showCover(path){
+	$('#picDialog').dialog({modal:true,position:"center",width:221,height:151,title:"查看封面图片"});
+	$('#picDialog img').attr('src',basePath+path);
+}
+</script>
+<div id="picDialog" style="display:none">
+	<img src="" width="191" height="131" />
+</div>
+	<form name="tourForm" action="tour!update.action?id=${tour.ID}" method="post" enctype="multipart/form-data" onSubmit="return validateForm(this)">
 		<table class="default" width="100%">
 			<col width="40%" align="center">
 			<col width="60%" align="center">
@@ -17,7 +27,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>行程分类</td>
+				<td>行程分类<@p.mustMark /></td>
 				<td>
 					<select name="cid" emptyInfo="请选择行程分类">
 						<option>--请选择--</option>
@@ -26,6 +36,18 @@
 						</#list>
 					</select>
 				</td>
+			</tr>
+			<tr>
+				<td>封面图片</td>
+				<td><#if tour.COVERLINK?has_content><a href="javascript:void(0)" onclick="showCover('${tour.COVERLINK}')">点击查看</a><#else>暂无图片</#if></td>
+			</tr>
+			<tr>
+				<td>修改封面图片</td>
+				<td><@app.file id="coverlink" name="coverlink" /></td>
+			</tr>
+			<tr>
+				<td>简短描述<@p.mustMark /></td>
+				<td><textarea cols="80" rows="7" name="description">${tour.DESCRIPTION}</textarea></td>
 			</tr>
 			<tr>
 				<td>更新时间</td>

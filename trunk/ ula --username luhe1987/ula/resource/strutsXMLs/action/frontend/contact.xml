@@ -4,5 +4,17 @@
     "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="front-contact" extends="global" namespace="/contact">
+		<action name="russian" class="ula.action.front.ContactAction"
+			method="russian">
+			<result name="russian">/front/contact/index.ftl</result>
+		</action>
+		<action name="chinese" class="ula.action.front.ContactAction"
+			method="chinese">
+			<result name="chinese">/front/contact/index.ftl</result>
+		</action>
+		<action name="guest" class="ula.action.front.ContactAction"
+			method="guest">
+			<result name="guest">/front/contact/index.ftl</result>
+		</action>
 	</package>
 </struts>

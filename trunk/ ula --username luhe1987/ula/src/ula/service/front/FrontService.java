@@ -44,6 +44,13 @@ public class FrontService extends BaseService {
 		return jt.queryForList(SQL_GET_TOUR_BY_CATEGORY_TAG, tag);
 	}
 
+	private static final String SQL_GET_TOUR_BY_ID = "select TITLE, DESCRIPTION, COVERLINK, CONTENT from tour where ID=?";
+
+	public Map<String, Object> getTourById(Map<String, Object> parameters) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
+		return jt.queryForMap(SQL_GET_TOUR_BY_ID, params);
+	}
+
 	private static final String SQL_GET_SPECIAL_BY_TAG = "select * from special where TAG=?";
 
 	public Map<String, Object> getSpecialByTag(String tag) {
@@ -59,6 +66,12 @@ public class FrontService extends BaseService {
 						parameters,
 						"hotelName,guestTotal,roomTotal,checkinDate,checkoutDate,contact,phoneType,phoneNumber,contactType,contactValue,remarks");
 		jt.update(SQL_ADD_HOTE_RESERVATION, params);
+	}
+
+	private static final String SQL_GET_CONTACT_BY_TAG = "select TITLE, CONTENT from contact where TAG=?";
+
+	public Map<String, Object> getContactByTag(String tag) {
+		return jt.queryForMap(SQL_GET_CONTACT_BY_TAG, tag);
 	}
 
 	// private static final String

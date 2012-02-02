@@ -4,6 +4,9 @@
     "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="front-tour" extends="global" namespace="/tour">
+		<action name="info" class="ula.action.front.TourAction" method="info">
+			<result name="info">/front/tour/info.ftl</result>
+		</action>
 		<!-- 商务行程 -->
 		<action name="business" class="ula.action.front.TourAction"
 			method="business">

@@ -3,12 +3,12 @@
     <div id="nav">
     	<ul>
     		<li><a<#if c_index> class="clicked"</#if> href="${base}/index.html"><@s.property value="%{getText('front.nav.homepage')}"/></a></li>
-    		<li id="city_li"><a <#if c_city> class="clicked"</#if> onmousemove="secondNav('snav1');" onmouseout="hidden_nav('snav1');" href="${base}/city.html"><@s.property value="%{getText('front.nav.about.dalian')}"/></a></li>
-    		<li id="tour_li" <#if locale='ru'> class="sp"</#if>><a<#if c_tour> class="clicked"</#if> onmousemove="secondNav('snav2');" onmouseout="hidden_nav('snav2');" href="${base}/tour.html"><@s.property value="%{getText('front.nav.jounery.tour')}"/></a></li>
-    		<li id="special_li"<#if locale='ru'> class="sp"</#if>><a<#if c_service> class="clicked"</#if> onmousemove="secondNav('snav3');" onmouseout="hidden_nav('snav3');" href="${base}/special.html"><@s.property value="%{getText('front.nav.special.service')}"/></a></li>
-    		<li id="search_li"><a<#if c_search> class="clicked"</#if> onmousemove="secondNav('snav4');" onmouseout="hidden_nav('snav4');" href="#"><@s.property value="%{getText('front.nav.search')}"/></a></li>
-    		<li id="contact_li"><a<#if c_contact> class="clicked"</#if> onmousemove="secondNav('snav5');" onmouseout="hidden_nav('snav5');" href="#"><@s.property value="%{getText('front.nav.contact.us')}"/></a></li>
-    		<li<#if locale='ru'> class="sp"</#if>><a href="#"><@s.property value="%{getText('front.nav.online.contact')}"/></a></li>
+    		<li id="city_li"><a <#if c_city> class="clicked"</#if> onmousemove="secondNav('snav1');" onmouseout="hidden_nav('snav1');" href="javascript:void(0)"><@s.property value="%{getText('front.nav.about.dalian')}"/></a></li>
+    		<li id="tour_li" <#if locale='ru'> class="sp"</#if>><a<#if c_tour> class="clicked"</#if> onmousemove="secondNav('snav2');" onmouseout="hidden_nav('snav2');" href="javascript:void(0)"><@s.property value="%{getText('front.nav.jounery.tour')}"/></a></li>
+    		<li id="special_li"<#if locale='ru'> class="sp"</#if>><a<#if c_service> class="clicked"</#if> onmousemove="secondNav('snav3');" onmouseout="hidden_nav('snav3');" href="javascript:void(0)"><@s.property value="%{getText('front.nav.special.service')}"/></a></li>
+    		<li id="search_li"><a<#if c_search> class="clicked"</#if> onmousemove="secondNav('snav4');" onmouseout="hidden_nav('snav4');" href="javascript:void(0)"><@s.property value="%{getText('front.nav.search')}"/></a></li>
+    		<li id="contact_li"><a<#if c_contact> class="clicked"</#if> onmousemove="secondNav('snav5');" onmouseout="hidden_nav('snav5');" href="javascript:void(0)"><@s.property value="%{getText('front.nav.contact.us')}"/></a></li>
+    		<li<#if locale='ru'> class="sp"</#if>><a href="javascript:void(0)"><@s.property value="%{getText('front.nav.online.contact')}"/></a></li>
     	</ul>
     </div>
  	<div id="nav_sed">
@@ -81,9 +81,9 @@
             </div>
             <div id="snav5" class="menu5"  onmousemove="secondNav('snav5');" onmouseout="hidden_nav('snav5');">
             	<ul class="ul1">
-                	<li><a href="#">▪ <@s.property value="%{getText('front.contact.russian')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.contact.chinese')}"/></a></li>
-                    <li><a href="#">▪ <@s.property value="%{getText('front.contact.individual')}"/></a></li>
+                	<li><a href="${base}/contact/russian.html">▪ <@s.property value="%{getText('front.contact.russian')}"/></a></li>
+                    <li><a href="${base}/contact/chinese.html">▪ <@s.property value="%{getText('front.contact.chinese')}"/></a></li>
+                    <li><a href="${base}/contact/guest.html">▪ <@s.property value="%{getText('front.contact.individual')}"/></a></li>
                 </ul>
             </div>
         </div>

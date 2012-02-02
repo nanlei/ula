@@ -4,7 +4,7 @@
 	<@app.button id="newTourButton" onclick="$('#newTour').toggle();this.blur();return false;" text="添加行程文章"/>
 	</@app.naviInfo>
 <div id="newTour" style="display:none">
-	<form name="tourForm" action="tour!add.action" method="post" onSubmit="return validateForm(this)">
+	<form name="tourForm" action="tour!add.action" method="post" enctype="multipart/form-data" onSubmit="return validateForm(this)">
 		<table class="default" width="100%">
 			<col width="40%" align="center">
 			<col width="60%" align="center">
@@ -18,7 +18,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>行程分类</td>
+				<td>行程分类<@p.mustMark /></td>
 				<td>
 					<select name="cid" emptyInfo="请选择行程分类">
 						<option>--请选择--</option>
@@ -27,6 +27,14 @@
 						</#list>
 					</select>
 				</td>
+			</tr>
+			<tr>
+				<td>选择封面图片<@p.mustMark /></td>
+				<td><@app.file id="coverlink" name="coverlink" emptyInfo="请选择封面图片"/></td>
+			</tr>
+			<tr>
+				<td>简短描述<@p.mustMark /></td>
+				<td><textarea cols="80" rows="7" name="description">请输入简短描述</textarea></td>
 			</tr>
 			<tr>
 				<td colspan="2"><textarea  id="content" name="content">请输入文章内容<@p.mustMark /></textarea><@p.ckeditor id="content"/></td>

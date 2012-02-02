@@ -65,6 +65,11 @@
 		<from>/tour/([a-z]+).html</from>
 		<to type="forward">/tour/$1.action</to>
 	</rule>
+	<rule>
+		<note>tour</note>
+		<from>/tour-([0-9]+).html</from>
+		<to type="forward">/tour/info.action?id=$1</to>
+	</rule>
 	
 	<rule>
 		<note>special service</note>
@@ -81,6 +86,12 @@
 		<note>search</note>
 		<from>/search/([a-z]+).html</from>
 		<to type="forward">/search/$1.action</to>
+	</rule>
+	
+	<rule>
+		<note>contact</note>
+		<from>/contact/([a-z]+).html</from>
+		<to type="forward">/contact/$1.action</to>
 	</rule>
 	
 	<rule>

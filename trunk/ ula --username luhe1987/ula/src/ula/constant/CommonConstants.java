@@ -68,6 +68,10 @@ public interface CommonConstants {
 	String TAG_SPECIAL_COMMISION_SOUVENIR = "souvenir";
 	String TAG_SPECIAL_RUSSIAN_STUDENTS = "russianstudents";
 
+	String TAG_CONTACT_RUSSIAN = "russia";
+	String TAG_CONTACT_CHINESE = "china";
+	String TAG_CONTACT_GUEST = "guest";
+
 	String TAG_PROGRAM_MONTH_RECOMMENDATION = "recommend";
 	String TAG_PROGRAM_REGULAR = "regular";
 	String TAG_PROGRAM_CHINESE_LEARNING = "chineselearning";
