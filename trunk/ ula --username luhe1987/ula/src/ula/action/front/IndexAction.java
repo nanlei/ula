@@ -23,6 +23,9 @@ public class IndexAction extends AnonymousAction {
 	private Map<String, Object> weather;
 	private List<Map<String, Object>> exchangeRateList;
 
+	private Map<String, Object> recommend;
+	private List<Map<String, Object>> product;
+
 	private HashMap<String, Object> jsonModel;
 	private String referer;
 
@@ -40,6 +43,14 @@ public class IndexAction extends AnonymousAction {
 
 	public Map<String, Object> getWeather() {
 		return weather;
+	}
+
+	public Map<String, Object> getRecommend() {
+		return recommend;
+	}
+
+	public List<Map<String, Object>> getProduct() {
+		return product;
 	}
 
 	public HashMap<String, Object> getJsonModel() {
@@ -63,7 +74,7 @@ public class IndexAction extends AnonymousAction {
 	 * 
 	 * @return
 	 */
-	public String index() {
+	public String index() throws Exception {
 		recommendList = getServiceManager().getIndexService()
 				.getRecommendList();
 		productList = getServiceManager().getIndexService().getProductList();
@@ -72,6 +83,38 @@ public class IndexAction extends AnonymousAction {
 		exchangeRateList = getServiceManager().getIndexService()
 				.getExchangeRate();
 		return SUCCESS;
+	}
+
+	/**
+	 * 查看首页推荐
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String recommend() throws Exception {
+		recommendList = getServiceManager().getIndexService()
+				.getRecommendList();
+		linkList = getServiceManager().getIndexService().getLinkList();
+		weather = getServiceManager().getIndexService().getWeather();
+		recommend = getServiceManager().getIndexService().getRecommendById(
+				getParametersAsMap());
+		return "recommend";
+	}
+
+	/**
+	 * 产品
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String product() throws Exception {
+		recommendList = getServiceManager().getIndexService()
+				.getRecommendList();
+		linkList = getServiceManager().getIndexService().getLinkList();
+		weather = getServiceManager().getIndexService().getWeather();
+		product = getServiceManager().getIndexService().getProductById(
+				getParametersAsMap());
+		return "product";
 	}
 
 	/**

@@ -31,5 +31,15 @@
 			method="special">
 			<result name="success">/front/special/index.ftl</result>
 		</action>
+		<!-- 首页推荐 -->
+		<action name="recommend" class="ula.action.front.IndexAction"
+			method="recommend">
+			<result name="recommend">/front/recommend/index.ftl</result>
+		</action>
+		<!-- 首页产品 -->
+		<action name="product" class="ula.action.front.IndexAction"
+			method="product">
+			<result name="product">/front/product/index.ftl</result>
+		</action>
 	</package>
 </struts>

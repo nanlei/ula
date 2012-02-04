@@ -96,8 +96,14 @@
 	
 	<rule>
 		<note>product</note>
-		<from>/product/([0-9]+).html</from>
+		<from>/product-([0-9]+).html</from>
 		<to type="forward">/product.action?id=$1</to>
+	</rule>
+	
+	<rule>
+		<note>recommend</note>
+		<from>/recommend-([0-9]+).html</from>
+		<to type="forward">/recommend.action?id=$1</to>
 	</rule>
 
 	<!-- 后台管理部分begin -->

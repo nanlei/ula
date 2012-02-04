@@ -1088,9 +1088,9 @@ img {
 	line-height: 20px;
 }
 
-#hotel{
+/*-------------酒店搜索页面---------------*/
+#hotel {
 	margin-top: 20px;
-	
 }
 
 #hotel .line {
@@ -1100,14 +1100,98 @@ img {
 }
 
 #hotel .left {
-    text-align: right;
+	text-align: right;
 	width: 120px;
 	margin-left: 160px;
 	float: left;
 }
+
 #hotel .right {
-    text-align: left;
-    margin-right: 180px;
+	text-align: left;
+	margin-right: 180px;
 	float: right;
-	
+}
+
+/*----------类别项目的页面----------*/
+#page_content {
+	width: 790px;
+	float: left;
+	margin-left: 5px;
+}
+
+.simple_travel_bar {
+	width: 778px;
+	background: url(../images/page_simple_tra_bg.png) no-repeat left top;
+	margin-bottom: 5px;
+	height: 142px;
+	padding: 6px;
+}
+
+.simple_travel_bar .photos {
+	float: left;
+	background: url(../images/simple_tra_img_bg.png) no-repeat left top;
+	padding: 6px;
+	height: 131px;
+	width: 191px;
+}
+
+.simple_travel_bar .photos img {
+	height: 131px;
+}
+
+.simple_travel_bar .intro {
+	float: left;
+	padding-top: 1px;
+	margin-left: 4px;
+}
+
+.simple_travel_bar .intro .title {
+	height: 29px;
+	width: 540px;
+	padding-left: 30px;
+	overflow: hidden;
+	background: url(../images/simple_tra_title_bg.png) no-repeat left top;
+}
+
+.simple_travel_bar .intro .title .tra_name {
+	float: left;
+	color: #666666;
+	font-weight: bold;
+	line-height: 29px;
+}
+
+.simple_travel_bar .intro .title .tra_icon_more {
+	float: right;
+	margin-right: 6px;
+	margin-top: 7px;
+	width: 49px;
+	height: 16px;
+	background: url(../images/icon_more.png) no-repeat left top;
+}
+
+.simple_travel_bar .intro .title .tra_icon_more a {
+	display: block;
+	width: 49px;
+	height: 16px;
+	color: #FFFFFF;
+	text-align: center;
+	font-weight: bold;
+	line-height: 16px;
+	font-size: 11px;
+}
+
+.simple_travel_bar .intro .title .tra_icon_more a:hover {
+	color: #2c5980;
+}
+
+.simple_travel_bar .intro .words {
+	padding: 5px;
+	width: 560px;
+	height: 102px;
+	overflow: hidden;
+	color: #666666;
+}
+
+.simple_travel_bar .words p {
+	line-height: 20px;
 }
