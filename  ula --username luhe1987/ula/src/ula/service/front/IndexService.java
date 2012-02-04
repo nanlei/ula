@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import ula.service.BaseService;
+import ula.util.MapUtil;
 
 /**
  * 首页Service
@@ -40,5 +41,28 @@ public class IndexService extends BaseService {
 
 	public List<Map<String, Object>> getExchangeRate() {
 		return jt.queryForList(SQL_GET_EXCHANGE_RATE);
+	}
+
+	private static final String SQL_GET_RECOMMEND_BY_ID = "select COVER, TITLE, CONTENT from recommend where TAG=1 and ID=?";
+
+	public Map<String, Object> getRecommendById(Map<String, Object> parameters) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
+		return jt.queryForMap(SQL_GET_RECOMMEND_BY_ID, params);
+	}
+
+	private static final String SQL_GET_PRODUCT_TAG_BY_ID = "select TAG from product where ID=?";
+
+	private static final String SQL_GET_PRODUCT_BY_ID = "select t.ID as ID, t.TITLE as TITLE, t.COVERLINK as COVERLINK, t.DESCRIPTION as DESCRIPTION from tour t, product_tour pt where t.ID=pt.TOUR_ID and pt.PRODUCT_ID=?";
+
+	public List<Map<String, Object>> getProductById(
+			Map<String, Object> parameters) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
+		int tag = (Integer) jt.queryForObject(SQL_GET_PRODUCT_TAG_BY_ID,
+				Integer.class, params);
+		if (tag == 1) {
+			return jt.queryForList(SQL_GET_PRODUCT_BY_ID, params);
+		} else {
+			return null;
+		}
 	}
 }
