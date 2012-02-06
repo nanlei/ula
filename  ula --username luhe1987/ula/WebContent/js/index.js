@@ -62,9 +62,9 @@ $(function() {
 	// $("#snav5").mouseout(function() {
 	// $("#contact_li").css( {
 	// "color" : "#FFFFFF",
-	//			"background" : ""
-	//		});
-	//	});
+	// "background" : ""
+	// });
+	// });
 });
 
 function rssSubmit() {
@@ -142,4 +142,20 @@ function cancelSubscribe(email) {
 			dialogAlert("Network Error, Please refresh page and try again!");
 		}
 	});
+}
+
+function selectAllType() {
+	if ($("#ttselector").attr("checked") == "checked") {
+		selectAll('tourSearchForm', 'travel_type');
+	} else {
+		unSelectAll('tourSearchForm', 'travel_type');
+	}
+}
+
+function selectAllHotel() {
+	if ($("#hselector").attr("checked") == "checked") {
+		selectAll('tourSearchForm', 'level');
+	} else {
+		unSelectAll('tourSearchForm', 'level');
+	}
 }

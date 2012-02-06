@@ -1195,3 +1195,171 @@ img {
 .simple_travel_bar .words p {
 	line-height: 20px;
 }
+
+/*---------显示搜索结果的页面----------------------*/
+#re_content {
+	width: 1000px;
+	margin-top: 5px;
+}
+
+#re_con_title {
+	width: 972px;
+	height: 31px;
+	background: url(../images/result_title_bg.png) no-repeat left top;
+	padding-left: 28px;
+}
+
+#re_con_title span {
+	font-weight: bold;
+	color: #FFFFFF;
+	line-height: 31px;
+}
+
+#re_con_ch_title {
+	width: 990px;
+	height: 33px;
+	padding-left: 10px;
+	background: url(../images/re_ch_title_bg.png) no-repeat left top;
+}
+
+#re_con_ch_title span {
+	color: #666666;
+	line-height: 33px;
+}
+
+#re_con_choose {
+	width: 1000px;
+	background: url(../images/re_ch_con_bg.png) repeat-y left top;
+	padding: 8px 0px;
+}
+
+#re_con_choose table {
+	width: 1000px;
+	line-height: 20px;
+}
+
+#re_con_choose table .item {
+	text-align: right;
+	padding-right: 5px;
+	width: 131px;
+}
+
+#re_con_choose table .words {
+	width: 359px;
+	padding-left: 5px;
+	color: #2b6bba;
+}
+
+#re_words_title {
+	width: 990px;
+	background: url(../images/re_words_title_bg.png) no-repeat left top;
+	height: 30px;
+	padding-left: 10px;
+}
+
+#re_words_title span {
+	line-height: 30px;
+	color: #666666;
+}
+
+#re_words {
+	line-height: 20px;
+	width: 1000px;
+	background: url(../images/re_words_con_bg.png) repeat-y left top;
+}
+
+#re_words table {
+	width: 1000px;
+	text-align: center;
+}
+
+#re_words table .words_title {
+	width: 1000px;
+	height: 27px;
+	background: url(../images/re_words_con_title_bg.png) no-repeat left top;
+}
+
+#re_words table .words_title td {
+	width: 500px;
+	line-height: 27px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+#re_words table .words_con td a {
+	width: 500px;
+	line-height: 25px;
+	color: #666666;
+}
+
+#re_words table .words_con td a:hover {
+	color: #3b98de;
+}
+
+#re_words_bottom {
+	width: 1000px;
+	height: 6px;
+	background: url(../images/re_words_bottom_bg.png) no-repeat left top;
+}
+
+#re_bottom {
+	margin-top: 5px;
+	width: 1000px;
+}
+
+#re_bottom .waether {
+	width: 205px;
+	float: left;
+}
+
+#re_bottom .waether table {
+	width: 205px;
+	text-align: center;
+}
+
+#re_bottom .waether table tr {
+	height: 24px;
+	line-height: 24px;
+}
+
+#re_bottom .waether table td {
+	background: #e4f0f6;
+	border-bottom: 1px #FFFFFF solid;
+	border-right: 1px #FFFFFF solid;
+}
+
+#re_bottom .waether table img {
+	width: 26px;
+	height: 26px;
+}
+
+#re_bottom .waether_title {
+	width: 175px;
+	height: 25px;
+	padding-left: 30px;
+	line-height: 25px;
+	font-weight: bold;
+	margin-bottom: 2px;
+	color: #FFFFFF;
+	background: url(../images/left_weather_item_bg.png) no-repeat left top;
+}
+
+#re_bottom .contact {
+	width: 788px;
+	height: 80px;
+	float: left;
+	margin-left: 5px;
+	border: 1px #CCCCCC solid;
+	background: url(../images/address_bg_pages.png) no-repeat left top;
+	border-radius:4px;
+}
+
+#re_bottom .contact table {
+	font-size: 11px;
+	text-align: center;
+	line-height: 20px;
+}
+
+#re_bottom .contact table .blue {
+	color: #326ea9;
+}

@@ -8,9 +8,17 @@
 			method="hotel">
 			<result name="hotel">/front/search/hotel.ftl</result>
 		</action>
+		<action name="hotelSearch" class="ula.action.front.SearchAction"
+			method="hotelSearch">
+			<result name="hotelSearch">/front/search/hotel.ftl</result>
+		</action>
 		<action name="tour" class="ula.action.front.SearchAction"
 			method="tour">
 			<result name="tour">/front/search/tour.ftl</result>
+		</action>
+		<action name="tourSearch" class="ula.action.front.SearchAction"
+			method="tourSearch">
+			<result name="tourSearch">/front/search/tour.ftl</result>
 		</action>
 	</package>
 </struts>
