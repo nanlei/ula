@@ -72,19 +72,27 @@ img {
 #top_bar {
 	margin-left: auto;
 	margin-right: auto;
-	width: 1000px;
-	height: 35px;
-	line-height: 35px;
+	width:100%;
+	text-align:center;
+	height:36px;
+	line-height:36px;
 	/*background:url(../images/top_bar_left.png) left top no-repeat;*/
-	z-index: 100;
+	z-index:100;
+}
+
+#head_warpper .lang{
+    font-size:10px;
+	color:#FFFFFF;
+    margin-top:-24px;
+    margin-right:10px;
+	float:right;
+	clear:left;
 }
 
 #top_bar span {
-	float: right;
-	padding-left: 30px;
-	font-size: 14px;
-	font-weight: bold;
-	color: #FFFFFF;
+	font-size:14px;
+	font-weight:bold;
+	color:#FFFFFF;
 }
 
 #top_bar img {
@@ -359,7 +367,7 @@ img {
 }
 
 #con_stab_1,#con_stab_2 {
-	height: 180px;
+	height: 190px;
 }
 
 .search_bar {
@@ -440,7 +448,7 @@ img {
 
 .search_bar .short {
 	float: left;
-	width: 55px;
+	width:60px;
 	height: 18px;
 }
 
@@ -456,6 +464,11 @@ img {
 
 .search_bar .time_ch {
 	padding-left: 3px;
+}
+
+.search_bar .time_ch input{
+	float:right;
+	padding-right:5px;
 }
 
 .search_bar .p_nums {

@@ -59,9 +59,9 @@
 						<p><input id="search_dater" type="checkbox" name="notnecessary" onchange="hdiien_input()" /><@s.property value="%{getText('front.search.date.no')}"/></p>
 						<div id="start_time" class="time_ch"><@s.property value="%{getText('front.search.date.from')}"/>:<input name="start_time" id="fromDate" type="text" readonly="readonly"/></div>
 						<div id="end_time" class="time_ch"><@s.property value="%{getText('front.search.date.to')}"/>:<input name="end_time" id="toDate" type="text" readonly="readonly"/></div>
-						<div><@s.property value="%{getText('front.search.date.people')}"/>:</div>
-						<div><input class="short" type="text" name="adult_n"/>&nbsp;<@s.property value="%{getText('front.search.date.adult')}"/></div>
-						<div style="margin-top:5px"><input class="short" type="text" name="child_n"/>&nbsp;<@s.property value="%{getText('front.search.date.child')}"/></div>	
+						<div><@s.property value="%{getText('front.search.date.people')}"/></div>
+						<div><span class="p_nums"><@s.property value="%{getText('front.search.date.adult')}"/>:</span><input class="short" type="text" name="adult_n"/></div>
+						<div><span class="p_nums"><@s.property value="%{getText('front.search.date.child')}"/>:</span><input class="short" type="text" name="child_n"/></div>	
 					</div>
 					<div class="single_part">
 						<div class="s_title"><@s.property value="%{getText('front.search.guide.require')}"/></div>
@@ -220,9 +220,9 @@
 						<p><input id="search_dater" type="checkbox" name="notnecessary" onchange="hdiien_input()" /><@s.property value="%{getText('front.search.date.no')}"/></p>
 						<div id="start_time" class="time_ch"><@s.property value="%{getText('front.search.date.from')}"/>:<input name="start_time" id="fromDate" type="text" readonly="readonly"/></div>
 						<div id="end_time" class="time_ch"><@s.property value="%{getText('front.search.date.to')}"/>:<input name="end_time" id="toDate" type="text" readonly="readonly"/></div>
-						<div><@s.property value="%{getText('front.search.date.people')}"/>:</div>
-						<div><input class="short" type="text" name="adult_n"/>&nbsp;<@s.property value="%{getText('front.search.date.adult')}"/></div>
-						<div style="margin-top:5px"><input class="short" type="text" name="child_n"/>&nbsp;<@s.property value="%{getText('front.search.date.child')}"/></div>	
+						<div><@s.property value="%{getText('front.search.date.people')}"/></div>
+						<div><span class="p_nums"><@s.property value="%{getText('front.search.date.adult')}"/>:</span><input class="short" type="text" name="adult_n"/></div>
+						<div><span class="p_nums"><@s.property value="%{getText('front.search.date.child')}"/>:</span><input class="short" type="text" name="child_n"/></div>	
 					</div>
 					<div class="single_part">
 						<div class="s_title"><@s.property value="%{getText('front.search.guide.require')}"/></div>
