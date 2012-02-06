@@ -275,3 +275,33 @@
 			</div>
 		</div>
 </#macro>
+
+<#macro weather2 w>
+<div class="waether">
+	<div class="waether_title">
+		<span><@s.property value="%{getText('front.weather.title')}"/><#if locale?string?starts_with('zh')>&nbsp;&nbsp;&nbsp;${w.UPDATETIME?string("yyyy-MM-dd HH:mm")}</#if></span>
+	</div>
+	<table border="0"  cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="60">
+				<img src="http://m.weather.com.cn/img/b${w.IMG1}.gif" width="26" height="26" alt="network error" title="Weather"/>
+				<#if w.IMG2?number?int!=99>
+				<img src="http://m.weather.com.cn/img/b${w.IMG2}.gif" width="26" height="26" alt="network error" title="Weather"/>
+				</#if>
+			</td>
+			<td width="75"><@s.property value="%{getText('front.weather.today')}"/></td>
+			<td>${w.TEMP1}</td>
+		</tr>
+		<tr>
+			<td width="60">
+				<img src="http://m.weather.com.cn/img/b${w.IMG3}.gif" width="26" height="26" alt="network error" title="Weather"/>
+				<#if w.IMG4?number?int!=99>
+				<img src="http://m.weather.com.cn/img/b${w.IMG4}.gif" width="26" height="26" alt="network error" title="Weather"/>
+				</#if>
+			</td>
+			<td width="75"><@s.property value="%{getText('front.weather.tomorrow')}"/></td>
+			<td>${w.TEMP2}</td>
+		</tr>
+	</table>
+</div>
+</#macro>

@@ -8,22 +8,22 @@
 		<!-- The Search Content -->
 		<div id="tabcontent">
 			<div id="con_stab_1">
-				<form class="search_bar" action="" name="sch_form" method="post">
+				<form name="tourSearchForm" class="search_bar" action="${base}/search/tourSearch.html" name="sch_form" method="post">
 					<div class="tra_style">
 						<div class="s_title"><@s.property value="%{getText('front.search.vacation.type')}"/></div>
 						<div class="text_part">
-							<p><input type="radio" name="travel_type" value="tt1" /><span><@s.property value="%{getText('front.search.vacation.type.all')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt1" /><span><@s.property value="%{getText('front.search.vacation.type.therapy')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt2" /><span><@s.property value="%{getText('front.search.vacation.type.child')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt6" /><span><@s.property value="%{getText('front.search.vacation.type.romantic')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt3" /><span><@s.property value="%{getText('front.search.vacation.type.luxurious')}"/></span></p>
+							<p><input type="checkbox" id="ttselector" onClick="selectAllType()" /><span><@s.property value="%{getText('front.search.vacation.type.all')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="2" /><span><@s.property value="%{getText('front.search.vacation.type.therapy')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="3" /><span><@s.property value="%{getText('front.search.vacation.type.child')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="4" /><span><@s.property value="%{getText('front.search.vacation.type.romantic')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="5" /><span><@s.property value="%{getText('front.search.vacation.type.luxurious')}"/></span></p>
 						</div>
 						<div class="text_part2">
-							<p><input type="radio" name="travel_type" value="tt8" /><span><@s.property value="%{getText('front.search.vacation.type.family')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt4" /><span><@s.property value="%{getText('front.search.vacation.type.foodie')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt9" /><span><@s.property value="%{getText('front.search.vacation.type.sport')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt5" /><span><@s.property value="%{getText('front.search.vacation.type.event')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt0" /><span><@s.property value="%{getText('front.search.vacation.type.learn')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="6" /><span><@s.property value="%{getText('front.search.vacation.type.family')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="7" /><span><@s.property value="%{getText('front.search.vacation.type.foodie')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="8" /><span><@s.property value="%{getText('front.search.vacation.type.sport')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="9" /><span><@s.property value="%{getText('front.search.vacation.type.event')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="10" /><span><@s.property value="%{getText('front.search.vacation.type.learn')}"/></span></p>
 						</div>
 					</div>
 					<div class="single_part">
@@ -43,71 +43,71 @@
 					</div>
 					<div class="hotel_part">
 						<div class="s_title"><@s.property value="%{getText('front.search.hotel')}"/></div>
-						<p><input type="radio" name="hotel" value="whole" /><span><@s.property value="%{getText('front.search.hotel.all')}"/></span></p>
+						<p><input type="checkbox" id="hselector" onclick="selectAllHotel()" /><span><@s.property value="%{getText('front.search.hotel.all')}"/></span></p>
 						<p>
-							<input type="radio" name="hotel" value="level3" /><span><@s.property value="%{getText('front.search.hotel.star3')}"/></span>
-							<input type="radio" name="hotel" value="level4" /><span><@s.property value="%{getText('front.search.hotel.star4')}"/></span>
-							<input type="radio" name="hotel" value="level5" /><span><@s.property value="%{getText('front.search.hotel.star5')}"/></span>
+							<input type="checkbox" name="level" value="3star" /><span><@s.property value="%{getText('front.search.hotel.star3')}"/></span>
+							<input type="checkbox" name="level" value="4star" /><span><@s.property value="%{getText('front.search.hotel.star4')}"/></span>
+							<input type="checkbox" name="level" value="5star" /><span><@s.property value="%{getText('front.search.hotel.star5')}"/></span>
 						</p>
-						<p><input type="radio" name="hotel" value="level3" /><span><@s.property value="%{getText('front.search.hotel.express')}"/></span></p>
-						<p><input type="radio" name="hotel" value="level3" /><span><@s.property value="%{getText('front.search.hotel.dormitory')}"/></span></p>
-						<p><input type="radio" name="hotel" value="level3" /><span><@s.property value="%{getText('front.search.hotel.nursing')}"/></span></p>
+						<p><input type="checkbox" name="level" value="express_hotel" /><span><@s.property value="%{getText('front.search.hotel.express')}"/></span></p>
+						<p><input type="checkbox" name="level" value="apartment_hotel" /><span><@s.property value="%{getText('front.search.hotel.dormitory')}"/></span></p>
+						<p><input type="checkbox" name="level" value="nursing_hotel" /><span><@s.property value="%{getText('front.search.hotel.nursing')}"/></span></p>
 					</div>
 					<div class="time_part">
 						<div class="s_title"><@s.property value="%{getText('front.search.date.title')}"/></div>
 						<p><@s.property value="%{getText('front.search.date.travel')}"/>:</p>
-						<p><input id="search_dater" type="checkbox" name="nothtl" onchange="hdiien_input()" /><@s.property value="%{getText('front.search.date.no')}"/></p>
+						<p><input id="search_dater" type="checkbox" name="notnecessary" onchange="hdiien_input()" /><@s.property value="%{getText('front.search.date.no')}"/></p>
 						<div id="start_time" class="time_ch"><@s.property value="%{getText('front.search.date.from')}"/>:<input name="start_time" id="fromDate" type="text" readonly="readonly"/></div>
 						<div id="end_time" class="time_ch"><@s.property value="%{getText('front.search.date.to')}"/>:<input name="end_time" id="toDate" type="text" readonly="readonly"/></div>
 						<div><@s.property value="%{getText('front.search.date.people')}"/>:</div>
-						<div><input class="short" type="text" />&nbsp;<@s.property value="%{getText('front.search.date.adult')}"/></div>
-						<div style="margin-top:5px"><input class="short" type="text" />&nbsp;<@s.property value="%{getText('front.search.date.child')}"/></div>	
+						<div><input class="short" type="text" name="adult_n"/>&nbsp;<@s.property value="%{getText('front.search.date.adult')}"/></div>
+						<div style="margin-top:5px"><input class="short" type="text" name="child_n"/>&nbsp;<@s.property value="%{getText('front.search.date.child')}"/></div>	
 					</div>
 					<div class="single_part">
 						<div class="s_title"><@s.property value="%{getText('front.search.guide.require')}"/></div>
-						<p><input type="radio" name="guide" value="ser1" /><span><@s.property value="%{getText('front.search.guide.airport')}"/></span></p>
-						<p><input type="radio" name="guide" value="ser2" /><span><@s.property value="%{getText('front.search.guide.tour')}"/></span></p>
-						<p><input type="radio" name="guide" value="ser3" /><span><@s.property value="%{getText('front.search.guide.fulltime')}"/></span></p>
-						<p><input type="radio" name="guide" value="ser4" /><span><@s.property value="%{getText('front.search.guide.fixed')}"/></span></p>
-						<p><input type="radio" name="guide" value="ser5" /><span><@s.property value="%{getText('front.search.guide.no')}"/></span></p>
+						<p><input type="radio" name="guide" value="airport" /><span><@s.property value="%{getText('front.search.guide.airport')}"/></span></p>
+						<p><input type="radio" name="guide" value="tour" /><span><@s.property value="%{getText('front.search.guide.tour')}"/></span></p>
+						<p><input type="radio" name="guide" value="fulltime" /><span><@s.property value="%{getText('front.search.guide.fulltime')}"/></span></p>
+						<p><input type="radio" name="guide" value="fixed" /><span><@s.property value="%{getText('front.search.guide.fixed')}"/></span></p>
+						<p><input type="radio" name="guide" value="no" /><span><@s.property value="%{getText('front.search.guide.no')}"/></span></p>
 					</div>
 					<input type="submit" class="search_btn" name="travel_sh" value=" " />
 					<div class="clear"></div>
 				</form>
 			</div>
 			<div id="con_stab_2" class="hidden">
-				<form class="search_bar" action="" method="post">
+				<form name="hotelSearchForm" class="search_bar" action="${base}/search/hotelSearch.html" method="post" onsubmit="return validateForm(this)">
 					<div class="single_part">
 						<div class="s_title"><@s.property value="%{getText('front.search.location')}"/></div>
-						<p><input type="radio" name="where" value="city" /><span><@s.property value="%{getText('front.search.location.dalian')}"/></span></p>
-						<p><input type="radio" name="where" value="jst" /><span><@s.property value="%{getText('front.search.location.jst')}"/></span></p>
-						<p><input type="radio" name="where" value="ls" /><span><@s.property value="%{getText('front.search.location.ls')}"/></span></p>
+						<p><input type="radio" name="location" value="downtown" emptyInfo="please choose location"/><span><@s.property value="%{getText('front.search.location.dalian')}"/></span></p>
+						<p><input type="radio" name="location" value="jinshitan" emptyInfo="please choose location"/><span><@s.property value="%{getText('front.search.location.jst')}"/></span></p>
+						<p><input type="radio" name="location" value="lvshun" emptyInfo="please choose location"/><span><@s.property value="%{getText('front.search.location.ls')}"/></span></p>
 					</div>
 					<div class="single_part">
 						<div class="s_title"><@s.property value="%{getText('front.search.star')}"/></div>
-						<p><input type="radio" name="hotel" value="ht_le3" /><span><@s.property value="%{getText('front.search.star3')}"/></span></p>
-						<p><input type="radio" name="hotel" value="ht_le4" /><span><@s.property value="%{getText('front.search.star4')}"/></span></p>
-						<p><input type="radio" name="hotel" value="ht_le5" /><span><@s.property value="%{getText('front.search.star5')}"/></span></p>
-						<p><input type="radio" name="hotel" value="sty_kj" /><span><@s.property value="%{getText('front.search.star.express')}"/></span></p>
-						<p><input type="radio" name="hotel" value="sty_gy" /><span><@s.property value="%{getText('front.search.star.dormitory')}"/></span></p>
-						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.star.nursing')}"/></span></p>
+						<p><input type="radio" name="level" value="3star" emptyInfo="please choose level"/><span><@s.property value="%{getText('front.search.star3')}"/></span></p>
+						<p><input type="radio" name="level" value="4star" emptyInfo="please choose level"/><span><@s.property value="%{getText('front.search.star4')}"/></span></p>
+						<p><input type="radio" name="level" value="5star" emptyInfo="please choose level"/><span><@s.property value="%{getText('front.search.star5')}"/></span></p>
+						<p><input type="radio" name="level" value="express_hotel" emptyInfo="please choose level"/><span><@s.property value="%{getText('front.search.star.express')}"/></span></p>
+						<p><input type="radio" name="level" value="apartment_hotel" emptyInfo="please choose level"/><span><@s.property value="%{getText('front.search.star.dormitory')}"/></span></p>
+						<p><input type="radio" name="level" value="nursing_hotel" emptyInfo="please choose level"/><span><@s.property value="%{getText('front.search.star.nursing')}"/></span></p>
 					</div>
 					<div class="single_part_func">
 						<div class="s_title"><@s.property value="%{getText('front.search.function')}"/></div>
 						<div class="text_part_func">
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.exhibition')}"/></span></p>
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.beach')}"/></span></p>
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.treatment')}"/></span></p>
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.store')}"/></span></p>
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.treatment.store')}"/></span></p>
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.treatment.beach')}"/></span></p>
+							<p><input type="radio" name="func" value="huizhanzhongxinfujin" emptyInfo="please choose function"/><span><@s.property value="%{getText('front.search.function.exhibition')}"/></span></p>
+							<p><input type="radio" name="func" value="yuchang" emptyInfo="please choose function"/><span><@s.property value="%{getText('front.search.function.beach')}"/></span></p>
+							<p><input type="radio" name="func" value="zhiliao" emptyInfo="please choose function"/><span><@s.property value="%{getText('front.search.function.treatment')}"/></span></p>
+							<p><input type="radio" name="func" value="shangchang" emptyInfo="please choose function"/><span><@s.property value="%{getText('front.search.function.store')}"/></span></p>
+							<p><input type="radio" name="func" value="zhiliaoshangchang" emptyInfo="please choose function"/><span><@s.property value="%{getText('front.search.function.treatment.store')}"/></span></p>
+							<p><input type="radio" name="func" value="yuchangzhiliao" emptyInfo="please choose function"/><span><@s.property value="%{getText('front.search.function.treatment.beach')}"/></span></p>
 						</div>
 						<div class="text_part_func">
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.garden.hotel')}"/></span></p>
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.college')}"/></span></p>
+							<p><input type="radio" name="func" value="gongyuan" emptyInfo="please choose function"/><span><@s.property value="%{getText('front.search.function.garden.hotel')}"/></span></p>
+							<p><input type="radio" name="func" value="kaojindaxue" emptyInfo="please choose function"/><span><@s.property value="%{getText('front.search.function.college')}"/></span></p>
 						</div>
 					</div>
-					<input type="submit" class="search_btn" name="hotel_sh" value=" " />
+					<input type="submit" class="search_btn" name="hotel_sh" value="" />
 				</form>
 				<div class="clear"></div>
 			</div>
@@ -123,39 +123,39 @@
 		<!-- The Search Content -->
 		<div id="tabcontent">
 			<div id="con_stab_1">
-				<form class="search_bar" action="" method="post">
+				<form name="hotelSearchForm" class="search_bar" action="${base}/search/hotelSearch.html" method="post" onsubmit="return validateForm(this)">
 					<div class="single_part">
 						<div class="s_title"><@s.property value="%{getText('front.search.location')}"/></div>
-						<p><input type="radio" name="where" value="city" /><span><@s.property value="%{getText('front.search.location.dalian')}"/></span></p>
-						<p><input type="radio" name="where" value="jst" /><span><@s.property value="%{getText('front.search.location.jst')}"/></span></p>
-						<p><input type="radio" name="where" value="ls" /><span><@s.property value="%{getText('front.search.location.ls')}"/></span></p>
+						<p><input type="radio" name="location" value="downtown" /><span><@s.property value="%{getText('front.search.location.dalian')}"/></span></p>
+						<p><input type="radio" name="location" value="jinshitan" /><span><@s.property value="%{getText('front.search.location.jst')}"/></span></p>
+						<p><input type="radio" name="location" value="lvshun" /><span><@s.property value="%{getText('front.search.location.ls')}"/></span></p>
 					</div>
 					<div class="single_part">
 						<div class="s_title"><@s.property value="%{getText('front.search.star')}"/></div>
-						<p><input type="radio" name="hotel" value="ht_le3" /><span><@s.property value="%{getText('front.search.star3')}"/></span></p>
-						<p><input type="radio" name="hotel" value="ht_le4" /><span><@s.property value="%{getText('front.search.star4')}"/></span></p>
-						<p><input type="radio" name="hotel" value="ht_le5" /><span><@s.property value="%{getText('front.search.star5')}"/></span></p>
-						<p><input type="radio" name="hotel" value="sty_kj" /><span><@s.property value="%{getText('front.search.star.express')}"/></span></p>
-						<p><input type="radio" name="hotel" value="sty_gy" /><span><@s.property value="%{getText('front.search.star.dormitory')}"/></span></p>
-						<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.star.nursing')}"/></span></p>
+						<p><input type="radio" name="level" value="3star" /><span><@s.property value="%{getText('front.search.star3')}"/></span></p>
+						<p><input type="radio" name="level" value="4star" /><span><@s.property value="%{getText('front.search.star4')}"/></span></p>
+						<p><input type="radio" name="level" value="5star" /><span><@s.property value="%{getText('front.search.star5')}"/></span></p>
+						<p><input type="radio" name="level" value="express_hotel" /><span><@s.property value="%{getText('front.search.star.express')}"/></span></p>
+						<p><input type="radio" name="level" value="apartment_hotel" /><span><@s.property value="%{getText('front.search.star.dormitory')}"/></span></p>
+						<p><input type="radio" name="level" value="nursing_hotel" /><span><@s.property value="%{getText('front.search.star.nursing')}"/></span></p>
 					</div>
 					<div class="single_part_func">
 						<div class="s_title"><@s.property value="%{getText('front.search.function')}"/></div>
 						<div class="text_part_func">
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.exhibition')}"/></span></p>
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.beach')}"/></span></p>
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.treatment')}"/></span></p>
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.store')}"/></span></p>
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.treatment.store')}"/></span></p>
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.treatment.beach')}"/></span></p>
+							<p><input type="radio" name="func" value="huizhanzhongxinfujin" /><span><@s.property value="%{getText('front.search.function.exhibition')}"/></span></p>
+							<p><input type="radio" name="func" value="yuchang" /><span><@s.property value="%{getText('front.search.function.beach')}"/></span></p>
+							<p><input type="radio" name="func" value="zhiliao" /><span><@s.property value="%{getText('front.search.function.treatment')}"/></span></p>
+							<p><input type="radio" name="func" value="shangchang" /><span><@s.property value="%{getText('front.search.function.store')}"/></span></p>
+							<p><input type="radio" name="func" value="zhiliaoshangchang" /><span><@s.property value="%{getText('front.search.function.treatment.store')}"/></span></p>
+							<p><input type="radio" name="func" value="yuchangzhiliao" /><span><@s.property value="%{getText('front.search.function.treatment.beach')}"/></span></p>
 						</div>
 						<div class="text_part_func">
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.garden.hotel')}"/></span></p>
-							<p><input type="radio" name="hotel" value="sty_ly" /><span><@s.property value="%{getText('front.search.function.college')}"/></span></p>
+							<p><input type="radio" name="func" value="gongyuan" /><span><@s.property value="%{getText('front.search.function.garden.hotel')}"/></span></p>
+							<p><input type="radio" name="func" value="kaojindaxue" /><span><@s.property value="%{getText('front.search.function.college')}"/></span></p>
 						</div>
 					</div>
-					<input type="submit" class="search_btn" name="hotel_sh" value=" " />
-				</form>				
+					<input type="submit" class="search_btn" name="hotel_sh" value="" />
+				</form>		
 			</div>
 		</div>
 	</div>
@@ -169,22 +169,22 @@
 		<!-- The Search Content -->
 		<div id="tabcontent">
 			<div id="con_stab_1">
-				<form class="search_bar" action="" name="sch_form" method="post">
+				<form name="tourSearchForm" class="search_bar" action="${base}/search/tourSearch.html" name="sch_form" method="post">
 					<div class="tra_style">
 						<div class="s_title"><@s.property value="%{getText('front.search.vacation.type')}"/></div>
 						<div class="text_part">
-							<p><input type="radio" name="travel_type" value="tt1" /><span><@s.property value="%{getText('front.search.vacation.type.all')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt1" /><span><@s.property value="%{getText('front.search.vacation.type.therapy')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt2" /><span><@s.property value="%{getText('front.search.vacation.type.child')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt6" /><span><@s.property value="%{getText('front.search.vacation.type.romantic')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt3" /><span><@s.property value="%{getText('front.search.vacation.type.luxurious')}"/></span></p>
+							<p><input type="checkbox" id="ttselector" onClick="selectAllType()" /><span><@s.property value="%{getText('front.search.vacation.type.all')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="2" /><span><@s.property value="%{getText('front.search.vacation.type.therapy')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="3" /><span><@s.property value="%{getText('front.search.vacation.type.child')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="4" /><span><@s.property value="%{getText('front.search.vacation.type.romantic')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="5" /><span><@s.property value="%{getText('front.search.vacation.type.luxurious')}"/></span></p>
 						</div>
 						<div class="text_part2">
-							<p><input type="radio" name="travel_type" value="tt8" /><span><@s.property value="%{getText('front.search.vacation.type.family')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt4" /><span><@s.property value="%{getText('front.search.vacation.type.foodie')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt9" /><span><@s.property value="%{getText('front.search.vacation.type.sport')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt5" /><span><@s.property value="%{getText('front.search.vacation.type.event')}"/></span></p>
-							<p><input type="radio" name="travel_type" value="tt0" /><span><@s.property value="%{getText('front.search.vacation.type.learn')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="6" /><span><@s.property value="%{getText('front.search.vacation.type.family')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="7" /><span><@s.property value="%{getText('front.search.vacation.type.foodie')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="8" /><span><@s.property value="%{getText('front.search.vacation.type.sport')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="9" /><span><@s.property value="%{getText('front.search.vacation.type.event')}"/></span></p>
+							<p><input type="checkbox" name="travel_type" value="10" /><span><@s.property value="%{getText('front.search.vacation.type.learn')}"/></span></p>
 						</div>
 					</div>
 					<div class="single_part">
@@ -204,33 +204,33 @@
 					</div>
 					<div class="hotel_part">
 						<div class="s_title"><@s.property value="%{getText('front.search.hotel')}"/></div>
-						<p><input type="radio" name="hotel" value="whole" /><span><@s.property value="%{getText('front.search.hotel.all')}"/></span></p>
+						<p><input type="checkbox" id="hselector" onclick="selectAllHotel()" /><span><@s.property value="%{getText('front.search.hotel.all')}"/></span></p>
 						<p>
-							<input type="radio" name="hotel" value="level3" /><span><@s.property value="%{getText('front.search.hotel.star3')}"/></span>
-							<input type="radio" name="hotel" value="level4" /><span><@s.property value="%{getText('front.search.hotel.star4')}"/></span>
-							<input type="radio" name="hotel" value="level5" /><span><@s.property value="%{getText('front.search.hotel.star5')}"/></span>
+							<input type="checkbox" name="level" value="3star" /><span><@s.property value="%{getText('front.search.hotel.star3')}"/></span>
+							<input type="checkbox" name="level" value="4star" /><span><@s.property value="%{getText('front.search.hotel.star4')}"/></span>
+							<input type="checkbox" name="level" value="5star" /><span><@s.property value="%{getText('front.search.hotel.star5')}"/></span>
 						</p>
-						<p><input type="radio" name="hotel" value="level3" /><span><@s.property value="%{getText('front.search.hotel.express')}"/></span></p>
-						<p><input type="radio" name="hotel" value="level3" /><span><@s.property value="%{getText('front.search.hotel.dormitory')}"/></span></p>
-						<p><input type="radio" name="hotel" value="level3" /><span><@s.property value="%{getText('front.search.hotel.nursing')}"/></span></p>
+						<p><input type="checkbox" name="level" value="express_hotel" /><span><@s.property value="%{getText('front.search.hotel.express')}"/></span></p>
+						<p><input type="checkbox" name="level" value="apartment_hotel" /><span><@s.property value="%{getText('front.search.hotel.dormitory')}"/></span></p>
+						<p><input type="checkbox" name="level" value="nursing_hotel" /><span><@s.property value="%{getText('front.search.hotel.nursing')}"/></span></p>
 					</div>
 					<div class="time_part">
 						<div class="s_title"><@s.property value="%{getText('front.search.date.title')}"/></div>
 						<p><@s.property value="%{getText('front.search.date.travel')}"/>:</p>
-						<p><input id="search_dater" type="checkbox" name="nothtl" onchange="hdiien_input()" /><@s.property value="%{getText('front.search.date.no')}"/></p>
+						<p><input id="search_dater" type="checkbox" name="notnecessary" onchange="hdiien_input()" /><@s.property value="%{getText('front.search.date.no')}"/></p>
 						<div id="start_time" class="time_ch"><@s.property value="%{getText('front.search.date.from')}"/>:<input name="start_time" id="fromDate" type="text" readonly="readonly"/></div>
 						<div id="end_time" class="time_ch"><@s.property value="%{getText('front.search.date.to')}"/>:<input name="end_time" id="toDate" type="text" readonly="readonly"/></div>
 						<div><@s.property value="%{getText('front.search.date.people')}"/>:</div>
-						<div><input class="short" type="text" />&nbsp;<@s.property value="%{getText('front.search.date.adult')}"/></div>
-						<div style="margin-top:5px"><input class="short" type="text" />&nbsp;<@s.property value="%{getText('front.search.date.child')}"/></div>	
+						<div><input class="short" type="text" name="adult_n"/>&nbsp;<@s.property value="%{getText('front.search.date.adult')}"/></div>
+						<div style="margin-top:5px"><input class="short" type="text" name="child_n"/>&nbsp;<@s.property value="%{getText('front.search.date.child')}"/></div>	
 					</div>
 					<div class="single_part">
 						<div class="s_title"><@s.property value="%{getText('front.search.guide.require')}"/></div>
-						<p><input type="radio" name="guide" value="ser1" /><span><@s.property value="%{getText('front.search.guide.airport')}"/></span></p>
-						<p><input type="radio" name="guide" value="ser2" /><span><@s.property value="%{getText('front.search.guide.tour')}"/></span></p>
-						<p><input type="radio" name="guide" value="ser3" /><span><@s.property value="%{getText('front.search.guide.fulltime')}"/></span></p>
-						<p><input type="radio" name="guide" value="ser4" /><span><@s.property value="%{getText('front.search.guide.fixed')}"/></span></p>
-						<p><input type="radio" name="guide" value="ser5" /><span><@s.property value="%{getText('front.search.guide.no')}"/></span></p>
+						<p><input type="radio" name="guide" value="airport" /><span><@s.property value="%{getText('front.search.guide.airport')}"/></span></p>
+						<p><input type="radio" name="guide" value="tour" /><span><@s.property value="%{getText('front.search.guide.tour')}"/></span></p>
+						<p><input type="radio" name="guide" value="fulltime" /><span><@s.property value="%{getText('front.search.guide.fulltime')}"/></span></p>
+						<p><input type="radio" name="guide" value="fixed" /><span><@s.property value="%{getText('front.search.guide.fixed')}"/></span></p>
+						<p><input type="radio" name="guide" value="no" /><span><@s.property value="%{getText('front.search.guide.no')}"/></span></p>
 					</div>
 					<input type="submit" class="search_btn" name="travel_sh" value=" " />
 					<div class="clear"></div>

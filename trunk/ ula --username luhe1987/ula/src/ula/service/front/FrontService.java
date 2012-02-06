@@ -3,8 +3,13 @@ package ula.service.front;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.commons.lang.StringUtils;
+
 import ula.service.BaseService;
 import ula.util.MapUtil;
+import ula.util.QueryHelper;
 
 /**
  * 前台功能Service
@@ -74,6 +79,69 @@ public class FrontService extends BaseService {
 		return jt.queryForMap(SQL_GET_CONTACT_BY_TAG, tag);
 	}
 
-	// private static final String
-	// SQL_GET_TOUR_BY_PRODUCT_ID="select from product_";
+	public List<Map<String, Object>> getSearchHotel(
+			Map<String, Object> parameters) {
+		QueryHelper qh = new QueryHelper("select ID, NAME from hotel");
+		String location = MapUtil.getStringFromMap(parameters, "location");
+		String level = MapUtil.getStringFromMap(parameters, "level");
+		String func = MapUtil.getStringFromMap(parameters, "func");
+		qh.setParam(StringUtils.isNotEmpty(location), "LOCATION=?", location);
+		qh.setParam(StringUtils.isNotEmpty(level), "LEVEL=?", level);
+		qh.setParam(StringUtils.isNotEmpty(func), "FUNC=?", func);
+		return jt.queryForList(qh.getQuerySql(), qh.getParams());
+	}
+
+	public List<Map<String, Object>> getSearchHotelByLevel(
+			HttpServletRequest request) {
+		StringBuffer sqlBuffer = new StringBuffer(
+				"select ID,NAME from hotel where LEVEL in(");
+		String sql = null;
+		String[] levels = request.getParameterValues("level");
+		if (levels == null) {
+			sql = "select ID,NAME from hotel";
+		} else {
+			for (int i = 0; i < levels.length; i++) {
+				sqlBuffer.append("'").append(levels[i]).append("',");
+			}
+			sql = sqlBuffer.substring(0, sqlBuffer.toString().length() - 1)
+					+ ")";
+		}
+		return jt.queryForList(sql);
+	}
+
+	public List<Map<String, Object>> getTourCategoryByVacationType(
+			HttpServletRequest request) {
+		StringBuffer sqlBuffer = new StringBuffer(
+				"select distinct CATEGORY_ID from tour_category_vacation_type where VACATION_TYPE_ID in(");
+		String sql = null;
+		String[] types = request.getParameterValues("travel_type");
+		if (types == null) {
+			sql = "select distinct CATEGORY_ID from tour_category_vacation_type";
+		} else {
+			for (int i = 0; i < types.length; i++) {
+				sqlBuffer.append("'").append(types[i]).append("',");
+			}
+			sql = sqlBuffer.substring(0, sqlBuffer.toString().length() - 1)
+					+ ")";
+		}
+		return jt.queryForList(sql);
+	}
+
+	public List<Map<String, Object>> getSearchTour(HttpServletRequest request) {
+		List<Map<String, Object>> categoryIds = getTourCategoryByVacationType(request);
+		StringBuffer sqlBuffer = new StringBuffer(
+				"select ID,TITLE from tour where CATEGORY_ID in(");
+		String sql = null;
+		if (categoryIds.size() == 0) {
+			sql = "select ID,TITLE from tour";
+		} else {
+			for (int i = 0; i < categoryIds.size(); i++) {
+				sqlBuffer.append("'").append(
+						categoryIds.get(i).get("CATEGORY_ID")).append("',");
+			}
+			sql = sqlBuffer.substring(0, sqlBuffer.toString().length() - 1)
+					+ ")";
+		}
+		return jt.queryForList(sql);
+	}
 }
