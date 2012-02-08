@@ -41,5 +41,10 @@
 			method="product">
 			<result name="product">/front/product/index.ftl</result>
 		</action>
+		<!-- 查看酒店 -->
+		<action name="hotel" class="ula.action.front.IndexAction"
+			method="hotel">
+			<result name="hotel">/front/hotel/index.ftl</result>
+		</action>
 	</package>
 </struts>

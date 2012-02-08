@@ -1,5 +1,6 @@
 package ula.action.front;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -25,6 +26,9 @@ public class IndexAction extends AnonymousAction {
 
 	private Map<String, Object> recommend;
 	private List<Map<String, Object>> product;
+	private Map<String, Object> hotel;
+	private List<Map<String, Object>> albumPicList;
+	private List<Integer> picIndex;
 
 	private HashMap<String, Object> jsonModel;
 	private String referer;
@@ -51,6 +55,18 @@ public class IndexAction extends AnonymousAction {
 
 	public List<Map<String, Object>> getProduct() {
 		return product;
+	}
+
+	public Map<String, Object> getHotel() {
+		return hotel;
+	}
+
+	public List<Map<String, Object>> getAlbumPicList() {
+		return albumPicList;
+	}
+
+	public List<Integer> getPicIndex() {
+		return picIndex;
 	}
 
 	public HashMap<String, Object> getJsonModel() {
@@ -115,6 +131,36 @@ public class IndexAction extends AnonymousAction {
 		product = getServiceManager().getIndexService().getProductById(
 				getParametersAsMap());
 		return "product";
+	}
+
+	/**
+	 * 酒店查询
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String hotel() throws Exception {
+		hotel = getServiceManager().getIndexService().getHotelById(
+				getParametersAsMap());
+		hotel.put("LOCATION", getServiceManager().getHotelService()
+				.getParamValueByName((String) hotel.get("LOCATION")));
+		hotel.put("LEVEL", getServiceManager().getHotelService()
+				.getParamValueByName((String) hotel.get("LEVEL")));
+		hotel.put("FUNC", getServiceManager().getHotelService()
+				.getParamValueByName((String) hotel.get("FUNC")));
+		albumPicList = getServiceManager().getHotelService()
+				.getHotelAlbumPicByHotelId(String.valueOf(hotel.get("ID")));
+		picIndex = new ArrayList<Integer>();
+		for (int i = 0; i < albumPicList.size(); i++) {
+			Map<String, Object> map = albumPicList.get(i);
+			picIndex.add((Integer) map.get("PICID"));
+		}
+		// baseInfo
+		recommendList = getServiceManager().getIndexService()
+				.getRecommendList();
+		linkList = getServiceManager().getIndexService().getLinkList();
+		weather = getServiceManager().getIndexService().getWeather();
+		return "hotel";
 	}
 
 	/**

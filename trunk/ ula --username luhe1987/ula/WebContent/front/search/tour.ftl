@@ -149,13 +149,13 @@
                     <#if hotelList?has_content>
                   	<#list hotelList as hotel>
                     <tr class="words_con">
-                    	<td>${hotel.NAME}</td>
+                    	<td><a href="${base}/hotel-${hotel.ID}.html">${hotel.NAME}</a></td>
                     </tr>
                     </#list>
                     <#if (hotelList?size<tourList?size)>
                     <#list 1..(tourList?size-hotelList?size) as i>
                     <tr class="words_con">
-                    	<td>&nbsp;</td>
+                    	<td><a>&nbsp;</a></td>
                     <tr>
                     </#list>
                     </#if>
@@ -172,13 +172,13 @@
                     <#if tourList?has_content>
                   	<#list tourList as tour>
                     <tr class="words_con">
-                    	<td>${tour.TITLE}</td>
+                    	<td><a href="${base}/tour-${tour.ID}.html">${tour.TITLE}</a></td>
                     </tr>
                     </#list>
                     <#if (tourList?size<hotelList?size)>
                     <#list 1..(hotelList?size-tourList?size) as i>
                     <tr class="words_con">
-                    	<td>&nbsp;</td>
+                    	<td><a>&nbsp;</a></td>
                     <tr>
                     </#list>
                     </#if>
