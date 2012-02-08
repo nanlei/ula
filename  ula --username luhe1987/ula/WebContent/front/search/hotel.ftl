@@ -92,7 +92,7 @@
                   	<#list hotelList as hotel>
                     <tr class="words_con">
                     	<td>${hotel.NAME}</td>
-                    	<td><a href="#">点击查看</a></td>
+                    	<td><a href="${base}/hotel-${hotel.ID}.html">点击查看</a></td>
                     </tr>
                     </#list>
                     <#else>

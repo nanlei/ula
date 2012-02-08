@@ -65,4 +65,11 @@ public class IndexService extends BaseService {
 			return null;
 		}
 	}
+
+	private static final String SQL_GET_HOTEL_BY_ID = "select * from hotel where ID=?";
+
+	public Map<String, Object> getHotelById(Map<String, Object> parameters) {
+		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
+		return jt.queryForMap(SQL_GET_HOTEL_BY_ID, params);
+	}
 }
