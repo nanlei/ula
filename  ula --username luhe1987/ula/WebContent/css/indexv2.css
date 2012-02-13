@@ -23,7 +23,7 @@ a {
 }
 
 ul,li {
-	list-style: none;
+  	list-style: none;
 }
 
 img {
@@ -436,7 +436,7 @@ img {
 }
 
 .search_bar p {
-	padding-left: 3px;
+	padding-left: 4px;
 	line-height: 20px;
 }
 
@@ -449,11 +449,12 @@ img {
 .search_bar .short {
 	float: left;
 	width:60px;
+	margin-left:10px;
 	height: 18px;
 }
 
 .search_bar .date_span {
-	width: 20px;
+	width: 35px;
 	height: 20px;
 	float: left;
 }
@@ -464,6 +465,8 @@ img {
 
 .search_bar .time_ch {
 	padding-left: 3px;
+	margin-top:3px;
+	margin-bottom:3px;	
 }
 
 .search_bar .time_ch input{
@@ -475,7 +478,18 @@ img {
 	width: 70px;
 	height: 20px;
 	float: left;
+	clear:both;
 }
+
+.search_bar .p_people {
+	width: 160px;
+	height: 20px;
+	float: left;
+	clear:both;
+}
+
+
+
 
 .search_bar .search_btn {
 	float: right;
