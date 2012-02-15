@@ -201,9 +201,9 @@ ${importJS("/components/ckeditor/ckeditor.js")}
 <#if upload>
 <script type="text/javascript">
 CKEDITOR.replace('${id}',{
-	filebrowserUploadUrl : '${base}/pic/editorUpload.action',
-	filebrowserImageUploadUrl : '${base}/pic/editorUpload.action',
-	filebrowserFlashUploadUrl : '${base}/pic/editorUpload.action'
+	filebrowserUploadUrl : '${base}/admin/pic/editorUpload.action',
+	filebrowserImageUploadUrl : '${base}/admin/pic/editorUpload.action',
+	filebrowserFlashUploadUrl : '${base}/admin/pic/editorUpload.action'
 });
 </script>
 <#else>
