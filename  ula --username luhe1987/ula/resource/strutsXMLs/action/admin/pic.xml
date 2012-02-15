@@ -3,7 +3,7 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-	<package name="admin/pic" extends="global" namespace="/pic">
+	<package name="admin-pic" extends="global" namespace="/pic">
 		<action name="list" class="ula.action.admin.pic.PictureAction"
 			method="list">
 			<result name="list">list.ftl</result>
@@ -33,10 +33,12 @@
 		</action>
 	</package>
 
-	<package name="admin/editorpic" extends="global" namespace="/pic">
+	<package name="admin-editorpic" extends="global" namespace="/admin/pic">
 		<!-- CKEditor文件上传 -->
 		<action name="editorUpload" class="ula.action.admin.pic.EditorPictureAction"
-			method="editorUpload" />
+			method="editorUpload">
+			<interceptor-ref name="UlaFileUpload" />
+		</action>
 
 		<action name="editorList" class="ula.action.admin.pic.EditorPictureAction"
 			method="editorList">
