@@ -45,20 +45,20 @@
  		</div>
             <div id="snav2" class="menu2"  onmousemove="secondNav('snav2');" onmouseout="hidden_nav('snav2');">
             	<ul class="ul1">
-                	<li><a href="${base}/tour/tour-1.html">▪ <@s.property value="%{getText('front.tour.business')}"/></a></li>
-                    <li><a href="${base}/tour/tour-2.html">▪ <@s.property value="%{getText('front.tour.camping')}"/></a></li>
-                    <li><a href="${base}/tour/tour-4.html">▪ <@s.property value="%{getText('front.tour.foodie')}"/></a></li>
-                    <li><a href="${base}/tour/tour-5.html">▪ <@s.property value="%{getText('front.tour.family')}"/></a></li>
-                    <li><a href="${base}/tour/tour-6.html">▪ <@s.property value="%{getText('front.tour.therapy')}"/></a></li>
-                    <li><a href="${base}/tour/tour-7.html">▪ <@s.property value="%{getText('front.tour.newyear')}"/></a></li>
-                    <li><a href="${base}/tour/tour-8.html">▪ <@s.property value="%{getText('front.tour.learn')}"/></a></li>
-                    <li><a href="${base}/tour/tour-9.html">▪ <@s.property value="%{getText('front.tour.romantic')}"/></a></li>
-                    <li><a href="${base}/tour/tour-10.html">▪ <@s.property value="%{getText('front.tour.rural')}"/></a></li>
-                    <li><a href="${base}/tour/tour-18.html">▪ <@s.property value="%{getText('front.tour.event')}"/></a></li>
-                    <li><a href="${base}/tour/tour-11.html">▪ <@s.property value="%{getText('front.tour.sport')}"/></a></li>
-                    <li><a href="${base}/tour/tour-12.html">▪ <@s.property value="%{getText('front.tour.hotspring')}"/></a></li>
-                    <li><a href="${base}/tour/tour-13.html">▪ <@s.property value="%{getText('front.tour.exhibition')}"/></a></li>
-                    <li><a href="${base}/tour/tour-14.html">▪ <@s.property value="%{getText('front.tour.luxurious')}"/></a></li>
+                	<li><a href="${base}/tour/business.html"><@s.property value="%{getText('front.tour.business')}"/></a></li>
+					<li><a href="${base}/tour/camping.html"><@s.property value="%{getText('front.tour.camping')}"/></a></li>
+					<li><a href="${base}/tour/foodie.html"><@s.property value="%{getText('front.tour.foodie')}"/></a></li>
+					<li><a href="${base}/tour/family.html"><@s.property value="%{getText('front.tour.family')}"/></a></li>
+					<li><a href="${base}/tour/therapy.html"><@s.property value="%{getText('front.tour.therapy')}"/></a></li>
+					<li><a href="${base}/tour/newyear.html"><@s.property value="%{getText('front.tour.newyear')}"/></a></li>
+					<li><a href="${base}/tour/learn.html"><@s.property value="%{getText('front.tour.learn')}"/></a></li>
+					<li><a href="${base}/tour/romantic.html"><@s.property value="%{getText('front.tour.romantic')}"/></a></li>
+					<li><a href="${base}/tour/rural.html"><@s.property value="%{getText('front.tour.rural')}"/></a></li>
+					<li><a href="${base}/tour/event.html"><@s.property value="%{getText('front.tour.event')}"/></a></li>
+					<li><a href="${base}/tour/sport.html"><@s.property value="%{getText('front.tour.sport')}"/></a></li>
+					<li><a href="${base}/tour/hotspring.html"><@s.property value="%{getText('front.tour.hotspring')}"/></a></li>
+					<li><a href="${base}/tour/exhibition.html"><@s.property value="%{getText('front.tour.exhibition')}"/></a></li>
+					<li><a href="${base}/tour/luxurious.html"><@s.property value="%{getText('front.tour.luxurious')}"/></a></li>
                 </ul>
             </div>
             <div id="snav3" class="menu3" onmousemove="secondNav('snav3');" onmouseout="hidden_nav('snav3');">
