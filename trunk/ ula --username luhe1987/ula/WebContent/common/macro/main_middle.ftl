@@ -64,3 +64,26 @@
 	</#list>
 </div>
 </#macro>
+
+
+
+<#macro tours_by_category tours>
+<div id="page_content">
+	<#list tours as tour>
+	<div class="simple_travel_bar">
+		<div class="photos">
+			<img src="${base}${tour.COVERLINK}" alt="${tour.TITLE}"  />
+		</div>
+		<div class="intro">
+			<div class="title">
+				<div class="tra_name">${tour.TITLE}</div>
+				<div class="tra_icon_more"><a href="${base}/tour-${tour.ID}.html">More</a></div>
+			</div>
+			<div class="words">
+				<p>${tour.DESCRIPTION}...</p>
+			</div>
+		</div>
+	</div>
+	</#list>
+</div>
+</#macro>
