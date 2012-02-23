@@ -6,7 +6,7 @@
 	<!-- The Banner  -->
 	<@fp.banner /><#-- banner宏 -->
 	<!-- The Navigation  -->
-	<@fp.navigation c_index=true c_city=false c_tour=false c_service=false c_search=false c_contact=false /><#-- navigation宏 -->
+	<@fp.navigation c_index=true c_city=false c_tour=false c_service=false c_search=false c_contact=false c_online=false/><#-- navigation宏 -->
 	<!-- The Search Bar  -->
 	<@fp.search /><#-- search宏 -->
 	<!-- The Main Body -->

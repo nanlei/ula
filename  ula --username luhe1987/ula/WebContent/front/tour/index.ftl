@@ -6,7 +6,7 @@
 	<!-- The Banner  -->
 	<@fp.banner /><#-- banner宏 -->
 	<!-- The Navigation  -->
-	<@fp.navigation c_index=false c_city=false c_tour=true c_service=false c_search=false c_contact=false /><#-- navigation宏 -->
+	<@fp.navigation c_index=false c_city=false c_tour=true c_service=false c_search=false c_contact=false c_online=false/><#-- navigation宏 -->
 	<!-- The Main Body -->
 	<div id="main_body">
 		<!-- The Left -->
@@ -31,21 +31,9 @@
          	<#case "exhibition"><#assign tips="${action.getBundle('front.tour.exhibition')}"><#break>
          	<#case "luxurious"><#assign tips="${action.getBundle('front.tour.luxurious')}"><#break>
          </#switch>
-            <div id="article_content">
             	<#if tourList?has_content>
-                <p style="text-align:center;margin-top:5px;font-size:16px">当前分类：<b>${tips}</b></p>
-            	<div style="border-top: 1px #CCCCCC dashed;margin-top:5px;"></div>
-            	<#list tourList as tour>
-            	<div id="page_article_title">
-                	<p><a href="${base}/tour-${tour.ID}.html">${tour.TITLE}</a></p>
-                </div>
-                </#list>
-                <#else>
-                <div>
-                	<p style="text-align:center;margin-top:5px;font-size:16px">当前分类：<b>${tips}</b><br>该分类下暂无行程信息</p>
-                </div>
+               		 <@fp.tours_by_category tourList />
                 </#if>
-            </div>
 	</div>
     <!-- The Footer -->
 	<@fp.footer /><#-- footer宏 -->
