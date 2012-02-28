@@ -13,14 +13,14 @@ public class RecommendService extends BaseService {
 		return getPagingList(SQL_GET_ALL_RECOMMENDS);
 	}
 
-	private static final String SQL_ADD_RECOMMEND = "insert into recommend(title,cover,content,updatetime,tag,username) values(?,?,?,now(),?,?)";
+	private static final String SQL_ADD_RECOMMEND = "insert into recommend(title,cover,content,updatetime,tag,username,link) values(?,?,?,now(),?,?)";
 
 	public void addRecommend(Map<String, Object> parameters, String filePath,
 			String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"title,tag,content");
+				"title,tag,content,link");
 		jt.update(SQL_ADD_RECOMMEND, params[0], filePath, params[2], params[1],
-				userName);
+				userName,params[3]);
 	}
 
 	private static final String SQL_GET_RECOMMEND_BY_ID = "select * from recommend where ID=?";
@@ -30,23 +30,23 @@ public class RecommendService extends BaseService {
 		return jt.queryForMap(SQL_GET_RECOMMEND_BY_ID, id);
 	}
 
-	private static final String SQL_UPDATE_RECOMMEND_NO_COVER = "update recommend set TITLE=?, CONTENT=?, UPDATETIME=now(), TAG=?, USERNAME=? where ID=?";
+	private static final String SQL_UPDATE_RECOMMEND_NO_COVER = "update recommend set TITLE=?, CONTENT=?, UPDATETIME=now(), TAG=?, USERNAME=?, LINK=?where ID=?";
 
 	public void updateRecommend(Map<String, Object> parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"title,content,tag,id");
+				"title,content,tag,link,id");
 		jt.update(SQL_UPDATE_RECOMMEND_NO_COVER, params[0], params[1],
-				params[2], userName, params[3]);
+				params[2], userName, params[3],params[4]);
 	}
 
-	private static final String SQL_UPDATE_RECOMMEND = "update recommend set TITLE=?, CONTENT=?, COVER=?, UPDATETIME=now(), TAG=?, USERNAME=? where ID=?";
+	private static final String SQL_UPDATE_RECOMMEND = "update recommend set TITLE=?, CONTENT=?, COVER=?, UPDATETIME=now(), TAG=?, USERNAME=?,LINK=? where ID=?";
 
 	public void updateRecommend(Map<String, Object> parameters,
 			String filePath, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"title,content,tag,id");
+				"title,content,tag,link,id");
 		jt.update(SQL_UPDATE_RECOMMEND, params[0], params[1], filePath,
-				params[2], userName, params[3]);
+				params[2], userName, params[3],params[4]);
 	}
 
 	private static final String SQL_DELETE_RECOMMEND = "delete from recommend where ID=?";

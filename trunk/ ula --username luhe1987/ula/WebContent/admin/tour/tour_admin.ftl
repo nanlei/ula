@@ -36,6 +36,23 @@
 				<td>简短描述<@p.mustMark /></td>
 				<td><textarea cols="80" rows="7" name="description">请输入简短描述</textarea></td>
 			</tr>
+			
+			<tr>
+				<td>是否作为此行程类别的首页</td>
+				<td>
+						<input type="radio" name="as_index" value="Y" /> 是
+						<input type="radio" name="as_index" value="N" checked/> 否
+				</td>
+			</tr>
+			<tr>
+				<td>是否出现来表格里</td>
+				<td>
+						<input type="radio" name="show_in_table" value="Y" checked/> 是
+						<input type="radio" name="show_in_table" value="N" /> 否
+				</td>
+			</tr>
+			
+			
 			<tr>
 				<td colspan="2"><textarea  id="content" name="content">请输入文章内容<@p.mustMark /></textarea><@p.ckeditor id="content"/></td>
 			</tr>

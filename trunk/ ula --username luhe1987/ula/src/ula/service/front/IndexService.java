@@ -13,13 +13,13 @@ import ula.util.MapUtil;
  * 
  */
 public class IndexService extends BaseService {
-	private static final String SQL_GET_RECOMMENDS = "select ID, COVER, TITLE from recommend where TAG=1 order by UPDATETIME desc";
+	private static final String SQL_GET_RECOMMENDS = "select ID, COVER, TITLE,LINK from recommend where TAG=1 order by UPDATETIME desc";
 
 	public List<Map<String, Object>> getRecommendList() {
 		return jt.queryForList(SQL_GET_RECOMMENDS);
 	}
 
-	private static final String SQL_GET_PRODUCTS = "select ID, NAME, PRICE, COVER from product where TAG=1 order by UPDATETIME desc limit 12";
+	private static final String SQL_GET_PRODUCTS = "select ID, NAME, PRICE, COVER, LINK from product where TAG=1 order by UPDATETIME desc limit 12";
 
 	public List<Map<String, Object>> getProductList() {
 		return jt.queryForList(SQL_GET_PRODUCTS);
@@ -43,7 +43,7 @@ public class IndexService extends BaseService {
 		return jt.queryForList(SQL_GET_EXCHANGE_RATE);
 	}
 
-	private static final String SQL_GET_RECOMMEND_BY_ID = "select COVER, TITLE, CONTENT from recommend where TAG=1 and ID=?";
+	private static final String SQL_GET_RECOMMEND_BY_ID = "select COVER, TITLE, CONTENT,LINK from recommend where TAG=1 and ID=?";
 
 	public Map<String, Object> getRecommendById(Map<String, Object> parameters) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
@@ -52,7 +52,7 @@ public class IndexService extends BaseService {
 
 	private static final String SQL_GET_PRODUCT_TAG_BY_ID = "select TAG from product where ID=?";
 
-	private static final String SQL_GET_PRODUCT_BY_ID = "select t.ID as ID, t.TITLE as TITLE, t.COVERLINK as COVERLINK, t.DESCRIPTION as DESCRIPTION from tour t, product_tour pt where t.ID=pt.TOUR_ID and pt.PRODUCT_ID=?";
+	private static final String SQL_GET_PRODUCT_BY_ID = "select t.ID as ID, t.TITLE as TITLE, t.COVERLINK as COVERLINK, t.DESCRIPTION as DESCRIPTION, t.COVERLINK as LINK from tour t, product_tour pt where t.ID=pt.TOUR_ID and pt.PRODUCT_ID=?";
 
 	public List<Map<String, Object>> getProductById(
 			Map<String, Object> parameters) {

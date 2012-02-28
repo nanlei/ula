@@ -32,6 +32,12 @@
 				<td>封面图片<@p.mustMark /></td>
 				<td><@app.file id="cover" name="cover" emptyInfo="请选择封面图片"/></td>
 			</tr>
+			
+			<tr>
+				<td>链接(如果添加的是链接，我们会转向链接而不是显示产品列表)</td>
+				<td><input type="text" name="link"/>
+			</tr>
+			
 			<tr>
 				<td colspan="2"><textarea  id="description" name="description">请输入简短描述内容<@p.mustMark /></textarea><@p.ckeditor id="description"/></td>
 			</tr>

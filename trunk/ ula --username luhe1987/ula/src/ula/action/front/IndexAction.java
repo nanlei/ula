@@ -1,3 +1,4 @@
+
 package ula.action.front;
 
 import java.util.ArrayList;
@@ -15,233 +16,232 @@ import ula.util.MapUtil;
  * 首页请求处理Action
  * 
  * @author Nanlei
- * 
  */
 public class IndexAction extends AnonymousAction {
-	private List<Map<String, Object>> recommendList;
-	private List<Map<String, Object>> productList;
-	private List<Map<String, Object>> linkList;
-	private Map<String, Object> weather;
-	private List<Map<String, Object>> exchangeRateList;
+    private List<Map<String, Object>> recommendList;
 
-	private Map<String, Object> recommend;
-	private List<Map<String, Object>> product;
-	private Map<String, Object> hotel;
-	private List<Map<String, Object>> albumPicList;
-	private List<Integer> picIndex;
+    private List<Map<String, Object>> productList;
 
-	private HashMap<String, Object> jsonModel;
-	private String referer;
+    private List<Map<String, Object>> linkList;
 
-	public List<Map<String, Object>> getRecommendList() {
-		return recommendList;
-	}
+    private Map<String, Object> weather;
 
-	public List<Map<String, Object>> getProductList() {
-		return productList;
-	}
+    private List<Map<String, Object>> exchangeRateList;
 
-	public List<Map<String, Object>> getLinkList() {
-		return linkList;
-	}
+    private Map<String, Object> recommend;
 
-	public Map<String, Object> getWeather() {
-		return weather;
-	}
+    private List<Map<String, Object>> product;
 
-	public Map<String, Object> getRecommend() {
-		return recommend;
-	}
+    private Map<String, Object> hotel;
 
-	public List<Map<String, Object>> getProduct() {
-		return product;
-	}
+    private List<Map<String, Object>> albumPicList;
 
-	public Map<String, Object> getHotel() {
-		return hotel;
-	}
+    private List<Integer> picIndex;
 
-	public List<Map<String, Object>> getAlbumPicList() {
-		return albumPicList;
-	}
+    private HashMap<String, Object> jsonModel;
 
-	public List<Integer> getPicIndex() {
-		return picIndex;
-	}
+    private String referer;
 
-	public HashMap<String, Object> getJsonModel() {
-		return jsonModel;
-	}
+    public List<Map<String, Object>> getRecommendList() {
+        return recommendList;
+    }
 
-	public void setJsonModel(HashMap<String, Object> jsonModel) {
-		this.jsonModel = jsonModel;
-	}
+    public List<Map<String, Object>> getProductList() {
+        return productList;
+    }
 
-	public String getReferer() {
-		return referer;
-	}
+    public List<Map<String, Object>> getLinkList() {
+        return linkList;
+    }
 
-	public List<Map<String, Object>> getExchangeRateList() {
-		return exchangeRateList;
-	}
+    public Map<String, Object> getWeather() {
+        return weather;
+    }
 
-	/**
-	 * 进入首页的方法
-	 * 
-	 * @return
-	 */
-	public String index() throws Exception {
-		recommendList = getServiceManager().getIndexService()
-				.getRecommendList();
-		productList = getServiceManager().getIndexService().getProductList();
-		linkList = getServiceManager().getIndexService().getLinkList();
-		weather = getServiceManager().getIndexService().getWeather();
-		exchangeRateList = getServiceManager().getIndexService()
-				.getExchangeRate();
-		return SUCCESS;
-	}
+    public Map<String, Object> getRecommend() {
+        return recommend;
+    }
 
-	/**
-	 * 查看首页推荐
-	 * 
-	 * @return
-	 * @throws Exception
-	 */
-	public String recommend() throws Exception {
-		recommendList = getServiceManager().getIndexService()
-				.getRecommendList();
-		linkList = getServiceManager().getIndexService().getLinkList();
-		weather = getServiceManager().getIndexService().getWeather();
-		recommend = getServiceManager().getIndexService().getRecommendById(
-				getParametersAsMap());
-		return "recommend";
-	}
+    public List<Map<String, Object>> getProduct() {
+        return product;
+    }
 
-	/**
-	 * 产品
-	 * 
-	 * @return
-	 * @throws Exception
-	 */
-	public String product() throws Exception {
-		recommendList = getServiceManager().getIndexService()
-				.getRecommendList();
-		linkList = getServiceManager().getIndexService().getLinkList();
-		weather = getServiceManager().getIndexService().getWeather();
-		product = getServiceManager().getIndexService().getProductById(
-				getParametersAsMap());
-		return "product";
-	}
+    public Map<String, Object> getHotel() {
+        return hotel;
+    }
 
-	/**
-	 * 酒店查询
-	 * 
-	 * @return
-	 * @throws Exception
-	 */
-	public String hotel() throws Exception {
-		hotel = getServiceManager().getIndexService().getHotelById(
-				getParametersAsMap());
-		hotel.put("LOCATION", getServiceManager().getHotelService()
-				.getParamValueByName((String) hotel.get("LOCATION")));
-		hotel.put("LEVEL", getServiceManager().getHotelService()
-				.getParamValueByName((String) hotel.get("LEVEL")));
-		hotel.put("FUNC", getServiceManager().getHotelService()
-				.getParamValueByName((String) hotel.get("FUNC")));
-		albumPicList = getServiceManager().getHotelService()
-				.getHotelAlbumPicByHotelId(String.valueOf(hotel.get("ID")));
-		picIndex = new ArrayList<Integer>();
-		for (int i = 0; i < albumPicList.size(); i++) {
-			Map<String, Object> map = albumPicList.get(i);
-			picIndex.add((Integer) map.get("PICID"));
-		}
-		// baseInfo
-		recommendList = getServiceManager().getIndexService()
-				.getRecommendList();
-		linkList = getServiceManager().getIndexService().getLinkList();
-		weather = getServiceManager().getIndexService().getWeather();
-		return "hotel";
-	}
+    public List<Map<String, Object>> getAlbumPicList() {
+        return albumPicList;
+    }
 
-	/**
-	 * 订阅资源的方法
-	 * 
-	 * @return
-	 */
-	public String subscribe() {
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		String email = MapUtil.getStringFromMap(getParametersAsMap(), "email");
-		int flag = getServiceManager().getSubscriberService()
-				.getCheckSubscriber(email);
-		if (flag > 0) {
-			// 邮件地址已经存在
-			map.put("result", 2);
-		} else {
-			try {
-				getServiceManager().getSubscriberService().addSubscriber(email,
-						getIP());
-				// 订阅成功
-				map.put("result", 1);
-			} catch (Exception e) {
-				log.error(ExceptionUtils.getStackTrace(e));
-				// 订阅失败
-				map.put("result", 0);
-			}
-		}
-		setJsonModel(map);
-		return "subscribe";
-	}
+    public List<Integer> getPicIndex() {
+        return picIndex;
+    }
 
-	/**
-	 * 取消订阅资源的方法
-	 * 
-	 * @return
-	 */
-	public String cancelSubscribe() {
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		String email = MapUtil.getStringFromMap(getParametersAsMap(), "email");
-		int flag = getServiceManager().getSubscriberService()
-				.getCheckSubscriber(email);
-		if (flag > 0) {
-			try {
-				getServiceManager().getSubscriberService()
-						.deleteSubscriberByEmail(email);
-				// 取消订阅成功
-				map.put("result", 1);
-			} catch (Exception e) {
-				log.error(ExceptionUtils.getStackTrace(e));
-				// 取消订阅失败
-				map.put("result", 0);
-			}
-		} else {
-			// 邮件地址不存在
-			map.put("result", 2);
-		}
-		setJsonModel(map);
-		return "cancelSubscribe";
-	}
+    public HashMap<String, Object> getJsonModel() {
+        return jsonModel;
+    }
 
-	/**
-	 * 设置语言版本的方法，将所需的locale放入session
-	 * 
-	 * @return
-	 */
-	public String language() {
-		String locale = MapUtil
-				.getStringFromMap(getParametersAsMap(), "locale");
-		getHttpServletRequest().getSession().setAttribute("locale_session",
-				new Locale(locale));
-		String contextPath = getHttpServletRequest().getContextPath();
-		String header_referer = getHttpServletRequest().getHeader("referer");
-		String temp_referer = header_referer.substring(header_referer
-				.indexOf("//") + 2);
-		temp_referer = temp_referer.substring(temp_referer.indexOf("/"));
-		temp_referer = temp_referer.substring(temp_referer.indexOf(contextPath)
-				+ contextPath.length());
-		if (!temp_referer.startsWith("/")) {
-			temp_referer = "/" + temp_referer;
-		}
-		referer = temp_referer;
-		return SUCCESS;
-	}
+    public void setJsonModel(HashMap<String, Object> jsonModel) {
+        this.jsonModel = jsonModel;
+    }
+
+    public String getReferer() {
+        return referer;
+    }
+
+    public List<Map<String, Object>> getExchangeRateList() {
+        return exchangeRateList;
+    }
+
+    /**
+     * 进入首页的方法
+     * 
+     * @return
+     */
+    public String index() throws Exception {
+        recommendList = getServiceManager().getIndexService().getRecommendList();
+        productList = getServiceManager().getIndexService().getProductList();
+        linkList = getServiceManager().getIndexService().getLinkList();
+        weather = getServiceManager().getIndexService().getWeather();
+        exchangeRateList = getServiceManager().getIndexService().getExchangeRate();
+        return SUCCESS;
+    }
+
+    /**
+     * 查看首页推荐
+     * 
+     * @return
+     * @throws Exception
+     */
+    public String recommend() throws Exception {
+        recommendList = getServiceManager().getIndexService().getRecommendList();
+        linkList = getServiceManager().getIndexService().getLinkList();
+        weather = getServiceManager().getIndexService().getWeather();
+        recommend = getServiceManager().getIndexService().getRecommendById(getParametersAsMap());
+      
+        return "recommend";
+    }
+
+    /**
+     * 产品
+     * 
+     * @return
+     * @throws Exception
+     */
+    public String product() throws Exception {
+        recommendList = getServiceManager().getIndexService().getRecommendList();
+        linkList = getServiceManager().getIndexService().getLinkList();
+        weather = getServiceManager().getIndexService().getWeather();
+        product = getServiceManager().getIndexService().getProductById(getParametersAsMap());
+        return "product";
+    }
+
+    /**
+     * 酒店查询
+     * 
+     * @return
+     * @throws Exception
+     */
+    public String hotel() throws Exception {
+        hotel = getServiceManager().getIndexService().getHotelById(getParametersAsMap());
+        hotel.put(
+                "LOCATION",
+                getServiceManager().getHotelService().getParamValueByName(
+                        (String)hotel.get("LOCATION")));
+        hotel.put(
+                "LEVEL",
+                getServiceManager().getHotelService().getParamValueByName(
+                        (String)hotel.get("LEVEL")));
+        hotel.put("FUNC",
+                getServiceManager().getHotelService()
+                        .getParamValueByName((String)hotel.get("FUNC")));
+        albumPicList = getServiceManager().getHotelService().getHotelAlbumPicByHotelId(
+                String.valueOf(hotel.get("ID")));
+        picIndex = new ArrayList<Integer>();
+        for (int i = 0; i < albumPicList.size(); i++) {
+            Map<String, Object> map = albumPicList.get(i);
+            picIndex.add((Integer)map.get("PICID"));
+        }
+        // baseInfo
+        recommendList = getServiceManager().getIndexService().getRecommendList();
+        linkList = getServiceManager().getIndexService().getLinkList();
+        weather = getServiceManager().getIndexService().getWeather();
+        return "hotel";
+    }
+
+    /**
+     * 订阅资源的方法
+     * 
+     * @return
+     */
+    public String subscribe() {
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        String email = MapUtil.getStringFromMap(getParametersAsMap(), "email");
+        int flag = getServiceManager().getSubscriberService().getCheckSubscriber(email);
+        if (flag > 0) {
+            // 邮件地址已经存在
+            map.put("result", 2);
+        } else {
+            try {
+                getServiceManager().getSubscriberService().addSubscriber(email, getIP());
+                // 订阅成功
+                map.put("result", 1);
+            } catch (Exception e) {
+                log.error(ExceptionUtils.getStackTrace(e));
+                // 订阅失败
+                map.put("result", 0);
+            }
+        }
+        setJsonModel(map);
+        return "subscribe";
+    }
+
+    /**
+     * 取消订阅资源的方法
+     * 
+     * @return
+     */
+    public String cancelSubscribe() {
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        String email = MapUtil.getStringFromMap(getParametersAsMap(), "email");
+        int flag = getServiceManager().getSubscriberService().getCheckSubscriber(email);
+        if (flag > 0) {
+            try {
+                getServiceManager().getSubscriberService().deleteSubscriberByEmail(email);
+                // 取消订阅成功
+                map.put("result", 1);
+            } catch (Exception e) {
+                log.error(ExceptionUtils.getStackTrace(e));
+                // 取消订阅失败
+                map.put("result", 0);
+            }
+        } else {
+            // 邮件地址不存在
+            map.put("result", 2);
+        }
+        setJsonModel(map);
+        return "cancelSubscribe";
+    }
+
+    /**
+     * 设置语言版本的方法，将所需的locale放入session
+     * 
+     * @return
+     */
+    public String language() {
+        String locale = MapUtil.getStringFromMap(getParametersAsMap(), "locale");
+        getHttpServletRequest().getSession().setAttribute("locale_session", new Locale(locale));
+        String contextPath = getHttpServletRequest().getContextPath();
+        String header_referer = getHttpServletRequest().getHeader("referer");
+        String temp_referer = header_referer.substring(header_referer.indexOf("//") + 2);
+        temp_referer = temp_referer.substring(temp_referer.indexOf("/"));
+        temp_referer = temp_referer.substring(temp_referer.indexOf(contextPath)
+                + contextPath.length());
+        if (!temp_referer.startsWith("/")) {
+            temp_referer = "/" + temp_referer;
+        }
+        referer = temp_referer;
+        return SUCCESS;
+    }
 }

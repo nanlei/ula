@@ -23,7 +23,7 @@ function showCover(path){
 			<tr>
 				<td>标题<@p.mustMark /></td>
 				<td>
-					<input type="text" name="title" size="40" maxLength="15" value="${tour.TITLE}" emptyInfo="请输入文章标题">
+					<input type="text" name="title" size="100" maxLength="15" value="${tour.TITLE}" emptyInfo="请输入文章标题">
 				</td>
 			</tr>
 			<tr>
@@ -56,6 +56,34 @@ function showCover(path){
 			<tr>
 				<td>更新人</td>
 				<td>${tour.USERNAME}</td>
+			</tr>
+			<tr>
+				<td>是否作为此行程类别的首页</td>
+				<td>
+						<#if tour.ASCATEGORYINDEX?exists && tour.ASCATEGORYINDEX=='Y'>
+						<input type="radio" name="as_index" value="Y" checked/> 是
+						<input type="radio" name="as_index" value="N" /> 否
+					<#else>	
+						<input type="radio" name="as_index" value="Y" /> 是
+						<input type="radio" name="as_index" value="N" checked/> 否
+					</#if>  
+				</td>
+			</tr>
+			<tr>
+				<td>是否出现来表格里</td>
+				<td>
+				    <#if tour.SHOWINTABLE?exists && tour.SHOWINTABLE=='Y'>
+						<input type="radio" name="show_in_table" value="Y" checked/> 是
+						<input type="radio" name="show_in_table" value="N" /> 否
+					<#else>	
+						<input type="radio" name="show_in_table" value="Y" /> 是
+						<input type="radio" name="show_in_table" value="N" checked/> 否
+					</#if>  
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan="2">文章内容是  #NO#的时候，文章部分会隐藏起来</td>
 			</tr>
 			<tr>
 				<td colspan="2"><textarea  id="content" name="content">${tour.CONTENT}</textarea><@p.ckeditor id="content"/></td>

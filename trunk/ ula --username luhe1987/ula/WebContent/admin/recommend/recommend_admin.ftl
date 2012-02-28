@@ -25,6 +25,10 @@
 				<td><@app.file id="cover" name="cover" emptyInfo="请选择封面图片"/></td>
 			</tr>
 			<tr>
+				<td>链接(如果添加的是链接，我们会转向链接而不是显示文章)</td>
+				<td><input type="text" name="link"/>
+			</tr>
+			<tr>
 				<td>是否显示<@p.mustMark /></td>
 				<td><input type="radio" name="tag" value="1" checked>显示&nbsp;&nbsp;<input type="radio" name="tag" value="0">不显示</td>
 			</tr>

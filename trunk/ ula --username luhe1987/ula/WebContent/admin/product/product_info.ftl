@@ -44,6 +44,12 @@ function showCover(path){
 		<td>修改封面图片</td>
 		<td><@app.file id="cover" name="cover" /></td>
 	</tr>
+	
+	<tr>
+		<td>链接(如果添加的是链接，我们会转向链接而不是显示文章)</td>
+		<td><input type="text" name="link"  value="<#if product.LINK?exists>${product.LINK}</#if>"/>
+	</tr>
+	
 	<tr>
 		<td>最后更新时间</td>
 		<td>${product.UPDATETIME?datetime}</td>

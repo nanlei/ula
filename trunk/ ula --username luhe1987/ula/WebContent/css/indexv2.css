@@ -1095,7 +1095,7 @@ img {
 	float: left;
 	padding: 10px 25px;
 	margin-left: 5px;
-	min-height: 790px;
+	margin-bottom: 5px;
 	border: 1px #F1F1F1 solid;
 	background: #FAFAFA;
 	border-radius: 4px;
@@ -1151,7 +1151,7 @@ img {
 /*----------类别项目的页面----------*/
 #page_content {
 	width: 790px;
-	float: left;
+	float: right;
 	margin-left: 5px;
 }
 

@@ -30,6 +30,16 @@
 					<@app.submit id="submitButton" value="提交" />&nbsp;&nbsp;<@app.reset id="resetButton" value="重置"/>
 				</td>
 			</tr>
+			</tr>
+				<td colspan="2">
+					关于这个行程的标题（描述）					
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan="2"><textarea  id="content" name="description">请输入文章内容<@p.mustMark /></textarea><@p.ckeditor id="content"/></td>
+			</tr>
+			
 		</table>
 	</form>
 </div>

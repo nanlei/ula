@@ -32,6 +32,12 @@ function showCover(path){
 		<td>修改封面图片</td>
 		<td><@app.file id="cover" name="cover" /></td>
 	</tr>
+	
+	<tr>
+		<td>链接(如果添加的是链接，我们会转向链接而不是显示文章)</td>
+		<td><input type="text" name="link"  value="<#if recommend.LINK?exists>${recommend.LINK}</#if>"/>
+	</tr>
+	
 	<tr>
 		<td>显示状态<@p.mustMark /></td>
 		<td><input type="radio" name="tag" value="1" <#if recommend.TAG=1>checked</#if>>显示&nbsp;&nbsp;<input type="radio" name="tag" value="0" <#if recommend.TAG=0>checked</#if>>不显示</td>
