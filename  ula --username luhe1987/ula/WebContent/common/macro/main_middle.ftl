@@ -7,12 +7,21 @@
 				<#list productList as product>
 					<#if counter%3=1><ul></#if>
 					<li>
+					<#if product.LINK?has_content>
+						<a href="${product.LINK}">
+					<#else>
 						<a href="${base}/product-${product.ID}.html">
+					</#if>
 							<img src="${base}${product.COVER}" alt="<@s.property value="%{getText('front.production.title')}"/>" />
 						</a>
 						<div class="travel_info">
 							<span class="left_words">￥${product.PRICE}</span>
-							<a href="${base}/product-${product.ID}.html" class="right_words">${product.NAME}>></a>
+							
+								<#if product.LINK?has_content>
+									<a href="${product.LINK}" class="right_words">${product.NAME}>></a>
+								<#else>
+									<a href="${base}/product-${product.ID}.html" class="right_words">${product.NAME}>></a>
+								</#if>
 						</div>
 					</li>
 					<#if counter%3=0||counter=productList.size()></ul></#if>
@@ -54,7 +63,7 @@
 		<div class="intro">
 			<div class="title">
 				<div class="tra_name">${product.TITLE}</div>
-				<div class="tra_icon_more"><a href="${base}/tour-${product.ID}.html">More</a></div>
+					<div class="tra_icon_more"><a href="${base}/tour-${product.ID}.html">More</a></div>
 			</div>
 			<div class="words">
 				<p>${product.DESCRIPTION}...</p>
@@ -70,20 +79,25 @@
 <#macro tours_by_category tours>
 <div id="page_content">
 	<#list tours as tour>
-	<div class="simple_travel_bar">
-		<div class="photos">
-			<img src="${base}${tour.COVERLINK}" alt="${tour.TITLE}"  />
-		</div>
-		<div class="intro">
-			<div class="title">
-				<div class="tra_name">${tour.TITLE}</div>
-				<div class="tra_icon_more"><a href="${base}/tour-${tour.ID}.html">More</a></div>
+	
+	<#if tour.SHOWINTABLE?has_content && tour.SHOWINTABLE=='Y'>
+		<div class="simple_travel_bar">
+			<div class="photos">
+				<img src="${base}${tour.COVERLINK}" alt="${tour.TITLE}"  />
 			</div>
-			<div class="words">
-				<p>${tour.DESCRIPTION}...</p>
+			<div class="intro">
+				<div class="title">
+					<div class="tra_name">${tour.TITLE}</div>
+					<div class="tra_icon_more"><a href="${base}/tour-${tour.ID}.html">More</a></div>
+				</div>
+				<div class="words">
+					<p>${tour.DESCRIPTION}...</p>
+				</div>
 			</div>
 		</div>
-	</div>
+	
+	</#if>
+	
 	</#list>
 </div>
 </#macro>

@@ -31,11 +31,42 @@
          	<#case "exhibition"><#assign tips="${action.getBundle('front.tour.exhibition')}"><#break>
          	<#case "luxurious"><#assign tips="${action.getBundle('front.tour.luxurious')}"><#break>
          </#switch>
+         
+	        <#if tourList?has_content>
+		         <#list tourList as tour>
+		         	<#if tour.ASCATEGORYINDEX=='Y'>
+		         		  <div id="article_content">
+				            	<div id="page_article_title">
+				                	<p>${tour.TITLE}</p>
+				                </div>
+	                
+				                <div style="margin-top:10px;height:150px;">
+				                	<div style="float:left;width:210px;"><img src="${base}${tour.COVERLINK}" alt="" /></div>
+				                	<div style="float:right;width:515px;">${tour.DESCRIPTION}</div>
+				                </div>
+			                
+			               		<div style="border-top: 1px #CCCCCC dashed;"> </div>
+			               		
+			               		<#if tour.CONTENT?contains("#NO#") >
+			               		
+			               		<#else>
+				            		<div id="page_article">
+				            			<p>${tour.CONTENT}</p>
+		            				</div>
+			               		</#if>
+			               		
+	      				 </div>
+		         	</#if>
+		         </#list>
+	        </#if>
+         
+         
+         
             	<#if tourList?has_content>
                		 <@fp.tours_by_category tourList />
                 </#if>
 	</div>
     <!-- The Footer -->
 	<@fp.footer /><#-- footer宏 -->
-</div>
+</div>	
 </@fp.page>

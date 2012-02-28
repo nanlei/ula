@@ -30,17 +30,17 @@ public class ProductService extends BaseService {
 		return getPagingList(SQL_GET_ALL_PRODUCTS);
 	}
 
-	private static final String SQL_ADD_PRODUCT = "insert into product(NAME, DESCRIPTION, PRICE, COVER, TAG, UPDATETIME, USERNAME) values(?, ?, ?, ?, ?, now(), ?)";
+	private static final String SQL_ADD_PRODUCT = "insert into product(NAME, DESCRIPTION, PRICE, COVER, TAG, UPDATETIME, USERNAME,LINK) values(?, ?, ?, ?, ?, now(), ?,?)";
 
 	public void addProduct(Map<String, Object> parameters, String filePath,
 			String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"name,description,price,tag");
+				"name,description,price,tag,link");
 		if (getProductsDisplayNum() >= 12) {
 			params[3] = 0;
 		}
 		jt.update(SQL_ADD_PRODUCT, params[0], params[1], params[2], filePath,
-				params[3], userName);
+				params[3], userName,params[4]);
 	}
 
 	private static final String SQL_GET_PRODUCT_BY_ID = "select * from product where ID=?";
@@ -50,26 +50,26 @@ public class ProductService extends BaseService {
 		return jt.queryForMap(SQL_GET_PRODUCT_BY_ID, params);
 	}
 
-	private static final String SQL_UPDATE_PRODUCT_NO_COVER = "update product set NAME=?, DESCRIPTION=?, PRICE=?, TAG=?, UPDATETIME=now(), USERNAME=? where ID=?";
+	private static final String SQL_UPDATE_PRODUCT_NO_COVER = "update product set NAME=?, DESCRIPTION=?, PRICE=?, TAG=?, UPDATETIME=now(), USERNAME=?,LINK=? where ID=?";
 
 	public void updateProduct(Map<String, Object> parameters, String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"name,description,price,tag,id");
+				"name,description,price,tag,link,id");
 		if (getProductsDisplayNum() >= 12) {
 			params[3] = 0;
 		}
 		jt.update(SQL_UPDATE_PRODUCT_NO_COVER, params[0], params[1], params[2],
-				params[3], userName, params[4]);
+				params[3], userName, params[4],params[5]);
 	}
 
-	private static final String SQL_UPDATE_PRODUCT = "update product set NAME=?, DESCRIPTION=?, PRICE=?, COVER=?, TAG=?, UPDATETIME=now(), USERNAME=? where ID=?";
+	private static final String SQL_UPDATE_PRODUCT = "update product set NAME=?, DESCRIPTION=?, PRICE=?, COVER=?, TAG=?, UPDATETIME=now(), USERNAME=?, LINK=? where ID=?";
 
 	public void updateProduct(Map<String, Object> parameters, String filePath,
 			String userName) {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters,
-				"name,description,price,tag,id");
+				"name,description,price,tag,link,id");
 		jt.update(SQL_UPDATE_PRODUCT, params[0], params[1], params[2],
-				filePath, params[3], userName, params[4]);
+				filePath, params[3], userName, params[4],params[5]);
 	}
 
 	private static final String SQL_DELETE_PRODUCT_TOUR_BY_PRODUCT_ID = "delete from product_tour where PRODUCT_ID=?";
