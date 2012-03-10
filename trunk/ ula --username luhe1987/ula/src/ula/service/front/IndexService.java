@@ -19,7 +19,7 @@ public class IndexService extends BaseService {
 		return jt.queryForList(SQL_GET_RECOMMENDS);
 	}
 
-	private static final String SQL_GET_PRODUCTS = "select ID, NAME, PRICE, COVER, LINK from product where TAG=1 order by UPDATETIME desc limit 12";
+	private static final String SQL_GET_PRODUCTS = "select ID, NAME, PRICE, COVER, LINK from product where TAG=1 order by ID desc limit 12";
 
 	public List<Map<String, Object>> getProductList() {
 		return jt.queryForList(SQL_GET_PRODUCTS);

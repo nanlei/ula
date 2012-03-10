@@ -64,8 +64,9 @@
 	</form>
 </div>
 <table class="default" width="100%">
-	<col width="10%" align="center">
+	<col width="5%" align="center">
 	<col width="35%" align="center">
+	<col width="5%" align="center">
 	<col width="10%" align="center">
 	<col width="15%" align="center">
 	<col width="10%" align="center">
@@ -73,6 +74,7 @@
 	<tr class="title">
 		<td>序号</td>
 		<td>文章标题</td>
+		<td>是否首页</td>
 		<td>行程分类</td>
 		<td>更新时间</td>
 		<td>更新人</td>
@@ -83,6 +85,11 @@
 	<tr <@p.trChangeColor />>
 		<td>${count}</td>
 		<td>${tour.TITLE}</td>
+		<#if tour.ASCATEGORYINDEX=="Y">
+		<td>是</td>
+		  <#else>
+		<td></td>
+		</#if>
 		<td>${tour.CATEGORY_NAME}</td>
 		<td>${tour.UPDATETIME?datetime}</td>
 		<td>${tour.USERNAME}</td>

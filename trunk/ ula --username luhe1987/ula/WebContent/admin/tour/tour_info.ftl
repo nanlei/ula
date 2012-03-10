@@ -23,7 +23,7 @@ function showCover(path){
 			<tr>
 				<td>标题<@p.mustMark /></td>
 				<td>
-					<input type="text" name="title" size="100" maxLength="15" value="${tour.TITLE}" emptyInfo="请输入文章标题">
+					<input type="text" name="title"  value="${tour.TITLE}" emptyInfo="请输入文章标题">
 				</td>
 			</tr>
 			<tr>
@@ -60,7 +60,7 @@ function showCover(path){
 			<tr>
 				<td>是否作为此行程类别的首页</td>
 				<td>
-						<#if tour.ASCATEGORYINDEX?exists && tour.ASCATEGORYINDEX=='Y'>
+					<#if tour.ASCATEGORYINDEX?exists && tour.ASCATEGORYINDEX=='Y'>
 						<input type="radio" name="as_index" value="Y" checked/> 是
 						<input type="radio" name="as_index" value="N" /> 否
 					<#else>	

@@ -14,7 +14,13 @@
 			<tr>
 				<td>分类名称<@p.mustMark /></td>
 				<td>
-					<input type="text" name="name" size="40" maxLength="15" emptyInfo="请输入分类名称">
+					<input type="text" name="name" size="40" maxLength="127" emptyInfo="请输入分类名称">
+				</td>
+			</tr>
+			<tr>
+				<td>分类英文名称（首页URL使用）<@p.mustMark /></td>
+				<td>
+					<input type="text" name="tag" size="40" maxLength="127" emptyInfo="请输入分类英文名称">
 				</td>
 			</tr>
 			<tr>
@@ -63,7 +69,7 @@
 	<tr <@p.trChangeColor />>
 		<td>${count}</td>
 		<td>${category.NAME}</td>
-		<td>${category.TAG}</td>
+		<td>${category.TAG?default("")}</td>
 		<td>${category.UPDATETIME?datetime}</td>
 		<td>${category.USERNAME}</td>
 		<td><a href="category!preUpdate.action?id=${category.ID}">修改</a> | <a href="category!delete.action?id=${category.ID}" onclick="return confirm('该类别下的所有文章也将被删除\n若该类别显示在前台，那么会导致该分类不可用\n确定吗？？？')">删除</a></td>
