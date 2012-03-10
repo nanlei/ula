@@ -37,7 +37,7 @@ public class TourService extends BaseService {
         return jt.queryForList(SQL_GET_ALL_TOUR_CATEGORIES);
     }
 
-    private static final String SQL_ADD_TOUR_CATEGORY = "insert into tour_category(NAME,UPDATETIME,USERNAME,DESCRIPTION) values(?,now(),?,?)";
+    private static final String SQL_ADD_TOUR_CATEGORY = "insert into tour_category(NAME,UPDATETIME,USERNAME,DESCRIPTION,TAG) values(?,now(),?,?,?)";
 
     private static final String SQL_ADD_CATEGORY_AND_VACATION_TYPE = "insert into tour_category_vacation_type(CATEGORY_ID,VACATION_TYPE_ID) values(?,?)";
 
@@ -45,16 +45,18 @@ public class TourService extends BaseService {
         // 先插入到分类表，然后取出刚生成的主键ID
         final String param = MapUtil.getStringFromMap(parameters, "name");
         final String description = MapUtil.getStringFromMap(parameters, "description");
+        final String tag = MapUtil.getStringFromMap(parameters, "tag");
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jt.update(new PreparedStatementCreator() {
             public PreparedStatement createPreparedStatement(Connection conn) throws SQLException {
                 PreparedStatement ps = conn.prepareStatement(SQL_ADD_TOUR_CATEGORY, new String[] {
-                        "NAME", "USERNAME", "DESCRIPTION"
+                        "NAME", "USERNAME", "DESCRIPTION","TAG"
                 });
                 ps.setString(1, (String)param);
                 ps.setString(2, (String)userName);
                 ps.setString(3, (String)description);
+                ps.setString(4, (String)tag);
                 return ps;
             }
         }, keyHolder);
@@ -128,7 +130,7 @@ public class TourService extends BaseService {
         jt.update(SQL_DELETE_TOUR_CATEGORY_BY_ID, params);
     }
 
-    private static final String SQL_GET_ALL_TOURS = "select t.ID, t.TITLE, t.UPDATETIME, t.USERNAME, c.NAME  as CATEGORY_NAME from tour t, tour_category c where t.CATEGORY_ID=c.ID order by UPDATETIME desc";
+    private static final String SQL_GET_ALL_TOURS = "select t.ID, t.TITLE, t.UPDATETIME, t.USERNAME, t.ASCATEGORYINDEX, c.NAME  as CATEGORY_NAME from tour t, tour_category c where t.CATEGORY_ID=c.ID order by CATEGORY_NAME";
 
     public PagingList getAllTours() {
         return getPagingList(SQL_GET_ALL_TOURS);
@@ -136,14 +138,16 @@ public class TourService extends BaseService {
 
     private static final String SQL_ADD_TOUR = "insert into tour(CATEGORY_ID, TITLE, DESCRIPTION, COVERLINK, CONTENT, UPDATETIME, USERNAME, SHOWINTABLE,ASCATEGORYINDEX) values(?, ?, ?, ?, ?,now(), ?,?,?)";
 
-    private static final String SQL_RESET_TOUR_INDEX = "update tour set ASCATEGORYINDEX = 'N'";
+    private static final String SQL_RESET_TOUR_INDEX = "update tour set ASCATEGORYINDEX = 'N' where CATEGORY_ID =?";
 
     public void addTour(Map<String, Object> parameters, String filePath, String userName) {
 
         // Reset all tours as non-index tag
         String asCatetoryIndex = MapUtil.getStringFromMap(parameters, "as_index");
-        if (asCatetoryIndex.equalsIgnoreCase(asCatetoryIndex)) {
-            jt.update(SQL_RESET_TOUR_INDEX);
+        if (asCatetoryIndex.equalsIgnoreCase("Y")) {
+            String cid = MapUtil.getStringFromMap(parameters, "cid");
+            jt.update(SQL_RESET_TOUR_INDEX, cid);
+
         }
 
         Object[] params = MapUtil.getObjectArrayFromMap(parameters,
@@ -162,13 +166,15 @@ public class TourService extends BaseService {
     private static final String SQL_UPDATE_TOUR_NO_COVERLINK_BY_ID = "update tour set CATEGORY_ID=?, TITLE=?, DESCRIPTION=?, CONTENT=?, UPDATETIME=now(), USERNAME=?,SHOWINTABLE=?, ASCATEGORYINDEX=? where ID=?";
 
     public void updateTourById(Map<String, Object> parameters, String userName) {
-     
+
         // Reset all tours as non-index tag
         String asCatetoryIndex = MapUtil.getStringFromMap(parameters, "as_index");
-        if (asCatetoryIndex.equalsIgnoreCase(asCatetoryIndex)) {
-            jt.update(SQL_RESET_TOUR_INDEX);
+        if (asCatetoryIndex.equalsIgnoreCase("Y")) {
+            String cid = MapUtil.getStringFromMap(parameters, "cid");
+            jt.update(SQL_RESET_TOUR_INDEX, cid);
+
         }
-        
+
         Object[] params = MapUtil.getObjectArrayFromMap(parameters,
                 "cid,title,description,content,show_in_table,as_index,id");
         jt.update(SQL_UPDATE_TOUR_NO_COVERLINK_BY_ID, params[0], params[1], params[2], params[3],
@@ -178,13 +184,15 @@ public class TourService extends BaseService {
     private static final String SQL_UPDATE_TOUR_BY_ID = "update tour set CATEGORY_ID=?, TITLE=?, COVERLINK=?,DESCRIPTION=?, CONTENT=?, UPDATETIME=now(), USERNAME=?, SHOWINTABLE=?, ASCATEGORYINDEX=? where ID=?";
 
     public void updateTourById(Map<String, Object> parameters, String filePath, String userName) {
-       
+
         // Reset all tours as non-index tag
         String asCatetoryIndex = MapUtil.getStringFromMap(parameters, "as_index");
-        if (asCatetoryIndex.equalsIgnoreCase(asCatetoryIndex)) {
-            jt.update(SQL_RESET_TOUR_INDEX);
+        if (asCatetoryIndex.equalsIgnoreCase("Y")) {
+            String cid = MapUtil.getStringFromMap(parameters, "cid");
+            jt.update(SQL_RESET_TOUR_INDEX, cid);
+
         }
-        
+
         Object[] params = MapUtil.getObjectArrayFromMap(parameters,
                 "cid,title,description,content,show_in_table,as_index,id");
         jt.update(SQL_UPDATE_TOUR_BY_ID, params[0], params[1], filePath, params[2], params[3],

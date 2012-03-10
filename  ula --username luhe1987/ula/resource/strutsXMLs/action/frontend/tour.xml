@@ -27,17 +27,27 @@
 			method="family">
 			<result name="family">/front/tour/index.ftl</result>
 		</action>
+		<!-- 常规行程 -->
+		<action name="normal" class="ula.action.front.TourAction"
+			method="normal">
+			<result name="normal">/front/tour/index.ftl</result>
+		</action>
+		<!-- 个别行程 -->
+		<action name="individual" class="ula.action.front.TourAction"
+			method="individual">
+			<result name="individual">/front/tour/index.ftl</result>
+		</action>
 		<!-- 治疗行程 -->
 		<action name="therapy" class="ula.action.front.TourAction"
 			method="therapy">
 			<result name="therapy">/front/tour/index.ftl</result>
 		</action>
-		<!-- 治疗行程 -->
+		<!-- 新年行程 -->
 		<action name="newyear" class="ula.action.front.TourAction"
 			method="newyear">
 			<result name="newyear">/front/tour/index.ftl</result>
 		</action>
-		<!-- 治疗行程 -->
+		<!-- 学习行程 -->
 		<action name="learn" class="ula.action.front.TourAction"
 			method="learn">
 			<result name="learn">/front/tour/index.ftl</result>

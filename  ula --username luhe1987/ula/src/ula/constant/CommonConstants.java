@@ -48,6 +48,8 @@ public interface CommonConstants {
 	String TAG_TOUR_CAMPING = "camping";
 	String TAG_TOUR_FOODIE = "foodie";
 	String TAG_TOUR_FAMILY = "family";
+	String TAG_TOUR_NORMAL = "normal";
+	String TAG_TOUR_INDIVIDUAL = "individual";
 	String TAG_TOUR_THERAPY = "therapy";
 	String TAG_TOUR_NEWYEAR = "newyear";
 	String TAG_TOUR_LEARN = "learn";
