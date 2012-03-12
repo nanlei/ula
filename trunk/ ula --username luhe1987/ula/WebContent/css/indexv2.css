@@ -469,6 +469,7 @@ img {
 	width: 35px;
 	height: 20px;
 	float: left;
+	clear:both;
 }
 
 .search_bar .ch_text {
