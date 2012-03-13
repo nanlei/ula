@@ -4,5 +4,21 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
 	<package name="front-about" extends="global" namespace="/about">
+		<action name="business" class="ula.action.front.AboutAction"
+			method="business">
+			<result name="business">/front/about/index.ftl</result>
+		</action>
+		<action name="company" class="ula.action.front.AboutAction"
+			method="company">
+			<result name="company">/front/about/index.ftl</result>
+		</action>
+		<action name="team" class="ula.action.front.AboutAction"
+			method="team">
+			<result name="team">/front/about/index.ftl</result>
+		</action>
+		<action name="memory" class="ula.action.front.AboutAction"
+			method="memory">
+			<result name="memory">/front/about/index.ftl</result>
+		</action>
 	</package>
 </struts>

@@ -17,26 +17,57 @@
                 	<p>${hotel.NAME}</p>
                 </div>
                 <div style="text-align:center;margin-top:10px;margin-bottom:10px;">
-					位置：<b>${hotel.LOCATION}</b><br>
-					星级：<b>${hotel.LEVEL}</b><br>
-					功能：<b>${hotel.FUNC}</b>
+					<@s.property value="%{getText('front.hotel.location')}"/>：<b>${hotel.LOCATION}</b><br>
+					<@s.property value="%{getText('front.hotel.stars')}"/>：<b>${hotel.LEVEL}</b><br>
+					<@s.property value="%{getText('front.hotel.func')}"/>：<b>${hotel.FUNC}</b>
 				</div>
                 <div style="border-top: 1px #CCCCCC dashed;"/>
                 	<#assign pIndex=picIndex/>
 	   				<#list albumPicList as albumPic>
-					<div style="text-align:center;margin-top:10px;margin-bottom:10px;">
-						<img src="${base}${albumPic.PICPATH}" alt="${albumPic.PICNAME}" width="600" height="450"/>
-					</div>
-					
+						<div style="text-align:center;margin-top:10px;margin-bottom:10px;">
+							<img src="${base}${albumPic.PICPATH}" alt="${albumPic.PICNAME}" width="600" height="450"/>
+						</div>
 					</#list>
 				</div>
                 <div style="border-top: 1px #CCCCCC dashed;"/>
             	<div id="page_article">
-            	<p>${hotel.CONTENT}</p>
+            		<p>${hotel.CONTENT}</p>
             	</div>
+            	
             </div>
+            
+           <div style="text-align:center; margin-top:15px;">
+		        
+		        <a style = "font-size:40px; color:#CC6633" href="${base}/search/hotel.html">обратно</a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		        
+		        <a style = "font-size:40px; color:#CC6633" href="javascript:postwith('${base}/special/hotel.html',{hotelName:'${hotel.NAME}'})">бронирование</a> 
+		        
+			</div>
+
 	</div>
     <!-- The Footer -->
 	<@fp.footer /><#-- footer宏 -->
 </div>
+
+<script language=javascript>  
+
+
+	function postwith(to, p) {
+	
+			var myForm = document.createElement("form");
+			myForm.method = "post";
+			myForm.action = to;
+			for ( var k in p) {
+				var myInput = document.createElement("input");
+				myInput.setAttribute("name", k);
+				myInput.setAttribute("value", p[k]);
+				myForm.appendChild(myInput);
+			}
+			document.body.appendChild(myForm);
+			myForm.submit();
+			document.body.removeChild(myForm);
+		}
+
+</script>  
+
 </@fp.page>

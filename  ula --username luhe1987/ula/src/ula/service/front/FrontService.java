@@ -42,6 +42,12 @@ public class FrontService extends BaseService {
 		Object[] params = MapUtil.getObjectArrayFromMap(parameters, "id");
 		return jt.queryForMap(SQL_GET_ARTICLE_BY_ID, params);
 	}
+	
+	private static final String SQL_GET_ABOUT_BY_TYPE = "select * from aboutinfo where type=?";
+	
+	public Map<String, Object> getAboutByType(String type) {
+	    return jt.queryForMap(SQL_GET_ABOUT_BY_TYPE, type);
+	}
 
 	private static final String SQL_GET_TOUR_BY_CATEGORY_TAG = "select t.ID, t.TITLE, t.COVERLINK,t.DESCRIPTION,t.CONTENT,t.SHOWINTABLE,t.ASCATEGORYINDEX from tour t,tour_category tc where t.CATEGORY_ID=tc.ID and tc.TAG=?";
 

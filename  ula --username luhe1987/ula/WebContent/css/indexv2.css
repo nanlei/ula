@@ -1132,7 +1132,7 @@ img {
 
 #hotel .line {
 	text-align: center;
-	height: 26px;
+	min-height: 26px;
 	width: 740px;
 }
 
