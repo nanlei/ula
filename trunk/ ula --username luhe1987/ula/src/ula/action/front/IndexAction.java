@@ -119,7 +119,7 @@ public class IndexAction extends AnonymousAction {
         linkList = getServiceManager().getIndexService().getLinkList();
         weather = getServiceManager().getIndexService().getWeather();
         recommend = getServiceManager().getIndexService().getRecommendById(getParametersAsMap());
-      
+
         return "recommend";
     }
 
@@ -176,6 +176,9 @@ public class IndexAction extends AnonymousAction {
      * @return
      */
     public String subscribe() {
+
+        System.out.println("Do not do this");
+
         HashMap<String, Object> map = new HashMap<String, Object>();
         String email = MapUtil.getStringFromMap(getParametersAsMap(), "email");
         int flag = getServiceManager().getSubscriberService().getCheckSubscriber(email);
@@ -244,4 +247,5 @@ public class IndexAction extends AnonymousAction {
         referer = temp_referer;
         return SUCCESS;
     }
+
 }

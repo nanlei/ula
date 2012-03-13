@@ -9,7 +9,7 @@
     		<li id="special_li"<#if locale='ru'> class="sp"</#if>><a<#if c_service> class="clicked"</#if> onmousemove="secondNav('snav3');" onmouseout="hidden_nav('snav3');" href="javascript:void(0)"><@s.property value="%{getText('front.nav.special.service')}"/></a></li>
     		<li id="search_li"><a<#if c_search> class="clicked"</#if> onmousemove="secondNav('snav4');" onmouseout="hidden_nav('snav4');" href="javascript:void(0)"><@s.property value="%{getText('front.nav.search')}"/></a></li>
     		<li id="contact_li"><a<#if c_contact> class="clicked"</#if> onmousemove="secondNav('snav5');" onmouseout="hidden_nav('snav5');" href="javascript:void(0)"><@s.property value="%{getText('front.nav.contact.us')}"/></a></li>
-    		<li id="online_li"><a<#if c_online> class="clicked"</#if> onmousemove="secondNav('snav6');" onmouseout="hidden_nav('snav6');" href="javascript:void(0)"><@s.property value="%{getText('front.nav.contact.us')}"/></a></li>
+    		<li id="online_li" <#if locale='ru'> class="sp"</#if>> <a<#if c_online> class="clicked"</#if> onmousemove="secondNav('snav6');" onmouseout="hidden_nav('snav6');" href="javascript:void(0)"><@s.property value="%{getText('front.nav.online.contact')}"/></a></li>
     	</ul>
     </div>
     
@@ -90,9 +90,8 @@
             </div>
             <div id="snav6" class="menu6"  onmousemove="secondNav('snav6');" onmouseout="hidden_nav('snav6');">
             	<ul class="ul1">
-                	<li><a href="${base}/contact/russian.html">▪ <@s.property value="%{getText('front.contact.russian')}"/></a></li>
-                    <li><a href="${base}/contact/chinese.html">▪ <@s.property value="%{getText('front.contact.chinese')}"/></a></li>
-                    <li><a href="${base}/contact/guest.html">▪ <@s.property value="%{getText('front.contact.individual')}"/></a></li>
+                	<li><a href="${base}/online/chat.html">▪ <@s.property value="%{getText('front.online.chat')}"/></a></li>
+                    <li><a href="${base}/online/email.html">▪ <@s.property value="%{getText('front.online.email')}"/></a></li>
                 </ul>
             </div>
         </div>

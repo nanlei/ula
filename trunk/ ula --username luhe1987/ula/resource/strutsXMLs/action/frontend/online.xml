@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="front-online" extends="global" namespace="/online">
+		<action name="chat" class="ula.action.front.OnlineAction"
+			method="chat">
+			<result name="chat">/front/online/chat.ftl</result>
+		</action>
+		<action name="email" class="ula.action.front.OnlineAction"
+			method="email">
+			<result name="email">/front/online/email.ftl</result>
+		</action>
+	</package>
+</struts>

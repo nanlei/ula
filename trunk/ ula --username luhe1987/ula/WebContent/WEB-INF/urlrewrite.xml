@@ -95,6 +95,18 @@
 	</rule>
 	
 	<rule>
+		<note>about</note>
+		<from>/about/([a-z]+).html</from>
+		<to type="forward">/about/$1.action</to>
+	</rule>
+	
+	<rule>
+		<note>online</note>
+		<from>/online/([a-z]+).html</from>
+		<to type="forward">/online/$1.action</to>
+	</rule>
+	
+	<rule>
 		<note>product</note>
 		<from>/product-([0-9]+).html</from>
 		<to type="forward">/product.action?id=$1</to>

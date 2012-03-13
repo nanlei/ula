@@ -1,8 +1,9 @@
 $(function() {
-	$("#fromDate").datepicker( {
+
+	$("#fromDate").datepicker({
 		dateFormat : 'yy-mm-dd'
 	});
-	$("#toDate").datepicker( {
+	$("#toDate").datepicker({
 		dateFormat : 'yy-mm-dd'
 	});
 	// $("#snav1").mouseover(function() {
@@ -68,6 +69,8 @@ $(function() {
 });
 
 function rssSubmit() {
+
+
 	var email = $.trim($("#email_input").val());
 	var emailReg = /^[_a-z0-9]+@([_a-z0-9]+\.)+[a-z0-9]{2,3}$/;
 	var selectorFlag = $("input:[name=rss_ornot]:radio:checked").length;
@@ -93,14 +96,18 @@ function rssSubmit() {
  * @return
  */
 function subscribe(email) {
-	$.ajax( {
+
+
+	$.ajax({
 		type : "POST",
-		url : "subscribe.action",
+		url : "${base}/subscribe.html",
+
 		data : {
 			email : email,
 			time : new Date().getTime()
 		},
 		success : function(data) {
+
 			var jsonData = jQuery.parseJSON(data);
 			if (jsonData.result == 1) {
 				alert("Subscribe Successfully!");
@@ -111,6 +118,7 @@ function subscribe(email) {
 			}
 		},
 		error : function(xmlHttpRequest, status, exception) {
+
 			dialogAlert("Network Error, Please refresh page and try again!");
 		}
 	});
@@ -121,14 +129,16 @@ function subscribe(email) {
  * @return
  */
 function cancelSubscribe(email) {
-	$.ajax( {
+
+	$.ajax({
 		type : "POST",
-		url : "cancelSubscribe.action",
+		url : "${base}/cancelSubscribe.html",
 		data : {
 			email : email,
 			time : new Date().getTime()
 		},
 		success : function(data) {
+
 			var jsonData = jQuery.parseJSON(data);
 			if (jsonData.result == 1) {
 				alert("Cancel Subscribe Successfully!");
@@ -139,12 +149,14 @@ function cancelSubscribe(email) {
 			}
 		},
 		error : function(xmlHttpRequest, status, exception) {
+
 			dialogAlert("Network Error, Please refresh page and try again!");
 		}
 	});
 }
 
 function selectAllType() {
+
 	if ($("#ttselector").attr("checked") == "checked") {
 		selectAll('tourSearchForm', 'travel_type');
 	} else {
@@ -153,6 +165,7 @@ function selectAllType() {
 }
 
 function selectAllHotel() {
+
 	if ($("#hselector").attr("checked") == "checked") {
 		selectAll('tourSearchForm', 'level');
 	} else {

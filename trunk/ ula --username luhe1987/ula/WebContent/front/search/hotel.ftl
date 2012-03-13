@@ -12,8 +12,8 @@
 	<@fp.search_hotel />
 	</div>
 	<div id="re_content">
-        	<div id="re_con_title"><span>搜索结果</span></div>
-            <div id="re_con_ch_title"><span>尊敬的朋友，按照你选择的以下要求：</span></div>
+        	<div id="re_con_title"><span><@s.property value="%{getText('front.search.result')}"/></span></div>
+            <div id="re_con_ch_title"><span><@s.property value="%{getText('front.search.result.title')}"/>：</span></div>
             <div id="re_con_choose">
             	<table border="0"  cellspacing="0" cellpadding="0">
                 	<tr>
@@ -27,10 +27,10 @@
                         	<#case "lvshun"><@s.property value="%{getText('front.search.location.ls')}"/><#break>
                         </#switch>
                         <#else>
-                                                               未选择
+                                                               <!--未选择-->
                         </#if>
                         <#else>
-                                                               未选择
+                                                              <!--未选择-->
                         </#if>
                         </td>
                         <td class="item"></td>
@@ -50,10 +50,10 @@
                         	<#case "nursing_hotel"><@s.property value="%{getText('front.search.nursing')}"/><#break>
                         </#switch>
                         <#else>
-                                                               未选择
+                                                             <!--未选择-->
                         </#if>
                         <#else>
-                                                               未选择
+                                                            <!--未选择-->
                         </#if>                    
                         </td>
                         <td class="item"></td>
@@ -70,10 +70,10 @@
                         	<#case "zhiliao"><@s.property value="%{getText('front.search.function.treatment')}"/><#break>
                         </#switch>
                         <#else>
-                                                               未选择
+                                               <!--未选择-->
                         </#if>
                         <#else>
-                                                               未选择
+                                                               <!--未选择-->
                         </#if>
                         </td>
                         <td class="item"></td>
@@ -81,25 +81,27 @@
                     </tr>
                 </table>
             </div>
-            <div id="re_words_title"><span>符合条件的有：</span></div>
+            <div id="re_words_title"><span><@s.property value="%{getText('front.search.result.found')}"/>：</span></div>
             <div id="re_words">
             	<table border="0"  cellspacing="0" cellpadding="0">
                 	<tr class="words_title">
-                    	<td>酒店名称</td>
-                    	<td>操作</td>
+                    	<td><@s.property value="%{getText('front.search.hotelname')}"/></td>
+                    	<td><@s.property value="%{getText('front.search.operation')}"/></td>
                     </tr>
                     <#if hotelList?has_content>
                   	<#list hotelList as hotel>
                     <tr class="words_con">
                     	<td>${hotel.NAME}</td>
-                    	<td><a href="${base}/hotel-${hotel.ID}.html">点击查看</a></td>
+                    	<td><a href="${base}/hotel-${hotel.ID}.html">Detail</a></td>
                     </tr>
                     </#list>
                     <#else>
-                    <tr class="words_con">
-                    	<td>暂无搜索结果</td>
-                    	<td>暂无搜索结果</td>
-                    </tr>
+	                     <!--
+	                    <tr class="words_con">
+	                    	<td>暂无搜索结果</td>
+	                    	<td>暂无搜索结果</td>
+	                    </tr>
+	                    -->
                     </#if>
                 </table>
             </div>

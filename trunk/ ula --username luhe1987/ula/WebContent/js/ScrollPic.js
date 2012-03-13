@@ -6,7 +6,6 @@ var sina = {
 			return eval('document.all.' + objName)
 		}
 	},
-	isIE : navigator.appVersion.indexOf("MSIE") != -1 ? true : false,
 	addEvent : function(l, i, I) {
 		if (l.attachEvent) {
 			l.attachEvent("on" + i, I)
@@ -63,6 +62,9 @@ var sina = {
 		}
 	}
 };
+
+
+
 
 // ����ͼƬ���캯��
 // UI&UE Dept. mengjia

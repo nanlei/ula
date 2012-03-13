@@ -1,3 +1,4 @@
+
 package ula.action.front;
 
 import java.util.List;
@@ -10,159 +11,169 @@ import ula.constant.CommonConstants;
  * 前台-特色服务
  * 
  * @author Nanlei
- * 
  */
 public class SpecialAction extends AnonymousAction {
-	private List<Map<String, Object>> recommendList;
-	private List<Map<String, Object>> linkList;
-	private Map<String, Object> weather;
+    private List<Map<String, Object>> recommendList;
 
-	private Map<String, Object> special;
-	private String reserveResult;
+    private List<Map<String, Object>> linkList;
 
-	public List<Map<String, Object>> getRecommendList() {
-		return recommendList;
-	}
+    private Map<String, Object> weather;
 
-	public List<Map<String, Object>> getLinkList() {
-		return linkList;
-	}
+    private Map<String, Object> special;
 
-	public Map<String, Object> getWeather() {
-		return weather;
-	}
+    private String reserveResult;
 
-	public Map<String, Object> getSpecial() {
-		return special;
-	}
+    public List<Map<String, Object>> getRecommendList() {
+        return recommendList;
+    }
 
-	public String getReserveResult() {
-		return reserveResult;
-	}
+    public List<Map<String, Object>> getLinkList() {
+        return linkList;
+    }
 
-	private void baseInfo() throws Exception {
-		weather = getServiceManager().getIndexService().getWeather();
-		recommendList = getServiceManager().getIndexService()
-				.getRecommendList();
-		linkList = getServiceManager().getIndexService().getLinkList();
-	}
+    public Map<String, Object> getWeather() {
+        return weather;
+    }
 
-	/**
-	 * 特色服务首页
-	 * 
-	 * @return
-	 * @throws Exception
-	 */
-	public String special() throws Exception {
-		special = getServiceManager().getFrontService().getSpecialByTag(
-				CommonConstants.TAG_SPECIAL_VISA);
-		baseInfo();
-		return SUCCESS;
-	}
+    public Map<String, Object> getSpecial() {
+        return special;
+    }
 
-	/**
-	 * 签证
-	 * 
-	 * @return
-	 * @throws Exception
-	 */
-	public String visa() throws Exception {
-		special = getServiceManager().getFrontService().getSpecialByTag(
-				CommonConstants.TAG_SPECIAL_VISA);
-		baseInfo();
-		return "visa";
-	}
+    public String getReserveResult() {
+        return reserveResult;
+    }
 
-	/**
-	 * 酒店预定
-	 * 
-	 * @return
-	 * @throws Exception
-	 */
-	public String hotel() throws Exception {
-		baseInfo();
-		return "hotel";
-	}
+    private void baseInfo() throws Exception {
+        weather = getServiceManager().getIndexService().getWeather();
+        recommendList = getServiceManager().getIndexService().getRecommendList();
+        linkList = getServiceManager().getIndexService().getLinkList();
+    }
 
-	/**
-	 * 供货者搜索
-	 * 
-	 * @return
-	 * @throws Exception
-	 */
-	public String supplier() throws Exception {
-		special = getServiceManager().getFrontService().getSpecialByTag(
-				CommonConstants.TAG_SPECIAL_SUPPLIER);
-		baseInfo();
-		return "supplier";
-	}
+    /**
+     * 特色服务首页
+     * 
+     * @return
+     * @throws Exception
+     */
+    public String special() throws Exception {
+        special = getServiceManager().getFrontService().getSpecialByTag(
+                CommonConstants.TAG_SPECIAL_VISA);
+        baseInfo();
+        return SUCCESS;
+    }
 
-	/**
-	 * 租车服务
-	 * 
-	 * @return
-	 * @throws Exception
-	 */
-	public String carrental() throws Exception {
-		special = getServiceManager().getFrontService().getSpecialByTag(
-				CommonConstants.TAG_SPECIAL_COMMISION_CARRENTAL);
-		baseInfo();
-		return "carrental";
-	}
+    /**
+     * 签证
+     * 
+     * @return
+     * @throws Exception
+     */
+    public String visa() throws Exception {
+        special = getServiceManager().getFrontService().getSpecialByTag(
+                CommonConstants.TAG_SPECIAL_VISA);
+        baseInfo();
+        return "visa";
+    }
 
-	/**
-	 * 订票服务
-	 * 
-	 * @return
-	 * @throws Exception
-	 */
-	public String ticketbooking() throws Exception {
-		special = getServiceManager().getFrontService().getSpecialByTag(
-				CommonConstants.TAG_SPECIAL_COMMISION_TICKETBOOKING);
-		baseInfo();
-		return "ticketbooking";
-	}
+    /**
+     * 酒店预定
+     * 
+     * @return
+     * @throws Exception
+     */
+    public String hotel() throws Exception {
 
-	/**
-	 * 翻译服务
-	 * 
-	 * @return
-	 * @throws Exception
-	 */
-	public String translation() throws Exception {
-		special = getServiceManager().getFrontService().getSpecialByTag(
-				CommonConstants.TAG_SPECIAL_COMMISION_TRANSLATION);
-		baseInfo();
-		return "translation";
-	}
+        // 酒店名称
+        String hotelName = getHttpServletRequest().getParameter("hotelName");
+        if (hotelName == null) {
+            hotelName = "";
+        }
+        getHttpServletRequest().setAttribute("hotelName", hotelName);
+        
+        
+        
+        baseInfo();
+        return "hotel";
+    }
 
-	/**
-	 * 代邮寄服务
-	 * 
-	 * @return
-	 * @throws Exception
-	 */
-	public String shipping() throws Exception {
-		special = getServiceManager().getFrontService().getSpecialByTag(
-				CommonConstants.TAG_SPECIAL_COMMISION_SOUVENIR);
-		baseInfo();
-		return "shipping";
-	}
+    /**
+     * 供货者搜索
+     * 
+     * @return
+     * @throws Exception
+     */
+    public String supplier() throws Exception {
+        special = getServiceManager().getFrontService().getSpecialByTag(
+                CommonConstants.TAG_SPECIAL_SUPPLIER);
+        baseInfo();
+        return "supplier";
+    }
 
-	/**
-	 * 酒店预定
-	 * 
-	 * @return
-	 */
-	public String hotelReserve() {
-		try {
-			getServiceManager().getFrontService().addHotelReservation(
-					getParametersAsMap());
-			baseInfo();
-			reserveResult = "success";
-		} catch (Exception e) {
-			reserveResult = "failure";
-		}
-		return "hotelReserve";
-	}
+    /**
+     * 租车服务
+     * 
+     * @return
+     * @throws Exception
+     */
+    public String carrental() throws Exception {
+        special = getServiceManager().getFrontService().getSpecialByTag(
+                CommonConstants.TAG_SPECIAL_COMMISION_CARRENTAL);
+        baseInfo();
+        return "carrental";
+    }
+
+    /**
+     * 订票服务
+     * 
+     * @return
+     * @throws Exception
+     */
+    public String ticketbooking() throws Exception {
+        special = getServiceManager().getFrontService().getSpecialByTag(
+                CommonConstants.TAG_SPECIAL_COMMISION_TICKETBOOKING);
+        baseInfo();
+        return "ticketbooking";
+    }
+
+    /**
+     * 翻译服务
+     * 
+     * @return
+     * @throws Exception
+     */
+    public String translation() throws Exception {
+        special = getServiceManager().getFrontService().getSpecialByTag(
+                CommonConstants.TAG_SPECIAL_COMMISION_TRANSLATION);
+        baseInfo();
+        return "translation";
+    }
+
+    /**
+     * 代邮寄服务
+     * 
+     * @return
+     * @throws Exception
+     */
+    public String shipping() throws Exception {
+        special = getServiceManager().getFrontService().getSpecialByTag(
+                CommonConstants.TAG_SPECIAL_COMMISION_SOUVENIR);
+        baseInfo();
+        return "shipping";
+    }
+
+    /**
+     * 酒店预定
+     * 
+     * @return
+     */
+    public String hotelReserve() {
+        try {
+            getServiceManager().getFrontService().addHotelReservation(getParametersAsMap());
+            baseInfo();
+            reserveResult = "success";
+        } catch (Exception e) {
+            reserveResult = "failure";
+        }
+        return "hotelReserve";
+    }
 }

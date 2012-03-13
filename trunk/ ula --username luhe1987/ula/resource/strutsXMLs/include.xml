@@ -26,6 +26,7 @@
 	<include file="strutsXMLs/action/frontend/about.xml"></include>
 	<include file="strutsXMLs/action/frontend/city.xml"></include>
 	<include file="strutsXMLs/action/frontend/contact.xml"></include>
+	<include file="strutsXMLs/action/frontend/online.xml"></include>
 	<include file="strutsXMLs/action/frontend/index.xml"></include>
 	<include file="strutsXMLs/action/frontend/product.xml"></include>
 	<include file="strutsXMLs/action/frontend/search.xml"></include>
