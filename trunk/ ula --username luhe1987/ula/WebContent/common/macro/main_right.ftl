@@ -13,7 +13,7 @@
 			</div>
 			<div id="right_about">
 				<div id="right_about_about"><a href="${base}/about/company.html"><@s.property value="%{getText('front.aboutus.title')}"/></a></div>
-				<div id="right_about_allow"><a href="${base}/about/company.html"><@s.property value="%{getText('front.aboutus.license')}"/></a></div>
+				<div id="right_about_allow"><a href="${base}about/business.html"><@s.property value="%{getText('front.aboutus.license')}"/></a></div>
 			</div>
 			<div class="right_links"><a href="${base}/special/shipping.html"><@s.property value="%{getText('front.tool.transport')}"/></a></div>
 			<div class="right_links"><a href="${base}/special/supplier.html"><@s.property value="%{getText('front.tool.supplier')}"/></a></div>
