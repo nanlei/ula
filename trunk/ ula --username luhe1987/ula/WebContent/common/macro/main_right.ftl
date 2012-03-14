@@ -2,7 +2,7 @@
 <#macro main_right>
 		<div id="main_right">
 			<div id="right_show"><a href="${base}/city/exhibition-27.html">Далянь Выставка<br />2011-2012</a></div>
-			<div id="right_mice"><a href="${base}/tour-53.html">MICE</a></div>
+			<div id="right_mice"><a href="${base}/tour/business.html">MICE</a></div>
 			<div class="right_tools">
 				<div class="right_tool1"><a href="${base}/special/visa.html"><@s.property value="%{getText('front.tool.visa')}"/></a></div>
 				<div class="right_tool2"><a href="${base}/special/ticketbooking.html"><@s.property value="%{getText('front.tool.ticket')}"/></a></div>
