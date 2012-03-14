@@ -17,7 +17,7 @@ public class ReservationService extends BaseService {
 
 	private static final String SQL_HOTEL_RESERVATION_BACKUP = "INSERT INTO reservation_hotel_backup(name,tel,email,hotelName,roomCategory,checkinDate,checkoutDate,men,women,kids,remarks,order_date) VALUES(?,?,?,?,?,?,?,?,?,?,?,now())";
 
-	private static final String SQL_HOTEL_RESERVLIST = "SELECT * FROM reservation_hotel ORDER BY order_date desc";
+	private static final String SQL_HOTEL_RESERVLIST = "SELECT * FROM reservation_hotel ORDER BY POST_TIME ";
 
 	private static final String SQL_TRAVEL_RESERVLIST = "SELECT * FROM reservation_travel ORDER BY order_date desc";
 
@@ -33,13 +33,13 @@ public class ReservationService extends BaseService {
 
 	private static final String SQL_REMOVE_TRAVELRESERV = "DELETE FROM reservation_travel WHERE Id=?";
 
-	private static final String SQL_HOTEL_ORDER_DONE_MARK = "UPDATE reservation_hotel SET done ='yes' WHERE Id =?";
+	private static final String SQL_HOTEL_ORDER_DONE_MARK = "UPDATE reservation_hotel SET RESOLVER ='yes' WHERE Id =?";
 
-	private static final String SQL_HOTEL_ORDER_UNDONE_MARK = "UPDATE reservation_hotel SET done ='no' WHERE Id =?";
+	private static final String SQL_HOTEL_ORDER_UNDONE_MARK = "UPDATE reservation_hotel SET RESOLVER ='no' WHERE Id =?";
 
-	private static final String SQL_TRAVEL_ORDER_DONE_MARK = "UPDATE reservation_travel SET done ='yes' WHERE Id =?";
+	private static final String SQL_TRAVEL_ORDER_DONE_MARK = "UPDATE reservation_travel SET RESOLVER ='yes' WHERE Id =?";
 
-	private static final String SQL_TRAVEL_ORDER_UNDONE_MARK = "UPDATE reservation_travel SET done ='no' WHERE Id =?";
+	private static final String SQL_TRAVEL_ORDER_UNDONE_MARK = "UPDATE reservation_travel SET RESOLVER ='no' WHERE Id =?";
 
 	/**
 	 * 酒店预订
