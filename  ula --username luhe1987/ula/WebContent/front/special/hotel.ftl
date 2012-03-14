@@ -20,23 +20,23 @@
 				<form name="reserveForm" method="post" action="hotelReserve" onsubmit="return validateForm(this)">
 					<div class="line">
 						<div class="left"><@s.property value="%{getText('hotel.booking.hotelname')}"/>*</div>
-						<div class="right"><input type="text" name="hotelName" size="40" value= "${hotelName}" emptyInfo="请输入酒店名称"/></div>
+						<div class="right"><input type="text" name="hotelName" size="40" value= "" emptyInfo="Please enter hotel name"/></div>
 					</div>
 					<div class="line">
 						<div class="left"><@s.property value="%{getText('hotel.booking.people_num')}"/>*</div>
-						<div class="right"><input type="text" name="guestTotal" value ="1" size="40" emptyInfo="请输入入住人数"/></div>
+						<div class="right"><input type="text" name="guestTotal" value ="1" size="40" emptyInfo="Please enter guest number"/></div>
 					</div>
 					<div class="line">
 						<div class="left"><@s.property value="%{getText('hotel.booking.rooms')}"/>*</div>
-						<div class="right"><input type="text" name="roomTotal" value="1" size="40" emptyInfo="请输入预定间数"/></div>
+						<div class="right"><input type="text" name="roomTotal" value="1" size="40" emptyInfo="Please enter how many rooms"/></div>
 					</div>
 					<div class="line">
 						<div class="left"><@s.property value="%{getText('hotel.booking.from')}"/>*</div>
-						<div class="right"><input type="text" name="checkinDate" id = "checkinDate" size="40" readonly="readonly" emptyInfo="请选择入住日期"/></div>
+						<div class="right"><input type="text" name="checkinDate" id = "checkinDate" size="40" readonly="readonly" emptyInfo="Please pick check-in date"/></div>
 					</div>
 					<div class="line">
 						<div class="left"><@s.property value="%{getText('hotel.booking.to')}"/>*</div>
-						<div class="right"><input type="text" name="checkoutDate" id = "checkoutDate" size="40" readonly="readonly" emptyInfo="请选择离开日期"/></div>
+						<div class="right"><input type="text" name="checkoutDate" id = "checkoutDate" size="40" readonly="readonly" emptyInfo="Please pick check-out date"/></div>
 					</div>
 					<div class="line">
 						<div class="left"><@s.property value="%{getText('hotel.booking.contact')}"/>*</div>
@@ -49,7 +49,7 @@
 								<option value="mobile"><@s.property value="%{getText('hotel.booking.mobile')}"/></option>
     						</select>*
     					</div>
-						<div class="right"><input type="text" name="phoneNumber" size="40" emptyInfo="请填写号码"/></div>
+						<div class="right"><input type="text" name="phoneNumber" size="40" emptyInfo="Please enter phone number"/></div>
 					</div>
 					<div class="line">
 						<div class="left">
@@ -59,11 +59,11 @@
 								<option value="email">Email</option>
 							</select>*
     					</div>
-						<div class="right"><input type="text" name="contactValue" size="40" emptyInfo="请填写联系方式"/></div>
+						<div class="right"><input type="text" name="contactValue" size="40" value=" "emptyInfo="Please enter contact info"/></div>
 					</div>
 					<div class="line">
 						<div class="left"><@s.property value="%{getText('hotel.booking.note')}"/>*</div>
-						<div class="right"><input type="text" name="remarks" size="40" emptyInfo="请填写备注说明"/></div>
+						<div class="right"><input type="text" name="remarks" size="40" value=" "emptyInfo="Please enter remarks"/></div>
 					</div>
 					<div class="line">
 						<div><input type="submit" id="submitButton" value="<@s.property value="%{getText('hotel.booking.submit')}"/>" />&nbsp;&nbsp;<input type="reset" id="resetButton" value="<@s.property value="%{getText('front.booking.reset')}"/>" /></div>
