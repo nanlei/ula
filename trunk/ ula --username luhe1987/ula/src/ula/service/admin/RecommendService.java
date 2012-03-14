@@ -13,7 +13,7 @@ public class RecommendService extends BaseService {
 		return getPagingList(SQL_GET_ALL_RECOMMENDS);
 	}
 
-	private static final String SQL_ADD_RECOMMEND = "insert into recommend(title,cover,content,updatetime,tag,username,link) values(?,?,?,now(),?,?)";
+	private static final String SQL_ADD_RECOMMEND = "insert into recommend(title,cover,content,updatetime,tag,username,link) values(?,?,?,now(),?,?,?)";
 
 	public void addRecommend(Map<String, Object> parameters, String filePath,
 			String userName) {
