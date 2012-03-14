@@ -21,13 +21,13 @@
 		
 		<#list hotelReservList.list as hotelReserv>
 		<tr>
-		<td>${hotelReserv.name}</td>
-		<td>${hotelReserv.hotelName}</td>
-		<td>${hotelReserv.orderDate}</td>
-		<td><a href= "${base}/reservation/hotelReserv!detail.action?id=${hotelReserv.Id}">查看</a></td>
-		<td><a href= "${base}/reservation/hotelReserv!remove.action?id=${hotelReserv.Id}">删除</a></td>
+		<td>${hotelReserv.CONTACT}</td>
+		<td>${hotelReserv.HOTEL_NAME}</td>
+		<td>${hotelReserv.POST_TIME}</td>
+		<td><a href= "${base}/reservation/hotelReserv!detail.action?id=${hotelReserv.ID}">查看</a></td>
+		<td><a href= "${base}/reservation/hotelReserv!remove.action?id=${hotelReserv.ID}">删除</a></td>
 		<td>
-		<#if !hotelReserv.done?exists || hotelReserv.done == "no">
+		<#if !hotelReserv.RESOLVER?exists || hotelReserv.RESOLVER == "no">
 		未处理
 		<#else>
 		已处理
