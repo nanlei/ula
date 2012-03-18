@@ -21,7 +21,8 @@
 					<@s.property value="%{getText('front.hotel.stars')}"/>：<b>${hotel.LEVEL}</b><br>
 					<@s.property value="%{getText('front.hotel.func')}"/>：<b>${hotel.FUNC}</b>
 				</div>
-                <div style="border-top: 1px #CCCCCC dashed;"/>
+               
+                 <div style="border-top: 1px #CCCCCC dashed;" class="album"/>
                 	<#assign pIndex=picIndex/>
 	   				<#list albumPicList as albumPic>
 						<div style="text-align:center;margin-top:10px;margin-bottom:10px;">
@@ -29,6 +30,8 @@
 						</div>
 					</#list>
 				</div>
+               
+               
                 <div style="border-top: 1px #CCCCCC dashed;"/>
             	<div id="page_article">
             		<p>${hotel.CONTENT}</p>
@@ -38,7 +41,8 @@
             
            <div style="text-align:center; margin-top:15px;">
 		        
-		        <a style = "font-size:40px; color:#CC6633" href="${base}/search/hotel.html">обратно</a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		        
+		        <a style = "font-size:40px; color:#CC6633" href="javascript: history.go(-1)">обратно</a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		        
 		        <a style = "font-size:40px; color:#CC6633" href="javascript:postwith('${base}/special/hotel.html',{hotelName:'${hotel.NAME}'})">бронирование</a> 
 		        

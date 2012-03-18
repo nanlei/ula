@@ -19,6 +19,7 @@
 	<script src="${base}/js/jqueryui/datepicker/lang/${locale}.js" type="text/javascript"></script>
 	<script src="${base}/js/index_tab.js" type="text/javascript"></script>
 	<script src="${base}/js/myScrollPic.js" type="text/javascript"></script>
+	<script src="${base}/js/album.js" type="text/javascript"></script>
 	<script src="${base}/js/common.js" type="text/javascript"></script>
 	<#if index>
 	<script src="${base}/js/index.js" type="text/javascript"></script>
