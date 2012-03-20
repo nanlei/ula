@@ -4,6 +4,7 @@ package ula.quartz.service;
 import java.util.List;
 import java.util.Map;
 
+import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
@@ -140,7 +141,32 @@ public class SendResourceService {
      * @param email
      * @param phone
      */
-    public void sendToAdmin(String from, String message, String email, String phone) {
+    public int sendToAdmin(String from, String message, String email, String phone) {
+
+        String mailText = "用户名 ：" + from + "<br/>用户邮件地址 ：" + email + "<br/>用户电话 ：" + phone
+                + "<br/>用户留言 ： " + message;
+
+        // 发送邮件
+        MimeMessage htmlMessage = mailSender.createMimeMessage();
+        // 发送HTML邮件
+        MimeMessageHelper helper = null;
+        try {
+            helper = new MimeMessageHelper(htmlMessage, true, "UTF-8");
+            // 设置邮件属性
+            helper.setFrom(fromAddress);
+            helper.setBcc(new String[] {
+                    "dlcts_jiangxiaowu@hotmail.com", "luhe1987@gmail.com"
+            });
+            helper.setSubject("来自用户的咨询邮件");
+            helper.setText(mailText, true);
+            // 发送邮件
+            mailSender.send(htmlMessage);
+            return 0;
+
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            return -1;
+        }
 
     }
 

@@ -1,5 +1,6 @@
 package ula.common;
 
+import ula.quartz.service.SendResourceService;
 import ula.service.admin.AboutService;
 import ula.service.admin.ArticleService;
 import ula.service.admin.CityServcie;
@@ -46,6 +47,7 @@ public class ServiceManager {
 	private RecommendService recommendService;
 	private WeatherService weatherService;
 	private ResourceService resourceService;
+	private SendResourceService sendResourceService;
 	private SubscriberService subscriberService;
 	private TourService tourService;
 	private ProductService productService;
@@ -223,5 +225,16 @@ public class ServiceManager {
 	public void setFrontService(FrontService frontService) {
 		this.frontService = frontService;
 	}
+
+    public SendResourceService getSendResourceService() {
+        return sendResourceService;
+    }
+
+    public void setSendResourceService(SendResourceService sendResourceService) {
+        this.sendResourceService = sendResourceService;
+    }
+	
+	
+	
 
 }

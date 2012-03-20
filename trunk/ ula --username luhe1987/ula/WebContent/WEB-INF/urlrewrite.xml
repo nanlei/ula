@@ -13,7 +13,7 @@
 		<from>/([a-z]+).html</from>
 		<to type="forward">/$1.action</to>
 	</rule>
-	
+
 	<rule>
 		<note>city</note>
 		<from>/city/([a-z]+).html</from>
@@ -70,7 +70,7 @@
 		<from>/tour-([0-9]+).html</from>
 		<to type="forward">/tour/info.action?id=$1</to>
 	</rule>
-	
+
 	<rule>
 		<note>special service</note>
 		<from>/special/([a-z]+).html</from>
@@ -81,43 +81,52 @@
 		<from>^/special/hotelReserve$</from>
 		<to type="forward">/special/hotelReserve.action</to>
 	</rule>
-	
+
 	<rule>
 		<note>search</note>
 		<from>/search/([a-z]+).html</from>
 		<to type="forward">/search/$1.action</to>
 	</rule>
-	
+
 	<rule>
 		<note>contact</note>
 		<from>/contact/([a-z]+).html</from>
 		<to type="forward">/contact/$1.action</to>
 	</rule>
-	
+
 	<rule>
 		<note>about</note>
 		<from>/about/([a-z]+).html</from>
 		<to type="forward">/about/$1.action</to>
 	</rule>
-	
+
 	<rule>
 		<note>online</note>
 		<from>/online/([a-z]+).html</from>
 		<to type="forward">/online/$1.action</to>
 	</rule>
-	
+
+
+
+	<rule>
+		<note>Email online</note>
+		<from>^/online/email$</from>
+		<to type="forward">/online/email.action</to>
+	</rule>
+
+
 	<rule>
 		<note>product</note>
 		<from>/product-([0-9]+).html</from>
 		<to type="forward">/product.action?id=$1</to>
 	</rule>
-	
+
 	<rule>
 		<note>recommend</note>
 		<from>/recommend-([0-9]+).html</from>
 		<to type="forward">/recommend.action?id=$1</to>
 	</rule>
-	
+
 	<rule>
 		<note>hotel</note>
 		<from>/hotel-([0-9]+).html</from>
