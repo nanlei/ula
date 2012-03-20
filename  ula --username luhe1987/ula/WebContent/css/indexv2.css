@@ -469,7 +469,7 @@ img {
 	width: 35px;
 	height: 20px;
 	float: left;
-	clear:both;
+	clear: both;
 }
 
 .search_bar .ch_text {
@@ -1132,21 +1132,41 @@ img {
 
 #hotel .line {
 	text-align: center;
-	min-height: 26px;
+	height: 40px;
 	width: 740px;
+	clear:both;
+}
+
+#hotel .line #submitButton{
+	margin-left:100px;
 }
 
 #hotel .left {
 	text-align: right;
-	width: 120px;
-	margin-left: 160px;
+	vertical-align: middle;
+	margin-left: 100px;
+	width: 220px;
 	float: left;
 }
 
 #hotel .right {
+	vertical-align: middle;
 	text-align: left;
-	margin-right: 180px;
-	float: right;
+	margin-left: 20px;
+	float: left;
+	width: 217px
+}
+
+
+#hotel .right input{
+	width: 217px
+}
+
+#hotel .line .right textarea {
+	height: 200px;
+	width: 220px;
+	margin-bottom:10px;
+	
 }
 
 /*----------类别项目的页面----------*/
@@ -1406,10 +1426,7 @@ img {
 	list-style: circle inside;
 }
 
-
-
 /*---------酒店图片相册效果----------------------*/
-
 #gallery {
 	width: 640px;
 	height: 650px;

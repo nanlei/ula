@@ -1,3 +1,4 @@
+
 package ula.action;
 
 import java.util.Map;
@@ -27,197 +28,191 @@ import com.opensymphony.xwork2.ActionContext;
  * 3.获取HttpSession 4.获取ServletContext 5.获取客户端所有参数的值getParametersAsMap 6.
  * 获取所有Service的getServiceManager 7.用于Log的Logger
  * 
- * 
  * @author Harry
- * 
  */
 public class BaseAction implements Action {
 
-	protected Logger log = LoggerFactory.getLogger(getClass());
-	protected Logger logger = LoggerFactory.getLogger(getClass());
+    protected Logger log = LoggerFactory.getLogger(getClass());
 
-	protected static final String REDIRECT = "redirect";
+    protected Logger logger = LoggerFactory.getLogger(getClass());
 
-	/**
-	 *所有Action必须要有的方法
-	 */
-	public String execute() throws Exception {
-		return SUCCESS;
-	}
+    protected static final String REDIRECT = "redirect";
 
-	/* 通用操作结果返回页 */
-	public static final String EXECUTE_RESULT = CommonConstants.EXECUTE_RESULT;
+    /**
+     * 所有Action必须要有的方法
+     */
+    public String execute() throws Exception {
+        return SUCCESS;
+    }
 
-	private ExecuteResult executeResult;
+    /* 通用操作结果返回页 */
+    public static final String EXECUTE_RESULT = CommonConstants.EXECUTE_RESULT;
 
-	private ExecuteResult buildExecuteResult() {
-		if (executeResult == null) {
-			executeResult = new ExecuteResult();
-			getHttpSessionAsMap().put(EXECUTE_RESULT, executeResult);
-		}
-		return executeResult;
-	}
+    private ExecuteResult executeResult;
 
-	public void setResult(String result) {
-		buildExecuteResult().setResult(result);
-	}
+    private ExecuteResult buildExecuteResult() {
+        if (executeResult == null) {
+            executeResult = new ExecuteResult();
+            getHttpSessionAsMap().put(EXECUTE_RESULT, executeResult);
+        }
+        return executeResult;
+    }
 
-	public void addMessage(String message) {
-		buildExecuteResult().addMessage(message);
-	}
+    public void setResult(String result) {
+        buildExecuteResult().setResult(result);
+    }
 
-	public void addRedirURL(String desc, String url) {
-		buildExecuteResult().addRedirURL(desc, url);
-	}
+    public void addMessage(String message) {
+        buildExecuteResult().addMessage(message);
+    }
 
-	public ExecuteResult getExecuteResult() {
-		return (ExecuteResult) getHttpSessionAsMap().get(EXECUTE_RESULT);
-	}
+    public void addRedirURL(String desc, String url) {
+        buildExecuteResult().addRedirURL(desc, url);
+    }
 
-	/**
-	 * 获得原始的HttpServletRequest
-	 */
-	public HttpServletRequest getHttpServletRequest() {
-		return ServletActionContext.getRequest();
-	}
+    public ExecuteResult getExecuteResult() {
+        return (ExecuteResult)getHttpSessionAsMap().get(EXECUTE_RESULT);
+    }
 
-	/**
-	 * 获得原始的HttpServletResponse
-	 */
-	public HttpServletResponse getHttpServletResponse() {
-		return ServletActionContext.getResponse();
-	}
+    /**
+     * 获得原始的HttpServletRequest
+     */
+    public HttpServletRequest getHttpServletRequest() {
+        return ServletActionContext.getRequest();
+    }
 
-	/**
-	 * 获得原始的HttpSession
-	 */
-	public Map<String, Object> getHttpSessionAsMap() {
-		return ActionContext.getContext().getSession();
-	}
+    /**
+     * 获得原始的HttpServletResponse
+     */
+    public HttpServletResponse getHttpServletResponse() {
+        return ServletActionContext.getResponse();
+    }
 
-	/**
-	 * 获取客户端所有参数的值，并保存为Map
-	 */
-	public Map<String, Object> getParametersAsMap() {
-		return ActionContext.getContext().getParameters();
-	}
+    /**
+     * 获得原始的HttpSession
+     */
+    public Map<String, Object> getHttpSessionAsMap() {
+        return ActionContext.getContext().getSession();
+    }
 
-	/**
-	 * 获取Service管理器
-	 */
-	public ServiceManager getServiceManager() {
-		return (ServiceManager) BeanManager.getBean("serviceManager");
-	}
+    /**
+     * 获取客户端所有参数的值，并保存为Map
+     */
+    public Map<String, Object> getParametersAsMap() {
+        return ActionContext.getContext().getParameters();
+    }
 
-	/**
-	 * 获取MailSender
-	 * 
-	 * @return
-	 */
-	public JavaMailSender getJavaMailSender() {
-		return (JavaMailSender) BeanManager.getBean("mailSender");
-	}
+    /**
+     * 获取Service管理器
+     */
+    public ServiceManager getServiceManager() {
+        return (ServiceManager)BeanManager.getBean("serviceManager");
+    }
 
-	/**
-	 * 获得原始的HttpServletContext
-	 */
-	public ServletContext getServletContext() {
-		return ServletActionContext.getServletContext();
-	}
+    /**
+     * 获取MailSender
+     * 
+     * @return
+     */
+    public JavaMailSender getJavaMailSender() {
+        return (JavaMailSender)BeanManager.getBean("mailSender");
+    }
 
-	@SuppressWarnings("unchecked")
-	public Map<String, Object> getLoginUser() throws Exception {
-		return (Map<String, Object>) getHttpSessionAsMap().get(
-				CommonConstants.LOGIN_USER);
-	}
+    /**
+     * 获得原始的HttpServletContext
+     */
+    public ServletContext getServletContext() {
+        return ServletActionContext.getServletContext();
+    }
 
-	/**
-	 * 获取登陆用户的userId 如果用户登录，用户的userId被放入Session
-	 * 
-	 * getLoginUserID()有可能因为如下原因抛出异常： a)没有登录，无法取到值 b)Session过期 c)格式转换
-	 */
-	public int getLoginUserID() throws Exception {
-		String userId = (String) getLoginUser().get(
-				CommonConstants.LOGIN_USERID);
-		return Integer.valueOf(userId);
-	}
+    @SuppressWarnings("unchecked")
+    public Map<String, Object> getLoginUser() throws Exception {
+        return (Map<String, Object>)getHttpSessionAsMap().get(CommonConstants.LOGIN_USER);
+    }
 
-	public String getLoginUserName() throws Exception {
-		return (String) getLoginUser().get(CommonConstants.LOGIN_USERNAME);
-	}
+    /**
+     * 获取登陆用户的userId 如果用户登录，用户的userId被放入Session getLoginUserID()有可能因为如下原因抛出异常：
+     * a)没有登录，无法取到值 b)Session过期 c)格式转换
+     */
+    public int getLoginUserID() throws Exception {
+        String userId = (String)getLoginUser().get(CommonConstants.LOGIN_USERID);
+        return Integer.valueOf(userId);
+    }
 
-	/**
-	 * 获取IP的方法，加入了通过代理服务器跳转过来请求的判断
-	 * 
-	 * @param request
-	 * @return
-	 */
-	public String getIP() {
-		HttpServletRequest request = getHttpServletRequest();
-		String ip = request.getHeader("x-forwarded-for");
-		if (StringUtils.isEmpty(ip) || "unknown".equalsIgnoreCase(ip)) {
-			ip = request.getHeader("x-forward-for");
-			if (StringUtils.isEmpty(ip) || "unknown".equalsIgnoreCase(ip)) {
-				ip = request.getRemoteAddr();
-			}
-		}
-		return ip;
-	}
+    public String getLoginUserName() throws Exception {
+        return (String)getLoginUser().get(CommonConstants.LOGIN_USERNAME);
+    }
 
-	/* 分页信息 */
-	protected int pageNum = 1;
+    /**
+     * 获取IP的方法，加入了通过代理服务器跳转过来请求的判断
+     * 
+     * @param request
+     * @return
+     */
+    public String getIP() {
+        HttpServletRequest request = getHttpServletRequest();
+        String ip = request.getHeader("x-forwarded-for");
+        if (StringUtils.isEmpty(ip) || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("x-forward-for");
+            if (StringUtils.isEmpty(ip) || "unknown".equalsIgnoreCase(ip)) {
+                ip = request.getRemoteAddr();
+            }
+        }
+        return ip;
+    }
 
-	protected int pageSize = CommonConstants.DEFAULT_PAGE_SIZE;
+    /* 分页信息 */
+    protected int pageNum = 1;
 
-	public int getPageNum() {
-		return pageNum;
-	}
+    protected int pageSize = CommonConstants.DEFAULT_PAGE_SIZE;
 
-	public void setPageNum(int pageNum) {
-		this.pageNum = pageNum;
-	}
+    public int getPageNum() {
+        return pageNum;
+    }
 
-	public int getPageSize() {
-		return pageSize;
-	}
+    public void setPageNum(int pageNum) {
+        this.pageNum = pageNum;
+    }
 
-	public void setPageSize(int pageSize) {
-		this.pageSize = pageSize;
-	}
+    public int getPageSize() {
+        return pageSize;
+    }
 
-	public int getMaxPageSize() {
-		return CommonConstants.MAX_PAGE_SIZE;
-	}
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
 
-	public int getDefaultPageSize() {
-		return CommonConstants.DEFAULT_PAGE_SIZE;
-	}
+    public int getMaxPageSize() {
+        return CommonConstants.MAX_PAGE_SIZE;
+    }
 
-	public String getQueryStringWithoutPageNum() {
-		Map<String, Object> m = getParametersAsMap();
-		m.remove("pageNum");
-		return QueryUtil.getQueryString(m);
-	}
+    public int getDefaultPageSize() {
+        return CommonConstants.DEFAULT_PAGE_SIZE;
+    }
 
-	public String getFullUrlWithoutPageNum() {
-		return getHttpServletRequest().getServletPath() + "?"
-				+ getQueryStringWithoutPageNum();
-	}
+    public String getQueryStringWithoutPageNum() {
+        Map<String, Object> m = getParametersAsMap();
+        m.remove("pageNum");
+        return QueryUtil.getQueryString(m);
+    }
 
-	public String getQueryStringWithoutPageInfo() {
-		Map<String, Object> m = getParametersAsMap();
-		m.remove("pageNum");
-		m.remove("pageSize");
-		return QueryUtil.getQueryString(m);
-	}
+    public String getFullUrlWithoutPageNum() {
+        return getHttpServletRequest().getServletPath() + "?" + getQueryStringWithoutPageNum();
+    }
 
-	public String getFullUrlWithoutPageInfo() {
-		return getHttpServletRequest().getServletPath() + "?"
-				+ getQueryStringWithoutPageInfo();
-	}
+    public String getQueryStringWithoutPageInfo() {
+        Map<String, Object> m = getParametersAsMap();
+        m.remove("pageNum");
+        m.remove("pageSize");
+        return QueryUtil.getQueryString(m);
+    }
 
-	public String getBundle(String key) {
-		ResourceBundle bundle = ResourceBundle.getBundle("globalMessages");
-		return bundle.getString(key);
-	}
+    public String getFullUrlWithoutPageInfo() {
+        return getHttpServletRequest().getServletPath() + "?" + getQueryStringWithoutPageInfo();
+    }
+
+    public String getBundle(String key) {
+        ResourceBundle bundle = ResourceBundle.getBundle("globalMessages");
+        return bundle.getString(key);
+    }
 }
