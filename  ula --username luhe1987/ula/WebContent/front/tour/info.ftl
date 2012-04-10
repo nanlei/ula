@@ -17,10 +17,9 @@
                 	<p>${tour.TITLE}</p>
                 </div>
                 
+              
                 
-                
-                <#if tour.DESCRIPTION !="index">
-                
+                <#if tour.DESCRIPTION !="index">    
                 <div style="margin-top:10px;height:150px;">
                 	<div style="float:left;width:210px;"><img src="${base}${tour.COVERLINK}" alt="" /></div>
                 	<div style="float:right;width:515px;">${tour.DESCRIPTION}</div>

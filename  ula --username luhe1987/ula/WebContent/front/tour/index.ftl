@@ -12,25 +12,7 @@
 		<!-- The Left -->
 		<@fp.main_left_tour /><#-- 主体左侧宏，包含关于大连导航，RSS订阅，天气预报-->
 		 <!-- The Content -->
-         <#assign tour_category=request.getRequestURI()?substring(request.getRequestURI()?last_index_of("/")+1,request.getRequestURI()?last_index_of(".")) />
-         <#assign tips="" />
-         <#switch tour_category>
-         	<#case "tour"><#assign tips="${action.getBundle('front.tour.business')}"><#break>
-         	<#case "business"><#assign tips="${action.getBundle('front.tour.business')}"><#break>
-         	<#case "camping"><#assign tips="${action.getBundle('front.tour.camping')}"><#break>
-         	<#case "foodie"><#assign tips="${action.getBundle('front.tour.foodie')}"><#break>
-         	<#case "family"><#assign tips="${action.getBundle('front.tour.family')}"><#break>
-         	<#case "therapy"><#assign tips="${action.getBundle('front.tour.therapy')}"><#break>
-         	<#case "newyear"><#assign tips="${action.getBundle('front.tour.newyear')}"><#break>
-         	<#case "learn"><#assign tips="${action.getBundle('front.tour.learn')}"><#break>
-         	<#case "romantic"><#assign tips="${action.getBundle('front.tour.romantic')}"><#break>
-         	<#case "rural"><#assign tips="${action.getBundle('front.tour.rural')}"><#break>
-         	<#case "event"><#assign tips="${action.getBundle('front.tour.event')}"><#break>
-         	<#case "sport"><#assign tips="${action.getBundle('front.tour.sport')}"><#break>
-         	<#case "hotspring"><#assign tips="${action.getBundle('front.tour.hotspring')}"><#break>
-         	<#case "exhibition"><#assign tips="${action.getBundle('front.tour.exhibition')}"><#break>
-         	<#case "luxurious"><#assign tips="${action.getBundle('front.tour.luxurious')}"><#break>
-         </#switch>
+        
          
 	        <#if tourList?has_content>
 		         <#list tourList as tour>
