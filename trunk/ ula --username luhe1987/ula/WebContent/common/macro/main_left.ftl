@@ -87,10 +87,10 @@
 			<div id="left_title"><@s.property value="%{getText('front.nav.jounery.tour')}"/></div>
 			<div id="left_menu">
 				<ul class="left_first_menu">
-					<li><a href="${base}/tour/business.html"><@s.property value="%{getText('front.tour.business')}"/></a></li>
+					<li><a href="${base}/tour/busine.html"><@s.property value="%{getText('front.tour.business')}"/></a></li>
 					<li><a href="${base}/tour/camping.html"><@s.property value="%{getText('front.tour.camping')}"/></a></li>
 					<li><a href="${base}/tour/foodie.html"><@s.property value="%{getText('front.tour.foodie')}"/></a></li>
-					<li><a href="${base}/tour/family.html"><@s.property value="%{getText('front.tour.family')}"/></a></li>
+					<li><a href="${base}/tour/normal.html"><@s.property value="%{getText('front.tour.normal')}"/></a></li>
 					<li><a href="${base}/tour/therapy.html"><@s.property value="%{getText('front.tour.therapy')}"/></a></li>
 					<li><a href="${base}/tour/newyear.html"><@s.property value="%{getText('front.tour.newyear')}"/></a></li>
 					<li><a href="${base}/tour/learn.html"><@s.property value="%{getText('front.tour.learn')}"/></a></li>
@@ -99,7 +99,7 @@
 					<li><a href="${base}/tour/event.html"><@s.property value="%{getText('front.tour.event')}"/></a></li>
 					<li><a href="${base}/tour/sport.html"><@s.property value="%{getText('front.tour.sport')}"/></a></li>
 					<li><a href="${base}/tour/hotspring.html"><@s.property value="%{getText('front.tour.hotspring')}"/></a></li>
-					<li><a href="${base}/tour/exhibition.html"><@s.property value="%{getText('front.tour.exhibition')}"/></a></li>
+					<li><a href="${base}/tour/individual.html"><@s.property value="%{getText('front.tour.individual')}"/></a></li>
 					<li><a href="${base}/tour/luxurious.html"><@s.property value="%{getText('front.tour.luxurious')}"/></a></li>
 				</ul>
 			</div>
