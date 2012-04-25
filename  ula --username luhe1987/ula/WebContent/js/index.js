@@ -68,24 +68,24 @@ $(function() {
 	// });
 });
 
-function rssSubmit() {
+function rssSubmit(invalid_address, no_option,error) {
 
 
 	var email = $.trim($("#email_input").val());
 	var emailReg = /^[_a-z0-9]+@([_a-z0-9]+\.)+[a-z0-9]{2,3}$/;
 	var selectorFlag = $("input:[name=rss_ornot]:radio:checked").length;
 	if (email == "" || email == null) {
-		alert("Invalid Email Address!");
+		alert(invalid_address);
 	} else if (emailReg.test(email) == false) {
-		alert("Invalid Email Address!");
+		alert(invalid_address);
 	} else if (selectorFlag == 0) {
-		alert("Please Choose Subscribe Or Cancel!");
+		alert(no_option);
 	} else {
 		var selector = $("input:[name=rss_ornot]:radio:checked").val();
 		if (selector == "yes") {
-			subscribe(email);
+			subscribe(email,error);
 		} else {
-			cancelSubscribe(email);
+			cancelSubscribe(email,error);
 		}
 	}
 }
@@ -95,7 +95,7 @@ function rssSubmit() {
  * @param email
  * @return
  */
-function subscribe(email) {
+function subscribe(email,error) {
 
 
 	$.ajax({
@@ -109,17 +109,12 @@ function subscribe(email) {
 		success : function(data) {
 
 			var jsonData = jQuery.parseJSON(data);
-			if (jsonData.result == 1) {
-				alert("Subscribe Successfully!");
-			} else if (jsonData.result == 2) {
-				alert("Email Address already exists!");
-			} else {
-				alert("Subscribe Failure!");
+			if(jsonData.result==0 || jsonData.result==1 || jsonData.result==2){
+				alert(jsonData.msg);
 			}
 		},
 		error : function(xmlHttpRequest, status, exception) {
-
-			dialogAlert("Network Error, Please refresh page and try again!");
+			dialogAlert(error);
 		}
 	});
 }
@@ -128,7 +123,7 @@ function subscribe(email) {
  * 
  * @return
  */
-function cancelSubscribe(email) {
+function cancelSubscribe(email,error) {
 
 	$.ajax({
 		type : "POST",
@@ -140,17 +135,14 @@ function cancelSubscribe(email) {
 		success : function(data) {
 
 			var jsonData = jQuery.parseJSON(data);
-			if (jsonData.result == 1) {
-				alert("Cancel Subscribe Successfully!");
-			} else if (jsonData.result == 2) {
-				alert("Email Address not exists!");
-			} else {
-				alert("Cancel Subscribe Failure!");
+			
+			if(jsonData.result==0 || jsonData.result==1 || jsonData.result==2){
+				alert(jsonData.msg);
 			}
 		},
 		error : function(xmlHttpRequest, status, exception) {
 
-			dialogAlert("Network Error, Please refresh page and try again!");
+			dialogAlert(error);
 		}
 	});
 }

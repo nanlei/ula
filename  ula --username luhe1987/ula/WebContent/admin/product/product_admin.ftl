@@ -21,8 +21,8 @@
 				</td>
 			</tr>
 			<tr>
-				<td>价格<@p.mustMark /></td>
-				<td><input type="text" name="price" size="40" maxLength="15" emptyInfo="请输入产品价格" numberInfo="产品价格为纯数字"></td>
+				<td>价格</td>
+				<td><input type="text" name="price" size="40" maxLength="15" value=""></td>
 			</tr>
 			<tr>
 				<td>首页显示(最多设置12个)<@p.mustMark /></td>

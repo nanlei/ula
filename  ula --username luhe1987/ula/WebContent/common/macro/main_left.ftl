@@ -46,7 +46,7 @@
 						<input class="rss_ch" type="radio" name="rss_ornot" value="yes" /><span><@s.property value="%{getText('front.rss.radio.subscribe')}"/></span><br />
 						<input class="rss_ch" type="radio" name="rss_ornot" value="no" /><span><@s.property value="%{getText('front.rss.radio.cancel')}"/></span>
 						<p align="right">
-							<input id="info_submit" name="rss_add" type="button" value="&nbsp;&nbsp;&nbsp;&nbsp;<@s.property value="%{getText('front.rss.submit')}"/>&nbsp;&nbsp;&nbsp;&nbsp;" onclick="rssSubmit()"/>
+							<input id="info_submit" name="rss_add" type="button" value="&nbsp;&nbsp;&nbsp;&nbsp;<@s.property value="%{getText('front.rss.submit')}"/>&nbsp;&nbsp;&nbsp;&nbsp;" onclick="rssSubmit('${invalidAdress!"Invalid email address"}','${noAction!"Please choose subscribe or unsubscribe"}','${error!"Error occured."}')"/>
 						</p>
 					</form>
 				</div>
@@ -116,7 +116,7 @@
 						<input class="rss_ch" type="radio" name="rss_ornot" value="yes" /><span><@s.property value="%{getText('front.rss.radio.subscribe')}"/></span><br />
 						<input class="rss_ch" type="radio" name="rss_ornot" value="no" /><span><@s.property value="%{getText('front.rss.radio.cancel')}"/></span>
 						<p align="right">
-							<input id="info_submit" name="rss_add" type="button" value="&nbsp;&nbsp;&nbsp;&nbsp;<@s.property value="%{getText('front.rss.submit')}"/>&nbsp;&nbsp;&nbsp;&nbsp;" onclick="rssSubmit()"/>
+							<input id="info_submit" name="rss_add" type="button" value="&nbsp;&nbsp;&nbsp;&nbsp;<@s.property value="%{getText('front.rss.submit')}"/>&nbsp;&nbsp;&nbsp;&nbsp;" onclick="rssSubmit('${invalidAdress!"Invalid email address"}','${noAction!"Please choose subscribe or unsubscribe"}','${error!"Error occured."}')"/>
 						</p>
 					</form>
 				</div>
@@ -182,7 +182,7 @@
 						<input class="rss_ch" type="radio" name="rss_ornot" value="yes" /><span><@s.property value="%{getText('front.rss.radio.subscribe')}"/></span><br />
 						<input class="rss_ch" type="radio" name="rss_ornot" value="no" /><span><@s.property value="%{getText('front.rss.radio.cancel')}"/></span>
 						<p align="right">
-							<input id="info_submit" name="rss_add" type="button" value="&nbsp;&nbsp;&nbsp;&nbsp;<@s.property value="%{getText('front.rss.submit')}"/>&nbsp;&nbsp;&nbsp;&nbsp;" onclick="rssSubmit()"/>
+							<input id="info_submit" name="rss_add" type="button" value="&nbsp;&nbsp;&nbsp;&nbsp;<@s.property value="%{getText('front.rss.submit')}"/>&nbsp;&nbsp;&nbsp;&nbsp;" onclick="rssSubmit('${invalidAdress!"Invalid email address"}','${noAction!"Please choose subscribe or unsubscribe"}','${error!"Error occured."}')"/>
 						</p>
 					</form>
 				</div>
@@ -241,7 +241,7 @@
 						<input class="rss_ch" type="radio" name="rss_ornot" value="yes" /><span><@s.property value="%{getText('front.rss.radio.subscribe')}"/></span><br />
 						<input class="rss_ch" type="radio" name="rss_ornot" value="no" /><span><@s.property value="%{getText('front.rss.radio.cancel')}"/></span>
 						<p align="right">
-							<input id="info_submit" name="rss_add" type="button" value="&nbsp;&nbsp;&nbsp;&nbsp;<@s.property value="%{getText('front.rss.submit')}"/>&nbsp;&nbsp;&nbsp;&nbsp;" onclick="rssSubmit()"/>
+							<input id="info_submit" name="rss_add" type="button" value="&nbsp;&nbsp;&nbsp;&nbsp;<@s.property value="%{getText('front.rss.submit')}"/>&nbsp;&nbsp;&nbsp;&nbsp;" onclick="rssSubmit('${invalidAdress!"Invalid email address"}','${noAction!"Please choose subscribe or unsubscribe"}','${error!"Error occured."}')"/>
 						</p>
 					</form>
 				</div>
@@ -304,7 +304,7 @@
 						<input class="rss_ch" type="radio" name="rss_ornot" value="yes" /><span><@s.property value="%{getText('front.rss.radio.subscribe')}"/></span><br />
 						<input class="rss_ch" type="radio" name="rss_ornot" value="no" /><span><@s.property value="%{getText('front.rss.radio.cancel')}"/></span>
 						<p align="right">
-							<input id="info_submit" name="rss_add" type="button" value="&nbsp;&nbsp;&nbsp;&nbsp;<@s.property value="%{getText('front.rss.submit')}"/>&nbsp;&nbsp;&nbsp;&nbsp;" onclick="rssSubmit()"/>
+							<input id="info_submit" name="rss_add" type="button" value="&nbsp;&nbsp;&nbsp;&nbsp;<@s.property value="%{getText('front.rss.submit')}"/>&nbsp;&nbsp;&nbsp;&nbsp;" onclick="rssSubmit('${invalidAdress!"Invalid email address"}','${noAction!"Please choose subscribe or unsubscribe"}','${error!"Error occured."}')"/>
 						</p>
 					</form>
 				</div>
@@ -364,7 +364,7 @@
 						<input class="rss_ch" type="radio" name="rss_ornot" value="yes" /><span><@s.property value="%{getText('front.rss.radio.subscribe')}"/></span><br />
 						<input class="rss_ch" type="radio" name="rss_ornot" value="no" /><span><@s.property value="%{getText('front.rss.radio.cancel')}"/></span>
 						<p align="right">
-							<input id="info_submit" name="rss_add" type="button" value="&nbsp;&nbsp;&nbsp;&nbsp;<@s.property value="%{getText('front.rss.submit')}"/>&nbsp;&nbsp;&nbsp;&nbsp;" onclick="rssSubmit()"/>
+							<input id="info_submit" name="rss_add" type="button" value="&nbsp;&nbsp;&nbsp;&nbsp;<@s.property value="%{getText('front.rss.submit')}"/>&nbsp;&nbsp;&nbsp;&nbsp;" onclick="rssSubmit('${invalidAdress!"Invalid email address"}','${noAction!"Please choose subscribe or unsubscribe"}','${error!"Error occured."}')"/>
 						</p>
 					</form>
 				</div>
