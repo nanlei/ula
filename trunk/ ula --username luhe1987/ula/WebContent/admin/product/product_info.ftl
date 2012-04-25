@@ -28,8 +28,8 @@ function showCover(path){
 		<td><input type="text" name="name" value="${product.NAME}" size="40" maxLength="50" emptyInfo="请输入产品名称"></td>
 	</tr>
 	<tr>
-		<td>产品价格<@p.mustMark /></td>
-		<td><input type="text" name="price" value="${product.PRICE}" size="40" maxLength="50" emptyInfo="请输入产品价格" numberInfo="价格仅能是数字"></td>
+		<td>产品价格</td>
+		<td><input type="text" name="price" value="${product.PRICE}" size="40" maxLength="50" value=""></td>
 	</tr>
 	<tr>
 		<td>首页显示(最多设置12个)<@p.mustMark /></td>

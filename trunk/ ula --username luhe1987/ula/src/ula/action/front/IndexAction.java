@@ -6,8 +6,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.ResourceBundle;
+
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
+
+import com.opensymphony.xwork2.ActionContext;
 
 import ula.action.AnonymousAction;
 import ula.util.MapUtil;
@@ -100,11 +105,15 @@ public class IndexAction extends AnonymousAction {
      * @return
      */
     public String index() throws Exception {
+        
         recommendList = getServiceManager().getIndexService().getRecommendList();
         productList = getServiceManager().getIndexService().getProductList();
         linkList = getServiceManager().getIndexService().getLinkList();
         weather = getServiceManager().getIndexService().getWeather();
         exchangeRateList = getServiceManager().getIndexService().getExchangeRate();
+        
+        this.setAlertLanguages();
+        
         return SUCCESS;
     }
 
@@ -177,23 +186,31 @@ public class IndexAction extends AnonymousAction {
      */
     public String subscribe() {
 
-        System.out.println("Do not do this");
-
         HashMap<String, Object> map = new HashMap<String, Object>();
         String email = MapUtil.getStringFromMap(getParametersAsMap(), "email");
+
+        Locale curLoc = ActionContext.getContext().getLocale();
+        ResourceBundle props = ResourceBundle.getBundle("globalMessages", curLoc);
+
+        String resultKey = "result";
+        String msgKey = "msg";
+
         int flag = getServiceManager().getSubscriberService().getCheckSubscriber(email);
         if (flag > 0) {
             // 邮件地址已经存在
-            map.put("result", 2);
+            map.put(resultKey, 2);
+            map.put(msgKey, props.getString("front.subscribe.email.existed"));
         } else {
             try {
                 getServiceManager().getSubscriberService().addSubscriber(email, getIP());
                 // 订阅成功
-                map.put("result", 1);
+                map.put(resultKey, 1);
+                map.put(msgKey, props.getString("front.subscribe.success"));
             } catch (Exception e) {
                 log.error(ExceptionUtils.getStackTrace(e));
                 // 订阅失败
-                map.put("result", 0);
+                map.put(resultKey, 0);
+                map.put(msgKey, props.getString("front.subscribe.failure"));
             }
         }
         setJsonModel(map);
@@ -208,20 +225,31 @@ public class IndexAction extends AnonymousAction {
     public String cancelSubscribe() {
         HashMap<String, Object> map = new HashMap<String, Object>();
         String email = MapUtil.getStringFromMap(getParametersAsMap(), "email");
+
+        Locale curLoc = ActionContext.getContext().getLocale();
+        ResourceBundle props = ResourceBundle.getBundle("globalMessages", curLoc);
+
+        String resultKey = "result";
+        String msgKey = "msg";
+
         int flag = getServiceManager().getSubscriberService().getCheckSubscriber(email);
         if (flag > 0) {
             try {
                 getServiceManager().getSubscriberService().deleteSubscriberByEmail(email);
                 // 取消订阅成功
-                map.put("result", 1);
+                map.put(resultKey, 1);
+                map.put(msgKey, props.getString("front.subscribe.canceled"));
             } catch (Exception e) {
                 log.error(ExceptionUtils.getStackTrace(e));
                 // 取消订阅失败
-                map.put("result", 0);
+                map.put(resultKey, 0);
+                map.put(msgKey, props.getString("front.subscribe.cancel.failure"));
+
             }
         } else {
             // 邮件地址不存在
-            map.put("result", 2);
+            map.put(resultKey, 0);
+            map.put(msgKey, props.getString("front.subscribe.cancel.failure"));
         }
         setJsonModel(map);
         return "cancelSubscribe";
@@ -233,19 +261,41 @@ public class IndexAction extends AnonymousAction {
      * @return
      */
     public String language() {
+
         String locale = MapUtil.getStringFromMap(getParametersAsMap(), "locale");
         getHttpServletRequest().getSession().setAttribute("locale_session", new Locale(locale));
+
         String contextPath = getHttpServletRequest().getContextPath();
         String header_referer = getHttpServletRequest().getHeader("referer");
         String temp_referer = header_referer.substring(header_referer.indexOf("//") + 2);
+
         temp_referer = temp_referer.substring(temp_referer.indexOf("/"));
         temp_referer = temp_referer.substring(temp_referer.indexOf(contextPath)
                 + contextPath.length());
         if (!temp_referer.startsWith("/")) {
             temp_referer = "/" + temp_referer;
         }
+
+
+        this.setAlertLanguages();
+        
         referer = temp_referer;
         return SUCCESS;
+    }
+
+    /**
+     * Set RSS alerts based on locale
+     */
+    private void setAlertLanguages() {
+        
+        Locale curLoc = ActionContext.getContext().getLocale();
+        ResourceBundle props = ResourceBundle.getBundle("globalMessages", curLoc);
+
+        HttpSession sess = getHttpServletRequest().getSession();
+        sess.setAttribute("invalidAdress", props.getString("front.subscribe.email.invalid"));
+        sess.setAttribute("noAction", props.getString("front.subscribe.noaction"));
+        sess.setAttribute("error", props.getString("front.subscribe.networkerror"));
+
     }
 
 }

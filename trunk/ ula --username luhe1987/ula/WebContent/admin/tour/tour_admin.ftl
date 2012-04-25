@@ -14,7 +14,7 @@
 			<tr>
 				<td>标题<@p.mustMark /></td>
 				<td>
-					<input type="text" name="title" size="40" maxLength="15" emptyInfo="请输入文章标题">
+					<input type="text" name="title" size="100"  emptyInfo="请输入文章标题">
 				</td>
 			</tr>
 			<tr>

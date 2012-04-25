@@ -24,7 +24,7 @@ public class FrontService extends BaseService {
 		return jt.queryForMap(SQL_GET_CITY_INFO_BY_TAG, tag);
 	}
 
-	private static final String SQL_GET_CITY_TOUR_BY_TYPE = "select * from article where TYPE=?";
+	private static final String SQL_GET_CITY_TOUR_BY_TYPE = "select * from article where TYPE=? limit 1";
 
 	public Map<String, Object> getCityTourByType(String type) {
 		return jt.queryForMap(SQL_GET_CITY_TOUR_BY_TYPE, type);

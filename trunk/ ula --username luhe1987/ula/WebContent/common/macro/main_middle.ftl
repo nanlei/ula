@@ -15,8 +15,13 @@
 							<img src="${base}${product.COVER}" alt="<@s.property value="%{getText('front.production.title')}"/>" />
 						</a>
 						<div class="travel_info">
-							<span class="left_words">￥${product.PRICE}</span>
-							
+						
+								<#if product.PRICE?has_content&&product.PRICE!="">
+									<span class="left_words">￥${product.PRICE}</span>
+								<#else>
+									<span class="left_words"></span>
+								</#if>
+								
 								<#if product.LINK?has_content>
 									<a href="${product.LINK}" class="right_words">${product.NAME}>></a>
 								<#else>
