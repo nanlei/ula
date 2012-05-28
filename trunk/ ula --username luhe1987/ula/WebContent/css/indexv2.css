@@ -507,17 +507,18 @@ img {
 	margin-right: 10px;
 	width: 60px;
 	height: 60px;
-	background: url(../images/search_bar_btn.png) no-repeat left top;
 	border: 0;
 	cursor: pointer;
 	font-size: 25px;
 	color: #FFFFFF;
 	padding-left: 50px;
 	padding-bottom: 2px;
+	
+	background: url(../images/search_bar_btn.png) no-repeat left top;
 }
 
 .search_bar .search_btn:hover {
-	background: url(../images/search_bar_btn2.png) no-repeat left top;
+	/* background: url(../images/search_bar_btn2.png) no-repeat left top; */
 }
 
 .search_bar .tra_style {
@@ -820,11 +821,15 @@ img {
 	font-size: 18px;
 	color: #FFFFFF;
 	display: block;
-	background: url(../images/right_p1_bg2.png) no-repeat left top;
+	
+	border-radius:5px;
+	background-color:#7ba2c8;
+	/* background: url(../images/right_p1_bg2.png) no-repeat left top; */
 }
 
 #right_show a:hover {
-	background: url(../images/right_p2_bg.png) no-repeat left top;
+	background-color: #efb00a;
+	/* background: url(../images/right_p2_bg.png) no-repeat left top; */
 }
 
 #right_mice {
@@ -841,11 +846,15 @@ img {
 	line-height: 96px;
 	font-size: 45px;
 	color: #FFFFFF;
-	background: url(../images/right_p2_bg2.png) no-repeat left top;
+	
+	border-radius:5px;
+	background-color: #78be09
+	/* background: url(../images/right_p2_bg2.png) no-repeat left top; */
 }
 
 #right_mice a:hover {
-	background: url(../images/right_p2_bg.png) no-repeat left top;
+	background-color: #efb00a;
+	/* background: url(../images/right_p2_bg.png) no-repeat left top; */
 }
 
 .right_tools {
@@ -862,11 +871,15 @@ img {
 	font-size: 18px;
 	color: #FFFFFF;
 	font-weight: bolder;
-	background: url(../images/right_p3_bg.png) no-repeat left top;
+	
+	border-radius:5px;
+	background-color:#7ba2c8;
+	/* background: url(../images/right_p3_bg.png) no-repeat left top; */
 }
 
 .right_tools a:hover {
-	background: url(../images/right_p3_bg2.png) no-repeat left top;
+	background-color:#d87a00;
+	/* background: url(../images/right_p3_bg2.png) no-repeat left top; */
 }
 
 .right_tool1 {
@@ -906,7 +919,12 @@ img {
 	color: #FFFFFF;
 	font-weight: bold;
 	line-height: 37px;
-	background: url(../images/right_button_bg.png) no-repeat left top;
+	background-color:#2479ce;
+	
+	/* Css Button  */
+	border-radius:5px;
+	box-shadow: 0px 0px 2px #888;
+	/* background: url(../images/right_button_bg.png) no-repeat left top; */
 }
 
 .right_links {
@@ -923,12 +941,20 @@ img {
 	width: 180px;
 	height: 37px;
 	color: #5782aa;
-	background: url(../images/right_links_bg.png) no-repeat left top;
+	/* Css Button  */
+	border:1px solid #71abdc;
+	border-radius:5px;
+	box-shadow: 0px 0px 2px #888;
+	/* background: url(../images/right_links_bg.png) no-repeat left top; */
 }
 
 .right_links a:hover {
 	color: #FFFFFF;
-	background: url(../images/right_links_bg2.png) no-repeat left top;
+	/* Css Button  */
+	background-color:#71abdc;
+	border-radius:5px;
+	box-shadow: 0px 0px 2px #888;
+	/* background: url(../images/right_links_bg2.png) no-repeat left top; */
 }
 
 .right_parts {
