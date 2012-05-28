@@ -227,8 +227,8 @@
 						<div id="start_time" class="time_ch"><@s.property value="%{getText('front.search.date.from')}"/>:<input name="start_time" id="fromDate" type="text" readonly="readonly"/></div>
 						<div id="end_time" class="time_ch"><@s.property value="%{getText('front.search.date.to')}"/>:<input name="end_time" id="toDate" type="text" readonly="readonly"/></div>
 						
-						<div>
-							<p><span class="p_nums"><@s.property value="%{getText('front.search.date.people')}"/></span></p>
+						<div align="left">
+							<p><span class="p_people"><@s.property value="%{getText('front.search.date.people')}"/></span></p>
 							<p><span class="p_nums"><@s.property value="%{getText('front.search.date.adult')}"/>:</span><input class="short" type="text" name="adult_n"/></p>
 							<p><span class="p_nums"><@s.property value="%{getText('front.search.date.child')}"/>:</span><input class="short" type="text" name="child_n"/></p>
 						</div>
