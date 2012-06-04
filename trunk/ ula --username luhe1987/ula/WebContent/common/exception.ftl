@@ -14,14 +14,13 @@
 <#assign exceptionDetail = stack.context["_exception_info_"]>
 <table border="0" cellpadding="0" cellspacing="1" class="default" style="width:50%" align="center">
 <tr class="title">
-	<td style="text-align:center;color:red">系统操作出现异常</td>
+	<td style="text-align:center;color:red">Error</td>
 </tr>
 <tr>
 	<td align="center" style="line-height:150%;padding:10px">
-	<table width="90%"><tr><td style="padding:10px;background:#FFCCCC;border:1px solid black;width:90%">错误原因：${exception?if_exists?html}</td></tr></table>
 	<br>
-	请选择以下任务继续：<br><br>
-	<a href="javascript:history.go(-1)">返回</a> | <a href="javascript:void(0)" onclick="$('#explaintab').toggle();this.blur();return false;">查看错误详细信息</a>
+	 It seems like a server error.<br/>
+	 We cannot find the page for you :(<br/><br/>
 	</td>
 </tr>
 </tr>
