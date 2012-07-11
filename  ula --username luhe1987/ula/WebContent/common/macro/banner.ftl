@@ -2,7 +2,7 @@
 <#macro banner>
 	<div id="banner">
 		<div id="logo">
-		<a href="${base}"><img src="${base}/images/logo.png" title="<@s.property value="%{getText('front.company')}"/>" alt="LOGO"/></a>
+		<a href="${base}/"><img src="${base}/images/logo.png" title="<@s.property value="%{getText('front.company')}"/>" alt="LOGO"/></a>
 		</div>
 		<ul id="banner_ad">
 			<#list recommendList as recommend>
