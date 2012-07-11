@@ -44,7 +44,7 @@
 		        
 		        <a style = "font-size:40px; color:#CC6633" href="javascript: history.go(-1)">обратно</a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		        
-		        <a style = "font-size:40px; color:#CC6633" href="javascript:postwith('${base}/special/hotel.html',{hotelName:'${hotel.NAME}'})">бронирование</a> 
+		        <a style = "font-size:40px; color:#CC6633" href="javascript:postwith('${base}/special/hotel.html',{hotelName:'${hotel.NAME}'})">Узнать стоимость</a> 
 		        
 			</div>
 
