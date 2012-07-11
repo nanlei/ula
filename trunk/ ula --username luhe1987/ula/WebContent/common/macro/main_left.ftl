@@ -87,7 +87,7 @@
 			<div id="left_title"><@s.property value="%{getText('front.nav.jounery.tour')}"/></div>
 			<div id="left_menu">
 				<ul class="left_first_menu">
-					<li><a href="${base}/tour/busine.html"><@s.property value="%{getText('front.tour.business')}"/></a></li>
+					<li><a href="${base}/tour/business.html"><@s.property value="%{getText('front.tour.business')}"/></a></li>
 					<li><a href="${base}/tour/camping.html"><@s.property value="%{getText('front.tour.camping')}"/></a></li>
 					<li><a href="${base}/tour/foodie.html"><@s.property value="%{getText('front.tour.foodie')}"/></a></li>
 					<li><a href="${base}/tour/normal.html"><@s.property value="%{getText('front.tour.normal')}"/></a></li>

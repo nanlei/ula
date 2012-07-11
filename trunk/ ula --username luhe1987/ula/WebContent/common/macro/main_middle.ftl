@@ -68,7 +68,7 @@
 		<div class="intro">
 			<div class="title">
 				<div class="tra_name">${product.TITLE}</div>
-					<div class="tra_icon_more"><a href="${base}/tour-${product.ID}.html">More</a></div>
+					<div class="tra_icon_more"><a href="${base}/tour-${product.ID}.html"><@s.property value="%{getText('front.tour.more')}"/></a></div>
 			</div>
 			<div class="words">
 				<p>${product.DESCRIPTION}...</p>
@@ -93,7 +93,7 @@
 			<div class="intro">
 				<div class="title">
 					<div class="tra_name">${tour.TITLE}</div>
-					<div class="tra_icon_more"><a href="${base}/tour-${tour.ID}.html">More</a></div>
+					<div class="tra_icon_more"><a href="${base}/tour-${tour.ID}.html"><@s.property value="%{getText('front.tour.more')}"/></a></div>
 				</div>
 				<div class="words">
 					<p>${tour.DESCRIPTION}...</p>
