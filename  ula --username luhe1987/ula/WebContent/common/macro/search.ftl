@@ -224,8 +224,8 @@
 						<div class="s_title"><@s.property value="%{getText('front.search.date.title')}"/></div>
 						<p><@s.property value="%{getText('front.search.date.travel')}"/>:</p>
 						<p><input id="search_dater" type="checkbox" name="notnecessary" onchange="hdiien_input()" /><@s.property value="%{getText('front.search.date.no')}"/></p>
-						<div id="start_time" class="time_ch"><@s.property value="%{getText('front.search.date.from')}"/>:<input name="start_time" id="fromDate" type="text" readonly="readonly"/></div>
-						<div id="end_time" class="time_ch"><@s.property value="%{getText('front.search.date.to')}"/>:<input name="end_time" id="toDate" type="text" readonly="readonly"/></div>
+						<div id="start_time" class="time_ch"><@s.property value="%{getText('front.search.date.from')}"/>:<input name="start_time" id="fromDate" type="text"/></div>
+						<div id="end_time" class="time_ch"><@s.property value="%{getText('front.search.date.to')}"/>:<input name="end_time" id="toDate" type="text"/></div>
 						
 						<div align="left">
 							<p><span class="p_people"><@s.property value="%{getText('front.search.date.people')}"/></span></p>

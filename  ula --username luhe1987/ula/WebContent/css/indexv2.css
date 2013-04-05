@@ -459,6 +459,7 @@ img {
 }
 
 .search_bar .short {
+	margin-top: 2px;
 	float: left;
 	width: 60px;
 	margin-left: 10px;
@@ -466,10 +467,12 @@ img {
 }
 
 .search_bar .date_span {
-	width: 35px;
+	margin-top: 2px;
+	width: auto;
 	height: 20px;
 	float: left;
 	clear: both;
+	width: auto;
 }
 
 .search_bar .ch_text {
@@ -513,12 +516,12 @@ img {
 	color: #FFFFFF;
 	padding-left: 50px;
 	padding-bottom: 2px;
-	
 	background: url(../images/search_bar_btn.png) no-repeat left top;
 }
 
 .search_bar .search_btn:hover {
 	/* background: url(../images/search_bar_btn2.png) no-repeat left top; */
+	
 }
 
 .search_bar .tra_style {
@@ -533,6 +536,7 @@ img {
 	width: 1000px;
 	position: relative;
 	padding-bottom: 2px;
+	clear: both;
 }
 
 #main_left {
@@ -821,9 +825,8 @@ img {
 	font-size: 18px;
 	color: #FFFFFF;
 	display: block;
-	
-	border-radius:5px;
-	background-color:#7ba2c8;
+	border-radius: 5px;
+	background-color: #7ba2c8;
 	/* background: url(../images/right_p1_bg2.png) no-repeat left top; */
 }
 
@@ -846,10 +849,9 @@ img {
 	line-height: 96px;
 	font-size: 45px;
 	color: #FFFFFF;
-	
-	border-radius:5px;
+	border-radius: 5px;
 	background-color: #78be09
-	/* background: url(../images/right_p2_bg2.png) no-repeat left top; */
+		/* background: url(../images/right_p2_bg2.png) no-repeat left top; */
 }
 
 #right_mice a:hover {
@@ -871,14 +873,13 @@ img {
 	font-size: 18px;
 	color: #FFFFFF;
 	font-weight: bolder;
-	
-	border-radius:5px;
-	background-color:#7ba2c8;
+	border-radius: 5px;
+	background-color: #7ba2c8;
 	/* background: url(../images/right_p3_bg.png) no-repeat left top; */
 }
 
 .right_tools a:hover {
-	background-color:#d87a00;
+	background-color: #d87a00;
 	/* background: url(../images/right_p3_bg2.png) no-repeat left top; */
 }
 
@@ -919,10 +920,9 @@ img {
 	color: #FFFFFF;
 	font-weight: bold;
 	line-height: 37px;
-	background-color:#2479ce;
-	
+	background-color: #2479ce;
 	/* Css Button  */
-	border-radius:5px;
+	border-radius: 5px;
 	box-shadow: 0px 0px 2px #888;
 	/* background: url(../images/right_button_bg.png) no-repeat left top; */
 }
@@ -942,8 +942,8 @@ img {
 	height: 37px;
 	color: #5782aa;
 	/* Css Button  */
-	border:1px solid #71abdc;
-	border-radius:5px;
+	border: 1px solid #71abdc;
+	border-radius: 5px;
 	box-shadow: 0px 0px 2px #888;
 	/* background: url(../images/right_links_bg.png) no-repeat left top; */
 }
@@ -951,8 +951,8 @@ img {
 .right_links a:hover {
 	color: #FFFFFF;
 	/* Css Button  */
-	background-color:#71abdc;
-	border-radius:5px;
+	background-color: #71abdc;
+	border-radius: 5px;
 	box-shadow: 0px 0px 2px #888;
 	/* background: url(../images/right_links_bg2.png) no-repeat left top; */
 }
@@ -1160,11 +1160,11 @@ img {
 	text-align: center;
 	height: 40px;
 	width: 740px;
-	clear:both;
+	clear: both;
 }
 
-#hotel .line #submitButton{
-	margin-left:100px;
+#hotel .line #submitButton {
+	margin-left: 100px;
 }
 
 #hotel .left {
@@ -1183,16 +1183,14 @@ img {
 	width: 217px
 }
 
-
-#hotel .right input{
+#hotel .right input {
 	width: 217px
 }
 
 #hotel .line .right textarea {
 	height: 200px;
 	width: 220px;
-	margin-bottom:10px;
-	
+	margin-bottom: 10px;
 }
 
 /*----------类别项目的页面----------*/
